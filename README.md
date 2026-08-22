@@ -22,9 +22,9 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 
 | Skill | 做什么 | 状态 |
 |---|---|---|
-| [`ppt-deck`](skills/ppt-deck/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + COM 渲染核查闭环（生成后真实渲染逐页核验） | ✅ 上线 |
-| `vibe-motion` | 逐页动效编排：节奏、转场、镜头语言 | 🚧 规划中 |
-| `deck-to-video` | deck 逐页渲染 → Remotion 合成，直接出成片 | 🚧 规划中 |
+| [`ppt-deck`](skills/ppt-deck/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + COM 渲染核查闭环（生成后真实渲染逐页核验） | 已上线 |
+| `vibe-motion` | 逐页动效编排：节奏、转场、镜头语言 | 规划中 |
+| `deck-to-video` | deck 逐页渲染 → Remotion 合成，直接出成片 | 规划中 |
 
 > **为什么代码画 PPT**：设计即代码——网格坐标、字号阶梯、色板全部显式声明，可复跑、可 diff、可版本化；渲染核查闭环保证「所见即所写」。
 
