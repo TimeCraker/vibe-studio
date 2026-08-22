@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node（未来 Remotion 等）
+node_modules/
+dist/
+build/
+
+# 产物（生成物不进 git，脚本可复跑）
+*.pptx
+*.pdf
+!docs/**/*.pdf
+
+# OS / 编辑器
+.DS_Store
+Thumbs.db
