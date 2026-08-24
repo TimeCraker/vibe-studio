@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-ppt-deck primitives — python-pptx 代码画 PPT 的积木箱
+ppt primitives — python-pptx 代码画 PPT 的积木箱
 用法：复制本文件改造，或 import 后组装。数据区放项目事实（Step 1 取材结果）。
 
 坐标约定：16:9（13.333 × 7.5 in）· 边距 0.55 · 页码 (12.35, 7.02)
