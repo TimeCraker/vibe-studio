@@ -1,498 +1,279 @@
 ---
 name: humanizer
 description: |
-  Rewrite AI-sounding text so it reads naturally without changing what it says.
-  Use when editing or reviewing prose for inflated claims,
-  sales language, vague sources, repetitive structure, stock AI words, passive
-  voice, filler, or chatbot artifacts. Based on Wikipedia's "Signs of AI writing."
-  Also handles Simplified Chinese: 去 AI 腔、把文本改得像人写的、润色中文、去营销腔、去套话。
+  中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。
+  去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。
+  基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检）融合。
 license: MIT
 metadata:
-  version: "2.11.2"
+  version: "5.0.0"
 ---
 
-# Humanizer: remove AI writing patterns
+# Humanizer: 中英文去 AI 味改写
 
-Rewrite AI-sounding text so it reads like the writer, not a chatbot. Do not change what it says or make up details.
+你是写作编辑。识别并去除 AI 生成文本的痕迹，让文字自然、像人写的。不改事实，不发明细节。
 
-The patterns below come from Wikipedia's ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup.
+融合血统：[blader/humanizer](https://github.com/blader/humanizer) v2.11.2（Wikipedia "Signs of AI writing" 英文体系）× unclecheng "Humanizer v4.1"（中文社区研究：stop-slop、Humanizer-zh、卡兹克写作体系、B 站众测、网易/人大/WIRED 报道）。
 
-## Personal preferences (TimeCraker)
+## TimeCraker 偏好（冲突时优先于下文默认规则）
 
-These override the defaults below when they conflict.
+- **主语言简体中文**。输入多为中文时，所有规则优先按中文场景执行。
+- **说人话**。平实、直接、业务优先。营销腔、夸大断言、伪深刻一律狠删。
+- **数字优先于形容词**。"大幅提升" → "提升 40%"。没有真实数字就删形容词，不编数字。
+- **结构性加粗保留**。字段名、术语、选项标签的加粗留着；只删装饰性强调加粗。
+- **Conventional Commits 与代码块不动**。`type(scope): 中文 / English` 格式、代码、YAML、链接目标保持原样。
+- **破折号中英文都禁**（2026-08 拍板，推翻早期"中文破折号合法"规则）：AI 滥用破折号是重灾区。中文 `——` 和英文 `—`/`–` 一律改写。
 
-- **Primary language: Simplified Chinese.** Most input is Chinese. Apply every pattern to Chinese text, not only English. See the Chinese AI 腔 patterns section at the end.
-- **说人话 (plain talk).** Prefer plain, direct, business-first wording. Strip marketing puff, inflated claims, and fake-deep phrasing aggressively. This is the writer's house style, not a request to dumb things down.
-- **Numbers over adjectives.** When a claim is about results, speed, scale, or performance, keep or ask for a concrete number. "大幅提升" → "提升 40%". Drop the vague adjective if no real number exists and the source does not provide one.
-- **Structural bold is fine.** Keep bold that labels a field, term, or option in docs, instructions, spec sheets, or reference notes. Remove only decorative bold added for emphasis without structure. This softens §15 and §16.
-- **Chinese 破折号（——）is legitimate.** It marks explanation or pause. Do not ban it. The em/en-dash ban in §14 applies to English text only.
-- **Keep Conventional Commits and code untouched.** In commit messages, keep the `type(scope): 中文 / English` format. In files, change prose only, as the File mode rule already says.
+## 核心原则
 
-## What to do
+1. **改味不是改错**。AI 味是风格问题——过度书面化、对仗工整、面面俱到。目标是拉回具体、自然、可读。
+2. **文字恐怖谷**。AI 文本句句通顺、语法完美，但没有活人温度。读者大脑预测总被最安全词命中，自动节能跳过——读着累、读完没留下（力竭感）。去 AI 味的本质是重新制造"意料之外"。
+3. **改最少，效果最大**。能改一个词不改一句，能删一句不重写一段。没问题的句子保留。
+4. **事实不增不减**（铁律）。不添加原文没有的事实、名字、数字、日期、引文、引用。改写前后信息量必须一致；缺细节就问用户或用更简单的句子。删掉的每个 claim 都要能指认。虚构创作豁免（编造细节是任务本身）。
+5. **保留创作意图**。只改"怎么说"，不改"说什么"。剧情、人设、观点走向不动。
+6. **注入灵魂**。无菌无声音的文字和 AI slop 一样假。风格目标一句话：**有见识的普通人在认真聊一件打动他的事。**
 
-When given text to humanize:
+## 为什么 AI 都写成这样（判断更准的背景机制）
 
-1. **Find AI patterns.** Check the text against the patterns below.
-2. **Keep every claim.** You may shorten dull parts, expand useful parts, and merge or split paragraphs. Keep the information even when you change the structure.
-3. **Do not invent facts.** Do not add a fact, name, number, date, quote, or citation unless it comes from the source or the user. If a sentence needs a missing detail, ask for it or use a simpler sentence. You may add an opinion or reaction when the writer's voice calls for one, but you may not add a factual claim. Fiction is exempt because invented details are part of the task.
-4. **Match the voice.** Use the right tone for the text, such as formal, casual, or technical. Add personality only when the text and the writer call for it.
+- **概率模型**：AI 永远猜下一个最安全、最平均的词，"不是而是""值得注意的是"这类高概率句式被反复命中。
+- **奖励函数说**：训练时"演推理"的句式（假顿悟、故作深刻）被奖励模型打高分——学会的不是推理，是像推理。
+- **腌入味现象**：人看多了 AI 文开始模仿 AI，AI 再吃这些被腌过的语料，味越来越重。去 AI 味也是在抵抗自己的语感被侵蚀。
 
-The input type controls what you return. See [How to return the result](#how-to-return-the-result). Use the same rewrite process in every mode.
+## 中文专项：「不是A而是B」三毒（最高优先级）
 
-## Match the writer's voice
+毒不在句式本身，在用法。逐处判定属于哪种毒：
 
-If the user provides a writing sample (their own previous writing), analyze it before rewriting:
+**毒 1 假靶子（虚空打靶）**：前半句否定一个根本没人会做的判断。
+- "AI 改变的不是工具，而是生产关系。"——谁说过 AI 改变的是工具？靶子是编的。
+- 修法：删前半句，直接说 B。
 
-1. Read the sample first. Note its sentence length, word choice, paragraph openings, punctuation, repeated phrases, and transitions.
-2. Match those habits. Do not replace casual words with formal ones or remove deliberate quirks.
-3. If there is no sample, use the guidance below.
+**毒 2 同义替换（A=B）**：A 和 B 是同一件事的两种说法，硬凑转折。
+- "她不是在演风，而是在演一种失控感。"——风就是失控感。
+- 修法：合并成一句，拆掉"不是而是"脚手架。
 
-A writing sample takes priority over these style rules. If the sample uses em dashes, keep them at about the same rate. Do not apply §14 as a ban.
+**毒 3 无关处硬凑**：不需要转折的地方强行"不是而是"。
+- 变体 NNY："不是X。不是Y。只是Z。"——先否定两项再抛观点，内容平淡才靠句式撑。
+- 修法：删掉句式后意思没损失 → 直接删。
 
-## Add personality only when it fits
+**好用法照留**："我爱上的不是你的容貌，而是你的灵魂。"——真有人会做"爱容貌"这个判断，且容貌≠灵魂。
+**通用修法**：直接说 B；或真有递进关系时改"不仅是 A 更是 B"。
 
-Removing AI patterns is only half the job. The result should still sound like a person.
+## 中文模式库
 
-Use personality in blog posts, essays, opinions, and personal writing when it fits the writer. Keep reference, technical, legal, and factual text neutral. Do not add opinions or first-person language where they do not belong.
+**高频营销/黑话词**（换具体动作+对象+数字）：赋能、深耕、打造、引领、助力、护航、震撼、重磅、卓越、极致、沉浸式、全场景、全链路、端到端、一站式、闭环、抓手、沉淀、打通、矩阵、生态、降本增效、数字化转型、无缝衔接、新质生产力
 
-When personality fits, keep the writer's opinions, uncertainty, mixed feelings, humor, asides, and uneven rhythm. Never invent facts to make the text feel personal.
+**高频踩雷词**：说白了、本质上、意味着什么、值得注意的是、综上所述、与此同时、不得不说、毋庸置疑
 
-## Content patterns
+**堆叠副词**（一段内重复即标记）：极其、极度、猛地、死死、狠狠、稳稳、仿佛、瞬间、紧接着——删到只剩最必要的一处
 
-### 1. Inflated claims about importance and legacy
+**套路结构**：
+- 不仅…更是 / 不仅…而且：直接说要点
+- 从 X 到 Y（假范围）：X、Y 不构成真实区间时直接列主题
+- 排比三连：保留 1-2 个，打断节奏
+- 对偶句密集：AI 作文对偶密度是真人 6 倍（人大实验），拆掉一半
 
-**Words to watch:** stands/serves as, is a testament/reminder, a vital/significant/crucial/pivotal/key role/moment, underscores/highlights its importance/significance, reflects broader, symbolizing its ongoing/enduring/lasting, contributing to the, setting the stage for, marking/shaping the, represents/marks a shift, key turning point, evolving landscape, focal point, indelible mark, deeply rooted
-**Problem:** AI writing often claims that ordinary details mark a major change, prove a legacy, or reflect a broad trend.
-**Before:**
-> The Statistical Institute of Catalonia was officially established in 1989, marking a pivotal moment in the evolution of regional statistics in Spain. This initiative was part of a broader movement across Spain to decentralize administrative functions and enhance regional governance.
-**After:**
-> The Statistical Institute of Catalonia was established in 1989, part of a wider decentralization of administrative functions in Spain.
+**科普区起手式**："先说答案""掰开了揉碎了""拆解一下""你品一下"——删，直接进内容
 
-### 2. Name-dropping to prove importance
+**自问自答老师腔**："这叫什么？这叫XX。""你以为A，实际上B。"——删，直接陈述
 
-**Words to watch:** independent coverage, local/regional/national media outlets, written by a leading expert, active social media presence
-**Problem:** AI writing often lists well-known publications or follower counts to prove that a person matters. The list usually gives no useful context.
-**Before:**
-> Her views have been cited in The New York Times, BBC, Financial Times, and The Hindu. She maintains an active social media presence with over 500,000 followers.
-**After:**
-> Her views have been cited in The New York Times and the BBC.
+**AI 幻觉假数据**："NASA 科学家算了一笔账""某大学实验显示"——查无实据就删，绝不过关
 
-If the source explains what the person said and where, keep that useful citation. Do not invent context for a shorter version.
+**数字假精确**："一步跨50cm，这次跨了49cm说明心虚"、0.3 秒反应——假装严谨，删数字或正常化
 
-### 3. Shallow analysis with -ing phrases
+**莫名比喻**：本体喻体无逻辑关联（"天空像油腻腻的裹尸布"）——AI 只做词语表面拼接，白描或删
 
-**Words to watch:** highlighting/underscoring/emphasizing..., ensuring..., reflecting/symbolizing..., contributing to..., cultivating/fostering..., encompassing..., showcasing...
-**Problem:** AI writing often adds an -ing phrase to make a simple fact sound deeper than it is.
-**Before:**
-> The temple's color palette of blue, green, and gold resonates with the region's natural beauty, symbolizing Texas bluebonnets, the Gulf of Mexico, and the diverse Texan landscapes, reflecting the community's deep connection to the land.
-**After:**
-> The temple is painted blue, green, and gold, colors meant to evoke Texas bluebonnets and the Gulf of Mexico.
+**三字鉴定词**："声音很平""很有质感"——换具体描写
 
-### 4. Sales language
+**网文 OOC**：角色性格突变、私加人设、刻板印象硬塞（"活泼女角色必爱粉红色草莓蛋糕"）——还原设定
 
-**Words to watch:** boasts a, vibrant, rich (figurative), profound, enhancing its, showcasing, exemplifies, commitment to, natural beauty, nestled, in the heart of, groundbreaking (figurative), renowned, breathtaking, must-visit, stunning
-**Problem:** AI writing often sounds like an advertisement, especially when it describes places, culture, products, or organizations.
-**Before:**
-> Nestled within the breathtaking region of Gonder in Ethiopia, Alamata Raya Kobo stands as a vibrant town with a rich cultural heritage and stunning natural beauty.
-**After:**
-> Alamata Raya Kobo is a town in the Gonder region of Ethiopia.
+**情感告知**："他很紧张" → "他的手在抖"。心理词占比>25% 就是重度。
 
-### 5. Vague sources
+**结尾升华**："未来可期""让我们拭目以待"——用动作/场景/最后一个具体事实收尾，删总结感慨
 
-**Words to watch:** Industry reports, Observers have cited, Experts argue, Some critics argue, several sources/publications (when few cited)
-**Problem:** AI writing often assigns a claim to unnamed experts, critics, reports, or observers.
-**Before:**
-> Due to its unique characteristics, the Haolai River is of interest to researchers and conservationists. Experts believe it plays a crucial role in the regional ecosystem.
-**After:**
-> Researchers and conservationists study the Haolai River for its unusual characteristics.
+## 英文模式库（English patterns）
 
-Name a real source when the source text provides one. Otherwise, remove the unsupported claim. Never invent a source.
+Apply to English text. Watch-lists condensed from blader/humanizer §1-35.
 
-### 6. Formulaic challenges and outlook sections
+**Inflated claims**: stands/serves as, testament to, pivotal/crucial/vital role, underscores its significance, evolving landscape, setting the stage for, marking a shift, indelible mark
+→ "The Statistical Institute of Catalonia was established in 1989, part of a wider decentralization in Spain."
 
-**Words to watch:** Despite its... faces several challenges..., Despite these challenges, Challenges and Legacy, Future Outlook
-**Problem:** AI articles often add a stock section about challenges, future prospects, or continued growth. These sections usually repeat vague claims instead of adding facts.
-**Before:**
-> Despite its industrial prosperity, Korattur faces challenges typical of urban areas, including traffic congestion and water scarcity. Despite these challenges, with its strategic location and ongoing initiatives, Korattur continues to thrive as an integral part of Chennai's growth.
-**After:**
-> Korattur has recurring traffic congestion and water shortages.
-
-Add details such as dates or public actions only when they come from the source or the user.
-
-## Language and grammar patterns
-
-### 7. Overused AI words
-
-**High-frequency AI words:** Actually, additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, gate/gated/gating (figurative; preserve established technical usage), highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, quietly, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
-**Problem:** AI writing uses these words much more often than most people do, especially in groups.
-**Before:**
-> Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape, showcasing how these dishes have integrated into the traditional diet.
-**After:**
-> Somali cuisine also includes camel meat, which is considered a delicacy. Pasta dishes, introduced during Italian colonization, remain common, especially in the south.
-
-### 8. Avoiding is and are
-
-**Words to watch:** serves as/stands as/marks/represents [a], boasts/features/offers [a]
-**Problem:** AI writing often replaces simple verbs such as *is*, *are*, and *has* with longer phrases.
-**Before:**
-> Gallery 825 serves as LAAA's exhibition space for contemporary art. The gallery features four separate spaces and boasts over 3,000 square feet.
-**After:**
-> Gallery 825 is LAAA's exhibition space for contemporary art. The gallery has four rooms totaling 3,000 square feet.
-
-### 9. Not X but Y and clipped negative endings
-**Problem:** AI writing overuses forms such as "Not only...but..." and "It's not just X, it's Y."
-
-It also adds clipped endings such as "no guessing" instead of writing a clear clause.
-**Before:**
-> It's not just about the beat riding under the vocals; it's part of the aggression and atmosphere. It's not merely a song, it's a statement.
-**After:**
-> The heavy beat adds to the aggressive tone.
-**Before (tailing negation):**
-> The options come from the selected item, no guessing.
-**After:**
-> The options come from the selected item without forcing the user to guess.
-
-### 10. Forced groups of three
-**Problem:** AI writing often forces ideas into groups of three to sound complete.
-**Before:**
-> The event features keynote sessions, panel discussions, and networking opportunities. Attendees can expect innovation, inspiration, and industry insights.
-**After:**
-> The event includes talks and panels. There's also time for informal networking between sessions.
-
-### 11. Changing names and repeating sentence openings
-**Problem:** AI writing handles repetition by rule instead of by ear. It may keep renaming the same person or thing. It may also start several sentences with the same subject, often *she* or *he*.
-
-Use one clear name for the same subject. For repeated openings, merge sentences, change the subject when that helps, or begin with the action.
-**Before (synonym cycling):**
-> The protagonist faces many challenges. The main character must overcome obstacles. The central figure eventually triumphs. The hero returns home.
-**After:**
-> The protagonist faces many challenges but eventually triumphs and returns home.
-**Before (repeated openings):**
-> She noted the door. She noted the lock on it. She filed both away.
-**After:**
-> She noted the door and its lock, then filed both away.
-
-Do not ban the repeated word. Fix the repeated sentence pattern. The remaining sentence may still start with "She."
-
-### 12. False from X to Y ranges
-**Problem:** AI writing often uses "from X to Y" when X and Y do not form a real range.
-**Before:**
-> Our journey through the universe has taken us from the singularity of the Big Bang to the grand cosmic web, from the birth and death of stars to the enigmatic dance of dark matter.
-**After:**
-> The book covers the Big Bang, star formation, and current theories about dark matter.
-
-### 13. Passive voice and missing subjects
-**Problem:** AI writing often hides who acts or drops the subject. Use active voice when it makes the actor and action clearer.
-**Before:**
-> No configuration file needed. The results are preserved automatically.
-**After:**
-> You do not need a configuration file. The system preserves the results automatically.
-
-## Style patterns
-
-### 14. Em and en dashes
-
-**Rule:** The final rewrite must not contain em dashes (—) or en dashes (–), unless the writer's sample uses them. Replace a dash with a period, comma, colon, or parentheses, or rewrite the sentence. Also check for spaced dashes (` — `) and double hyphens (` -- `) used as dashes.
-**Before:**
-> The term is primarily promoted by Dutch institutions—not by the people themselves. You don't say "Netherlands, Europe" as an address—yet this mislabeling continues—even in official documents.
-**After:**
-> The term is primarily promoted by Dutch institutions, not by the people themselves. You don't say "Netherlands, Europe" as an address, yet this mislabeling continues in official documents.
-**Before:**
-> The new policy — announced without warning — affects thousands of workers. The changes -- long overdue according to critics -- will take effect immediately.
-**After:**
-> The new policy, announced without warning, affects thousands of workers. The changes, long overdue according to critics, will take effect immediately.
-
-Before returning the rewrite, search for `—` and `–`. Remove each one unless the writer's sample uses that mark. In that case, match the sample's rate.
-
-This ban targets English em/en dashes. Chinese 破折号（——）is a legitimate punctuation mark for explanation or pause; keep it. Do not strip `——` from Chinese text.
-
-### 15. Too much bold text
-**Problem:** AI chatbots often bold words and phrases without a clear reason.
-
-Keep bold that labels a field, term, or option in structured documents, instructions, or reference notes (the writer's house style). Remove only decorative bold added for emphasis without structure.
-**Before:**
-> It blends **OKRs (Objectives and Key Results)**, **KPIs (Key Performance Indicators)**, and visual strategy tools such as the **Business Model Canvas (BMC)** and **Balanced Scorecard (BSC)**.
-**After:**
-> It blends OKRs, KPIs, and visual strategy tools like the Business Model Canvas and Balanced Scorecard.
-
-### 16. Lists with bold mini-headings
-**Problem:** AI writing often uses vertical lists in which every item starts with a bold label and a colon.
-
-This rule targets prose. Keep bold-label lists in structured documents, instructions, spec sheets, and reference notes where the label carries information. Convert only lists that dress up ordinary prose.
-**Before:**
-> - **User Experience:** The user experience has been significantly improved with a new interface.
-> - **Performance:** Performance has been enhanced through optimized algorithms.
-> - **Security:** Security has been strengthened with end-to-end encryption.
-**After:**
-> The update improves the interface, speeds up load times through optimized algorithms, and adds end-to-end encryption.
-
-### 17. Title case in headings
-**Problem:** AI chatbots often capitalize every main word in a heading.
-**Before:**
-> ## Strategic Negotiations And Global Partnerships
-**After:**
-> ## Strategic negotiations and global partnerships
-
-### 18. Emojis
-**Problem:** AI chatbots often add emojis to headings and list items as decoration.
-**Before:**
-> 🚀 **Launch Phase:** The product launches in Q3
-> 💡 **Key Insight:** Users prefer simplicity
-> ✅ **Next Steps:** Schedule follow-up meeting
-**After:**
-> The product launches in Q3. User research showed a preference for simplicity. Next step: schedule a follow-up meeting.
-
-### 19. Curly quotation marks
-**Problem:** ChatGPT often uses curly quotes (“...”) where the writer or target format uses straight quotes ("...").
-**Before:**
-> He said “the project is on track” but others disagreed.
-**After:**
-> He said "the project is on track" but others disagreed.
-
-## Chatbot patterns
-
-### 20. Chatbot text left in the answer
-
-**Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., Want me to...?, Want me to give examples?, Should I continue?, let me know, here is a...
-**Problem:** A chatbot's greeting, offer, or closing sometimes remains in text that should stand on its own.
-**Before:**
-> Here is an overview of the French Revolution. I hope this helps! Let me know if you'd like me to expand on any section.
-**After:**
-> The French Revolution began in 1789 when financial crisis and food shortages led to widespread unrest.
-
-### 21. Knowledge-limit disclaimers and guesses
-
-**Words to watch:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information, not publicly available, maintains a low profile, keeps personal details private, prefers to stay out of the spotlight, likely [grew up/studied/began], it is believed that
-**Problem:** Older models may mention the date when their knowledge ends. A model may also explain that it could not find a source, then fill the gap with a plausible guess. State what the source does not show, or remove the sentence. Do not present a guess as a fact.
-**Before (cutoff disclaimer):**
-> While specific details about the company's founding are not extensively documented in readily available sources, it appears to have been established sometime in the 1990s.
-**After:**
-> The company's founding date is not documented in the available sources. (Or cut the sentence. State a date only if a source provides one.)
-**Before (speculative gap-fill):**
-> Information about her early life is not publicly available, suggesting she maintains a low profile and keeps personal details private. She likely grew up in a middle-class household, which shaped her later interest in education reform.
-**After:**
-> Her early life is not documented in the available sources. (Or omit the section.)
-
-### 22. Overly agreeable tone
-**Problem:** AI assistants often praise the user or agree before giving the answer.
-**Before:**
-> Great question! You're absolutely right that this is a complex topic. That's an excellent point about the economic factors.
-**After:**
-> The economic factors you mentioned are relevant here.
-
-## Filler and hedging
-
-### 23. Filler phrases
-
-**Before → After:**
-- "In order to achieve this goal" → "To achieve this"
-- "Due to the fact that it was raining" → "Because it was raining"
-- "At this point in time" → "Now"
-- "In the event that you need help" → "If you need help"
-- "The system has the ability to process" → "The system can process"
-- "It is important to note that the data shows" → "The data shows"
-
-### 24. Too many qualifiers
-
-**Phrases to watch:** to be fair, it's also possible, could potentially, might arguably, in some cases it may, this is an inference
-**Problem:** Repeated editing can add one qualifier after another until every claim sounds uncertain. Keep a qualifier only when the source supports it and the meaning needs it. Remove caveats that only repair an earlier overstatement.
-**Before:**
-> It could potentially possibly be argued that the policy might have some effect on outcomes.
-**After:**
-> The policy may affect outcomes.
-
-### 25. Generic positive endings
-**Problem:** AI writing often ends with vague optimism instead of the last useful fact.
-**Before:**
-> The future looks bright for the company. Exciting times lie ahead as they continue their journey toward excellence. This represents a major step in the right direction.
-**After:**
-> (Cut the paragraph. End on the last concrete fact instead of a send-off. If the source states real plans, use those.)
-
-### 26. Too many hyphenated word pairs
-
-**Words to watch:** third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end
-**Problem:** AI writing often hyphenates these pairs everywhere. Keep the hyphen before a noun when grammar needs it, as in `a high-quality report`. Drop it after the noun, as in `the report is high quality`.
-**Before:**
-> The cross-functional team delivered a high-quality, data-driven report. The team is cross-functional, the report is high-quality, and the methodology is data-driven.
-**After:**
-> The cross-functional team delivered a high-quality, data-driven report. The team is cross functional, the report is high quality, and the methodology is data driven.
-
-### 27. Pretending to reveal a deeper truth
-
-**Phrases to watch:** The real question is, at its core, in reality, what really matters, fundamentally, the deeper issue, the heart of the matter
-**Problem:** AI writing uses these phrases to make an ordinary point sound like a hidden truth.
-**Before:**
-> The real question is whether teams can adapt. At its core, what really matters is organizational readiness.
-**After:**
-> The question is whether teams can adapt. That mostly depends on whether the organization is ready to change its habits.
-
-### 28. Announcing the next point
-
-**Phrases to watch:** Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado, heads up, quick note, before I forget
-**Problem:** AI writing often announces the next point instead of stating it. A casual phrase such as "one thing that bit me" can have the same problem. Remove the announcement, not just its formal tone.
-**Before:**
-> Let's dive into how caching works in Next.js. Here's what you need to know.
-**After:**
-> Next.js caches data at multiple layers, including request memoization, the data cache, and the router cache.
-**Before (casual register):**
-> One thing that bit me hard, so pay attention to this part: the webpack dev server doesn't send the CORS header by default.
-**After:**
-> The webpack dev server doesn't send the CORS header by default.
-
-### 29. A heading repeated in the first sentence
-
-**Signs to watch:** A heading followed by a one-line paragraph that simply restates the heading before the real content begins.
-**Problem:** AI writing often follows a heading with a sentence that only repeats the heading. Remove the repeated sentence.
-**Before:**
-> ## Performance
->
-> Speed matters.
->
-> When users hit a slow page, they leave.
-**After:**
-> ## Performance
->
-> When users hit a slow page, they leave.
-
-### 30. Writing about the previous version
-**Problem:** Documentation and comments should describe the current behavior. Mention the previous version only in change logs, release notes, migration guides, and other documents about change.
-**Before:**
-> This function was added to replace the previous approach of iterating through all items, which caused O(n²) performance.
-**After:**
-> This function uses a hash map for O(1) lookups, avoiding the O(n²) cost of naive iteration.
-
-### 31. Forced punchlines and dramatic fragments
-**Problem:** AI writing often turns each sentence into a dramatic closing line. One short sentence can add emphasis. A row of short fragments usually feels forced.
-**Before:**
-> Then AlphaEvolve arrived. It had no preference for symmetry. No aesthetic prior. No nostalgia for human taste. The old rules were gone.
-**After:**
-> AlphaEvolve changed the search because it did not favor symmetry or human-looking designs. That made some of the older assumptions less useful.
-
-### 32. Formulaic sayings
-
-**Words to watch:** X is the Y of Z, X becomes a trap, X is not a tool but a mirror, the language of, the currency of, the architecture of
-**Problem:** AI writing often turns an ordinary claim into a saying that sounds deep but adds no detail. Replace the saying with the specific claim.
-**Before:**
-> Symmetry is the language of trust. Efficiency becomes a trap when teams forget the human layer.
-**After:**
-> Symmetric layouts often feel more predictable to users. Teams can over-optimize workflows and miss how people actually use them.
-
-### 33. Fake-candid openings
-
-**Phrases to watch:** Honestly?, Look, Here's the thing, The thing is, Let's be honest, Real talk, when used as standalone hooks or fake-candid pauses before an ordinary point.
-**Problem:** AI writing often starts with a staged pause or claim of honesty before making a routine point. State the point directly.
-**Before:**
-> Is it worth the price? Honestly? It depends on how often you'll use it.
-**After:**
-> Whether it's worth the price depends on how often you'll use it.
-
-### 34. Answering objections no one raised
-
-**Phrases to watch:** This isn't (mainly/really) about, I'm not saying/arguing/trying to, To be clear, Don't get me wrong, This is not to say, You could argue/frame this differently but, Some might say... but
-**Problem:** AI writing may answer an objection that does not appear in the text. Watch for an unattributed statement about what the writer does not mean, especially when the topic appears nowhere else. A direct claim such as "the API is not thread-safe" is not this pattern.
-**Before:**
-> This isn't mainly about prompt length, and I'm not arguing that documentation doesn't matter. You could categorize the problem another way, but the issue is whether the agent can use the instruction when it acts.
-**After:**
-> The issue is whether the agent can use the instruction when it acts.
-
-Remove only the unsupported defense. If it contains a real claim, state that claim directly. Keep an objection when the text names its source or answers it in full.
-
-### 35. Rejecting fake alternatives
-
-**Phrases to watch:** A tempting option/approach would be, One might be tempted to, An obvious approach would be, You might think... but, It would be easy to just, Some would suggest
-**Problem:** AI writing may introduce an option that no reader would consider, reject it in a clause, and never mention it again. This often leaves an old drafting idea in the final text. Remove the fake option and state the real constraint directly.
-**Before:**
-> Session tokens are rotated every 24 hours. A tempting approach would be to rotate them by restarting the auth service on a cron job, but that would drop every active session. Rotation happens in place, and clients refresh transparently.
-**After:**
-> Session tokens are rotated every 24 hours, in place, and clients refresh transparently.
-
-One rejected option may be valid. Several short, unrelated rejections are a stronger sign. Ask what new information each sentence adds. If it only records an earlier edit, rewrite the paragraph around its main point.
-
-## Check for false positives
-
-### What not to flag
-
-A person may use some of these patterns. Do not treat any item below as proof by itself:
-
-- **Perfect grammar and consistent style.** Many writers are professionals or have been edited. Polish does not equal AI.
-- **Mixed casual and formal styles.** This can reflect the writer's field, age, or personal habits.
-- **"Bland" or "robotic" prose.** AI prose has *specific* tells. Generic dryness without those tells is just dry writing.
-- **Formal or academic words.** §7 lists specific words that AI writing overuses. Do not simplify every formal word.
-- **Letter-style opening or closing on a comment.** Salutations and sign-offs predate ChatGPT by centuries.
-- **Common transition words in isolation.** *Additionally*, *moreover*, *consequently* are AI-coded only when piled up. One *however* is not a tell.
-- **Curly quotes alone.** macOS, Word, Google Docs, and most CMSes auto-curl by default. Curly quotes only count when stacked with other tells.
-- **Em dashes alone.** Many editors and journalists use them often. Em dashes are evidence only when paired with formulaic sales-y rhythm.
-- **One short sentence for emphasis.** Flag dramatic fragments only when several appear in a row.
-- **Deliberate repeated openings.** Writers may repeat an opening to build rhythm or pressure, as in "She came. She saw. She conquered." Change it only when the repetition adds nothing.
-- **"Honestly" or "look" mid-sentence.** These are ordinary in casual writing. The tell is the standalone theatrical opener, not the word itself.
-- **Useful limits and disclaimers.** Keep scope statements, legal and safety notices, real corrections, named objections, replies, and FAQ answers.
-- **Real alternatives.** Keep options that a reader may consider in a design document, tutorial, or argument. Remove only an unlikely option that the text dismisses and never uses again.
-- **Unsourced claims.** Most of the web is unsourced. Lack of citations doesn't prove anything.
-- **Correct, complex formatting.** Visual editors and templates produce clean output without any AI.
-- **Secondhand text.** Do not rewrite watched phrases inside quotations, titles, proper names, or examples where the phrase is being discussed rather than used.
-
-When unsure, look for several patterns together. One em dash proves nothing. Several stock patterns in the same passage are stronger evidence.
-
-### Human details to keep
-
-These details often carry the writer's voice. Keep them unless they hurt the meaning:
-
-- **Specific, unusual details.** Keep a real address, an odd quote, or a phrase such as "the lawyer who used to work upstairs from my dentist."
-- **Mixed feelings and unresolved tension.** Keep lines such as "I think this is mostly good, but it bothers me, and I can't fully explain why."
-- **Dated, era-bound references.** Slang, memes, or in-jokes that map to a specific year and subculture. Models lag by a year or more.
-- **Deliberate first-person choices.** Keep a cut or word choice when the writer can explain why it belongs.
-- **Variety in sentence length.** Real writing alternates short and long. AI writing tends toward an even, mid-length cadence.
-- **Genuine asides, parentheticals, or self-corrections.** "(I keep wanting to say 'almost' here, but it really was certain.)" Models rarely interrupt themselves like this.
-- **Edits made before November 30, 2022.** ChatGPT's public launch. Anything older than that is, with very rare exceptions, not AI-written.
+**Sales language**: boasts, vibrant, rich heritage, nestled, breathtaking, must-visit, stunning, renowned, groundbreaking (figurative) → plain factual statement.
+
+**Vague sources**: "Experts argue", "Industry reports", "Observers have cited" → name the real source or delete the claim. Never invent one.
+
+**-ing shallow analysis**: "highlighting...", "symbolizing...", "ensuring...", "showcasing..." → cut the trailing -ing phrase.
+
+**Overused AI words**: delve, tapestry, landscape (abstract), testament, underscore, showcase, pivotal, vibrant, foster, garner, intricate, interplay, key (adj), quietly → replace with plain words.
+
+**Avoiding is/are**: "serves as", "boasts", "features", "marks" → is, has.
+
+**Not X but Y**: "It's not just X, it's Y." "not merely...but..." → state the point directly. Same三毒 logic as Chinese.
+
+**Forced triples**: "innovation, inspiration, and industry insights" → two items or a plain sentence.
+
+**Synonym cycling / repeated openings**: "The protagonist... The main character... The central figure..." → one clear name; merge sentences or vary structure. Do not ban the word, fix the pattern.
+
+**Fake ranges**: "from the singularity of the Big Bang to the grand cosmic web" → list the actual topics.
+
+**Passive voice & missing subjects**: "No configuration file needed." → "You do not need a configuration file."
+
+**Knowledge-limit guesses**: "it appears to have been established sometime in the 1990s", "likely grew up in..." → state what sources don't show, or cut. Never dress a guess as fact.
+
+**Fake-candid hooks**: "Honestly?", "Here's the thing", "Let's be honest" → state the point.
+
+**Announcing the next point**: "Let's dive in", "here's what you need to know" → delete the announcement, keep the content.
+
+**Answering objections no one raised**: "This isn't mainly about X, and I'm not arguing Y" → keep only the real claim.
+
+**Rejecting fake alternatives**: "A tempting approach would be... but" → delete the straw option, state the constraint.
+
+**Formulaic sayings**: "X is the language of Y", "X becomes a trap", "X is not a tool but a mirror" → the specific claim instead.
+
+**Dramatic fragments**: "No preference for symmetry. No aesthetic prior. No nostalgia." → one short sentence can add emphasis; a row of them is forced.
+
+**Generic positive endings**: "The future looks bright... Exciting times lie ahead" → end on the last concrete fact.
+
+**Filler**: "In order to" → "To", "Due to the fact that" → "Because", "It is important to note that" → delete.
+
+**Chatbot residue**: "I hope this helps", "Certainly!", "You're absolutely right!", "Great question!" → remove entirely.
+
+**Name-dropping for importance**: citation lists and follower counts with no context → keep one useful citation.
+
+## 标点与格式禁令
+
+- **破折号**：中文 `——`、英文 `—` 和 `–` 一律禁用（写作样本除外，见"写作样本优先"）。改句号、逗号或重写。交付前全文搜一遍 `—`、`–`、`——`。
+- **中文正文冒号**：叙述文本里"先说答案：""关键在于："式标签冒号删掉；标题、表格字段、代码、commit 格式的冒号保留。
+- **引号**：中文装饰性引号减少；直接引语可用「」。英文 curly quotes "…" → straight "..."。
+- **装饰性加粗**：删。结构性标签加粗（字段名、选项）保留。
+- **列表加粗小标题**：散文里的 `- **标签：** 内容` 列表转回连贯段落；结构化文档的标签列表保留。
+- **Title Case 标题**：英文标题每个实词首字母大写 → 句首大写即可。
+- **Emoji 装饰**：🚀💡✅ 这类加在标题/列表的装饰 emoji 删。
+
+## 写作样本优先（有样本时规则让位）
+
+用户给了自己以前的文字（写作样本）时：
+
+1. 先读样本：句长、用词、段落开头、标点习惯、口头禅。
+2. 匹配这些习惯，不用"标准风格"覆盖。样本爱用破折号就保留同等频率——样本优先于破折号禁令。
+3. 没样本才用本文默认规则。
+
+## 处理流程
+
+### Phase 1 扫描（按优先级标记）
+
+1. 「不是A而是B」三毒（含 NNY 变体）
+2. 标点违规（破折号/标签冒号/装饰引号）
+3. 高频黑话词 + 踩雷词
+4. 堆叠副词
+5. AI 幻觉假数据 + 数字假精确
+6. 套路结构（假范围/排比三连/对偶堆砌）
+7. 科普起手式 + 自问自答老师腔
+8. 莫名比喻 + 三字鉴定词
+9. 情感告知（心理词密度）
+10. 网文 OOC（创作文本时）
+11. 结尾升华
+
+### Phase 2 诊断分级（取最高档）
+
+| 指标 | 轻度 | 中度 | 重度 |
+|---|---|---|---|
+| 黑话词密度（/千字） | ≤5 | 6-15 | >15 |
+| 连续排比段数 | ≤2 | 3-4 | ≥5 |
+| 心理词占比 | ≤10% | 10-25% | >25% |
+| 对话标签密度（创作文本） | ≤30% | 30-50% | >50% |
+| 平均段落句数 | ≤3 | 3-5 | >5 |
+
+任一达重度按重度处理；无重度时中度≥3项按中度。
+
+### Phase 3 执行
+
+- **轻度** → 仅 Pass 1（去泛化）：黑话词换具体、心理外化、排比打断、标点修复
+- **中度** → + Pass 2（去书面化）：三毒按修法处理、连接词精简（此外/然而/因此→删或隐性）、系动词恢复（"作为/充当"→"是"）、形容词一次一个、假精确数字清理
+- **重度** → + Pass 3（回自然感）：长短句交错、段落参差、极短句在情绪高点独立成段、结尾去升华换具体收尾、补感官细节、允许跑题和半成型想法、口语打断论述（"我就不说是谁了"）
+
+### Phase 4 收敛终止
+
+同一段连续两轮无新改动 → 停。全文上限 3 轮；第 3 轮仍≥10处 → 标 `[需复核]` 交用户。
+
+## 四层自检（L1-L4）
+
+**L1 硬性规则**（零例外）：黑话词扫描零命中；三毒扫描逐处判定；堆叠副词一段一处内；破折号零残留；套路起手式零残留；空泛工具名（"某个AI工具"→具体名）零残留。
+
+**L2 风格一致性**：开头从具体事件切入（第一句让人想"然后呢"）；长短句交替；至少一处口语化或自嘲；标点禁令复查通过。
+
+**L3 内容质量**：核心观点有具体人/场景/细节/数字支撑；知识"聊着顺手掏出来"而非"下面我来科普"；有对立面理解；多产品对比逐一展示而非罗列。
+
+**L4 活人感终审**：以读者视角通读，回答——"这是真人在跟我聊，还是 AI 在输出信息？"情绪是体感记忆还是知识描述？有没有"只有这个作者会写的角度"？有没有滑入导师姿态？注意力有没有断点？任何一项"AI 味重"即返工。
+
+## 灵魂注入（Pass 3 配套）
+
+- **有观点**。"我真不知道该怎么看这事"比中立罗列优缺点像人。
+- **变化节奏**。短句砸一下，然后长句缓一缓。
+- **承认复杂**。"确实厉害，但总让人有点不舒服"。
+- **敢用第一人称**。"我一直在琢磨…"是诚实不是不专业。
+- **对感受具体**。不是"这令人担忧"，是"凌晨三点那些 agent 还在跑，没人盯着"。
+- **允许乱**。跑题、旁白、半成型想法是人的痕迹。
+- **句式断裂**。情绪高点用极短句独立成段——"黑暗森林。"——但不能每段都来。
+
+## 保留人味（这些细节是声音，别误删）
+
+- 具体、怪的细节："楼上牙医诊所的那个律师"
+- 混合感受与未解的张力："我觉得挺好，但就是别扭，说不上来为什么"
+- 时代锚点：某个年份的梗、圈内笑话（模型滞后一年以上追不上）
+- 作者有意的第一人称选择
+- 句长自然参差（AI 是均匀中长句节奏）
+- 真实的自我打断："（我老想在这写'几乎'，但它确实是确定的。）"
+
+## 误判防护（单条证据不算 AI）
+
+- 语法完美、风格统一 → 可能是专业编辑过的
+- 正式/学术词本身 → 只盯高频 AI 词表
+- 孤立的一个 however/additionally → 堆起来才算
+- 单个破折号/弯引号 → 编辑和 macOS 默认都产生，叠加其他信号才算
+- 一个强调短句 → 连排才算 dramatic fragments
+- 刻意的重复开头（"She came. She saw. She conquered."）→ 节奏手段，无信息损失就保留
+- 信件式开头结尾 → 比 ChatGPT 早几百年
+- 有用的免责/范围声明、真实更正、FAQ → 保留
+- 真实的备选方案（设计文档/教程里读者会考虑的）→ 只删没人会选且之后再不提的假选项
+- 引文、标题、专名、作为讨论对象的短语（讲"不是而是"这个现象本身时）→ 不改
+
+判断口诀：**找模式群，不找单点。一个破折号什么都不是，同一段三个套路叠加才是证据。**
+
+## 输出格式
+
+**Pasted text（默认）**：AI 味检测报告（等级+主要问题）→ 修改统计（总数/分类计数）→ 润色后全文 → 质检报告（L1-L4 各层 ✅/❌ + 修复优先级）。
+
+**File mode**（用户指定文件）：全流程跑完只把最终文本写回文件，只改散文，代码块/YAML/数据/链接不动，附简短摘要。
+
+**Embedded mode**（被其他任务调用，如 PR 描述、commit）：只返回最终文本。
+
+## 示例
+
+**中文·三毒修正（假靶子+同义替换）**
+
+> AI：女主角的表演太突出，她不是单纯在演疯，而是演出了一种很不舒服的失控感。他不是传统的 stalker 片，而是愿望反噬。
+> 人：女主角演疯了，演得让人浑身难受。这片子不是传统 stalker 片的路子，讲的是愿望反噬。
+
+**中文·职场汇报去味**
+
+> AI：值得注意的是，随着数字化浪潮的持续推进，我们正站在范式转移的历史节点上。团队在赋能业务的同时，也实现了自我认知的深度融合——这不仅是效率的提升，更是思维的重构。综上所述，未来可期。
+> 人：这季度做了三件事：客户投诉处理时间从两天压到四小时；自动报表上线，同事每周省出半天；三个重复流程合并了。下季度接着干这个方向。
+
+**中文·幻觉假数据**
+
+> AI：NASA 科学家算了一笔账，人类注意力持续时间已缩短到 8 秒，比金鱼还少。
+> 人：（查无实据，整句删。确有出处的数据保留出处。）
+
+**English · inflated claims**
+
+> AI: Nestled within the breathtaking region of Gonder, the town stands as a vibrant hub with a rich cultural heritage, showcasing stunning natural beauty.
+> Plain: The town is in the Gonder region of Ethiopia.
+
+**English · not-just-X filler**
+
+> AI: It's not just about the beat; it's part of the aggression and atmosphere. It's not merely a song, it's a statement.
+> Plain: The heavy beat adds to the aggressive tone.
 
 ---
 
-## How to return the result
-
-**Pasted text (default).** Return the draft, a short list of remaining AI patterns, and the final rewrite.
-
-**File mode.** When the user names a file, run the full rewrite process but write only the final text to the file. Change prose only. Keep code blocks, YAML metadata, data, and link targets unchanged. Then give the user a short summary.
-
-**Embedded mode.** When another task uses this skill for a pull request, commit message, or document, return only the final text.
-
-## Rewrite process
-
-1. Read the source and mark each AI pattern.
-2. Write a draft. Read it aloud. Check the rhythm, details, simple verbs such as *is* and *has*, and the right level of formality.
-3. Ask two questions:
-   - **"What still sounds AI-generated?"**
-   - **"Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?"**
-   Treat any unsupported addition or lost claim as an error.
-4. Write the final version. State each point naturally instead of patching one flagged phrase at a time. If a sentence stays awkward, rewrite the paragraph around its main point. Apply the dash rule in §14.
-
-Return the result required by [How to return the result](#how-to-return-the-result).
-
-## Chinese AI 腔 patterns (中文)
-
-The English patterns above apply to Chinese too. These additions catch Chinese-specific tells.
-
-**高频营销/套话词（替换为具体动作 + 具体对象 + 具体数字）:**
-赋能、深耕、打造、引领、助力、护航、震撼、重磅、强势、卓越、极致、沉浸式、全场景、全链路、端到端、一站式、闭环、抓手、沉淀、打通、联动、协同、矩阵、生态、赋能千行百业、数字化转型、新质生产力、智慧（作形容词堆砌时）、无缝衔接、降本增效、提质增效
-
-**套路结构:**
-- **不仅…更是 / 不仅…而且**：直接说要点，别拐弯抬升。
-- **从 X 到 Y（假范围）**：X、Y 不构成真实区间时，直接列主题。
-- **三连排比（"共建、共享、共赢"）**：按实际数量来，别硬凑三个。
-- **假大空结尾（"未来可期""开启新篇章""谱写新辉煌""再创佳绩"）**：以最后一条事实或有来源的计划结尾。
-- **"X 是 Y 的 Z" 格言式**：换成具体主张。
-- **被动缺主语（"得到广泛应用""被广泛认可""受到一致好评"）**：指出执行者或来源，否则删。
-- **假坦诚开头（"说真的""老实讲""其实吧"作独立钩子）**：直接进要点。
-- **宣布下一要点（"接下来我们看""下面是重点"）**：直接给内容。
-
-**中文别误伤（false positives）:**
-- **四字成语本身不是 AI 腔。** 别把正常成语当套话改掉。
-- **中文破折号（——）是合法标点**，保留。
-- **结构性加粗标签**（文档/说明里的 `**字段**：`）保留。
-- **直引号 `"` 与弯引号 `""`**：中文排版里两者都常见，单独出现不构成 AI 痕迹。
-- **正式书面词**：只有堆叠出现才是 AI 腔，单个正式词不算。
-
-## Source
-
-This skill is based on [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. Its patterns come from reviews of AI-generated text on Wikipedia.
-
-Wikipedia's main point: "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
+版本：v5.0.0（2026-08-24，blader v2.11.2 × unclecheng v4.1 融合；破折号裁决升级为中英双禁，TimeCraker 拍板）
