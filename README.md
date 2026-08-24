@@ -23,6 +23,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 | Skill | 做什么 | 状态 |
 |---|---|---|
 | [`ppt-deck`](skills/ppt-deck/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + COM 渲染核查闭环（生成后真实渲染逐页核验） | 已上线 |
+| [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader v2.11.2 原版 + 中文模式与个人偏好扩展） | 已收录 |
 | `vibe-motion` | 逐页动效编排：节奏、转场、镜头语言 | 规划中 |
 | `deck-to-video` | deck 逐页渲染 → Remotion 合成，直接出成片 | 规划中 |
 
@@ -33,7 +34,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 进 vibe-studio 会话时其 `.claude/skills/` 自动生效；在其他项目用某 skill，复制或软链对应目录到该项目 `.claude/skills/`：
 
 ```bash
-ln -s ~/Desktop/my_workspace/vibe-studio/skills/ppt-deck <project>/.claude/skills/ppt-deck
+ln -s ~/Desktop/my-workspace/vibe-studio/skills/ppt-deck <project>/.claude/skills/ppt-deck
 ```
 
 ## 结构
@@ -41,12 +42,13 @@ ln -s ~/Desktop/my_workspace/vibe-studio/skills/ppt-deck <project>/.claude/skill
 ```
 vibe-studio/
 ├── skills/
-│   └── ppt-deck/          # PPT 生成 skill
-│       ├── SKILL.md       # 五步决策流程
-│       └── templates/
-│           └── primitives.py   # 版式原语（网格/文本/图形）
-├── assets/                # 品牌资源与 SVG
-└── docs/                  # 选型与决策记录
+│   ├── ppt-deck/          # PPT 生成 skill
+│   │   ├── SKILL.md       # 五步决策流程
+│   │   └── templates/
+│   │       └── primitives.py   # 版式原语（网格/文本/图形）
+│   └── humanizer/         # 中英文去 AI 腔改写
+│       └── SKILL.md       # blader v2.11.2 + 中文扩展
+└── assets/                # 品牌资源与 SVG
 ```
 
 ## 约定
