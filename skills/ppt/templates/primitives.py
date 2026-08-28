@@ -22,7 +22,7 @@ CREAM = "FAF6F0"       # 底色：卡片斑马纹 / 次级底
 PAPER = "FFFFFF"       # 纸白：卡片默认底
 INK = "1C1917"         # 墨：正文标题
 INK_SOFT = "57534E"    # 墨浅：正文
-MUTED = "A8A29E"       # 灰：注释 / 页码（白底用，暗底换 PAPER）
+MUTED = "78716C"       # 灰：注释 / 页码（stone-500，白底 4.8:1 达 AA；暗底换 PAPER）
 LINE = "E7E0D8"        # 线：卡片描边 / 分隔线
 
 FONT_CN = "Microsoft YaHei"
@@ -240,7 +240,7 @@ def slide_closing(prs, meta, footer_lines):
          [("Let's build something.", 40, PAPER, True),
           (meta.get("domain", "asterforge.top"), 18, CORAL, False)], spacing=1.25)
     text(s, Inches(0.9), Inches(4.9), Inches(11), Inches(1.4), footer_lines,
-         spacing=1.5, color=MUTED, font=FONT_MONO, size=12)
+         spacing=1.5, color=PAPER, font=FONT_MONO, size=12)
     box(s, Inches(11.9), Inches(0.9), Inches(1.3), Inches(1.3), fill=CORAL)
     text(s, Inches(11.9), Inches(1.28), Inches(1.3), Inches(0.5), "TC", 24, PAPER, True, PP_ALIGN.CENTER)
     return s
@@ -295,6 +295,9 @@ if __name__ == "__main__":
         ("访客浏览器", "HTTPS 443"), ("nginx", "proxy"), ("Next.js", "standalone"),
         ("Prisma", "ORM"), ("SQLite", "file db"),
     ])
+    s = add_slide(prs); page_chrome(s, 5, "Chart")
+    bar_chart(s, Inches(0.55), Inches(1.6), Inches(8.0), Inches(4.8),
+              ["Q1", "Q2", "Q3", "Q4"], [12, 25, 18, 31], title="decks per quarter")
     slide_closing(prs, META, ["github.com/example", "© 2026"])
     prs.save("deck-demo.pptx")
     print("OK deck-demo.pptx")
