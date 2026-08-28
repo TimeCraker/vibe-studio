@@ -51,6 +51,9 @@ AUTO_RULES = [
     ("media", "float_up", None, 0.5, 0.12),
     ("tl", "wipe", "left", 0.4, 0.15),
     ("vs", "float_up", None, 0.5, 0.15),
+    ("tab", "float_up", None, 0.4, 0.06),   # 表格行：快节奏级联
+    ("side", "float_up", None, 0.5, 0.1),   # dense 侧区分组
+    ("main", "float_up", None, 0.5, 0.1),   # dense 主区
 ]
 # 固定名字页面序列：(名字, 效果, 时长, delay, 方向|None)
 COVER_SEQ = [("kicker", "fade", 0.5, 0.0, None), ("ctitle", "fade", 0.5, 0.25, None),

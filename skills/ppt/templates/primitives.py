@@ -390,15 +390,22 @@ def slide_quote(prs, quote, source):
     return s
 
 
-def slide_closing(prs, meta, footer_lines):
-    """尾页：ink 反色整页 + coral logo 块"""
+def slide_closing(prs, meta, footer_lines, slogan=None):
+    """尾页：ink 反色整页 + coral logo 块。slogan 传 str 或
+    [(文字, size, color, bold), ...]，缺省默认英文句 + domain。"""
     s = add_slide(prs)
     box(s, 0, 0, SW, SH, fill=INK)
     box(s, Inches(0.9), Inches(2.35), Inches(0.35), Emu(19050), fill=CORAL).name = "cdivider"
+    if slogan is None:
+        slogan_lines = [("Let's build something.", 40, PAPER, True),
+                        (meta.get("domain", "asterforge.top"), 18, CORAL, False)]
+    elif isinstance(slogan, str):
+        slogan_lines = [(slogan, 40, PAPER, True),
+                        (meta.get("domain", "asterforge.top"), 18, CORAL, False)]
+    else:
+        slogan_lines = slogan
     text(s, Inches(0.9), Inches(2.75), Inches(10), Inches(1.0),
-         [("Let's build something.", 40, PAPER, True),
-          (meta.get("domain", "asterforge.top"), 18, CORAL, False)],
-         spacing=1.25).name = "slogan"
+         slogan_lines, spacing=1.25).name = "slogan"
     text(s, Inches(0.9), Inches(4.9), Inches(11), Inches(1.4), footer_lines,
          spacing=1.5, color=PAPER, font=FONT_MONO, size=12).name = "cfoot"
     box(s, Inches(11.9), Inches(0.9), Inches(1.3), Inches(1.3), fill=CORAL).name = "logobox"
@@ -428,13 +435,31 @@ def picture(slide, x, y, w, h, img, frame=True, caption=None):
     return pic, cap
 
 
-def slide_media(prs, idx, label, title, img, bullets, caption=None, img_side="left"):
+def slide_media(prs, idx, label, title, img, bullets, caption=None, img_side="left",
+                sidebar=None, footnote=None):
     """图文页：图 + 要点列（img_side='right' 图换到右边）。
-    bullets = [(要点, 说明), ...]，右侧逐条 float_up 级联（auto_page 可全代劳）。"""
+    bullets = [(要点, 说明), ...]，右侧逐条 float_up 级联（auto_page 可全代劳）。
+    sidebar 模式（editorial）：图占六成 + 右窄栏圈注 [(短语, 说明), ...] + 底部脚注行，
+    此时 bullets 忽略。"""
     s = add_slide(prs)
     page_chrome(s, idx, label)
     text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
          title, 30, INK, True).name = "title"
+    if sidebar:
+        picture(s, Inches(MARGIN), Inches(1.95), Inches(7.4), Inches(4.25), img, caption=caption)
+        for i, (t, d) in enumerate(sidebar):
+            y = 2.0 + i * 1.08
+            box(s, Inches(8.3), Inches(y + 0.08), Inches(0.14), Inches(0.14),
+                fill=CORAL).name = f"media{i}dot"
+            text(s, Inches(8.62), Inches(y), Inches(4.1), Inches(0.35),
+                 t, 14, INK, True).name = f"media{i}h"
+            check_fit(d, 10.5, 4.1, 0.62, label=f"media{i}d")
+            text(s, Inches(8.62), Inches(y + 0.38), Inches(4.1), Inches(0.62),
+                 d, 10.5, INK_SOFT, spacing=1.3).name = f"media{i}d"
+        if footnote:
+            text(s, Inches(MARGIN), Inches(6.55), Inches(12.2), Inches(0.3),
+                 footnote, 9, MUTED, font=FONT_MONO).name = "mediafn"
+        return s
     img_x = Inches(MARGIN) if img_side == "left" else Inches(6.9)
     lst_x = Inches(6.9) if img_side == "left" else Inches(MARGIN)
     picture(s, img_x, Inches(2.1), Inches(5.9), Inches(4.2), img, caption=caption)
@@ -446,6 +471,69 @@ def slide_media(prs, idx, label, title, img, bullets, caption=None, img_side="le
              t, 15, INK, True).name = f"media{i}h"
         text(s, lst_x + Inches(0.35), y + Inches(0.42), Inches(5.4), Inches(0.5),
              d, 11.5, INK_SOFT, spacing=1.3).name = f"media{i}d"
+    return s
+
+
+def slide_table(prs, idx, label, title, cols, rows, col_ws=None, row_h=0.52):
+    """真表格页：cols = [列名...]，rows = [[c1, c2, ...], ...]，col_ws = 列宽比例列表
+    （缺省等分；第一列建议窄做标签列）。列头 CREAM + 斑马行，6~9 行；tab* 命名吃
+    auto 级联（行级快节奏）。单元格文本超列宽会被 check_fit 预警。"""
+    s = add_slide(prs)
+    page_chrome(s, idx, label)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
+    n = len(cols)
+    ws = col_ws or [1 / n] * n
+    tot = 13.333 - 2 * MARGIN
+    xs, xe = [], MARGIN
+    for w in ws:
+        xs.append(xe)
+        xe += tot * w
+    box(s, Inches(MARGIN), Inches(1.95), Inches(tot), Inches(0.42),
+        fill=CREAM).name = "tabhead"
+    for j, c in enumerate(cols):
+        text(s, Inches(xs[j] + 0.12), Inches(2.0), Inches(tot * ws[j] - 0.2), Inches(0.32),
+             c, 9.5, MUTED, True, font=FONT_MONO).name = f"tabh{j}"
+    for i, row in enumerate(rows):
+        y = 2.37 + i * row_h
+        box(s, Inches(MARGIN), Inches(y), Inches(tot), Inches(row_h),
+            fill=PAPER if i % 2 == 0 else CREAM).name = f"tab{i}box"
+        for j, cell in enumerate(row):
+            check_fit(cell, 10.5, tot * ws[j] - 0.2, row_h - 0.08, label=f"tab{i}c{j}")
+            text(s, Inches(xs[j] + 0.12), Inches(y + 0.04), Inches(tot * ws[j] - 0.2),
+                 Inches(row_h - 0.08), cell, 10.5, INK if j == 0 else INK_SOFT, j == 0,
+                 font=FONT_MONO if j == 0 else FONT_CN,
+                 anchor=MSO_ANCHOR.MIDDLE).name = f"tab{i}c{j}"
+    return s
+
+
+def slide_dense(prs, idx, label, title, side, main_lines=None, img=None, img_h=3.1):
+    """高密度分区页：主区约 60%（可选大图 + 大字陈述/大数字）+ 侧区 40% 分组细节清单。
+    side = [(组名, [行...]), ...]；main_lines = [(text, size, color, bold), ...] 富文本。
+    打破等分平铺：主区讲一件事，侧区把细节喂饱（每组 3~5 行 10.5pt）。"""
+    s = add_slide(prs)
+    page_chrome(s, idx, label)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
+    mw = 7.1
+    y = 1.95
+    if img:
+        picture(s, Inches(MARGIN), Inches(y), Inches(mw), Inches(img_h), img)
+        y += img_h + 0.25
+    if main_lines:
+        text(s, Inches(MARGIN), Inches(y), Inches(mw), Inches(6.8 - y),
+             main_lines, spacing=1.35).name = "main0t"
+    sx, sw = MARGIN + mw + 0.35, 13.333 - MARGIN - (MARGIN + mw + 0.35)
+    yy = 1.95
+    for gi, (h, lines) in enumerate(side):
+        box(s, Inches(sx), Inches(yy + 0.07), Inches(0.16), Inches(0.16),
+            fill=CORAL).name = f"side{gi}dot"
+        text(s, Inches(sx + 0.3), Inches(yy), Inches(sw - 0.3), Inches(0.32),
+             h, 12, CORAL_DEEP, True).name = f"side{gi}h"
+        check_fit(lines, 10.5, sw - 0.3, 0.26 * len(lines), label=f"side{gi}d")
+        text(s, Inches(sx + 0.3), Inches(yy + 0.38), Inches(sw - 0.3),
+             Inches(0.26 * len(lines)), lines, 10.5, INK_SOFT, spacing=1.4).name = f"side{gi}d"
+        yy += 0.38 + 0.26 * len(lines) + 0.28
     return s
 
 
