@@ -11,7 +11,7 @@ import re
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
-from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION
+from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION, XL_LEGEND_POSITION, XL_MARKER_STYLE
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Emu, Inches, Pt
@@ -130,6 +130,12 @@ def shape_groups(slide, prefix):
     return [groups[k] for k in sorted(groups)]
 
 
+def notes(slide, script):
+    """演讲者备注 = 口播稿：deck-to-video 与现场讲稿的数据源。每页 1~3 句，
+    与页面同步写（Step 1 取材时同步产出），交付报告注明页数。"""
+    slide.notes_slide.notes_text_frame.text = script
+
+
 # ── 页面范式（组合优于发明；坐标用表达式算，不写魔法数）───────────────
 def slide_cover(prs, meta):
     s = add_slide(prs)
@@ -208,7 +214,7 @@ def slide_chain(prs, idx, label, title, nodes, hi=2, sub_title=None, subs=None):
         text(s, x + Inches(0.12), Inches(2.52), Inches(bw - 0.24), Inches(0.4), t,
              12, PAPER if hot else INK, True, PP_ALIGN.CENTER).name = f"node{i}t"
         text(s, x + Inches(0.12), Inches(3.05), Inches(bw - 0.24), Inches(0.35), d,
-             9, PAPER if hot else MUTED, align=PP_ALIGN.CENTER,
+             9, PAPER if hot else MUTED, hot, align=PP_ALIGN.CENTER,
              font=FONT_MONO).name = f"node{i}d"
         if i < len(nodes) - 1:
             text(s, x + Inches(bw - 0.02), Inches(2.62), Inches(gap + 0.06), Inches(0.5),
@@ -278,6 +284,48 @@ def slide_closing(prs, meta, footer_lines):
     return s
 
 
+def picture(slide, x, y, w, h, img, frame=True, caption=None):
+    """品牌化图片：等比缩放居中入框（不拉伸），LINE 细边框，可选图注（Consolas 9.5 灰）。
+    img 为本地路径（png/jpg）。返回 (picture, caption_tb|None)。"""
+    pic = slide.shapes.add_picture(img, x, y)
+    s = min(w / pic.width, h / pic.height)
+    nw, nh = int(pic.width * s), int(pic.height * s)
+    pic.left, pic.top = int(x + (w - nw) / 2), int(y + (h - nh) / 2)
+    pic.width, pic.height = nw, nh
+    if frame:
+        pic.line.color.rgb = C(LINE)
+        pic.line.width = Pt(0.75)
+    pic.shadow.inherit = False
+    pic.name = "media"
+    cap = None
+    if caption:
+        cap = text(slide, x, y + h + 0.1, w, Inches(0.3), caption, 9.5, MUTED,
+                   font=FONT_MONO)
+        cap.name = "mediacap"
+    return pic, cap
+
+
+def slide_media(prs, idx, label, title, img, bullets, caption=None, img_side="left"):
+    """图文页：图 + 要点列（img_side='right' 图换到右边）。
+    bullets = [(要点, 说明), ...]，右侧逐条 float_up 级联（auto_page 可全代劳）。"""
+    s = add_slide(prs)
+    page_chrome(s, idx, label)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
+    img_x = Inches(MARGIN) if img_side == "left" else Inches(6.9)
+    lst_x = Inches(6.9) if img_side == "left" else Inches(MARGIN)
+    picture(s, img_x, Inches(2.1), Inches(5.9), Inches(4.2), img, caption=caption)
+    for i, (t, d) in enumerate(bullets):
+        y = Inches(2.2 + i * 1.05)
+        box(s, lst_x, y + Inches(0.09), Inches(0.14), Inches(0.14),
+            fill=CORAL).name = f"media{i}dot"
+        text(s, lst_x + Inches(0.35), y, Inches(5.4), Inches(0.4),
+             t, 15, INK, True).name = f"media{i}h"
+        text(s, lst_x + Inches(0.35), y + Inches(0.42), Inches(5.4), Inches(0.5),
+             d, 11.5, INK_SOFT, spacing=1.3).name = f"media{i}d"
+    return s
+
+
 def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color=CORAL,
               highlight=None, highlight_color=INK):
     """可编辑原生柱/条图（单系列，非贴图）：cats 类目，vals 数值。
@@ -315,6 +363,75 @@ def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color
     va.major_gridlines.format.line.color.rgb = C(LINE)
     va.tick_labels.font.size = Pt(9); va.tick_labels.font.name = FONT_MONO
     va.tick_labels.font.color.rgb = C(MUTED)
+    return gf
+
+
+def line_chart(slide, x, y, w, h, cats, vals, title=None, color=CORAL):
+    """趋势线（单系列原生可编辑，非贴图）：动画用 anim.chart(gf, 'series')——
+    擦入即画线，符合时间序列直觉。末点数值标签 Consolas。返回 GraphicFrame。"""
+    cd = CategoryChartData()
+    cd.categories = cats
+    cd.add_series("s", vals)
+    gf = slide.shapes.add_chart(XL_CHART_TYPE.LINE_MARKERS, x, y, w, h, cd)
+    chart = gf.chart
+    chart.has_legend = False
+    chart.has_title = title is not None
+    if chart.has_title:
+        chart.chart_title.text_frame.text = title
+    ser = chart.plots[0].series[0]
+    ser.format.line.color.rgb = C(color)
+    ser.format.line.width = Pt(2.25)
+    ser.smooth = False
+    for pt_ in ser.points:  # 小实心标记，crisp 数据感
+        pt_.marker.style = XL_MARKER_STYLE.CIRCLE
+        pt_.marker.size = 6
+        pt_.marker.format.fill.solid()
+        pt_.marker.format.fill.fore_color.rgb = C(color)
+        pt_.marker.format.line.color.rgb = C(color)
+    dl = ser.points[len(vals) - 1].data_label  # 只标末点数值
+    dl.text_frame.text = str(vals[-1])
+    r = dl.text_frame.paragraphs[0].runs[0]
+    r.font.size = Pt(14); r.font.bold = True; r.font.name = FONT_MONO
+    r.font.color.rgb = C(INK)
+    dl.position = XL_LABEL_POSITION.ABOVE
+    ca = chart.category_axis
+    ca.tick_labels.font.size = Pt(12); ca.tick_labels.font.name = FONT_CN
+    ca.format.line.color.rgb = C(LINE)
+    va = chart.value_axis
+    va.has_major_gridlines = True
+    va.major_gridlines.format.line.color.rgb = C(LINE)
+    va.tick_labels.font.size = Pt(9); va.tick_labels.font.name = FONT_MONO
+    va.tick_labels.font.color.rgb = C(MUTED)
+    gf.name = "chart"
+    return gf
+
+
+def donut_chart(slide, x, y, w, h, cats, vals, title=None, colors=None):
+    """占比环（单系列原生可编辑）：逐块配色缺省 [CORAL, INK, MUTED, CORAL_DEEP, INK_SOFT]
+    循环——只用封闭色板里的数据色（LINE/CREAM 是脚手架色，白底不可辨，禁入数据位）。
+    右侧图例；中心留白可叠总数大字（用 text 叠加）。返回 GraphicFrame。"""
+    if colors is None:
+        colors = [CORAL, INK, MUTED, CORAL_DEEP, INK_SOFT]
+    cd = CategoryChartData()
+    cd.categories = cats
+    cd.add_series("s", vals)
+    gf = slide.shapes.add_chart(XL_CHART_TYPE.DOUGHNUT, x, y, w, h, cd)
+    chart = gf.chart
+    chart.has_title = title is not None
+    if chart.has_title:
+        chart.chart_title.text_frame.text = title
+    chart.has_legend = True
+    chart.legend.position = XL_LEGEND_POSITION.RIGHT
+    chart.legend.include_in_layout = False
+    chart.legend.font.size = Pt(12)
+    chart.legend.font.name = FONT_CN
+    ser = chart.plots[0].series[0]
+    for i, pt_ in enumerate(ser.points):
+        pt_.format.fill.solid()
+        pt_.format.fill.fore_color.rgb = C(colors[i % len(colors)])
+        pt_.format.line.color.rgb = C(PAPER)
+        pt_.format.line.width = Pt(1.5)
+    gf.name = "chart"
     return gf
 
 

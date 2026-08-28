@@ -10,7 +10,7 @@ user-invocable: true
 
 ## Step 1 · 取材（禁止编造）
 
-内容必须来自项目真实资料：README / CLAUDE.md / package.json / docs。动笔前列「事实清单」（项目名、数字指标、技术栈、部署拓扑），每个数字有出处。**没有出处的数字不进 PPT**。
+内容必须来自项目真实资料：README / CLAUDE.md / package.json / docs。动笔前列「事实清单」（项目名、数字指标、技术栈、部署拓扑），每个数字有出处。**没有出处的数字不进 PPT**。取材同时为每页写口播稿（1~3 句，讲这页时的原话），生成时写进 `notes()` 演讲者备注——它是 deck-to-video 与现场讲稿的数据源。
 
 ## Step 2 · 设计系统（写代码前定案，全程不改）
 
@@ -29,28 +29,38 @@ user-invocable: true
 3. 用 primitives 组装页面，**坐标用表达式算**（如 `Inches(0.55 + i * 3.13)`），不写魔法数
 4. 文本框塞内容前用 `check_fit()` 预检（字符宽估算 vs 框高），`[FIT-WARN]` 即拆行/拆页/砍字；估算保守，最终以 Step 4 为准
 
-**动画（可选；Windows + MS Office + pywin32）**——按元素声明，按元素类型自选效果：
+**动画（可选；Windows + MS Office + pywin32）**——默认走 **auto 编排**（组件适配表的代码化，扫 primitives 系统命名一键落地），手动 `fx()/stagger()` 只做微调：
 
 ```python
-from animate import Anim
 import primitives as P
+from animate import Anim
+# 生成范式页面 + 每页口播稿：
+P.notes(s2, "这一页讲级联节奏：卡片 0.12s 一拍进来，重点是重叠不是排队。")
+# 动画默认路径——全 deck 自动：
 anim = Anim(prs)
+anim.auto_deck()                       # 封面四级级联/卡片 float_up/数字 zoom/链路 wipe/尾页 grow_turn
+anim.chart(gf, 'series')               # auto 之外的补充：图表动画手动声明（line 擦入即画线）
+anim.fx(footer, 'fade', dur=0.4)       # 特殊元素手动补一枪
+P.set_transition(prs, 'fade')          # 统一转场：fade / push-left（morph 页自动跳过）
+prs.save('deck.pptx')                  # apply 必须在 save 之后
+anim.apply('deck.pptx')                # COM 写入 + 读回自验证（数量/类型不齐直接报错）
+```
+
+手动挡（auto 未覆盖或要微调时）：
+
+```python
 anim.fade(title, dur=0.5)              # 淡入 + 缓出（dur 给定自动 SmoothEnd）
-anim.fx(num, 'zoom', dur=0.6, delay=0.2)  # 通用入口：词表 10 种入场任选
+anim.fx(num, 'zoom', dur=0.6, delay=0.2)  # 通用入口：词表 11 种入场任选
 anim.stagger(P.shape_groups(s, 'card'), 'float_up', step=0.12)
                                       # 级联：组内同进、组间 delay 递增——真重叠节奏
 anim.wipe(card, 'up')                  # 方向感：up / down / left / right
-anim.chart(gf, 'category')             # 图表逐类目擦入：allAtOnce / series / category
-P.set_transition(prs, 'fade')          # 统一转场：fade / push-left（morph 页自动跳过）
-# 数据增长叙事（真补间，非擦入）——柱子从 0 平滑长到位：
+# 数据增长叙事（真补间，非擦入）——柱子从 0 平滑长到位，auto 自动跳过其动画：
 s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 占两页
-prs.save('deck.pptx')                  # apply 必须在 save 之后
-anim.apply('deck.pptx')                # COM 写入；此后才做 Step 4
 ```
 
 **效果词表**（全部 COM 实测验证，写入后 EffectType 读回一致）：`fade / wipe / appear` 基础三件；`float_up / float_down`（Float In 上浮下沉，现代高级感主力）；`zoom`（柔缩放）；`grow_turn`（Grow & Turn，图标 logo）；`ease_in / split / wheel / stretch` 备选。90 年代花活（百叶窗/棋盘/螺旋）明确不收。
 
-**组件适配表**（默认推荐，按叙事可微调）：
+**组件适配表**（默认推荐，按叙事可微调；已代码化为 `anim.auto_deck()`，一行全代劳）：
 
 | 组件 | 推荐 |
 |---|---|
@@ -74,6 +84,9 @@ anim.apply('deck.pptx')                # COM 写入；此后才做 Step 4
 | 大数字墙 | 指标 | 2×3 数字卡，数字 40 coral，注释 9 Consolas |
 | 柱/条图 | 数据对比 | `bar_chart()` 原生可编辑图表，Consolas 数值标签，值轴淡化 |
 | 增长柱图 | 数据增长叙事 | `growth_chart()` 零状态→终态两页，morph 真补间（需 PowerPoint 2019+，WPS 不支持则降级 fade） |
+| 趋势线 | 时间序列 | `line_chart()` 末点数值标签；动画 `chart(gf, 'series')` 擦入即画线 |
+| 占比环 | 构成 | `donut_chart()` 逐块配色 + 右图例，中心可叠总数大字 |
+| 图文页 | 截图/产品图 + 要点 | `slide_media()` 图左文右，`picture()` 等比缩放 + 品牌边框 + 图注 |
 | 链路图 | 架构 | 横排 box + `→` 文本，中间节点反色强调 |
 | 双栏清单 | 技术栈/配置 | 左右两组斑马行条 |
 | 表格页 | 路由/API | pptx 里少用真表格，用行条模拟更可控 |
@@ -94,11 +107,13 @@ $pres.SaveAs("<输出>.pdf", 32); $pres.Close(); $p.Quit()
 
 ```bash
 # 初筛：读 PDF 每个文本块的真实渲染 bbox，报页级溢出（方向+溢出量）；
-# 顺带全文扫描占位符（未改的模板默认值 / lorem / TODO）。退出码 1=有问题
+# 全文扫描占位符（未改的模板默认值 / lorem / TODO）；
+# 文本对比度 WCAG 初筛（bold/≥18pt 阈 3.0，其余 4.5；底色不均与近隐形 morph 脚手架跳过）。
+# 退出码 1=有问题
 python <本skill>/templates/verify.py <输出>.pdf
 ```
 
-初筛只保证「没出页」；框级溢出生成侧已由 `check_fit` 预警。报红即改脚本重跑。
+初筛只保证「没出页、没占位符、没明显低对比」；框级溢出生成侧已由 `check_fit` 预警。报红即改脚本重跑。
 
 **② 视觉自查（模型读图，四项）**
 
@@ -119,7 +134,7 @@ for i in range(len(pdf)):
 
 ## Step 5 · 交付
 
-报告：页数 + 页面清单 / 文件路径与大小 / 三级核查结论（初筛 + 视觉逐页过，或列出已修问题）/ 生成脚本位置（可复跑）。在 git 仓库内则提交脚本 + pptx。
+报告：页数 + 页面清单 / 文件路径与大小 / 三级核查结论（初筛 + 视觉逐页过，或列出已修问题）/ 口播稿页数（notes 备注，供 deck-to-video 消费）/ 生成脚本位置（可复跑）。在 git 仓库内则提交脚本 + pptx。
 
 ## 边界与坑
 
