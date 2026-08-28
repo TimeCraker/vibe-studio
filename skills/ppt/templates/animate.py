@@ -79,7 +79,12 @@ class Anim:
                 eff = sld.TimeLine.MainSequence.AddEffect(_by_id(sld, spid), fx, 0, trig)
                 if direction is not None:
                     eff.EffectParameters.Direction = direction
-            pres.Save()
+            try:
+                pres.Save()
+            except Exception:
+                import time
+                time.sleep(1.5)   # 偶发 sharing violation（杀软/索引器短暂锁文件），重试一次
+                pres.Save()
             pres.Close()
         finally:
             app.Quit()

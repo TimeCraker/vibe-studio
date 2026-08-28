@@ -327,36 +327,58 @@ def _morph(slide, dur_ms=900):
 
 
 def growth_chart(prs, idx, label, title, cats, vals, color=CORAL, highlight=None,
-                 x=MARGIN, y=2.2, w=12.23, h=4.2, dur_ms=900):
-    """morph 数据增长柱图：一次生成两页——零状态页（柱≈0）+ 终态页。
-    翻页时 PowerPoint 对 !! 同名元素做真补间：柱子平滑长高、数值随柱顶升起。
-    原生 chart 无逐柱补间（bldChart 只是擦入），数据增长叙事用本范式。
-    需 PowerPoint 2019+；占两页页码，后续页 idx 自行 +2。返回 (零状态页, 终态页)。"""
+                 horizontal=False, x=MARGIN, y=2.2, w=12.23, h=4.2, dur_ms=900):
+    """morph 数据增长图：一次生成两页——零状态页（柱≈0/条≈0）+ 终态页。
+    翻页时 PowerPoint 对 !! 同名元素做真补间：纵向柱子平滑长高、横向条形从左长出，
+    数值随端点升起浮现。原生 chart 无逐柱补间（bldChart 只是擦入），数据增长叙事用本范式。
+    horizontal=True 横向条形（类目左对齐列）。需 PowerPoint 2019+；占两页页码。
+    返回 (零状态页, 终态页)。"""
     n = len(vals)
     gap = 0.25
-    bw = (w - gap * (n - 1)) / n
     vmax = max(vals) or 1
 
     def build(page_idx, zero):
         s = add_slide(prs)
         page_chrome(s, page_idx, label)
         text(s, Inches(x), Inches(0.95), Inches(w), Inches(0.7), title, 30, INK, True)
-        base = box(s, Inches(x), Inches(y + h), Inches(w), Emu(9525), fill=LINE)
-        base.name = "!!gbase"
-        for i, (c, v) in enumerate(zip(cats, vals)):
-            bx = x + i * (bw + gap)
-            bh = 0.04 if zero else max(0.04, v / vmax * (h - 0.8))
-            hot = i == highlight
-            bar = box(s, Inches(bx), Inches(y + h - bh), Inches(bw), Inches(bh),
-                      fill=LINE if zero else (INK if hot else color))
-            bar.name = f"!!gbar{i}"
-            lab = text(s, Inches(bx), Inches(y + h - bh - 0.42), Inches(bw), Inches(0.4),
-                       str(v), 22, LINE if zero else (INK if hot else CORAL_DEEP), True,
-                       PP_ALIGN.CENTER, font=FONT_MONO)
-            lab.name = f"!!glab{i}"
-            cat = text(s, Inches(bx), Inches(y + h + 0.08), Inches(bw), Inches(0.3),
-                       c, 11.5, INK_SOFT, True, PP_ALIGN.CENTER)
-            cat.name = f"!!gcat{i}"
+        if not horizontal:
+            bw = (w - gap * (n - 1)) / n
+            base = box(s, Inches(x), Inches(y + h), Inches(w), Emu(9525), fill=LINE)
+            base.name = "!!gbase"
+            for i, (c, v) in enumerate(zip(cats, vals)):
+                bx = x + i * (bw + gap)
+                bh = 0.04 if zero else max(0.04, v / vmax * (h - 0.8))
+                hot = i == highlight
+                bar = box(s, Inches(bx), Inches(y + h - bh), Inches(bw), Inches(bh),
+                          fill=LINE if zero else (INK if hot else color))
+                bar.name = f"!!gbar{i}"
+                lab = text(s, Inches(bx), Inches(y + h - bh - 0.42), Inches(bw), Inches(0.4),
+                           str(v), 22, LINE if zero else (INK if hot else CORAL_DEEP), True,
+                           PP_ALIGN.CENTER, font=FONT_MONO)
+                lab.name = f"!!glab{i}"
+                cat = text(s, Inches(bx), Inches(y + h + 0.08), Inches(bw), Inches(0.3),
+                           c, 11.5, INK_SOFT, True, PP_ALIGN.CENTER)
+                cat.name = f"!!gcat{i}"
+        else:
+            lab_w = 2.0
+            area = w - lab_w - 0.9
+            row_h = min(0.55, (h - 0.3 - gap * (n - 1)) / n)
+            base = box(s, Inches(x + lab_w), Inches(y), Emu(9525), Inches(h), fill=LINE)
+            base.name = "!!gbase"
+            for i, (c, v) in enumerate(zip(cats, vals)):
+                by = y + i * (row_h + gap)
+                bw = 0.04 if zero else max(0.04, v / vmax * area)
+                hot = i == highlight
+                bar = box(s, Inches(x + lab_w), Inches(by), Inches(bw), Inches(row_h),
+                          fill=LINE if zero else (INK if hot else color))
+                bar.name = f"!!gbar{i}"
+                lab = text(s, Inches(x + lab_w + bw + 0.08), Inches(by + row_h / 2 - 0.22),
+                           Inches(0.9), Inches(0.44), str(v), 20,
+                           LINE if zero else (INK if hot else CORAL_DEEP), True, font=FONT_MONO)
+                lab.name = f"!!glab{i}"
+                cat = text(s, Inches(x), Inches(by + row_h / 2 - 0.22), Inches(lab_w - 0.18),
+                           Inches(0.44), c, 11.5, INK_SOFT, True, align=PP_ALIGN.RIGHT)
+                cat.name = f"!!gcat{i}"
         return s
 
     s0 = build(idx, True)

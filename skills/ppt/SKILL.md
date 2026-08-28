@@ -45,7 +45,7 @@ prs.save('deck.pptx')               # apply 必须在 save 之后
 anim.apply('deck.pptx')             # COM 写入；此后才做 Step 4
 ```
 
-选择纪律：标题 fade；卡片/行条逐个 fade 接力；大数字 wipe up；链路节点按流向 wipe 依次；**数据增长用 growth_chart（morph 补间），原生 chart 的 bldChart 只是逐类目擦入、无高度补间**。一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技。动画在 PDF 里不可见——verify 只验 XML 结构与静态页，最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
+选择纪律：标题 fade；卡片/行条逐个 fade 接力；大数字 wipe up；链路节点按流向 wipe 依次；**数据图表首选 `growth_chart`（纵向柱 / 横向条，morph 真补间的增长感）；原生 `bar_chart` 的 bldChart 只是逐类目擦入、无高度补间，仅当交付后还要在 PowerPoint 里改数据时用它**。一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技。动画在 PDF 里不可见——verify 只验 XML 结构与静态页；morph 生效可程序化验证：COM 读 `SlideShowTransition.EntryEffect == 3954`；最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
 
 **页面范式速查**（覆盖 90% 技术场景，组合优于发明）：
 
