@@ -7,7 +7,7 @@ animate.py — COM 动画后处理：按元素逐个声明进入动画（Windows
     import primitives as P
     anim = Anim(prs)
     anim.fade(title, dur=0.5)                      # 淡入，0.5s 缓出
-    anim.fx(card, 'float_up', dur=0.5, delay=0.12) # 通用入口：词表 10 种入场任选
+    anim.fx(card, 'float_up', dur=0.5, delay=0.12) # 通用入口：词表 11 种入场任选
     anim.stagger(P.shape_groups(s, 'card'), 'float_up', step=0.12)
                                                    # 级联：组内同进、组间 delay 递增
     anim.wipe(num_card, 'up')                      # 方向感：up / down / left / right
