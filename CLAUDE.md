@@ -13,7 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `assets/` — 品牌资源与 SVG
 - `docs/` — 决策记录（选了什么、放弃了什么、为什么）；目录尚未建立，首次决策时创建
 
-skill 的设计单元是**自包含**：每个 skill 可独立运行、自带模板、不依赖本仓库外文件。分发方式是复制或软链到目标项目 `.claude/skills/`。注意：本仓库根目录尚无 `.claude/`，README 所说「本会话自动生效」尚未落地。
+skill 的设计单元是**自包含**：每个 skill 可独立运行、自带模板、不依赖本仓库外文件。分发方式是复制或软链到目标项目 `.claude/skills/`。`.claude/skills/` 下是指向 `skills/` 同名目录的本机 junction（Claude Code 只认这个路径；已 gitignore，克隆后按 README「使用」节跑一次 setup）。
 
 改动 skill 时同步 README.md 的 Skills 表与结构图（历史上漏过：ppt-deck 改名 ppt、收录 humanizer 都事后补过 README）。
 

@@ -31,7 +31,18 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 
 ## 使用
 
-进 vibe-studio 会话时其 `.claude/skills/` 自动生效；在其他项目用某 skill，复制或软链对应目录到该项目 `.claude/skills/`：
+Claude Code 只从 `.claude/skills/` 发现 skill。本仓库真身在 `skills/`，`.claude/skills/` 下是指过去的 junction（Windows 免管理员）——**克隆后跑一次**：
+
+```powershell
+git clone https://github.com/TimeCraker/vibe-studio
+cd vibe-studio
+New-Item -ItemType Directory -Force .claude/skills | Out-Null
+foreach ($s in 'ppt', 'humanizer') {
+    New-Item -ItemType Junction -Path "$PWD\.claude\skills\$s" -Target "$PWD\skills\$s" | Out-Null
+}
+```
+
+之后进 vibe-studio 会话，skill 自动生效（新会话生效，已在开的会话不含）。在**其他项目**用某 skill，同法复制或链接对应目录到该项目 `.claude/skills/`：
 
 ```bash
 ln -s ~/Desktop/my-workspace/vibe-studio/skills/ppt <project>/.claude/skills/ppt

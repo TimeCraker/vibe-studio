@@ -16,3 +16,6 @@ build/
 # OS / 编辑器
 .DS_Store
 Thumbs.db
+
+# .claude/skills 是指向 skills/ 的本机 junction（绝对路径，不可跨机）
+.claude/skills/
