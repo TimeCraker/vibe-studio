@@ -54,8 +54,10 @@ anim.fx(num, 'zoom', dur=0.6, delay=0.2)  # 通用入口：词表 11 种入场�
 anim.stagger(P.shape_groups(s, 'card'), 'float_up', step=0.12)
                                       # 级联：组内同进、组间 delay 递增——真重叠节奏
 anim.wipe(card, 'up')                  # 方向感：up / down / left / right
-# 数据增长叙事（真补间，非擦入）——柱子从 0 平滑长到位，auto 自动跳过其动画：
-s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 占两页
+# 数据增长叙事（真补间，非擦入）——auto 自动跳过其动画，占两页页码：
+s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 柱/条
+g0, g1 = P.growth_line(prs, 8, 'Trend', '标题', cats, vals, highlight=5)    # 趋势线
+d0, d1 = P.growth_donut(prs, 10, 'Mix', '标题', cats, vals)                 # 占比环
 ```
 
 **效果词表**（全部 COM 实测验证，写入后 EffectType 读回一致）：`fade / wipe / appear` 基础三件；`float_up / float_down`（Float In 上浮下沉，现代高级感主力）；`zoom`（柔缩放）；`grow_turn`（Grow & Turn，图标 logo）；`ease_in / split / wheel / stretch` 备选。90 年代花活（百叶窗/棋盘/螺旋）明确不收。
@@ -69,7 +71,7 @@ s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 
 | 大数字 | zoom 0.6s（或 wipe up） |
 | 链路节点 | wipe 按流向依次，step 0.1 |
 | 图标/logo | grow_turn |
-| 数据图表 | 首选 `growth_chart`（morph 真补间）；交付后还要改数据才用 `bar_chart` + `chart('category')` |
+| 数据图表 | 一律 `growth_*`：柱/条 `growth_chart`、线 `growth_line`、环 `growth_donut`（morph 真补间）；原生 chart 仅交付后要改数据时用 |
 | 封面 | kicker → 标题 → 元信息，三级 fade 级联 |
 | 尾页 | logo grow_turn + 文案 fade |
 
@@ -83,9 +85,10 @@ s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 
 | 四象限卡 | 项目角色/模块 | 2×2 或 1×4 卡片，顶 coral 条 0.07 |
 | 大数字墙 | 指标 | 2×3 数字卡，数字 40 coral，注释 9 Consolas |
 | 柱/条图 | 数据对比 | `bar_chart()` 原生可编辑图表，Consolas 数值标签，值轴淡化 |
-| 增长柱图 | 数据增长叙事 | `growth_chart()` 零状态→终态两页，morph 真补间（需 PowerPoint 2019+，WPS 不支持则降级 fade） |
-| 趋势线 | 时间序列 | `line_chart()` 末点数值标签；动画 `chart(gf, 'series')` 擦入即画线 |
-| 占比环 | 构成 | `donut_chart()` 逐块配色 + 右图例，中心可叠总数大字 |
+| 增长柱/条图 | 数据增长叙事 | `growth_chart()` 零状态→终态两页，morph 真补间（需 PowerPoint 2019+，WPS 不支持则降级 fade） |
+| 增长趋势线 | 时间序列叙事 | `growth_line()` 等顶点 freeform 折线，morph 逐点插值：线从基线长出、点与标签升起 |
+| 增长占比环 | 构成叙事 | `growth_donut()` 等顶点楔形扇区，morph 扫开整环绽放；环心总数 + 右图例 |
+| 趋势线 · 占比环（原生） | 交付后还要在 PowerPoint 里改数据 | `line_chart / donut_chart()` 原生可编辑；动画 bldChart 只是擦入，**不做增长叙事** |
 | 图文页 | 截图/产品图 + 要点 | `slide_media()` 图左文右，`picture()` 等比缩放 + 品牌边框 + 图注 |
 | 链路图 | 架构 | 横排 box + `→` 文本，中间节点反色强调 |
 | 双栏清单 | 技术栈/配置 | 左右两组斑马行条 |

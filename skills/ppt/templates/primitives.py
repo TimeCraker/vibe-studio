@@ -535,6 +535,115 @@ def growth_chart(prs, idx, label, title, cats, vals, color=CORAL, highlight=None
     return s0, s1
 
 
+def growth_line(prs, idx, label, title, cats, vals, color=CORAL, highlight=None,
+                x=MARGIN, y=2.1, w=12.23, h=3.9, dur_ms=900):
+    """morph 趋势线增长：两页——零状态（折线贴基线）→ 终态（真实走势）。
+    折线是等顶点 freeform，morph 对同构路径逐点插值 = 线从基线整体长出，
+    数据点/数值标签随端点升起。原生 line_chart 的 bldChart 只是整图擦入，
+    趋势叙事用本范式。需 PowerPoint 2019+；占两页页码。返回 (零状态页, 终态页)。"""
+    n = len(vals)
+    vmax = max(vals) or 1
+    px = [x + i * (w / max(n - 1, 1)) for i in range(n)]
+
+    def build(page_idx, zero):
+        s = add_slide(prs)
+        page_chrome(s, page_idx, label)
+        text(s, Inches(x), Inches(0.95), Inches(w), Inches(0.7), title, 30, INK, True)
+        box(s, Inches(x), Inches(y + h), Inches(w), Emu(9525), fill=LINE).name = "!!gaxis"
+        ys = [y + h] * n if zero else [y + h - 0.3 - v / vmax * (h - 0.95) for v in vals]
+        fb = s.shapes.build_freeform(Inches(px[0]), Inches(ys[0]), scale=1.0)
+        fb.add_line_segments([(Inches(px[i]), Inches(ys[i])) for i in range(1, n)], close=False)
+        ln = fb.convert_to_shape()
+        ln.fill.background()
+        ln.line.color.rgb = C(color)
+        ln.line.width = Pt(2.5)
+        ln.shadow.inherit = False
+        ln.name = "!!gline"
+        for i in range(n):
+            hot = i == highlight
+            d = 0.11
+            dot = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(px[i] - d / 2), Inches(ys[i] - d / 2),
+                                     Inches(d), Inches(d))
+            dot.fill.solid()
+            dot.fill.fore_color.rgb = C(INK if hot else color)
+            dot.line.fill.background()
+            dot.shadow.inherit = False
+            dot.name = f"!!gdot{i}"
+            text(s, Inches(px[i] - 0.5), Inches(ys[i] - 0.55), Inches(1.0), Inches(0.4),
+                 str(vals[i]), 12, LINE if zero else (INK if hot else CORAL_DEEP), True,
+                 PP_ALIGN.CENTER, font=FONT_MONO).name = f"!!glab{i}"
+            text(s, Inches(px[i] - 0.6), Inches(y + h + 0.12), Inches(1.2), Inches(0.3),
+                 cats[i], 11.5, INK_SOFT, True, PP_ALIGN.CENTER).name = f"!!gcat{i}"
+        return s
+
+    s0 = build(idx, True)
+    s1 = build(idx + 1, False)
+    _morph(s1, dur_ms)
+    return s0, s1
+
+
+def growth_donut(prs, idx, label, title, cats, vals, colors=None, unit="",
+                 x=MARGIN, y=1.9, w=12.23, h=4.5, dur_ms=900):
+    """morph 占比环增长：两页——零状态（各扇区收缩成自己起始角上的细楔）→ 终态。
+    扇区是等顶点 freeform 楔形，morph 逐点插值 = 各扇区从自己的起始边扫开、整环绽放。
+    右侧图例 + 环心总数静态。原生 donut_chart 的 bldChart 只是整图擦入，构成叙事用
+    本范式。需 PowerPoint 2019+；占两页页码。返回 (零状态页, 终态页)。"""
+    if colors is None:
+        colors = [CORAL, INK, MUTED, CORAL_DEEP, INK_SOFT]
+    total = sum(vals)
+    cx, cy = x + 2.9, y + h / 2
+    R = min(h / 2 - 0.3, 2.3)
+    rr = R * 0.62
+    gap = math.radians(1.5)
+    # 每扇区固定细分步数（零/终态同构，morph 才能逐点插值）
+    segs, a = [], -math.pi / 2
+    for v in vals:
+        sweep = v / (total or 1) * 2 * math.pi
+        segs.append((a + gap, a + sweep - gap, max(3, math.ceil(math.degrees(sweep) / 5))))
+        a += sweep
+
+    def wedge(s, a0, a1, steps, col):
+        pts = [(cx + R * math.sin(a0 + (a1 - a0) * k / steps),
+                cy - R * math.cos(a0 + (a1 - a0) * k / steps)) for k in range(steps + 1)]
+        pts += [(cx + rr * math.sin(a1 - (a1 - a0) * k / steps),
+                 cy - rr * math.cos(a1 - (a1 - a0) * k / steps)) for k in range(steps + 1)]
+        fb = s.shapes.build_freeform(Inches(pts[0][0]), Inches(pts[0][1]), scale=1.0)
+        fb.add_line_segments([(Inches(px_), Inches(py_)) for px_, py_ in pts[1:]], close=True)
+        sp = fb.convert_to_shape()
+        sp.fill.solid()
+        sp.fill.fore_color.rgb = C(col)
+        sp.line.color.rgb = C(PAPER)
+        sp.line.width = Pt(1.5)
+        sp.shadow.inherit = False
+        return sp
+
+    def build(page_idx, zero):
+        s = add_slide(prs)
+        page_chrome(s, page_idx, label)
+        text(s, Inches(x), Inches(0.95), Inches(w), Inches(0.7), title, 30, INK, True)
+        for i, (a0, a1, steps) in enumerate(segs):
+            end = a0 + math.radians(0.5) if zero else a1
+            wedge(s, a0, end, steps, colors[i % len(colors)]).name = f"!!gseg{i}"
+        text(s, Inches(cx - 1.2), Inches(cy - 0.5), Inches(2.4), Inches(1.0),
+             [(str(total) + unit, 34, INK, True), ("total", 11, MUTED, False)],
+             align=PP_ALIGN.CENTER, spacing=1.05).name = "gtotal"
+        for i, (c, v) in enumerate(zip(cats, vals)):
+            ly = y + 0.6 + i * 0.78
+            box(s, Inches(x + 6.3), Inches(ly), Inches(0.16), Inches(0.16),
+                fill=colors[i % len(colors)]).name = f"gleg{i}dot"
+            text(s, Inches(x + 6.65), Inches(ly - 0.08), Inches(3.6), Inches(0.35),
+                 c, 13, INK, True).name = f"gleg{i}t"
+            text(s, Inches(x + 10.3), Inches(ly - 0.08), Inches(1.5), Inches(0.35),
+                 f"{v / (total or 1) * 100:.0f}%", 13, INK_SOFT, True, font=FONT_MONO
+                 ).name = f"gleg{i}v"
+        return s
+
+    s0 = build(idx, True)
+    s1 = build(idx + 1, False)
+    _morph(s1, dur_ms)
+    return s0, s1
+
+
 # ── 入口示例 ──────────────────────────────────────────────────────────
 if __name__ == "__main__":
     prs = new_deck()
