@@ -6,7 +6,8 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 仓库根
+sys.path.insert(0, os.path.join(ROOT, "skills", "ppt", "templates"))  # 直接用 skill 正本
 
 import primitives as P
 from animate import Anim
