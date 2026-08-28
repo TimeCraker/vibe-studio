@@ -37,13 +37,15 @@ anim = Anim(prs)
 anim.fade(title, 'with')            # 淡入；逐个声明 = 逐条接力进入
 anim.wipe(card, 'up')               # 方向感：up / down / left / right
 anim.appear(footer)                 # 直出
-anim.chart(gf, 'category')          # 图表生长：allAtOnce / series / category
-P.set_transition(prs, 'fade')       # 统一转场：fade / push-left
+anim.chart(gf, 'category')          # 图表逐类目擦入：allAtOnce / series / category
+P.set_transition(prs, 'fade')       # 统一转场：fade / push-left（morph 页自动跳过）
+# 数据增长叙事（真补间，非擦入）——柱子从 0 平滑长到位：
+s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 占两页
 prs.save('deck.pptx')               # apply 必须在 save 之后
 anim.apply('deck.pptx')             # COM 写入；此后才做 Step 4
 ```
 
-选择纪律：标题 fade；卡片/行条逐个 fade 接力；大数字 wipe up；链路节点按流向 wipe 依次；图表 chart category。**一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技**。动画在 PDF 里不可见——verify 只验 XML 结构与静态页，最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
+选择纪律：标题 fade；卡片/行条逐个 fade 接力；大数字 wipe up；链路节点按流向 wipe 依次；**数据增长用 growth_chart（morph 补间），原生 chart 的 bldChart 只是逐类目擦入、无高度补间**。一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技。动画在 PDF 里不可见——verify 只验 XML 结构与静态页，最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
 
 **页面范式速查**（覆盖 90% 技术场景，组合优于发明）：
 
@@ -53,6 +55,7 @@ anim.apply('deck.pptx')             # COM 写入；此后才做 Step 4
 | 四象限卡 | 项目角色/模块 | 2×2 或 1×4 卡片，顶 coral 条 0.07 |
 | 大数字墙 | 指标 | 2×3 数字卡，数字 40 coral，注释 9 Consolas |
 | 柱/条图 | 数据对比 | `bar_chart()` 原生可编辑图表，Consolas 数值标签，值轴淡化 |
+| 增长柱图 | 数据增长叙事 | `growth_chart()` 零状态→终态两页，morph 真补间（需 PowerPoint 2019+，WPS 不支持则降级 fade） |
 | 链路图 | 架构 | 横排 box + `→` 文本，中间节点反色强调 |
 | 双栏清单 | 技术栈/配置 | 左右两组斑马行条 |
 | 表格页 | 路由/API | pptx 里少用真表格，用行条模拟更可控 |

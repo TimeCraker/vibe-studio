@@ -288,13 +288,81 @@ def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color
 
 
 def set_transition(prs, kind="fade"):
-    """统一页面转场（XML 注入，save 前调用）：fade / push-left。"""
+    """统一页面转场（XML 注入，save 前调用）：fade / push-left。已有转场的页跳过。"""
     import lxml.etree as etree
 
+    P = "http://schemas.openxmlformats.org/presentationml/2006/main"
     body = '<p:push dir="l"/>' if kind == "push-left" else "<p:fade/>"
-    xml = f'<p:transition xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" spd="med">{body}</p:transition>'
+    xml = f'<p:transition xmlns:p="{P}" spd="med">{body}</p:transition>'
     for slide in prs.slides:
-        slide._element.append(etree.fromstring(xml))
+        el = slide._element
+        if el.find(f"{{{P}}}transition") is None and el.find(f"{{{MC}}}AlternateContent") is None:
+            # 幂等：已有转场（含 morph 的 AlternateContent 包装）的页跳过，防双 transition
+            el.append(etree.fromstring(xml))
+
+
+P14 = "http://schemas.microsoft.com/office/powerpoint/2010/main"
+P159 = "http://schemas.microsoft.com/office/powerpoint/2015/09/main"
+MC = "http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+
+def _morph(slide, dur_ms=900):
+    """给单页设 morph 平滑转场（PowerPoint 2019+；跨页同名 !!shape 补间）。
+    morph 元素属 p159 扩展且须 mc:AlternateContent 包装——裸 p14:morph 会被 PowerPoint
+    视为无效转场（EntryEffect 读作 0，带修改的保存直接丢弃）。"""
+    import lxml.etree as etree
+
+    P = "http://schemas.openxmlformats.org/presentationml/2006/main"
+    for el in slide._element.findall(f"{{{P}}}transition"):
+        slide._element.remove(el)  # 一页只允许一个 transition
+    xml = (
+        f'<mc:AlternateContent xmlns:mc="{MC}">'
+        f'<mc:Choice xmlns:p159="{P159}" Requires="p159">'
+        f'<p:transition xmlns:p="{P}" xmlns:p14="{P14}" spd="slow" p14:dur="{dur_ms}">'
+        f'<p159:morph option="byObject"/></p:transition></mc:Choice>'
+        f'<mc:Fallback><p:transition xmlns:p="{P}" spd="slow"><p:fade/></p:transition></mc:Fallback>'
+        f'</mc:AlternateContent>'
+    )
+    slide._element.append(etree.fromstring(xml))
+
+
+def growth_chart(prs, idx, label, title, cats, vals, color=CORAL, highlight=None,
+                 x=MARGIN, y=2.2, w=12.23, h=4.2, dur_ms=900):
+    """morph 数据增长柱图：一次生成两页——零状态页（柱≈0）+ 终态页。
+    翻页时 PowerPoint 对 !! 同名元素做真补间：柱子平滑长高、数值随柱顶升起。
+    原生 chart 无逐柱补间（bldChart 只是擦入），数据增长叙事用本范式。
+    需 PowerPoint 2019+；占两页页码，后续页 idx 自行 +2。返回 (零状态页, 终态页)。"""
+    n = len(vals)
+    gap = 0.25
+    bw = (w - gap * (n - 1)) / n
+    vmax = max(vals) or 1
+
+    def build(page_idx, zero):
+        s = add_slide(prs)
+        page_chrome(s, page_idx, label)
+        text(s, Inches(x), Inches(0.95), Inches(w), Inches(0.7), title, 30, INK, True)
+        base = box(s, Inches(x), Inches(y + h), Inches(w), Emu(9525), fill=LINE)
+        base.name = "!!gbase"
+        for i, (c, v) in enumerate(zip(cats, vals)):
+            bx = x + i * (bw + gap)
+            bh = 0.04 if zero else max(0.04, v / vmax * (h - 0.8))
+            hot = i == highlight
+            bar = box(s, Inches(bx), Inches(y + h - bh), Inches(bw), Inches(bh),
+                      fill=LINE if zero else (INK if hot else color))
+            bar.name = f"!!gbar{i}"
+            lab = text(s, Inches(bx), Inches(y + h - bh - 0.42), Inches(bw), Inches(0.4),
+                       str(v), 22, LINE if zero else (INK if hot else CORAL_DEEP), True,
+                       PP_ALIGN.CENTER, font=FONT_MONO)
+            lab.name = f"!!glab{i}"
+            cat = text(s, Inches(bx), Inches(y + h + 0.08), Inches(bw), Inches(0.3),
+                       c, 11.5, INK_SOFT, True, PP_ALIGN.CENTER)
+            cat.name = f"!!gcat{i}"
+        return s
+
+    s0 = build(idx, True)
+    s1 = build(idx + 1, False)
+    _morph(s1, dur_ms)
+    return s0, s1
 
 
 # ── 入口示例 ──────────────────────────────────────────────────────────
