@@ -22,7 +22,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 
 | Skill | 做什么 | 状态 |
 |---|---|---|
-| [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + COM 渲染核查闭环（生成后真实渲染逐页核验） | 已上线 |
+| [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + 三级渲染核查（程序初筛→视觉自查→人工终审） | 已上线 |
 | [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader 英文体系 × 中文三毒/L1-L4 工程体系融合 v5） | 已上线 |
 | `vibe-motion` | 逐页动效编排：节奏、转场、镜头语言 | 规划中 |
 | `deck-to-video` | deck 逐页渲染 → Remotion 合成，直接出成片 | 规划中 |
@@ -45,7 +45,8 @@ vibe-studio/
 │   ├── ppt/          # PPT 生成 skill
 │   │   ├── SKILL.md       # 五步决策流程
 │   │   └── templates/
-│   │       └── primitives.py   # 版式原语（网格/文本/图形）
+│   │       ├── primitives.py   # 版式原语（网格/文本/图形/图表）
+│   │       └── verify.py       # 渲染核查初筛（文本块 bbox 溢出检测）
 │   └── humanizer/         # 中英文去 AI 腔改写
 │       └── SKILL.md       # v5 融合版（中英双体系）
 └── assets/                # 品牌资源与 SVG

@@ -27,6 +27,7 @@ user-invocable: true
 1. `pip install python-pptx -i https://pypi.tuna.tsinghua.edu.cn/simple`（首次）
 2. 复制本 skill 的 `templates/primitives.py` 到目标项目 `scripts/gen-<name>-deck.py`，改造数据区
 3. 用 primitives 组装页面，**坐标用表达式算**（如 `Inches(0.55 + i * 3.13)`），不写魔法数
+4. 文本框塞内容前用 `check_fit()` 预检（字符宽估算 vs 框高），`[FIT-WARN]` 即拆行/拆页/砍字；估算保守，最终以 Step 4 为准
 
 **页面范式速查**（覆盖 90% 技术场景，组合优于发明）：
 
@@ -35,6 +36,7 @@ user-invocable: true
 | 封面 | 开场 | 大标题 54 + 右侧竖色块 + 元信息行 |
 | 四象限卡 | 项目角色/模块 | 2×2 或 1×4 卡片，顶 coral 条 0.07 |
 | 大数字墙 | 指标 | 2×3 数字卡，数字 40 coral，注释 9 Consolas |
+| 柱/条图 | 数据对比 | `bar_chart()` 原生可编辑图表，Consolas 数值标签，值轴淡化 |
 | 链路图 | 架构 | 横排 box + `→` 文本，中间节点反色强调 |
 | 双栏清单 | 技术栈/配置 | 左右两组斑马行条 |
 | 表格页 | 路由/API | pptx 里少用真表格，用行条模拟更可控 |
@@ -42,29 +44,43 @@ user-invocable: true
 
 ## Step 4 · 渲染核查闭环（必做，不可跳）
 
-纯代码画 PPT 最易翻车：文字溢出、字体缺失。交付前必须人眼/视觉模型核查每页：
+纯代码画 PPT 最易翻车：文字溢出、字体缺失。三级管线，自动化优先，人工只看终稿：
+
+**① 转 PDF + 程序初筛（自动）**
 
 ```powershell
-# 1. Office COM 转 PDF（Windows + MS Office）
+# Office COM 转 PDF（Windows + MS Office）
 $p = New-Object -ComObject PowerPoint.Application
 $pres = $p.Presentations.Open("<绝对路径>.pptx", $true, $false, $false)
 $pres.SaveAs("<输出>.pdf", 32); $pres.Close(); $p.Quit()
 ```
 
+```bash
+# 初筛：读 PDF 每个文本块的真实渲染 bbox，报页级溢出（方向+溢出量）；退出码 1=有溢出
+python <本skill>/templates/verify.py <输出>.pdf
+```
+
+初筛只保证「没出页」；框级溢出生成侧已由 `check_fit` 预警。报红即改脚本重跑。
+
+**② 视觉自查（模型读图，四项）**
+
 ```python
-# 2. pymupdf 渲染 PNG
+# pymupdf 渲染 PNG
 import fitz
 pdf = fitz.open("<输出>.pdf")
 for i in range(len(pdf)):
     pdf[i].get_pixmap(dpi=100).save(f"slide-{i}.png")
 ```
 
-3. 逐页核查四项：**溢出**（文字超框/超页边）、**乱码**（缺字形/方块）、**对齐**（间距不等/箭头错位）、**对比度**（暗底灰字看不清）。发现问题改脚本重跑，**禁手改 pptx**。
-4. 视觉核查用图像分析工具时，路径含反斜杠会被解析失败——先复制到 `C:\pc\` 这类短路径再读。
+逐页核查：**溢出**（残余/元素重叠）、**乱码**（缺字形/方块）、**对齐**（间距不等/箭头错位）、**对比度**（暗底灰字看不清）。发现问题改脚本重跑，**禁手改 pptx**。
+
+图像工具读图坑：路径含反斜杠会解析失败，先复制到 `C:\pc\` 类短路径；同一 PNG 重复读取报错时转 JPEG 换内容指纹再传。
+
+**③ 人工终审**：用户只看成稿确认——前两级已把机械问题清零。
 
 ## Step 5 · 交付
 
-报告：页数 + 页面清单 / 文件路径与大小 / 渲染核查结论（逐页过或列出已修问题）/ 生成脚本位置（可复跑）。在 git 仓库内则提交脚本 + pptx。
+报告：页数 + 页面清单 / 文件路径与大小 / 三级核查结论（初筛 + 视觉逐页过，或列出已修问题）/ 生成脚本位置（可复跑）。在 git 仓库内则提交脚本 + pptx。
 
 ## 边界与坑
 

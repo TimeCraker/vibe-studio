@@ -5,8 +5,12 @@ ppt primitives — python-pptx 代码画 PPT 的积木箱
 
 坐标约定：16:9（13.333 × 7.5 in）· 边距 0.55 · 页码 (12.35, 7.02)
 """
+import math
+
 from pptx import Presentation
+from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
+from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Emu, Inches, Pt
@@ -85,6 +89,22 @@ def text(slide, x, y, w, h, content, size=13, color=INK, bold=False,
         r.font.bold = b
         r.font.name = font
     return tb
+
+
+def check_fit(content, size, w_in, h_in, spacing=1.0, label=""):
+    """生成侧溢出预警：字符宽估算（中文≈1.0em / ASCII≈0.55em）× 雅黑行高 1.35em。
+    保守估算而非精确排版，预警即拆行/拆页/砍字；最终以 Step 4 渲染核查为准。"""
+    lines = content if isinstance(content, list) else [content]
+    n = 0
+    for ln in lines:
+        t = ln if isinstance(ln, str) else ln[0]
+        units = sum(1.0 if ord(ch) > 0x2E80 else 0.55 for ch in t)
+        n += max(1, math.ceil(units * size / 72 / max(w_in - 0.2, 0.1)))  # 扣文本框左右 inset
+    need = n * size * 1.35 * spacing / 72
+    if need > h_in + 0.02:
+        print(f"[FIT-WARN] {label or lines[0][:12]}: need {need:.2f}in > box {h_in:.2f}in ({n} lines)")
+        return False
+    return True
 
 
 def page_chrome(slide, idx, label):
@@ -224,6 +244,37 @@ def slide_closing(prs, meta, footer_lines):
     box(s, Inches(11.9), Inches(0.9), Inches(1.3), Inches(1.3), fill=CORAL)
     text(s, Inches(11.9), Inches(1.28), Inches(1.3), Inches(0.5), "TC", 24, PAPER, True, PP_ALIGN.CENTER)
     return s
+
+
+def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color=CORAL):
+    """可编辑原生柱/条图（单系列，非贴图）：cats 类目，vals 数值。
+    horizontal=True 转横向条形图。品牌化：无 legend、数值标签 Consolas、值轴淡化。"""
+    cd = CategoryChartData()
+    cd.categories = cats
+    cd.add_series("s", vals)
+    ct = XL_CHART_TYPE.BAR_CLUSTERED if horizontal else XL_CHART_TYPE.COLUMN_CLUSTERED
+    chart = slide.shapes.add_chart(ct, x, y, w, h, cd).chart
+    chart.has_legend = False
+    chart.has_title = title is not None
+    if chart.has_title:
+        chart.chart_title.text_frame.text = title
+    plot = chart.plots[0]
+    plot.gap_width = 60
+    plot.series[0].format.fill.solid()
+    plot.series[0].format.fill.fore_color.rgb = C(color)
+    plot.has_data_labels = True
+    dl = plot.data_labels
+    dl.font.size = Pt(11); dl.font.name = FONT_MONO; dl.font.color.rgb = C(INK)
+    dl.position = XL_LABEL_POSITION.OUTSIDE_END
+    ca = chart.category_axis
+    ca.tick_labels.font.size = Pt(12); ca.tick_labels.font.name = FONT_CN
+    ca.format.line.color.rgb = C(LINE)
+    va = chart.value_axis
+    va.has_major_gridlines = True
+    va.major_gridlines.format.line.color.rgb = C(LINE)
+    va.tick_labels.font.size = Pt(9); va.tick_labels.font.name = FONT_MONO
+    va.tick_labels.font.color.rgb = C(MUTED)
+    return chart
 
 
 # ── 入口示例 ──────────────────────────────────────────────────────────

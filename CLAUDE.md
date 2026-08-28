@@ -40,7 +40,12 @@ for i in range(len(pdf)):
     pdf[i].get_pixmap(dpi=100).save(f"slide-{i}.png")
 ```
 
-验收标准就是 ppt skill 的渲染核查闭环：逐页检查溢出 / 乱码 / 对齐 / 对比度四项，发现问题改脚本重跑。无 MS Office 时降级 LibreOffice `soffice --convert-to pdf`，两者都无则明确报告「未做视觉核查」。
+```bash
+# 程序化溢出初筛：读 PDF 文本块真实 bbox，报每页 [OK]/[OVERFLOW]，退出码 1=有溢出
+python skills/ppt/templates/verify.py <输出>.pdf
+```
+
+验收标准就是 ppt skill 的三级渲染核查：程序初筛（页级溢出）→ 模型读图四项（溢出 / 乱码 / 对齐 / 对比度）→ 人工只看终稿；发现问题改脚本重跑。无 MS Office 时降级 LibreOffice `soffice --convert-to pdf`，两者都无则明确报告「未做视觉核查」。
 
 ## 硬约束与坑
 
