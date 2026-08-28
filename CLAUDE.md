@@ -45,7 +45,7 @@ for i in range(len(pdf)):
 python skills/ppt/templates/verify.py <输出>.pdf
 ```
 
-动画（可选，Windows + MS Office + pywin32）：gen 脚本内 `Anim(prs)` 默认 `auto_deck()` 按组件适配表自动编排（11 种入场 + 级联节奏），手动 `fx()/stagger()` 微调；`set_transition()` 统一转场，`growth_chart / growth_line / growth_donut()` 生成 morph 数据增长两页（柱/条/线/环，真补间，PowerPoint 2019+，线环走等顶点 freeform 逐点插值）；`prs.save()` 之后 `anim.apply(path)` 由 COM 写入并读回自验证。每页口播稿写 `notes()` 演讲者备注（deck-to-video 消费）。
+动画（可选，Windows + MS Office + pywin32）：gen 脚本内 `Anim(prs)` 默认 `auto_deck()` 按组件适配表自动编排（11 种入场 + 级联节奏），手动 `fx()/stagger()` 微调；`growth_chart / growth_line / growth_donut()` 生成 morph 数据增长两页（柱/条/线/环，真补间，PowerPoint 2019+，线环走等顶点 freeform 逐点插值）；`prs.save()` 之后 `anim.apply(path)` 由 COM 写入并读回自验证。每页口播稿写 `notes()` 演讲者备注（deck-to-video 消费）；`auto_show()` 按口播稿估时设自动换页，整 deck 自动播完可录屏出粗片。改现有 pptx 用 `deck_replace / deck_recolor`，主题用 `use_theme()`。
 
 验收标准就是 ppt skill 的三级渲染核查：程序初筛（页级溢出）→ 模型读图四项（溢出 / 乱码 / 对齐 / 对比度）→ 人工只看终稿；发现问题改脚本重跑。无 MS Office 时降级 LibreOffice `soffice --convert-to pdf`，两者都无则明确报告「未做视觉核查」。
 

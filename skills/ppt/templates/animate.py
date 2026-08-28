@@ -49,13 +49,19 @@ AUTO_RULES = [
     ("sub", "float_up", None, 0.5, 0.12),
     ("row", "float_up", None, 0.5, 0.12),
     ("media", "float_up", None, 0.5, 0.12),
+    ("tl", "wipe", "left", 0.4, 0.15),
+    ("vs", "float_up", None, 0.5, 0.15),
 ]
-# 封面/尾页：固定名字序列 (名字, 效果, 时长, delay)
-COVER_SEQ = [("kicker", "fade", 0.5, 0.0), ("ctitle", "fade", 0.5, 0.25),
-             ("cdivider", "fade", 0.5, 0.55), ("cmeta", "fade", 0.5, 0.7)]
-CLOSING_SEQ = [("logobox", "grow_turn", 0.8, 0.0), ("logot", "grow_turn", 0.8, 0.0),
-               ("slogan", "fade", 0.6, 0.2), ("cdivider", "fade", 0.5, 0.4),
-               ("cfoot", "fade", 0.5, 0.5)]
+# 固定名字页面序列：(名字, 效果, 时长, delay, 方向|None)
+COVER_SEQ = [("kicker", "fade", 0.5, 0.0, None), ("ctitle", "fade", 0.5, 0.25, None),
+             ("cdivider", "fade", 0.5, 0.55, None), ("cmeta", "fade", 0.5, 0.7, None)]
+CLOSING_SEQ = [("logobox", "grow_turn", 0.8, 0.0, None), ("logot", "grow_turn", 0.8, 0.0, None),
+               ("slogan", "fade", 0.6, 0.2, None), ("cdivider", "fade", 0.5, 0.4, None),
+               ("cfoot", "fade", 0.5, 0.5, None)]
+SECTION_SEQ = [("secno", "wipe", 0.6, 0.0, "up"), ("sectitle", "fade", 0.5, 0.25, None),
+               ("secbar", "fade", 0.4, 0.4, None), ("secpts", "fade", 0.4, 0.5, None)]
+QUOTE_SEQ = [("qmark", "grow_turn", 0.6, 0.0, None), ("qtext", "fade", 0.6, 0.3, None),
+             ("qbar", "fade", 0.4, 0.5, None), ("qsrc", "fade", 0.5, 0.6, None)]
 
 
 class Anim:
@@ -129,10 +135,15 @@ class Anim:
             seq = COVER_SEQ
         elif "logobox" in names:
             seq = CLOSING_SEQ
+        elif "secno" in names:
+            seq = SECTION_SEQ
+        elif "qmark" in names:
+            seq = QUOTE_SEQ
         if seq:
-            for i, (name, fxname, dur, delay) in enumerate(seq):
+            for i, (name, fxname, dur, delay, direction) in enumerate(seq):
                 if name in names:
                     self.fx(next(sp for sp in slide.shapes if sp.name == name), fxname,
+                            direction=direction,
                             trigger="after" if i == 0 else "with", dur=dur,
                             delay=delay if i else None)
         else:

@@ -12,7 +12,8 @@ from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
 from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION, XL_LEGEND_POSITION, XL_MARKER_STYLE
-from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.dml import MSO_FILL
+from pptx.enum.shapes import MSO_SHAPE, MSO_SHAPE_TYPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Emu, Inches, Pt
 
@@ -32,6 +33,23 @@ SW, SH = Inches(13.333), Inches(7.5)
 MARGIN = 0.55
 
 C = RGBColor.from_string  # hex -> RGBColor
+
+# ── 主题预设（均为对比度验证过的 5+1 封闭系统；deck 开始前 use_theme 切换）──
+THEMES = {
+    "warm":   dict(CORAL="CC785C", CORAL_DEEP="9C4F37", CREAM="FAF6F0", INK="1C1917",
+                   INK_SOFT="57534E", MUTED="78716C", LINE="E7E0D8"),
+    "tech":   dict(CORAL="3B6FE0", CORAL_DEEP="274CA0", CREAM="F4F6FA", INK="171B22",
+                   INK_SOFT="4A5261", MUTED="6B7280", LINE="E2E6EE"),
+    "forest": dict(CORAL="3E7C59", CORAL_DEEP="2C5B41", CREAM="F5F6F1", INK="1A1F1B",
+                   INK_SOFT="4E574F", MUTED="6E776E", LINE="E3E6DE"),
+}
+
+
+def use_theme(name):
+    """切换主题预设（改写模块级色常量；只影响之后的页面，deck 开始前调用）。
+    warm 暖珊瑚（默认）/ tech 冷蓝 / forest 墨绿。有项目品牌色时优先直接改常量。"""
+    for k, v in THEMES[name].items():
+        globals()[k] = v
 
 # ── 数据区（Step 1 取材结果，每项必须有出处）───────────────────────────
 META = {
@@ -108,11 +126,15 @@ def check_fit(content, size, w_in, h_in, spacing=1.0, label=""):
     return True
 
 
-def page_chrome(slide, idx, label):
-    """每页统一 chrome：顶部 coral 短杠 + 章节 label + 右下页码 + 底部细线"""
+def page_chrome(slide, idx, label, badge=None):
+    """每页统一 chrome：顶部 coral 短杠 + 章节 label + 右下页码 + 底部细线；
+    badge = 右上角品牌角标（域名/项目名，Consolas 灰）"""
     box(slide, Inches(MARGIN), Inches(0.5), Inches(0.28), Inches(0.055), fill=CORAL)
     text(slide, Inches(MARGIN + 0.4), Inches(0.38), Inches(8), Inches(0.3),
          label.upper(), 10, MUTED, True)
+    if badge:
+        text(slide, Inches(10.0), Inches(0.38), Inches(2.78), Inches(0.3),
+             badge, 10, MUTED, True, PP_ALIGN.RIGHT, font=FONT_MONO).name = "badge"
     text(slide, Inches(12.35), Inches(7.02), Inches(0.7), Inches(0.3),
          f"{idx:02d}", 10, MUTED, align=PP_ALIGN.RIGHT)
     box(slide, Inches(MARGIN), Inches(7.18), Inches(13.333 - 2 * MARGIN),
@@ -264,6 +286,107 @@ def slide_rows(prs, idx, label, title, rows, col_split=None):
                  lab, 9, MUTED).name = f"row{ri}l"
             text(s, Inches(MARGIN + 0.18), y + Inches(0.32), Inches(11.5), Inches(0.32),
                  val, 11.5, INK, True).name = f"row{ri}v"
+    return s
+
+
+def slide_section(prs, no, title, points=None):
+    """章节分隔页：ink 反色整页 + 巨大序号 + 章节名 + 可选要点行。
+    auto 编排：序号 wipe up → 标题/要点 fade 级联。"""
+    s = add_slide(prs)
+    box(s, 0, 0, SW, SH, fill=INK).name = "secbg"
+    text(s, Inches(0.9), Inches(1.5), Inches(4), Inches(2.4),
+         f"{no:02d}", 96, CORAL, True, font=FONT_MONO).name = "secno"
+    box(s, Inches(1.0), Inches(4.3), Inches(0.35), Emu(19050), fill=CORAL).name = "secbar"
+    text(s, Inches(0.95), Inches(4.7), Inches(11), Inches(1.0),
+         title, 40, PAPER, True).name = "sectitle"
+    if points:
+        text(s, Inches(0.95), Inches(5.75), Inches(11), Inches(1.2),
+             points if isinstance(points, list) else points.split("\n"),
+             13, CREAM, spacing=1.5).name = "secpts"
+    return s
+
+
+def slide_timeline(prs, idx, label, title, events, hi=None, badge=None):
+    """时间轴：events = [(时间点, 事件[换行最多两行]), ...]，横轴上下交替，
+    hi = 高亮节点下标（当前位置）。auto 编排：节点按流向 wipe 0.15s 级联。"""
+    s = add_slide(prs)
+    page_chrome(s, idx, label, badge=badge)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
+    n = len(events)
+    axis_y = 4.1
+    box(s, Inches(MARGIN + 0.4), Inches(axis_y), Inches(12.23 - 0.8), Emu(9525),
+        fill=LINE).name = "tlaxis"
+    for i, (t, d) in enumerate(events):
+        x = MARGIN + 0.7 + i * (12.23 - 1.4) / max(n - 1, 1)
+        hot = i == hi
+        dot = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(x - 0.075), Inches(axis_y - 0.075),
+                                 Inches(0.15), Inches(0.15))
+        dot.fill.solid()
+        dot.fill.fore_color.rgb = C(INK if hot else CORAL)
+        dot.line.fill.background()
+        dot.shadow.inherit = False
+        dot.name = f"tl{i}dot"
+        above = i % 2 == 0
+        if above:
+            text(s, Inches(x - 1.1), Inches(2.35), Inches(2.2), Inches(1.55),
+                 [(d, 11.5, INK_SOFT, False), (t, 15, INK if hot else CORAL_DEEP, True)],
+                 align=PP_ALIGN.CENTER, spacing=1.3,
+                 anchor=MSO_ANCHOR.BOTTOM).name = f"tl{i}t"
+        else:
+            text(s, Inches(x - 1.1), Inches(axis_y + 0.25), Inches(2.2), Inches(1.55),
+                 [(t, 15, INK if hot else CORAL_DEEP, True), (d, 11.5, INK_SOFT, False)],
+                 align=PP_ALIGN.CENTER, spacing=1.3).name = f"tl{i}t"
+    return s
+
+
+def slide_versus(prs, idx, label, title, left, right, badge=None):
+    """对比页：left/right = (标题, [行...])。左 PAPER 右 CREAM 双面板 + 中缝 VS 圆标
+    （面板几何对称：两侧边距相等，VS 圆心正对页面中线）。auto 编排：左右两组 float_up 级联。"""
+    s = add_slide(prs)
+    page_chrome(s, idx, label, badge=badge)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
+    gap = 0.66
+    pw = (12.23 - gap) / 2
+    for ci, (head, rows, fill) in enumerate([(left[0], left[1], PAPER),
+                                             (right[0], right[1], CREAM)]):
+        x = Inches(MARGIN + ci * (pw + gap))
+        box(s, x, Inches(2.1), Inches(pw), Inches(4.35), fill=fill,
+            line=LINE).name = f"vs{ci}box"
+        text(s, x + Inches(0.3), Inches(2.35), Inches(pw - 0.6), Inches(0.5),
+             head, 19, INK, True).name = f"vs{ci}h"
+        for ri, r_ in enumerate(rows):
+            ry = Inches(3.1 + ri * 0.62)
+            box(s, x + Inches(0.32), ry + Inches(0.1), Inches(0.12), Inches(0.12),
+                fill=CORAL).name = f"vs{ci}r{ri}dot"
+            text(s, x + Inches(0.6), ry, Inches(pw - 0.9), Inches(0.5),
+                 r_, 11.5, INK_SOFT, spacing=1.25).name = f"vs{ci}r{ri}"
+    vs = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(6.317), Inches(3.92), Inches(0.7), Inches(0.7))
+    vs.fill.solid()
+    vs.fill.fore_color.rgb = C(INK)
+    vs.line.color.rgb = C(PAPER)
+    vs.line.width = Pt(1.5)
+    vs.shadow.inherit = False
+    vs.name = "vsbadge"
+    text(s, Inches(6.317), Inches(4.06), Inches(0.7), Inches(0.4), "VS", 15, PAPER, True,
+         PP_ALIGN.CENTER).name = "vsbadge_t"
+    return s
+
+
+def slide_quote(prs, quote, source):
+    """金句页：cream 整页，居中构图——coral 巨引号 → 大字引用 → 短杠 → mono 出处。
+    auto 编排：引号 grow_turn → 正文/出处 fade。"""
+    s = add_slide(prs)
+    box(s, 0, 0, SW, SH, fill=CREAM).name = "qbg"
+    text(s, Inches(6.167), Inches(1.35), Inches(1.0), Inches(1.5),
+         '"', 100, CORAL, True, PP_ALIGN.CENTER, font=FONT_MONO).name = "qmark"
+    text(s, Inches(1.67), Inches(3.05), Inches(10.0), Inches(1.6),
+         quote, 30, INK, True, PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE,
+         spacing=1.35).name = "qtext"
+    box(s, Inches(6.517), Inches(4.95), Inches(0.3), Emu(19050), fill=CORAL).name = "qbar"
+    text(s, Inches(1.67), Inches(5.3), Inches(10.0), Inches(0.4),
+         source, 13, MUTED, True, PP_ALIGN.CENTER, font=FONT_MONO).name = "qsrc"
     return s
 
 
@@ -447,6 +570,26 @@ def set_transition(prs, kind="fade"):
         if el.find(f"{{{P}}}transition") is None and el.find(f"{{{MC}}}AlternateContent") is None:
             # 幂等：已有转场（含 morph 的 AlternateContent 包装）的页跳过，防双 transition
             el.append(etree.fromstring(xml))
+
+
+def narration_secs(slide, wps=4.2, pad=1.8, min_sec=3.0):
+    """按口播稿估放映秒数：中文字数 / 每秒字数 + 停顿余量；无备注取 min_sec。"""
+    t = slide.notes_slide.notes_text_frame.text.strip() if slide.has_notes_slide else ""
+    n = sum(1 for ch in t if not ch.isspace())
+    return max(min_sec, n / wps + pad) if n else min_sec
+
+
+def auto_show(prs, kind="fade", wps=4.2, pad=1.8, min_sec=3.0, override=None):
+    """自动放映：每页按口播稿长度设转场 advTm 自动换页（save 前调用）。
+    动画须为 after/with 链（auto_deck 默认即是）→ 整 deck 放着不管自动播完，录屏即视频草稿。
+    override = {页号: 秒} 手动覆盖个别页；morph 页的 Choice/Fallback 转场都会写上。"""
+    set_transition(prs, kind)
+    PML = "http://schemas.openxmlformats.org/presentationml/2006/main"
+    for i, s in enumerate(prs.slides, 1):
+        sec = override.get(i) if override and i in override else narration_secs(
+            s, wps, pad, min_sec)
+        for el in s._element.iter(f"{{{PML}}}transition"):
+            el.set("advTm", str(int(sec * 1000)))
 
 
 P14 = "http://schemas.microsoft.com/office/powerpoint/2010/main"
@@ -642,6 +785,71 @@ def growth_donut(prs, idx, label, title, cats, vals, colors=None, unit="",
     s1 = build(idx + 1, False)
     _morph(s1, dur_ms)
     return s0, s1
+
+
+# ── 读改现有 deck（改也是脚本改，禁手改 pptx；改完 save 新文件名） ──────
+def _walk_shapes(shapes):
+    for sp in shapes:
+        if sp.shape_type == MSO_SHAPE_TYPE.GROUP:
+            yield from _walk_shapes(sp.shapes)
+        else:
+            yield sp
+
+
+def deck_replace(prs, pairs, use_regex=False):
+    """全文替换（runs 级，含备注页）：pairs = {旧: 新} 或 [(旧, 新), ...]。返回替换次数。"""
+    import re as _re
+
+    n = 0
+    items = pairs.items() if isinstance(pairs, dict) else pairs
+    for s in prs.slides:
+        frames = [sp.text_frame for sp in _walk_shapes(s.shapes) if sp.has_text_frame]
+        if s.has_notes_slide:
+            frames.append(s.notes_slide.notes_text_frame)
+        for tf in frames:
+            for p in tf.paragraphs:
+                for r in p.runs:
+                    for old, new in items:
+                        if use_regex:
+                            r.text, k = _re.subn(old, new, r.text)
+                        else:
+                            k = r.text.count(old)
+                            r.text = r.text.replace(old, new)
+                        n += k
+    return n
+
+
+def deck_recolor(prs, mapping):
+    """全 deck 换色（hex 大写字符串映射 {旧: 新}）：字体色 / 形状填充 / 线色。
+    返回命中次数。配 THEMES 用：deck_recolor(prs, dict(zip(warm.values(), tech.values())))。"""
+    n = 0
+
+    def hit(color_obj):
+        nonlocal n
+        try:
+            cur = str(color_obj.rgb)
+        except Exception:
+            return
+        if cur in mapping:
+            color_obj.rgb = C(mapping[cur])
+            n += 1
+
+    for s in prs.slides:
+        for sp in _walk_shapes(s.shapes):
+            if sp.has_text_frame:
+                for p in sp.text_frame.paragraphs:
+                    for r in p.runs:
+                        hit(r.font.color)
+            try:
+                if sp.fill.type == MSO_FILL.SOLID:
+                    hit(sp.fill.fore_color)
+            except Exception:
+                pass
+            try:
+                hit(sp.line.color)
+            except Exception:
+                pass
+    return n
 
 
 # ── 入口示例 ──────────────────────────────────────────────────────────

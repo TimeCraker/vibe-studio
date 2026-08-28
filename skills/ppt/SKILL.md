@@ -16,7 +16,7 @@ user-invocable: true
 
 | 维度 | 规则 |
 |---|---|
-| **色板** | 从项目设计语言提取（README 视觉章节 / 站点主色）。无则用默认暖色系：主色 `CC785C` / 深 `9C4F37` / 底 `FAF6F0` / 墨 `1C1917` / 灰 `78716C` / 线 `E7E0D8`。**5+1 色封闭系统，中途禁加色**；换色板时小字（注释/页码）对底色对比度 ≥4.5:1（WCAG AA） |
+| **色板** | 从项目设计语言提取（README 视觉章节 / 站点主色）。无则用默认暖色系或 `use_theme('tech' / 'forest')` 切预设（warm 珊瑚 / tech 冷蓝 / forest 墨绿，均过对比度）。**5+1 色封闭系统，中途禁加色**；换色板时小字（注释/页码）对底色对比度 ≥4.5:1（WCAG AA） |
 | **网格** | 16:9（13.333 × 7.5 in）· 统一边距 0.55 · 页码右下 (12.35, 7.02) · 每页顶部 coral 短杠 + 章节 label |
 | **字号阶梯** | 54 封面 / 40 大数字 / 30 页标题 / 19 卡片题 / 13 正文 / 11 次要 / 9 注释。**禁用阶梯外的中间值** |
 | **字体** | 中文 Microsoft YaHei；代码 / 域名 / 数字 / 版本号一律 Consolas。技术感一半来自等宽字体的克制使用 |
@@ -44,6 +44,19 @@ anim.fx(footer, 'fade', dur=0.4)       # 特殊元素手动补一枪
 P.set_transition(prs, 'fade')          # 统一转场：fade / push-left（morph 页自动跳过）
 prs.save('deck.pptx')                  # apply 必须在 save 之后
 anim.apply('deck.pptx')                # COM 写入 + 读回自验证（数量/类型不齐直接报错）
+```
+
+**自动放映**（内容工厂直出视频草稿）：`P.auto_show(prs)` 按每页口播稿字数估时设 `advTm` 自动换页，配合 auto_deck 的 after/with 链 → 整 deck 放着不管自动播完，录屏即粗片；`override={页号: 秒}` 微调个别页。
+
+**改现有 pptx**（改也是脚本改，禁手改；save 到新文件名）：
+
+```python
+from pptx import Presentation
+prs = Presentation('旧文件.pptx')
+P.deck_replace(prs, {'旧产品名': '新产品名'})                # 全文替换（含备注页）
+P.deck_recolor(prs, dict(zip(P.THEMES['warm'].values(),     # 整 deck 换主题色
+                             P.THEMES['tech'].values())))
+prs.save('新文件.pptx')
 ```
 
 手动挡（auto 未覆盖或要微调时）：
@@ -82,6 +95,10 @@ d0, d1 = P.growth_donut(prs, 10, 'Mix', '标题', cats, vals)                 # 
 | 范式 | 用途 | 关键布局 |
 |---|---|---|
 | 封面 | 开场 | 大标题 54 + 右侧竖色块 + 元信息行 |
+| 章节分隔页 | 长稿导航 | `slide_section()` ink 反色 + 巨大序号 wipe up + 要点行 |
+| 时间轴 | 演进/路线图 | `slide_timeline()` 横轴上下交替，hi 高亮当前位置，节点按流向 wipe |
+| 对比页 | 方案 A/B、前后对比 | `slide_versus()` 左 PAPER 右 CREAM 双面板 + 中缝 VS 圆标 |
+| 金句页 | 观点/转场 | `slide_quote()` 巨引号 grow_turn + 大字引用 + mono 出处 |
 | 四象限卡 | 项目角色/模块 | 2×2 或 1×4 卡片，顶 coral 条 0.07 |
 | 大数字墙 | 指标 | 2×3 数字卡，数字 40 coral，注释 9 Consolas |
 | 柱/条图 | 数据对比 | `bar_chart()` 原生可编辑图表，Consolas 数值标签，值轴淡化 |
@@ -137,7 +154,7 @@ for i in range(len(pdf)):
 
 ## Step 5 · 交付
 
-报告：页数 + 页面清单 / 文件路径与大小 / 三级核查结论（初筛 + 视觉逐页过，或列出已修问题）/ 口播稿页数（notes 备注，供 deck-to-video 消费）/ 生成脚本位置（可复跑）。在 git 仓库内则提交脚本 + pptx。
+报告：页数 + 页面清单 / 文件路径与大小 / 三级核查结论（初筛 + 视觉逐页过，或列出已修问题）/ 口播稿页数（notes 备注，供 deck-to-video 消费）/ 自动放映总时长（auto_show 估时）/ 生成脚本位置（可复跑）。在 git 仓库内则提交脚本 + pptx。
 
 ## 边界与坑
 
