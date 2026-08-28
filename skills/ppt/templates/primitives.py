@@ -163,7 +163,6 @@ def slide_cover(prs, meta):
     s = add_slide(prs)
     box(s, 0, 0, SW, SH, fill=CREAM)
     box(s, Inches(10.2), 0, Inches(3.133), SH, fill=CORAL)          # 右侧竖色块
-    box(s, Inches(9.85), Inches(2.1), Inches(0.35), Inches(0.07), fill=INK)
     k = text(s, Inches(0.9), Inches(1.55), Inches(5), Inches(0.4),
              meta.get("kicker", "PROJECT BRIEF").upper(), 13, CORAL, True)
     k.name = "kicker"
@@ -289,20 +288,44 @@ def slide_rows(prs, idx, label, title, rows, col_split=None):
     return s
 
 
-def slide_section(prs, no, title, points=None):
-    """章节分隔页：ink 反色整页 + 巨大序号 + 章节名 + 可选要点行。
-    auto 编排：序号 wipe up → 标题/要点 fade 级联。"""
+def slide_section(prs, no, title, points=None, total=None, domain=None):
+    """章节分隔页（杂志风）：ink 反色整页 + hairline 上下框架 + 巨大序号 +
+    章节进度 + 条目细线 + 右下超大暗纹序号。points 接 list（竖排条目，每条前
+    coral 细线段）；total / domain 给出时显示「no / total」进度与左下域名。
+    auto 编排：序号 wipe up → 标题/条目 fade 级联；框架与暗纹属背板不动。"""
     s = add_slide(prs)
     box(s, 0, 0, SW, SH, fill=INK).name = "secbg"
-    text(s, Inches(0.9), Inches(1.5), Inches(4), Inches(2.4),
-         f"{no:02d}", 96, CORAL, True, font=FONT_MONO).name = "secno"
-    box(s, Inches(1.0), Inches(4.3), Inches(0.35), Emu(19050), fill=CORAL).name = "secbar"
-    text(s, Inches(0.95), Inches(4.7), Inches(11), Inches(1.0),
+    # 上下 hairline 框架 + 顶栏 label / 进度（背板级，不进动画）
+    box(s, Inches(MARGIN), Inches(0.62), Inches(13.333 - 2 * MARGIN),
+        Emu(9525), fill=INK_SOFT).name = "secframe1"
+    box(s, Inches(MARGIN), Inches(6.82), Inches(13.333 - 2 * MARGIN),
+        Emu(9525), fill=INK_SOFT).name = "secframe2"
+    text(s, Inches(MARGIN), Inches(0.32), Inches(6), Inches(0.3),
+         "CHAPTER", 10, CORAL, True, font=FONT_MONO).name = "seclabel"
+    if total:
+        text(s, Inches(9.5), Inches(0.32), Inches(3.28), Inches(0.3),
+             f"{no:02d} / {total:02d}", 10, PAPER, True,
+             PP_ALIGN.RIGHT, font=FONT_MONO).name = "secprog"
+    # 右下超大暗纹序号（负空间装饰，出血右缘）
+    text(s, Inches(8.6), Inches(3.4), Inches(6.5), Inches(4.6),
+         f"{no:02d}", 240, INK_SOFT, True, PP_ALIGN.RIGHT,
+         font=FONT_MONO).name = "secghost"
+    # 主内容：巨大序号 + 标题 + 条目
+    text(s, Inches(0.82), Inches(1.35), Inches(5), Inches(2.2),
+         f"{no:02d}", 110, CORAL, True, font=FONT_MONO).name = "secno"
+    box(s, Inches(0.95), Inches(3.62), Inches(0.35), Emu(19050), fill=CORAL).name = "secbar"
+    text(s, Inches(0.9), Inches(3.98), Inches(11), Inches(0.9),
          title, 40, PAPER, True).name = "sectitle"
     if points:
-        text(s, Inches(0.95), Inches(5.75), Inches(11), Inches(1.2),
-             points if isinstance(points, list) else points.split("\n"),
-             13, CREAM, spacing=1.5).name = "secpts"
+        pts = points if isinstance(points, list) else points.split("\n")
+        for i, p in enumerate(pts):
+            y = 5.05 + i * 0.46
+            box(s, Inches(0.95), Inches(y + 0.12), Inches(0.22), Emu(9525),
+                fill=CORAL).name = f"secdec{i}"
+            text(s, Inches(1.35), Inches(y), Inches(10.5), Inches(0.36),
+                 p, 13, CREAM).name = f"secpt{i}"
+    text(s, Inches(MARGIN), Inches(7.0), Inches(8), Inches(0.3),
+         domain or "", 9, PAPER, font=FONT_MONO).name = "secfoot"
     return s
 
 
@@ -395,7 +418,7 @@ def slide_closing(prs, meta, footer_lines, slogan=None):
     [(文字, size, color, bold), ...]，缺省默认英文句 + domain。"""
     s = add_slide(prs)
     box(s, 0, 0, SW, SH, fill=INK)
-    box(s, Inches(0.9), Inches(2.35), Inches(0.35), Emu(19050), fill=CORAL).name = "cdivider"
+    box(s, Inches(0.9), Inches(2.5), Inches(0.35), Emu(19050), fill=CORAL).name = "cdivider"
     if slogan is None:
         slogan_lines = [("Let's build something.", 40, PAPER, True),
                         (meta.get("domain", "asterforge.top"), 18, CORAL, False)]
@@ -404,9 +427,9 @@ def slide_closing(prs, meta, footer_lines, slogan=None):
                         (meta.get("domain", "asterforge.top"), 18, CORAL, False)]
     else:
         slogan_lines = slogan
-    text(s, Inches(0.9), Inches(2.75), Inches(10), Inches(1.0),
+    text(s, Inches(0.9), Inches(2.9), Inches(10), Inches(1.0),
          slogan_lines, spacing=1.25).name = "slogan"
-    text(s, Inches(0.9), Inches(4.9), Inches(11), Inches(1.4), footer_lines,
+    text(s, Inches(0.9), Inches(5.05), Inches(11), Inches(1.4), footer_lines,
          spacing=1.5, color=PAPER, font=FONT_MONO, size=12).name = "cfoot"
     box(s, Inches(11.9), Inches(0.9), Inches(1.3), Inches(1.3), fill=CORAL).name = "logobox"
     text(s, Inches(11.9), Inches(1.28), Inches(1.3), Inches(0.5), "TC", 24, PAPER, True,

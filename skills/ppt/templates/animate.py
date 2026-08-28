@@ -62,7 +62,7 @@ CLOSING_SEQ = [("logobox", "grow_turn", 0.8, 0.0, None), ("logot", "grow_turn", 
                ("slogan", "fade", 0.6, 0.2, None), ("cdivider", "fade", 0.5, 0.4, None),
                ("cfoot", "fade", 0.5, 0.5, None)]
 SECTION_SEQ = [("secno", "wipe", 0.6, 0.0, "up"), ("sectitle", "fade", 0.5, 0.25, None),
-               ("secbar", "fade", 0.4, 0.4, None), ("secpts", "fade", 0.4, 0.5, None)]
+               ("secbar", "fade", 0.4, 0.4, None)]
 QUOTE_SEQ = [("qmark", "grow_turn", 0.6, 0.0, None), ("qtext", "fade", 0.6, 0.3, None),
              ("qbar", "fade", 0.4, 0.5, None), ("qsrc", "fade", 0.5, 0.6, None)]
 
@@ -149,6 +149,10 @@ class Anim:
                             direction=direction,
                             trigger="after" if i == 0 else "with", dur=dur,
                             delay=delay if i else None)
+            if "secno" in names:  # 章节条目：secpt* 接在固定序列后级联
+                groups = P.shape_groups(slide, "secpt")
+                if groups:
+                    self.stagger(groups, "fade", step=0.12, dur=0.4, delay0=0.55)
         else:
             if "title" in names:
                 self.fx(next(sp for sp in slide.shapes if sp.name == "title"),
