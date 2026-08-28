@@ -33,19 +33,37 @@ user-invocable: true
 
 ```python
 from animate import Anim
+import primitives as P
 anim = Anim(prs)
-anim.fade(title, 'with')            # 淡入；逐个声明 = 逐条接力进入
-anim.wipe(card, 'up')               # 方向感：up / down / left / right
-anim.appear(footer)                 # 直出
-anim.chart(gf, 'category')          # 图表逐类目擦入：allAtOnce / series / category
-P.set_transition(prs, 'fade')       # 统一转场：fade / push-left（morph 页自动跳过）
+anim.fade(title, dur=0.5)              # 淡入 + 缓出（dur 给定自动 SmoothEnd）
+anim.fx(num, 'zoom', dur=0.6, delay=0.2)  # 通用入口：词表 10 种入场任选
+anim.stagger(P.shape_groups(s, 'card'), 'float_up', step=0.12)
+                                      # 级联：组内同进、组间 delay 递增——真重叠节奏
+anim.wipe(card, 'up')                  # 方向感：up / down / left / right
+anim.chart(gf, 'category')             # 图表逐类目擦入：allAtOnce / series / category
+P.set_transition(prs, 'fade')          # 统一转场：fade / push-left（morph 页自动跳过）
 # 数据增长叙事（真补间，非擦入）——柱子从 0 平滑长到位：
 s0, s1 = P.growth_chart(prs, 6, 'Growth', '标题', cats, vals, highlight=2)  # 占两页
-prs.save('deck.pptx')               # apply 必须在 save 之后
-anim.apply('deck.pptx')             # COM 写入；此后才做 Step 4
+prs.save('deck.pptx')                  # apply 必须在 save 之后
+anim.apply('deck.pptx')                # COM 写入；此后才做 Step 4
 ```
 
-选择纪律：标题 fade；卡片/行条逐个 fade 接力；大数字 wipe up；链路节点按流向 wipe 依次；**数据图表首选 `growth_chart`（纵向柱 / 横向条，morph 真补间的增长感）；原生 `bar_chart` 的 bldChart 只是逐类目擦入、无高度补间，仅当交付后还要在 PowerPoint 里改数据时用它**。一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技。动画在 PDF 里不可见——verify 只验 XML 结构与静态页；morph 生效可程序化验证：COM 读 `SlideShowTransition.EntryEffect == 3954`；最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
+**效果词表**（全部 COM 实测验证，写入后 EffectType 读回一致）：`fade / wipe / appear` 基础三件；`float_up / float_down`（Float In 上浮下沉，现代高级感主力）；`zoom`（柔缩放）；`grow_turn`（Grow & Turn，图标 logo）；`ease_in / split / wheel / stretch` 备选。90 年代花活（百叶窗/棋盘/螺旋）明确不收。
+
+**组件适配表**（默认推荐，按叙事可微调）：
+
+| 组件 | 推荐 |
+|---|---|
+| 页标题 | fade 0.5s |
+| 卡片/行条 | float_up 级联，step 0.12 |
+| 大数字 | zoom 0.6s（或 wipe up） |
+| 链路节点 | wipe 按流向依次，step 0.1 |
+| 图标/logo | grow_turn |
+| 数据图表 | 首选 `growth_chart`（morph 真补间）；交付后还要改数据才用 `bar_chart` + `chart('category')` |
+| 封面 | kicker → 标题 → 元信息，三级 fade 级联 |
+| 尾页 | logo grow_turn + 文案 fade |
+
+**节奏 > 花活**：高级感来自时长 0.4~0.6s + 级联间隔 0.1~0.2s + 缓出，不是效果种类堆砌；一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技。动画在 PDF 里不可见——verify 只验 XML 结构与静态页；morph 生效可程序化验证：COM 读 `SlideShowTransition.EntryEffect == 3954`；最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
 
 **页面范式速查**（覆盖 90% 技术场景，组合优于发明）：
 

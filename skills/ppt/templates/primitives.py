@@ -6,6 +6,7 @@ ppt primitives — python-pptx 代码画 PPT 的积木箱
 坐标约定：16:9（13.333 × 7.5 in）· 边距 0.55 · 页码 (12.35, 7.02)
 """
 import math
+import re
 
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
@@ -118,44 +119,62 @@ def page_chrome(slide, idx, label):
         Emu(9525), fill=LINE)
 
 
+def shape_groups(slide, prefix):
+    """按命名前缀取 shape 组：card0box/card0t/card0d 同属组 0（box 与其文字同进同退）。
+    返回按组序排列的 [[shape...]...]，直接喂 animate.Anim.stagger(groups, 'float_up')。"""
+    groups = {}
+    for sp in slide.shapes:
+        m = re.match(rf"^{re.escape(prefix)}(\d+)", sp.name)
+        if m:
+            groups.setdefault(int(m.group(1)), []).append(sp)
+    return [groups[k] for k in sorted(groups)]
+
+
 # ── 页面范式（组合优于发明；坐标用表达式算，不写魔法数）───────────────
 def slide_cover(prs, meta):
     s = add_slide(prs)
     box(s, 0, 0, SW, SH, fill=CREAM)
     box(s, Inches(10.2), 0, Inches(3.133), SH, fill=CORAL)          # 右侧竖色块
     box(s, Inches(9.85), Inches(2.1), Inches(0.35), Inches(0.07), fill=INK)
-    text(s, Inches(0.9), Inches(1.55), Inches(5), Inches(0.4),
-         meta.get("kicker", "PROJECT BRIEF").upper(), 13, CORAL, True)
-    text(s, Inches(0.9), Inches(2.15), Inches(8.6), Inches(2.2),
-         [(meta["title"], 54, INK, True), (meta["subtitle"], 17, INK_SOFT, False)], spacing=1.05)
-    box(s, Inches(0.95), Inches(4.45), Inches(2.2), Emu(19050), fill=CORAL)  # 分隔粗线
-    text(s, Inches(0.9), Inches(4.85), Inches(8.4), Inches(1.6),
-         [(meta.get("tagline", ""), 13, INK_SOFT, False),
-          (f'{meta.get("domain", "")}    {meta.get("version", "")}    {meta["date"]}    {meta["author"]}',
-           11, MUTED, False)], spacing=1.4)
+    k = text(s, Inches(0.9), Inches(1.55), Inches(5), Inches(0.4),
+             meta.get("kicker", "PROJECT BRIEF").upper(), 13, CORAL, True)
+    k.name = "kicker"
+    t = text(s, Inches(0.9), Inches(2.15), Inches(8.6), Inches(2.2),
+             [(meta["title"], 54, INK, True), (meta["subtitle"], 17, INK_SOFT, False)], spacing=1.05)
+    t.name = "ctitle"
+    d = box(s, Inches(0.95), Inches(4.45), Inches(2.2), Emu(19050), fill=CORAL)  # 分隔粗线
+    d.name = "cdivider"
+    m = text(s, Inches(0.9), Inches(4.85), Inches(8.4), Inches(1.6),
+             [(meta.get("tagline", ""), 13, INK_SOFT, False),
+              (f'{meta.get("domain", "")}    {meta.get("version", "")}    {meta["date"]}    {meta["author"]}',
+               11, MUTED, False)], spacing=1.4)
+    m.name = "cmeta"
     return s
 
 
 def slide_cards(prs, idx, label, title, cards, cols=4, card_h=3.6):
     """1×cols 卡片页：cards = [(题, '描述行1\\n描述行2'), ...]"""
     s = add_slide(prs); page_chrome(s, idx, label)
-    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7), title, 30, INK, True)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
     gap = 0.2
     card_w = (13.333 - 2 * MARGIN - gap * (cols - 1)) / cols
     for i, (t, d) in enumerate(cards):
         x = Inches(MARGIN + i * (card_w + gap))
-        box(s, x, Inches(2.55), Inches(card_w), Inches(card_h), fill=PAPER, line=LINE)
-        box(s, x, Inches(2.55), Inches(card_w), Inches(0.07), fill=CORAL)     # 顶 coral 条
-        text(s, x + Inches(0.25), Inches(2.9), Inches(card_w - 0.5), Inches(0.5), t, 19, INK, True)
+        box(s, x, Inches(2.55), Inches(card_w), Inches(card_h), fill=PAPER, line=LINE).name = f"card{i}box"
+        box(s, x, Inches(2.55), Inches(card_w), Inches(0.07), fill=CORAL).name = f"card{i}bar"  # 顶 coral 条
+        text(s, x + Inches(0.25), Inches(2.9), Inches(card_w - 0.5), Inches(0.5),
+             t, 19, INK, True).name = f"card{i}t"
         text(s, x + Inches(0.25), Inches(3.55), Inches(card_w - 0.4), Inches(2.4),
-             d.split("\n"), 11.5, INK_SOFT, spacing=1.5)
+             d.split("\n"), 11.5, INK_SOFT, spacing=1.5).name = f"card{i}d"
     return s
 
 
 def slide_numbers(prs, idx, label, title, nums, cols=3):
     """大数字墙：nums = [(数字, 标签, 注释), ...]，2 行 × cols"""
     s = add_slide(prs); page_chrome(s, idx, label)
-    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7), title, 30, INK, True)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
     rows = (len(nums) + cols - 1) // cols
     gap = 0.28
     card_w = (13.333 - 2 * MARGIN - gap * (cols - 1)) / cols
@@ -164,30 +183,33 @@ def slide_numbers(prs, idx, label, title, nums, cols=3):
         row, col = divmod(i, cols)
         x = Inches(MARGIN + col * (card_w + gap))
         y = Inches(2.1 + row * (card_h + 0.3))
-        box(s, x, y, Inches(card_w), Inches(card_h), fill=PAPER, line=LINE)
+        box(s, x, y, Inches(card_w), Inches(card_h), fill=PAPER, line=LINE).name = f"num{i}box"
         text(s, x + Inches(0.28), y + Inches(0.22), Inches(card_w - 0.6), Inches(0.9),
-             n, 40, CORAL_DEEP, True)
-        text(s, x + Inches(0.3), y + Inches(1.18), Inches(card_w - 0.6), Inches(0.35), t, 13, INK, True)
+             n, 40, CORAL_DEEP, True).name = f"num{i}v"
+        text(s, x + Inches(0.3), y + Inches(1.18), Inches(card_w - 0.6), Inches(0.35),
+             t, 13, INK, True).name = f"num{i}t"
         text(s, x + Inches(0.3), y + Inches(1.55), Inches(card_w - 0.55), Inches(0.35),
-             d, 9.5, MUTED, font=FONT_MONO)
+             d, 9.5, MUTED, font=FONT_MONO).name = f"num{i}d"
     return s
 
 
 def slide_chain(prs, idx, label, title, nodes, hi=2, sub_title=None, subs=None):
     """横向链路图：nodes = [(名称, 子注释), ...]，hi = 反色强调的节点下标"""
     s = add_slide(prs); page_chrome(s, idx, label)
-    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7), title, 30, INK, True)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
     gap = 0.37
     bw = (13.333 - 2 * MARGIN - gap * (len(nodes) - 1)) / len(nodes)
     for i, (t, d) in enumerate(nodes):
         x = Inches(MARGIN + i * (bw + gap))
         hot = i == hi
         box(s, x, Inches(2.3), Inches(bw), Inches(1.35),
-            fill=CORAL if hot else PAPER, line=None if hot else LINE)
+            fill=CORAL if hot else PAPER, line=None if hot else LINE).name = f"node{i}box"
         text(s, x + Inches(0.12), Inches(2.52), Inches(bw - 0.24), Inches(0.4), t,
-             12, PAPER if hot else INK, True, PP_ALIGN.CENTER)
+             12, PAPER if hot else INK, True, PP_ALIGN.CENTER).name = f"node{i}t"
         text(s, x + Inches(0.12), Inches(3.05), Inches(bw - 0.24), Inches(0.35), d,
-             9, PAPER if hot else MUTED, align=PP_ALIGN.CENTER, font=FONT_MONO)
+             9, PAPER if hot else MUTED, align=PP_ALIGN.CENTER,
+             font=FONT_MONO).name = f"node{i}d"
         if i < len(nodes) - 1:
             text(s, x + Inches(bw - 0.02), Inches(2.62), Inches(gap + 0.06), Inches(0.5),
                  "→", 20, CORAL, True, PP_ALIGN.CENTER)
@@ -197,10 +219,12 @@ def slide_chain(prs, idx, label, title, nodes, hi=2, sub_title=None, subs=None):
         scw = (13.333 - 2 * MARGIN - sgap * (len(subs) - 1)) / len(subs)
         for i, (u, t) in enumerate(subs):
             x = Inches(MARGIN + i * (scw + sgap))
-            box(s, x, Inches(4.6), Inches(scw), Inches(1.15), fill=CREAM, line=LINE)
-            text(s, x + Inches(0.15), Inches(4.78), Inches(scw - 0.3), Inches(0.35), t, 11.5, INK, True)
+            box(s, x, Inches(4.6), Inches(scw), Inches(1.15), fill=CREAM,
+                line=LINE).name = f"sub{i}box"
+            text(s, x + Inches(0.15), Inches(4.78), Inches(scw - 0.3), Inches(0.35),
+                 t, 11.5, INK, True).name = f"sub{i}t"
             text(s, x + Inches(0.15), Inches(5.18), Inches(scw - 0.25), Inches(0.35),
-                 u, 9, MUTED, font=FONT_MONO)
+                 u, 9, MUTED, font=FONT_MONO).name = f"sub{i}d"
     return s
 
 
@@ -208,7 +232,8 @@ def slide_rows(prs, idx, label, title, rows, col_split=None):
     """双栏清单（技术栈等）：rows = [(左标签, 左值, 右标签, 右值), ...]
     或单栏：rows = [(标签, 值), ...] + col_split=None 时每行全宽"""
     s = add_slide(prs); page_chrome(s, idx, label)
-    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7), title, 30, INK, True)
+    text(s, Inches(MARGIN), Inches(0.95), Inches(12.2), Inches(0.7),
+         title, 30, INK, True).name = "title"
     if col_split:
         half = (len(rows) + 1) // 2
         for ri, (l1, v1, l2, v2) in enumerate(rows[:half]):
@@ -217,18 +242,22 @@ def slide_rows(prs, idx, label, title, rows, col_split=None):
                 if not lab:
                     continue
                 x = Inches(MARGIN + ci * 6.3)
-                box(s, x, y, Inches(5.9), Inches(0.7), fill=PAPER if ri % 2 == 0 else CREAM, line=LINE)
-                text(s, x + Inches(0.18), y + Inches(0.06), Inches(1.5), Inches(0.3), lab, 9, MUTED)
+                box(s, x, y, Inches(5.9), Inches(0.7),
+                    fill=PAPER if ri % 2 == 0 else CREAM,
+                    line=LINE).name = f"row{ri}c{ci}box"
+                text(s, x + Inches(0.18), y + Inches(0.06), Inches(1.5), Inches(0.3),
+                     lab, 9, MUTED).name = f"row{ri}c{ci}l"
                 text(s, x + Inches(0.18), y + Inches(0.32), Inches(5.5), Inches(0.32),
-                     val, 11.5, INK, True, font=FONT_MONO)
+                     val, 11.5, INK, True, font=FONT_MONO).name = f"row{ri}c{ci}v"
     else:
         for ri, (lab, val) in enumerate(rows):
             y = Inches(1.95 + ri * 0.82)
             box(s, Inches(MARGIN), y, Inches(12.23), Inches(0.7),
-                fill=PAPER if ri % 2 == 0 else CREAM, line=LINE)
-            text(s, Inches(MARGIN + 0.18), y + Inches(0.06), Inches(1.8), Inches(0.3), lab, 9, MUTED)
+                fill=PAPER if ri % 2 == 0 else CREAM, line=LINE).name = f"row{ri}box"
+            text(s, Inches(MARGIN + 0.18), y + Inches(0.06), Inches(1.8), Inches(0.3),
+                 lab, 9, MUTED).name = f"row{ri}l"
             text(s, Inches(MARGIN + 0.18), y + Inches(0.32), Inches(11.5), Inches(0.32),
-                 val, 11.5, INK, True)
+                 val, 11.5, INK, True).name = f"row{ri}v"
     return s
 
 
@@ -236,14 +265,16 @@ def slide_closing(prs, meta, footer_lines):
     """尾页：ink 反色整页 + coral logo 块"""
     s = add_slide(prs)
     box(s, 0, 0, SW, SH, fill=INK)
-    box(s, Inches(0.9), Inches(2.35), Inches(0.35), Emu(19050), fill=CORAL)
+    box(s, Inches(0.9), Inches(2.35), Inches(0.35), Emu(19050), fill=CORAL).name = "cdivider"
     text(s, Inches(0.9), Inches(2.75), Inches(10), Inches(1.0),
          [("Let's build something.", 40, PAPER, True),
-          (meta.get("domain", "asterforge.top"), 18, CORAL, False)], spacing=1.25)
+          (meta.get("domain", "asterforge.top"), 18, CORAL, False)],
+         spacing=1.25).name = "slogan"
     text(s, Inches(0.9), Inches(4.9), Inches(11), Inches(1.4), footer_lines,
-         spacing=1.5, color=PAPER, font=FONT_MONO, size=12)
-    box(s, Inches(11.9), Inches(0.9), Inches(1.3), Inches(1.3), fill=CORAL)
-    text(s, Inches(11.9), Inches(1.28), Inches(1.3), Inches(0.5), "TC", 24, PAPER, True, PP_ALIGN.CENTER)
+         spacing=1.5, color=PAPER, font=FONT_MONO, size=12).name = "cfoot"
+    box(s, Inches(11.9), Inches(0.9), Inches(1.3), Inches(1.3), fill=CORAL).name = "logobox"
+    text(s, Inches(11.9), Inches(1.28), Inches(1.3), Inches(0.5), "TC", 24, PAPER, True,
+         PP_ALIGN.CENTER).name = "logot"
     return s
 
 

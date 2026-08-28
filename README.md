@@ -22,7 +22,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 
 | Skill | 做什么 | 状态 |
 |---|---|---|
-| [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + 逐元素动画（COM）+ morph 数据增长（真补间）+ 三级渲染核查 | 已上线 |
+| [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：品牌色板 + 网格纪律 + 页面范式 + 逐元素动画（10 种入场 + 级联节奏）+ morph 数据增长（真补间）+ 三级渲染核查 | 已上线 |
 | [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader 英文体系 × 中文三毒/L1-L4 工程体系融合 v5） | 已上线 |
 | `vibe-motion` | 逐页动效编排：节奏、转场、镜头语言 | 规划中 |
 | `deck-to-video` | deck 逐页渲染 → Remotion 合成，直接出成片 | 规划中 |
