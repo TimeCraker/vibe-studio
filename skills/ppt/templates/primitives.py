@@ -306,10 +306,10 @@ def slide_section(prs, no, title, points=None, total=None, domain=None):
         text(s, Inches(9.5), Inches(0.32), Inches(3.28), Inches(0.3),
              f"{no:02d} / {total:02d}", 10, PAPER, True,
              PP_ALIGN.RIGHT, font=FONT_MONO).name = "secprog"
-    # 右下超大暗纹序号（负空间装饰，出血右缘）
-    text(s, Inches(8.6), Inches(3.4), Inches(6.5), Inches(4.6),
-         f"{no:02d}", 240, INK_SOFT, True, PP_ALIGN.RIGHT,
-         font=FONT_MONO).name = "secghost"
+    # 右下暗纹序号（收在页面内：右缘对齐网格、底部锚定与下框架线留缝，禁换行）
+    text(s, Inches(9.7), Inches(3.75), Inches(3.08), Inches(2.97),
+         f"{no:02d}", 170, INK_SOFT, True, PP_ALIGN.RIGHT,
+         anchor=MSO_ANCHOR.BOTTOM, font=FONT_MONO).name = "secghost"
     # 主内容：巨大序号 + 标题 + 条目
     text(s, Inches(0.82), Inches(1.35), Inches(5), Inches(2.2),
          f"{no:02d}", 110, CORAL, True, font=FONT_MONO).name = "secno"

@@ -69,6 +69,8 @@ def contrast_issues(page, pix, scale):
                 r = _ratio(fg, bg)
                 if r < 1.6:           # 近隐形 = morph 零状态脚手架，设计意图
                     continue
+                if sp["size"] >= 72:  # 阶梯 54 之上的超大字 = 装饰（暗纹序号等），
+                    continue          # WCAG 1.4.3 纯装饰豁免
                 need = 3.0 if (sp["flags"] & 16 or sp["size"] >= 18) else 4.5
                 if r < need - 0.2:
                     t = sp["text"].strip().replace("\n", " ")[:14]
