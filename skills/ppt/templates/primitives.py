@@ -124,7 +124,8 @@ def slide_cover(prs, meta):
     box(s, 0, 0, SW, SH, fill=CREAM)
     box(s, Inches(10.2), 0, Inches(3.133), SH, fill=CORAL)          # 右侧竖色块
     box(s, Inches(9.85), Inches(2.1), Inches(0.35), Inches(0.07), fill=INK)
-    text(s, Inches(0.9), Inches(1.55), Inches(5), Inches(0.4), "PROJECT BRIEF", 13, CORAL, True)
+    text(s, Inches(0.9), Inches(1.55), Inches(5), Inches(0.4),
+         meta.get("kicker", "PROJECT BRIEF").upper(), 13, CORAL, True)
     text(s, Inches(0.9), Inches(2.15), Inches(8.6), Inches(2.2),
          [(meta["title"], 54, INK, True), (meta["subtitle"], 17, INK_SOFT, False)], spacing=1.05)
     box(s, Inches(0.95), Inches(4.45), Inches(2.2), Emu(19050), fill=CORAL)  # 分隔粗线
@@ -248,12 +249,14 @@ def slide_closing(prs, meta, footer_lines):
 
 def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color=CORAL):
     """可编辑原生柱/条图（单系列，非贴图）：cats 类目，vals 数值。
-    horizontal=True 转横向条形图。品牌化：无 legend、数值标签 Consolas、值轴淡化。"""
+    horizontal=True 转横向条形图。品牌化：无 legend、数值标签 Consolas、值轴淡化。
+    返回容器 GraphicFrame（供 anim.chart() 等按元素引用）。"""
     cd = CategoryChartData()
     cd.categories = cats
     cd.add_series("s", vals)
     ct = XL_CHART_TYPE.BAR_CLUSTERED if horizontal else XL_CHART_TYPE.COLUMN_CLUSTERED
-    chart = slide.shapes.add_chart(ct, x, y, w, h, cd).chart
+    gf = slide.shapes.add_chart(ct, x, y, w, h, cd)
+    chart = gf.chart
     chart.has_legend = False
     chart.has_title = title is not None
     if chart.has_title:
@@ -274,7 +277,17 @@ def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color
     va.major_gridlines.format.line.color.rgb = C(LINE)
     va.tick_labels.font.size = Pt(9); va.tick_labels.font.name = FONT_MONO
     va.tick_labels.font.color.rgb = C(MUTED)
-    return chart
+    return gf
+
+
+def set_transition(prs, kind="fade"):
+    """统一页面转场（XML 注入，save 前调用）：fade / push-left。"""
+    import lxml.etree as etree
+
+    body = '<p:push dir="l"/>' if kind == "push-left" else "<p:fade/>"
+    xml = f'<p:transition xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" spd="med">{body}</p:transition>'
+    for slide in prs.slides:
+        slide._element.append(etree.fromstring(xml))
 
 
 # ── 入口示例 ──────────────────────────────────────────────────────────

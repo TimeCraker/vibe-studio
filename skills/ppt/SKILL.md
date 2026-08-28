@@ -29,6 +29,22 @@ user-invocable: true
 3. 用 primitives 组装页面，**坐标用表达式算**（如 `Inches(0.55 + i * 3.13)`），不写魔法数
 4. 文本框塞内容前用 `check_fit()` 预检（字符宽估算 vs 框高），`[FIT-WARN]` 即拆行/拆页/砍字；估算保守，最终以 Step 4 为准
 
+**动画（可选；Windows + MS Office + pywin32）**——按元素声明，按元素类型自选效果：
+
+```python
+from animate import Anim
+anim = Anim(prs)
+anim.fade(title, 'with')            # 淡入；逐个声明 = 逐条接力进入
+anim.wipe(card, 'up')               # 方向感：up / down / left / right
+anim.appear(footer)                 # 直出
+anim.chart(gf, 'category')          # 图表生长：allAtOnce / series / category
+P.set_transition(prs, 'fade')       # 统一转场：fade / push-left
+prs.save('deck.pptx')               # apply 必须在 save 之后
+anim.apply('deck.pptx')             # COM 写入；此后才做 Step 4
+```
+
+选择纪律：标题 fade；卡片/行条逐个 fade 接力；大数字 wipe up；链路节点按流向 wipe 依次；图表 chart category。**一页 ≤2 种效果；chrome/背板不动；动画服务叙事节奏，不是炫技**。动画在 PDF 里不可见——verify 只验 XML 结构与静态页，最终动效由人工终审确认；无 Office 环境直接跳过动画做静态交付。
+
 **页面范式速查**（覆盖 90% 技术场景，组合优于发明）：
 
 | 范式 | 用途 | 关键布局 |
@@ -56,7 +72,8 @@ $pres.SaveAs("<输出>.pdf", 32); $pres.Close(); $p.Quit()
 ```
 
 ```bash
-# 初筛：读 PDF 每个文本块的真实渲染 bbox，报页级溢出（方向+溢出量）；退出码 1=有溢出
+# 初筛：读 PDF 每个文本块的真实渲染 bbox，报页级溢出（方向+溢出量）；
+# 顺带全文扫描占位符（未改的模板默认值 / lorem / TODO）。退出码 1=有问题
 python <本skill>/templates/verify.py <输出>.pdf
 ```
 
@@ -73,6 +90,7 @@ for i in range(len(pdf)):
 ```
 
 逐页核查：**溢出**（残余/元素重叠）、**乱码**（缺字形/方块）、**对齐**（间距不等/箭头错位）、**对比度**（暗底灰字看不清）。发现问题改脚本重跑，**禁手改 pptx**。
+**盲看**：渲染图交给无生成上下文的子代理核查——写生成代码的模型看图会脑补预期，新鲜眼光才看得出真问题。
 
 图像工具读图坑：路径含反斜杠会解析失败，先复制到 `C:\pc\` 类短路径；同一 PNG 重复读取报错时转 JPEG 换内容指纹再传。
 
@@ -88,4 +106,5 @@ for i in range(len(pdf)):
 - **GBK 控制台**：脚本 print 禁用 `✓` 等非 ASCII 字符，用 `OK`
 - **pptx 真表格列宽失控** → 一律用行条（box + text）模拟
 - **中文缺字形** → run 级设置 `font.name` 为雅黑（模板 primitives 已处理）
+- **动画定位坑**：shape_id 每页独立编号不唯一，animate.py 已按 XML 树身份定位；二次开发勿按全 deck 搜 id。pywin32 依赖：`pip install pywin32 -i https://pypi.tuna.tsinghua.edu.cn/simple`
 - 同一方法可做 docx（python-docx）/ xlsx（openpyxl），primitives 思路通用；但那两个是「编辑部/工作簿」范式，页面范式表仅适用 pptx

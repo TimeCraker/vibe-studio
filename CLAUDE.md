@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 结构与架构
 
 - `skills/<name>/SKILL.md` — skill 本体，frontmatter 含 `name` / `description`（description 即触发条件，要写清用户会怎么说的触发词）
-- `skills/<name>/templates/` — skill 自带的模板代码（如 ppt 的 `primitives.py` 版式原语：色板 / 网格 / box / text 等积木函数）
+- `skills/<name>/templates/` — skill 自带的模板代码（如 ppt 的 `primitives.py` 版式原语、`animate.py` 逐元素动画、`verify.py` 渲染核查初筛）
 - `assets/` — 品牌资源与 SVG
 - `docs/` — 决策记录（选了什么、放弃了什么、为什么）；目录尚未建立，首次决策时创建
 
@@ -41,9 +41,11 @@ for i in range(len(pdf)):
 ```
 
 ```bash
-# 程序化溢出初筛：读 PDF 文本块真实 bbox，报每页 [OK]/[OVERFLOW]，退出码 1=有溢出
+# 程序化溢出初筛：读 PDF 文本块真实 bbox，报每页 [OK]/[OVERFLOW] + 占位符扫描，退出码 1=有问题
 python skills/ppt/templates/verify.py <输出>.pdf
 ```
+
+动画（可选，Windows + MS Office + pywin32）：gen 脚本内 `Anim(prs)` 按元素声明 `fade/wipe/appear/chart`，`set_transition()` 统一转场；`prs.save()` 之后 `anim.apply(path)` 由 COM 写入。
 
 验收标准就是 ppt skill 的三级渲染核查：程序初筛（页级溢出）→ 模型读图四项（溢出 / 乱码 / 对齐 / 对比度）→ 人工只看终稿；发现问题改脚本重跑。无 MS Office 时降级 LibreOffice `soffice --convert-to pdf`，两者都无则明确报告「未做视觉核查」。
 
