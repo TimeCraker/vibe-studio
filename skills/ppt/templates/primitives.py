@@ -247,9 +247,11 @@ def slide_closing(prs, meta, footer_lines):
     return s
 
 
-def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color=CORAL):
+def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color=CORAL,
+              highlight=None, highlight_color=INK):
     """可编辑原生柱/条图（单系列，非贴图）：cats 类目，vals 数值。
-    horizontal=True 转横向条形图。品牌化：无 legend、数值标签 Consolas、值轴淡化。
+    horizontal=True 转横向条形图。highlight=i 时第 i 根强调为 highlight_color（其余 color）。
+    品牌化：无 legend、数值标签 Consolas、值轴淡化。
     返回容器 GraphicFrame（供 anim.chart() 等按元素引用）。"""
     cd = CategoryChartData()
     cd.categories = cats
@@ -263,8 +265,13 @@ def bar_chart(slide, x, y, w, h, cats, vals, title=None, horizontal=False, color
         chart.chart_title.text_frame.text = title
     plot = chart.plots[0]
     plot.gap_width = 60
-    plot.series[0].format.fill.solid()
-    plot.series[0].format.fill.fore_color.rgb = C(color)
+    ser = plot.series[0]
+    ser.format.fill.solid()
+    ser.format.fill.fore_color.rgb = C(color)
+    if highlight is not None:
+        pt = ser.points[highlight]
+        pt.format.fill.solid()
+        pt.format.fill.fore_color.rgb = C(highlight_color)
     plot.has_data_labels = True
     dl = plot.data_labels
     dl.font.size = Pt(11); dl.font.name = FONT_MONO; dl.font.color.rgb = C(INK)
