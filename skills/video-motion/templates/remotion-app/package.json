@@ -1,0 +1,16 @@
+{
+  "name": "video-motion-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "video-motion template: Remotion app that overlays animated layers (subtitles, data bars, spotlights) on real footage",
+  "scripts": {
+    "render": "remotion render remotion/index.ts",
+    "studio": "remotion studio remotion/index.ts",
+    "compositions": "remotion compositions remotion/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.518",
+    "@remotion/media": "^4.0.518",
+    "remotion": "^4.0.518"
+  }
+}
