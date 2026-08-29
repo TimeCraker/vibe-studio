@@ -23,6 +23,7 @@ export const FootageOverlay: React.FC = () => {
           width: DESIGN_WIDTH,
           height: DESIGN_HEIGHT,
           transform: `scale(${width / DESIGN_WIDTH})`,
+          transformOrigin: "top left",
         }}
       >
         <Spotlight marks={cues.spotlights} />

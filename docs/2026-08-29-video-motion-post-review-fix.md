@@ -17,8 +17,8 @@
 
 ```bash
 cd skills/video-motion/templates/remotion-app
-mkdir -p ../../../../../output/video-motion
-npx remotion render remotion/index.ts FootageOverlay ../../../../../output/video-motion/demo.mp4 --crf=16
+mkdir -p ../../../../output/video-motion
+npx remotion render remotion/index.ts FootageOverlay ../../../../output/video-motion/demo.mp4 --crf=16
 ```
 
 **完成标志**：退出码 0；`output/video-motion/demo.mp4` 存在且 >100MB；`ffprobe -v error -show_entries stream=width,height,r_frame_rate -of csv=p=0` 输出含 `2560,1440,60/1`。
@@ -28,7 +28,7 @@ npx remotion render remotion/index.ts FootageOverlay ../../../../../output/video
 60fps 下帧号 = 秒 × 60。抽 3 帧到 `output/video-motion/frames-1440p/`：
 
 ```bash
-npx remotion still remotion/index.ts FootageOverlay ../../../../../output/video-motion/frames-1440p/f-<n>.png --frame=<n>
+npx remotion still remotion/index.ts FootageOverlay ../../../../output/video-motion/frames-1440p/f-<n>.png --frame=<n>
 ```
 
 | 帧 | 时刻 | 期望（与 1080p 版相同的落点，仅更清晰） |
@@ -46,7 +46,7 @@ npx remotion still remotion/index.ts FootageOverlay ../../../../../output/video-
 3. 迁移完成后删除空的 `out/` 目录
 4. **素材直读试验**（快验证，不整段渲染）：
    ```bash
-   npx remotion compositions remotion/index.ts --public-dir ../../../../../output/footage
+   npx remotion compositions remotion/index.ts --public-dir ../../../../output/footage
    ```
    能算出 `1831` 帧 → 说明 `staticFile` 可直读项目素材库 → 删除 `public/footage.mp4`（118MB 副本，skill 里不留素材），把用法记进验收文件；失败 → 保留副本不动，**不试第二次**，如实报告
 
