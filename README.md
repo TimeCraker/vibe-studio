@@ -26,6 +26,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 | [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader 英文体系 × 中文三毒/L1-L4 工程体系融合 v5） | 已上线 |
 | `video-motion` | **视频动效合成**：视频底材上叠字幕 / 数据动效 / 圈注标注（Remotion），后续接 PPT 逐页成片 | 开发中（[Stage Spec](docs/2026-08-29-video-motion-stage-spec.md)） |
 | `auto-subtitle` | **自动字幕**：faster-whisper 转写音视频 → `SubtitleCue[]` JSON（直接喂 video-motion），VAD 防幻觉 | 开发中（[Stage Spec](docs/2026-08-29-auto-subtitle-stage-spec.md)） |
+| `narration` | **口播稿工坊**：分段稿 JSON + 程序校验（字数↔秒数、段长、禁令初筛），直出剪映配音与 cues | 开发中（[Stage Spec](docs/2026-08-29-narration-stage-spec.md)） |
 
 > **为什么代码画 PPT**：设计即代码——网格坐标、字号阶梯、色板全部显式声明，可复跑、可 diff、可版本化；渲染核查闭环保证「所见即所写」。
 
@@ -65,6 +66,9 @@ vibe-studio/
 │   ├── auto-subtitle/     # 自动字幕（faster-whisper）
 │   │   ├── SKILL.md       # 流程与验收
 │   │   └── templates/asr/       # 转写脚本 + 语音素材生成
+│   ├── narration/         # 口播稿工坊（分段稿 + 程序校验）
+│   │   ├── SKILL.md       # 流程与验收
+│   │   └── templates/     # verify_narration.py 校验器
 │   └── humanizer/         # 中英文去 AI 腔改写
 │       └── SKILL.md       # v5 融合版（中英双体系）
 └── assets/                # 品牌资源与 SVG
