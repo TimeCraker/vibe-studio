@@ -38,7 +38,7 @@ vibe-studio 是 TimeCraker 的自媒体内容工厂（Skills / Assets / 决策�
 | npm 网络 | 中国网络。项目内 `.npmrc` 写 npmmirror 镜像（Stage 0 配置） |
 | Chrome Headless Shell | `npx remotion browser ensure` 首次运行会把 Chrome Headless Shell 下载进项目 node_modules（百 MB 级）。**下载源是 Google 服务器，中国网络可能超时**。失败 → 报告用户，不要反复重试大文件下载 |
 | 视频读图坑 | 视觉核查读图时，**路径含反斜杠可能解析失败**；先把 PNG 复制到 `C:\pc\` 这类短路径再读（ppt skill 已踩过的坑） |
-| 素材 | 用户将提供 `footage.mp4`（可能无声音、无字幕——无所谓，字幕和动效本来就是叠上去的层）。**若执行时素材未到位**：走 Stage 1 的程序合成素材 fallback，不阻塞 |
+| 素材 | 素材库在仓库 `output/footage/`（不入 git）。**测试素材已就位**：`output/footage/footage.mp4`——CS2 录像 4:30 后的 30.5 秒，2560×1440 / 60fps，含音轨。Stage 1 复制进工程 `public/` 使用。合成 1920×1080 / 30fps 时素材自动缩放铺满、抽帧，均属正常 |
 | Remotion 版本 | 安装时不写死版本号，全部同批 `npm install` 让 npm 解析一致的最新版（Remotion 各子包版本必须严格联动，混版本必报错） |
 
 ---
@@ -53,7 +53,7 @@ skills/video-motion/
     ├── .npmrc                     # npmmirror
     ├── tsconfig.json
     ├── remotion/index.ts          # registerRoot 入口
-    ├── public/footage.mp4         # 视频底材（用户提供；不进 git）
+    ├── public/footage.mp4         # 视频底材（从仓库 output/footage/ 复制进来；不进 git）
     ├── out/                       # 渲染产物 mp4 + 抽帧 PNG（不进 git）
     └── src/
         ├── Root.tsx               # Composition 注册（1080p / fps30 / 时长=素材）
@@ -138,7 +138,7 @@ export const cues = {
 
 ### Stage 1 · 底材层
 
-1. 素材：若 `public/footage.mp4` 已由用户放入 → 用它；**否则 fallback**——写 `src/SyntheticFootage.tsx`（10 秒程序合成素材：渐变背景 + 移动色块 + 大数字计时，模拟"有东西可指"的画面），注册 `SyntheticFootage` Composition 渲染出 `public/footage.mp4`，代码中留 `// TODO-REPLACE: 换成用户真实素材后删除本文件`
+1. 素材：复制仓库 `output/footage/footage.mp4`（CS2 测试素材，最后 30.5 秒）到工程 `public/footage.mp4`。若该文件不存在 → fallback：写 `src/SyntheticFootage.tsx`（10 秒程序合成素材：渐变背景 + 移动色块 + 大数字计时，模拟"有东西可指"的画面），注册 `SyntheticFootage` Composition 渲染出 `public/footage.mp4`，代码中留 `// TODO-REPLACE: 换成用户真实素材后删除本文件`
 2. `src/Root.tsx` 改注册 `FootageOverlay`：**1920×1080 横屏**、fps 30、`durationInFrames` 用 `calculateMetadata` + `getVideoMetadata(staticFile('footage.mp4'))` 动态取素材时长（写法见 §5 metadata 文档）
 3. `FootageOverlay.tsx`：`<OffthreadVideo src={staticFile('footage.mp4')} />` 铺满
 4. `npx remotion render remotion/index.ts FootageOverlay out/stage1-footage.mp4`
