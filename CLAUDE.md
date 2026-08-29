@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 仓库定位
 
-自媒体内容工厂：项目 README → 介绍 PPT → 逐页动效 → 视频成片的一条流水线。不承载业务代码，只沉淀内容生产能力（Skills / Workflows / Assets）。当前 `ppt`、`humanizer`、`video-motion`、`narration`、`auto-subtitle` 五个 skill 已上线；`video-motion`（Remotion 视频动效合成，吸收原 `vibe-motion` + `deck-to-video` 两项规划）首站「视频底材叠动效」已交付（spec：`docs/2026-08-29-video-motion-stage-spec.md`），第二站 PPT 逐页成片开发中。第二站 `auto-subtitle`（faster-whisper 自动转写出 `SubtitleCue`，对接 video-motion 契约）已上线（spec：`docs/2026-08-29-auto-subtitle-stage-spec.md`）；第三站 `narration`（结构化口播稿 + 程序校验，配音走剪映、不做语音合成）已上线，spec 在 `docs/2026-08-29-narration-stage-spec.md`；第四站 `deck-video`（PPT 逐页成片：pptx 页图 + 逐页配音 → Remotion 直出 mp4，复用 video-motion 引擎与 SubtitleTrack）spec 在 `docs/2026-08-29-deck-video-stage-spec.md`。后几站同样由 Zcode 执行，多站可能并行施工，**提交时只 add 自己站点的文件**。
+自媒体内容工厂：项目 README → 介绍 PPT → 逐页动效 → 视频成片的一条流水线。不承载业务代码，只沉淀内容生产能力（Skills / Workflows / Assets）。当前 `ppt`、`humanizer`、`video-motion`、`narration`、`auto-subtitle` 五个 skill 已上线；`video-motion`（Remotion 视频动效合成，吸收原 `vibe-motion` + `deck-to-video` 两项规划）首站「视频底材叠动效」与 PPT 逐页成片（直出 mp4）均已交付（spec：`docs/2026-08-29-video-motion-stage-spec.md` 与下文 deck-video）。第二站 `auto-subtitle`（faster-whisper 自动转写出 `SubtitleCue`，对接 video-motion 契约）已上线（spec：`docs/2026-08-29-auto-subtitle-stage-spec.md`）；第三站 `narration`（结构化口播稿 + 程序校验，配音走剪映、不做语音合成）已上线，spec 在 `docs/2026-08-29-narration-stage-spec.md`；第四站 `deck-video`（PPT 逐页成片：pptx 页图 + 逐页配音 → Remotion 直出 mp4，复用 video-motion 引擎与 SubtitleTrack）spec 在 `docs/2026-08-29-deck-video-stage-spec.md`。后几站同样由 Zcode 执行，多站可能并行施工，**提交时只 add 自己站点的文件**。
 
 ## 结构与架构
 

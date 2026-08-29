@@ -45,6 +45,18 @@ npx remotion render remotion/index.ts FootageOverlay <项目根>/output/video-mo
 
 报告：成片路径与大小 / 分辨率帧率（=素材原生）/ 三级核查结论（含抽帧核对表）/ `cues.ts` 位置（可复跑）。产物与 mp4 一律不进 git。
 
+## PPT 逐页成片（DeckVideo，第二种成片）
+
+一套引擎两种成片：上面 Steps 是「视频底材叠动效」，这一节是「PPT 逐页」——pptx 页图 + 逐页配音直出成片，页时长跟配音实际长度走，字幕按分段稿时间轴出现。
+
+1. **pptx 与分段稿**：ppt skill 产物 pptx；写 narration 分段稿 `script.json`，`ref` 写 `"page N"`（N=页号），先过 `python skills/narration/templates/verify_narration.py <script.json>` 全绿。每段剥后 ≤20 字（字幕单行药丸直接显示段文本），页内多段以句号连接成该页口播
+2. **页图**：`python scripts/extract_pages.py <in.pptx> public/deck/pages`——COM 转 PDF 后 fitz 渲 200dpi，出 `p-<N>.png`（2667×1500，画布 contain 铺满）
+3. **配音**：测试走 `powershell -File scripts/make_deck_audio.ps1 <script.json> public/deck/audio`（SAPI Huihui 逐页出 `page-N.wav`）；正式流程人工在剪映逐页配音，导出同名 `page-N.wav` 放同目录，下游无感
+4. **接线与渲染**：`node scripts/build-deck-params.mjs <script.json> public/deck` 生成 `src/deck-params.ts` + `src/deck-cues.ts`（页起点 / 总时长 / 字幕摊时全是派生值，勿手改）→ `npx remotion render remotion/index.ts DeckVideo <项目根>/output/video-motion/<项目名>/deck.mp4 --crf=16`
+5. **三级核查**：同 Step 4 三级（程序 ffprobe / compositions 对账 + 抽帧读图 + 用户看片）。L2 抽帧要点：每页首帧+0.3s 查页序；交叠中点取**下页 start+0.25s**（交叠尾在页窗尾部，0.5s 交叉溶解）；字幕 start+0.3s / end+0.3s 查文本与退场。页首帧+0.3s 处 spring 淡入未满、整帧偏灰，是转场中间态不是缺陷
+
+页图与配音住 `public/deck/`（.gitignore 已覆盖，不入 git）；画布 1920×1080@30 常量在 `build-deck-params.mjs` 顶部，改两行即 4K。
+
 ## 边界与坑
 
 - 读图坑：路径含反斜杠解析失败 → 先复制 `C:\pc\` 短路径；复查修复效果必须换新文件名（同路径图片会被缓存返回旧图）
