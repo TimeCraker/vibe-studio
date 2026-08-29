@@ -24,7 +24,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 |---|---|---|
 | [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：17 种页面范式（章节/时间轴/对比/金句/图文/增长柱线环…）+ 3 套主题预设 + 动画 auto 编排（11 入场 + 级联 + morph 真补间）+ 口播稿备注 + 自动放映 + 改写现有 pptx + 三级渲染核查（含对比度初筛） | 已上线 |
 | [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader 英文体系 × 中文三毒/L1-L4 工程体系融合 v5） | 已上线 |
-| `video-motion` | **视频动效合成**：视频底材叠字幕 / 数据动效 / 圈注 + PPT 逐页成片（一套 Remotion 引擎两种成片） | 开发中（[首站 Spec](docs/2026-08-29-video-motion-stage-spec.md) · [逐页成片 Spec](docs/2026-08-29-deck-video-stage-spec.md)） |
+| [`video-motion`](skills/video-motion/) | **视频动效合成**：视频底材叠字幕 / 数据动效 / 圈注 + PPT 逐页成片（一套 Remotion 引擎两种成片） | 已上线（首站）· 逐页成片开发中（[首站 Spec](docs/2026-08-29-video-motion-stage-spec.md) · [逐页成片 Spec](docs/2026-08-29-deck-video-stage-spec.md)） |
 | `auto-subtitle` | **自动字幕**：faster-whisper 转写音视频 → `SubtitleCue[]` JSON（直接喂 video-motion），VAD 防幻觉 | 开发中（[Stage Spec](docs/2026-08-29-auto-subtitle-stage-spec.md)） |
 | `narration` | **口播稿工坊**：分段稿 JSON + 程序校验（字数↔秒数、段长、禁令初筛），直出剪映配音与 cues（video-motion / deck-video 消费） | 开发中（[Stage Spec](docs/2026-08-29-narration-stage-spec.md)） |
 
@@ -38,7 +38,7 @@ Claude Code 只从 `.claude/skills/` 发现 skill。本仓库真身在 `skills/`
 git clone https://github.com/TimeCraker/vibe-studio
 cd vibe-studio
 New-Item -ItemType Directory -Force .claude/skills | Out-Null
-foreach ($s in 'ppt', 'humanizer') {
+foreach ($s in 'ppt', 'humanizer', 'video-motion') {
     New-Item -ItemType Junction -Path "$PWD\.claude\skills\$s" -Target "$PWD\skills\$s" | Out-Null
 }
 ```
