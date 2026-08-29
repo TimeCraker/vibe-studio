@@ -15,7 +15,7 @@
 TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容生产能力**：
 
 - **Skills** — 可独立运行的创作技能，自带模板代码，零外部依赖
-- **Workflows** — 端到端工作流：项目 README → 介绍 PPT → 逐页动效 → 视频成片
+- **Workflows** — 端到端总装图：项目 README → 介绍 PPT → 逐页动效 → 视频成片（[`explainer-video`](workflows/explainer-video.md)，A 线剪映全包 / B 线 Remotion 成片）
 - **Assets** — 跨项目共享的品牌资源：色板、字体 token、版式范式
 
 ## Skills
@@ -71,6 +71,8 @@ vibe-studio/
 │   │   └── templates/     # verify_narration.py 校验器
 │   └── humanizer/         # 中英文去 AI 腔改写
 │       └── SKILL.md       # v5 融合版（中英双体系）
+├── workflows/
+│   └── explainer-video.md # 项目介绍视频总装图（A/B 双线）
 └── assets/                # 品牌资源与 SVG
 ```
 
