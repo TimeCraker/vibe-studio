@@ -14,9 +14,9 @@ user-invocable: true
 
 素材只取项目真实资料（README / CLAUDE.md / docs / 数据后台，按类型选源）。**没有出处的数字不进 PPT；观众不需要的事实不进正文**——内部指标（函数数、API 常数、内部代号）默认出局，受众是内行才留。
 
-**挖内容，不摘名词**：光收数字和功能名不算取材。按 deck 类型挖，技术/产品：设计决策 + 效果对比；作品集：作品细节与取舍；数据报告：口径与基线；叙事品牌：人物、场景、转折。
+**挖内容，不摘名词**：光收数字和功能名不算取材。按 PPT 类型挖，技术/产品：设计决策 + 效果对比；作品集：作品细节与取舍；数据报告：口径与基线；叙事品牌：人物、场景、转折。
 
-**大纲先于逐页**：挖完先写叙事大纲——一条主线（全 deck 只论证一件事）+ 开篇三答（是什么 / 给谁 / 解决什么）+ 每页在论证链里的角色（承接上页什么、铺垫下页什么）。概念先解释后使用，禁前向引用；连续两页互不承接 = 重排。逐页文案稿（标题 + 要点 + 口播稿；口播稿生成时进 `notes()` 演讲者备注，是 deck-to-video（规划中）与现场讲稿的数据源）挂在大纲下写，标题要参与递进，不是各自成立的口号。
+**大纲先于逐页**：挖完先写叙事大纲——一条主线（整份 PPT 只论证一件事）+ 开篇三答（是什么 / 给谁 / 解决什么）+ 每页在论证链里的角色（承接上页什么、铺垫下页什么）。概念先解释后使用，禁前向引用；连续两页互不承接 = 重排。逐页文案稿（标题 + 要点 + 口播稿；口播稿生成时进 `notes()` 演讲者备注，是 deck-to-video（规划中）与现场讲稿的数据源）挂在大纲下写，标题要参与递进，不是各自成立的口号。
 
 **两遍成稿**：第一遍**写足**——完整叙述体，假设观众零基础，把是什么、给谁、解决什么讲透，允许长；第二遍才打磨——先 humanizer 去味、再按下面四条修剪。humanizer 是打磨器不是初稿模板，初稿就按它的标准写只会又瘦又跳、没讲清楚就开喊口号。
 
@@ -25,7 +25,7 @@ user-invocable: true
 3. **每页 ≥3 件可溯源的具体事实**；遮住排版只读文字，是在『讲』不是『列清单』
 4. **槽位规则**：大字槽（封面主标题 / 尾页大字 / 章节名）只放主张句或身份句（有观点、念出来像口号）；域名、版本号、日期、统计数字一律退副题 / 元信息位
 
-风格黑话零容忍，分两层：商业八股（赋能 / 闭环 / 沉淀 / 矩阵 / 生态 / 一站式 / 端到端）直接删；技术行话（API 常数 / 内部函数名 / 体系代号 / 实现细节）按受众过滤，外行 deck 要么删要么当页用人话解释。数字优先于形容词；标题写观点不写名词短语；破折号中英双禁。重要项目文案稿先给用户过目再排版。
+风格黑话零容忍，分两层：商业八股（赋能 / 闭环 / 沉淀 / 矩阵 / 生态 / 一站式 / 端到端）直接删；技术行话（API 常数 / 内部函数名 / 体系代号 / 实现细节）按受众过滤，外行 PPT 要么删要么当页用人话解释。数字优先于形容词；标题写观点不写名词短语；破折号中英双禁。重要项目文案稿先给用户过目再排版。
 
 ## Step 2 · 设计系统（写代码前定案，全程不改）
 
@@ -47,11 +47,11 @@ user-invocable: true
 
 ```python
 anim = Anim(prs)
-anim.auto_deck()                       # 全 deck 自动编排
+anim.auto_deck()                       # 全份 PPT 自动编排
 anim.fx(footer, 'fade', dur=0.4)       # 特殊元素补一枪
 anim.chart(gf, 'series')               # 原生图表按系列擦入
 P.set_transition(prs, 'fade')          # 统一转场（morph 页自动跳过）
-P.auto_show(prs)                       # 口播稿估时自动换页：整 deck 自动播完，录屏即粗片
+P.auto_show(prs)                       # 口播稿估时自动换页：整份 PPT 自动播完，录屏即粗片
 prs.save('deck.pptx')
 anim.apply('deck.pptx')                # 必须在 save 后；COM 写入 + 读回自验证
 # 微调：anim.stagger(P.shape_groups(s, 'card'), 'float_up', step=0.12)
@@ -63,9 +63,9 @@ P.growth_donut(prs, 10, 'Mix', '标题', cats, vals)                  # 占比�
 
 效果词表（COM 实测）：`fade / wipe / appear / float_up / float_down / zoom / grow_turn / ease_in / split / wheel / stretch`；90 年代花活不收。节奏 > 花活：时长 0.4~0.6s、级联间隔 0.1~0.2s、一页 ≤2 种效果、页面固定装饰（顶部短杠 / 页码 / 底线）不进动画；数据图表一律 `growth_*`，原生 chart 仅交付后要在 PowerPoint 改数据时用。
 
-**改现有 pptx**（脚本改，禁手改，save 到新文件名）：`P.deck_replace(prs, {'旧名': '新名'})` 全文替换（含备注）；`P.deck_recolor(prs, dict(zip(P.THEMES['warm'].values(), P.THEMES['tech'].values())))` 整 deck 换主题。
+**改现有 pptx**（脚本改，禁手改，save 到新文件名）：`P.deck_replace(prs, {'旧名': '新名'})` 全文替换（含备注）；`P.deck_recolor(prs, dict(zip(P.THEMES['warm'].values(), P.THEMES['tech'].values())))` 整份 PPT 换主题。
 
-**页面范式**（字典非 checklist：按 Step 1 叙事大纲选范式，不为凑范式造内容；同一范式重复用没关系，一份 deck 集邮式 9 种范式各来一次是能力巡展不是叙事；密度靠 Step 1 喂饱，不靠范式本身）：
+**页面范式**（字典非 checklist：按 Step 1 叙事大纲选范式，不为凑范式造内容；同一范式重复用没关系，一份 PPT 集邮式 9 种范式各来一次是能力巡展不是叙事；密度靠 Step 1 喂饱，不靠范式本身）：
 
 | 范式 | 函数 | 用途 |
 |---|---|---|
@@ -73,7 +73,7 @@ P.growth_donut(prs, 10, 'Mix', '标题', cats, vals)                  # 占比�
 | 章节页 | `slide_section` | 12+ 页长稿导航，杂志风（框架线 + 暗纹序号 + 条目） |
 | 时间轴 | `slide_timeline` | 演进 / 路线图，hi 高亮当前位置 |
 | 对比页 | `slide_versus` | A/B、前后对比，中缝 VS 圆标 |
-| 金句页 | `slide_quote` | 一句值得整页的话（12+ 页 deck） |
+| 金句页 | `slide_quote` | 一句值得整页的话（12+ 页 PPT） |
 | 卡片阵 | `slide_cards` | 并列职能 / 模块，自动换行 |
 | 数字墙 | `slide_numbers` | 等权指标一览 |
 | 图文页 | `slide_media` | 截图 + 要点；`sidebar=` 大图六成 + 圈注 + 脚注 |
@@ -107,5 +107,5 @@ P.growth_donut(prs, 10, 'Mix', '标题', cats, vals)                  # 占比�
 - GBK 控制台：print 禁用非 ASCII 字符，用 `OK`
 - pptx 原生表格列宽失控 → 一律自绘表格行（box + text 逐行拼）
 - 中文缺字形 → run 级设雅黑（primitives 已处理）
-- shape_id 每页独立编号不唯一，animate.py 已按 XML 树定位，二次开发勿全 deck 搜 id；pywin32：`pip install pywin32 -i https://pypi.tuna.tsinghua.edu.cn/simple`
+- shape_id 每页独立编号不唯一，animate.py 已按 XML 树定位，二次开发勿全局搜 id；pywin32：`pip install pywin32 -i https://pypi.tuna.tsinghua.edu.cn/simple`
 - docx / xlsx 可复用 primitives 思路，但页面范式表仅适用 pptx
