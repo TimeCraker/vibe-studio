@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "CS2 回合解说",
+    "lang": "zh",
+    "budgetSeconds": 22,
+    "charsPerSecond": 4.5,
+    "bannedWords": []
+  },
+  "segments": [
+    { "id": 1, "kind": "subtitle", "text": "这一局我们打 B 区。", "ref": "footage 0:00-0:04" },
+    { "id": 2, "kind": "subtitle", "text": "上隧道推进，队友先顶出去。", "ref": "footage 0:04-0:08" },
+    { "id": 3, "kind": "subtitle", "text": "B 口接火，配合队友直接双杀。", "ref": "footage 0:08-0:12" },
+    { "id": 4, "kind": "subtitle", "text": "进 B 换弹，准备下包。", "ref": "footage 0:12-0:15" },
+    { "id": 5, "kind": "subtitle", "text": "平台安放 C4，同时留意回防。", "ref": "footage 0:15-0:19" },
+    { "id": 6, "kind": "subtitle", "text": "包已下好，四十秒倒计时。", "ref": "footage 0:19-0:22" },
+    { "id": 7, "kind": "subtitle", "text": "卡住方向守包，等对手来撞。", "ref": "footage 0:22-0:26" },
+    { "id": 8, "kind": "subtitle", "text": "回合胜利，三杀拿下 MVP。", "ref": "footage 0:26-0:30" }
+  ]
+}
