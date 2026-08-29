@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 仓库定位
 
-自媒体内容工厂：项目 README → 介绍 PPT → 逐页动效 → 视频成片的一条流水线。不承载业务代码，只沉淀内容生产能力（Skills / Workflows / Assets）。当前 `ppt`、`humanizer` 两个 skill 已上线；`vibe-motion`（逐页动效）、`deck-to-video`（Remotion 合成）规划中。
+自媒体内容工厂：项目 README → 介绍 PPT → 逐页动效 → 视频成片的一条流水线。不承载业务代码，只沉淀内容生产能力（Skills / Workflows / Assets）。当前 `ppt`、`humanizer` 两个 skill 已上线；`video-motion`（Remotion 视频动效合成，吸收原 `vibe-motion` + `deck-to-video` 两项规划）开发中，Stage Spec 在 `docs/2026-08-29-video-motion-stage-spec.md`，由 Zcode 执行。
 
 ## 结构与架构
 
