@@ -1,11 +1,13 @@
 import React from "react";
 import { Composition, staticFile } from "remotion";
 import { getVideoMetadata } from "@remotion/media-utils";
+import { DataBarsDemo, SpotlightDemo, SubtitleDemo } from "./Demos";
 import { FootageOverlay } from "./FootageOverlay";
 
 export const FPS = 30;
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
+const DEMO_DURATION = 5 * FPS;
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -37,6 +39,30 @@ export const RemotionRoot: React.FC = () => {
             height: HEIGHT,
           };
         }}
+      />
+      <Composition
+        id="SubtitleDemo"
+        component={SubtitleDemo}
+        durationInFrames={DEMO_DURATION}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="DataBarsDemo"
+        component={DataBarsDemo}
+        durationInFrames={DEMO_DURATION}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="SpotlightDemo"
+        component={SpotlightDemo}
+        durationInFrames={DEMO_DURATION}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
       />
     </>
   );
