@@ -48,8 +48,13 @@ def split_long(text, limit=MAX_CHARS):
             pieces.append(rest[:cut + 1])
             rest = rest[cut + 1:]
         else:
-            pieces.append(rest[:limit])
-            rest = rest[limit:]
+            # 硬切时若尾片会不足 3 字（如 21 字段在 20 字处斩出「端」），
+            # 提前切点让尾片 >= 3 字——词级时长约 0.45s+，可独立成片不闪现
+            hard = limit
+            if len(rest) - limit < 3:
+                hard = len(rest) - 3
+            pieces.append(rest[:hard])
+            rest = rest[hard:]
     empty = re.compile(r"[\s%s]" % re.escape(PUNCT))
     return [p for p in pieces if empty.sub("", p)]
 
@@ -68,7 +73,7 @@ def allocate_times(pieces, start, end):
         cues.append([round(s, 3), round(e, 3), p])
     merged = []
     for c in cues:
-        if merged and (c[1] - c[0]) < 0.3:
+        if merged and (c[1] - c[0]) < 0.3 and len(merged[-1][2]) + len(c[2]) <= MAX_CHARS:
             merged[-1][1] = c[1]
             merged[-1][2] += c[2]
         else:
