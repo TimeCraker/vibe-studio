@@ -1,6 +1,6 @@
 ---
 name: video-motion
-description: 用 Remotion 在真实视频底材上叠加动效图层——字幕跟随、数据柱升起、圈注箭头标注（触发词：视频动效 / 视频加字幕 / 屏录标注 / 把视频做成讲解视频 / Remotion）。素材 + 一份 cues 时间轴声明，一条命令渲染成片。给录像 / 屏录 / 游戏录像做讲解视频、加字幕或数据动画时使用。
+description: 用 Remotion 在真实视频底材上叠加动效图层——字幕跟随、数据柱升起、圈注箭头标注（触发词：视频动效 / 视频加字幕 / 屏录标注 / 把视频做成讲解视频 / Remotion）。素材 + 一份 cues 时间轴声明，一条命令渲染成片。也给 PPT 逐页成片（DeckVideo）与视频封面出图（Cover 静态 PNG，触发词：封面图 / 视频封面 / 出封面 / cover）。给录像 / 屏录 / 游戏录像做讲解视频、加字幕、数据动画或出封面时使用。
 user-invocable: true
 ---
 
@@ -56,6 +56,14 @@ npx remotion render remotion/index.ts FootageOverlay <项目根>/output/video-mo
 5. **三级核查**：同 Step 4 三级（程序 ffprobe / compositions 对账 + 抽帧读图 + 用户看片）。L2 抽帧要点：每页首帧+0.3s 查页序；交叠中点取**下页 start+0.25s**（交叠尾在页窗尾部，0.5s 交叉溶解）；字幕 start+0.3s / end+0.3s 查文本与退场。页首帧+0.3s 处 spring 淡入未满、整帧偏灰，是转场中间态不是缺陷
 
 页图与配音住 `public/deck/`（.gitignore 已覆盖，不入 git）；画布 1920×1080@30 常量在 `build-deck-params.mjs` 顶部，改两行即 4K。
+
+## 封面出图（Cover，第三种产物）
+
+不渲视频渲一帧：一条命令出 1920×1080 封面 PNG，发视频时配图用。
+
+1. **props**：`output/video-motion/<项目名>/cover-<名>.json` 写 `{ title, subtitle?, badge?, bg?, preset }`。`preset` ∈ `photo`（bg 图铺满 + 底部 55% 黑渐变遮罩保对比度）/ `dark`（深色渐变，缺省）/ `clean`（浅底 + 顶部细线）；`bg` 是 remotion-app `public/` 下相对路径。**subtitle 省略即不渲染；badge 省略回落 ASTERFORGE 品牌角标**
+2. **渲染**：`npx remotion still src/cover-index.ts Cover <输出>.png --props=<json 文件路径>`（独立入口不经 Root.tsx，与 DeckVideo 并行施工零冲突）
+3. **核查**：读图查标题完整不截断（超长标题须两行内折行）、photo 遮罩下文字可读、无乱码方块；读图走 `C:\pc\` 短路径，复查须换新文件名防缓存
 
 ## 边界与坑
 
