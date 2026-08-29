@@ -14,6 +14,7 @@ out/
 *.webm
 public/deck/
 skills/video-motion/templates/remotion-app/public/deck/
+skills/video-motion/templates/remotion-app/public/covers/
 
 # 产物（生成物不进 git，脚本可复跑）
 *.pptx
