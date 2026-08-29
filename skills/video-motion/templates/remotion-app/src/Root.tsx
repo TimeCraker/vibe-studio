@@ -8,6 +8,10 @@ export const FPS = 30;
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
 const DEMO_DURATION = 5 * FPS;
+// 正片随素材原生规格：2560x1440 @ 60fps（动效层在 FootageOverlay 内按 1080p 设计坐标放大适配）
+const FOOTAGE_FPS = 60;
+const FOOTAGE_WIDTH = 2560;
+const FOOTAGE_HEIGHT = 1440;
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -24,19 +28,19 @@ export const RemotionRoot: React.FC = () => {
         id="FootageOverlay"
         component={FootageOverlay}
         durationInFrames={1}
-        fps={FPS}
-        width={WIDTH}
-        height={HEIGHT}
+        fps={FOOTAGE_FPS}
+        width={FOOTAGE_WIDTH}
+        height={FOOTAGE_HEIGHT}
         defaultProps={{}}
         calculateMetadata={async () => {
           const { durationInSeconds } = await getVideoMetadata(
             staticFile("footage.mp4"),
           );
           return {
-            durationInFrames: Math.floor(durationInSeconds * FPS),
-            fps: FPS,
-            width: WIDTH,
-            height: HEIGHT,
+            durationInFrames: Math.floor(durationInSeconds * FOOTAGE_FPS),
+            fps: FOOTAGE_FPS,
+            width: FOOTAGE_WIDTH,
+            height: FOOTAGE_HEIGHT,
           };
         }}
       />
