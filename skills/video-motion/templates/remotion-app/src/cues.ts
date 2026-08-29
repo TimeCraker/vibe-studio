@@ -49,7 +49,7 @@ export const cues = {
   ] as DataBarGroup[],
   spotlights: [
     { t: 4.2,  ttl: 2.5, kind: 'box',    x: 1380, y: 70,  w: 530, h: 85,  text: '双杀时刻' },
-    { t: 12.4, ttl: 2.6, kind: 'circle', x: 850,  y: 470, w: 330, h: 350, text: '安放 C4' },
+    { t: 11.2, ttl: 1.4, kind: 'circle', x: 850,  y: 470, w: 330, h: 350, text: '安放 C4' },
     { t: 16.4, ttl: 2.6, kind: 'arrow',  x: 1085, y: 825, w: 680, h: 0,   text: '倒计时 40 秒' },
   ] as SpotlightCue[],
 };
