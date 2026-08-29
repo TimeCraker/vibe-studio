@@ -7,7 +7,9 @@ Output: <stem>.cues.json + <stem>.srt next to the input (or --outdir).
 Cue schema matches video-motion SubtitleCue: {start, end, text}, seconds with 3 decimals.
 """
 import os
-os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
+# 默认官方直连（2026-08-29 实测通；hf-mirror 当时对 GET/HEAD 一律 308 回官方源导致下载必炸）。
+# 下载失败时可设 HF_ENDPOINT 换源，如 https://hf-mirror.com
+os.environ.setdefault("HF_ENDPOINT", "https://huggingface.co")
 
 import argparse
 import json
