@@ -11,6 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `skills/<name>/SKILL.md` — skill 本体，frontmatter 含 `name` / `description`（description 即触发条件，要写清用户会怎么说的触发词）
 - `skills/<name>/templates/` — skill 自带的模板代码（如 ppt 的 `primitives.py` 版式原语、`animate.py` 逐元素动画、`verify.py` 渲染核查初筛）
 - `assets/` — 品牌资源与 SVG
+- `output/` — 产物工作台：各 skill 产物按 `<skill 名>/` 分目录（`footage/` 为素材库），不入 git；skill 只放工具不放产物
 - `docs/` — 决策记录（选了什么、放弃了什么、为什么）；目录尚未建立，首次决策时创建
 
 skill 的设计单元是**自包含**：每个 skill 可独立运行、自带模板、不依赖本仓库外文件。分发方式是复制或软链到目标项目 `.claude/skills/`。`.claude/skills/` 下是指向 `skills/` 同名目录的本机 junction（Claude Code 只认这个路径；已 gitignore，克隆后按 README「使用」节跑一次 setup）。

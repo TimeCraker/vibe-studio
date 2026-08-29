@@ -192,7 +192,7 @@ export const cues = {
 
 1. **写 `skills/video-motion/SKILL.md`**（流程式结构，对齐 `skills/ppt/SKILL.md` 的写法与验收风格）：
    - frontmatter：`name: video-motion`、`description`（含触发词：视频动效 / 视频加字幕 / 屏录标注 / 把视频做成讲解视频 / Remotion）、`user-invocable: true`
-   - 五步：① 剧本设计（看素材抽帧 → 写 cues，字幕讲画面、圈注指实物、数字要口径）② 工程与 cues（复制 templates/remotion-app，素材放 public/）③ 生成（render 命令）④ 三级核查（程序 → 读图 → 用户看片，still 抽帧法）⑤ 交付（产物路径 / 验收结论 / 脚本可复跑）
+   - 五步：① 剧本设计（看素材抽帧 → 写 cues，字幕讲画面、圈注指实物、数字要口径）② 工程与 cues（复制 templates/remotion-app，素材放 public/ 后跑 `node scripts/probe-footage.mjs` 让输出参数随素材适配）③ 生成（render 命令，产物渲染到项目根 `output/video-motion/`——skill 是纯工具，不留产物）④ 三级核查（程序 → 读图 → 用户看片，still 抽帧法）⑤ 交付（产物路径 / 验收结论 / 脚本可复跑）
 2. 建 junction（PowerShell）：
    ```powershell
    New-Item -ItemType Directory -Force C:\Users\TimeCraker\Desktop\my_workspace\vibe-studio\.claude\skills | Out-Null
