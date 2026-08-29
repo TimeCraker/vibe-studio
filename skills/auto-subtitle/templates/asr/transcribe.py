@@ -55,7 +55,8 @@ def split_long(text, limit=MAX_CHARS):
 
 
 def allocate_times(pieces, start, end):
-    """Interpolate segment duration across pieces linearly by char count."""
+    """Interpolate segment duration across pieces linearly by char count.
+    Tiny pieces (<0.3s) merge into the previous piece within the same segment."""
     total = sum(len(p) for p in pieces)
     dur = end - start
     cues = []
@@ -64,8 +65,15 @@ def allocate_times(pieces, start, end):
         s = start + dur * (acc / total)
         acc += len(p)
         e = start + dur * (acc / total)
-        cues.append((round(s, 3), round(e, 3), p))
-    return cues
+        cues.append([round(s, 3), round(e, 3), p])
+    merged = []
+    for c in cues:
+        if merged and (c[1] - c[0]) < 0.3:
+            merged[-1][1] = c[1]
+            merged[-1][2] += c[2]
+        else:
+            merged.append(c)
+    return [tuple(c) for c in merged]
 
 
 def fmt_srt_ts(t):
@@ -98,7 +106,8 @@ def main():
         from faster_whisper import WhisperModel
         model = WhisperModel(args.model, device="cpu", compute_type="int8")
         segments, info = model.transcribe(str(inp), language=args.lang,
-                                          vad_filter=True, beam_size=5)
+                                          vad_filter=True, beam_size=5,
+                                          word_timestamps=True)
 
         cues = []
         n_segments = 0
@@ -107,7 +116,15 @@ def main():
             text = clean_text(seg.text, args.lang)
             if not text:
                 continue
-            cues.extend(allocate_times(split_long(text), seg.start, seg.end))
+            # 词级时间戳定真实语音窗口：首词 start / 末词 end，
+            # 避开 whisper 段边界吞掉句间静音导致的字幕提前
+            words = list(seg.words or [])
+            if words:
+                seg_start = min(w.start for w in words)
+                seg_end = max(w.end for w in words)
+            else:
+                seg_start, seg_end = seg.start, seg.end
+            cues.extend(allocate_times(split_long(text), seg_start, seg_end))
 
         data = {"subtitles": [
             {"start": s, "end": e, "text": t} for (s, e, t) in cues
