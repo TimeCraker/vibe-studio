@@ -77,7 +77,7 @@ export const TypingTerminal: React.FC<{
           {title}
         </div>
       </div>
-      <div style={{ padding: "20px 24px 24px", fontFamily: "Consolas, monospace", fontSize: 17, lineHeight: 1.8 }}>
+      <div style={{ padding: "20px 24px 24px", fontFamily: "Consolas, 'Microsoft YaHei', monospace", fontSize: 17, lineHeight: 1.8 }}>
         {rows.map((r, i) => {
           const isTyping = r.state === "typing";
           const showCursor = cursorVisible && (isTyping || (activeIdx === -1 && lastStarted === r && r.state === "done" && i === rows.length - 1));

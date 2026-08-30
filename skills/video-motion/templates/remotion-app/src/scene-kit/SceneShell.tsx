@@ -18,6 +18,7 @@ export const SceneShell: React.FC<{
   accent?: string;
   highlight?: { start: number; end: number };
   titleSize?: number;
+  tone?: "light" | "dark"; // 深底场景反色（眉题/标题/章节号/分隔线）
   left?: React.ReactNode;
   style?: React.CSSProperties;
   children?: React.ReactNode;
@@ -28,6 +29,7 @@ export const SceneShell: React.FC<{
   accent = DEFAULT_ACCENT,
   highlight,
   titleSize = 66,
+  tone = "light",
   left,
   style,
   children,
@@ -36,8 +38,13 @@ export const SceneShell: React.FC<{
   const { fps } = useVideoConfig();
   const chromeP = spring({ frame: Math.max(0, frame - 0.05 * fps), fps, config: SPRING_CONFIG });
   const lineP = spring({ frame: Math.max(0, frame - 0.3 * fps), fps, config: SPRING_CONFIG });
+  const dark = tone === "dark";
+  const titleColor = dark ? "#f8fafc" : INK;
+  const chapterColor = dark ? "#94a3b8" : INK_MUTED;
+  const eyebrowColor = dark ? "#8FA8FF" : accent; // 深底上钴蓝对比不足，提亮一档
+  const hairline = dark ? "rgba(255,255,255,0.16)" : HAIRLINE;
   const titleHighlights = highlight
-    ? [{ start: highlight.start, end: highlight.end, color: accent }]
+    ? [{ start: highlight.start, end: highlight.end, color: dark ? "#8FA8FF" : accent }]
     : [];
 
   return (
@@ -50,7 +57,7 @@ export const SceneShell: React.FC<{
             fontWeight: 700,
             letterSpacing: "0.32em",
             textTransform: "uppercase",
-            color: accent,
+            color: eyebrowColor,
             opacity: chromeP,
             transform: `translateY(${((1 - chromeP) * 12).toFixed(2)}px)`,
           }}
@@ -62,7 +69,7 @@ export const SceneShell: React.FC<{
             fontFamily: "Consolas, monospace",
             fontSize: 18,
             fontWeight: 700,
-            color: INK_MUTED,
+            color: chapterColor,
             opacity: chromeP,
           }}
         >
@@ -72,7 +79,7 @@ export const SceneShell: React.FC<{
 
       {/* 超大加粗标题 */}
       <div style={{ marginTop: 22 }}>
-        <TextReveal text={title} mode="char" size={titleSize} weight={800} color={INK} delay={0.12} highlights={titleHighlights} />
+        <TextReveal text={title} mode="char" size={titleSize} weight={800} color={titleColor} delay={0.12} highlights={titleHighlights} />
       </div>
 
       {/* 细分隔线 */}
@@ -80,7 +87,7 @@ export const SceneShell: React.FC<{
         style={{
           marginTop: 26,
           height: 1,
-          background: HAIRLINE,
+          background: hairline,
           transformOrigin: "left center",
           transform: `scaleX(${lineP.toFixed(3)})`,
         }}

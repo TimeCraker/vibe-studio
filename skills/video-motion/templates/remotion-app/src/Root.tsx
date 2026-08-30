@@ -3,6 +3,7 @@ import { Composition, staticFile } from "remotion";
 import { getVideoMetadata } from "@remotion/media-utils";
 import { DataBarsDemo, SpotlightDemo, SubtitleDemo } from "./Demos";
 import { DeckVideo } from "./DeckVideo";
+import { DeckVideoV2 } from "./DeckVideoV2";
 import { deckParams } from "./deck-params";
 import { FootageOverlay } from "./FootageOverlay";
 import { footageParams } from "./footage-params";
@@ -46,6 +47,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="DeckVideo"
         component={DeckVideo}
+        durationInFrames={Math.round(deckParams.totalSeconds * deckParams.fps)}
+        fps={deckParams.fps}
+        width={deckParams.width}
+        height={deckParams.height}
+      />
+      <Composition
+        id="DeckVideoV2"
+        component={DeckVideoV2}
         durationInFrames={Math.round(deckParams.totalSeconds * deckParams.fps)}
         fps={deckParams.fps}
         width={deckParams.width}
