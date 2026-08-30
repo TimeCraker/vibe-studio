@@ -24,7 +24,7 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 |---|---|---|
 | [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：17 种页面范式（章节/时间轴/对比/金句/图文/增长柱线环…）+ 3 套主题预设 + 动画 auto 编排（11 入场 + 级联 + morph 真补间）+ 口播稿备注 + 自动放映 + 改写现有 pptx + 三级渲染核查（含对比度初筛） | 已上线 |
 | [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader 英文体系 × 中文三毒/L1-L4 工程体系融合 v5） | 已上线 |
-| [`video-motion`](skills/video-motion/) | **视频动效合成**：视频底材叠字幕 / 数据动效 / 圈注 + PPT 逐页成片 + 静态封面出图（一套 Remotion 引擎三种产物） | 已上线（[首站 Spec](docs/2026-08-29-video-motion-stage-spec.md) · [逐页成片 Spec](docs/2026-08-29-deck-video-stage-spec.md) · [封面 Spec](docs/2026-08-29-cover-still-stage-spec.md)） |
+| [`video-motion`](skills/video-motion/) | **视频动效合成**：视频底材叠字幕 / 数据动效 / 圈注 + PPT 逐页成片 + 场景化成片（scene-kit 直绘动效场景，八问口诀+质感工艺）+ 静态封面出图（一套 Remotion 引擎四种产物） | 已上线（[首站 Spec](docs/2026-08-29-video-motion-stage-spec.md) · [逐页成片 Spec](docs/2026-08-29-deck-video-stage-spec.md) · [场景化 v2 Spec](docs/2026-08-30-deck-video-v2-stage-spec.md) · [质感 v3 Spec](docs/2026-08-30-deck-video-v3-fidelity-spec.md) · [封面 Spec](docs/2026-08-29-cover-still-stage-spec.md)） |
 | [`auto-subtitle`](skills/auto-subtitle/) | **自动字幕**：faster-whisper 转写音视频 → `SubtitleCue[]` JSON（直接喂 video-motion），词级时间戳对齐真实语音窗口、长句自动切分、VAD 防幻觉 | 已上线（[Stage Spec](docs/2026-08-29-auto-subtitle-stage-spec.md)） |
 | [`narration`](skills/narration/) | **口播稿工坊**：分段稿 JSON + 程序校验（字数↔秒数、段长、禁令初筛），直出剪映配音与 cues（video-motion / deck-video 消费） | 已上线（[Stage Spec](docs/2026-08-29-narration-stage-spec.md)） |
 
