@@ -23,6 +23,7 @@ import { TextReveal } from "./scene-kit/TextReveal";
 import { TypingTerminal } from "./scene-kit/TypingTerminal";
 import { deckCues } from "./deck-cues";
 import { deckParams } from "./deck-params";
+import { FONT } from "./scene-kit/tokens";
 
 // DeckVideoV2 — 场景化成片（v2）：画面主体为 Remotion 原生动效场景（scene-kit 组合），
 // PPT 降级为内容来源。页时长/起点/音频/字幕时间轴全部复用 v1 派生机制
@@ -559,7 +560,8 @@ const V2Page: React.FC<{ index: number; pageSeconds: number }> = ({ index, pageS
 export const DeckVideoV2: React.FC = () => {
   const { fps } = useVideoConfig();
   return (
-    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+    // 全局字体接入（F2）：全片任何文字不得落回浏览器默认衬线
+    <AbsoluteFill style={{ backgroundColor: "#000", fontFamily: FONT.sans }}>
       {deckParams.pages.map((page) => (
         <Sequence
           key={page.index}

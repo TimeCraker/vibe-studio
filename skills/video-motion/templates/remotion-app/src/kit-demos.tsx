@@ -12,13 +12,17 @@ import { ChartGrow } from "./scene-kit/ChartGrow";
 import { ChatReplay } from "./scene-kit/ChatReplay";
 import { CountUp } from "./scene-kit/CountUp";
 import { DeviceFrame } from "./scene-kit/DeviceFrame";
+import { DropCard } from "./scene-kit/DropCard";
 import { FloatWrap } from "./scene-kit/FloatWrap";
 import { GlowPulse } from "./scene-kit/GlowPulse";
 import { SceneBg } from "./scene-kit/SceneBg";
 import { SceneShell } from "./scene-kit/SceneShell";
 import { StaggerList } from "./scene-kit/StaggerList";
 import { TextReveal } from "./scene-kit/TextReveal";
+import { TopProgress } from "./scene-kit/TopProgress";
 import { TypingTerminal } from "./scene-kit/TypingTerminal";
+import { SubtitleTrack } from "./fx/SubtitleTrack";
+import { COLOR, FONT, SHADOW } from "./scene-kit/tokens";
 
 // scene-kit 零件 demo：kit-basics（Stage 0 基础层）与 kit-narrative（Stage 1 叙事组件）。
 // 独立入口 remotion/demo-index.ts，不进 Root.tsx；段内 useCurrentFrame 均为段本地帧。
@@ -33,7 +37,7 @@ const PAPER = "#FFFFFF";
 
 const SPRING_CONFIG = { damping: 200, stiffness: 120, mass: 1 };
 
-// 段首说明标签（左下角小字，demo 导航用）
+// 段首说明标签（左上角小字，demo 导航用；底带让给字幕面板，F4 无叠压）
 const SegmentTag: React.FC<{ label: string }> = ({ label }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -43,7 +47,7 @@ const SegmentTag: React.FC<{ label: string }> = ({ label }) => {
       style={{
         position: "absolute",
         left: 48,
-        bottom: 40,
+        top: 40,
         fontFamily: "Consolas, monospace",
         fontSize: 20,
         fontWeight: 700,
@@ -279,6 +283,117 @@ const SegPhone: React.FC = () => (
   </SceneBg>
 );
 
+// ── kit-v3a 段落（v3 Stage 0 光影地基）────────────────────────────────
+const Seg3aLight: React.FC = () => (
+  <SceneBg variant="light">
+    <TopProgress from={0} to={0.5} />
+    <AbsoluteFill style={{ padding: "110px 120px 150px", fontFamily: FONT.sans, display: "flex", flexDirection: "column" }}>
+      <TextReveal text="画面大字：字幕去重对照" mode="char" size={64} highlights={[{ start: 5, end: 10, color: COLOR.brand }]} />
+      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 90 }}>
+        <FloatWrap period={4.2}>
+          <DropCard glow glowSize={620} padding="34px 44px" style={{ width: 380 }}>
+            <div style={{ fontSize: 26, fontWeight: 800, color: COLOR.ink }}>DropCard · glow</div>
+            <div style={{ fontSize: 18, fontWeight: 600, color: COLOR.inkSoft, marginTop: 10, lineHeight: 1.6 }}>
+              双层阴影 + hairline + 顶光 rim + 卡后品牌衬光
+            </div>
+          </DropCard>
+        </FloatWrap>
+        <FloatWrap phase={1.9} period={4.6}>
+          <DropCard padding="34px 44px" style={{ width: 380 }}>
+            <div style={{ fontSize: 26, fontWeight: 800, color: COLOR.ink }}>DropCard · plain</div>
+            <div style={{ fontSize: 18, fontWeight: 600, color: COLOR.inkSoft, marginTop: 10, lineHeight: 1.6 }}>
+              白卡面 + 双层阴影，无衬光
+            </div>
+          </DropCard>
+        </FloatWrap>
+      </div>
+    </AbsoluteFill>
+    <SubtitleTrack
+      theme="panel"
+      keywords={["LeKao"]}
+      cues={[
+        { start: 1.0, end: 4.0, text: "浅底字幕：LeKao 关键词品牌色，白 85% 面板" },
+        { start: 4.5, end: 7.5, text: "画面大字：字幕去重对照" },
+      ]}
+      dedupe={[{ from: 4.5, to: 7.5, text: "画面大字：字幕去重对照" }]}
+    />
+    <SegmentTag label="01 SceneBg light v3（网格+柔光斑+暗角）+ DropCard + 字幕面板/去重" />
+  </SceneBg>
+);
+
+const Seg3aDark: React.FC = () => (
+  <SceneBg variant="dark">
+    <TopProgress from={0.5} to={1} trackColor="rgba(255,255,255,0.12)" />
+    <AbsoluteFill style={{ padding: "110px 120px 150px", fontFamily: FONT.sans, display: "flex", flexDirection: "column" }}>
+      <TextReveal text="深族背景：径向渐变 + 暗角 + 微噪点" mode="char" size={60} color="#f8fafc" highlights={[{ start: 5, end: 9, color: "#8FA8FF" }]} />
+      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <FloatWrap period={4.4}>
+          <DropCard tone="dark" glow glowSize={680} padding="38px 52px" style={{ width: 640 }}>
+            <div style={{ fontSize: 26, fontWeight: 800, color: "#f8fafc" }}>深底 DropCard</div>
+            <div style={{ fontSize: 18, fontWeight: 600, color: "#94a3b8", marginTop: 10, lineHeight: 1.6 }}>
+              #1B2338 卡面 + SHADOW.float + rim light 边光
+            </div>
+          </DropCard>
+        </FloatWrap>
+      </div>
+    </AbsoluteFill>
+    <SubtitleTrack
+      theme="panel"
+      darkRanges={[{ from: 0, to: 8 }]}
+      keywords={["T-Coin"]}
+      cues={[{ start: 1.0, end: 6.5, text: "深底字幕：黑 55% 面板，T-Coin 关键词提亮" }]}
+    />
+    <SegmentTag label="02 SceneBg dark v3 + 深底卡 + 深底字幕面板" />
+  </SceneBg>
+);
+
+const Seg3aShadow: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", gap: 110, flexDirection: "row", fontFamily: FONT.sans }}>
+      <FloatWrap period={4.2}>
+        <DropCard padding="40px 52px" style={{ width: 430 }}>
+          <div style={{ fontSize: 28, fontWeight: 800, color: COLOR.ink }}>v3 · 光影体系</div>
+          <div style={{ fontFamily: FONT.mono, fontSize: 17, fontWeight: 600, color: COLOR.inkSoft, marginTop: 12, lineHeight: 1.7 }}>
+            SHADOW.card + RIM.light
+            <br />
+            + COLOR.line hairline
+          </div>
+        </DropCard>
+      </FloatWrap>
+      <FloatWrap phase={2.0} period={4.5}>
+        <div
+          style={{
+            width: 430,
+            borderRadius: 20,
+            background: COLOR.paperCard,
+            boxShadow: "0 24px 60px rgba(17,23,34,0.12)",
+            padding: "40px 52px",
+          }}
+        >
+          <div style={{ fontSize: 28, fontWeight: 800, color: COLOR.ink }}>v2 · 旧平阴影</div>
+          <div style={{ fontFamily: FONT.mono, fontSize: 17, fontWeight: 600, color: COLOR.inkSoft, marginTop: 12, lineHeight: 1.7 }}>
+            单层大投影
+            <br />
+            无 rim / 无 hairline
+          </div>
+        </div>
+      </FloatWrap>
+    </AbsoluteFill>
+    <SegmentTag label="03 卡片悬浮光影对比（v3 双层阴影 vs v2 单层）" />
+  </SceneBg>
+);
+
+// 段长（秒）：8 / 8 / 4 = 20s
+export const KitV3a: React.FC = () => {
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+      <Sequence from={0} durationInFrames={8 * FPS}><Seg3aLight /></Sequence>
+      <Sequence from={8 * FPS} durationInFrames={8 * FPS}><Seg3aDark /></Sequence>
+      <Sequence from={16 * FPS} durationInFrames={4 * FPS}><Seg3aShadow /></Sequence>
+    </AbsoluteFill>
+  );
+};
+
 // 段长（秒）：7 / 6 / 4 / 5 / 4 / 4 = 30s
 export const KitNarrative: React.FC = () => {
   return (
@@ -308,6 +423,14 @@ export const KitDemoRoot: React.FC = () => {
         id="kit-narrative"
         component={KitNarrative}
         durationInFrames={30 * FPS}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="kit-v3a"
+        component={KitV3a}
+        durationInFrames={20 * FPS}
         fps={FPS}
         width={WIDTH}
         height={HEIGHT}
