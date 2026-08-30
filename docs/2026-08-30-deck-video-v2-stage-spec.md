@@ -42,19 +42,27 @@
 | `GlowPulse.tsx` | 强调脉冲光晕（呼吸 1.5-2s 周期） | `color?` `size?` |
 | `SceneShell.tsx` | **杂志式**场景容器（V3 规则）：眉题小字（英文小标签）+ 章节号（01/02…+细分隔线）+ 大标题 TextReveal + **非对称双栏**主体插槽（左文 ~55% / 右主体 ~45%） | `chapter: string` `eyebrow: string` `title: string` `accent?: string` |
 
-### 11 页 → 场景映射（DeckVideoV2；V2 规则——主体是内容的具象化，V1 规则——背景按内容选族）
+### 场景设计方法（通用规则，换任何产品/项目同样适用）
 
-| 页 | 背景族 | 场景组合（主体 = 内容具象化） |
-|---|---|---|
-| 1 开场 | dark | 黑场→GlowPulse 光晕绽放→logo 浮现(FloatWrap)→主标题逐行 TextReveal（"错题本，不再一道道粘贴"） |
-| 2 痛点 | **light** | 杂志排版：左列眉题+大标题，右侧 TypingTerminal 逐行打出助教重复劳动清单（主体=痛点清单本身） |
-| 3-5 三大功能 | **light** | 左列眉题+大标题+文案 TextReveal，右 45% DeviceFrame(browser) 装 feature-*.png 官方图 + GlowPulse 强调「免费/1币」标签——对标标杆片「左文右手机」版式；三页结构同、素材不同 |
-| 6 价值 | dark | CountUp（30 人 × 3 题 = 90 道）+ ChartGrow（手抄 vs Lekao 分钟对比柱）——数字页用深底 |
-| 7 流程 | **light** | 4 步 StaggerList 横排卡（01-04 编号+细线连接依次点亮） |
-| 8 T-Coin | **light** | 签到 ChatReplay 对话回放（用户签到→+1 币→失败退回）+ 结论 GlowPulse |
-| 9 隐私安心 | **light** | 三卡片 StaggerList 级联 + FloatWrap 待机 |
-| 10 结尾 CTA | dark | logo FloatWrap + TextReveal 大字 + 免费开始按钮 GlowPulse |
-| 11 片尾 | dark | logo + 域名 lekao.asterforge.top |
+每页画面**由该页文案内容决定**，不预设答案。方法三步：
+
+**第一步：给每页文案定内容类型**（六类之一）：
+
+| 内容类型 | 判断标志 | 主体具象化候选（讲什么就用什么当主体） | 背景族倾向 | 组件组合候选 |
+|---|---|---|---|---|
+| 叙事痛点 | 讲一个情境/烦恼 | 清单终端、对话回放、对比图 | light | TypingTerminal / ChatReplay + TextReveal |
+| 功能演示 | 展示产品做什么 | 真实截图装设备框、操作回放 | light | DeviceFrame + TextReveal + GlowPulse |
+| 数据说服 | 用数字证明价值 | 图表、大数字 | dark | CountUp + ChartGrow |
+| 流程说明 | 怎么做/几步走 | 步骤卡、连接线 | light | StaggerList + 编号线 |
+| 概念解释 | 讲一个抽象概念 | 插画、示意结构 | 视情绪 | FloatWrap + GlowPulse + TextReveal |
+| 行动号召 | 结尾 CTA | logo + 大字 + 按钮 | dark | TextReveal + GlowPulse |
+
+**第二步：按三条选择规则定稿**：
+1. **主体由文案具体内容定**：讲对话→对话回放，讲截图→设备框，讲数字→数字滚动；不拿装饰物凑主体。
+2. **同类型多页不重复同一视觉方案**：标杆片同一内容类型出现多次时，主体形式和构图都会变化（如演示型一页用手机框、一页用浏览器框、一页用全屏内嵌）。
+3. **背景族服务内容情绪**：叙事亲和走米白杂志，数字科技走深蓝；倾向表可破——给出理由即可。
+
+**第三步：设计表前置关卡（Stage 2 的第一步，硬门槛）**——开工写代码前，先产出 `output/video-motion/lekao-intro/scene-design.md`：每页一行「文案摘要 → 内容类型 → 主体形式 → 背景族 → 组件组合 → 一句话理由」，**停下等 Claude 复核通过后才进代码**。设计判断是质量源头，不让代码先行倒逼设计。
 
 字幕仍挂 `deck-cues.ts`（复用 v1）；`DeckVideoV2.tsx` 每页一个 `<Sequence>`，页时长读 `deck-params.ts`。
 
@@ -62,7 +70,9 @@
 
 - **Stage 0 基础层**：SceneBg（light/dark 双 variant 都要演示）/ FloatWrap / TextReveal / StaggerList / SceneShell + demo composition `kit-basics`（20s，各组件依次演示）。验收：渲染 exit 0 + 抽帧 ≥8 张含进场中间态。
 - **Stage 1 叙事组件**：TypingTerminal / ChatReplay / CountUp / ChartGrow / DeviceFrame / GlowPulse + demo `kit-narrative`（30s）。同样抽帧验收。
-- **Stage 2 全片接线**：素材复制进 `public/lekao/`（.gitignore 加行）→ 11 场景按 §2 映射组进 `DeckVideoV2.tsx` → Root.tsx 注册（只加一行）→ `npx remotion compositions` 帧数对账（= Σ 页时长×30）。
+- **Stage 2 场景设计+全片接线**：
+  1. **设计表前置**：按 §2「场景设计方法」三步产出 `scene-design.md`（每页一行：文案摘要→内容类型→主体形式→背景族→组件组合→理由），**停下等 Claude 复核**；复核不过改表重提，不带病进代码。
+  2. 素材复制进 `public/lekao/`（.gitignore 加行）→ 按复核过的设计表组进 `DeckVideoV2.tsx` → Root.tsx 注册（只加一行）→ `npx remotion compositions` 帧数对账（= Σ 页时长×30）。
 - **Stage 3 渲染+三级验收**：渲染到 `output/video-motion/lekao-intro/deck-v2.mp4`。L1：exit 0 + ffprobe 对账；L2：抽帧 ≥40 张——**每场景必须抽到元素半入场的中间帧**（证明动画存在，这是 v1→v2 的核心差异点）+ 字幕帧逐字核对 + 无黑帧；L3：报告 `output/deck-video-v2-acceptance.md`（含与 v1 同时间点画面对照表）。**停下等确认。**
 - **Stage 4（用户确认后）**：封面 v2——新 composition `CoverV2`（SceneBg dark + DeviceFrame 装官网截图 + 大标题 TextReveal 冻结态 + GlowPulse），`npx remotion still` 出 `cover-v2.png`；配音终稿线：提示用户拿 `script.json` 去剪映配音，回填 `public/deck/audio/` 后重跑 build-deck-params + 渲染两步即换音。SKILL.md 补「场景化成片 v2」流程节（本 spec 为准）。
 
@@ -71,7 +81,8 @@
 - [ ] v1 存量零改动（DeckVideo.tsx / cover-index.ts / Root.tsx 既有项 diff 为零）
 - [ ] 确定性：grep 渲染路径无 `Math.random` / `Date.now`
 - [ ] 每场景抽帧含进场中间态（动画真实存在的证据）
-- [ ] motion-grammar 四视觉规则抽查：背景选族正确（light/dark 与 §2 映射一致）/ 主体是内容具象化 / 杂志式排版（眉题+大标题+细线）/ 强调色每屏 ≤2
+- [ ] motion-grammar 四视觉规则抽查：背景选族与该页内容类型匹配 / 主体是内容具象化 / 杂志式排版（眉题+大标题+细线）/ 强调色每屏 ≤2
+- [ ] 设计表经 Claude 复核，且同类型多页视觉方案不重复
 - [ ] 字幕与 script.json 逐字一致；无付费/充值词（复用 v1 bannedWords 校验）
 - [ ] 渲染 exit 0、ffprobe 时长 = compositions 帧数/30 对账
 - [ ] 素材未入 git（public/lekao/ 已忽略）；分支内提交、零 push
