@@ -1,13 +1,16 @@
 import React from "react";
 import { useCurrentFrame, useVideoConfig } from "remotion";
+import { COLOR, FONT, SHADOW } from "./tokens";
+import { DropCard } from "./DropCard";
 
-// macOS 风终端窗：逐行打字 + 光标闪烁 + 当前行高亮（M2 微叙事：0.5-2s 一个事件）。
-// 确定性：打字进度全部由 (t - lineStart) × cps 推导，无随机源。
+// 终端窗 v2（F2 拟真）：标题栏与内容同底色（去分割线）、三灯左置、标题 mono 居中、
+// 正文纯 #0d1117 + FONT.mono、$ 提示符品牌色、块状光标 530ms 闪烁；
+// 整窗经 DropCard（SHADOW.float + RIM.dark 顶光）承载，逐行打字（M2 微叙事）。
 const LINE_PAUSE = 0.25; // s，行间停顿
-const BG = "#141a24";
-const BORDER = "rgba(255,255,255,0.09)";
+const BODY_BG = "#0d1117";
 const DONE_COLOR = "#7d8590";
 const TYPING_COLOR = "#e6edf3";
+const CURSOR_PERIOD_S = 0.53; // 块状光标闪烁周期
 
 export const TypingTerminal: React.FC<{
   lines: string[];
@@ -33,33 +36,14 @@ export const TypingTerminal: React.FC<{
     const state = typed <= 0 ? "pending" : typed < line.length ? "typing" : "done";
     return { line, typed, state };
   });
-  // 光标落在最后一条已开始（未完或刚完）的行尾
   const activeIdx = rows.findIndex((r) => r.state === "typing");
   const lastStarted = [...rows].reverse().find((r) => r.state !== "pending");
-  const cursorVisible = Math.floor(frame / 18) % 2 === 0;
+  const cursorVisible = Math.floor(t / CURSOR_PERIOD_S) % 2 === 0;
 
   return (
-    <div
-      style={{
-        width,
-        borderRadius: 14,
-        background: BG,
-        border: `1px solid ${BORDER}`,
-        boxShadow: "0 30px 80px rgba(0,0,0,0.35)",
-        overflow: "hidden",
-        ...style,
-      }}
-    >
-      <div
-        style={{
-          height: 42,
-          display: "flex",
-          alignItems: "center",
-          paddingLeft: 16,
-          position: "relative",
-          borderBottom: `1px solid ${BORDER}`,
-        }}
-      >
+    <DropCard tone="dark" bg={BODY_BG} radius={14} shadow={SHADOW.float} style={style}>
+      {/* 标题栏：与内容同底色，无分割线 */}
+      <div style={{ height: 40, display: "flex", alignItems: "center", paddingLeft: 16, position: "relative" }}>
         {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
           <div key={c} style={{ width: 12, height: 12, borderRadius: 6, background: c, marginRight: 8 }} />
         ))}
@@ -69,7 +53,7 @@ export const TypingTerminal: React.FC<{
             left: 0,
             right: 0,
             textAlign: "center",
-            fontFamily: "Consolas, monospace",
+            fontFamily: FONT.mono,
             fontSize: 13,
             color: "#8b949e",
           }}
@@ -77,20 +61,26 @@ export const TypingTerminal: React.FC<{
           {title}
         </div>
       </div>
-      <div style={{ padding: "20px 24px 24px", fontFamily: "Consolas, 'Microsoft YaHei', monospace", fontSize: 17, lineHeight: 1.8 }}>
+      <div style={{ padding: "14px 24px 24px", fontFamily: FONT.mono, fontSize: 17, lineHeight: 1.8 }}>
         {rows.map((r, i) => {
           const isTyping = r.state === "typing";
           const showCursor = cursorVisible && (isTyping || (activeIdx === -1 && lastStarted === r && r.state === "done" && i === rows.length - 1));
+          const hasPrompt = r.line.startsWith("$");
           return (
             <div key={i} style={{ color: r.state === "done" ? DONE_COLOR : TYPING_COLOR, fontWeight: isTyping ? 700 : 400, whiteSpace: "pre-wrap", minHeight: "1.8em" }}>
-              {r.line.slice(0, r.typed)}
-              {showCursor ? <span style={{ color: ACCENT_CURSOR }}>▋</span> : null}
+              {hasPrompt ? (
+                <>
+                  <span style={{ color: COLOR.brandBright, fontWeight: 800 }}>$</span>
+                  {r.line.slice(0, Math.max(1, r.typed)).slice(1)}
+                </>
+              ) : (
+                r.line.slice(0, r.typed)
+              )}
+              {showCursor ? <span style={{ color: COLOR.brandBright }}>▋</span> : null}
             </div>
           );
         })}
       </div>
-    </div>
+    </DropCard>
   );
 };
-
-const ACCENT_CURSOR = "#58a6ff";

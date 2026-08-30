@@ -383,6 +383,116 @@ const Seg3aShadow: React.FC = () => (
   </SceneBg>
 );
 
+// ── kit-v3b 段落（v3 Stage 1 道具拟真）────────────────────────────────
+const Seg3bTerminal: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", fontFamily: FONT.sans }}>
+      <TypingTerminal
+        title="lekao · generate"
+        lines={[
+          "$ lekao upload lecture-0413.png",
+          "reading image ... ok",
+          "subject: math  chapter: quadratic",
+          "generating 10 feedback items ...",
+          "done in 8.2s  (1 coin)",
+        ]}
+        cps={20}
+      />
+    </AbsoluteFill>
+    <SegmentTag label="01 TypingTerminal v2 · 同底色标题栏 + $ 品牌提示符 + 530ms 光标" />
+  </SceneBg>
+);
+
+const Seg3bChat: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", fontFamily: FONT.sans }}>
+      <ChatReplay
+        shell
+        width={340}
+        messages={[
+          { side: "user", text: "第四节课的小结好了吗？" },
+          { side: "ai", text: "已读取讲义，识别：数学 · 二次函数" },
+          { side: "ai", text: "10 条反馈 + 一段小结，生成完毕" },
+          { side: "user", text: "反馈发我一份" },
+          { side: "ai", text: "已生成，字数用标准挡" },
+        ]}
+      />
+    </AbsoluteFill>
+    <SegmentTag label="02 ChatReplay v2 · 手机壳内聊天（头像/尾巴/时间戳/在线状态）" />
+  </SceneBg>
+);
+
+const Seg3bBrowser: React.FC = () => (
+  <SceneBg variant="dark">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", fontFamily: FONT.sans }}>
+      <DeviceFrame
+        frame="browser"
+        tone="dark"
+        title="LeKao · AI 智能助教助手"
+        domain="lekao.asterforge.top"
+        src={staticFile("lekao/lekao-home.png")}
+        zoom={1.5}
+        offsetY={60}
+      />
+    </AbsoluteFill>
+    <SegmentTag label="03 DeviceFrame browser v2 · 标签条/工具栏/锁形地址 + hero 裁切 1.5x" />
+  </SceneBg>
+);
+
+const Seg3bPhone: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", fontFamily: FONT.sans }}>
+      {/* 长图 fullpage 中段 70% 为空白（素材缺陷），F2 走裁切特写路径：竖幅 hero 特写满屏 */}
+      <DeviceFrame frame="phone" tone="light" src={staticFile("lekao/lekao-hero-crop.png")} width={330} />
+    </AbsoluteFill>
+    <SegmentTag label="04 DeviceFrame phone v2 · 侧键/贴顶灵动岛/玻璃高光 + hero 裁切特写满幅" />
+  </SceneBg>
+);
+
+const Seg3bChart: React.FC = () => (
+  <SceneBg variant="dark">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <div>
+        <ChartGrow
+          width={760}
+          delay={0.4}
+          barColor="#4c6fff"
+          valueColor="#f8fafc"
+          labelColor="#94a3b8"
+          axisColor="rgba(255,255,255,0.22)"
+          coin
+          bars={[
+            { label: "第1天", value: 2, unit: "币" },
+            { label: "第2天", value: 3, unit: "币" },
+            { label: "第3天", value: 4, unit: "币" },
+            { label: "第4天", value: 5, unit: "币" },
+            { label: "第5天", value: 6, unit: "币" },
+            { label: "第6天", value: 7, unit: "币" },
+            { label: "第7天", value: 8, unit: "币" },
+          ]}
+        />
+        <div style={{ marginTop: 26, textAlign: "center", fontSize: 20, color: "#94a3b8", fontWeight: 600, fontFamily: FONT.sans }}>
+          连续签到 7 日，每日奖励 2 币递增到 8 币 · 末柱高亮 + T 币锚 + 柱顶连线
+        </div>
+      </div>
+    </AbsoluteFill>
+    <SegmentTag label="05 ChartGrow v2 · 基线网格/柱身渐变/末柱高亮/连线逐段生长/T 币锚" />
+  </SceneBg>
+);
+
+// 段长（秒）：6 / 7 / 5 / 6 / 6 = 30s
+export const KitV3b: React.FC = () => {
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+      <Sequence from={0} durationInFrames={6 * FPS}><Seg3bTerminal /></Sequence>
+      <Sequence from={6 * FPS} durationInFrames={7 * FPS}><Seg3bChat /></Sequence>
+      <Sequence from={13 * FPS} durationInFrames={5 * FPS}><Seg3bBrowser /></Sequence>
+      <Sequence from={18 * FPS} durationInFrames={6 * FPS}><Seg3bPhone /></Sequence>
+      <Sequence from={24 * FPS} durationInFrames={6 * FPS}><Seg3bChart /></Sequence>
+    </AbsoluteFill>
+  );
+};
+
 // 段长（秒）：8 / 8 / 4 = 20s
 export const KitV3a: React.FC = () => {
   return (
@@ -431,6 +541,14 @@ export const KitDemoRoot: React.FC = () => {
         id="kit-v3a"
         component={KitV3a}
         durationInFrames={20 * FPS}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="kit-v3b"
+        component={KitV3b}
+        durationInFrames={30 * FPS}
         fps={FPS}
         width={WIDTH}
         height={HEIGHT}
