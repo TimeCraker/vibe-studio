@@ -120,14 +120,14 @@ const ChromeLine: React.FC<{ dark?: boolean }> = ({ dark = false }) => {
   );
 };
 
-// 插画卡 v3：DropCard 白卡装官方示意插画，可带角标（主体标注）
+// 插画卡 v3：DropCard 白卡装官方示意插画，可带角标（主体标注）。width 必须显式约束卡宽
 const IllustCard: React.FC<{ src: string; width: number; tag?: string; style?: React.CSSProperties }> = ({
   src,
   width,
   tag,
   style,
 }) => (
-  <DropCard tone="light" radius={20} style={style}>
+  <DropCard tone="light" radius={20} style={{ width, ...style }}>
     <div style={{ position: "relative" }}>
       <Img src={staticFile(src)} style={{ width: "100%", display: "block" }} />
       {tag ? (
@@ -161,7 +161,7 @@ const ScanCard: React.FC<{ src: string; width: number; style?: React.CSSProperti
   const imgH = width * (832 / 1248);
   const y = (0.5 + 0.5 * Math.sin((2 * Math.PI * t) / 2.8)) * (imgH - 6);
   return (
-    <DropCard tone="light" radius={20} style={style}>
+    <DropCard tone="light" radius={20} style={{ width, ...style }}>
       <div style={{ position: "relative" }}>
         <Img src={staticFile(src)} style={{ width: "100%", display: "block" }} />
         <div
@@ -232,8 +232,8 @@ const PhoneHeroScreen: React.FC<{ width?: number }> = ({ width = 300 }) => {
   const screenW = width - 24;
   const imgH = screenW * (790 / 680); // hero-content 素材 680×790
   const topPad = 40; // 灵动岛安全区（岛贴顶 12+24）
-  const ringTop = topPad + imgH * 0.085; // 大标题区（素材内比例）
-  const ringH = imgH * 0.29;
+  const ringTop = topPad + imgH * 0.07; // 大标题区（素材内比例，圈略留边距防压字形）
+  const ringH = imgH * 0.31;
   return (
     <PhoneShell width={width} tone="light">
       <div style={{ position: "relative", height: "100%", display: "flex", flexDirection: "column", background: COLOR.dark0 }}>
@@ -657,6 +657,19 @@ const Scene08: React.FC = () => (
   </SceneBg>
 );
 
+// P9 流动虚线箭头（静帧可见"流动中"进行时证据，确定性 dashoffset）
+const FlowArrow: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const off = -((frame / fps) * 26) % 14;
+  return (
+    <svg width="52" height="24" viewBox="0 0 52 24">
+      <line x1="2" y1="12" x2="38" y2="12" stroke={BRAND} strokeWidth="3.5" strokeLinecap="round" strokeDasharray="7 7" strokeDashoffset={off.toFixed(2)} />
+      <path d="M38 4 L48 12 L38 20" stroke={BRAND} strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};
+
 // ── P9 · 09:11 流程说明：三步上手（light，横排大编号卡）──────────────────
 const Scene09: React.FC = () => {
   const cards = [
@@ -673,12 +686,17 @@ const Scene09: React.FC = () => {
             <React.Fragment key={c.no}>
               {i > 0 ? (
                 <SpringIn delay={0.5 + i * 0.18}>
-                  <div style={{ fontSize: 40, fontWeight: 800, color: BRAND }}>→</div>
+                  <FlowArrow />
                 </SpringIn>
               ) : null}
               <SpringIn delay={0.15 + i * 0.18}>
                 <FloatWrap phase={i * 1.4} period={4.4} amp={6}>
                   <div style={{ position: "relative" }}>
+                    {i === 0 ? (
+                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
+                        <GlowPulse size={440} intensity={0.32} />
+                      </div>
+                    ) : null}
                     <DropCard tone="light" radius={22} padding="36px 40px" style={{ width: 420 }}>
                       <div style={{ fontFamily: FONT.mono, fontSize: 58, fontWeight: 800, color: BRAND }}>{c.no}</div>
                       <div style={{ fontSize: 30, fontWeight: 800, color: INK, marginTop: 10 }}>{c.name}</div>
@@ -726,9 +744,9 @@ const Scene10: React.FC = () => (
         <SpringIn delay={0.15}>
           <div style={{ fontSize: 28, fontWeight: 600, color: MUTED_DARK, letterSpacing: "0.1em" }}>记住一句话就够了</div>
         </SpringIn>
-        <div style={{ width: 1560 }}>
+        <div style={{ width: 1700 }}>
           <TextReveal
-            text="把每次课的 1 到 2 小时，还给教学"
+            text={"把每次课的 1 到 2 小时\n还给教学"}
             mode="char"
             size={150}
             weight={800}

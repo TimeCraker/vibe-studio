@@ -141,15 +141,30 @@ export const ChartGrow: React.FC<{
             })}
             {bars.map((_, i) => {
               const p = progresses[i];
+              const isLast = i === bars.length - 1;
+              // 末柱数据点呼吸光环（静帧可见的"实时数据"进行时证据）
+              const breathe = 0.5 + 0.5 * Math.sin((2 * Math.PI * frame) / fps / 1.6);
               return p < 0.05 ? null : (
-                <circle
-                  key={`d${i}`}
-                  cx={centerX(i)}
-                  cy={chartH - heights[i]}
-                  r={4}
-                  fill={highlightLast && i === bars.length - 1 ? highlightColor : valueColor}
-                  opacity={Math.min(1, p)}
-                />
+                <g key={`d${i}`}>
+                  {isLast ? (
+                    <circle
+                      cx={centerX(i)}
+                      cy={chartH - heights[i]}
+                      r={5 + 5 * breathe}
+                      fill="none"
+                      stroke={highlightColor}
+                      strokeWidth={2}
+                      opacity={(1 - breathe) * 0.7}
+                    />
+                  ) : null}
+                  <circle
+                    cx={centerX(i)}
+                    cy={chartH - heights[i]}
+                    r={4}
+                    fill={highlightLast && isLast ? highlightColor : valueColor}
+                    opacity={Math.min(1, p)}
+                  />
+                </g>
               );
             })}
           </svg>

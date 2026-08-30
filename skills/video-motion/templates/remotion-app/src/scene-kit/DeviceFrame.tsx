@@ -45,7 +45,7 @@ export const PhoneShell: React.FC<{
       radius={64}
       overflow="visible"
       shadow={dark ? SHADOW.float : `${SHADOW.card}, ${SHADOW.contact}`}
-      style={style}
+      style={{ width, flexShrink: 0, ...style }}
     >
       {/* 右侧电源键 / 左侧音量键 ×2（框外 3px 细条） */}
       <div style={{ position: "absolute", right: -3, top: "26%", width: 3, height: 74, borderRadius: 2, background: keyColor }} />

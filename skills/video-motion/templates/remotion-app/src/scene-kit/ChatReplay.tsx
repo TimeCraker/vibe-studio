@@ -106,7 +106,7 @@ const ShellChat: React.FC<{ messages: ChatMessage[]; delay: number; width: numbe
             flex: 1,
             minHeight: 0,
             background: "#E9EDF2",
-            padding: "12px 12px 14px",
+            padding: "12px 12px 10px",
             display: "flex",
             flexDirection: "column",
             gap: 10,
@@ -173,6 +173,41 @@ const ShellChat: React.FC<{ messages: ChatMessage[]; delay: number; width: numbe
               </React.Fragment>
             );
           })}
+        </div>
+        {/* 输入条：静帧里的"进行时"证据——块光标 530ms 闪烁（确定性） */}
+        <div
+          style={{
+            flexShrink: 0,
+            background: "#FFFFFF",
+            borderTop: `1px solid ${COLOR.line}`,
+            padding: "8px 10px",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <div
+            style={{
+              flex: 1,
+              background: "#F1F3F7",
+              borderRadius: 16,
+              padding: "7px 12px",
+              display: "flex",
+              alignItems: "center",
+              fontFamily: FONT.sans,
+              fontSize: 12,
+              fontWeight: 600,
+              color: "#9aa3b5",
+            }}
+          >
+            输入消息
+            <span style={{ color: ACCENT, marginLeft: 2, opacity: Math.floor(frame / (0.53 * fps)) % 2 === 0 ? 1 : 0 }}>▋</span>
+          </div>
+          <div style={{ width: 28, height: 28, borderRadius: 14, background: ACCENT, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <svg width="13" height="13" viewBox="0 0 13 13">
+              <path d="M2 6.5 H10 M6.8 3 L10.3 6.5 L6.8 10" stroke="#fff" strokeWidth="1.7" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
         </div>
       </div>
     </PhoneShell>
