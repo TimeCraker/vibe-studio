@@ -7,7 +7,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import type { SubtitleCue } from "../cues";
-import { COLOR, FONT } from "../scene-kit/tokens";
+import { COLOR, FONT, SHADOW } from "../scene-kit/tokens";
 
 // 字幕轨（F4 版面一体）：
 //   theme="pill"（默认）= v1 黑药丸，存量 composition 零改动；
@@ -138,7 +138,7 @@ const Panel: React.FC<{
         borderRadius: 14,
         maxWidth: 1600,
         textAlign: "center",
-        boxShadow: dark ? "none" : "0 4px 18px rgba(15,23,42,0.08)",
+        boxShadow: dark ? SHADOW.float : SHADOW.card, // 与画面卡片同源悬浮逻辑（复核修订 #5）
         opacity: fadeIn * (1 - fadeOut),
         transform: `translateY(${(1 - fadeIn) * 14}px)`,
       }}

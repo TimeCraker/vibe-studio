@@ -23,8 +23,8 @@ const shade = (hex: string, pct: number) => {
   return `rgb(${r},${g},${b})`;
 };
 
-// T 币图形锚：金色圆币 + 深金 T 字
-const CoinIcon: React.FC<{ size: number }> = ({ size }) => (
+// T 币图形锚：金色圆币 + 深金 T 字（导出供规则行等复用，「讲币必画币」）
+export const CoinIcon: React.FC<{ size: number }> = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 20 20" style={{ flexShrink: 0 }}>
     <circle cx="10" cy="10" r="9" fill="#F5C518" stroke="rgba(122,82,0,.45)" strokeWidth="1.5" />
     <text

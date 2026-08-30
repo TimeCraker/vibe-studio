@@ -59,6 +59,20 @@ export const DropCard: React.FC<{
           overflow,
         }}
       >
+        {/* 卡面顶部 3-5% 内高光（复核修订 #5）：消「亮了一块的板」的平板感；透底（设备框）不施加 */}
+        {bg !== "none" ? (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 90,
+              background: `linear-gradient(180deg, rgba(255,255,255,${dark ? 0.05 : 0.035}) 0%, rgba(255,255,255,0) 100%)`,
+              pointerEvents: "none",
+            }}
+          />
+        ) : null}
         {children}
       </div>
     </div>
