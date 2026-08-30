@@ -4,14 +4,21 @@ import {
   Composition,
   Sequence,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { ChartGrow } from "./scene-kit/ChartGrow";
+import { ChatReplay } from "./scene-kit/ChatReplay";
+import { CountUp } from "./scene-kit/CountUp";
+import { DeviceFrame } from "./scene-kit/DeviceFrame";
 import { FloatWrap } from "./scene-kit/FloatWrap";
+import { GlowPulse } from "./scene-kit/GlowPulse";
 import { SceneBg } from "./scene-kit/SceneBg";
 import { SceneShell } from "./scene-kit/SceneShell";
 import { StaggerList } from "./scene-kit/StaggerList";
 import { TextReveal } from "./scene-kit/TextReveal";
+import { TypingTerminal } from "./scene-kit/TypingTerminal";
 
 // scene-kit 零件 demo：kit-basics（Stage 0 基础层）与 kit-narrative（Stage 1 叙事组件）。
 // 独立入口 remotion/demo-index.ts，不进 Root.tsx；段内 useCurrentFrame 均为段本地帧。
@@ -40,7 +47,7 @@ const SegmentTag: React.FC<{ label: string }> = ({ label }) => {
         fontFamily: "Consolas, monospace",
         fontSize: 20,
         fontWeight: 700,
-        color: "rgba(17,23,34,0.45)",
+        color: "rgba(100,116,139,0.95)",
         opacity: p,
       }}
     >
@@ -174,15 +181,114 @@ export const KitBasics: React.FC = () => {
   );
 };
 
-// ── kit-narrative 段落（Stage 1 占位，下一 Stage 填充）────────────────────
+// ── kit-narrative 段落（Stage 1 叙事组件）─────────────────────────────
+const SegTerminal: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <TypingTerminal
+        title="lekao · generate"
+        lines={[
+          "$ lekao upload lecture-0413.png",
+          "reading image ... ok",
+          "subject: math  chapter: quadratic",
+          "generating 10 feedback items ...",
+          "done in 8.2s  (1 coin)",
+        ]}
+        cps={20}
+      />
+    </AbsoluteFill>
+    <SegmentTag label="01 TypingTerminal · 逐行打字 + 光标" />
+  </SceneBg>
+);
+
+const SegChat: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <ChatReplay
+        messages={[
+          { side: "user", text: "第四节课的小结好了吗？" },
+          { side: "ai", text: "已读取讲义，识别：数学 · 二次函数" },
+          { side: "ai", text: "10 条反馈 + 一段小结，生成完毕" },
+          { side: "user", text: "反馈发我一份" },
+          { side: "ai", text: "已生成，字数用标准挡" },
+        ]}
+      />
+    </AbsoluteFill>
+    <SegmentTag label="02 ChatReplay · 气泡弹出 + 正在输入" />
+  </SceneBg>
+);
+
+const SegCountUp: React.FC = () => (
+  <SceneBg variant="dark">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
+        <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <GlowPulse size={480} intensity={0.55} />
+          <CountUp to={120} suffix=" 分钟" size={150} color="#f8fafc" suffixColor="#F5C518" delay={0.4} durationInSec={1.2} />
+        </div>
+        <div style={{ fontSize: 24, fontWeight: 600, color: "#94a3b8" }}>
+          每次课省回的时间（演示数据）· CountUp + GlowPulse
+        </div>
+      </div>
+    </AbsoluteFill>
+    <SegmentTag label="03 CountUp + GlowPulse" />
+  </SceneBg>
+);
+
+const SegChart: React.FC = () => (
+  <SceneBg variant="dark">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <div>
+        <ChartGrow
+          width={760}
+          bars={[
+            { label: "抄错题", value: 35, unit: "min" },
+            { label: "写小结", value: 25, unit: "min" },
+            { label: "写反馈", value: 40, unit: "min" },
+          ]}
+          delay={0.4}
+          barColor="#4c6fff"
+          valueColor="#f8fafc"
+          labelColor="#94a3b8"
+          axisColor="rgba(255,255,255,0.22)"
+        />
+        <div style={{ marginTop: 26, textAlign: "center", fontSize: 20, color: "#94a3b8", fontWeight: 600 }}>
+          每次课三件重复事耗时（演示数据）· ChartGrow
+        </div>
+      </div>
+    </AbsoluteFill>
+    <SegmentTag label="04 ChartGrow · 错峰长高" />
+  </SceneBg>
+);
+
+const SegBrowser: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <DeviceFrame frame="browser" title="lekao.asterforge.top" src={staticFile("lekao/lekao-home.png")} />
+    </AbsoluteFill>
+    <SegmentTag label="05 DeviceFrame · browser（真实截图）" />
+  </SceneBg>
+);
+
+const SegPhone: React.FC = () => (
+  <SceneBg variant="light">
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+      <DeviceFrame frame="phone" src={staticFile("lekao/lekao-fullpage.png")} width={330} />
+    </AbsoluteFill>
+    <SegmentTag label="06 DeviceFrame · phone（真实截图）" />
+  </SceneBg>
+);
+
+// 段长（秒）：7 / 6 / 4 / 5 / 4 / 4 = 30s
 export const KitNarrative: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
-      <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
-        <div style={{ color: "#fff", fontSize: 40, fontFamily: "Consolas, monospace" }}>
-          kit-narrative placeholder
-        </div>
-      </AbsoluteFill>
+      <Sequence from={0} durationInFrames={7 * FPS}><SegTerminal /></Sequence>
+      <Sequence from={7 * FPS} durationInFrames={6 * FPS}><SegChat /></Sequence>
+      <Sequence from={13 * FPS} durationInFrames={4 * FPS}><SegCountUp /></Sequence>
+      <Sequence from={17 * FPS} durationInFrames={5 * FPS}><SegChart /></Sequence>
+      <Sequence from={22 * FPS} durationInFrames={4 * FPS}><SegBrowser /></Sequence>
+      <Sequence from={26 * FPS} durationInFrames={4 * FPS}><SegPhone /></Sequence>
     </AbsoluteFill>
   );
 };
