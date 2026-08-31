@@ -6,7 +6,7 @@
 
 ## §0 规则与护栏
 
-1. **v3 已封箱**（HEAD 应见 3f8874e）。本站改动仅限：`src/DeckVideoV2.tsx`、`src/scene-kit/`（新增 entrance-kit 组件）、`scripts/build-deck-params.mjs` 一处常量、Stage 4 时的 `SKILL.md` / `docs/2026-08-30-motion-grammar.md`。**deck.mp4 / deck-v2.mp4 / deck-v3.mp4 / cover-v3.png 及 v1 全部存量文件零触碰**（字节与 mtime 不变，是对照基准）。
+1. **v3 已封箱**（HEAD 应见 3f8874e）。本站改动仅限（基路径 projects/lekao-intro/remotion-app/）：`src/deck-scenes.tsx`（进场重排主战场）、`src/DeckVideoV2.tsx`（页窗机制）、`src/scene-kit/`（新增 entrance-kit 组件）、`projects/lekao-intro/remotion-app/scripts/build-deck-params.mjs` 一处常量、Stage 4 时的 `SKILL.md` / `docs/2026-08-30-motion-grammar.md`。**deck.mp4 / deck-v2.mp4 / deck-v3.mp4 / cover-v3.png 及 v1 全部存量文件零触碰**（字节与 mtime 不变，是对照基准）。
 2. **v3 的资产全保留**：scene-kit 18 组件、tokens、M2 微事件（打字/CountUp/柱生长/流动虚线）、M3 待机动画、F1-F5 质感——本站是「重排时刻 + 加转场动词」，**不是重写页面**。发现要推翻 v3 画面设计时停下报告，不许自行改。
 3. 只 `git add` 本站文件，不 push。同一问题连续 2 轮修复仍有红项 → 停下报告。
 4. 确定性铁律：渲染函数内禁 `Math.random()` / `Date.now()` / `new Date()`；伪随机用索引式（`(i * 137) % 100`）。

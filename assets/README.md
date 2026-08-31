@@ -6,6 +6,7 @@
 |---|---|---|
 | 成页方案库 | [`patterns.md`](patterns.md) | 已验证的成页方案（PAT 条目）：情景 → 版式 → 组件 → 参数 → 参考帧 |
 | 组件登记簿 | [`component-catalog.md`](component-catalog.md) | scene-kit / fx 组件清单与用法（代码本体在 video-motion 模板内，此处登记） |
+| 方案代表帧 | `patterns-frames/` | 每个 PAT 一张压缩帧（p01-p11 + cover，jpg ~150KB/张） |
 | 品牌素材 | `lekao-screens/`、`pipeline.svg` | 截图与品牌图形 |
 | 测试素材 | `footage/footage.mp4` | FootageOverlay 测试底材 |
 
