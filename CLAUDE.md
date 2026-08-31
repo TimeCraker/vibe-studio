@@ -4,15 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 仓库定位
 
-自媒体内容工厂：项目 README → 介绍 PPT → 逐页动效 → 视频成片的一条流水线。不承载业务代码，只沉淀内容生产能力（Skills / Workflows / Assets）。当前 `ppt`、`humanizer`、`video-motion`、`narration`、`auto-subtitle` 五个 skill 已上线；`video-motion`（Remotion 视频动效合成，吸收原 `vibe-motion` + `deck-to-video` 两项规划）首站「视频底材叠动效」与 PPT 逐页成片（直出 mp4）均已交付（spec：`docs/2026-08-29-video-motion-stage-spec.md` 与下文 deck-video）。第二站 `auto-subtitle`（faster-whisper 自动转写出 `SubtitleCue`，对接 video-motion 契约）已上线（spec：`docs/2026-08-29-auto-subtitle-stage-spec.md`）；第三站 `narration`（结构化口播稿 + 程序校验，配音走剪映、不做语音合成）已上线，spec 在 `docs/2026-08-29-narration-stage-spec.md`；第四站 `deck-video`（PPT 逐页成片：pptx 页图 + 逐页配音 → Remotion 直出 mp4，复用 video-motion 引擎与 SubtitleTrack）spec 在 `docs/2026-08-29-deck-video-stage-spec.md`。后几站同样由 Zcode 执行，多站可能并行施工，**提交时只 add 自己站点的文件**。
+自媒体内容工厂：项目 README → 介绍 PPT → 逐页动效 → 视频成片的一条流水线。不承载业务代码，只沉淀内容生产能力（Skills / Workflows / Assets）。当前 `ppt`、`humanizer`、`video-motion`、`narration`、`auto-subtitle` 五个 skill 已上线；video-motion 已长成「一套 Remotion 引擎四种产物」（叠动效 / PPT 逐页成片 / 场景化成片 / 静态封面）。历站决策与教训收编在 `docs/workorder-log.md`（工单台账：跑完一份工单整理进一节）；质量底线在 `docs/2026-08-30-motion-grammar.md`；在跑工单独立成文件（当前：`docs/2026-08-31-deck-video-v4-motion-spec.md`）。工单由 Zcode 执行，多站可能并行施工，**提交时只 add 自己站点的文件**。
 
 ## 结构与架构
 
 - `skills/<name>/SKILL.md` — skill 本体，frontmatter 含 `name` / `description`（description 即触发条件，要写清用户会怎么说的触发词）
 - `skills/<name>/templates/` — skill 自带的模板代码（如 ppt 的 `primitives.py` 版式原语、`animate.py` 逐元素动画、`verify.py` 渲染核查初筛）
 - `assets/` — 品牌资源与 SVG
-- `output/` — 产物工作台：各 skill 产物按 `<skill 名>/` 分目录（`footage/` 为素材库），不入 git；skill 只放工具不放产物
-- `docs/` — 决策记录（选了什么、放弃了什么、为什么）；目录尚未建立，首次决策时创建
+- `projects/` — 施工区：一项目一目录（`<项目>/remotion-app/` 施工工程 + 设计文档），代码入库，素材（`public/`）不入；项目彼此隔离，从 skill 模板复制起步
+- `products/` — 产出成品库：按项目分目录带 README 标注（README 入库，mp4/png/pptx 不入）；`assets/` — 跨项目可复用资产（品牌 SVG、测试素材）。素材归属三规则：项目素材跟项目、可复用测试素材进 assets、成品进 products
+- `docs/` — 决策记录与规范：`motion-grammar.md` 质量底线 + `workorder-log.md` 已完成工单台账（完成的 spec 收编进去，不设 archive）+ 活跃工单 spec 独立文件
 
 skill 的设计单元是**自包含**：每个 skill 可独立运行、自带模板、不依赖本仓库外文件。分发方式是复制或软链到目标项目 `.claude/skills/`。`.claude/skills/` 下是指向 `skills/` 同名目录的本机 junction（Claude Code 只认这个路径；已 gitignore，克隆后按 README「使用」节跑一次 setup）。
 

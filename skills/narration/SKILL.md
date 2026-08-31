@@ -22,7 +22,7 @@ user-invocable: true
 
 ## Step 2 · 分段成稿
 
-写 `output/narration/script-<项目>.json`：逐段 text + ref + kind，段 id 顺叙事排。
+写 `projects/<项目名>/script.json`：逐段 text + ref + kind，段 id 顺叙事排。
 
 **通用写稿要求：讲稿解读下钻到细节层。** 不停在概念、模块、功能名的层面复述——每段至少落到一个具体细节（具体画面、具体操作、具体数字、具体场景），观众听到的是细节不是抽象名词；挖不出细节的段回 Step 1 换素材，不硬凑空话。
 
@@ -38,9 +38,9 @@ humanizer 深度过稿；然后**出声读一遍**——喘不上气的段拆两
 
 ## Step 5 · 交付
 
-1. 分段稿逐段贴**剪映**配音（市面产品人工操作，无自动化环节）；音频回来放 `output/narration/`
+1. 分段稿逐段贴**剪映**配音（市面产品人工操作，无自动化环节）；音频回来放 `projects/<项目名>/remotion-app/public/deck/audio/`
 2. 段文本进 video-motion 的 `cues.subtitles`，时间轴由 auto-subtitle 校准
-3. 产物与分段稿统一放 `output/narration/`（gitignore）
+3. 分段稿与校验记录属项目工作区（`projects/`），成片产物落 `products/<项目名>/`
 
 ## 节奏速查表
 

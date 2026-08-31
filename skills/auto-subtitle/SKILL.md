@@ -46,7 +46,7 @@ cd skills/auto-subtitle/templates/asr
 
 ## Step 5 · 复跑命令留档
 
-交付报告末尾附完整复跑命令（输入路径 / `--lang` / `--outdir` / `--model`），保证下个会话或他人可精确复现；产物（cues.json / srt）落 `output/` 不进 git，命令即资产。
+交付报告末尾附完整复跑命令（输入路径 / `--lang` / `--outdir` / `--model`），保证下个会话或他人可精确复现；产物（cues.json / srt）落产出区（本仓 `products/`，跨仓库用项目根 `output/`）不进 git，命令即资产。
 
 ## 边界与坑
 

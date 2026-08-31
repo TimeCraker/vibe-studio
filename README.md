@@ -24,9 +24,9 @@ TimeCraker 的内容创作工作台。不承载业务代码，只沉淀**内容�
 |---|---|---|
 | [`ppt`](skills/ppt/) | python-pptx **代码画 PPT**：17 种页面范式（章节/时间轴/对比/金句/图文/增长柱线环…）+ 3 套主题预设 + 动画 auto 编排（11 入场 + 级联 + morph 真补间）+ 口播稿备注 + 自动放映 + 改写现有 pptx + 三级渲染核查（含对比度初筛） | 已上线 |
 | [`humanizer`](skills/humanizer/) | 中英文**去 AI 腔**改写（blader 英文体系 × 中文三毒/L1-L4 工程体系融合 v5） | 已上线 |
-| [`video-motion`](skills/video-motion/) | **视频动效合成**：视频底材叠字幕 / 数据动效 / 圈注 + PPT 逐页成片 + 场景化成片（scene-kit 直绘动效场景，八问口诀+质感工艺）+ 静态封面出图（一套 Remotion 引擎四种产物） | 已上线（[首站 Spec](docs/2026-08-29-video-motion-stage-spec.md) · [逐页成片 Spec](docs/2026-08-29-deck-video-stage-spec.md) · [场景化 v2 Spec](docs/2026-08-30-deck-video-v2-stage-spec.md) · [质感 v3 Spec](docs/2026-08-30-deck-video-v3-fidelity-spec.md) · [封面 Spec](docs/2026-08-29-cover-still-stage-spec.md)） |
-| [`auto-subtitle`](skills/auto-subtitle/) | **自动字幕**：faster-whisper 转写音视频 → `SubtitleCue[]` JSON（直接喂 video-motion），词级时间戳对齐真实语音窗口、长句自动切分、VAD 防幻觉 | 已上线（[Stage Spec](docs/2026-08-29-auto-subtitle-stage-spec.md)） |
-| [`narration`](skills/narration/) | **口播稿工坊**：分段稿 JSON + 程序校验（字数↔秒数、段长、禁令初筛），直出剪映配音与 cues（video-motion / deck-video 消费） | 已上线（[Stage Spec](docs/2026-08-29-narration-stage-spec.md)） |
+| [`video-motion`](skills/video-motion/) | **视频动效合成**：视频底材叠字幕 / 数据动效 / 圈注 + PPT 逐页成片 + 场景化成片（scene-kit 直绘动效场景，八问口诀+质感工艺）+ 静态封面出图（一套 Remotion 引擎四种产物） | 已上线（历站记录见[工单台账](docs/workorder-log.md)，在跑：[v4 转场与进场动效](docs/2026-08-31-deck-video-v4-motion-spec.md)） |
+| [`auto-subtitle`](skills/auto-subtitle/) | **自动字幕**：faster-whisper 转写音视频 → `SubtitleCue[]` JSON（直接喂 video-motion），词级时间戳对齐真实语音窗口、长句自动切分、VAD 防幻觉 | 已上线（[工单台账](docs/workorder-log.md)） |
+| [`narration`](skills/narration/) | **口播稿工坊**：分段稿 JSON + 程序校验（字数↔秒数、段长、禁令初筛），直出剪映配音与 cues（video-motion / deck-video 消费） | 已上线（[工单台账](docs/workorder-log.md)） |
 
 > **为什么代码画 PPT**：设计即代码——网格坐标、字号阶梯、色板全部显式声明，可复跑、可 diff、可版本化；渲染核查闭环保证「所见即所写」。
 
@@ -53,34 +53,26 @@ ln -s ~/Desktop/my-workspace/vibe-studio/skills/ppt <project>/.claude/skills/ppt
 
 ```
 vibe-studio/
-├── skills/
-│   ├── ppt/          # PPT 生成 skill
-│   │   ├── SKILL.md       # 五步决策流程
-│   │   └── templates/
-│   │       ├── primitives.py   # 版式原语（网格/文本/图形/图表/转场）
-│   │       ├── animate.py      # 逐元素动画（COM：fade/wipe/图表生长）
-│   │       └── verify.py       # 渲染核查初筛（溢出检测 + 占位符扫描）
-│   ├── video-motion/      # 视频动效合成（Remotion）
-│   │   ├── SKILL.md       # 流程与验收
-│   │   └── templates/remotion-app/   # 最小 Remotion 工程模板
-│   ├── auto-subtitle/     # 自动字幕（faster-whisper）
-│   │   ├── SKILL.md       # 流程与验收
-│   │   └── templates/asr/       # 转写脚本 + 语音素材生成
-│   ├── narration/         # 口播稿工坊（分段稿 + 程序校验）
-│   │   ├── SKILL.md       # 流程与验收
-│   │   └── templates/     # verify_narration.py 校验器
-│   └── humanizer/         # 中英文去 AI 腔改写
-│       └── SKILL.md       # v5 融合版（中英双体系）
-├── workflows/
-│   └── explainer-video.md # 项目介绍视频总装图（A/B 双线）
-└── assets/                # 品牌资源与 SVG
+├── skills/            # 纯工具：五个 skill（SKILL.md + 模板代码，零素材零产物）
+│   ├── ppt/           #   python-pptx 代码画 PPT（primitives / animate / verify）
+│   ├── humanizer/     #   中英文去 AI 腔改写
+│   ├── video-motion/  #   Remotion 引擎（fx 叠动效 + scene-kit 质感组件 + deck 引擎模板）
+│   ├── narration/     #   口播稿工坊（verify_narration.py）
+│   └── auto-subtitle/ #   faster-whisper 自动字幕
+├── workflows/         # 蓝图：explainer-video.md（A 线剪映全包 / B 线 Remotion 成片）
+├── assets/            # 资产库：跨项目可复用（品牌 SVG、lekao 截图、测试素材 footage/）
+├── projects/          # 施工区：一项目一目录，彼此隔离
+│   └── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
+├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
+├── docs/              # 决策与规范：motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
+└── scripts/           # 一次性生成脚本（ad-hoc deck 等，入库可复跑）
 ```
 
 ## 约定
 
 - 每个 skill 必须可独立运行（自带模板，不依赖本仓库外文件）
 - **skill 是纯工具**：只放流程（SKILL.md）、脚本与模板；素材、产物、中间文件一律不进 skill
-- **产物统一放项目根 `output/<skill 名>/`**（不入 git，脚本可复跑）——工具包管能力，工作台管产出
+- **仓库五区**：`skills/` 纯工具（零素材零产物）· `workflows/` 蓝图 · `assets/` 可复用资产 · `projects/` 施工区（一项目一目录，代码入库）· `products/` 产出（按项目标注，README 入库、二进制不入）。素材归属三规则：项目素材跟项目走、可复用测试素材进 `assets/`、成品进 `products/`
 - 决策记录进 `docs/`——选了什么、放弃了什么、为什么，避免后人重新踩
 - 提交：Conventional Commits + 中英文对照
 

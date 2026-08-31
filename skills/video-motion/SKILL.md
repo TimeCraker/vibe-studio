@@ -28,10 +28,10 @@ user-invocable: true
 
 ```bash
 cd <remotion-app>
-npx remotion render remotion/index.ts FootageOverlay <项目根>/output/video-motion/demo.mp4 --crf=16 --public-dir <素材目录>
+npx remotion render remotion/index.ts FootageOverlay <仓库>/products/<项目名>/demo.mp4 --crf=16 --public-dir <素材目录>
 ```
 
-产物住**项目根 `output/<skill 名>/`**（目录法：skill 是纯工具，产物不落 skill 内）；`--crf=16` 高质量。大素材渲染放后台跑（1440p60 × 30s 约 10 分钟），以退出码 + ffprobe 验收，不凭进度条。
+产物住**仓库 `products/<项目名>/`**（目录法：skill 是纯工具，产物不落 skill 内；跨仓库使用时落该项目根 `output/<skill 名>/`）；`--crf=16` 高质量。大素材渲染放后台跑（1440p60 × 30s 约 10 分钟），以退出码 + ffprobe 验收，不凭进度条。
 
 ## Step 4 · 三级核查（必做，不可跳）
 
@@ -52,7 +52,7 @@ npx remotion render remotion/index.ts FootageOverlay <项目根>/output/video-mo
 1. **pptx 与分段稿**：ppt skill 产物 pptx；写 narration 分段稿 `script.json`，`ref` 写 `"page N"`（N=页号），先过 `python skills/narration/templates/verify_narration.py <script.json>` 全绿。每段剥后 ≤20 字（字幕单行药丸直接显示段文本），页内多段以句号连接成该页口播
 2. **页图**：`python scripts/extract_pages.py <in.pptx> public/deck/pages`——COM 转 PDF 后 fitz 渲 200dpi，出 `p-<N>.png`（2667×1500，画布 contain 铺满）
 3. **配音**：测试走 `powershell -File scripts/make_deck_audio.ps1 <script.json> public/deck/audio`（SAPI Huihui 逐页出 `page-N.wav`）；正式流程人工在剪映逐页配音，导出同名 `page-N.wav` 放同目录，下游无感
-4. **接线与渲染**：`node scripts/build-deck-params.mjs <script.json> public/deck` 生成 `src/deck-params.ts` + `src/deck-cues.ts`（页起点 / 总时长 / 字幕摊时全是派生值，勿手改）→ `npx remotion render remotion/index.ts DeckVideo <项目根>/output/video-motion/<项目名>/deck.mp4 --crf=16`
+4. **接线与渲染**：`node scripts/build-deck-params.mjs <script.json> public/deck` 生成 `src/deck-params.ts` + `src/deck-cues.ts`（页起点 / 总时长 / 字幕摊时全是派生值，勿手改）→ `npx remotion render remotion/index.ts DeckVideo <仓库>/products/<项目名>/deck.mp4 --crf=16`
 5. **三级核查**：同 Step 4 三级（程序 ffprobe / compositions 对账 + 抽帧读图 + 用户看片）。L2 抽帧要点：每页首帧+0.3s 查页序；交叠中点取**下页 start+0.25s**（交叠尾在页窗尾部，0.5s 交叉溶解）；字幕 start+0.3s / end+0.3s 查文本与退场。页首帧+0.3s 处 spring 淡入未满、整帧偏灰，是转场中间态不是缺陷
 
 页图与配音住 `public/deck/`（.gitignore 已覆盖，不入 git）；画布 1920×1080@30 常量在 `build-deck-params.mjs` 顶部，改两行即 4K。
@@ -90,7 +90,7 @@ L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositio
 
 不渲视频渲一帧：一条命令出 1920×1080 封面 PNG，发视频时配图用。
 
-1. **props**：`output/video-motion/<项目名>/cover-<名>.json` 写 `{ title, subtitle?, badge?, bg?, preset }`。`preset` ∈ `photo`（bg 图铺满 + 底部 55% 黑渐变遮罩保对比度）/ `dark`（深色渐变，缺省）/ `clean`（浅底 + 顶部细线）；`bg` 是 remotion-app `public/` 下相对路径。**subtitle 省略即不渲染；badge 省略回落 ASTERFORGE 品牌角标**
+1. **props**：`products/<项目名>/cover-<名>.json` 写 `{ title, subtitle?, badge?, bg?, preset }`。`preset` ∈ `photo`（bg 图铺满 + 底部 55% 黑渐变遮罩保对比度）/ `dark`（深色渐变，缺省）/ `clean`（浅底 + 顶部细线）；`bg` 是 remotion-app `public/` 下相对路径。**subtitle 省略即不渲染；badge 省略回落 ASTERFORGE 品牌角标**
 2. **渲染**：`npx remotion still src/cover-index.ts Cover <输出>.png --props=<json 文件路径>`（独立入口不经 Root.tsx，与 DeckVideo 并行施工零冲突）
 3. **核查**：读图查标题完整不截断（超长标题须两行内折行）、photo 遮罩下文字可读、无乱码方块；读图走 `C:\pc\` 短路径，复查须换新文件名防缓存
 
