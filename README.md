@@ -60,7 +60,7 @@ vibe-studio/
 │   ├── narration/     #   口播稿工坊（verify_narration.py）
 │   └── auto-subtitle/ #   faster-whisper 自动字幕
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映全包 / B 线 Remotion 成片）
-├── assets/            # 资产库：跨项目可复用（品牌 SVG、lekao 截图、测试素材 footage/）
+├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + 品牌与测试素材
 ├── projects/          # 施工区：一项目一目录，彼此隔离
 │   └── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
 ├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）

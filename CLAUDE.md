@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `skills/<name>/templates/` — skill 自带的模板代码（如 ppt 的 `primitives.py` 版式原语、`animate.py` 逐元素动画、`verify.py` 渲染核查初筛）
 - `assets/` — 品牌资源与 SVG
 - `projects/` — 施工区：一项目一目录（`<项目>/remotion-app/` 施工工程 + 设计文档），代码入库，素材（`public/`）不入；项目彼此隔离，从 skill 模板复制起步
-- `products/` — 产出成品库：按项目分目录带 README 标注（README 入库，mp4/png/pptx 不入）；`assets/` — 跨项目可复用资产（品牌 SVG、测试素材）。素材归属三规则：项目素材跟项目、可复用测试素材进 assets、成品进 products
+- `products/` — 产出成品库：按项目分目录带 README 标注（README 入库，mp4/png/pptx 不入）；`assets/` — 跨项目可复用资产：`patterns.md` 成页方案库（PAT 条目：情景→版式→组件→参考帧）、`component-catalog.md` 组件登记簿（代码本体在 video-motion 模板内）、品牌 SVG、测试素材。素材归属三规则：项目素材跟项目、可复用测试素材进 assets、成品进 products；**资产回流铁律：验收后组件回写模板、方案登记 patterns、教训进台账**（详见 assets/README.md）
 - `docs/` — 决策记录与规范：`motion-grammar.md` 质量底线 + `workorder-log.md` 已完成工单台账（完成的 spec 收编进去，不设 archive）+ 活跃工单 spec 独立文件
 
 skill 的设计单元是**自包含**：每个 skill 可独立运行、自带模板、不依赖本仓库外文件。分发方式是复制或软链到目标项目 `.claude/skills/`。`.claude/skills/` 下是指向 `skills/` 同名目录的本机 junction（Claude Code 只认这个路径；已 gitignore，克隆后按 README「使用」节跑一次 setup）。
