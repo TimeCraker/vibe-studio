@@ -1,6 +1,6 @@
 ---
 name: narration
-description: 视频口播稿 / 配音稿结构化工坊：把讲稿写成带画面引用的分段稿 JSON，字数↔秒数由程序派生，verify_narration.py 程序校验红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 写脚本 / 分段稿 / narration」时使用；视频成片前的文案环节。
+description: 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 workflows/explainer-video.md。
 user-invocable: true
 ---
 
