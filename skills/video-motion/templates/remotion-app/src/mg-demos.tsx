@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Composition, interpolate, Series, useCurrentFrame } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
-import { mgFixtures } from "./fixtures";
+import { mgFixtures, spinRingLottie } from "./fixtures";
 import { DrawPath } from "./scene-kit/DrawPath";
 import { FitText } from "./scene-kit/FitText";
 import { NoiseField } from "./scene-kit/NoiseField";
@@ -16,6 +16,10 @@ import {
   TextBreath,
   WipeIn,
 } from "./scene-kit/entrance-kit";
+import { BlurTrail } from "./scene-kit/BlurTrail";
+import { ShutterBlur } from "./scene-kit/ShutterBlur";
+import { LottieLayer } from "./scene-kit/LottieLayer";
+import { GifLayer } from "./scene-kit/GifLayer";
 import { exposure, slideIn } from "./transitions";
 import { COLOR, FONT, TYPE } from "./scene-kit/tokens";
 
@@ -250,7 +254,72 @@ export const MgDemoRoot: React.FC = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="MgMediaDemo"
+      component={MgMediaDemo}
+      durationInFrames={6 * SEG}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
   </>
+);
+
+// ============ MgMediaDemo(S3):blur / lottie / gif 媒体层,6 段 × 90 帧 ============
+
+// 快速横移卡片(ShutterBlur 段的动源)
+const ZipCard: React.FC = () => {
+  const frame = useCurrentFrame();
+  const x = Math.sin((frame / 25) * Math.PI) * 640; // 0.8s 一个来回,速度够快才见快门模糊
+  return (
+    <div style={{ transform: `translateX(${x.toFixed(1)}px)` }}>
+      <TCard text="快速掠过" />
+    </div>
+  );
+};
+
+const MgMediaDemo: React.FC = () => (
+  <Series>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={20} text={mgFixtures.blurCaption}>
+        <BlurTrail direction="left">
+          <TCard text="拖着残影进位" />
+        </BlurTrail>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={21} text={mgFixtures.shutterCaption}>
+        <ShutterBlur>
+          <ZipCard />
+        </ShutterBlur>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={22} text={mgFixtures.lottieInlineCaption}>
+        <LottieLayer animationData={spinRingLottie} width={260} />
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={23} text={mgFixtures.lottieSrcCaption}>
+        <LottieLayer src="lottie/spin-ring.json" width={260} />
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={24} text={mgFixtures.gifCaption}>
+        <GifLayer src="media/test-spinner.gif" width={220} />
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={25} text={mgFixtures.comboCaption} dark>
+        <div style={{ display: "flex", gap: 56, alignItems: "center" }}>
+          <BlurTrail direction="up" distance={260} dur={0.55}>
+            <TCard text="进场" dark />
+          </BlurTrail>
+          <LottieLayer animationData={spinRingLottie} width={200} />
+        </div>
+      </TSeg>
+    </Series.Sequence>
+  </Series>
 );
 
 // ============ MgTransitionDemo(S2):九动词 + 两种页间转场,11 段 × 60 帧 ============

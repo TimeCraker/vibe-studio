@@ -25,6 +25,10 @@
 | `ShapeMorph` | 形状渐变（interpolatePath 真顶点插值）：rect/circle/triangle/star 互变 | `progress` 外驱可接力两段 morph；**interpolatePath 签名是 (value, from, to) 三独立参数**；triangle 边长参数是 `length` |
 | `NoiseField` | 有机颗粒流场（noise3D）：点阵网格逐点漂移+明暗呼吸，叠 SceneBg 上当活背景 | `variant` 双族；seed 固定数字保确定性；22×12 网格每帧 720 次 noise3D，性能无压力 |
 | `FitText` | 程序排版：字号由测量算出，盒内不溢出不截断，免手动断行留余量 | 单行走 fitText（`withinWidth`）；**中文多行不能直接用 fitTextOnNLines（按空格分词）**，组件内置字符等分兜底；字体须先装载再测量 |
+| `BlurTrail` | 进场残影（@remotion/motion-blur Trail）：快速进位拖出运动残影，内置 spring 位移 | layers(8) / lagInFrames(2) / trailOpacity(0.36)；成本 = 子树重渲 ×layers，重元素慎用 |
+| `ShutterBlur` | 快门模糊（CameraMotionBlur）：整帧自然 motion blur，拖影跟运动方向 | shutterAngle(180) / samples(10)；成本 ×samples，**spot-only，重武器每片 ≤1 处** |
+| `LottieLayer` | Lottie 资产层：吃 AE 生态成品（assets/lottie/） | 内联 animationData 优先；src 走 fetch+delayRender；playbackRate 自动 = compFps/lottieFr；**intake 禁带 expressions 的 JSON** |
+| `GifLayer` | GIF 循环小动效（@remotion/gif） | src 是 public/ 相对路径（assets/media 复制进项目后用） |
 
 ## tokens（取值单源）
 
@@ -50,7 +54,7 @@
 | 文件 | 干什么 | 坑 |
 |---|---|---|
 | `fonts.ts` | 字体装载（loadRemoteFont / loadLocalFont 自托管），失败回落系统栈 | **不进确定性验收链**；google-fonts 渲染时拉 gstatic，中国网络慎用 |
-| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（MgUtilityDemo 720 帧 8 段 + MgTransitionDemo 660 帧 11 段，内联 fixture 零素材） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约 |
+| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（Utility 720 帧 8 段 + Transition 660 帧 11 段 + Media 540 帧 6 段，内联 fixture 零素材；Media 的 lottie/gif 段渲染时临时复制 assets 副本进 public、渲完删） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约；MgMediaDemo 540 帧 wall-clock ≈25s（后续性能基线） |
 | `transitions.tsx` | house 页间转场件：`slideIn()`（滑入盖场）/ `exposure()`（曝光渐起）/ `hardCut()`（恒等，对拍用） | enter 侧动、exit 侧恒等（旧页冻结）；**TransitionSeries 转场吃相邻页时长**，成片引擎默认零转场（Series 硬切）+ 页内动词 |
 
 ## entrance-kit（进场动词库，S2 起，一文件九件）
