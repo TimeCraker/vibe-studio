@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>张桓睿 · 简历</title>
+  <style>
+    @font-face { font-family: "Noto Sans SC"; src: url("fonts/noto-sans-sc-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+    @font-face { font-family: "Noto Sans SC"; src: url("fonts/noto-sans-sc-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+    @font-face { font-family: "Noto Sans SC"; src: url("fonts/noto-sans-sc-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Noto Sans SC"; src: url("fonts/noto-sans-sc-700.woff2") format("woff2"); font-weight: 700; font-display: block; }
+
+    :root {
+      --coral: #CC785C;
+      --coral-deep: #9C4F37;
+      --clay: #B45A3C;
+      --gold: #C4A07A;
+      --gold-deep: #9A734C;
+      --peach: #E8C8B4;
+      --sand: #F3E6D8;
+      --cream: #FAF6F0;
+      --paper: #FFFCF8;
+      --ink: #1C1917;
+      --soft: #57534E;
+      --mute: #78716C;
+      --line: #E7E0D8;
+    }
+
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #d9d0c6;
+      color: var(--ink);
+      font-family: "Noto Sans SC", sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 10px auto;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 64mm 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .frame-h {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4.2mm;
+      background: var(--coral);
+      z-index: 4;
+    }
+
+    .frame-v {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 4.8mm;
+      background: var(--coral);
+      z-index: 4;
+    }
+
+    .art {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .art-tr {
+      right: 0;
+      top: 0;
+      width: 68mm;
+      height: 24mm;
+    }
+
+    .art-bl {
+      left: 0;
+      bottom: 0;
+      width: 64mm;
+      height: 58mm;
+    }
+
+    .rail {
+      background: var(--cream);
+      padding: 11mm 6.4mm 8mm 11.2mm;
+      position: relative;
+      border-right: 0.28mm solid var(--line);
+      overflow: hidden;
+    }
+
+    .identity { position: relative; z-index: 3; }
+
+    .name {
+      font-size: 21pt;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      line-height: 1.08;
+      color: var(--ink);
+    }
+
+    .handle {
+      margin-top: 1.6mm;
+      font-size: 7.6pt;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--gold-deep);
+    }
+
+    .role {
+      margin-top: 3.6mm;
+      font-size: 12.5pt;
+      font-weight: 600;
+      color: var(--coral-deep);
+      letter-spacing: 0.04em;
+      line-height: 1.38;
+    }
+
+    .name-rule {
+      width: 16mm;
+      height: 0.55mm;
+      margin-top: 4.2mm;
+      background: linear-gradient(90deg, var(--coral) 0 9mm, var(--gold) 9mm 100%);
+    }
+
+    .rail-block {
+      position: relative;
+      z-index: 3;
+      margin-top: 7.2mm;
+    }
+
+    .rail h2 {
+      font-size: 7.6pt;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      color: var(--gold-deep);
+      margin-bottom: 2.6mm;
+    }
+
+    .edu-name {
+      font-size: 11.2pt;
+      font-weight: 700;
+      line-height: 1.28;
+    }
+
+    .edu-major {
+      margin-top: 1.6mm;
+      font-size: 9.4pt;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .edu-date {
+      margin-top: 1mm;
+      font-size: 7.5pt;
+      color: var(--mute);
+      letter-spacing: 0.02em;
+    }
+
+    .contact { list-style: none; }
+    .contact li {
+      position: relative;
+      padding-left: 3.6mm;
+      font-size: 8pt;
+      color: var(--soft);
+      line-height: 1.78;
+      word-break: break-all;
+    }
+    .contact li::before {
+      content: "";
+      position: absolute;
+      left: 0.1mm;
+      top: 2.15mm;
+      width: 1.35mm;
+      height: 1.35mm;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+    .contact a { color: var(--coral-deep); font-weight: 500; }
+
+    .skills dt {
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--coral-deep);
+      margin-top: 3.2mm;
+      margin-bottom: 0.8mm;
+    }
+    .skills dt:first-child { margin-top: 0; }
+    .skills dd {
+      font-size: 8.2pt;
+      line-height: 1.52;
+      color: var(--ink);
+    }
+
+    .main {
+      padding: 11mm 9.4mm 8mm 8.4mm;
+      position: relative;
+      z-index: 3;
+    }
+
+    .sec + .sec { margin-top: 5.4mm; }
+
+    .sec > h2 {
+      display: flex;
+      align-items: center;
+      gap: 3.2mm;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--coral);
+      letter-spacing: 0.18em;
+      margin-bottom: 3.4mm;
+    }
+
+    .sec > h2::after {
+      content: "";
+      flex: 1;
+      height: 0.35mm;
+      background: linear-gradient(90deg, var(--coral) 0, var(--peach) 42mm, transparent 100%);
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 5mm;
+    }
+
+    .head h3 {
+      font-size: 11pt;
+      font-weight: 700;
+      line-height: 1.28;
+    }
+
+    .when {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--coral-deep);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .sub {
+      margin-top: 1.2mm;
+      font-size: 9.1pt;
+      font-weight: 500;
+      color: var(--soft);
+      line-height: 1.45;
+    }
+
+    .work { margin-top: 3.4mm; }
+    .sec > h2 + .head + .sub + .work { margin-top: 3.2mm; }
+    .sec > h2 + .work { margin-top: 0; }
+
+    .work h4 {
+      font-size: 9.5pt;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .meta {
+      margin-top: 0.7mm;
+      font-size: 7.6pt;
+      color: var(--mute);
+      line-height: 1.45;
+    }
+
+    .links {
+      margin-top: 0.5mm;
+      font-size: 7.6pt;
+      color: var(--coral-deep);
+      font-weight: 500;
+    }
+
+    ul { margin-top: 1.5mm; list-style: none; }
+
+    .main li {
+      position: relative;
+      padding-left: 4mm;
+      font-size: 8.2pt;
+      line-height: 1.56;
+      margin-bottom: 1.15mm;
+      color: var(--ink);
+    }
+
+    .main li::before {
+      content: "";
+      position: absolute;
+      left: 0.15mm;
+      top: 2.1mm;
+      width: 1.45mm;
+      height: 1.45mm;
+      background: var(--coral);
+      transform: rotate(45deg);
+    }
+
+    strong { font-weight: 600; }
+
+    @media print {
+      html, body { background: white; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <div class="frame-h" aria-hidden="true"></div>
+    <div class="frame-v" aria-hidden="true"></div>
+
+    <svg class="art art-tr" viewBox="0 0 272 96" fill="none" aria-hidden="true">
+      <path d="M272 17 H168" stroke="#FFF8F3" stroke-width="1.2" opacity="0.35"/>
+      <path d="M272 21 H198" stroke="#C4A07A" stroke-width="0.8"/>
+      <path d="M256 17 V78" stroke="#FFF8F3" stroke-width="0.7" opacity="0.28"/>
+      <path d="M262 17 V52" stroke="#C4A07A" stroke-width="0.6"/>
+
+      <circle cx="232" cy="40" r="28" stroke="#E8C8B4" stroke-width="0.8" opacity="0.85"/>
+      <circle cx="232" cy="40" r="18" stroke="#C4A07A" stroke-width="0.7" opacity="0.7"/>
+      <circle cx="232" cy="40" r="8" stroke="#CC785C" stroke-width="0.55" opacity="0.55" stroke-dasharray="1.6 1.4"/>
+      <circle cx="232" cy="40" r="2.2" fill="#C4A07A"/>
+
+      <path d="M232 12 V68" stroke="#CC785C" stroke-width="0.4" opacity="0.35"/>
+      <path d="M204 40 H260" stroke="#C4A07A" stroke-width="0.4" opacity="0.4"/>
+      <path d="M214 22 L232 40 L250 22" stroke="#E8C8B4" stroke-width="0.55" opacity="0.7"/>
+
+      <g stroke="#9A734C" stroke-width="0.7" opacity="0.7">
+        <path d="M232 12 v3.5"/><path d="M232 68 v-3.5"/>
+        <path d="M204 40 h-3.5"/><path d="M260 40 h3.5"/>
+        <path d="M214 22 l2 2"/><path d="M250 22 l-2 2"/>
+      </g>
+
+      <rect x="227.4" y="35.4" width="9.2" height="9.2" transform="rotate(45 232 40)" stroke="#CC785C" stroke-width="0.65" opacity="0.7"/>
+
+      <g stroke="#C4A07A" stroke-width="0.9">
+        <path d="M176 28 h14"/><path d="M176 33 h8"/><path d="M176 38 h11"/>
+      </g>
+      <circle cx="262" cy="78" r="1.6" fill="#CC785C" opacity="0.8"/>
+    </svg>
+
+    <aside class="rail">
+      <svg class="art art-bl" viewBox="0 0 256 232" fill="none" aria-hidden="true">
+        <circle cx="36" cy="188" r="62" stroke="#CC785C" stroke-width="0.75" opacity="0.28"/>
+        <circle cx="36" cy="188" r="44" stroke="#C4A07A" stroke-width="0.7" opacity="0.34"/>
+        <circle cx="36" cy="188" r="24" stroke="#9C4F37" stroke-width="0.55" opacity="0.26" stroke-dasharray="2 1.6"/>
+        <path d="M36 126 V250" stroke="#CC785C" stroke-width="0.5" opacity="0.24"/>
+        <path d="M-16 188 H118" stroke="#C4A07A" stroke-width="0.5" opacity="0.26"/>
+        <path d="M36 188 l36 -36 M36 188 l36 36 M36 188 l-36 -36 M36 188 l-36 36" stroke="#E8C8B4" stroke-width="0.55" opacity="0.4"/>
+        <rect x="29.2" y="181.2" width="13.6" height="13.6" transform="rotate(45 36 188)" stroke="#CC785C" stroke-width="0.75" opacity="0.42"/>
+        <circle cx="36" cy="188" r="2.4" fill="#C4A07A" opacity="0.5"/>
+
+        <g stroke="#9A734C" stroke-width="0.75" opacity="0.4">
+          <path d="M36 126 v6"/><path d="M36 250 v-6"/>
+          <path d="M-16 188 h6"/><path d="M98 188 h6"/>
+          <path d="M10 162 l3 3"/><path d="M62 162 l-3 3"/>
+          <path d="M10 214 l3 -3"/><path d="M62 214 l-3 -3"/>
+        </g>
+
+        <path d="M8 146 h20" stroke="#9C4F37" stroke-width="1" opacity="0.38"/>
+        <path d="M8 152 h12" stroke="#C4A07A" stroke-width="0.75" opacity="0.4"/>
+        <path d="M8 158 h16" stroke="#CC785C" stroke-width="0.65" opacity="0.32"/>
+
+        <path d="M92 224 H10 V192" stroke="#CC785C" stroke-width="0.8" opacity="0.34"/>
+        <path d="M92 218 H16 V192" stroke="#C4A07A" stroke-width="0.5" opacity="0.3"/>
+        <circle cx="10" cy="224" r="1.8" fill="#CC785C" opacity="0.42"/>
+      </svg>
+
+      <div class="identity">
+        <div class="name">张桓睿</div>
+        <div class="handle">TIMECRAKER</div>
+        <div class="role">全栈开发<br />游戏客户端</div>
+        <div class="name-rule"></div>
+      </div>
+
+      <section class="rail-block">
+        <h2>教育</h2>
+        <div class="edu-name">湖北大学</div>
+        <div class="edu-major">计算机科学与技术 · 本科</div>
+        <div class="edu-date">2023.09 至 2027.06 · 武汉</div>
+      </section>
+
+      <section class="rail-block">
+        <h2>联系</h2>
+        <ul class="contact">
+          <li>17764186883</li>
+          <li>timecraker@foxmail.com</li>
+          <li><a href="https://asterforge.top">asterforge.top</a></li>
+          <li><a href="https://github.com/TimeCraker">github.com/TimeCraker</a></li>
+        </ul>
+      </section>
+
+      <section class="rail-block">
+        <h2>技能</h2>
+        <dl class="skills">
+          <dt>客户端</dt>
+          <dd>TypeScript · React · Godot 4 · Unity · UniApp</dd>
+          <dt>实时</dt>
+          <dd>WebSocket · Socket.IO · 快照对齐 · 插值 / 预测</dd>
+          <dt>后端</dt>
+          <dd>NestJS · Go · PostgreSQL · Redis · BullMQ</dd>
+          <dt>工程</dt>
+          <dd>pnpm Monorepo · OpenSpec · Docker · Nginx · PM2</dd>
+        </dl>
+      </section>
+    </aside>
+
+    <div class="main">
+      <section class="sec">
+        <h2>实习经历</h2>
+        <div class="head">
+          <h3>湖北小象智汇科技有限公司</h3>
+          <span class="when">2026.05 起</span>
+        </div>
+        <p class="sub">全栈开发实习生 · 三人团队副主力 · TypeScript / NestJS / React / PostgreSQL / Socket.IO</p>
+
+        <div class="work">
+          <h4>小象英语课堂教学系统</h4>
+          <p class="meta">学生 PAD + 教师大屏 + 教研后台 · 单课 10-20 人，最多 3 堂并行，每生一 PAD</p>
+          <ul>
+            <li>主导<strong>学生端课堂运行时</strong>：入场登记、SyncEngine 快照对齐、环节编排与 ModuleContext 热插拔。断线后按快照进入中段，不回放历史。后续教学环节都挂在这套框架上。</li>
+            <li>独立交付主题阅读、语篇应用；语篇应用接到纸质答题纸拍照、OCR 按空识别、自动判分。管理端打印答题纸，教师端可手动公布。修过 OCR 拿候选词改拼写的误判。</li>
+            <li>课堂游戏化交互（单词密钥、碎片发放、人机对话重答）与三端腾讯云 Nginx + PM2 生产部署。</li>
+          </ul>
+        </div>
+
+        <div class="work">
+          <h4>培训班管理系统</h4>
+          <p class="meta">管理端 Web + 员工 / 家长微信小程序 · 报名、缴费、分班、排课、消课 · DDD 模块化单体</p>
+          <ul>
+            <li>后端支撑域与报名：通知、家长短信登录、学生档案、课程商品；报名与试课赠送整条（服务端事务 + 管理端），从报名打到待分班。</li>
+            <li>管理端教务页面对接冻结 OpenAPI；收款入口与真实支付上线排障（openid、全款规则、小程序按 appId 分流）；域名、证书、Nginx 分流与 PM2 双进程部署。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>个人项目</h2>
+        <div class="work">
+          <div class="head">
+            <h3>AsterNova · 2D 多人实时竞技</h3>
+            <span class="when">独立全栈 · 已上线</span>
+          </div>
+          <p class="meta">Go + WebSocket + Protobuf · Next.js / Godot(Wasm) / Unity</p>
+          <p class="links">
+            <a href="https://asterforge.top">asterforge.top</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a href="https://github.com/TimeCraker/games">github.com/TimeCraker/games</a>
+          </p>
+          <ul>
+            <li>Server-Authoritative：客户端只上报输入，60Hz 权威状态在服务端。Go 接入层加匹配 / 战斗拆分，Channel 背压避免高频广播把协程堵住。</li>
+            <li><strong>三端客户端</strong>：Godot 自研轻量 Protobuf 解码；Unity / Godot 预编译为 Wasm 嵌入 Next.js，经 JS Bridge 做 Token 注入和沙盒通信。</li>
+            <li>弱网插值与预测锁消位移拉扯；Hit-Stop、相机震动与碰撞反馈。Docker Compose 加云主机部署，处理过纯 IP 下 Wasm 跨域。</li>
+          </ul>
+        </div>
+
+        <div class="work">
+          <div class="head">
+            <h3>ResumeAIX · AI 简历生成</h3>
+            <span class="when">独立产品 · 已上线</span>
+          </div>
+          <p class="links">
+            <a href="https://resume.asterforge.top">resume.asterforge.top</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp; Next.js / TypeScript
+          </p>
+          <ul>
+            <li>从 0 上线解析、STAR 重写、JD 匹配、ATS 评分、多模板导出。鉴权、微信支付，Web / AI / Export 拆成多服务并完成生产部署。</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </article>
+</body>
+</html>

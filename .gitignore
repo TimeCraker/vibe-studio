@@ -33,3 +33,7 @@ Thumbs.db
 
 # .claude/skills 是指向 skills/ 的本机 junction（绝对路径，不可跨机）
 .claude/skills/
+
+# 渲染核查产物（PNG 等）
+output/
+scripts/resume/_qa*.png

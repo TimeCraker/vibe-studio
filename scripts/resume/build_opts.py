@@ -1,0 +1,439 @@
+# -*- coding: utf-8 -*-
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+RAIL_CORE = """
+      <section class="rail-block">
+        <h2>教育</h2>
+        <div class="edu-name">湖北大学</div>
+        <div class="edu-major">计算机科学与技术 · 本科</div>
+        <div class="edu-date">2023.09 至 2027.06 · 武汉</div>
+      </section>
+      <section class="rail-block">
+        <h2>联系</h2>
+        <ul class="contact">
+          <li>17764186883</li>
+          <li>timecraker@foxmail.com</li>
+          <li><a href="https://asterforge.top">asterforge.top</a></li>
+          <li><a href="https://github.com/TimeCraker">github.com/TimeCraker</a></li>
+        </ul>
+      </section>
+      <section class="rail-block">
+        <h2>技能</h2>
+        <dl class="skills">
+          <dt>客户端</dt>
+          <dd>TypeScript · React · Godot 4 · Unity · UniApp</dd>
+          <dt>实时</dt>
+          <dd>WebSocket · Socket.IO · 快照对齐 · 插值 / 预测</dd>
+          <dt>后端</dt>
+          <dd>NestJS · Go · PostgreSQL · Redis · BullMQ</dd>
+          <dt>工程</dt>
+          <dd>pnpm Monorepo · OpenSpec · Docker · Nginx · PM2</dd>
+        </dl>
+      </section>
+"""
+
+MAIN = """
+      <section class="sec">
+        <h2>实习经历</h2>
+        <div class="head">
+          <h3>湖北小象智汇科技有限公司</h3>
+          <span class="when">2026.05 起</span>
+        </div>
+        <p class="sub">全栈开发实习生 · 三人团队副主力 · TypeScript / NestJS / React / PostgreSQL / Socket.IO</p>
+        <div class="work">
+          <h4>小象英语课堂教学系统</h4>
+          <p class="meta">学生 PAD + 教师大屏 + 教研后台 · 单课 10-20 人，最多 3 堂并行，每生一 PAD</p>
+          <ul>
+            <li>主导<strong>学生端课堂运行时</strong>：入场登记、SyncEngine 快照对齐、环节编排与 ModuleContext 热插拔。断线后按快照进入中段，不回放历史。后续教学环节都挂在这套框架上。</li>
+            <li>独立交付主题阅读、语篇应用；语篇应用接到纸质答题纸拍照、OCR 按空识别、自动判分。管理端打印答题纸，教师端可手动公布。修过 OCR 拿候选词改拼写的误判。</li>
+            <li>课堂游戏化交互（单词密钥、碎片发放、人机对话重答）与三端腾讯云 Nginx + PM2 生产部署。</li>
+          </ul>
+        </div>
+        <div class="work">
+          <h4>培训班管理系统</h4>
+          <p class="meta">管理端 Web + 员工 / 家长微信小程序 · 报名、缴费、分班、排课、消课 · DDD 模块化单体</p>
+          <ul>
+            <li>后端支撑域与报名：通知、家长短信登录、学生档案、课程商品；报名与试课赠送整条（服务端事务 + 管理端），从报名打到待分班。</li>
+            <li>管理端教务页面对接冻结 OpenAPI；收款入口与真实支付上线排障（openid、全款规则、小程序按 appId 分流）；域名、证书、Nginx 分流与 PM2 双进程部署。</li>
+          </ul>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>个人项目</h2>
+        <div class="work">
+          <div class="head">
+            <h3>AsterNova · 2D 多人实时竞技</h3>
+            <span class="when">独立全栈 · 已上线</span>
+          </div>
+          <p class="meta">Go + WebSocket + Protobuf · Next.js / Godot(Wasm) / Unity</p>
+          <p class="links">
+            <a href="https://asterforge.top">asterforge.top</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a href="https://github.com/TimeCraker/games">github.com/TimeCraker/games</a>
+          </p>
+          <ul>
+            <li>Server-Authoritative：客户端只上报输入，60Hz 权威状态在服务端。Go 接入层加匹配 / 战斗拆分，Channel 背压避免高频广播把协程堵住。</li>
+            <li><strong>三端客户端</strong>：Godot 自研轻量 Protobuf 解码；Unity / Godot 预编译为 Wasm 嵌入 Next.js，经 JS Bridge 做 Token 注入和沙盒通信。</li>
+            <li>弱网插值与预测锁消位移拉扯；Hit-Stop、相机震动与碰撞反馈。Docker Compose 加云主机部署，处理过纯 IP 下 Wasm 跨域。</li>
+          </ul>
+        </div>
+        <div class="work">
+          <div class="head">
+            <h3>ResumeAIX · AI 简历生成</h3>
+            <span class="when">独立产品 · 已上线</span>
+          </div>
+          <p class="links">
+            <a href="https://resume.asterforge.top">resume.asterforge.top</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp; Next.js / TypeScript
+          </p>
+          <ul>
+            <li>从 0 上线解析、STAR 重写、JD 匹配、ATS 评分、多模板导出。鉴权、微信支付，Web / AI / Export 拆成多服务并完成生产部署。</li>
+          </ul>
+        </div>
+      </section>
+"""
+
+ART_BL = """
+      <svg class="art art-bl" viewBox="0 0 256 232" fill="none" aria-hidden="true">
+        <circle cx="36" cy="188" r="62" stroke="#CC785C" stroke-width="0.75" opacity="0.28"/>
+        <circle cx="36" cy="188" r="44" stroke="#C4A07A" stroke-width="0.7" opacity="0.34"/>
+        <circle cx="36" cy="188" r="24" stroke="#9C4F37" stroke-width="0.55" opacity="0.26" stroke-dasharray="2 1.6"/>
+        <path d="M36 126 V250" stroke="#CC785C" stroke-width="0.5" opacity="0.24"/>
+        <path d="M-16 188 H118" stroke="#C4A07A" stroke-width="0.5" opacity="0.26"/>
+        <path d="M36 188 l36 -36 M36 188 l36 36 M36 188 l-36 -36 M36 188 l-36 36" stroke="#E8C8B4" stroke-width="0.55" opacity="0.4"/>
+        <rect x="29.2" y="181.2" width="13.6" height="13.6" transform="rotate(45 36 188)" stroke="#CC785C" stroke-width="0.75" opacity="0.42"/>
+        <circle cx="36" cy="188" r="2.4" fill="#C4A07A" opacity="0.5"/>
+        <g stroke="#9A734C" stroke-width="0.75" opacity="0.4">
+          <path d="M36 126 v6"/><path d="M36 250 v-6"/>
+          <path d="M-16 188 h6"/><path d="M98 188 h6"/>
+        </g>
+        <path d="M8 146 h20" stroke="#9C4F37" stroke-width="1" opacity="0.38"/>
+        <path d="M8 152 h12" stroke="#C4A07A" stroke-width="0.75" opacity="0.4"/>
+        <path d="M8 158 h16" stroke="#CC785C" stroke-width="0.65" opacity="0.32"/>
+        <path d="M92 224 H10 V192" stroke="#CC785C" stroke-width="0.8" opacity="0.34"/>
+        <path d="M92 218 H16 V192" stroke="#C4A07A" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+"""
+
+ART_COMPASS_PAPER = """
+    <svg class="art art-tr" viewBox="0 0 280 120" fill="none" aria-hidden="true">
+      <circle cx="222" cy="48" r="34" stroke="#E8C8B4" stroke-width="0.8"/>
+      <circle cx="222" cy="48" r="22" stroke="#C4A07A" stroke-width="0.7"/>
+      <circle cx="222" cy="48" r="10" stroke="#CC785C" stroke-width="0.5" stroke-dasharray="1.8 1.4"/>
+      <circle cx="222" cy="48" r="2.2" fill="#C4A07A"/>
+      <path d="M222 10 V86" stroke="#CC785C" stroke-width="0.4" opacity="0.45"/>
+      <path d="M186 48 H258" stroke="#C4A07A" stroke-width="0.4" opacity="0.5"/>
+      <path d="M200 26 L222 48 L244 26" stroke="#E8C8B4" stroke-width="0.55"/>
+      <rect x="216.4" y="42.4" width="11.2" height="11.2" transform="rotate(45 222 48)" stroke="#CC785C" stroke-width="0.65"/>
+      <g stroke="#9A734C" stroke-width="0.7">
+        <path d="M222 10 v4"/><path d="M222 86 v-4"/><path d="M186 48 h-4"/><path d="M258 48 h4"/>
+      </g>
+      <g stroke="#C4A07A" stroke-width="0.9">
+        <path d="M168 22 h16"/><path d="M168 27 h9"/><path d="M168 32 h13"/>
+      </g>
+    </svg>
+"""
+
+ART_COMPASS_BONE = """
+      <svg class="art-on" viewBox="0 0 420 120" fill="none" aria-hidden="true">
+        <circle cx="348" cy="58" r="38" stroke="#E8C8B4" stroke-width="0.9" opacity="0.85"/>
+        <circle cx="348" cy="58" r="24" stroke="#FFF8F3" stroke-width="0.7" opacity="0.45"/>
+        <circle cx="348" cy="58" r="11" stroke="#C4A07A" stroke-width="0.6" stroke-dasharray="2 1.5"/>
+        <circle cx="348" cy="58" r="2.4" fill="#C4A07A"/>
+        <path d="M348 16 V100" stroke="#FFF8F3" stroke-width="0.45" opacity="0.35"/>
+        <path d="M306 58 H390" stroke="#C4A07A" stroke-width="0.45" opacity="0.55"/>
+        <path d="M324 34 L348 58 L372 34" stroke="#E8C8B4" stroke-width="0.65" opacity="0.8"/>
+        <rect x="341.2" y="51.2" width="13.6" height="13.6" transform="rotate(45 348 58)" stroke="#FFF8F3" stroke-width="0.7" opacity="0.55"/>
+        <g stroke="#C4A07A" stroke-width="0.8">
+          <path d="M348 16 v4"/><path d="M348 100 v-4"/><path d="M306 58 h-4"/><path d="M390 58 h4"/>
+        </g>
+        <path d="M420 18 H300" stroke="#FFF8F3" stroke-width="0.8" opacity="0.28"/>
+        <path d="M404 18 V92" stroke="#C4A07A" stroke-width="0.7" opacity="0.55"/>
+        <g stroke="#E8C8B4" stroke-width="0.9">
+          <path d="M250 28 h18"/><path d="M250 34 h10"/><path d="M250 40 h14"/>
+        </g>
+      </svg>
+"""
+
+
+def wrap(title: str, extra_css: str, body: str) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>{title}</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+{extra_css}
+  </style>
+</head>
+<body>
+{body}
+</body>
+</html>
+"""
+
+
+A_CSS = """
+    .page { display: grid; grid-template-columns: 64mm 1fr; }
+    .rail { padding: 12mm 6.4mm 8mm 11mm; }
+    .main { padding: 12mm 9.2mm 8mm 8.2mm; }
+    .art-bl { left: 0; bottom: 0; width: 64mm; height: 58mm; }
+    .art-tr { right: 0; top: 0; width: 70mm; height: 30mm; opacity: 0.85; }
+    .glyph-rail {
+      right: -6mm; top: 4mm;
+      font-size: 46mm;
+      color: var(--coral);
+      opacity: 0.09;
+    }
+"""
+
+A_BODY = f"""
+  <article class="page">
+    {ART_COMPASS_PAPER}
+    <aside class="rail">
+      <div class="glyph glyph-rail" aria-hidden="true">睿</div>
+      {ART_BL}
+      <div class="identity">
+        <div class="name">张桓睿</div>
+        <div class="handle">TIMECRAKER</div>
+        <div class="role-rail">全栈开发<br />游戏客户端</div>
+        <div class="name-rule"></div>
+      </div>
+      {RAIL_CORE}
+    </aside>
+    <div class="main">{MAIN}</div>
+  </article>
+"""
+
+B_CSS = """
+    .page {
+      display: grid;
+      grid-template-rows: 32mm 1fr;
+      grid-template-columns: 64mm 1fr;
+    }
+    .mast {
+      grid-column: 1 / -1;
+      background: var(--coral);
+      display: grid;
+      grid-template-columns: 64mm 1fr;
+      position: relative;
+      overflow: hidden;
+      z-index: 5;
+    }
+    .mast-left { position: relative; overflow: hidden; }
+    .glyph-mast {
+      left: 7mm; top: -8mm;
+      font-size: 42mm;
+      color: var(--bone);
+      opacity: 0.16;
+    }
+    .mast-right {
+      position: relative;
+      color: var(--bone);
+      padding: 5.4mm 10mm 5mm 8mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .mast-role {
+      font-size: 16.5pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      line-height: 1.32;
+    }
+    .mast-rule {
+      width: 22mm;
+      height: 0.55mm;
+      margin-top: 3mm;
+      background: linear-gradient(90deg, var(--gold), var(--peach));
+    }
+    .mast .art-on {
+      position: absolute;
+      right: 0; top: 0;
+      width: 105mm; height: 32mm;
+    }
+    .rail { padding: 7.2mm 6.4mm 8mm 11mm; }
+    .main { padding: 7.2mm 9.2mm 7.5mm 8.2mm; }
+    .art-bl { left: 0; bottom: 0; width: 64mm; height: 52mm; }
+"""
+
+B_BODY = f"""
+  <article class="page">
+    <header class="mast">
+      <div class="mast-left">
+        <div class="glyph glyph-mast" aria-hidden="true">睿</div>
+      </div>
+      <div class="mast-right">
+        {ART_COMPASS_BONE}
+        <div class="mast-role">全栈开发<br />游戏客户端</div>
+        <div class="mast-rule"></div>
+      </div>
+    </header>
+    <aside class="rail">
+      {ART_BL}
+      <div class="identity">
+        <div class="name">张桓睿</div>
+        <div class="handle">TIMECRAKER</div>
+        <div class="name-rule"></div>
+      </div>
+      {RAIL_CORE}
+    </aside>
+    <div class="main">{MAIN}</div>
+  </article>
+"""
+
+C_CSS = """
+    .page { display: grid; grid-template-columns: 64mm 1fr; }
+    .rail { padding: 12mm 6.4mm 8mm 11mm; }
+    .main { padding: 8mm 9.2mm 7.5mm 8.2mm; }
+    .art-bl { left: 0; bottom: 0; width: 64mm; height: 58mm; }
+    .banner {
+      position: relative;
+      overflow: hidden;
+      min-height: 26mm;
+      margin: -8mm -9.2mm 5.5mm -8.2mm;
+      padding: 7mm 9.2mm 6mm 8.2mm;
+      border-bottom: 0.35mm solid var(--line);
+    }
+    .glyph-banner {
+      right: -4mm; top: -10mm;
+      font-size: 48mm;
+      color: var(--coral);
+      opacity: 0.11;
+    }
+    .banner-role {
+      position: relative;
+      z-index: 2;
+      font-size: 16pt;
+      font-weight: 600;
+      color: var(--coral-deep);
+      letter-spacing: 0.12em;
+      line-height: 1.32;
+    }
+    .banner-rule {
+      position: relative;
+      z-index: 2;
+      width: 22mm;
+      height: 0.55mm;
+      margin-top: 3.2mm;
+      background: linear-gradient(90deg, var(--coral) 0 12mm, var(--gold) 12mm 100%);
+    }
+    .banner .art-on {
+      position: absolute;
+      right: 0; top: 0;
+      width: 90mm; height: 26mm;
+      opacity: 0.9;
+    }
+"""
+
+C_BODY = f"""
+  <article class="page">
+    <aside class="rail">
+      <div class="glyph glyph-rail" aria-hidden="true" style="right:-6mm;top:8mm;font-size:42mm;color:var(--coral);opacity:.08">睿</div>
+      {ART_BL}
+      <div class="identity">
+        <div class="name">张桓睿</div>
+        <div class="handle">TIMECRAKER</div>
+        <div class="name-rule"></div>
+      </div>
+      {RAIL_CORE}
+    </aside>
+    <div class="main">
+      <div class="banner">
+        <div class="glyph glyph-banner" aria-hidden="true">睿</div>
+        {ART_COMPASS_BONE.replace("#FFF8F3", "#CC785C").replace('opacity="0.45"', 'opacity="0.18"').replace('opacity="0.35"', 'opacity="0.2"').replace('opacity="0.55"', 'opacity="0.45"')}
+        <div class="banner-role">全栈开发<br />游戏客户端</div>
+        <div class="banner-rule"></div>
+      </div>
+      {MAIN}
+    </div>
+  </article>
+"""
+
+D_CSS = """
+    .page { display: grid; grid-template-columns: 64mm 1fr; }
+    .rail { padding: 12mm 6.4mm 8mm 11mm; }
+    .main { padding: 0 0 7.5mm 0; }
+    .art-bl { left: 0; bottom: 0; width: 64mm; height: 52mm; }
+    .plate {
+      position: relative;
+      overflow: hidden;
+      height: 34mm;
+      background: var(--coral);
+      color: var(--bone);
+      padding: 6.4mm 9.4mm 6mm 8.4mm;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 14mm 100%, 0 70%);
+    }
+    .glyph-plate {
+      right: -2mm; top: -11mm;
+      font-size: 50mm;
+      color: var(--bone);
+      opacity: 0.15;
+    }
+    .plate-role {
+      position: relative;
+      z-index: 2;
+      font-size: 16.5pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      line-height: 1.3;
+    }
+    .plate-rule {
+      position: relative;
+      z-index: 2;
+      width: 20mm;
+      height: 0.55mm;
+      margin-top: 3mm;
+      background: linear-gradient(90deg, var(--gold), var(--peach));
+    }
+    .plate .art-on {
+      position: absolute;
+      right: 0; top: 0;
+      width: 100mm; height: 34mm;
+    }
+    .stack { padding: 5.6mm 9.2mm 0 8.2mm; }
+"""
+
+D_BODY = f"""
+  <article class="page">
+    <aside class="rail">
+      <div class="glyph glyph-rail" aria-hidden="true" style="right:-6mm;top:8mm;font-size:42mm;color:var(--coral);opacity:.08">睿</div>
+      {ART_BL}
+      <div class="identity">
+        <div class="name">张桓睿</div>
+        <div class="handle">TIMECRAKER</div>
+        <div class="name-rule"></div>
+      </div>
+      {RAIL_CORE}
+    </aside>
+    <div class="main">
+      <div class="plate">
+        <div class="glyph glyph-plate" aria-hidden="true">桓</div>
+        {ART_COMPASS_BONE}
+        <div class="plate-role">全栈开发<br />游戏客户端</div>
+        <div class="plate-rule"></div>
+      </div>
+      <div class="stack">{MAIN}</div>
+    </div>
+  </article>
+"""
+
+
+def main() -> None:
+    files = {
+        "opt-a.html": wrap("张桓睿 · 方案 A · 侧栏无顶", A_CSS, A_BODY),
+        "opt-b.html": wrap("张桓睿 · 方案 B · 铜刊头", B_CSS, B_BODY),
+        "opt-c.html": wrap("张桓睿 · 方案 C · 主栏刊头", C_CSS, C_BODY),
+        "opt-d.html": wrap("张桓睿 · 方案 D · 切色铜板", D_CSS, D_BODY),
+    }
+    for name, html in files.items():
+        path = HERE / name
+        path.write_text(html, encoding="utf-8")
+        print("wrote", path.name, path.stat().st_size)
+
+
+if __name__ == "__main__":
+    main()
