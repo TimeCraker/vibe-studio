@@ -43,6 +43,19 @@ const V2Page: React.FC<{ index: number }> = ({ index }) => {
 
 export const DeckVideoV2: React.FC = () => {
   const { fps } = useVideoConfig();
+  // 页序列帧排布：**累计取整**（前一页结束帧 = 后一页起始帧）。
+  // 若每页 from 独立 round(start×fps)，页时长小数舍入方向不一致时会挤出
+  // 无人认领的孤儿帧 → 切点黑闪（S6 交付实测：帧 2259 / 2848 两处 luma=0）。
+  // 末页吃掉总长余数，保证覆盖到 composition 最后一帧。
+  const totalFrames = Math.round(deckParams.totalSeconds * fps);
+  const pageSlots: { index: number; from: number; dur: number }[] = [];
+  let acc = 0;
+  deckParams.pages.forEach((page, i) => {
+    const isLast = i === deckParams.pages.length - 1;
+    const dur = isLast ? totalFrames - acc : Math.round(page.pageSeconds * fps);
+    pageSlots.push({ index: page.index, from: acc, dur });
+    acc += dur;
+  });
   // 深底页时间区间（字幕面板换深色调）
   const darkRanges = deckParams.pages
     .filter((p) => DARK_PAGES.includes(p.index))
@@ -56,13 +69,9 @@ export const DeckVideoV2: React.FC = () => {
   return (
     // 全局字体接入（F2）：全片任何文字不得落回浏览器默认衬线
     <AbsoluteFill style={{ backgroundColor: "#000", fontFamily: FONT.sans }}>
-      {deckParams.pages.map((page) => (
-        <Sequence
-          key={page.index}
-          from={Math.round(page.start * fps)}
-          durationInFrames={Math.round(page.pageSeconds * fps)}
-        >
-          <V2Page index={page.index} />
+      {pageSlots.map(({ index, from, dur }) => (
+        <Sequence key={index} from={from} durationInFrames={dur}>
+          <V2Page index={index} />
         </Sequence>
       ))}
       <SubtitleTrack cues={deckCues} theme="panel" darkRanges={darkRanges} dedupe={dedupe} keywords={SUBTITLE_CONFIG.keywords} />

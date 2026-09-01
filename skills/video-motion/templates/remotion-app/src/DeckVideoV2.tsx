@@ -56,15 +56,24 @@ export const DeckVideoV2: React.FC = () => {
   return (
     // 全局字体接入（F2）：全片任何文字不得落回浏览器默认衬线
     <AbsoluteFill style={{ backgroundColor: "#000", fontFamily: FONT.sans }}>
-      {deckParams.pages.map((page) => (
-        <Sequence
-          key={page.index}
-          from={Math.round(page.start * fps)}
-          durationInFrames={Math.round(page.pageSeconds * fps)}
-        >
-          <V2Page index={page.index} />
-        </Sequence>
-      ))}
+      {/* 页序列帧排布：累计取整（前页结束帧=后页起始帧），末页吃总长余数。
+          独立 round 各页 start 会在小数舍入方向不一致时挤出孤儿帧 → 切点黑闪。 */}
+      {(() => {
+        const totalFrames = Math.round(deckParams.totalSeconds * fps);
+        const slots: { index: number; from: number; dur: number }[] = [];
+        let acc = 0;
+        deckParams.pages.forEach((page, i) => {
+          const isLast = i === deckParams.pages.length - 1;
+          const dur = isLast ? totalFrames - acc : Math.round(page.pageSeconds * fps);
+          slots.push({ index: page.index, from: acc, dur });
+          acc += dur;
+        });
+        return slots.map(({ index, from, dur }) => (
+          <Sequence key={index} from={from} durationInFrames={dur}>
+            <V2Page index={index} />
+          </Sequence>
+        ));
+      })()}
       <SubtitleTrack cues={deckCues} theme="panel" darkRanges={darkRanges} dedupe={dedupe} keywords={SUBTITLE_CONFIG.keywords} />
     </AbsoluteFill>
   );
