@@ -114,7 +114,9 @@ export const CascadeList: React.FC<{
   </div>
 );
 
-// 慢推运镜:整页匀速缓推(页长 >10s 时给),rate 0.3-0.5%/s
+// 慢推运镜:整页匀速缓推(页长 >10s 时给),rate 0.3-0.5%/s。
+// 根元素必须铺满定位(inset 0):transform 元素是 absolute 后代的 containing block,
+// 流内根高会被 absolute 子树塌成 0,整页布局顶格溢出(S6 实战踩过)。
 export const CameraPush: React.FC<{
   ratePerSec?: number; // 默认 0.004(0.4%/s)
   style?: React.CSSProperties;
@@ -124,7 +126,19 @@ export const CameraPush: React.FC<{
   const { fps } = useVideoConfig();
   const scale = 1 + ratePerSec * (frame / fps);
   return (
-    <div style={{ transform: `scale(${scale.toFixed(4)})`, transformOrigin: "center", ...style }}>{children}</div>
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        flexDirection: "column",
+        transform: `scale(${scale.toFixed(4)})`,
+        transformOrigin: "center",
+        ...style,
+      }}
+    >
+      {children}
+    </div>
   );
 };
 

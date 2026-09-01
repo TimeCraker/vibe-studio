@@ -22,7 +22,6 @@ import { LottieLayer } from "./scene-kit/LottieLayer";
 import { GifLayer } from "./scene-kit/GifLayer";
 import { ThreeStage } from "./scene-kit/ThreeStage";
 import { useThree } from "@react-three/fiber";
-import { useCurrentFrame } from "remotion";
 import { CursorTrack, type CursorWaypoint } from "./vendor/snapcn/cursor-track";
 import { depthPush } from "./vendor/onda/depth-push";
 import { exposure, slideIn } from "./transitions";
@@ -588,7 +587,9 @@ const MgTransitionDemo: React.FC = () => (
     <Series.Sequence durationInFrames={TSEG}>
       <TSeg n={16} text="CameraPush · 慢推(演示档 2%/s)">
         <CameraPush ratePerSec={0.02}>
-          <TCard text="整页缓推" />
+          <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+            <TCard text="整页缓推" />
+          </AbsoluteFill>
         </CameraPush>
       </TSeg>
     </Series.Sequence>

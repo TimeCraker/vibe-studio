@@ -29,7 +29,8 @@
 ```
 【0 开工】 ⚙ video-motion
    新建 projects/<项目>/，复制 skills/video-motion/templates/remotion-app
-   为施工工程（自带引擎 + scene-kit 组件 + tokens + 示例场景），npm install 即跑
+   为施工工程（自带引擎 + scene-kit 组件 + MG 武器库 + vendor 精选 + tokens + 示例场景），
+   npm install 即跑；第 3 步设计前先查 assets/component-catalog.md 选武器
 【1 定性】
    brief.md：给谁看 / 放哪 / 多长 / 要观众做什么——之后所有取舍用它裁决
 【2 文案】 ⚙ narration（可叠 ⚙ humanizer 深度过稿）

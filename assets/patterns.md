@@ -20,6 +20,7 @@
 | PAT-10 | 价值金句 | 深底光晕 + 引导句 + 150px 两行金句 + 对比插画 | lekao P10 |
 | PAT-11 | 行动号召 CTA | 左 150px CTA + mono 域名 + 右浏览器特写高亮圈 | lekao P11 |
 | PAT-12 | 封面出图 | 深族底 + 浏览器 hero 特写 + 金句 + chips + 进度条 | lekao 封面 |
+| PAT-13 | 全副武装数据说服页 | 深族双栏 + 九动词分批进场 + 残影柱图 + 呼吸环 + 颗粒场 + 慢推 | lekao P7（S6 武装版） |
 
 ---
 
@@ -118,6 +119,15 @@
 - **组件**：CoverV3 全套（独立入口 cover3-index.ts，still --frame=60）
 - **坑**：still 帧号要容纳入场 spring（frame=60 走完）；复查须换新文件名防缓存
 - **参考帧**：`assets/patterns-frames/cover.jpg`（成品：`products/lekao-intro/cover-v3.png`，本机保留）
+
+## PAT-13 · 全副武装数据说服页
+
+- **适用**：数字规则页（经济系统 / 定价 / 增长数据），页长 >10s 的深族主力版式
+- **版式**（深族自由双栏）：SlideGroup 标题组（0s）+ CascadeList 规则行（0.4s，280ms/项）+ DrawPath 关键词下划线（0.9s）｜右栏 BlurTrail 柱图整组残影进位（对齐段 2 start）+ 柱逐根升起 + LottieLayer 呼吸环挂标题角｜段 3 start 时 WipeIn 揭示兜底行 + 行内 DrawPath 二级下划线；全页 NoiseField dark 0.28 + CameraPush 0.4%/s + TextBreath 标题呼吸
+- **组件**：SceneBg(dark) / SlideGroup / CascadeList / DrawPath / BlurTrail(内包 ChartGrow) / LottieLayer / WipeIn / NoiseField / CameraPush / TextBreath
+- **坑**：transform 包装动词不得直接包 absolute 子树（高度塌 0，S6 双坑）；进场批次锚字幕段 start ±0.3s；柱图整组条件挂载在段 2 start（4.5s 前不在场）
+- **参考帧**：`products/lekao-intro/v3-kit/compare/`（v3 基线）、武装版验收 `products/lekao-intro/deck-video-armed-p7-acceptance.md`（L3 对照表）
+- **复用记录**：lekao P7 首用（S6，2026-09-01）
 
 ---
 

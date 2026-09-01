@@ -8,7 +8,7 @@ shadcn 式源码登记库（npm 包只是 CLI），组件以「精选 + intake �
 
 | 目录.文件 | 来源 | 许可证 | 拉取 | intake 改动 |
 |---|---|---|---|---|
-| `snapcn/cursor-track` | [snapcn.dev](https://snapcn.dev)（repo: snapcndev/snapcn，registry/r/cursor-track.json） | MIT | `gh api repos/snapcndev/snapcn/contents/public/r/cursor-track.json --jq '.content' \| base64 -d` | 剥 snap-cn-ui 主题系统（默认色挂 scene-kit tokens：ink / 白描边 / 品牌环）；withAlpha 内联；删 "use client"；S6 清 intake 残笔（重复 import 块 + 解构残留 theme/mode） |
+| `snapcn/cursor-track` | [snapcn.dev](https://snapcn.dev)（repo: snapcndev/snapcn，registry/r/cursor-track.json） | MIT | `gh api repos/snapcndev/snapcn/contents/public/r/cursor-track.json --jq '.content' \| base64 -d` | 剥 snap-cn-ui 主题系统（默认色挂 scene-kit tokens：ink / 白描边 / 品牌环）；withAlpha 内联；删 "use client" |
 | `onda/depth-push` | [onda-video.vercel.app](https://onda-video.vercel.app)（repo: degueba/onda，registry/transitions/depth-push） | MIT（代码；名称商标除外） | `gh api repos/degueba/onda/contents/registry/transitions/depth-push/depthPush.tsx --jq '.content' \| base64 -d` | 剥 zod 校验（props 直传同默认值），逻辑零改动 |
 
 ## 评估后未收录（记录原因，避免重复调研）

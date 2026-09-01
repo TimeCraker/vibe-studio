@@ -115,3 +115,21 @@
 - v4 工单同步改名（「编舞」→「进场动效」术语全部说人话）+ 路径更新。
 
 **教训**：分类法第一天不执行，第二天就要开重组工单——目录纪律和代码纪律同级。
+
+---
+
+## 2026-09-01 · MG 武器库 S0-S6 — 全副武装的 Remotion 成片线
+
+**目标**：v1-v3「全绿验收但看片被否」根因 = 只用 Remotion 的 DOM/CSS 子集 + 缺 MG（Motion Graphics）工艺。用户拍板：官方包全量装、做极致 MG、社区库精选入库、lekao P7 实战验证。
+**结果**：七站全部提交，P7 武装版四级验收全绿，5 项回流完成。
+
+**关键决策与理由**
+- **吸收合并**：未施工的 v4 进场动效工单整体吸收进本工单（S2 承接其 Stage 0），v4 文件转证据存档——两份 spec 并行必打架。
+- **版本纪律**：17 个 `@remotion/*` 精确锁 4.0.518 不带 `^`；three 走 React 19 兼容的 fiber@9。
+- **社区库走 vendor**：RemotionUI/Onda/snapcn 都是 shadcn 式 copy-paste 源码库（npm 包只是 CLI），精选 2 件（cursor-track/depth-push，双 MIT 一手验证）进 `src/vendor/`，intake 四纪律管住。
+- **引擎律落地**：页间硬切为底（OVERLAP 0.5→0，全片 3302→3287 帧）、动词全在页内内容层、相邻页动词不同型——进 motion-grammar M5-M7。
+
+**教训**
+- **transform 包装双坑**（S6 同日两炸）：带 transform 的包装动词包 absolute 子树 → containing block 变换 + 流内高度塌 0 → 整页顶格溢出。修法：组件根自足（CameraPush 根 inset 0；BlurTrail 主层流内、残影层 absolute——官方 Trail 根是 AbsoluteFill 页级语义，元素级必须 relative 化）。像素定位（coin 金色 y 扫描）比读图快且硬。
+- **4.0.518 文档与实现有出入**：evolvePath/interpolatePath/fitText/parseSrt 四处实测纠偏，全部回写 SKILL.md——版本升级后「记忆里的 API」不可信，先 node -e 打真实返回形状。
+- **esbuild 容忍 ≠ 类型干净**：cursor-track 重复 import、mg-demos 重复 useCurrentFrame 在渲染链路永远不炸，tsc 一过就现形——每站该跑 tsc 而不只是渲绿。

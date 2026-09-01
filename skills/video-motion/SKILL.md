@@ -82,6 +82,18 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 2. **包装组件必须显式透传 width**：新容器包旧组件时丢 width = 块级元素撑满父容器（插画盖标题、手机壳撑到 700px 宽两轮同根因）；包容器一律 `style={{ width, ...style }}`。
 3. **长截图先验空白率再定方案**：拿到长截图先按行算 std/空白占比（PIL 一段脚本），懒加载没渲染进截图的「空长图」滚动即死空气——先裁切特写，素材修复再回切滚动。
 
+## MG 武器库（S0-S6，成片质感的主力弹药）
+
+模板自带全套武器，家底与逐组件用法以 `assets/component-catalog.md` 为准（scene-kit 17 组件 / entrance-kit 九动词 / vendor 社区精选 / fonts），此处只记铁律：
+
+- **版本铁律**：所有 `@remotion/*` 必须精确同版（如 4.0.518，不带 `^`）——版本错配是 Remotion 硬报错不是警告；新增包先对齐存量版本
+- **4.0.518 API 事实**（与文档/记忆有出入，已实测）：`evolvePath` 返回 dash 属性对非裁剪 path；`interpolatePath(value, from, to)` 三独立参数；`fitText` 只吃 `withinWidth` 且返回 `{fontSize}` 对象；中文多行不能用 `fitTextOnNLines`（按空格分词）；`parseSrt` 返回 `{captions:[{text,startMs,endMs}]}` 毫秒制
+- **transform 包装坑**（S6 双坑实录）：带 transform 的包装动词（CameraPush/SlideGroup/TextBreath/BlurTrail）不得直接包 `position:absolute` 子树——transform 元素是 absolute 后代的 containing block，流内高度塌 0、内容顶格溢出。组件已自足（CameraPush 根 inset 0、BlurTrail 主层流内），使用时仍避免在无尺寸的 absolute 父级里裸包
+- **官方 `<Trail>`/`TransitionSeries` 语义**：Trail 根是 AbsoluteFill（页级覆盖语义），元素级残影用 scene-kit 的 BlurTrail（已 relative 化）；TransitionSeries 转场吃相邻页时长，成片引擎默认零转场（Series 硬切）+ 页内动词
+- **vendor 纪律**：copy-paste 入库非 npm 依赖；升级=重新拉取重做 intake；纪律四条见模板 `src/vendor/README.md`
+- **Lottie 资产流**：免费商用 JSON 进 `assets/lottie/`（README 三字段登记）→ 用时复制进项目 `public/` → `LottieLayer src` 引用；intake 禁带 expressions 的 JSON（渲染不确定）
+- **重武器限额**：ShutterBlur（×samples）与 ThreeStage（SwiftShader ~17 帧/s）每片 ≤1 处；BlurTrail 慎包重子树（×layers 重渲）
+
 ### 验收流程（四级）
 
 L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositions 帧数对账）；L2 抽帧（每页 4 张：进场中间态/稳定全景/信息包特写/道具 200% 放大 + 字幕帧逐字核对 + 去重证据帧，judge 读图）；L2.5 静音测试（逐页盲答主旨）；L3 报告（含新旧版同时间点对照表 + 八问逐页自评）。**验收全绿后资产回流（铁律）**：改进/新造的 scene-kit 组件与 tokens 回写 skill 模板；新成页方案在 `assets/patterns.md` 登记 PAT 条目（模板见文末）；教训进 `docs/workorder-log.md`。渲染命令同 DeckVideo（composition 换成场景化组件，如 `DeckVideoV2`），封面用 `npx remotion still` 出图（still 帧号要容纳入场 spring 时长）。

@@ -25,7 +25,7 @@
 | `ShapeMorph` | 形状渐变（interpolatePath 真顶点插值）：rect/circle/triangle/star 互变 | `progress` 外驱可接力两段 morph；**interpolatePath 签名是 (value, from, to) 三独立参数**；triangle 边长参数是 `length` |
 | `NoiseField` | 有机颗粒流场（noise3D）：点阵网格逐点漂移+明暗呼吸，叠 SceneBg 上当活背景 | `variant` 双族；seed 固定数字保确定性；22×12 网格每帧 720 次 noise3D，性能无压力 |
 | `FitText` | 程序排版：字号由测量算出，盒内不溢出不截断，免手动断行留余量 | 单行走 fitText（`withinWidth`）；**中文多行不能直接用 fitTextOnNLines（按空格分词）**，组件内置字符等分兜底；字体须先装载再测量 |
-| `BlurTrail` | 进场残影（@remotion/motion-blur Trail）：快速进位拖出运动残影，内置 spring 位移 | layers(8) / lagInFrames(2) / trailOpacity(0.36)；成本 = 子树重渲 ×layers，重元素慎用 |
+| `BlurTrail` | 进场残影（Trail 同构 relative 化）：快速进位拖出运动残影，内置 spring 位移 | layers(8) / lagInFrames(2) / trailOpacity(0.36)；**官方 Trail 根是 AbsoluteFill（页级覆盖语义），元素级用本件**（主层流内撑尺寸、残影层 absolute 叠加，S6 修）；成本 = 子树重渲 ×layers，重元素慎用 |
 | `ShutterBlur` | 快门模糊（CameraMotionBlur）：整帧自然 motion blur，拖影跟运动方向 | shutterAngle(180) / samples(10)；成本 ×samples，**spot-only，重武器每片 ≤1 处** |
 | `LottieLayer` | Lottie 资产层：吃 AE 生态成品（assets/lottie/） | 内联 animationData 优先；src 走 fetch+delayRender；playbackRate 自动 = compFps/lottieFr；**intake 禁带 expressions 的 JSON** |
 | `GifLayer` | GIF 循环小动效（@remotion/gif） | src 是 public/ 相对路径（assets/media 复制进项目后用） |
@@ -48,7 +48,7 @@
 | `SubtitleTrack` | 字幕轨（panel 主题/深浅双色调/关键词品牌色/大字去重 dedupe） |
 | `DataBars` | 数据柱升起 |
 | `Spotlight` | 圈注（circle/arrow/box 指真实元素） |
-| `srt-adapter` | parseSrt → SubtitleCue[]，直接吃 auto-subtitle 的 srt 产物（字段逐字对齐字幕契约） |
+| `srt-adapter` | parseSrt → SubtitleCue[]，直接吃 auto-subtitle 的 srt 产物（字段逐字对齐字幕契约） | 4.0.518 返回 `{captions:[{text,startMs,endMs}]}` 毫秒制，组件内已换算（S6 修） |
 
 ## MG 武器库工具件（模板 src/ 根）
 
@@ -79,7 +79,7 @@ v4 §3 全量吸收，默认值 = 标杆片实测。**架构：页间硬切为�
 | `GrowIn` | spring 生长落位 | from(0.6) |
 | `PopRotate` | 弹落+落定回弹摇摆 | settleDur(0.3) / wobbleDeg(3) / wobblePeriod(2.4) |
 | `CascadeList` | 级联列表（「数得出来」的叙事节奏） | stepMs(280) / direction("column") / slide("up") |
-| `CameraPush` | 整页匀速慢推（页长 >10s 用） | ratePerSec(0.004) |
+| `CameraPush` | 整页匀速慢推（页长 >10s 用） | ratePerSec(0.004)；**根元素 inset 0 铺满**（transform 根在流内会被 absolute 子树塌 0 高，S6 修） |
 | `TextBreath` | 落位后呼吸（进行时证据） | amp(0.015) / period(3) / delay(0.8) |
 | （BlurIn 组合） | SlideGroup/GrowIn + S3 的 BlurTrail 残影 | S3 交付 |
 

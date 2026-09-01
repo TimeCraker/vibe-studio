@@ -2,12 +2,18 @@ import React from "react";
 import {
   AbsoluteFill,
   Img,
+  Sequence,
   spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { BlurTrail } from "./scene-kit/BlurTrail";
 import { ChartGrow, CoinIcon } from "./scene-kit/ChartGrow";
+import { DrawPath } from "./scene-kit/DrawPath";
+import { LottieLayer } from "./scene-kit/LottieLayer";
+import { NoiseField } from "./scene-kit/NoiseField";
+import { CameraPush, CascadeList, SlideGroup, TextBreath, WipeIn } from "./scene-kit/entrance-kit";
 import { ChatReplay } from "./scene-kit/ChatReplay";
 import { CountUp } from "./scene-kit/CountUp";
 import { DropCard } from "./scene-kit/DropCard";
@@ -566,60 +572,126 @@ const Scene06: React.FC = () => (
   </SceneBg>
 );
 
-// ── P7 · 07:11 数据说服：T-Coin（dark，规则行 + 递增柱图）────────────────
-const Scene07: React.FC = () => (
-  <SceneBg variant="dark">
-    <SceneShell
-      tone="dark"
-      chapter="07 / 11"
-      eyebrow="T-COIN ECONOMY"
-      title="签到领币，生成花币"
-      highlight={{ start: 0, end: 4 }}
-      titleSize={120}
-      style={{ paddingBottom: 150 }}
-      left={
-        <div style={{ display: "flex", flexDirection: "column", gap: 18, justifyContent: "center", flex: 1 }}>
-          <StaggerList gap={130} delay={0.4}>
-            <RuleRow num="5 币" text="注册即送 · 够生成 5 次" />
-            <RuleRow num="1 币" text="AI 生成一次的消耗" />
-            <RuleRow num="2 → 8 币" text="连续签到 7 日，每日奖励递增" />
-          </StaggerList>
-          <SpringIn delay={1.1}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <CoinIcon size={34} />
-              <span style={{ fontSize: 28, fontWeight: 700, color: "#e8edf6" }}>生成失败，消耗的币自动退回</span>
+// ── P7 · 07:11 数据说服：T-Coin（dark，MG 武装版 S6）─────────────────────
+// 按 mg-armed-design.md 时刻表：批1 标题组滑入(0.00=段1 start)/批2 规则级联(0.40)/
+// 批3 关键词下划线生长(0.90)/批4 柱图残影进位(4.50=段2 start)/批5 柱升起+呼吸环(5.00)/
+// 批6 退币行揭示(8.31=段3 start)；全页 NoiseField 颗粒 + CameraPush 慢推(13.22s>10s 律)。
+// 布局从 SceneShell 改自由双栏（Chrome 同款样式内联，标题组才能整体挂动词）。
+const Scene07: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const CHART_AT = 4.5; // 批4：柱图整组残影进位
+  const RING_AT = 5.0; // 批5：柱逐根升起 + spin-ring 呼吸环挂出
+  const REFUND_AT = 8.31; // 批6：退币说明行揭示（段3 start）
+  return (
+    <SceneBg variant="dark">
+      <NoiseField variant="dark" opacity={0.28} style={{ position: "absolute", left: 0, top: 0 }} />
+      <CameraPush ratePerSec={0.004}>
+        <AbsoluteFill style={{ padding: "56px 96px 150px", display: "flex", flexDirection: "column" }}>
+          {/* 批1（0.00）：标题组自左进位；落位后标题行呼吸 */}
+          <SlideGroup direction="left" dur={0.35}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+              <div style={{ fontSize: 15, fontWeight: 700, letterSpacing: "0.32em", textTransform: "uppercase", color: BRAND_LIGHT }}>
+                T-COIN ECONOMY
+              </div>
+              <div style={{ fontFamily: FONT.mono, fontSize: 26, fontWeight: 700, color: MUTED_DARK }}>07 / 11</div>
             </div>
-          </SpringIn>
-        </div>
-      }
-    >
-      <SpringIn delay={0.2} style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <ChartGrow
-          width={600}
-          height={380}
-          delay={0.35}
-          barColor="#4c6fff"
-          valueColor="#f8fafc"
-          labelColor={MUTED_DARK}
-          axisColor="rgba(255,255,255,0.22)"
-          coin
-          bars={[
-            { label: "第1天", value: 2, unit: "币" },
-            { label: "第2天", value: 3, unit: "币" },
-            { label: "第3天", value: 4, unit: "币" },
-            { label: "第4天", value: 5, unit: "币" },
-            { label: "第5天", value: 6, unit: "币" },
-            { label: "第6天", value: 7, unit: "币" },
-            { label: "第7天", value: 8, unit: "币" },
-          ]}
-        />
-        <div style={{ marginTop: 16, fontSize: 24, fontWeight: 600, color: MUTED_DARK }}>
-          连续签到 7 日，每日奖励 2 币递增到 8 币
-        </div>
-      </SpringIn>
-    </SceneShell>
-  </SceneBg>
-);
+            <div style={{ marginTop: 18, position: "relative", width: 1300 }}>
+              <TextBreath amp={0.012} period={3} delay={0.9}>
+                <TextReveal
+                  text="签到领币，生成花币"
+                  mode="char"
+                  size={120}
+                  weight={800}
+                  color="#f8fafc"
+                  delay={0.1}
+                  highlights={[{ start: 0, end: 4, color: BRAND_LIGHT }]}
+                />
+              </TextBreath>
+              {/* 批3（0.90）：关键词「签到领币」下划线真路径生长（4 字 ≈480px） */}
+              <DrawPath
+                shape="underline"
+                width={480}
+                height={80}
+                stroke={BRAND_LIGHT}
+                strokeWidth={8}
+                dur={0.6}
+                delay={0.9}
+                endDot
+                style={{ position: "absolute", left: 4, top: 132 }}
+              />
+              {/* 批5（5.00）：spin-ring 呼吸环挂标题右上角（200×200 内缩放，56px） */}
+              {frame >= RING_AT * fps ? (
+                <LottieLayer src="spin-ring.json" width={56} style={{ position: "absolute", left: 1236, top: 24 }} />
+              ) : null}
+            </div>
+            <ChromeLine dark />
+          </SlideGroup>
+          <div style={{ display: "flex", flex: 1, minHeight: 0, marginTop: 26, gap: 56 }}>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              {/* 批2（0.40）：三条规则级联（280ms/项，数得出来的节奏） */}
+              <Sequence from={Math.round(0.4 * fps)} layout="none">
+                <CascadeList stepMs={280}>
+                  <RuleRow num="5 币" text="注册即送 · 够生成 5 次" />
+                  <RuleRow num="1 币" text="AI 生成一次的消耗" />
+                  <RuleRow num="2 → 8 币" text="连续签到 7 日，每日奖励递增" />
+                </CascadeList>
+              </Sequence>
+              {/* 批6（8.31）：退币说明行揭示 + 「自动退回」下划线（1.0s 后生长） */}
+              <WipeIn direction="left" dur={0.45} delay={REFUND_AT} style={{ marginTop: 26 }}>
+                <div style={{ position: "relative", display: "inline-flex", alignItems: "center", gap: 16, paddingBottom: 12 }}>
+                  <CoinIcon size={34} />
+                  <span style={{ fontSize: 28, fontWeight: 700, color: "#e8edf6" }}>生成失败，消耗的币自动退回</span>
+                  <DrawPath
+                    shape="underline"
+                    width={116}
+                    height={40}
+                    stroke={BRAND_LIGHT}
+                    strokeWidth={4}
+                    dur={0.5}
+                    delay={REFUND_AT + 1.0}
+                    style={{ position: "absolute", left: 304, bottom: -2 }}
+                  />
+                </div>
+              </WipeIn>
+            </div>
+            {/* 批4（4.50）：柱图整组残影进位（段2 start）；批5（5.00）柱逐根升起 */}
+            <div style={{ flex: "0 0 46%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+              {frame >= CHART_AT * fps ? (
+                <BlurTrail direction="left" dur={0.5} delay={CHART_AT}>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <ChartGrow
+                      width={600}
+                      height={380}
+                      delay={RING_AT}
+                      barColor="#4c6fff"
+                      valueColor="#f8fafc"
+                      labelColor={MUTED_DARK}
+                      axisColor="rgba(255,255,255,0.22)"
+                      coin
+                      bars={[
+                        { label: "第1天", value: 2, unit: "币" },
+                        { label: "第2天", value: 3, unit: "币" },
+                        { label: "第3天", value: 4, unit: "币" },
+                        { label: "第4天", value: 5, unit: "币" },
+                        { label: "第5天", value: 6, unit: "币" },
+                        { label: "第6天", value: 7, unit: "币" },
+                        { label: "第7天", value: 8, unit: "币" },
+                      ]}
+                    />
+                    <div style={{ marginTop: 16, fontSize: 24, fontWeight: 600, color: MUTED_DARK }}>
+                      连续签到 7 日，每日奖励 2 币递增到 8 币
+                    </div>
+                  </div>
+                </BlurTrail>
+              ) : null}
+            </div>
+          </div>
+        </AbsoluteFill>
+      </CameraPush>
+    </SceneBg>
+  );
+};
 
 // ── P8 · 08:11 体验细节：手机「截图段+深色自绘段」（light）───────────────
 const Scene08: React.FC = () => (
