@@ -50,7 +50,26 @@
 | 文件 | 干什么 | 坑 |
 |---|---|---|
 | `fonts.ts` | 字体装载（loadRemoteFont / loadLocalFont 自托管），失败回落系统栈 | **不进确定性验收链**；google-fonts 渲染时拉 gstatic，中国网络慎用 |
-| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（MgUtilityDemo 720 帧 8 段，内联 fixture 零素材） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约 |
+| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（MgUtilityDemo 720 帧 8 段 + MgTransitionDemo 660 帧 11 段，内联 fixture 零素材） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约 |
+| `transitions.tsx` | house 页间转场件：`slideIn()`（滑入盖场）/ `exposure()`（曝光渐起）/ `hardCut()`（恒等，对拍用） | enter 侧动、exit 侧恒等（旧页冻结）；**TransitionSeries 转场吃相邻页时长**，成片引擎默认零转场（Series 硬切）+ 页内动词 |
+
+## entrance-kit（进场动词库，S2 起，一文件九件）
+
+v4 §3 全量吸收，默认值 = 标杆片实测。**架构：页间硬切为底，动词全部发生在页内内容层**（相邻页动词不同型）。
+
+| 组件 | 干什么 | 关键参数（默认） |
+|---|---|---|
+| `SlideGroup` | 整组方向性滑入 | direction("left") / distance(0.33×画宽) / dur(0.35) / delay |
+| `ExposureIn` | 曝光渐起+微慢推收束 | brightnessFrom(0.25) / dur(0.45) |
+| `WipeIn` | clip-path 一侧擦亮 | direction("left") / dur(0.45) |
+| `GrowIn` | spring 生长落位 | from(0.6) |
+| `PopRotate` | 弹落+落定回弹摇摆 | settleDur(0.3) / wobbleDeg(3) / wobblePeriod(2.4) |
+| `CascadeList` | 级联列表（「数得出来」的叙事节奏） | stepMs(280) / direction("column") / slide("up") |
+| `CameraPush` | 整页匀速慢推（页长 >10s 用） | ratePerSec(0.004) |
+| `TextBreath` | 落位后呼吸（进行时证据） | amp(0.015) / period(3) / delay(0.8) |
+| （BlurIn 组合） | SlideGroup/GrowIn + S3 的 BlurTrail 残影 | S3 交付 |
+
+**引擎接线变化（S2）**：DeckVideoV2 页序列改硬切（V2Page 删 fadeIn/fadeOut 交叉溶解、Sequence 时长去 overlap）；build-deck-params 的 `OVERLAP_SECONDS` 0.5→0（lekao 全片 3302→**3287 帧** = 109.57s）；字幕去重与关键词从引擎硬编码改为 deck-scenes 的 `SUBTITLE_CONFIG`（页号声明式，项目内容归项目文件）。
 
 ## 引擎（DeckVideoV2 机制层）
 

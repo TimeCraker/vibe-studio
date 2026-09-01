@@ -40,3 +40,10 @@ const SceneDemoLight: React.FC = () => (
 
 export const DARK_PAGES = [1];
 export const SCENES: React.FC[] = [SceneDemoDark, SceneDemoLight];
+
+// 项目级字幕配置(引擎 DeckVideoV2 读取):dedupe = 画面大字与字幕的重复段(页号+文本,
+// 引擎换算时间窗,重复时字幕让路);keywords = 字幕里要品牌色高亮的词。
+export const SUBTITLE_CONFIG = {
+  keywords: [] as string[],
+  dedupe: [] as { page: number; text: string }[],
+};

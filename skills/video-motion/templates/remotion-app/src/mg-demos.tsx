@@ -1,10 +1,22 @@
 import React from "react";
 import { AbsoluteFill, Composition, interpolate, Series, useCurrentFrame } from "remotion";
+import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { mgFixtures } from "./fixtures";
 import { DrawPath } from "./scene-kit/DrawPath";
 import { FitText } from "./scene-kit/FitText";
 import { NoiseField } from "./scene-kit/NoiseField";
 import { ShapeMorph } from "./scene-kit/ShapeMorph";
+import {
+  CameraPush,
+  CascadeList,
+  ExposureIn,
+  GrowIn,
+  PopRotate,
+  SlideGroup,
+  TextBreath,
+  WipeIn,
+} from "./scene-kit/entrance-kit";
+import { exposure, slideIn } from "./transitions";
 import { COLOR, FONT, TYPE } from "./scene-kit/tokens";
 
 // MG 武器库 demo:独立入口 remotion/mg-index.ts,不碰 Root.tsx 七组合契约。
@@ -230,5 +242,146 @@ export const MgDemoRoot: React.FC = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="MgTransitionDemo"
+      component={MgTransitionDemo}
+      durationInFrames={11 * 60}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
   </>
+);
+
+// ============ MgTransitionDemo(S2):九动词 + 两种页间转场,11 段 × 60 帧 ============
+
+const TSEG = 60;
+
+const TCard: React.FC<{ text: string; dark?: boolean }> = ({ text, dark }) => (
+  <div
+    style={{
+      padding: "36px 48px",
+      borderRadius: 20,
+      backgroundColor: dark ? COLOR.darkCard : COLOR.paperCard,
+      color: dark ? "#fff" : COLOR.ink,
+      fontFamily: FONT.sans,
+      fontSize: TYPE.title,
+      fontWeight: 800,
+      boxShadow: dark
+        ? "0 8px 20px rgba(5,10,20,.35), 0 32px 80px rgba(5,10,20,.45)"
+        : "0 2px 6px rgba(15,23,42,.07), 0 14px 40px rgba(15,23,42,.12)",
+    }}
+  >
+    {text}
+  </div>
+);
+
+const TSeg: React.FC<{ n: number; text: string; dark?: boolean; children: React.ReactNode }> = ({ n, text, dark, children }) => (
+  <AbsoluteFill style={dark ? darkBg : lightBg}>
+    <SegLabel n={n} text={text} dark={dark} />
+    <div style={{ position: "absolute", left: 0, right: 0, top: 440, display: "flex", justifyContent: "center", alignItems: "center" }}>
+      {children}
+    </div>
+  </AbsoluteFill>
+);
+
+const MgTransitionDemo: React.FC = () => (
+  <Series>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={9} text="SlideGroup · left">
+        <SlideGroup direction="left">
+          <TCard text="方向性滑入" />
+        </SlideGroup>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={10} text="SlideGroup · up">
+        <SlideGroup direction="up">
+          <TCard text="自下进位" />
+        </SlideGroup>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={11} text="ExposureIn · 曝光渐起" dark>
+        <ExposureIn>
+          <TCard text="灯打上来" dark />
+        </ExposureIn>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={12} text="WipeIn · 擦亮">
+        <WipeIn>
+          <TCard text="从左揭示" />
+        </WipeIn>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={13} text="GrowIn · 生长">
+        <GrowIn>
+          <TCard text="长大落位" />
+        </GrowIn>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={14} text="PopRotate · 弹落摇摆">
+        <PopRotate>
+          <TCard text="落定回弹" />
+        </PopRotate>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={15} text="CascadeList · 280ms 级联">
+        <CascadeList stepMs={280}>
+          <TCard text="第一项" />
+          <TCard text="第二项" />
+          <TCard text="第三项" />
+        </CascadeList>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={16} text="CameraPush · 慢推(演示档 2%/s)">
+        <CameraPush ratePerSec={0.02}>
+          <TCard text="整页缓推" />
+        </CameraPush>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TSeg n={17} text="TextBreath · 呼吸(演示档 4%)">
+        <TextBreath amp={0.04} period={1.5}>
+          <TCard text="活着的大字" />
+        </TextBreath>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      {/* 页间转场真机演示:slideIn 盖场(旧页冻结)——转场 20 帧吃掉相邻页各半,40+40-20=60 */}
+      <TransitionSeries>
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={18} text="Transition · slideIn 盖场">
+            <TCard text="旧页(会被盖住)" />
+          </TSeg>
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition timing={linearTiming({ durationInFrames: 20 })} presentation={slideIn()} />
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={18} text="Transition · slideIn 盖场">
+            <TCard text="新页滑上来" dark />
+          </TSeg>
+        </TransitionSeries.Sequence>
+      </TransitionSeries>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={TSEG}>
+      <TransitionSeries>
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={19} text="Transition · exposure 曝光" dark>
+            <TCard text="暗场" dark />
+          </TSeg>
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition timing={linearTiming({ durationInFrames: 20 })} presentation={exposure()} />
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={19} text="Transition · exposure 曝光">
+            <TCard text="亮场" />
+          </TSeg>
+        </TransitionSeries.Sequence>
+      </TransitionSeries>
+    </Series.Sequence>
+  </Series>
 );

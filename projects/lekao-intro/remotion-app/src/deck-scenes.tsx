@@ -836,3 +836,17 @@ const DeviceFrameBrowser: React.FC<{ w: number }> = ({ w }) => (
 );
 
 export const SCENES: React.FC[] = [Scene01, Scene02, Scene03, Scene04, Scene05, Scene06, Scene07, Scene08, Scene09, Scene10, Scene11];
+
+// 项目级字幕配置(引擎 DeckVideoV2 读取):dedupe = 画面大字与字幕的重复段(页号+文本,
+// 引擎换算时间窗,重复时字幕让路);keywords = 字幕里要品牌色高亮的词。
+export const SUBTITLE_CONFIG = {
+  keywords: ["LeKao", "T-Coin", "Word", "Excel", "AI"],
+  dedupe: [
+    { page: 1, text: "LeKao · AI 智能助教助手" },
+    { page: 1, text: "K12 机构助教的 AI 工作台" },
+    { page: 10, text: "记住一句话就够了" },
+    { page: 10, text: "把每次课的 1 到 2 小时，还给教学" },
+    { page: 11, text: "打开官网，现在就能试" },
+    { page: 11, text: "每次课，省回 1 到 2 小时" },
+  ],
+};

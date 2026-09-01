@@ -6,7 +6,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-const OVERLAP_SECONDS = 0.5; // 页间交叉溶解 / 末页交叠尾
+const OVERLAP_SECONDS = 0; // 硬切为底（v4 转场律）：页间零交叠，转场动词走 TransitionSeries
 const BREATH_SECONDS = 0.4; // 音频后的页内呼吸
 // 与 narration verify_narration.py 的剥离集一致：空白 + 中英标点
 const STRIP = /[\s，。！？；：、\u201c\u201d\u2018\u2019（）《》…—,.!?;:'"()]/gu;
