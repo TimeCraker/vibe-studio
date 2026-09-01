@@ -20,6 +20,9 @@ import { BlurTrail } from "./scene-kit/BlurTrail";
 import { ShutterBlur } from "./scene-kit/ShutterBlur";
 import { LottieLayer } from "./scene-kit/LottieLayer";
 import { GifLayer } from "./scene-kit/GifLayer";
+import { ThreeStage } from "./scene-kit/ThreeStage";
+import { useThree } from "@react-three/fiber";
+import { useCurrentFrame } from "remotion";
 import { exposure, slideIn } from "./transitions";
 import { COLOR, FONT, TYPE } from "./scene-kit/tokens";
 
@@ -262,7 +265,104 @@ export const MgDemoRoot: React.FC = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="MgThreeDemo"
+      component={MgThreeDemo}
+      durationInFrames={3 * SEG}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
   </>
+);
+
+// ============ MgThreeDemo(S4):3D 运镜,3 段 × 90 帧 ============
+
+// 运镜 Rig:相机动画由 useCurrentFrame 驱动(禁 useFrame,确定性铁律)
+const CamRig: React.FC<{ pushPerSec?: number; swayAmp?: number }> = ({ pushPerSec = 0, swayAmp = 0 }) => {
+  const { camera } = useThree();
+  const frame = useCurrentFrame();
+  const t = frame / 30;
+  camera.position.z = 4.2 - pushPerSec * t;
+  camera.position.x = Math.sin(t * 0.7) * swayAmp;
+  return null;
+};
+
+// 段 1:品牌卡持续旋转(rotation.y 由 frame 派生)
+const ThreeSpinCard: React.FC = () => {
+  const frame = useCurrentFrame();
+  return (
+    <>
+      <mesh rotation={[0, (frame / 30) * 1.1, 0]}>
+        <boxGeometry args={[2.4, 1.5, 0.07]} />
+        <meshStandardMaterial color="#3157F6" />
+      </mesh>
+      <mesh rotation={[0, (frame / 30) * 1.1 + 0.06, 0]} position={[0, 0, -0.01]}>
+        <boxGeometry args={[2.52, 1.62, 0.05]} />
+        <meshStandardMaterial color="#0a0e1a" />
+      </mesh>
+    </>
+  );
+};
+
+// 段 2:三层平面 + 相机横向缓移 = 2.5D 视差(最省成本的「空间感」)
+const ThreeParallax: React.FC = () => (
+  <>
+    <CamRig swayAmp={0.55} />
+    <mesh position={[0, 0, -1.4]}>
+      <planeGeometry args={[5.2, 3]} />
+      <meshStandardMaterial color="#141a2e" />
+    </mesh>
+    <mesh position={[0.7, 0.2, -0.5]} rotation={[0, -0.25, 0]}>
+      <planeGeometry args={[1.7, 1.1]} />
+      <meshStandardMaterial color="#5B7DFF" />
+    </mesh>
+    <mesh position={[-0.8, -0.25, 0.4]} rotation={[0, 0.3, 0]}>
+      <planeGeometry args={[1.2, 0.8]} />
+      <meshStandardMaterial color="#F5F1E8" />
+    </mesh>
+  </>
+);
+
+// 段 3:相机匀速缓推(0.05/s,演示档)
+const ThreePush: React.FC = () => (
+  <>
+    <CamRig pushPerSec={0.05} />
+    <mesh rotation={[0.35, 0.5, 0]}>
+      <torusGeometry args={[0.9, 0.32, 24, 64]} />
+      <meshStandardMaterial color="#3157F6" />
+    </mesh>
+    <mesh rotation={[-0.2, 0.3, 0.15]}>
+      <boxGeometry args={[0.55, 0.55, 0.55]} />
+      <meshStandardMaterial color="#F5F1E8" />
+    </mesh>
+  </>
+);
+
+const MgThreeDemo: React.FC = () => (
+  <Series>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={30} text="ThreeStage · 品牌卡旋转" dark>
+        <ThreeStage width={1280} height={720}>
+          <ThreeSpinCard />
+        </ThreeStage>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={31} text="ThreeStage · 三平面视差 + 相机缓移" dark>
+        <ThreeStage width={1280} height={720}>
+          <ThreeParallax />
+        </ThreeStage>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={32} text="ThreeStage · 相机匀速缓推" dark>
+        <ThreeStage width={1280} height={720}>
+          <ThreePush />
+        </ThreeStage>
+      </TSeg>
+    </Series.Sequence>
+  </Series>
 );
 
 // ============ MgMediaDemo(S3):blur / lottie / gif 媒体层,6 段 × 90 帧 ============

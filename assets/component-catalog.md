@@ -29,6 +29,7 @@
 | `ShutterBlur` | 快门模糊（CameraMotionBlur）：整帧自然 motion blur，拖影跟运动方向 | shutterAngle(180) / samples(10)；成本 ×samples，**spot-only，重武器每片 ≤1 处** |
 | `LottieLayer` | Lottie 资产层：吃 AE 生态成品（assets/lottie/） | 内联 animationData 优先；src 走 fetch+delayRender；playbackRate 自动 = compFps/lottieFr；**intake 禁带 expressions 的 JSON** |
 | `GifLayer` | GIF 循环小动效（@remotion/gif） | src 是 public/ 相对路径（assets/media 复制进项目后用） |
+| `ThreeStage` | 3D 运镜容器（@remotion/three ThreeCanvas）：真透视/光影/相机运动 | **内部禁 r3f useFrame**，动画与运镜一律 useCurrentFrame 派生（相机动画用 useThree 拿 camera 按 frame 赋值）；只 WebGL；性能：简单场景 ~17 帧/s（vs 2D 21.6），复杂 3D 段单帧可到数倍，成片「重武器每片 ≤1 处」；remotion.config.ts 无需建（SwiftShader 开箱可用，S4 已验证） |
 
 ## tokens（取值单源）
 
@@ -54,7 +55,7 @@
 | 文件 | 干什么 | 坑 |
 |---|---|---|
 | `fonts.ts` | 字体装载（loadRemoteFont / loadLocalFont 自托管），失败回落系统栈 | **不进确定性验收链**；google-fonts 渲染时拉 gstatic，中国网络慎用 |
-| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（Utility 720 帧 8 段 + Transition 660 帧 11 段 + Media 540 帧 6 段，内联 fixture 零素材；Media 的 lottie/gif 段渲染时临时复制 assets 副本进 public、渲完删） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约；MgMediaDemo 540 帧 wall-clock ≈25s（后续性能基线） |
+| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（Utility 720 帧 8 段 + Transition 660 帧 11 段 + Media 540 帧 6 段 + Three 270 帧 3 段，内联 fixture 零素材；Media 的 lottie/gif 段渲染时临时复制 assets 副本进 public、渲完删） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约；MgMediaDemo 540 帧 wall-clock ≈25s（后续性能基线） |
 | `transitions.tsx` | house 页间转场件：`slideIn()`（滑入盖场）/ `exposure()`（曝光渐起）/ `hardCut()`（恒等，对拍用） | enter 侧动、exit 侧恒等（旧页冻结）；**TransitionSeries 转场吃相邻页时长**，成片引擎默认零转场（Series 硬切）+ 页内动词 |
 
 ## entrance-kit（进场动词库，S2 起，一文件九件）
