@@ -9,9 +9,26 @@
     "compositions": "remotion compositions remotion/index.ts"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.7.0",
+    "@remotion/animation-utils": "^4.0.518",
+    "@remotion/captions": "^4.0.518",
     "@remotion/cli": "^4.0.518",
+    "@remotion/fonts": "^4.0.518",
+    "@remotion/gif": "^4.0.518",
+    "@remotion/google-fonts": "^4.0.518",
+    "@remotion/layout-utils": "^4.0.518",
+    "@remotion/lottie": "^4.0.518",
     "@remotion/media": "^4.0.518",
     "@remotion/media-utils": "^4.0.518",
-    "remotion": "^4.0.518"
+    "@remotion/motion-blur": "^4.0.518",
+    "@remotion/noise": "^4.0.518",
+    "@remotion/paths": "^4.0.518",
+    "@remotion/shapes": "^4.0.518",
+    "@remotion/three": "^4.0.518",
+    "@remotion/transitions": "^4.0.518",
+    "@types/three": "^0.185.4",
+    "lottie-web": "^5.13.0",
+    "remotion": "^4.0.518",
+    "three": "^0.185.1"
   }
 }

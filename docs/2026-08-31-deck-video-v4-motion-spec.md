@@ -4,6 +4,8 @@
 > 依据：2026-08-31 对标杆片 BV1fShG6LETU 的重测量（证据在 §2，方法可复现）。
 > 产物：`products/lekao-intro/deck-v4.mp4`（DeckVideoV2 渲染，composition 名不变）。
 
+> **[2026-09-01 吸收注记]** 本工单已被 `docs/2026-09-01-mg-arsenal-spec.md`（MG 武器库全量升级）吸收合并：§2 标杆证据、§3 动词库（DrawIn 升级为 evolvePath 版 DrawPath）、§4 Stage 划分与 §0 护栏整体并入新 spec；Stage 0 机制改造 = 新 spec S2，全片 11 页实施转为新 spec 验收后的后续站。施工以新 spec 为准，本文件转为证据存档，不再独立施工。
+
 ## §0 规则与护栏
 
 1. **v3 已封箱**（HEAD 应见 3f8874e）。本站改动仅限（基路径 projects/lekao-intro/remotion-app/）：`src/deck-scenes.tsx`（进场重排主战场）、`src/DeckVideoV2.tsx`（页窗机制）、`src/scene-kit/`（新增 entrance-kit 组件）、`projects/lekao-intro/remotion-app/scripts/build-deck-params.mjs` 一处常量、Stage 4 时的 `SKILL.md` / `docs/2026-08-30-motion-grammar.md`。**deck.mp4 / deck-v2.mp4 / deck-v3.mp4 / cover-v3.png 及 v1 全部存量文件零触碰**（字节与 mtime 不变，是对照基准）。
