@@ -3,7 +3,7 @@
 > 代码本体在 `skills/video-motion/templates/remotion-app/src/`（skill 是分发单元，组件跟引擎走）；本簿登记家底与用法，验收后新组件在此登记 + 回写模板。
 > 质量底线见 `docs/2026-08-30-motion-grammar.md`；成页方案见 `patterns.md`。
 
-## scene-kit（场景积木，13 个）
+## scene-kit（场景积木，13 + MG 武器 4）
 
 | 组件 | 干什么 | 关键参数 / 坑 |
 |---|---|---|
@@ -21,6 +21,10 @@
 | `FloatWrap` | 待机漂浮（sin ±8px，period 3-5s） | 各元素 `phase` 错开，禁止同步浮动 |
 | `GlowPulse` | 光晕呼吸（深底氛围/主体衬光） | `size/intensity`；浅底慎用大光晕 |
 | `TopProgress` | 顶部进度条（页序指示） | 深浅页自动换色由引擎管 |
+| `DrawPath` | 真路径生长（@remotion/paths）：下划线/引线箭头/圈注/矩形按真实路径长度画出来，`endDot` 生长端点冒点 | `shape` 或 `path` 二选一；**4.0.518 的 evolvePath 返回 strokeDasharray/offset 属性对**，不是裁剪后的 path |
+| `ShapeMorph` | 形状渐变（interpolatePath 真顶点插值）：rect/circle/triangle/star 互变 | `progress` 外驱可接力两段 morph；**interpolatePath 签名是 (value, from, to) 三独立参数**；triangle 边长参数是 `length` |
+| `NoiseField` | 有机颗粒流场（noise3D）：点阵网格逐点漂移+明暗呼吸，叠 SceneBg 上当活背景 | `variant` 双族；seed 固定数字保确定性；22×12 网格每帧 720 次 noise3D，性能无压力 |
+| `FitText` | 程序排版：字号由测量算出，盒内不溢出不截断，免手动断行留余量 | 单行走 fitText（`withinWidth`）；**中文多行不能直接用 fitTextOnNLines（按空格分词）**，组件内置字符等分兜底；字体须先装载再测量 |
 
 ## tokens（取值单源）
 
@@ -39,6 +43,14 @@
 | `SubtitleTrack` | 字幕轨（panel 主题/深浅双色调/关键词品牌色/大字去重 dedupe） |
 | `DataBars` | 数据柱升起 |
 | `Spotlight` | 圈注（circle/arrow/box 指真实元素） |
+| `srt-adapter` | parseSrt → SubtitleCue[]，直接吃 auto-subtitle 的 srt 产物（字段逐字对齐字幕契约） |
+
+## MG 武器库工具件（模板 src/ 根）
+
+| 文件 | 干什么 | 坑 |
+|---|---|---|
+| `fonts.ts` | 字体装载（loadRemoteFont / loadLocalFont 自托管），失败回落系统栈 | **不进确定性验收链**；google-fonts 渲染时拉 gstatic，中国网络慎用 |
+| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（MgUtilityDemo 720 帧 8 段，内联 fixture 零素材） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约 |
 
 ## 引擎（DeckVideoV2 机制层）
 
