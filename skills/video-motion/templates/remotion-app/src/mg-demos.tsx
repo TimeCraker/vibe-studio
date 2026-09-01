@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Composition, interpolate, Series, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Composition, Easing, interpolate, Series, useCurrentFrame } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { mgFixtures, spinRingLottie } from "./fixtures";
 import { DrawPath } from "./scene-kit/DrawPath";
@@ -23,6 +23,8 @@ import { GifLayer } from "./scene-kit/GifLayer";
 import { ThreeStage } from "./scene-kit/ThreeStage";
 import { useThree } from "@react-three/fiber";
 import { useCurrentFrame } from "remotion";
+import { CursorTrack, type CursorWaypoint } from "./vendor/snapcn/cursor-track";
+import { depthPush } from "./vendor/onda/depth-push";
 import { exposure, slideIn } from "./transitions";
 import { COLOR, FONT, TYPE } from "./scene-kit/tokens";
 
@@ -273,7 +275,83 @@ export const MgDemoRoot: React.FC = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="MgVendorDemo"
+      component={MgVendorDemo}
+      durationInFrames={4 * SEG}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
   </>
+);
+
+// ============ MgVendorDemo(S5):社区库精选,4 段 × 90 帧 ============
+
+// 自定义光标路径:进场 → 走到卡片 → 双击(两次 click)→ 收尾(帧号是组件自己的钟)
+const demoWaypoints: CursorWaypoint[] = [
+  { at: 5, x: 0.28, y: 0.38, duration: 10 },
+  { at: 26, x: 0.62, y: 0.5, duration: 14, click: true },
+  { at: 46, x: 0.62, y: 0.5, duration: 8, click: true },
+  { at: 64, x: 0.76, y: 0.4, duration: 12 },
+];
+
+const MgVendorDemo: React.FC = () => (
+  <Series>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={40} text="snapcn · CursorTrack 默认路径">
+        <div style={{ position: "relative", width: 1280, height: 640 }}>
+          <TCard text="光标走默认演示路径" />
+          <CursorTrack />
+        </div>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TSeg n={41} text="snapcn · CursorTrack 自定义路径 + 双击">
+        <div style={{ position: "relative", width: 1280, height: 640 }}>
+          <TCard text="点这里试试" dark />
+          <CursorTrack path={demoWaypoints} variant="dot" />
+        </div>
+      </TSeg>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      {/* depth-push:left — 读作摄像机推轨:旧页缩退,新页从景深处压来 */}
+      <TransitionSeries>
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={42} text="onda · depthPush(left)">
+            <TCard text="旧场景" />
+          </TSeg>
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition
+          timing={linearTiming({ durationInFrames: 20, easing: Easing.bezier(0.16, 1, 0.3, 1) })}
+          presentation={depthPush({ direction: "left", scaleAmount: 0.06 })}
+        />
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={42} text="onda · depthPush(left)">
+            <TCard text="新场景压来" dark />
+          </TSeg>
+        </TransitionSeries.Sequence>
+      </TransitionSeries>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={SEG}>
+      <TransitionSeries>
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={43} text="onda · depthPush(up)" dark>
+            <TCard text="下方场景" dark />
+          </TSeg>
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition
+          timing={linearTiming({ durationInFrames: 20, easing: Easing.bezier(0.16, 1, 0.3, 1) })}
+          presentation={depthPush({ direction: "up", scaleAmount: 0.08 })}
+        />
+        <TransitionSeries.Sequence durationInFrames={40}>
+          <TSeg n={43} text="onda · depthPush(up)">
+            <TCard text="上方场景" />
+          </TSeg>
+        </TransitionSeries.Sequence>
+      </TransitionSeries>
+    </Series.Sequence>
+  </Series>
 );
 
 // ============ MgThreeDemo(S4):3D 运镜,3 段 × 90 帧 ============

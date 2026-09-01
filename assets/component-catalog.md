@@ -55,8 +55,17 @@
 | 文件 | 干什么 | 坑 |
 |---|---|---|
 | `fonts.ts` | 字体装载（loadRemoteFont / loadLocalFont 自托管），失败回落系统栈 | **不进确定性验收链**；google-fonts 渲染时拉 gstatic，中国网络慎用 |
-| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（Utility 720 帧 8 段 + Transition 660 帧 11 段 + Media 540 帧 6 段 + Three 270 帧 3 段，内联 fixture 零素材；Media 的 lottie/gif 段渲染时临时复制 assets 副本进 public、渲完删） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约；MgMediaDemo 540 帧 wall-clock ≈25s（后续性能基线） |
+| `mg-demos.tsx` + `fixtures.ts` | 武器库 demo（Utility 720 + Transition 660 + Media 540 + Three 270 + Vendor 360 帧(社区精选)，内联 fixture 零素材；Media 的 lottie/gif 段渲染时临时复制 assets 副本进 public、渲完删） | 独立入口 remotion/mg-index.ts，不碰 Root.tsx 七组合契约；MgMediaDemo 540 帧 wall-clock ≈25s（后续性能基线） |
 | `transitions.tsx` | house 页间转场件：`slideIn()`（滑入盖场）/ `exposure()`（曝光渐起）/ `hardCut()`（恒等，对拍用） | enter 侧动、exit 侧恒等（旧页冻结）；**TransitionSeries 转场吃相邻页时长**，成片引擎默认零转场（Series 硬切）+ 页内动词 |
+
+## vendor/（社区库精选，S5 起）
+
+copy-paste 入库（非 npm 依赖），每文件头注明来源/许可证/拉取日期/intake 改动；**升级 = 重新拉取重做 intake**。收录与「评估后未收录」的完整清单、intake 纪律四条见模板 `src/vendor/README.md`。
+
+| 组件 | 来源（均 MIT） | 干什么 | 备注 |
+|---|---|---|---|
+| `snapcn/cursor-track` | snapcn.dev | 光标轨迹（waypoint 模型：到点/行走/点击环/arrow 或 dot 光标），讲解视频指哪打哪的标注利器 | intake：主题系统换 scene-kit tokens；waypoint 帧号是组件自己的钟（×speed） |
+| `onda/depth-push` | onda-video.vercel.app | 纵深推转场：旧页缩退、新页从景深处压来，读作摄像机推轨 | intake：剥 zod；配 linearTiming(18 帧, bezier(0.16,1,0.3,1)) |
 
 ## entrance-kit（进场动词库，S2 起，一文件九件）
 
