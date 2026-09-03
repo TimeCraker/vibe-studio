@@ -19,8 +19,10 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
 from animate import Anim
 
-OUT_DIR = os.path.join(ROOT, "output")
+OUT_DIR = os.path.join(ROOT, "products", "ddd-architecture")
 os.makedirs(OUT_DIR, exist_ok=True)
+SLIDES_DIR = os.path.join(OUT_DIR, "slides")
+os.makedirs(SLIDES_DIR, exist_ok=True)
 OUT_PPTX = os.path.join(OUT_DIR, "ddd-architecture-deck.pptx")
 OUT_PDF = os.path.join(OUT_DIR, "ddd-architecture-deck.pdf")
 
