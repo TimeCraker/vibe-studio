@@ -9,6 +9,7 @@
 | `vibe-studio-deck/` | vibe-studio 自我介绍 PPT（ppt skill 首站测试产物） |
 | `asterforge-landscape/` | AsterForge 产品全景 PPT |
 | `ddd-architecture/` | DDD 架构深度拆解与实战精要演示文稿（14页 / 183动效 / 架构图 / 全量口播） |
+| `ddd-paper/` | DDD 实战技术分享论文与演讲底稿（1.3万字 / 7章 / 5处真实代码实证 / 40分钟控场） |
 | `stations/` | 各 skill 站点开发期的测试产物与验收报告（video-motion 首站/封面/逐页、auto-subtitle、narration） |
 
 生成脚本在仓库 `scripts/`（入库可复跑）；施工工程在 `projects/<项目名>/`。
