@@ -1,361 +1,292 @@
 # 从理论到代码：基于小象培训管理系统的领域驱动设计 (DDD) 实战精要
 
-> **演讲主题**：领域驱动设计 (Domain-Driven Design) 在现代化全栈系统中的架构演进与工程落地  
-> **演讲时长**：40 分钟技术分享 / 深度研讨底稿  
-> **作者**：TimeCraker · AI 时代独立架构师  
-> **项目实证基线**：小象培训班管理系统 (`xiaoxiang-training-management`)  
-> **技术栈环境**：TypeScript / NestJS / MikroORM (PostgreSQL) / CQRS / Transactional Outbox  
+> **适用场景**：40 分钟技术团队内部分享 / 架构研讨  
+> **作者**：TimeCraker  
+> **实战项目**：小象培训班管理系统 (`xiaoxiang-training-management`)  
+> **技术栈**：TypeScript / NestJS / PostgreSQL / MikroORM  
 
 ---
 
-## 论文导读与演讲心智地图
+## 导读：先把三个常见的行话说明白
 
-领域驱动设计（Domain-Driven Design，简称 DDD）自 2003 年由 Eric Evans 提出以来，长期被诸多工程师视为“概念玄妙但难以下咽”的高岭之花。许多开发团队在面对日益臃肿的代码库时，言必谈“统一语言”、“聚合根”和“六边形架构”，然而实际代码一拉开，却依旧是贫血的数据库映射实体（Anemic Entity）配合动辄数千行的“上帝类”应用服务（God Service），只是给传统的增删改查（CRUD）套上了一层名为 `domain` 的目录外衣。
+在讨论领域驱动设计（DDD）之前，很多技术文章和分享喜欢堆砌一些听起来很深奥的词。为了让接下来的讨论在一个清晰、平实的语境下展开，我们先把最常听到的三个词用人话说清楚：
 
-本文彻底跳过浮于表面的理论复述，以一套真实上线、具备完整工程闭环的商业化生产系统——**小象培训班管理系统（`xiaoxiang-training-management`）** 为唯一代码实证基线，采用 **“实战案例驱动”（理论 30% + 实战 70%）** 的叙事脉络，深入剖析 DDD 在现代软件工程中从战略拆解到代码落地的全景画卷。
+1. **什么是“贫血模型”（Anemic Model）？**  
+   我们平时写 Java 或 TypeScript 代码时，经常定义一个实体类，里面除了字段属性，就只有一堆 `getter` 和 `setter`。这个类自己没有任何业务判断能力，就像一个没有任何血肉和思维的纯数据容器。业务校验、金额计算、状态修改全都被写在外部的各个 Service 里面。这种“数据和行为硬生生剥离开”的对象，就叫贫血模型。
+2. **什么是“上帝类”（God Class）？**  
+   因为实体类自身没有逻辑（贫血），所有的业务判断就只能往 Service 里放。随着功能不断增加，一个 `OrderService` 或者 `StudentService` 逐渐膨胀到两三千行代码。它既要校验参数，又要查权限，还要算金额、改各种数据库表、调第三方接口、发短信。这个 Service 无所不知、无所不包，就像一个全能的“上帝”。但代价是代码极度臃肿，谁也不敢轻易修改，改动一处经常引发三处意想不到的 bug。
+3. **什么是“大泥球”（Big Ball of Mud）？**  
+   系统在初期开发时为了图快，没有规划清晰的模块边界。订单模块直接去改学生表，排课模块为了展示方便直接跨库关联五六张表写复杂的 SQL 查询。随着业务发展，各个模块之间盘根错节、互相依赖，代码就像在烂泥地里滚出来的泥球一样，越滚越大、混成一团，最终任何人都没有能力单独重构其中某一部分。
 
-全文共分为七章，整体心智演进路线如下：
+DDD（Domain-Driven Design，领域驱动设计）的诞生，并不是为了发明一堆新名词去开会，而是为了解决软件工程中最实在的一个痛点：**当业务越来越复杂的时候，如何让代码逻辑清晰、职责内聚、易于维护和演进。**
+
+接下来，我们以一套真实运行的小象培训班管理系统为例，逐一拆解 DDD 的每个核心概念。我们会坚持一个原则：**先讲清楚这个概念是什么意思、为了解决什么问题，再摆出传统写法有什么毛病，最后看项目中真实的 TypeScript 代码是怎么落地的。**
+
+---
+
+## 第一章 业务背景与架构选型
+
+### 1.1 小象培训班的核心业务流程
+
+为了让后面的所有代码和模型不变成空中楼阁，我们先用几分钟了解这个系统的业务场景。
+
+一家线下培训机构的日常运营，核心围绕五个连续的业务动作展开：
 
 ```mermaid
-flowchart TD
-    subgraph S1["第一章：业务全景与破局"]
-        A1["业务闭环：报名→缴费→分班→排课→消课"] --> A2["贫血大泥球架构的技术债务溃决"]
-        A2 --> A3["选择性 DDD (Selective DDD) 的经济学决策"]
-    end
-
-    subgraph S2["第二章：战略设计"]
-        B1["统一语言 (Ubiquitous Language) 代码映射"] --> B2["5 大核心限界上下文 (Bounded Contexts)"]
-        B2 --> B3["上下文映射 (Context Map) 与防腐隔离 (ACL)"]
-    end
-
-    subgraph S3["第三章：战术设计元模型"]
-        C1["值对象 (Value Object)：不可变性与防御式校验"] --> C2["实体 (Entity) 与生命周期连续性"]
-        C2 --> C3["聚合根 (Aggregate Root)：不变性边界守护"]
-        C3 --> C4["领域服务 (Domain Service) 与领域事件 (Domain Event)"]
-    end
-
-    subgraph S4["第四章：分层架构与依赖倒置"]
-        D1["六边形与洋葱架构的四层目录投影 (north/domain/south/pl)"]
-        D1 --> D2["领域层绝对纯洁性：零框架依赖"]
-        D2 --> D3["依赖倒置原则 (DIP) 与仓储端口 (Port)"]
-    end
-
-    subgraph S5["第五章：CQRS 与最终一致性"]
-        E1["命令查询职责分离 (CQRS) 双通道"]
-        E1 --> E2["跨上下文事务陷阱：严禁跨 BC 本地大事务"]
-        E2 --> E3["Transactional Outbox 模式同事务原子落盘"]
-    end
-
-    subgraph S6["第六章：仓储防腐与 Mapper 隔离"]
-        F1["ORM 关系实体 vs 领域充血聚合根的天然张力"]
-        F1 --> F2["双向映射器 (Bi-directional Mapper) 工业级落地"]
-    end
-
-    subgraph S7["第七章：架构演进心智"]
-        G1["DDD 适用边界与权衡法则"] --> G2["给团队与架构师的落地建议"]
-    end
-
-    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+flowchart LR
+    A["1. 报名"] --> B["2. 缴费与订单"]
+    B --> C["3. 分班"]
+    C --> D["4. 排课"]
+    D --> E["5. 消课与记账"]
 ```
+
+1. **报名**：家长可以在小程序上给孩子报名体验课或者正式课程。报名时支持一次选择多门科目（比如同时报数学和英语）。系统在记录报名信息的同时，会自动赠送一定数量的试听课时。
+2. **缴费与订单**：家长决定购买课程，系统生成订单。这里有真实的财务规则：支持全款支付，也支持“30% 首付 + 尾款”的分期支付形态；如果是多门课程打包售卖（比如 2999 元包含语数英三门课），必须把总金额按规则分摊给各个科目，而且分摊后的金额相加必须分毫不差；如果是分期，尾款的截止日期必须在首付款成功支付后的第 30 天 23:59:59 自动推导，逾期需要触发催缴。
+3. **分班**：学生缴费或者领到试听课后，进入待分班名单。教务老师根据孩子的年级、评测成绩以及班级人数上限（比如小班上限 12 人），安排学生进入对应的班级。一个学生在同一门科目下，同一时间只能处于一个有效班级中，绝对不能出现一个学生同时在两个英语一班里的混乱情况。
+4. **排课**：教研老师制定周期排课规则，比如“每周二、周四晚上 18:30 到 20:00，在 302 教室由王老师上课”。排课系统需要自动把这个规则沿时间轴展开成一学期几十次具体的课次，并在排课时自动检查冲突（同一个教室同一时间不能有两门课，同一个老师同一时间不能在两个教室上课）。
+5. **消课与记账**：单次课程结束后，老师发起消课。系统扣除出勤学生的课时，并在课时账本上记录一笔复式流水。如果试听学生的课时扣完变零，系统会自动把该学生从班级名单中移出，释放名额给其他付费学员。
 
 ---
 
-## 第一章 业务全景与复杂度破局
+### 1.2 为什么传统三层 CRUD 会越写越乱？
 
-### 1.1 真实业务闭环切入：培训机构的“五部曲”
+在传统的三层架构（Controller 控制器、Service 业务层、DAO/Mapper 数据访问层）中，大家的开发习惯往往是“先去数据库建表，建完表用工具生成代码，然后把所有的业务逻辑都写在 Service 里”。
 
-任何脱离实际业务场景空谈架构模式的行为，都是无源之水。为了让 DDD 的各项抽象概念具备具象化的物理载体，我们首先审视真实线下培训教育机构的典型日常运营流程。
+面对上面这套业务，传统写法会遇到三个非常典型的瓶颈：
 
-在一家面向中小学生的现代素质与学科培训中心，支撑其经营现金流与教学履约的核心业务闭环可以抽象为以下 **五个正交而又前后咬合的业务阶段**：
-
-1. **报名（Enrollment）**：家长通过微信小程序或课程顾问在前台代建报名意向，系统支持单次提交包含多个课程规格（SKU）。在提交的瞬间，系统需要完成线索登记、来源渠道归因，并在同事务中原子赠送“体验试课机会”，生成试课课时，供学员即刻进班体验。
-2. **缴费与订单（Billing）**：家长决定正式购课，系统生成课程商品包订单。这里存在极为复杂的财务规则：学员可以全款支付，也可以选择“首付 + 尾款”的分期支付形态；订单金额必须在多门打包课程的各个 SKU 之间进行收入分摊冻结；支付成功后需要处理外部掉单、微信异步回调重试、流水对账以及原路退款。
-3. **分班（Classes）**：学员具备可用课时后进入待分班池。教务人员根据学生的年龄学段、意向科目、入学评测满分段（如 60%/70%/80%/90%）以及各班级容量上限（Capacity），通过算法建议或手动调配建立唯一的“在班关系”。
-4. **排课（Scheduling）**：教研制定每周循环的周期排课规则（如每周二、四 18:30–20:00，在 302 教室由张老师授课）。排课引擎必须自动将抽象规则沿时间轴展开为具体的课次实例（Lesson Session），并在展开过程中实时进行毫秒级的“硬性资源冲突检测”（同一教室在同一时段禁止双重占用、同一教师在同一时段禁止分身授课）。
-5. **消课与履约（Entitlement & Deduction）**：单次课程教学结束后，教师在员工端小程序发起批量消课。系统对出勤学员的课时账户进行扣减，生成不可篡改的复式变动流水。当试课学员的课时余额归零时，系统需自动触发事件结束其在班履约。
-
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Parent as 家长 / 顾问
-    participant Enrollment as 报名上下文 (Enrollment)
-    participant Billing as 收费上下文 (Billing)
-    participant Classes as 班级上下文 (Classes)
-    participant Scheduling as 排课上下文 (Scheduling)
-    participant Entitlement as 课时上下文 (Entitlement)
-
-    Parent->>Enrollment: 提交报名申请 (多SKU)
-    Enrollment->>Entitlement: 原子赠送试课课时 (Trial)
-    Parent->>Billing: 创建订单并完成首款支付
-    Billing->>Entitlement: 激活正式课时账户 / 作废剩余试课
-    Parent->>Classes: 自动/手动调配进班 (在班唯一性)
-    Classes->>Scheduling: 关联周期排课规则展开课次
-    Scheduling->>Entitlement: 课次结束后触发批量消课扣减
+#### 瓶颈一：状态流转没有保护，任何人都能在任何地方改状态
+在传统贫血模型中，`Order` 实体只有类似这样的代码：
+```typescript
+// 传统贫血模型：只有属性和 getter/setter
+export class Order {
+  id: string;
+  status: string; // 'PENDING', 'PAID', 'CANCELLED'
+  amount: number;
+}
 ```
+这意味着系统里任何地方（某个 Controller、定时任务脚本、甚至异步回调函数），只要拿到这个 `order` 对象，都能写一行：
+```typescript
+order.status = "PAID";
+await orderDao.update(order);
+```
+没有任何地方能拦截非法操作。比如一个订单明明已经因为超时被取消（`CANCELLED`）了，结果某处的补偿代码直接把它改成了 `PAID`，绕过了金额比对，也没有生成对应的课时。业务规则全靠写代码的人心里记着，只要有人漏写了一个 `if` 判断，脏数据就进库了。
 
-这一业务链路看似与传统的“电商下单 + 日程安排”类似，但深究其内部规则，就会发现其中蕴含着极高的内在业务复杂度。
+#### 瓶颈二：复杂的计算逻辑散落各处，极易算错
+比如多门课程打包销售时的金额分摊，如果写在 Service 里：
+```typescript
+// 传统写法：在 Service 里面用普通数字到处算
+const totalAmount = 2999;
+const item1 = Math.floor(totalAmount * (1200 / 3000));
+const item2 = Math.floor(totalAmount * (1800 / 3000));
+// 如果除不尽，少算了 1 分钱，谁来兜底？
+// 这段计算如果另一个财务导出的 Service 也要用，往往就是把代码复制一份过去
+```
+一旦分摊规则改动，所有复制过这段代码的 Service 都要改一遍，极易遗漏，月度对账就会导致大量的平账差错。
 
----
-
-### 1.2 传统三层架构 CRUD 在复杂业务下的溃败
-
-在传统的三层架构（Controller $\to$ Service $\to$ DAO/Repository）与数据驱动开发模式下，团队的标准工作流通常是：**“先设计数据库表结构，再用代码生成工具生成实体类，最后在 Service 层堆砌业务逻辑”**。
-
-这种模式在系统初期（简单的后台信息录入）极其敏捷高效，但一旦遇到上述培训机构的核心规则，代码库便会迅速滑向“大泥球架构”（Big Ball of Mud）：
-
-#### 痛点一：贫血模型导致业务逻辑全链路外泄，系统失去“不变性防护”
-在传统贫血模型中，实体仅仅是数据库字段的一对一映射，只拥有公有的 Getter 和 Setter，退化为单纯的“数据传输袋”（Data Bag）。
-例如，订单状态字段 `status` 是一个普通的字符串或枚举，外部任何一段代码都可以肆意调用 `order.setStatus("PAID")`。
-这就导致一个致命问题：**没有任何机制能够阻止非法状态跃迁**。一个已经取消（`CANCELLED`）的订单，可能因为某位新同学写的一段补偿脚本，直接被改成了已支付，而跳过了金额比对、库存校验和合同签署校验。业务规则被迫散落在数十个 Controller、Service、定时任务甚至前端代码中，系统千疮百孔。
-
-#### 痛点二：财务分摊与账本审计规则在过程化代码中极易产生“精度漂移”与“资金差错”
-在计费场景中，打包商品售价 2999 元，包含语文、数学、英语三门课程，每门课程标价各不相同。财务部门要求：必须在下单时刻冻结各 SKU 的收入确认分摊比例；在除不尽产生分厘差异时，末位 SKU 必须兜底补齐，确保分摊之和严格恒等于订单实收金额（不可变守恒）；如果支持首付款（如首付 30%），首付款与尾款金额同样必须守恒。
-在传统的过程化 Service 中，这类逻辑充斥着大量的浮点数除法、四舍五入与临时变量，一旦某处漏算了 1 分钱，月度对账就会导致成千上万条平账差错单。
-
-#### 痛点三：数据库表级强耦合，阻断了模块的独立演化
-在三层架构中，为了查询方便，开发人员习惯性地使用 SQL 多表关联查询（`JOIN`）：
+#### 瓶颈三：跨模块大联表，数据库层死锁在一起
+为了在前端展示一个学员报了什么课、在哪个班、剩多少课时，开发人员往往会写一个关联了 5 张表的复杂 SQL：
 ```sql
--- 传统三层中极其常见的跨域大联表：直接击穿了所有模块边界
-SELECT o.order_no, s.student_name, c.class_name, e.available_quantity 
-FROM orders o
+SELECT * FROM orders o
 JOIN students s ON o.student_id = s.id
-JOIN class_enrollments ce ON s.id = ce.student_id
-JOIN classes c ON ce.class_id = c.id
-JOIN entitlement_accounts e ON s.id = e.student_id AND e.sku_id = o.sku_id
-WHERE o.status = 'PAID';
+JOIN classes c ON s.class_id = c.id
+JOIN entitlement_accounts e ON s.id = e.student_id;
 ```
-这类 SQL 表面上写起来一行搞定，但其背后带来的毁灭性后果是：**将订单、学生主档、班级、排课、课时账户五张大表在数据库层死锁在一起**。未来无论想重构其中任何一个模块的表结构，或者将财务模块拆分为独立服务，整套系统的 SQL 都会全部崩塌。
+这张 SQL 把订单、学生、班级、课时四个模块在数据库层紧紧绑在了一起。以后只要课时模块想改表结构，所有牵扯到这段 SQL 的接口全都会报错。随着业务规模扩大，代码越来越难维护，改动任何一个小功能都伴随着未知的风险。这就是前文所说的代码变成了一团解不开的“烂泥球”。
 
 ---
 
-### 1.3 破局之道：为什么选择 DDD 与“选择性 DDD”策略
+### 1.3 选择性 DDD：不要搞教条主义
 
-领域驱动设计的核心哲学，是**将软件开发的核心重心从“数据存储介质（数据库/表结构）”转移到“业务领域内核（业务逻辑/领域模型）”上来**。
-DDD 强调：
-1. **统一语言**：以业务专家的术语为唯一真理，代码就是活的 PRD 文档。
-2. **战略划分**：用限界上下文圈定语义边界，杜绝“全能大上帝实体”。
-3. **战术内聚**：通过充血聚合根守护业务规则不变性，让对象对自己的数据与行为负全责。
-4. **技术解耦**：通过依赖倒置原则，让数据库、网络协议、第三方 SDK 统统变成外围可插拔的插件。
+看到这里，有人可能会想：那我们把系统里所有的功能全部用 DDD 重写一遍，是不是就好了？
 
-#### 拒绝教条：选择性 DDD（Selective DDD）的经济学决策
-然而，在真实企业工程中，最容易犯的错误就是“拿着锤子看什么都是钉子”的**教条主义 DDD**。很多架构师一旦引入 DDD，便要求系统里哪怕一个简单的“校区字典表”或者“系统参数配置”都要建立聚合根、仓储接口、防腐层和 CQRS Handler，导致系统凭空多出海量的样板代码，开发效率断崖式下跌。
+答案是：**千万不要这么做。**
 
-在 `xiaoxiang-training-management` 系统中，我们贯彻了极为清醒的 **选择性 DDD（Selective DDD）** 策略：
+DDD 是一把重型武器。它要求定义值对象、聚合根、接口契约、映射层，这些都会带来额外的代码量和学习成本。如果一个模块本身业务就非常简单，比如“校区基本信息维护”或者“系统字典配置”，它本质上就是几张界面的单表增删改查，如果给它也硬套一套聚合根和防腐层，纯粹是给自己找麻烦。
 
-| 领域分类 | 包含模块 | 架构选型 | 核心考量与经济学收益 |
+因此，在小象培训管理系统中，我们采用的是 **选择性 DDD（Selective DDD）**：
+
+| 模块分类 | 包含的具体业务 | 采用的架构 | 原因 |
 |---|---|---|---|
-| **核心域 (Core Domain)** | 报名 (Enrollment)、计费 (Billing)、班级 (Classes)、排课 (Scheduling)、课时权益 (Entitlement) | **严格 DDD 六边形架构**（聚合根 + 仓储 Port + Outbox 最终一致性） | 业务逻辑高度多变且复杂，涉及资金安全、排课冲突、复式流水，值得投入最高的工程标准进行严格内聚与单测守护。 |
-| **支撑域 (Supporting Domain)** | 产品目录 (Product Catalog)、学生主档 (Student Registry)、组织校区 (Org Campus) | **经典三层架构 CRUD**（Controller $\to$ Service $\to$ ORM Entity） | 业务规则极其稳定，主要以属性维护和关联读取为主，直接采用简化的三层模式，最大化人效。 |
-| **通用域 (Generic Domain)** | 身份权限 (Identity / IAM)、业务通知 (Notification)、系统配置 (Business Config) | **无状态基础服务 / SDK 适配器** | 纯粹的基础设施支撑能力，采用标准模块化集成，不侵入业务领域。 |
+| **核心域** | 报名、计费与订单、班级、排课、课时权益 | **严格 DDD 架构**（充血聚合根、端口适配器、防腐层） | 业务规则复杂，涉及资金安全、课时审计、排课冲突，必须由核心模型牢牢守住规则。 |
+| **支撑域** | 产品目录（课程商品）、学生档案、校区管理 | **经典三层 CRUD**（Controller $\to$ Service $\to$ Entity） | 业务极其稳定，以属性展示和配置为主，三层开发最快、最省成本。 |
+| **通用域** | 权限登录、短信发送、系统公共配置 | **通用模块 / SDK 适配器** | 纯粹的技术支撑能力，不需要建立复杂的业务领域模型。 |
+
+分清轻重缓急，把精力集中在最核心、最复杂的业务上，这是落地 DDD 的第一个实用心智。
 
 ---
 
-## 第二章 战略设计：从统一语言到限界上下文
+## 第二章 战略设计：划定系统的业务边界
 
-战略设计（Strategic Design）是 DDD 的顶层灵魂。如果战略设计画错了边界，战术设计代码写得再优雅，最终也只会演变成一个“高度面向对象的分布式大泥球”。
+如果把写代码比作盖房子，战略设计就是城市规划。如果城市规划把工业区和生活区混在一起，单栋房子建得再漂亮，居住体验也是一团糟。
 
-### 2.1 统一语言 (Ubiquitous Language) 的工程具象化
+战略设计只解决两个问题：
+1. 大家说话用不用同一个词汇（统一语言）？
+2. 整个大系统拆成几个独立的小王国，各自管什么、不管什么（限界上下文）？
 
-很多团队认为统一语言只是一份挂在 Wiki 上的名词对照表，开发人员写代码时依然各自为政。在 `xiaoxiang-training-management` 中，统一语言是**直接编译在代码仓库中的强类型契约**。
+---
 
-#### 案例剖析：消除“多义性鸿沟”
-在系统研发之初，业务运营人员常说：“给这个孩子送两节试听课”、“看看他还有没有体验资格”、“这个单子收了定金，尾款什么时候结”。
-在传统开发中，程序员往往按直觉定义数据库字段：
+### 2.1 统一语言 (Ubiquitous Language)
+
+#### 什么是统一语言？
+在很多团队中，业务人员、产品经理和开发人员各说各的话。业务人员说“家长报了个体验课”，产品文档里写着“试听活动”，开发人员在数据库里建了个字段叫 `is_auditing`，过两个月新来的开发又在另一个表里加了个 `trial_flag`。大家以为在聊同一件事，实际上一对细节漏洞百出。
+
+**统一语言的要求很简单：系统里的核心业务词汇，业务、产品和研发必须统一，并且这个词汇必须直接体现在代码中。**
+
+#### 小象系统中的实践：
+在小象系统中，针对“试听”和“付款”，团队统一了明确的定义，并直接写成了代码类型：
+
 ```typescript
-// ❌ 典型的反模式：开发人员自行脑补的技术行话与缩写
-const is_auditing = 1;      // 是试听还是体验？
-const deposit = 500;        // 500是元还是分？定金还是首付款？有法律区别！
-const balance_days = 30;    // 尾款什么时候到期？从哪一天开始算？
-```
-在 DDD 实践中，团队必须与业务专家坐在一起，通过事件风暴（Event Storming）严格收敛术语定义，并强制将术语固化为代码层面的符号：
-
-```typescript
-// ✅ 统一语言在代码中的具象化体现
-// 1. 试课机会 (Trial Opportunity) 与 试课权益 (Trial Entitlement) 严格区分
+// 统一语言落地为强类型代码定义
+// 1. 课时账户类型：试听课 (TRIAL)、正式课 (FORMAL)、赠送课 (GIFT)，严禁造其他缩写
 export type EntitlementAccountType = "TRIAL" | "FORMAL" | "GIFT";
 
-// 2. 款项形态：全款 (FULL) vs 分期 (INSTALLMENT)；首付款 (Deposit) vs 尾款 (Final Payment)
+// 2. 付款方式：全款支付 (FULL)、分期首付 (INSTALLMENT)
 export type PaymentForm = "FULL" | "INSTALLMENT";
 
-// 3. 业务值对象直接承载概念规则
-export class DepositRatio extends ValueObject<number> { ... } // 首付比例：固定 30%，不可随意传参
-export class FinalDueDays extends ValueObject<number> { ... } // 尾款账期：首付付清后第 30 天 23:59:59 截止
+// 3. 首付款比例：DepositRatio，系统明确规定首付款按 30% 计算，不允许代码里随便传别的数字
+export class DepositRatio extends ValueObject<number> { ... }
 ```
-当代码中的类名、方法名、枚举值与业务人员口中的语言达到 100% 同构时，PRD 文档与代码之间的“翻译损耗”便被彻底消除了。代码变动即是业务演进，代码审查即是业务规则审计。
+当业务人员说“首付款比例”时，开发人员脑子里对应的就是 `DepositRatio`；当运营问“正式课时”时，代码里找的就是 `FORMAL` 类型的账户。不需要中介翻译，代码就是活的业务规范。
 
 ---
 
-### 2.2 限界上下文 (Bounded Context) 划分的黄金边界
+### 2.2 限界上下文 (Bounded Context)
 
-DDD 战略设计的核心精髓，在于承认：**在软件系统中，不存在一个适用于所有场景的“全局通用模型”（Universal Model）**。同一个现实实体，在不同的业务语境下，其关注的属性、行为和生命周期有着本质的差异。
+#### 什么是限界上下文？
+“限界”就是边界，“上下文”就是语境。合起来的意思是：**任何一个业务概念，都只有在它特定的业务语境下才有明确、唯一的含义。**
 
-#### 经典误区：“大一统的学生模型”
-在很多劣质架构中，存在一个包含 80 多个字段的巨大 `Student` 类：里面既有基本信息（姓名、年龄、监护人），又有销售信息（跟进顾问、意向级别），还有教学信息（所在班级、历史成绩），甚至还包含财务信息（累计缴费、未付尾款、剩余课时）。
+在传统设计中，很多团队喜欢建一个全局通用的“大上帝表”。比如 `Student` 表，里面塞了 70 多个字段：既有学生姓名、出生年月、家庭住址，又有负责的课程顾问、意向科目、考试分数，还有累计缴了多少钱、欠多少尾款、上周上了哪节课。
 
-#### DDD 的解法：以限界上下文解构概念边界
-在本项目中，我们将系统划分为五个核心限界上下文，同一个“学生”概念在各个上下文拥有完全独立、高度自治的模型投影：
+这种“大一统模型”非常脆弱：顾问只想改个意向级别，结果要把整个包含了财务信息的对象读出来再存回去，极易产生并发覆盖；而且任何人想改一个字段，所有人都要跟着测试。
+
+#### DDD 的做法：按业务边界拆分上下文
+在小象系统中，同一个现实生活中的“学生”，在不同的限界上下文里，被拆成了各自完全独立的模型：
 
 ```mermaid
 classDiagram
     direction LR
-    
-    class EnrollmentStudent {
-        <<Enrollment BC>>
-        +String studentName
-        +PhoneNumber guardianPhone
-        +String grade
-        +String leadSource
-        +String salesConsultantId
+
+    class 报名上下文中的学生 {
+        +姓名
+        +监护人手机号
+        +意向年级
+        +来源渠道
+        +负责顾问
     }
 
-    class BillingStudent {
-        <<Billing BC>>
-        +StudentId studentId
-        +CampusId campusId
-        +PaymentEntry qrCode
-        +ReceivablePlan balanceDue
+    class 计费上下文中的学生 {
+        +学生ID
+        +所属校区ID
+        +收款二维码
+        +待缴尾款单
     }
 
-    class ClassesStudent {
-        <<Classes BC>>
-        +StudentId studentId
-        +ClassId classId
-        +PlacementScore entryScore
-        +ClassCapacityLimit capacity
+    class 班级上下文中的学生 {
+        +学生ID
+        +班级ID
+        +入班测评成绩
+        +在班状态
     }
 
-    class EntitlementStudent {
-        <<Entitlement BC>>
-        +StudentId studentId
-        +Map~SkuId, Ledger~ accounts
-        +LessonQuantity available
-        +LessonQuantity frozen
+    class 课时上下文中的学生 {
+        +学生ID
+        +科目ID
+        +可用课时数
+        +冻结课时数
     }
-
-    EnrollmentStudent ..> BillingStudent : 概念映射 (ID关联)
-    BillingStudent ..> ClassesStudent : 概念映射 (ID关联)
-    ClassesStudent ..> EntitlementStudent : 概念映射 (ID关联)
 ```
 
-1. **报名上下文 (`Enrollment`)**：关注的是线索转化。它只关心学生姓名、监护人手机号、生源渠道、负责顾问以及试课意向。
-2. **计费上下文 (`Billing`)**：关注的是资金与应收。它根本不需要知道孩子的年级或爱好，只关心该学员对应的付款人 ID、待缴应收单、分期到期日和发票凭证。
-3. **班级上下文 (`Classes`)**：关注的是教学编班。它只关心学生的学段、分班成绩分段、在班状态与退班时间。
-4. **课时权益上下文 (`Entitlement`)**：关注的是课时复式账户。它把学员抽象为一个资产账户主体，记录其持有的各个 SKU 的可用课时数与冻结课时数。
+- **在报名上下文（Enrollment）**：系统根本不管这个学生欠多少尾款。它眼里的学生是一个销售线索，只关心姓名、家长电话、来源渠道和跟进顾问。
+- **在计费上下文（Billing）**：系统根本不在乎这个学生读几年级、喜欢什么老师。它只把学生看作一个付款人编号，关心他绑定的收费二维码和待缴尾款记录。
+- **在班级上下文（Classes）**：系统只关心该学生的学段、分班成绩以及是否在这个班级名单里。
+- **在课时上下文（Entitlement）**：系统只把它看作一个课时资产账户，只记录可用课时和扣除记录。
 
-每个限界上下文拥有独立的领域模型、独立的代码包结构，甚至在物理部署上可以拥有完全独立的数据库。它们之间**绝对禁止共享数据库表**，唯一的关联纽带是强类型的值对象标识符——`StudentId`。
+这四个上下文里各自都有一个与学生相关的概念，但它们的数据表是彻底分开的，代码也是彻底分开的。它们之间唯一的联系，就是一个纯字符串的唯一标识符 `StudentId`。这样一来，报名业务改字段，绝对不会影响到计费和课时。
 
 ---
 
-### 2.3 上下文映射 (Context Map) 与防腐隔离 (ACL)
+### 2.3 上下文映射 (Context Map) 与防腐层 (ACL)
 
-当边界划定之后，限界上下文之间如何协同？DDD 提供了上下文映射（Context Map）这一强大的工具，用来梳理不同子系统之间的依赖与权力结构。
+当边界划好之后，不同的上下文之间怎么打交道？这就是上下文映射（Context Map）。
 
-#### 本系统的上下文映射拓扑图
+其中最实用、最重要的设计模式叫 **防腐层（Anti-Corruption Layer，简称 ACL）**。
+
+#### 什么是防腐层？
+当我们的核心系统需要调用外部系统（比如微信支付、第三方短信接口、或者公司的遗留老系统）时，外部系统的数据格式通常很别扭，命名规则也跟我们内部不一样。
+如果我们在自己的业务代码里到处直接调用微信支付的 SDK，到处写微信返回的 `sp_openid`、`sub_mch_id`、`total_fee`，这些晦涩难懂的外来名词就会像毒素一样，把我们原本干净清爽的业务代码弄得乱七八糟。
+
+**防腐层的做法就是在业务系统和外部系统之间修一堵防火墙。外部数据一进来，防腐层立刻把它翻译成我们自己定义的干净模型；核心业务代码只跟翻译后的干净模型打交道，对外部接口的丑陋细节一无所知。**
 
 ```mermaid
-flowchart TB
-    subgraph Upstream["上游上下文 (Upstream)"]
-        PC["产品目录上下文<br>(Product Catalog)"]
-        SR["学生档案上下文<br>(Student Registry)"]
-    end
-
-    subgraph CoreDomain["核心领域 (Core Domain)"]
-        direction TB
-        EN["报名上下文 (Enrollment)<br>[核心域]"]
-        BI["计费与订单上下文 (Billing)<br>[核心域]"]
-        CL["班级上下文 (Classes)<br>[核心域]"]
-        SC["排课上下文 (Scheduling)<br>[核心域]"]
-        ET["课时权益上下文 (Entitlement)<br>[核心域]"]
-    end
-
-    subgraph GenericDomain["外部与基础设施平台 (Generic)"]
-        WX["微信支付平台<br>(WeChat Pay)"]
-        SMS["短信与企微通道<br>(Notification)"]
-    end
-
-    PC -->|OHS / PL 发布语言| EN
-    PC -->|OHS / PL 发布语言| BI
-    SR -->|数据契约| EN
-
-    EN -->|Transactional Outbox 事件| BI
-    BI -->|Transactional Outbox 事件| ET
-    ET -->|状态驱动| CL
-    CL -->|在班关系| SC
-    SC -->|消课指令| ET
-
-    BI <-->|ACL 防腐层| WX
-    EN -->|ACL 防腐层| SMS
+flowchart LR
+    A["微信支付平台 (外部系统)<br>字段: sub_mch_id, payer_total, sp_openid"] 
+    -->|原始报文| B["防腐层 (ACL Adapter)<br>负责转换与翻译"]
+    B -->|翻译为纯净内部对象| C["计费领域内核 (Billing Domain)<br>对象: PaymentTransaction, Money"]
 ```
 
-#### 关键集成模式深度解析：
-1. **开放主机服务 (Open Host Service, OHS) 与 发布语言 (Published Language, PL)**：
-   - 支撑域（如产品目录 `Product Catalog`）通过在 `pl/` 包中对外发布标准的 DTO 和查询协议，向计费、报名等核心域提供稳定的上游能力。
-2. **防腐层 (Anti-Corruption Layer, ACL)**：
-   - 这是 DDD 中最关键的防御性设计模式。当核心域需要与外部三方系统（如微信支付 API）或遗留系统交互时，**绝对禁止直接在领域内部引用外部 SDK 的数据结构**。
-   - 在 `Billing` 模块中，我们设计了 `wechat-payment.repository.ts` 与专用适配器。微信回调返回的包含 `mch_id`、`sub_mch_id`、`sp_openid`、`payer_total` 等晦涩命名的 XML/JSON 报文，在穿透边界的第一时间就被防腐层拦截并翻译为领域内部纯净的 `PaymentTransaction` 实体与 `Money` 值对象。外部数据格式哪怕天天改版，核心领域层依然风雨不动。
-3. **客户/供应者 (Customer/Supplier) 与 异步事件解耦**：
-   - `Billing` 与 `Entitlement` 之间是经典的下游跟随关系。计费模块支付成功后，并不是以强依赖的 RPC 方式去同步修改课时账户，而是发布 `OrderPaidIntegrationEvent` 集成事件，由课时模块异步消费并开通权益，实现了高可用与性能隔离。
+在小象系统的计费模块中，微信支付接口返回的回调报文，在进入领域层之前，就被 `wechat-payment.repository.ts` 适配器拦截，提取出金额并包装成我们自己的 `Money` 值对象，状态转换成统一的 `OrderStatus`。哪怕明天微信支付接口字段全面改版，我们也只需要修改防腐层这一个文件，核心订单逻辑一行代码都不需要动。
 
 ---
 
-## 第三章 战术设计：领域模型的核心构建块
+## 第三章 战术设计：写出真正有防御力的代码
 
-战略设计划定了疆界，而战术设计（Tactical Design）则是在代码层面落地面向对象设计精髓的武器库。DDD 战术设计的核心基石由以下构件组成：**值对象（Value Object）、实体（Entity）、聚合与聚合根（Aggregate Root）、领域服务（Domain Service）与领域事件（Domain Event）**。
+如果说战略设计是画出图纸，战术设计就是具体搬砖砌墙的工艺。战术设计提供了几个非常具体的核心零件：**值对象、实体、聚合根、领域服务、领域事件**。
 
-### 3.1 值对象 (Value Object)：不可变性与领域规则守护者
+---
 
-在传统开发中，程序员极度依赖基本类型（Primitive Obsession，基本类型偏执）：金额用 `number`、电话用 `string`、时间用 `Date`、容量用 `number`。这导致业务规则完全无法内聚。
+### 3.1 值对象 (Value Object)：消灭代码里的隐式错误
 
-#### 值对象的三大核心铁律：
-1. **不可变性 (Immutable)**：值对象一旦通过构造函数初始化完成，内部属性永久冻结，严禁修改。任何状态变更操作都必须返回一个**全新的值对象实例**。
-2. **基于属性的值相等性 (Value-based Equality)**：值对象没有概念上的唯一主键标识（没有 ID）。两个值对象只要内部所有属性的值完全一致，它们在领域概念上就是同一个对象（例如：两张 100 元的人民币，只要面值和币种相同，买东西时没有任何区别）。
-3. **自包含业务规则验证 (Self-validating)**：值对象在被实例化的那一刻，就必须保证自身的合法性。世界上绝不存在一个“处于非法状态的值对象”。
+#### 什么是值对象？
+用一句话概括：**值对象是用来描述事物特征、本身没有唯一标识、并且一旦创建就绝对不可变的对象。**
 
-#### 代码实证一：`domain-shared/values/money.ts` 的工业级实现
+在传统代码中，大家特别习惯用基础类型（数字、字符串）来表示业务概念，这在编程领域叫“基本类型偏执”。
+比如写一个函数：
+```typescript
+function pay(amount: number, phone: string) { ... }
+```
+这个函数非常危险：
+1. `amount` 是不是负数？有没有小数位？是元还是分？不知道。调用方传个 `-100`，编译器完全不报错。
+2. `phone` 是不是合法的手机号？有没有带国家区号？调用方传个 `"abc"`，也能正常传进去。
 
-以下是小象培训系统中处理资金交易的 `Money` 值对象完整核心源码。请注意观察其如何通过基类继承、最小货币单位整数存储、严格的防御性断言彻底规避浮点精度问题：
+值对象就是为了解决这个问题而生的。它有三个鲜明特征：
+1. **不可变**：创建之后不能改。想改？返回一个全新的对象。
+2. **基于属性判等**：没有 ID。只要属性一样，就是同一个值（比如一张百元大钞，不管编号是啥，面值 100 元就等价于另一张 100 元）。
+3. **自我校验**：在构造的那一刻就检查自己的合法性。系统中绝不可能存在一个“金额为负数”的 Money 对象。
+
+#### 项目真实源码剖析：`Money` 值对象
+下面是小象系统中真实使用的 `Money` 值对象核心代码（节选自 `apps/server/src/domain-shared/values/money.ts`）：
 
 ```typescript
 import { ValueObject } from "../base/value-object.base";
 import { BusinessRuleViolationException } from "../exceptions/domain.exception";
 
-/**
- * Money 内部封装的值载荷
- * 必须标记为 readonly，确保不可篡改
- */
+// 值对象内部持有的数据结构：全部标为 readonly，外部不可修改
 interface MoneyValue {
-  readonly amountMinor: number; // 最小货币单位（人民币：分），严禁浮点
-  readonly currency: string;    // ISO 4217 三位大写币种代码（如 CNY）
+  readonly amountMinor: number; // 最小货币单位（分），必须是整数
+  readonly currency: string;    // 货币代码，固定 3 位大写，如 CNY
 }
 
-/**
- * Money 领域值对象：
- * 彻底消灭资金计算中的浮点精度漂移与跨币种计算灾难
- */
 export class Money extends ValueObject<MoneyValue> {
-  // 私有构造函数，强制所有调用方通过静态工厂方法创建，保证门禁有效
+  // 私有构造函数，强制外面必须通过静态 create 方法创建
   private constructor(value: MoneyValue) {
     super(value);
   }
 
-  /**
-   * 实现基类模板方法：在对象构造时自动执行前置校验
-   * 任何非法数据在进入系统的一瞬间立即抛出领域异常
-   */
+  // 核心校验逻辑：在对象出生的一瞬间把关
   protected validate(value: MoneyValue): void {
     const { amountMinor, currency } = value;
     
-    // 规则 1：金额必须是非负整数（分），禁止负数，更禁止浮点小数
+    // 门禁 1：金额必须是非负整数，杜绝浮点数和小数分
     if (!Number.isInteger(amountMinor) || amountMinor < 0) {
       throw new BusinessRuleViolationException(
-        `Money amountMinor 必须为非负整数，收到: ${amountMinor}`,
+        `金额必须是非负整数（单位为分），实际收到: ${amountMinor}`
       );
     }
     
-    // 规则 2：币种必须是合法的 3 位大写国际标准代码
+    // 门禁 2：币种必须是合法的 3 位大写字母
     if (!currency || !/^[A-Z]{3}$/.test(currency)) {
       throw new BusinessRuleViolationException(
-        `Money currency 必须为 3 位大写 ISO 4217 代码，收到: ${currency}`,
+        `币种必须是 3 位大写代码，实际收到: ${currency}`
       );
     }
   }
@@ -368,660 +299,488 @@ export class Money extends ValueObject<MoneyValue> {
     return this.value.currency;
   }
 
-  /**
-   * 静态安全工厂：以“分”为单位创建
-   */
+  // 静态安全工厂
   static create(amountMinor: number, currency = "CNY"): Money {
-    if (!Number.isFinite(amountMinor) || Math.floor(amountMinor) !== amountMinor) {
-      throw new BusinessRuleViolationException(
-        `Money 禁止浮点，amountMinor 必须为整数分，收到: ${amountMinor}`,
-      );
-    }
     return new Money({ amountMinor, currency });
   }
 
-  /**
-   * 零元对象静态常量工厂
-   */
-  static zero(currency = "CNY"): Money {
-    return new Money({ amountMinor: 0, currency });
-  }
-
-  /**
-   * 领域行为：资金相加
-   * 规则：跨币种禁止直接相加，必须显式抛出异常
-   * 行为特征：不可变操作，返回全新的 Money 实例
-   */
+  // 业务方法：两笔钱相加
   add(other: Money): Money {
-    this.assertSameCurrency(other);
+    // 门禁 3：不同币种不能直接加，直接拦截
+    if (this.currency !== other.currency) {
+      throw new BusinessRuleViolationException("不同币种无法直接相加");
+    }
+    // 关键特征：不可变！计算结果返回一个全新的 Money 对象
     return new Money({
       amountMinor: this.amountMinor + other.amountMinor,
       currency: this.currency,
     });
   }
 
-  /**
-   * 领域行为：资金扣减
-   * 规则：余额不足导致负数时直接拒绝，保护资金不变性
-   */
+  // 业务方法：扣减
   subtract(other: Money): Money {
-    this.assertSameCurrency(other);
-    const result = this.amountMinor - other.amountMinor;
-    if (result < 0) {
-      throw new BusinessRuleViolationException(
-        `资金扣减超额导致负数: ${this.amountMinor} - ${other.amountMinor}`,
-      );
-    }
-    return new Money({
-      amountMinor: result,
-      currency: this.currency,
-    });
-  }
-
-  /**
-   * 私有断言：校验币种一致性
-   */
-  private assertSameCurrency(other: Money): void {
     if (this.currency !== other.currency) {
-      throw new BusinessRuleViolationException(
-        `币种不一致禁止运算: ${this.currency} vs ${other.currency}`,
-      );
+      throw new BusinessRuleViolationException("不同币种无法直接扣减");
     }
+    const remain = this.amountMinor - other.amountMinor;
+    if (remain < 0) {
+      throw new BusinessRuleViolationException("余额不足，扣减后不能为负数");
+    }
+    return new Money({ amountMinor: remain, currency: this.currency });
   }
 }
 ```
 
-#### 架构收益剖析：
-1. **杜绝金额漏洞**：在整个系统所有的 Service、Entity、Controller 中，只要看到参数是 `Money` 类型，就百分之百可以断定它是一个合法的、单位为分、币种一致的不可变对象。系统中再也不可能出现诸如 `0.1 + 0.2 = 0.30000000000000004` 的经典 JavaScript 浮点数漏洞。
-2. **极简单元测试**：因为值对象是纯内存对象、无任何外部依赖，针对它的计算规则可以编写极度详尽、毫秒级执行的单元测试。
+看这段代码带来的好处：在后续写订单计算、分摊、支付的任何地方，只要方法的参数类型写的是 `Money`，你就**完全不需要再去写 `if (amount < 0)` 这种重复的校验代码**。非法数据在最外层就被挡回去了，后面的核心代码可以百分之百放心地进行计算。
+
+#### 另一个生活化的值对象案例：`LessonQuantity`（课时数量）
+除了钱，系统中还有一个高频概念是“课时”。传统写法同样喜欢用 `number`：
+```typescript
+// 传统写法：扣减课时
+function deduct(studentId: string, lessons: number) {
+  // 如果调用方不小心传了个 -2，不仅没扣课时，反而给学生倒贴了 2 节课！
+  // 如果学生只剩 1 节课，调用方扣了 2 节，课时变成了 -1，负数余额进入数据库。
+}
+```
+在小象系统中，我们为此专门建立了 `LessonQuantity` 值对象（节选自 `domain-shared/values/lesson-quantity.ts`）：
+```typescript
+export class LessonQuantity extends ValueObject<number> {
+  protected validate(value: number): void {
+    // 强制只能是非负整数，不允许负课时，也不允许小数课时
+    if (!Number.isInteger(value) || value < 0) {
+      throw new BusinessRuleViolationException(`课时必须为非负整数，收到: ${value}`);
+    }
+  }
+
+  // 业务扣减：直接把“不允许负余额”的铁律锁死在对象内部
+  subtract(other: LessonQuantity): LessonQuantity {
+    const remain = this.value - other.value;
+    if (remain < 0) {
+      throw new BusinessRuleViolationException(
+        `课时扣减后不能为负数（当前剩余: ${this.value}，尝试扣减: ${other.value}）`
+      );
+    }
+    return new LessonQuantity(remain);
+  }
+}
+```
+有了 `LessonQuantity`，消课和赠课的逻辑只要调用 `account.deduct(LessonQuantity.create(1))`，系统在语言级别就杜绝了“负课时”和“倒贴课时”的可能。这种把校验下沉到最底层对象的做法，比在几百个 Service 顶部反复写 `if-else` 要坚固得多。
 
 ---
 
-### 3.2 实体 (Entity) 与生命周期连续性
+### 3.2 实体 (Entity)：关心“他是谁”与生命周期
 
-与值对象截然相反，**实体（Entity）的核心在于“身份的连续性”**。
-即使一个实体的所有业务属性（如姓名、地址、电话）都发生了变化，只要其唯一标识符（Identifier）未变，它在领域中依然是同一个实体。反之，哪怕两个实体的所有属性一模一样，只要它们的 ID 不同，它们就是两个完全独立的存在。
+#### 什么是实体？
+实体刚好和值对象相反：**实体具有唯一的身份标识（ID），并且在它的整个生命周期中，状态会不断发生变化。**
 
-在 `xiaoxiang-training-management` 中，实体分为两大类：
-1. **聚合根实体（顶级实体）**：如 `Order`（订单）、`EntitlementAccount`（课时账户）。
-2. **聚合内部的局部实体（Child Entity）**：如 `OrderItem`（订单明细项）、`ReceivablePlan`（应收节点）、`Deduction`（消课明细）。
+例如系统里的学生 `Student`：学生今天 8 岁，明年 9 岁；今天叫小明，明天改名叫大明。虽然他的年龄和名字变了，但他依然是同一个人，因为他的学生 ID 没有变。
 
-局部实体拥有聚合内局部的唯一标识，**外部世界绝对禁止直接绕过聚合根去持久化或修改局部实体**。局部实体的整个生命周期，完全由其归属的聚合根全权管理。
+在实际代码中，实体分为两种：
+1. **聚合根实体**：系统的门面，比如 `Order`（订单）。
+2. **聚合内部的局部实体**：依附于聚合根存在的小实体，比如 `OrderItem`（订单里的明细商品行）。外部代码绝不能单独去修改一个 `OrderItem`，它的增删改查必须全部由 `Order` 这个大家长说了算。
 
 ---
 
-### 3.3 聚合与聚合根 (Aggregate Root)：不变性边界守护
+### 3.3 聚合与聚合根 (Aggregate Root)：业务规则的守护神
 
-**聚合（Aggregate）是 DDD 战术设计中最为关键、也是最能体现架构水准的概念。**
+这是战术设计中最核心的概念。
 
-#### 什么是聚合？
-聚合是一组具有紧密生命周期依赖和业务关联关系的领域对象的集合。而**聚合根（Aggregate Root）则是这个集合的唯一门户与指挥官**。
+#### 什么是聚合与聚合根？
+我们用生活中的例子来理解：**电脑主机就是聚合，主板上的 CPU、内存条、固态硬盘就是内部组件，而机箱外部的电源开关键就是聚合根。**
+外部用户想要开机或者关机，只能按机箱面板上的电源键（聚合根暴露的方法）。你绝不允许用户直接拿把螺丝刀捅到机箱内部去短接主板线路（绕过聚合根直接改内部数据）。
 
-#### 聚合设计的四大铁律：
-1. **聚合是保护“业务不变性（Invariants）”的唯一边界**：不变性是指在任何时刻都必须满足的一致性规则。例如：“订单实收金额必须严格等于所有订单明细项金额之和”；“订单处于已取消状态时绝对不能再确认支付”。
-2. **外部世界只与聚合根通信**：外部系统（如应用服务）只允许持有聚合根的引用，严禁直接跨过聚合根去调用或修改内部的子实体或值对象。修改明细必须通过聚合根提供的方法推进。
-3. **跨聚合只通过 ID 引用，严禁对象直接引用**：聚合根之间不允许持有彼此的对象引用（禁止 `order.student = studentInstance`），只能持有其强类型标识符（`order.studentId = StudentId.create(...)`）。这一规则是保障系统未来能够平滑微服务化或分布式部署的核心基石。
-4. **单事务只修改单聚合**：一个数据库事务内部，原则上严格只允许加载、修改并保存一个聚合根。跨聚合的状态协同，必须借助领域事件（Domain Event）实现最终一致性。
+聚合根有三个铁律：
+1. **它是外部访问的唯一入口**：要修改订单里的商品明细？找订单聚合根。要修改班级里的学生名单？找班级聚合根。
+2. **它负责守护“不变性”（业务规则恒成立）**：什么是“不变性”？比如“订单各科目分摊金额之和，必须分毫不差等于订单总金额”。这个规则必须由聚合根自己检查，不符合规则就直接报错拒绝。
+3. **一个事务只修改一个聚合根**：一次数据库操作，只能改一个聚合。想改别的聚合？发事件异步通知。
 
-#### 代码实证二：`Order` 聚合根的不变性守护源码拆解
-
-以下代码节选自 `apps/server/src/bounded-contexts/billing/domain/order/order.aggregate.ts`，展示了一个高内聚聚合根是如何以充血方式封装复杂的收入分摊冻结算法与状态机防线的：
+#### 项目真实源码剖析：`Order` 聚合根中的收入分摊算法
+以下代码节选自 `apps/server/src/bounded-contexts/billing/domain/order/order.aggregate.ts`，展示了聚合根如何在自己体内保护业务规则：
 
 ```typescript
 import { AggregateRootBase, Money, OrderId, StudentId, CampusId } from "../../../../domain-shared";
 import { OrderItem } from "./order-item";
-import { ReceivablePlan } from "./receivable-plan";
 import { OrderSkuRevenueAllocation } from "./order-sku-revenue-allocation";
 import { OrderStatus } from "./order-status.vo";
 import { OrderNotCancellable, BusinessRuleViolationException } from "../errors";
 
-/**
- * 订单聚合根 (Order Aggregate Root)
- * 职责：作为计费交易的核心守门人，封装商品快照、应收计划推进、收入分摊冻结
- */
 export class Order extends AggregateRootBase<OrderId> {
-  // 聚合内部管理的局部实体与值对象（全私有集合，外部无法直接 push/splice）
+  // 关键设计：内部所有集合全部私有 (private)，外面连 push 的机会都没有
   private readonly _items: OrderItem[] = [];
-  private readonly _plans: ReceivablePlan[] = [];
   private readonly _allocations: OrderSkuRevenueAllocation[] = [];
   private _status: OrderStatus;
-  private _version: number;
+  private _receivableAmount: Money;
 
-  /**
-   * 静态工厂方法：执行聚合创建时的严格不变性检验
-   */
+  // 工厂创建方法
   static create(params: {
     studentId: string;
     campusId: string;
-    productSnapshot: OrderProductSnapshotData;
+    totalAmount: number;
     items: Array<{ skuId: string; unitPrice: number }>;
   }): Order {
-    // 门禁断言 1：订单明细项不能为空，且必须完整覆盖打包商品中的所有 SKU
     if (!params.items || params.items.length === 0) {
-      throw new BusinessRuleViolationException("创建订单失败：订单明细项不能为空");
+      throw new BusinessRuleViolationException("创建订单必须包含至少一门课程明细");
     }
 
-    const orderId = OrderId.generate();
     const order = new Order(
-      orderId,
+      OrderId.generate(),
       StudentId.create(params.studentId),
       CampusId.create(params.campusId),
-      Money.create(params.productSnapshot.price, "CNY"),
-      OrderStatus.pendingPayment(),
-      1 // 乐观锁初始版本号
+      Money.create(params.totalAmount, "CNY"),
+      OrderStatus.pendingPayment() // 新建订单初始状态必然是待支付
     );
 
-    // 装配局部实体：只能由聚合根在内部创建并推入私有集合
+    // 把明细塞进内部
     for (const item of params.items) {
-      order._items.push(OrderItem.create({
-        orderId: order.id.value,
-        skuId: item.skuId,
-        unitPrice: item.unitPrice,
-        quantity: 1,
-      }));
+      order._items.push(OrderItem.create({ ...item, orderId: order.id.value }));
     }
 
-    // 核心业务行为：在下单瞬间冻结各 SKU 的财务收入分摊比例，处理末位分差守恒
+    // 核心行为：在创建订单的同时，在自己内部计算并冻结财务分摊规则
     order.freezeAllocations();
 
     return order;
   }
 
   /**
-   * 充血业务行为：收入分摊冻结算法 (Revenue Allocation)
-   * 不变量守恒要求：无论各个 SKU 标价占比如何除不尽，所有明细分摊金额累加必须严格等于订单总应收金额！
+   * 聚合根内部守护的不变性规则：
+   * 无论各科目的标价怎么除不尽，所有科目分摊的金额加起来，必须分毫不差等于总金额！
    */
   private freezeAllocations(): void {
-    const totalReceivable = this._receivableAmount.amountMinor;
-    const totalOriginal = this._items.reduce((sum, item) => sum + item.unitPrice.amountMinor, 0);
+    const totalMinor = this._receivableAmount.amountMinor;
+    const totalOriginalMinor = this._items.reduce((sum, i) => sum + i.unitPrice.amountMinor, 0);
 
     let allocatedSum = 0;
     const count = this._items.length;
 
     for (let i = 0; i < count; i++) {
       const item = this._items[i];
-      let itemAllocatedMinor = 0;
+      let itemShareMinor = 0;
 
       if (i === count - 1) {
-        // 核心财务守门逻辑：末位兜底！
-        // 最后一门课程直接拿总金额减去前面所有已分摊之和，彻底消灭分厘舍入误差
-        itemAllocatedMinor = totalReceivable - allocatedSum;
+        // 核心财务逻辑：最后一门课程做末位兜底！
+        // 用总金额减去前面已经分摊完的所有金额，彻底消灭除不尽产生的 1 分钱差异
+        itemShareMinor = totalMinor - allocatedSum;
       } else {
-        // 按标价权重占比分摊
-        itemAllocatedMinor = Math.floor((item.unitPrice.amountMinor / totalOriginal) * totalReceivable);
-        allocatedSum += itemAllocatedMinor;
+        // 按单价占比分配
+        itemShareMinor = Math.floor((item.unitPrice.amountMinor / totalOriginalMinor) * totalMinor);
+        allocatedSum += itemShareMinor;
       }
 
       this._allocations.push(
         OrderSkuRevenueAllocation.create({
-          orderId: this.id.value,
           skuId: item.skuId,
-          allocatedAmount: Money.create(itemAllocatedMinor, "CNY"),
+          amount: Money.create(itemShareMinor, "CNY"),
         })
       );
     }
   }
 
   /**
-   * 充血业务行为：订单取消
-   * 保护状态机不变性：只有处于待支付状态的订单才允许取消
+   * 业务意图方法：取消订单
    */
   cancel(reason: string): void {
+    // 状态机门禁：只有待支付状态的订单才允许取消，已付款的不能随便取消
     if (!this._status.isPendingPayment()) {
-      throw new OrderNotCancellable(
-        `当前订单状态为 [${this._status.code}]，仅待支付订单允许取消，原因: ${reason}`
-      );
+      throw new OrderNotCancellable(`当前状态为 [${this._status.code}]，不允许取消`);
     }
 
     this._status = OrderStatus.cancelled();
     
-    // 触发领域事件：向内存事件总线广播订单取消事实
-    this.apply(new OrderCancelledDomainEvent(this.id.value, reason, new Date()));
+    // 产生领域事件：记录事实并通知外部
+    this.apply(new OrderCancelledDomainEvent(this.id.value, reason));
   }
 }
 ```
 
-#### 充血模型带来的革命性优势：
-在上述代码中，没有任何一个方法允许外部传入参数直接替换 `_allocations` 或修改 `_status`。
-如果想取消订单，必须显式调用 `order.cancel(reason)`；想要创建订单，必须调用 `Order.create(...)` 并自动触发分摊冻结。**所有的业务规则、校验分支和状态机跳跃，全部被物理锁死在聚合根内部**。这才是真正的充血模型（Rich Domain Model）。
+看这段代码的精妙之处：外部想取消订单，只能调 `order.cancel(reason)`，状态机校验不通过直接抛错，根本不存在被误改成其他状态的可能。金额分摊计算也不会漏掉一分钱，因为那是 `Order` 聚合根在自己内部自动算好的，外面连操心的机会都没有。
 
 ---
 
-### 3.4 领域服务 (Domain Service) 与 领域事件 (Domain Event)
+### 3.4 领域服务与领域事件
 
-虽然我们提倡尽可能将行为内聚到聚合根中，但在实际业务中，总有一些逻辑是无法自然安放进单一聚合内部的。
-
-#### 领域服务 (Domain Service)
-当一个业务操作**天然跨越多个不同类型的聚合根**，或者属于纯粹的算法运算过程时，强行把代码塞给某一个聚合根会导致其职责扭曲。此时，领域服务便应运而生。
-- **典型特征**：无状态（Stateless）、以纯行为为中心、位于领域层。
-- **项目实证**：`reconciliation-matcher.service.ts`（对账匹配引擎）。在每天拉取微信官方对账单与系统本地支付流水时，需要比对交易单号、支付时间窗口、金额一致性，识别出“掉单”、“重复支付”、“金额异常”等 6 种异常模式。这一算法并不属于单个 `Order`，也不属于单个 `PaymentTransaction`，因此独立封装为纯领域服务。
-
-#### 领域事件 (Domain Event)
-领域事件表示**领域中已经发生且对业务具有重要意义的事实**。
-- **命名规范**：必须采用过去时态（如 `OrderCreated`、`OrderPaid`、`LessonSessionFinished`、`EntitlementExhausted`）。
-- **不可篡改性**：事件代表既成事实，属性只读，携带事件发生的时间戳与核心业务载荷（Payload）。
-- **聚合内的产生与分发**：聚合根内部通过 `this.apply(new Event(...))` 暂存事件；当应用服务成功提交本地数据库事务后，再由底层框架将事件统一投递至事件总线，驱动下游模块做出反应。
+- **什么是领域服务 (Domain Service)？**  
+  有些业务行为天然不属于某一个单独的聚合根。比如“每日自动拉取微信对账单与系统内的全部支付流水进行比对”，这个比对逻辑既不单属于某一个订单，也不单属于某一笔流水，它是跨聚合的。这种逻辑就可以写成无状态的领域服务（如小象系统中的 `reconciliation-matcher.service.ts`）。
+- **什么是领域事件 (Domain Event)？**  
+  领域事件就是“领域里已经发生的一件重要事实”。它通常用过去式命名，比如 `OrderPaid`（订单已支付）、`LessonFinished`（课程已结束）。它只读不可改，用来通知其他模块“这事已经成了，你们该干嘛干嘛”。
 
 ---
 
-## 第四章 六边形分层架构与依赖倒置 (DIP) 落地
+## 第四章 分层架构与依赖倒置：保护核心不被污染
 
-很多项目声称使用了 DDD，但在目录分层上依然延续着传统三层的习惯，导致领域对象被底层的 ORM 框架、数据库注解（如 `@Entity`, `@Column`）以及 Web 框架深度绑架。在 `xiaoxiang-training-management` 中，我们严格落实了**六边形架构（Hexagonal Architecture，又称端口与适配器架构 Ports & Adapters）**。
+很多团队说自己在用 DDD，但打开代码一看，实体类上面标满了 `@Entity`、`@Table`、`@Column`，领域服务里到处注入了数据库连接和外部 HTTP 客户端。这种代码一旦底层换个数据库或者换个框架，整个业务代码全得跟着改。
 
-### 4.1 四大目录分层铁律 (`north / domain / south / pl`)
+为了保护核心业务逻辑不被技术细节污染，小象系统严格落实了**六边形架构（Hexagonal Architecture）与依赖倒置原则（DIP）**。
 
-在系统的每一个核心限界上下文（如 `bounded-contexts/billing/`）内部，我们都严格贯彻了四分层的目录拓扑结构：
+---
+
+### 4.1 四层目录结构与依赖方向
+
+在系统的核心模块（如 `billing/` 计费模块）中，目录被严格切分为四层：
 
 ```
 bounded-contexts/billing/
-├── domain/            # 1. 【领域内核层】：纯净 TypeScript，零外部技术依赖
-│   ├── order/         #    聚合根、局部实体、值对象
-│   ├── ports/         #    南向端口接口定义 (Repository Port, Client Port)
-│   ├── errors.ts      #    强类型领域异常体系
-│   └── services/      #    跨聚合领域服务
-├── north/             # 2. 【北向应用层 / 驱动侧】：CQRS 编排、用例事务、事件监听
-│   └── handlers/      #    CommandHandlers, QueryHandlers, EventHandlers
-├── south/             # 3. 【南向基础设施层 / 被驱动侧】：端口实现、持久化、适配器
-│   ├── adapters/      #    Repository 具体实现类
-│   ├── entities/      #    MikroORM ORM 数据库实体定义
-│   └── mappers/       #    双向映射器：Domain Aggregate <-> ORM Entity
-└── pl/                # 4. 【发布语言层 Published Language】：跨限界上下文公开契约
-    ├── commands/      #    对外暴露的 Command DTO
-    ├── queries/       #    对外暴露的 Query DTO
-    └── events/        #    集成事件定义 (Integration Events)
+├── domain/     # 1. 领域层：最核心。只有纯 TypeScript 代码，零外部技术框架依赖
+├── north/      # 2. 北向应用层：接收前端命令，开启事务，调领域对象做事
+├── south/      # 3. 南向基础设施层：负责实现数据怎么存进数据库、怎么调外部接口
+└── pl/         # 4. 发布语言层：对外暴露的 DTO 传参格式和事件契约
 ```
 
-#### 依赖方向倒置的架构拓扑图
-
-```mermaid
-graph TD
-    subgraph Drivers["北向：驱动侧适配器 (Driving / Inbound)"]
-        HTTP["HTTP API Controller<br>(Express / NestJS)"]
-        RPC["RPC Facade 接口"]
-        MQ["消息队列消费者 (Consumer)"]
-    end
-
-    subgraph North["应用层 (North)"]
-        CH["Command Handlers<br>(用例编排 / 事务开启)"]
-        QH["Query Handlers<br>(读模型直查)"]
-    end
-
-    subgraph Domain["领域内核层 (Domain) · 绝对纯洁"]
-        AR["聚合根 (Order Aggregate)"]
-        VO["值对象 (Money, Status)"]
-        PORT["仓储端口接口 (OrderRepositoryPort)"]
-    end
-
-    subgraph South["南向：被驱动侧适配器 (Driven / Outbound)"]
-        REPO_IMPL["仓储适配器实现<br>(OrderRepositoryImpl)"]
-        MAPPER["双向映射器 (OrderMapper)"]
-        ORM["MikroORM / PostgreSQL"]
-    end
-
-    HTTP -->|调用| CH
-    RPC -->|调用| CH
-    MQ -->|调用| CH
-    HTTP -->|查询| QH
-
-    CH -->|加载与推进| AR
-    AR -->|持有| VO
-    CH -->|通过接口依赖| PORT
-
-    REPO_IMPL -.->|实现接口 (DIP)| PORT
-    REPO_IMPL -->|调用映射| MAPPER
-    MAPPER -->|读写| ORM
-```
+这里有一条绝不允许违反的红线：
+> **`domain/` 目录里的代码，绝对禁止 `import` 任何数据库框架（如 MikroORM）、Web 框架（如 NestJS）或者网络库（如 Axios）。它只能使用纯粹的语言基础语法。**
 
 ---
 
-### 4.2 领域层的“绝对纯洁性”：零外部框架依赖
+### 4.2 依赖倒置原则 (DIP) 到底倒置了什么？
 
-在六边形架构中，**领域层（`domain/`）处于同心圆的最中央**。
-我们设定了一条不可逾越的架构红线：
-> **`domain/` 目录下的所有文件，禁止 `import` 任何带有技术实现特性的外部库（如 `@nestjs/*`、`@mikro-orm/*`、`express`、`axios` 等），只允许依赖语言内置运行时（如 `node:crypto`）和 `domain-shared` 基础构件。**
+很多初学者觉得“依赖倒置”这个词非常抽象。我们用图文对比把它彻底说清楚：
 
-这意味着：
-- 聚合根里面**没有** `@Entity()`、`@Table()`、`@Column()` 注解。
-- 领域服务里面**没有** `@Injectable()`、`@Autowired()` 装饰器。
-- 领域异常**没有** HTTP 状态码（如 `400`、`500`）的概念。
+- **传统依赖方式（正常依赖）**：  
+  业务逻辑直接调用数据访问层（DAO）。业务代码依赖数据库代码。  
+  `业务 Service` $\longrightarrow$ `import MySQL_DAO`
 
-#### 纯洁性带来的巨大工程收益：
-1. **秒级纯内存单元测试**：针对 `Order` 聚合根与 `Money` 值对象的所有业务用例测试，无需启动 NestJS 容器，无需连接 Docker 数据库，全部都在纯 Node.js 内存环境中瞬间完成。几百个领域测试用例在 1 秒内执行完毕，研发自测反馈循环达到极致。
-2. **底层技术替换免疫**：即使未来将底层数据库从 PostgreSQL 替换为 MongoDB，或者将 ORM 从 MikroORM 换成 Prisma，`domain/` 目录下的核心业务代码**不需要改动任何一个字符**。
+- **依赖倒置方式（反向依赖）**：  
+  业务层说：“我需要一个能存取订单的东西，它长什么样由我定一个接口（Port 端口）”。  
+  数据库层说：“好的，我是具体的实现细节，我来遵从你定的接口”。  
+  `业务 Domain (定义接口 OrderRepositoryPort)` $\longleftarrow$ `数据库 South (实现该接口)`
 
----
-
-### 4.3 依赖倒置原则 (DIP) 与仓储端口 (Port) 的工程实现
-
-在传统的架构中，高层模块（业务逻辑）直接 `import` 并调用低层模块（数据访问层 DAO）。
-而在 DDD 中，我们依托 **依赖倒置原则（Dependency Inversion Principle, DIP）**：
-- **高层模块不应该依赖低层模块，二者都应该依赖于抽象。**
-- **抽象不应该依赖细节，细节应该依赖抽象。**
-
-#### 代码实证三：`domain/ports/order.repository.ts` 纯接口契约
-
-以下是定义在领域内核内部的仓储端口：
+#### 代码实证：`domain/ports/order.repository.ts` 纯接口
+看领域层内部定义的仓储接口，没有任何 SQL 和数据库包：
 
 ```typescript
 import type { Order } from "../order/order.aggregate";
-import type { OrderId, StudentId, CourseSkuId, EnrollmentSubmissionId, CourseProductId } from "../../../../domain-shared";
+import type { OrderId, StudentId } from "../../../../domain-shared";
 
 /**
- * 订单聚合仓储端口符号标记 (Injection Token)
- * 用于 NestJS 依赖注入容器在运行时绑定南向具体实现
- */
-export const ORDER_REPOSITORY = Symbol("ORDER_REPOSITORY");
-
-/**
- * 仓储端口接口：完全面向领域模型定义，零 SQL 与 ORM 痕迹
- * 职责：提供类似“内存集合 (Collection-oriented)”形态的聚合根存取抽象
+ * 领域层只定义自己需要什么存取能力
+ * 没有任何 ORM 和数据库的影子
  */
 export interface OrderRepositoryPort {
-  /**
-   * 按强类型聚合根唯一标识查找完整订单聚合
-   */
   findById(orderId: OrderId): Promise<Order | null>;
-
-  /**
-   * 业务查询：根据报名来源提交 ID 与课程商品 ID 查找有效订单
-   */
-  findActiveBySourceAndProduct(
-    sourceSubmissionId: EnrollmentSubmissionId,
-    productId: CourseProductId,
-  ): Promise<Order | null>;
-
-  /**
-   * 业务查询：校验学员当前已激活的 SKU 列表（防止重复购课）
-   */
-  findActiveSkuIds(studentId: StudentId, skuIds: readonly CourseSkuId[]): Promise<string[]>;
-
-  /**
-   * 持久化聚合根：原子保存整个聚合根内部的所有状态变迁
-   */
   save(order: Order): Promise<void>;
 }
 ```
 
-在上述代码中，领域层只定义了 `OrderRepositoryPort` 接口，它规定了业务需要什么存取能力；而具体这个仓储是用 SQL 拼装、用 ORM 查询还是从缓存中取，领域层一概不知。具体实现类被下放至 `south/adapters/order.repository.ts` 中，反向实现这一端口。这便是依赖倒置的真正威力。
-
----
-
-## 第五章 CQRS 与 Transactional Outbox 跨上下文集成
-
-当系统按限界上下文拆分为多个自治单元后，随之而来的最大挑战就是：**如何解决跨上下文的数据同步与事务一致性问题？**
-
-### 5.1 命令查询职责分离 (CQRS) 双通道架构
-
-在复杂系统中，写操作（Command）和读操作（Query）的关注点截然不同：
-- **写模型（Write Model）**：追求强一致性、高内聚，必须经过聚合根的完整生命周期校验，守护业务规则。
-- **读模型（Read Model）**：追求高性能、灵活拼装、跨域关联展示，不需要执行业务逻辑校验。
-
-在本项目中，我们基于 `@nestjs/cqrs` 实现了严密的读写分离：
-1. **写通道**：HTTP Controller 接收前端请求 $\to$ 组装为 `CreateOrderCommand` $\to$ 发送至 `CommandBus` $\to$ 触发 `CreateOrderHandler` $\to$ 开启数据库事务 $\to$ 加载聚合根执行充血行为 $\to$ 仓储持久化。
-2. **读通道**：在 `modules/operations-api/` 中，针对运营看板和复杂报表，我们直接编写 `GetOrderDashboardCountsHandler`，绕过聚合根封装，利用底层 SQL 视图进行高性能宽表查询，彻底解放了写模型的负担。
-
----
-
-### 5.2 跨上下文事务陷阱：严禁跨 BC 的本地大事务
-
-在很多单体架构演进过程中，开发者最容易犯的低级错误是：**在一个本地数据库事务中，同时跨多个限界上下文修改数据表**。
-
-#### 典型反模式警示：
+具体这个接口怎么实现？南向基础设施层写了一个类：
 ```typescript
-// ❌ 极其致命的跨上下文大事务代码：直接摧毁了微服务演进可能
+// 位于 south/adapters/order.repository.ts
+export class OrderRepositoryImpl implements OrderRepositoryPort {
+  constructor(private readonly em: EntityManager) {}
+
+  async findById(orderId: OrderId): Promise<Order | null> {
+    // 这里才真正用 MikroORM 从 PostgreSQL 查数据库表
+    const ormEntity = await this.em.findOne(OrderOrmEntity, { id: orderId.value });
+    return ormEntity ? OrderMapper.toDomain(ormEntity) : null;
+  }
+
+  async save(order: Order): Promise<void> {
+    const ormEntity = OrderMapper.toPersistence(order);
+    await this.em.persistAndFlush(ormEntity);
+  }
+}
+```
+
+#### 这种倒置带来的巨大好处：
+你给 `Order` 聚合根写单元测试的时候，**根本不需要连数据库，也不需要启动复杂的后端服务器**。在内存里写一个简单的数组模拟仓储，1 秒钟就能跑完几百个核心业务测试用例。测试变得极其快速、稳定。
+
+---
+
+## 第五章 CQRS 与 Transactional Outbox：跨模块通信与读写分离
+
+当系统被拆分为多个独立的上下文之后，很多团队在日常开发中会遇到两类很头疼的问题：
+1. **查报表很慢、很别扭**：后台管理系统需要展示一个“校区运营大盘”，既要看销售额，又要看排课率，还要看消课数。如果强行按 DDD 的规矩，把各个聚合根一个一个从数据库加载进内存，再去拼装 DTO，性能会慢得像蜗牛。
+2. **跨模块操作容易写成死锁的大事务**：学生交完钱，开发人员顺手在一个事务里把课时表改了、把微信通知发了，一旦外部接口网络卡顿，整个系统瞬间被拖垮。
+
+为了优雅地解决这两个问题，我们来看看 **CQRS（读写分离）** 和 **Transactional Outbox（事务发件箱）** 是怎么配合工作的。
+
+---
+
+### 5.1 什么是 CQRS（命令查询职责分离）？
+
+很多技术资料把 CQRS（Command Query Responsibility Segregation）说得神乎其神，好像一定要搞两套数据库、搞复杂的事件溯源。
+
+**其实说白了，CQRS 的核心思想只有一句话：写数据和读数据，走两条完全不同的路。**
+
+- **写通道（Command 命令通道）**：  
+  只要是改变系统状态的操作（比如创建订单、取消订单、学生进班、消课），都必须严格走聚合根。为什么？因为写数据必须保证数据正确性，必须经过 `Order` 或者 `ClassGroup` 内部的门禁和业务规则校验，保证哪怕天塌下来，数据库里的核心状态也是合法的。
+- **读通道（Query 查询通道）**：  
+  只要是不修改数据的展示类操作（比如分页列表、运营看板、统计报表），**根本不需要去加载复杂的聚合根，更不需要在内存里把值对象拼来拼去**。怎么快就怎么查，直接写只读的 SQL 去查多表关联视图，直接映射成前端要的 DTO 扔回去。
+
+在小象系统的 `operations-api`（运营报表模块）中，查询校区月度数据时，我们直接编写 `GetOperationsDashboardCountsHandler`，用一句高效的只读 SQL 从只读副本把数据查出来返回，耗时只有 10 毫秒。写操作保证逻辑纯洁严谨，读操作追求极致高效，两边互不打扰，这就是最实用的 CQRS。
+
+---
+
+### 5.2 跨模块协同：坚决消灭跨库本地大事务
+
+讲完了读写分离，我们来看跨模块写数据的场景。
+
+很多初学者容易写出下面这种代码：
+```typescript
+// ❌ 极其危险的跨模块大事务
 await em.transactional(async () => {
-  // 1. 修改计费模块的订单表
-  await orderRepo.save(order);
-  
-  // 2. 直接跨界修改课时模块的账本表
-  await entitlementRepo.save(entitlementAccount);
-  
-  // 3. 甚至直接修改微信模板消息发送记录
-  await notificationService.sendPaymentSuccessNotice(...);
+  await orderRepo.save(order);               // 1. 改计费模块的订单表
+  await entitlementRepo.save(account);      // 2. 顺便直接改课时模块的账本表！
+  await wechatClient.sendTemplateNotice();  // 3. 顺便调微信接口发个模板通知！
 });
 ```
-这种代码的危害是毁灭性的：
-- 它制造了强烈的数据库连接锁竞争，导致系统高并发时出现大量死锁。
-- 只要微信通知接口超时或者课时表校验失败，原本合法的支付记录也会被连带回滚，导致真实资金状态与数据库完全脱节！
-- 彻底斩断了未来将计费、课时拆分为独立微服务进行弹性扩缩容的技术路径。
+这种代码是灾难性的：
+1. **性能拖垮系统**：微信服务器万一偶尔卡顿 3 秒，数据库连接就会被这个事务一直霸占着不释放。一旦遇到做活动高并发，几百个请求一瞬间就能把数据库连接池全部耗尽，整站直接瘫痪。
+2. **资金账目混乱**：万一微信发通知接口抛了个异常，原本已经付完钱的订单竟然被本地事务全部回滚了，变成未支付！家长钱扣了，系统却显示没付，客服电话立刻被打爆。
+3. **架构无法拆分**：以后想把计费模块独立部署，这段代码就会彻底报错，因为跨了网络你根本没法开本地事务。
 
-#### DDD 的正统解法：最终一致性（Eventual Consistency）
-聚合根之间的协同，尤其是跨限界上下文的协同，**必须且只能通过领域集成事件（Integration Events）实现最终一致性**。计费模块支付完成并提交本地事务后，发出“订单已支付”事件；课时模块在独立事务中消费该事件并增加课时。
+**正统的架构原则只有一条：一个本地数据库事务，严格只修改自己上下文的一张或几张表。跨模块的联动，必须走最终一致性——发事件通知下游异步处理。**
+
+计费模块完成支付后，发出一个事件通知：“订单 X 已经付完款了”。课时模块监听到这个通知后，在自己的独立事务里给学生开通课时。
 
 ---
 
-### 5.3 Transactional Outbox 模式深度拆解
+### 5.3 Transactional Outbox（事务发件箱）模式
 
-然而，异步事件驱动架构引入了一个经典的分布式可靠性难题：**“先发消息还是先提交数据库事务？”**
-- 如果先提交数据库，消息发送由于网络抖动失败，下游课时账户将永远得不到开通（掉单）。
-- 如果先发消息，消息发送成功后数据库提交由于并发锁冲突回滚，下游却开通了课时（超卖薅羊毛）。
+但是发事件会遇到一个经典的可靠性问题：
+- 如果先提交订单事务，再去往消息队列发消息：万一网络断了消息没发出去，学员付了钱却没有课时（掉单）。
+- 如果先发消息，再去提交订单：万一消息发出去了，数据库提交时由于锁冲突报错回滚了，学员没付钱却白嫖到了课时。
 
-为了百分之百保证跨限界上下文数据传递的绝对可靠，我们在架构中完整落地了 **Transactional Outbox（事务性发件箱）模式**。
+为了彻底解决这个问题，工程上最成熟的方案就是 **Transactional Outbox（事务发件箱模式）**。
 
-#### Outbox 架构全景时序图
+#### 核心原理：
+我们不在业务代码里直接调网络发消息，而是**在数据库里建一张叫 `outbox_events` 的发件箱表**。
+当订单支付成功时，**在同一个数据库事务里做两件事**：
+1. 更新订单表为已支付；
+2. 往 `outbox_events` 表里插一条待发通知记录。
+
+因为在同一个事务里，这两件事要么同时成功，要么同时失败。随后，后台有一个专门的异步扫描线程，从发件箱表里捞出待发通知，稳稳当当地发给下游模块。
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant AppService as 计费应用服务 (PaymentHandler)
-    participant PG_Biz as PostgreSQL (orders 业务表)
-    participant PG_Outbox as PostgreSQL (outbox_events 发件箱)
-    participant Worker as 异步 Outbox 扫描线程 (Worker)
-    participant EventBus as 分布式消息队列 / Redis
-    participant Entitlement as 下游课时上下文 (Entitlement)
+    actor Parent as 家长
+    participant App as 计费应用服务
+    participant DB as 本地数据库 (PostgreSQL)
+    participant Worker as 后台发信线程
+    participant Entitlement as 课时上下文
 
-    Note over AppService, PG_Outbox: 开启同一本地数据库事务 (Atomic Transaction)
-    AppService->>PG_Biz: 1. 更新订单为已支付 (UPDATE orders)
-    AppService->>PG_Outbox: 2. 写入集成事件信封 (INSERT outbox_events)
-    Note over AppService, PG_Outbox: 提交事务 (原子双写：要么同生，要么同死)
+    Parent->>App: 支付成功回调
+    Note over App, DB: 开启本地数据库事务
+    App->>DB: 1. 更新订单为已支付 (orders 表)
+    App->>DB: 2. 写入一条待发事件 (outbox_events 表)
+    Note over App, DB: 提交事务 (原子双写，绝不丢数据)
 
-    loop 毫秒级可靠扫描
-        Worker->>PG_Outbox: 3. 拉取待分发事件 (SELECT FOR UPDATE SKIP LOCKED)
-        Worker->>EventBus: 4. 投递事件到消息总线
-        EventBus-->>Worker: ACK 确认
-        Worker->>PG_Outbox: 5. 标记事件状态为 PROCESSED
+    loop 后台定时或通知拉取
+        Worker->>DB: 3. 扫描未发送的事件
+        Worker->>Entitlement: 4. 派发 OrderPaid 事件
+        Entitlement->>Entitlement: 5. 开辟独立事务开通课时
+        Worker->>DB: 6. 标记该事件为已完成
     end
-
-    EventBus->>Entitlement: 6. 监听 OrderPaidIntegrationEvent
-    Entitlement->>Entitlement: 7. 开启独立事务开通课时账户 (幂等消费)
 ```
 
-#### 代码实证四：`outbox-writer.service.ts` 源码深度剖析
-
-以下是 `apps/server/src/shared/kernel/outbox/outbox-writer.service.ts` 的核心实现源码。请特别关注其通过断言当前事务上下文实现的 **Fail-Fast 防御机制** 与 **OpenTelemetry 全链路追踪继承**：
+#### 项目真实源码：`outbox-writer.service.ts`
+看小象系统中是如何严格从代码层面强制落实这一规则的：
 
 ```typescript
 import { Injectable } from "@nestjs/common";
 import { EntityManager } from "@mikro-orm/core";
 import { type SqlEntityManager } from "@mikro-orm/postgresql";
-import { trace, type Tracer } from "@opentelemetry/api";
-import { IntegrationEvent } from "../../../domain-shared/events/integration-event.base";
-import { currentTraceparent } from "../telemetry/otel";
 import { OutboxEventEntity } from "./outbox-event.entity";
 
-/**
- * 事务性发件箱 (Transactional Outbox) 写入端口
- * 职责：严格保障领域集成事件与业务数据在同一数据库事务中原子落盘
- */
 @Injectable()
 export class OutboxWriter {
-  private readonly tracer: Tracer = trace.getTracer("outbox-writer");
-
   constructor(private readonly em: EntityManager) {}
 
-  /**
-   * 在当前正在进行的业务事务上下文中，原子追加一条 Outbox 记录
-   * @param event 待发布的领域集成事件
-   */
   async append(event: IntegrationEvent): Promise<void> {
     const em = this.em as unknown as SqlEntityManager;
 
-    // 核心架构防御规则 (Fail-Fast)：
-    // 必须强制检查当前是否处于显式事务上下文内！
-    // 严禁任何开发者在无事务环境下调用 append，否则事件与数据分离将破坏原子性
+    // 核心架构防护：必须检查当前是否处于数据库事务内部！
+    // 如果有开发者试图在事务外面直接发事件，直接抛错拦截，防止出现数据丢失的漏洞
     if (!em.isInTransaction()) {
       throw new Error(
-        "架构违规拦截：OutboxWriter.append 必须在数据库事务上下文内调用！" +
-        "禁止业务数据事务提交与事件落盘分离，否则进程崩溃会导致事件丢失。"
+        "架构防护拦截：OutboxWriter.append 必须在数据库事务内部调用！" +
+        "禁止业务数据提交与事件记录分离，否则进程崩溃可能导致丢事件。"
       );
     }
 
-    // 提取当前链路的 OpenTelemetry TraceContext，注入事件信封
-    // 确保异步 Worker 投递到下游时，分布式调用链路日志依然连续
-    event.traceparent = currentTraceparent() ?? "";
-
-    this.tracer.startActiveSpan("outbox.append", (span) => {
-      try {
-        span.setAttributes({
-          "outbox.event_id": event.eventId,
-          "outbox.event_name": event.eventName,
-        });
-
-        // 将集成事件序列化为持久化实体，由外层事务统一提交落盘
-        const record = em.create(OutboxEventEntity, {
-          eventId: event.eventId,
-          eventName: event.eventName,
-          schemaVersion: event.schemaVersion,
-          occurredAt: event.occurredAt,
-          producer: event.producer,
-          payload: JSON.stringify(event.payload),
-          status: "PENDING",      // 初始状态为待投递
-          retryCount: 0,
-          traceparent: event.traceparent,
-          createdAt: new Date(),
-        });
-
-        em.persist(record);
-      } finally {
-        span.end();
-      }
+    // 与当前的业务操作共享同一个事务连接，共同提交
+    const record = em.create(OutboxEventEntity, {
+      eventId: event.eventId,
+      eventName: event.eventName,
+      payload: JSON.stringify(event.payload),
+      status: "PENDING", // 状态初始为待投递
+      createdAt: new Date(),
     });
+
+    em.persist(record);
   }
 }
 ```
 
-#### 设计精妙之处：
-1. **原子性保障**：由于 `OutboxEventEntity` 是通过当前正在执行业务更新的同一个 `EntityManager` 进行 `persist` 的，因此它与业务变更（如更新订单状态）共享同一个物理数据库连接与同一个 `BEGIN ... COMMIT` 事务周期。要么全部落盘，要么全部回滚，**从物理根源上彻底杜绝了“数据改了但事件丢了”的灾难**。
-2. **异步高可用投递**：独立的后台 Worker 进程（`worker.ts`）通过带悲观锁的轻量轮询语句（`SELECT ... FOR UPDATE SKIP LOCKED`）并行抓取待投递事件并推向下游，即使下游服务宕机数小时，事件依然安全静默在发件箱中，待网络恢复后自动重试并有序送达。
+---
+
+## 第六章 仓储与双向映射器：拆开数据库与业务对象的锁链
+
+初学 DDD 的同学经常会问一个问题：**“为什么不能直接把从数据库查出来的那个实体，拿来当业务领域对象用？非要中间再做一次对象转换，不麻烦吗？”**
+
+答案是：**必须转换，因为它们两者的使命从根本上就是冲突的。**
+
+### 6.1 数据库实体 vs 业务领域实体
+
+- **数据库实体（ORM Entity）**：是为了迎合关系型数据库设计的。它需要大量的公开属性供 ORM 框架做反射注入，字段设计要考虑主外键、考虑联表索引、通常是扁平的二维结构。
+- **领域实体与聚合根（Domain Model）**：是为了保护业务规则设计的。它的属性必须高度私有化，不给外部任意修改的口子，里面包含着复杂的值对象、状态机和计算方法。
+
+如果把这两个概念强行捏成同一个类，你的领域聚合根为了让 ORM 能存进去，就不得不把所有内部字段改成 `public`，给每个字段加 `getter/setter`。一旦加了，好不容易建立起来的防御性边界瞬间荡然无存。
 
 ---
 
-## 第六章 仓储防腐与 Mapper 隔离设计
+### 6.2 双向映射器 (Mapper) 的真实代码
 
-许多开发者在实践 DDD 时最常感到痛苦的一点就是：**为什么领域聚合根不能直接就是 ORM 的实体类？**
+解决这个矛盾的标准工程做法就是 **双向映射器（Bi-directional Mapper）**。
+它就像一个海关翻译官，专门负责在“数据库扁平数据”和“业务充血聚合根”之间做显式翻译：
+- `toDomain()`：从数据库查出数据，还原成业务聚合根；
+- `toPersistence()`：业务做完决策后，把聚合根拆解成数据库能理解的扁平列。
 
-### 6.1 持久化模型 (ORM Entity) $\neq$ 领域模型 (Domain Model)
-
-答案是：**它们两者的设计目标存在着不可调和的天然张力（Impedance Mismatch）**。
-
-| 维度 | 持久化模型 (ORM Entity) | 领域模型 (Domain Model / Aggregate Root) |
-|---|---|---|
-| **核心诉求** | 迎合关系数据库的物理存储结构、外键、索引、联表效率 | 迎合业务概念的不变性边界、封装性与行为完整性 |
-| **访问控制** | 字段几乎全公开（需要大量的 public getter/setter 供 ORM 反射注入） | 字段高度私有（private），严禁暴露修改通道，仅暴露业务意图方法 |
-| **结构形态** | 倾向于扁平化（Foreign Key、多对一关联 ID） | 倾向于深层富树状结构（包含多级值对象集合、状态机枚举对象） |
-| **生命周期** | 无业务约束，可任意从数据库加载部分字段并更新 | 必须整体作为一个一致性生命周期单元被加载与持久化 |
-
-如果强行将两者合二为一，聚合根就会被迫加上一大堆 `@Entity()`、`@ManyToOne()` 等注解，业务字段被迫设为 `public`，DDD 的封装性将在 ORM 的侵蚀下瞬间瓦解。
-
----
-
-### 6.2 双向映射器 (Bi-directional Mapper) 的工业级实现
-
-为了彻底切断数据库持久化细节对领域内核的污染，我们在南向基础设施层引入了 **双向映射器（Mapper）** 机制。
-
-#### 双向转换流转图
-
-```mermaid
-flowchart LR
-    subgraph South["南向基础设施 (South)"]
-        DB[(PostgreSQL 关系库)] <-->|SQL / MikroORM| ORM["OrderOrmEntity<br>(扁平关系实体 / 关系外键)"]
-        ORM <-->|OrderMapper 显式双向翻译| DOMAIN["Order Aggregate Root<br>(充血聚合根 / 纯净值对象)"]
-    end
-
-    subgraph Core["领域层 (Domain)"]
-        DOMAIN <-->|业务行为| PORT["OrderRepositoryPort"]
-    end
-```
-
-#### 代码实证五：`billing/south/mappers/order.mapper.ts` 源码拆解
-
-以下是小象培训系统中订单映射器的核心实现。请注意观察 `toDomain()` 如何从扁平数据库记录逐步还原出不可变的值对象与局部实体树；以及 `toPersistence()` 如何解构聚合根写入数据库：
+以下是小象系统中的真实映射器代码（节选自 `order.mapper.ts`）：
 
 ```typescript
 import { Order } from "../../domain/order/order.aggregate";
-import { OrderItem } from "../../domain/order/order-item";
 import { OrderOrmEntity } from "../entities/order.orm-entity";
-import { OrderItemOrmEntity } from "../entities/order-item.orm-entity";
-import { Money, OrderId, StudentId, CampusId, CourseProductId } from "../../../../domain-shared";
+import { Money, OrderId, StudentId, CampusId } from "../../../../domain-shared";
 import { OrderStatus } from "../../domain/order/order-status.vo";
-import { OrderNo } from "../../domain/order/order-no.vo";
-import { UtcInstant } from "../../domain/order/utc-instant.vo";
 
-/**
- * 订单双向映射器 (OrderMapper)
- * 职责：在关系型持久化模型 (ORM) 与业务充血领域模型 (Domain) 之间搭建绝缘隔离带
- */
 export class OrderMapper {
   /**
-   * 将数据库 ORM 实体还原为完全充血的纯净领域聚合根
-   * 包含：从基础类型重新构建值对象、组装私有子实体列表、初始化版本号
+   * 1. 从数据库记录还原为充血领域聚合根
    */
-  static toDomain(entity: OrderOrmEntity): Order {
-    // 1. 还原聚合根内部的局部实体集合 (OrderItem)
-    const items = (entity.items?.getItems() ?? []).map((itemOrm: OrderItemOrmEntity) => {
-      return OrderItem.fromPersistence({
-        id: itemOrm.id,
-        orderId: itemOrm.order.id,
-        skuId: itemOrm.skuId,
-        unitPrice: itemOrm.unitPriceMinor, // 传入分值整数
-        quantity: itemOrm.quantity,
-        skuSnapshot: JSON.parse(itemOrm.skuSnapshotJson),
-      });
-    });
-
-    // 2. 调用聚合根的受保护工厂方法从持久化恢复状态
-    // 注意：这里绝不能走业务创建工厂 Order.create()，因为那是针对“新订单”的，会重新计算分摊和校验
+  static toDomain(orm: OrderOrmEntity): Order {
+    // 关键点：把数据库里的基础数字重新包装成强类型的值对象
     return Order.fromPersistence({
-      id: OrderId.create(entity.id),
-      orderNo: entity.orderNo,
-      studentId: StudentId.create(entity.studentId),
-      campusId: CampusId.create(entity.campusId),
-      productId: CourseProductId.create(entity.productId),
-      productSnapshot: JSON.parse(entity.productSnapshotJson),
-      originalAmount: entity.originalAmountMinor,
-      receivableAmount: entity.receivableAmountMinor,
-      status: OrderStatus.fromCode(entity.statusCode),
-      version: entity.version, // 乐观并发控制版本号
-      createdAt: entity.createdAt,
-      items: items,
+      id: OrderId.create(orm.id),
+      orderNo: orm.orderNo,
+      studentId: StudentId.create(orm.studentId),
+      campusId: CampusId.create(orm.campusId),
+      // 数据库存的是整数分，还原成具备自校验能力的 Money 对象
+      receivableAmount: Money.create(orm.receivableAmountMinor, orm.currency),
+      // 数据库存的是简短字符串，还原成具备合法性判断的状态对象
+      status: OrderStatus.fromCode(orm.statusCode),
+      version: orm.version, // 乐观锁版本号
+      createdAt: orm.createdAt,
     });
   }
 
   /**
-   * 将业务充血聚合根解构并写入数据库 ORM 实体
-   * 职责：提取值对象内部的原生标量值，映射为 SQL 列数据
+   * 2. 把充血领域聚合根拆解为数据库 ORM 实体
    */
-  static toPersistence(domain: Order, existingOrm?: OrderOrmEntity): OrderOrmEntity {
-    const orm = existingOrm ?? new OrderOrmEntity();
-
-    // 标量字段映射：值对象 -> 原始数据库类型 (Primitive)
+  static toPersistence(domain: Order): OrderOrmEntity {
+    const orm = new OrderOrmEntity();
+    
+    // 提取聚合根内值对象的基础标量值，存入对应的数据库字段
     orm.id = domain.id.value;
     orm.orderNo = domain.orderNo.value;
     orm.studentId = domain.studentId.value;
     orm.campusId = domain.campusId.value;
-    orm.productId = domain.productId.value;
     
-    // 资金值对象解构为最小单位整数（分），无损存储
+    // 把 Money 对象解构为基础整数存库
     orm.receivableAmountMinor = domain.receivableAmount.amountMinor;
     orm.currency = domain.receivableAmount.currency;
     
-    // 状态值对象解构为简短代码字符串
+    // 把状态对象解构成简短字符串代码
     orm.statusCode = domain.status.code;
-    
-    // 复杂商品快照序列化为 JSONB 存储
-    orm.productSnapshotJson = JSON.stringify(domain.productSnapshot);
-    
-    // 乐观锁版本号传递
     orm.version = domain.version;
 
     return orm;
@@ -1029,57 +788,27 @@ export class OrderMapper {
 }
 ```
 
-#### 隔离价值总结：
-通过 Mapper 这一层显式的“胶水代码”，领域模型与数据库结构之间的所有直接耦合被全部剥离。数据库字段为了查询性能想要加冗余列、做分表甚至变更列名，只需要修改 `OrderOrmEntity` 和 `OrderMapper`；而上层的所有聚合根、领域服务、应用服务用例逻辑**完全无感**。
+有了这一层映射器，数据库就算为了优化查询要改列名、加索引，甚至做分库分表，也只需要修改这一处映射逻辑，上层的所有业务核心代码完全不受任何干扰。
 
 ---
 
-## 第七章 总结与架构演进心智
+## 第七章 总结与架构实战落地建议
 
-### 7.1 DDD 不是银弹：边界与权衡法则
+经过以上六个章节的层层递进，我们回顾一下整套 DDD 架构是如何像咬合的齿轮一样运转起来的：
 
-在技术架构的世界里，**没有任何一种架构范式是只有收益而没有代价的**。
-当我们完整审视了 `xiaoxiang-training-management` 这套 DDD 体系之后，必须清醒地认识到落地 DDD 所付出的客观工程成本：
-
-```mermaid
-quadrantChart
-    title 系统复杂度与架构选型象限图
-    x-axis 低业务复杂度 --> 高业务复杂度
-    y-axis 低技术/性能要求 --> 高技术/性能要求
-    quadrant-1 "严格 DDD 六边形 + 最终一致性 (如计费/履约核心)"
-    quadrant-2 "高并发响应式 / 专项技术优化 (如推送网关)"
-    quadrant-3 "轻量快速通道 / 传统三层 CRUD (如字典/配置)"
-    quadrant-4 "简单领域模型 / 贫血 Service 快速原型"
-    "小象计费与排课核心域": [0.85, 0.75]
-    "小象字典配置与校区": [0.15, 0.25]
-    "小象运营看板与报表": [0.45, 0.85]
-    "临时营销活动单页": [0.20, 0.40]
-```
-
-1. **样板代码增多**：由于引入了值对象、聚合根、端口接口、Mapper 转换类，开发人员新增一个简单字段（如订单备注）可能需要改动 4 到 5 个文件，开发路径明显拉长。
-2. **学习曲线陡峭**：初级工程师很容易由于惯性思维，在聚合外部随意调用仓储查询，或者在领域模型中注入数据库依赖，需要资深架构师通过严格的代码审查（Code Review）和规范工具进行纠偏。
-3. **团队协作成本**：统一语言的提炼和限界上下文的划分需要与业务专家进行高频、深入的磨合对齐，如果业务模式本身尚处于极不稳定的摸索期，过早进行重量级聚合建模可能会带来高昂的重构代价。
-
-因此，**DDD 绝非所有项目的默认必选项**。对于生命周期极短的营销活动、单纯的数据报表系统、或者业务规则极为简单的单表增删改查，强行套用 DDD 纯属“杀鸡用牛刀”。
+1. **战略上划清楚边界**：通过统一语言消除沟通误区；用限界上下文把大泥球拆解成独立的业务小王国；同一个学生在不同上下文里有明确的独立角色。
+2. **战术上锁死业务规则**：用不可变的值对象消灭浮点数和参数合法性漏洞；用充血聚合根守护业务状态机和关键算法，绝不给外部随意篡改数据的机会。
+3. **架构上切断技术污染**：依靠六边形分层和依赖倒置，让核心业务代码保持绝对纯洁，实现毫秒级的快速单元测试；依靠 Mapper 隔离数据库持久化细节。
+4. **集成上依靠最终一致性**：绝不搞跨模块的大事务，依靠 Transactional Outbox 事务发件箱实现可靠的事件传递。
 
 ---
 
-### 7.2 给独立架构师与技术团队的五条落地军规
+### 给开发团队的五条实用建议
 
-经过本系统的全闭环实践与持续演进，我们总结出以下五条高度凝练的实战军规，供所有正在或准备落地 DDD 的技术团队参考：
+最后，总结五条最实在的实战落地建议：
 
-1. **业务先于技术，统一语言先于代码**：
-   永远不要在没有完全理解业务全生命周期之前就开始画表结构。花在业务术语收敛和限界上下文划分上的时间，会在未来百倍地补偿在系统维护成本中。
-2. **坚决守住领域层的纯洁性**：
-   严禁任何技术框架、数据库注解、第三方 SDK 侵入 `domain/` 目录。让领域对象始终保持为纯净的 Plain TypeScript/Java Object，这是获得极速单元测试与高可维护性的唯一捷径。
-3. **以聚合根为单位，保护不变性与事务边界**：
-   杜绝外部代码直接对内部实体的 Setter 肆意修改。所有状态流转必须由聚合根的充血业务意图方法驱动；一个本地数据库事务严格只修改一个聚合根。
-4. **跨上下文协同无条件走最终一致性**：
-   坚决消灭跨越限界上下文的数据库本地大事务。依托 Transactional Outbox 模式，实现业务持久化与领域事件落盘的物理原子性，借助异步可靠投递解耦跨模块依赖。
-5. **坚持选择性 DDD，拒绝教条形式主义**：
-   系统不是所有模块都配得上完整的六边形架构。识别出系统中真正带来商业价值与防御风险的“核心域”，在此重兵布防；对于支撑域与通用域，果断放宽要求采用轻量三层通道，将宝贵的人力集中在最能产生复利的业务核心上。
-
----
-
-> **“代码不应是数据的死板容器，而应是业务知识的生动映射。”**  
-> 当业务的演进能够像齿轮咬合般自然地体现在领域模型的演变中时，软件系统才能真正具备抵御时间与复杂度侵蚀的生命力。
+1. **先做人话对齐，再动笔写代码**：在没搞清楚完整的业务闭环之前，千万不要盲目去数据库建表。
+2. **区分核心域，拒绝全面 DDD**：简单的增删改查继续用简单的三层写，把 DDD 用在真正多变、复杂、涉及核心利益的核心业务上。
+3. **守住 domain 目录的纯洁底线**：只要在 domain 目录下看到了对数据库框架或者 Web 框架的引用，一律打回重构。
+4. **一个事务只修改一个聚合根**：跨模块的联动老老实实通过事件通知异步处理，不要图省事把它们绑在同一个数据库大事务里。
+5. **别把 DDD 当玄学**：DDD 的本质是面向对象编程的严谨回归。只要你的对象开始对自己负责了、不再只是个空壳子了，你就已经走在正确的 DDD 道路上了。
