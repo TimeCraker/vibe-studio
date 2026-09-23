@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>张桓睿 · 游戏客户端开发</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+
+    :root {
+      --coral: #2A3140;
+      --coral-deep: #B85A38;
+      --clay: #3A4456;
+      --gold: #C9A06A;
+      --gold-deep: #8D7048;
+      --peach: #E0C4A8;
+      --bone: #F3EDE4;
+      --cream: #EDE8E0;
+      --paper: #F6F1E8;
+      --ink: #1A1C22;
+      --soft: #4E4B46;
+      --mute: #6F6A64;
+      --line: #DDD6CC;
+    }
+
+    .page { display: grid; grid-template-columns: 64mm 1fr; }
+    .rail { padding: 12mm 6.4mm 8mm 11mm; }
+    .main { padding: 0 0 7.5mm 0; }
+    .art-bl { left: 0; bottom: 0; width: 64mm; height: 56mm; }
+    .plate {
+      position: relative;
+      overflow: hidden;
+      height: 34mm;
+      background: var(--coral);
+      color: var(--bone);
+      padding: 6.4mm 9.4mm 6mm 8.4mm;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 14mm 100%, 0 70%);
+    }
+    .plate-role {
+      position: relative;
+      z-index: 2;
+      font-size: 16.5pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      line-height: 1.3;
+    }
+    .plate-rule {
+      position: relative;
+      z-index: 2;
+      width: 20mm;
+      height: 0.55mm;
+      margin-top: 3mm;
+      background: linear-gradient(90deg, var(--gold), var(--peach));
+    }
+    .plate .art-on {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .plate .art-mark {
+      position: absolute;
+      right: 6mm;
+      top: 4mm;
+      width: 22mm;
+      height: 22mm;
+      z-index: 1;
+      opacity: 0.2;
+    }
+    .plate .art-pad {
+      position: absolute;
+      right: -6mm;
+      bottom: -2mm;
+      width: 54mm;
+      height: 34mm;
+      z-index: 1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .plate-stamp {
+      position: absolute;
+      left: 22mm;
+      bottom: 3.2mm;
+      width: 48mm;
+      height: 4.2mm;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .stack { padding: 5.6mm 9.2mm 0 8.2mm; }
+
+  </style>
+</head>
+<body>
+
+  <article class="page">
+    <aside class="rail">
+      <div class="glyph glyph-rail" aria-hidden="true">桓</div>
+      
+      <svg class="art art-bl" viewBox="0 0 256 224" fill="none" aria-hidden="true">
+        <g transform="translate(10,108) rotate(-6 120 75) scale(0.96)" color="var(--coral)">
+          
+        <path class="pad-body" d="M48 54 C34 54 24 66 24 82 C24 106 42 124 66 124 H174 C198 124 216 106 216 82 C216 66 206 54 192 54 C184 40 158 32 140 32 H100 C82 32 56 40 48 54 Z" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.95"/>
+        <path d="M70 26 h36 a3 3 0 0 1 3 3 v6 h-42 v-6 a3 3 0 0 1 3-3 Z" stroke="var(--gold)" stroke-width="0.75" fill="none" opacity="0.8"/>
+        <path d="M134 26 h36 a3 3 0 0 1 3 3 v6 h-42 v-6 a3 3 0 0 1 3-3 Z" stroke="var(--gold)" stroke-width="0.75" fill="none" opacity="0.8"/>
+        <circle cx="74" cy="80" r="16.5" stroke="var(--peach)" stroke-width="0.8" opacity="0.85"/>
+        <path d="M74 68 v8 M74 84 v8 M62 80 h8 M78 80 h8" stroke="var(--coral-deep)" stroke-width="1.2" opacity="0.9"/>
+        <rect x="71.2" y="76.2" width="5.6" height="5.6" transform="rotate(45 74 79)" stroke="var(--gold)" stroke-width="0.55" fill="none" opacity="0.75"/>
+        <circle cx="166" cy="68" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <circle cx="178" cy="80" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <circle cx="166" cy="92" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <circle cx="154" cy="80" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <rect x="102" y="58" width="16" height="22" rx="3" stroke="var(--gold)" stroke-width="0.7" opacity="0.75"/>
+        <rect x="122" y="58" width="16" height="22" rx="3" stroke="var(--gold)" stroke-width="0.7" opacity="0.75"/>
+        <circle cx="96" cy="104" r="8.5" stroke="currentColor" stroke-width="0.75" opacity="0.55"/>
+        <circle cx="96" cy="104" r="3.2" fill="var(--gold)" opacity="0.5"/>
+        <circle cx="144" cy="104" r="8.5" stroke="currentColor" stroke-width="0.75" opacity="0.55"/>
+        <circle cx="144" cy="104" r="3.2" fill="var(--gold)" opacity="0.5"/>
+        <circle cx="120" cy="112" r="2.2" fill="var(--coral-deep)" opacity="0.6"/>
+        <path d="M48 54 C40 62 36 72 36 82" stroke="var(--peach)" stroke-width="0.5" opacity="0.45"/>
+        <path d="M192 54 C200 62 204 72 204 82" stroke="var(--peach)" stroke-width="0.5" opacity="0.45"/>
+
+        </g>
+        <circle cx="128" cy="206" r="22" stroke="var(--gold)" stroke-width="0.5" opacity="0.28"/>
+        <circle cx="128" cy="206" r="12" stroke="var(--peach)" stroke-width="0.45" opacity="0.3"/>
+        <path d="M128 196 v6 M128 210 v6 M118 206 h6 M132 206 h6" stroke="var(--coral-deep)" stroke-width="0.55" opacity="0.35"/>
+        <rect x="124.4" y="202.4" width="7.2" height="7.2" transform="rotate(45 128 206)" stroke="var(--coral)" stroke-width="0.55" fill="none" opacity="0.4"/>
+      </svg>
+
+      <div class="identity">
+        <div class="name">张桓睿</div>
+        <div class="brand-row">
+          
+          <svg class="tk-mark" viewBox="0 0 512 512" aria-hidden="true">
+            <rect width="512" height="512" rx="96" fill="var(--bone)"/>
+            <rect x="18" y="18" width="476" height="476" rx="78" fill="none" stroke="var(--gold)" stroke-width="9"/>
+            <g transform="translate(38 38) scale(0.85)">
+              <path fill="var(--ink)" d="M70 88h274l-43 60h-61v228l-54 84V148h-78L70 88Z"/>
+              <path fill="var(--ink)" d="M355 88h87l-38 60h-91l42-60Z"/>
+              <path fill="var(--ink)" d="M332 184h101l-38 60h-51l-72 102h108l53 70H240l-32-34 77-145 47-53Z"/>
+              <path fill="#F5F1E8" d="m344 88 11 0-42 60h-12l43-60Zm-38 60h13L251 244l-53 184-12 18 54-214 66-84Z"/>
+              <path fill="#D06448" d="m321 132 10-12-68 104-51 176-11 17 48-190 72-95Z"/>
+            </g>
+          </svg>
+
+          <div class="handle">TIMECRAKER</div>
+        </div>
+        <div class="name-rule"></div>
+      </div>
+      <section class="rail-block">
+        <h2>教育</h2>
+        <div class="edu-name">湖北大学</div>
+        <div class="edu-major">计算机科学与技术 · 本科</div>
+        <div class="edu-date">2023.09 至 2027.06 · 武汉</div>
+      </section>
+      <section class="rail-block">
+        <h2>联系</h2>
+        <ul class="contact">
+          <li>17764186883</li>
+          <li>timecraker@foxmail.com</li>
+          <li><a href="https://asterforge.top">asterforge.top</a></li>
+          <li><a href="https://github.com/TimeCraker">github.com/TimeCraker</a></li>
+        </ul>
+      </section>
+      
+      <section class="rail-block">
+        <h2>技能</h2>
+        <dl class="skills">
+          <dt>客户端</dt>
+          <dd>Godot 4 · Unity · Wasm</dd>
+          <dt>同步</dt>
+          <dd>Protobuf · 快照插值 · 预测</dd>
+          <dt>手感</dt>
+          <dd>Hit-Stop · 相机震动 · JS Bridge</dd>
+          <dt>协同</dt>
+          <dd>Go · 60Hz 权威 · Channel 背压</dd>
+          <dt>工程</dt>
+          <dd>Docker · Next.js · TypeScript</dd>
+        </dl>
+      </section>
+
+    </aside>
+    <div class="main">
+      <div class="plate">
+        
+        <svg class="art-on" viewBox="0 0 584 136" fill="none" aria-hidden="true" preserveAspectRatio="none">
+          
+          <defs>
+            <pattern id="mill" width="584" height="8" patternUnits="userSpaceOnUse">
+              <path d="M0 0.5 H584" stroke="var(--bone)" stroke-width="0.55"/>
+            </pattern>
+          </defs>
+          <rect width="584" height="136" fill="url(#mill)" opacity="0.055"/>
+          <path d="M10 8 H574 V126 H62 L10 88 Z" stroke="var(--bone)" stroke-width="1.1" opacity="0.28"/>
+          <path d="M16 14 H568 V120 H68 L16 86 Z" stroke="var(--gold)" stroke-width="0.7" opacity="0.4"/>
+          <g fill="var(--peach)" stroke="var(--bone)" stroke-width="0.7">
+            <circle cx="568" cy="14" r="3.1" opacity="0.55"/>
+            <circle cx="568" cy="122" r="3.1" opacity="0.5"/>
+            <circle cx="70" cy="122" r="2.7" opacity="0.45"/>
+            <circle cx="16" cy="84" r="2.7" opacity="0.4"/>
+          </g>
+          <g fill="var(--gold-deep)">
+            <circle cx="568" cy="14" r="0.9" opacity="0.55"/>
+            <circle cx="568" cy="122" r="0.9" opacity="0.5"/>
+            <circle cx="70" cy="122" r="0.8" opacity="0.45"/>
+            <circle cx="16" cy="84" r="0.8" opacity="0.4"/>
+          </g>
+
+          
+          <path d="M28 22 h12 v12" stroke="var(--peach)" stroke-width="0.8" opacity="0.4"/>
+          <path d="M556 22 h-12 v12" stroke="var(--gold)" stroke-width="0.8" opacity="0.4"/>
+          <path d="M556 114 h-12 v-12" stroke="var(--peach)" stroke-width="0.8" opacity="0.35"/>
+          <circle cx="86" cy="96" r="16" stroke="var(--peach)" stroke-width="0.55" opacity="0.32"/>
+          <circle cx="86" cy="96" r="8" stroke="var(--bone)" stroke-width="0.45" opacity="0.28"/>
+          <path d="M86 86 v6 M86 100 v6 M76 96 h6 M90 96 h6" stroke="var(--peach)" stroke-width="0.7" opacity="0.45"/>
+          <rect x="82.4" y="92.4" width="7.2" height="7.2" transform="rotate(45 86 96)" stroke="var(--gold)" stroke-width="0.55" fill="none" opacity="0.4"/>
+
+        </svg>
+
+        
+        <svg class="art-pad" viewBox="0 0 240 150" fill="none" aria-hidden="true" style="color:var(--bone)">
+          
+        <path class="pad-body" d="M48 54 C34 54 24 66 24 82 C24 106 42 124 66 124 H174 C198 124 216 106 216 82 C216 66 206 54 192 54 C184 40 158 32 140 32 H100 C82 32 56 40 48 54 Z" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.95"/>
+        <path d="M70 26 h36 a3 3 0 0 1 3 3 v6 h-42 v-6 a3 3 0 0 1 3-3 Z" stroke="var(--gold)" stroke-width="0.75" fill="none" opacity="0.8"/>
+        <path d="M134 26 h36 a3 3 0 0 1 3 3 v6 h-42 v-6 a3 3 0 0 1 3-3 Z" stroke="var(--gold)" stroke-width="0.75" fill="none" opacity="0.8"/>
+        <circle cx="74" cy="80" r="16.5" stroke="var(--peach)" stroke-width="0.8" opacity="0.85"/>
+        <path d="M74 68 v8 M74 84 v8 M62 80 h8 M78 80 h8" stroke="var(--coral-deep)" stroke-width="1.2" opacity="0.9"/>
+        <rect x="71.2" y="76.2" width="5.6" height="5.6" transform="rotate(45 74 79)" stroke="var(--gold)" stroke-width="0.55" fill="none" opacity="0.75"/>
+        <circle cx="166" cy="68" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <circle cx="178" cy="80" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <circle cx="166" cy="92" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <circle cx="154" cy="80" r="5.2" stroke="var(--peach)" stroke-width="0.9" opacity="0.9"/>
+        <rect x="102" y="58" width="16" height="22" rx="3" stroke="var(--gold)" stroke-width="0.7" opacity="0.75"/>
+        <rect x="122" y="58" width="16" height="22" rx="3" stroke="var(--gold)" stroke-width="0.7" opacity="0.75"/>
+        <circle cx="96" cy="104" r="8.5" stroke="currentColor" stroke-width="0.75" opacity="0.55"/>
+        <circle cx="96" cy="104" r="3.2" fill="var(--gold)" opacity="0.5"/>
+        <circle cx="144" cy="104" r="8.5" stroke="currentColor" stroke-width="0.75" opacity="0.55"/>
+        <circle cx="144" cy="104" r="3.2" fill="var(--gold)" opacity="0.5"/>
+        <circle cx="120" cy="112" r="2.2" fill="var(--coral-deep)" opacity="0.6"/>
+        <path d="M48 54 C40 62 36 72 36 82" stroke="var(--peach)" stroke-width="0.5" opacity="0.45"/>
+        <path d="M192 54 C200 62 204 72 204 82" stroke="var(--peach)" stroke-width="0.5" opacity="0.45"/>
+
+        </svg>
+
+        
+        <svg class="art-mark" viewBox="0 0 512 512" aria-hidden="true">
+          <path fill="var(--bone)" d="M70 88h274l-43 60h-61v228l-54 84V148h-78L70 88Z"/>
+          <path fill="var(--bone)" d="M355 88h87l-38 60h-91l42-60Z"/>
+          <path fill="var(--bone)" d="M332 184h101l-38 60h-51l-72 102h108l53 70H240l-32-34 77-145 47-53Z"/>
+          <path fill="var(--peach)" d="m321 132 10-12-68 104-51 176-11 17 48-190 72-95Z"/>
+        </svg>
+
+        <svg class="plate-stamp" viewBox="0 0 240 18" aria-hidden="true">
+          <text x="0" y="13" fill="var(--coral)" stroke="var(--bone)" stroke-width="0.7" font-family="Noto Sans SC, sans-serif" font-size="11" font-weight="500" letter-spacing="3.4">TIMECRAKER</text>
+        </svg>
+        <div class="plate-role">游戏客户端开发<br />Godot · Unity · 实时同步</div>
+        <div class="plate-rule"></div>
+      </div>
+      <div class="stack">
+
+      <section class="sec">
+        <h2>实习经历</h2>
+        <div class="head">
+          <h3>湖北小象智汇科技有限公司</h3>
+          <span class="when">2026.05 起</span>
+        </div>
+        <p class="sub">全栈开发实习生 · 主导学生端运行时 · TypeScript / React / NestJS / Socket.IO</p>
+        <div class="work">
+          <h4>小象英语课堂教学系统</h4>
+          <p class="meta">学生 PAD 客户端 + 教师大屏 + 教研后台 · 单课 10-20 人，最多 3 堂并行</p>
+          <ul>
+            <li>主导<strong>学生端课堂运行时</strong>：入场登记、快照对齐、环节热插拔。断线后按快照接入当前环节，不回放历史。后续教学环节都接在这套框架上。</li>
+            <li>课堂游戏化交互：单词密钥、碎片发放、人机对话重答。独立交付主题阅读、语篇应用（答题纸拍照、OCR 按空识别、自动判分）。</li>
+            <li>三端 Nginx + PM2 部署到腾讯云。教研后台做了组织架构、课程 SKU 与排课。</li>
+          </ul>
+        </div>
+        <div class="work">
+          <h4>培训班管理系统</h4>
+          <p class="meta">管理端 Web + 员工 / 家长微信小程序 · 报名、缴费、分班、排课、消课</p>
+          <ul>
+            <li>后端支撑域与报名闭环接到待分班。管理端按冻结 OpenAPI 对接。</li>
+            <li>收款与支付上线排障（openid、全款规则、小程序 appId 分流）。域名、证书、Nginx 与 PM2 双进程部署。</li>
+          </ul>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>个人项目</h2>
+        <div class="work">
+          <div class="head">
+            <h3>AsterNova · 2D 多人实时竞技</h3>
+            <span class="when">独立全栈 · 已上线</span>
+          </div>
+          <p class="meta">Godot 4 / Unity · Wasm · Go + WebSocket + Protobuf · Next.js 宿主</p>
+          <p class="links">
+            <a href="https://game.asterforge.top">game.asterforge.top</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a href="https://github.com/TimeCraker/games">github.com/TimeCraker/games</a>
+          </p>
+          <ul>
+            <li>服务端权威：客户端只上报输入。Godot 自研轻量 Protobuf 解码；Unity / Godot 编成 Wasm 嵌进 Next.js，JS Bridge 做 Token 与沙盒通信。</li>
+            <li>快照插值减轻弱网拉扯；Hit-Stop 0.08s / 0.15s，配合相机震动。Go 拆接入、匹配、战斗，Channel 背压避免高频广播阻塞。公网压测 P95 &lt;80ms。</li>
+          </ul>
+        </div>
+        <div class="work">
+          <div class="head">
+            <h3>ResumeAIX · AI 简历生成</h3>
+            <span class="when">独立产品 · 已上线</span>
+          </div>
+          <p class="meta">Next.js / Fastify / Prisma · PostgreSQL / Redis / BullMQ</p>
+          <p class="links"><a href="https://resume.asterforge.top">resume.asterforge.top</a></p>
+          <ul>
+            <li>从 0 上线解析、STAR 重写、多模板导出。Web / AI / Export 拆成多服务并完成生产部署。</li>
+          </ul>
+        </div>
+        <div class="work">
+          <div class="head">
+            <h3>ccweb · Claude Code 本地控制台</h3>
+            <span class="when">独立开源</span>
+          </div>
+          <p class="links">
+            <a href="https://github.com/TimeCraker/ccweb">github.com/TimeCraker/ccweb</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp; npm ccweb-console
+          </p>
+          <ul>
+            <li>基于官方 Agent SDK 拉起真 Claude Code 进程。浏览器里看工具 diff、审批和高危确认。</li>
+          </ul>
+        </div>
+        <div class="work">
+          <h4>开源</h4>
+          <ul>
+            <li>Casdoor：合入一处生产防护。dev 模式前端不可达时，避免反向代理打挂 K8s 探针。 dsh-claude-import：把 Claude Code 配置幂等导入 DeepSeek Harness。</li>
+          </ul>
+        </div>
+      </section>
+
+      </div>
+      <div class="glyph glyph-colophon" aria-hidden="true">睿</div>
+    </div>
+  </article>
+
+</body>
+</html>
