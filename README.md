@@ -30,7 +30,7 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 
 | 产品 | 做什么 |
 |---|---|
-| **PPT** | 代码画幻灯片：17 种页面范式、3 套主题、动画 auto 编排、三级渲染核查。文案过 humanizer。 |
+| **PPT** | 代码画幻灯片：15 种页面范式、3 套主题、动画 auto 编排、三级渲染核查。文案过 humanizer。 |
 | **讲解成片** | 真实底材叠字幕 / 数据柱 / 圈注。素材 + `cues.ts`，一条命令出片。 |
 | **介绍成片** | scene-kit 直绘动效场景（不是 PPT 录屏）。工作流里取材用 ppt、出稿用 narration、配音用剪映、渲染用 `DeckVideoV2`。 |
 
@@ -62,7 +62,7 @@ foreach ($s in 'ppt', 'humanizer', 'video-motion', 'narration', 'auto-subtitle')
 之后进 vibe-studio 会话，skill 自动生效（新会话生效，已在开的会话不含）。在其他项目用某 skill，同法复制或链接对应目录到该项目 `.claude/skills/`：
 
 ```bash
-ln -s ~/Desktop/my-workspace/vibe-studio/skills/ppt <project>/.claude/skills/ppt
+ln -s ~/Desktop/my_workspace/vibe-studio/skills/ppt <project>/.claude/skills/ppt
 ```
 
 ## 结构
@@ -78,10 +78,12 @@ vibe-studio/
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映全包 / B 线 Remotion 成片）
 ├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + lottie 动效 + 品牌与测试素材
 ├── projects/          # 施工区：一项目一目录，彼此隔离
-│   └── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
+│   ├── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
+│   ├── elephant-plan/ #   elephant-e-ai 2a 冲刺排期 deck 生成脚本（ppt skill）+ v3 两页图
+│   └── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
 ├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
 ├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
-└── scripts/           # 一次性生成脚本（ad-hoc deck 等，入库可复跑）
+└── scripts/           # 一次性生成脚本与独立小工具（ad-hoc deck / 简历变体 / 产品全景图等，入库可复跑）
 ```
 
 ## 约定
