@@ -542,39 +542,38 @@ window.__debug = () => ({ missing: missing.slice(0, 20), missingCount: missing.l
 
 // --------------------------------------------------------------------------- //
 // cover / thumbnail
+//
+// B站首页推荐按 4:3 裁、个人空间按 16:9 裁，两者都取画面中心。所以封面必须是
+// 「中心安全」构图：关键内容全部落在中心 1440x1080（x 240..1680）之内，否则
+// 4:3 那一刀会把标题切掉（踩过一次）。
 // --------------------------------------------------------------------------- //
 window.__cover = async (opts = {}) => {
   const shot = opts.shot ?? 'a-sunset';
   const src = Number(opts.src ?? 1.30);
-  const view = opts.view ? (VIEWS[opts.view] ? VIEWS[opts.view] : opts.view) : VIEWS.aScene;
+  const view = opts.view ? (VIEWS[opts.view] ? VIEWS[opts.view] : opts.view) : { cx: 0.5, cy: 0.40, w: 0.86, h: 0.86 };
   const key = `${shot}#${Math.round(src * FPS)}`;
   await ensure([key]);
   const bmp = CACHE.get(key);
 
   viewport.classList.remove('is-dark');
   ctx.drawImage(paperLight, 0, 0, DW, DH);
+  if (bmp) drawPlate(bmp, view, { x: 0, y: 0, w: DW, h: DH }, { z: Number(opts.zoom ?? 1.04), x: 0, y: 0 });
 
-  // plate on the right, lockup on the paper at the left: a printed cover
-  const plate = { x: 748, y: 96, w: 1172, h: 889 };
-  if (bmp) {
-    drawPlate(bmp, view, plate, { z: Number(opts.zoom ?? 1.06), x: 0, y: 0 });
-    ctx.strokeStyle = 'rgba(23,20,15,0.34)';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(plate.x + 0.5, plate.y + 0.5, plate.w - 1, plate.h - 1);
-  }
+  // bottom scrim, so the centred lockup reads over any frame and survives the crop
+  const g = ctx.createLinearGradient(0, DH * 0.44, 0, DH);
+  g.addColorStop(0, 'rgba(6,9,14,0)');
+  g.addColorStop(0.42, 'rgba(6,9,14,0.60)');
+  g.addColorStop(0.76, 'rgba(6,9,14,0.90)');
+  g.addColorStop(1, 'rgba(6,9,14,0.97)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, DH * 0.44, DW, DH * 0.56);
 
   overlay.innerHTML = `
-    <div class="head">
-      <span><b>ANTIGRAVITY 生成实录</b> · PELICAN ON A BICYCLE</span>
-      <span>GEMINI 3.8 FLASH · 轻量档</span>
-    </div><div class="headrule"></div>
-    <div class="coverlock">
-      <div class="kicker">ANTIGRAVITY 生成实录 · GEMINI 3.8 FLASH</div>
-      <div class="covertitle">骑自行车的<br>鹈鹕</div>
-      <div class="coverrule"></div>
-      <div class="coverkick">一句话的提示词 · 两版都能点</div>
-      <div class="coverhot">我怀疑它已是 Gemini 4.0 的水平</div>
-    </div>
-    <div class="covermeta"><span>@TimeCraker</span><span>纯 SVG 矢量动画 · 无一张位图</span></div>`;
+    <div class="cover-center">
+      <div class="cover-kicker">ANTIGRAVITY 生成实录 · GEMINI 3.8 FLASH</div>
+      <div class="cover-title">骑自行车的鹈鹕</div>
+      <div class="cover-rule"></div>
+      <div class="cover-hot">我怀疑它已是 Gemini 4.0 的水平</div>
+    </div>`;
   return { ok: true, shot, src, missing: missing.length };
 };
