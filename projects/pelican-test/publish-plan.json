@@ -1,5 +1,5 @@
 {
-  "_comment": "并行发布清单。run.mjs 会为 platforms 里的每一项并发起一个独立浏览器（bili=9222, douyin=9223），各自填表后停下；发布按钮由人在每个平台各自点。video/cover 路径相对本目录。改文案只改各平台的 spec 文件，不改这里。",
+  "_comment": "并行发布清单。run.mjs 会为 platforms 里的每一项并发起一个独立浏览器（bili=9222, douyin=9223, xhs=9224），各自填表后停下；发布按钮由人在每个平台各自点。video/cover 路径相对本目录。改文案只改各平台的 spec 文件，不改这里。",
   "video": "../../products/pelican-test/pelican-test-1080p.mp4",
   "cover": "../../products/pelican-test/pelican-test-cover.png",
   "platforms": {
@@ -12,6 +12,11 @@
       "spec": "douyin-form.json",
       "names": "AI,Gemini,人工智能,AI绘画,程序员",
       "declare": "内容由AI生成"
+    },
+    "xhs": {
+      "spec": "xhs-form.json",
+      "topics": "鹈鹕,动画制作",
+      "declare": "笔记含AI合成内容"
     }
   }
 }

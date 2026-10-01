@@ -38,6 +38,7 @@ const flag = (k) => argv.includes(`--${k}`);
 const PLATFORM_TOOL = {
   bili: { file: 'bili.mjs', port: 9222 },
   douyin: { file: 'douyin.mjs', port: 9223 },
+  xhs: { file: 'xhs.mjs', port: 9224 },
 };
 
 const PROJECT = resolve(arg('project', process.cwd()));
@@ -113,6 +114,12 @@ function buildArgs(platform, conf, isDry) {
     if (cover) args.push('--image', cover);
     if (conf.spec) args.push('--spec', conf.spec);
     if (conf.names) args.push('--names', conf.names);
+    if (conf.declare) args.push('--declare', conf.declare);
+  } else if (platform === 'xhs') {
+    if (video) args.push('--video', video);
+    if (cover) args.push('--image', cover);
+    if (conf.spec) args.push('--spec', conf.spec);
+    if (conf.topics) args.push('--names', conf.topics);
     if (conf.declare) args.push('--declare', conf.declare);
   }
   return args;
