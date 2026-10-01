@@ -61,7 +61,13 @@ node skills/publish/templates/douyin.mjs launch                   # 扫码
 node skills/publish/templates/douyin.mjs setup --project projects/<项目名> \
   --video products/<项目名>/<成片>.mp4 --image products/<项目名>/<封面>.png \
   --spec projects/<项目名>/douyin-form.json --names AI,Gemini,人工智能
-# （封面在抖音表单里走 cover --image，见下文平台二）
+
+# 小红书
+node skills/publish/templates/xhs.mjs launch                      # 扫码（登录卡右上角切二维码）
+node skills/publish/templates/xhs.mjs setup --project projects/<项目名> \
+  --video products/<项目名>/<成片>.mp4 \
+  --spec projects/<项目名>/xhs-form.json --names 鹈鹕,动画制作
+# （封面走 AI 推荐封面的「应用」，见下文平台三）
 ```
 
 `setup` 是幂等的：已上传的视频会跳过、简介写之前先清空，所以重复跑不会叠加。
@@ -71,15 +77,27 @@ node skills/publish/templates/douyin.mjs setup --project projects/<项目名> \
 
 ## 为什么能并行
 
-每个平台工具**自带独立的 Chrome profile 和调试端口**（B 站 = 9222，抖音 = 9223），
-是两个互不相干的浏览器实例，所以可以同时开、同时填、同时上传。
+每个平台工具**自带独立的 Chrome profile 和调试端口**（B 站 = 9222，抖音 = 9223，小红书 = 9224），
+是几个互不相干的浏览器实例，所以可以同时开、同时填、同时上传。
 `run.mjs` 就是把「每个平台 spawn 一个 `setup` 进程」包起来，输出按 `[平台名]` 加前缀，
 最后给一张就绪汇总表。
 
 **并行只到填表为止。** 发布是每个平台各点一次的人工动作：
 不可逆，且多平台风控政策不同，这一步永远留在人手里。
+「三端自动发布」的准确含义是：**三端的表单填写自动化，三端的发布按钮各自由人点**。
 
-## Step 1 · 先把文案写进 form.json
+## Step 1 · 每个平台一份文案文件
+
+**标准流程是三端**（B 站 / 抖音 / 小红书），所以一个项目要写三份文案文件：
+
+| 平台 | spec 文件 | 标题上限 | 正文上限 | 标签/话题 |
+|---|---|---|---|---|
+| B 站 | `form.json` | 80 字 | 2000 字 | 10 个，单个 ≤20 字 |
+| 抖音 | `douyin-form.json` | 30 字（超出被截） | 1000 字（含话题） | 话题走联想弹层 |
+| 小红书 | `xhs-form.json` | 20 字 | 1000 字 | 话题走 `#` 话题按钮的情境联想 |
+
+模板在 `skills/publish/templates/`（`form.example.json` / `douyin-form.example.json` / `xhs-form.example.json`），
+复制到 `projects/<项目名>/` 改内容。
 
 标题、简介、标签先落到文件里，不要在命令行上手打。理由：命令行参数过 GBK 控制台容易乱码，
 而 `form.json` 是 UTF-8 文件，还能进版本库、能 diff、能复查。
