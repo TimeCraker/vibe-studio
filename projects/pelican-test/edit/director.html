@@ -4,192 +4,209 @@
 <meta charset="utf-8">
 <title>pelican-test · director</title>
 <style>
+  /* =====================================================================
+     鹈鹕测试 — 印刷图鉴风版式系统
+     叙事型内容走浅色纸面（对齐 motion-grammar V1），只有结论页翻转成墨底，
+     全片不共用一个底。规则：平涂、无发光、无圆角胶囊、不用等宽字体。
+     ===================================================================== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #05080F; }
-  #viewport { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #F4EFE6; }
+
+  #viewport {
+    position: relative; width: 1920px; height: 1080px; overflow: hidden;
+    --paper:   #F4EFE6;
+    --paper-2: #E9E1D3;
+    --paper-3: #DFD5C4;
+    --ink:     #17140F;
+    --ink-2:   #4C4438;
+    --ink-3:   #8B8173;
+    --rule:    rgba(23, 20, 15, 0.18);
+    --rule-2:  rgba(23, 20, 15, 0.42);
+    --hot:     #C4432A;   /* 朱红 */
+    --teal:    #1D5B63;
+    background: var(--paper);
+  }
+  #viewport.is-dark {
+    --paper:   #17140F;
+    --paper-2: #241E16;
+    --paper-3: #322A20;
+    --ink:     #F2ECE1;
+    --ink-2:   #C3B9A8;
+    --ink-3:   #8A7F6E;
+    --rule:    rgba(242, 236, 225, 0.20);
+    --rule-2:  rgba(242, 236, 225, 0.46);
+    --hot:     #E2603F;
+    --teal:    #6FB3B8;
+  }
   #bed { position: absolute; inset: 0; display: block; }
   #overlay { position: absolute; inset: 0; pointer-events: none; }
 
-  /* ---------- shared type scale ---------- */
-  .eyebrow {
-    display: flex; align-items: center; gap: 16px;
-    font-family: 'Cascadia Code', 'Consolas', monospace;
-    font-size: 21px; letter-spacing: 0.24em; text-transform: uppercase;
-    color: rgba(244, 247, 252, 0.58); margin-bottom: 30px;
-  }
-  .eyebrow::before {
-    content: ''; width: 12px; height: 12px; background: #FFB020;
-    box-shadow: 0 0 18px rgba(255, 176, 32, 0.7); flex: none;
-  }
-  .h1 {
-    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
-    font-size: 128px; line-height: 1.06; letter-spacing: -0.012em; color: #F4F7FC;
-    text-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
-  }
-  .h1.hot { color: #FFB020; text-shadow: 0 8px 44px rgba(255, 150, 20, 0.42); }
-  .h2 {
-    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
-    font-size: 94px; line-height: 1.1; letter-spacing: -0.01em; color: #F4F7FC;
-    text-shadow: 0 8px 34px rgba(0, 0, 0, 0.5);
-  }
-  .latin {
-    font-family: 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
-    font-size: 25px; letter-spacing: 0.34em; text-transform: uppercase;
-    color: rgba(244, 247, 252, 0.44); margin-top: 26px;
-  }
-  .lead {
+  /* ---------- 书眉：全片常驻，右侧固定挂模型名 ---------- */
+  .head {
+    position: absolute; left: 72px; right: 72px; top: 22px; height: 30px;
+    display: flex; align-items: baseline; justify-content: space-between;
     font-family: 'Noto Sans SC', 'Microsoft YaHei UI', sans-serif;
-    font-size: 34px; line-height: 1.6; color: rgba(244, 247, 252, 0.76);
-    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.5);
+    font-size: 19px; letter-spacing: 0.14em; color: var(--ink-3);
   }
-  .lead + .lead { margin-top: 6px; }
-  .rule { height: 6px; border-radius: 3px; background: #FFB020; box-shadow: 0 0 26px rgba(255, 176, 32, 0.55); margin: 34px 0 30px; }
+  .head b { font-weight: 500; color: var(--ink-2); }
+  .headrule { position: absolute; left: 0; right: 0; top: 64px; height: 1px; background: var(--rule); }
+
+  /* ---------- 页脚字幕带：实心纸面，不是半透明药丸 ---------- */
+  .band { position: absolute; left: 0; right: 0; bottom: 0; height: 128px; }
+  .bandrule { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--rule); }
+  .band-inner { position: absolute; left: 72px; right: 72px; top: 20px; }
+  .band-top {
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: 'Noto Sans SC', sans-serif; font-size: 18px;
+    letter-spacing: 0.16em; color: var(--ink-3); height: 26px;
+  }
+  .band-kicker { color: var(--hot); font-weight: 500; }
+  .cap {
+    margin-top: 6px;
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
+    font-size: 44px; line-height: 1.14; letter-spacing: 0.01em; color: var(--ink);
+  }
+
+  /* ---------- 页面版心 ---------- */
+  .page { position: absolute; left: 72px; right: 72px; top: 118px; bottom: 128px; }
+  .page.cols { display: flex; gap: 84px; }
+  .main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+  .rail { flex: 0 0 600px; padding-top: 6px; }
+  .rail.narrow { flex: 0 0 420px; }
+
+  /* 大号装饰数字已移除：在纸面上会读成一块污渍，改为把期号放进 kicker */
+
+  /* ---------- 内容提要：填住页面下半，同时交代看点（信息自足） ---------- */
+  .agenda { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--rule); width: 100%; max-width: 1000px; }
+  .agenda-t {
+    font-family: 'Noto Sans SC', sans-serif; font-size: 18px;
+    letter-spacing: 0.2em; color: var(--ink-3); margin-bottom: 15px;
+  }
+  .agenda-r { display: flex; align-items: baseline; gap: 16px; padding: 6px 0; }
+  .agenda-n {
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+    font-size: 21px; color: var(--hot); width: 34px; flex: none;
+  }
+  .agenda-v { font-family: 'Noto Sans SC', sans-serif; font-size: 27px; color: var(--ink-2); }
+
+  /* ---------- 页末引文：印刷体的 pull quote ---------- */
+  .pull {
+    margin-top: auto; padding-top: 24px; border-top: 1px solid var(--rule);
+    font-family: 'Noto Serif SC Medium', 'Noto Serif SC', serif;
+    font-size: 46px; line-height: 1.48; color: var(--ink); max-width: 960px;
+  }
+
+  /* ---------- 核对清单：整栏铺开，不挤在窄栏里换行 ---------- */
+  .facts { width: 100%; max-width: 1180px; }
+
+  /* ---------- 标题与正文 ---------- */
   .kicker {
     font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
-    font-size: 31px; color: rgba(244, 247, 252, 0.62); margin-bottom: 26px;
+    font-size: 26px; letter-spacing: 0.04em; color: var(--hot); margin-bottom: 26px;
   }
+  .display {
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+    font-size: 132px; line-height: 1.1; letter-spacing: -0.015em; color: var(--ink);
+  }
+  .display.sm { font-size: 104px; }
+  .display.xl { font-size: 168px; }
+  .display em { font-style: normal; color: var(--hot); }
+  .rule { height: 6px; width: 168px; background: var(--hot); margin: 34px 0 30px; }
+  .rule.ink { background: var(--ink); height: 2px; width: 100%; margin: 26px 0 24px; }
+  .prose {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei UI', sans-serif;
+    font-size: 33px; line-height: 1.72; color: var(--ink-2); max-width: 1020px;
+  }
+  .prose + .prose { margin-top: 4px; }
   .foot {
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 22px;
-    color: rgba(244, 247, 252, 0.5); margin-top: 34px; padding-left: 22px;
-    border-left: 3px solid rgba(255, 176, 32, 0.8);
+    font-family: 'Noto Sans SC', sans-serif; font-size: 21px;
+    letter-spacing: 0.06em; color: var(--ink-3); margin-top: 34px;
+    padding-top: 16px; border-top: 1px solid var(--rule);
   }
-  .handle {
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 26px;
-    color: #38BDF8; margin-top: 38px; letter-spacing: 0.06em;
-  }
-  .fact { display: flex; align-items: baseline; gap: 24px; margin-top: 22px; }
-  .fk {
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 23px;
-    color: #FFB020; width: 92px; flex: none; letter-spacing: 0.04em;
-  }
-  .fv { font-family: 'Noto Sans SC', sans-serif; font-size: 31px; color: rgba(244, 247, 252, 0.8); }
 
-  /* ---------- right rail: kills the dead half of a card and carries real facts ---------- */
-  .side {
-    position: absolute; right: 112px; top: 104px; width: 560px;
-    display: flex; flex-direction: column; align-items: flex-start;
-    text-align: left; padding-top: 26px;
-    border-top: 2px solid rgba(255, 176, 32, 0.55);
+  /* ---------- 规格表：点线引导，印刷体例 ---------- */
+  .table { width: 100%; }
+  .trow { display: flex; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .trow:first-child { border-top: 1px solid var(--rule); }
+  .tk {
+    font-family: 'Noto Sans SC', sans-serif; font-size: 21px; letter-spacing: 0.1em;
+    color: var(--ink-3); white-space: nowrap;
   }
-  .side .row + .row { margin-top: 21px; }
-  .side .rk {
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 19px;
-    letter-spacing: 0.2em; color: rgba(244, 247, 252, 0.42);
-  }
-  .side .rv {
+  .tdots { flex: 1 1 auto; border-bottom: 2px dotted var(--rule-2); margin: 0 16px 7px; min-width: 24px; }
+  .tv {
     font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 27px;
-    color: rgba(244, 247, 252, 0.9); margin-top: 6px;
+    color: var(--ink); white-space: nowrap;
   }
-  .side .stat { align-self: flex-end; text-align: right; }
-  .side .sv {
-    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
-    font-size: 158px; line-height: 0.94; color: #FFB020;
-    text-shadow: 0 0 50px rgba(255, 176, 32, 0.45);
-  }
-  .side .sl {
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 22px;
-    letter-spacing: 0.16em; color: rgba(244, 247, 252, 0.6); margin-top: 20px;
-  }
-  .h1 + .lead, .h2 + .lead { margin-top: 42px; }
-  .lead + .foot { margin-top: 34px; }
+  .tv.hot { color: var(--hot); }
 
-  /* ---------- footer rail: closes a card so it reads as designed ---------- */
-  .footrail {
-    position: absolute; left: 116px; right: 112px; bottom: 62px;
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 17px; border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 19px;
-    letter-spacing: 0.18em; color: rgba(244, 247, 252, 0.34);
+  /* 核对清单 */
+  .check { display: flex; align-items: baseline; gap: 18px; padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .check:first-child { border-top: 1px solid var(--rule); }
+  .check i {
+    font-style: normal; font-family: 'Noto Sans SC Medium', sans-serif;
+    font-size: 24px; color: var(--hot); width: 30px; flex: none;
+  }
+  .check-k {
+    font-family: 'Noto Sans SC Medium', sans-serif; font-size: 23px;
+    letter-spacing: 0.08em; color: var(--ink-3); width: 84px; flex: none;
+  }
+  .check-v { font-family: 'Noto Sans SC', sans-serif; font-size: 29px; color: var(--ink-2); }
+  .stat {
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+    font-size: 168px; line-height: 0.94; color: var(--hot); text-align: right;
+  }
+  .stat-l {
+    font-family: 'Noto Sans SC', sans-serif; font-size: 20px; letter-spacing: 0.16em;
+    color: var(--ink-3); text-align: right; margin-top: 14px;
   }
 
-  .stack { position: absolute; display: flex; flex-direction: column; align-items: flex-start; }
-  .stack.hook { left: 116px; top: 268px; width: 1320px; }
-  .stack.statement { left: 116px; top: 296px; width: 1420px; }
-  .stack.verdict { left: 116px; top: 246px; width: 1600px; }
-  .stack.outro { left: 116px; top: 336px; width: 1420px; }
-  .stack.hook .rule { margin: 30px 0 26px; }
-
-  /* ---------- chips / labels ---------- */
-  .chip {
-    display: inline-block; padding: 10px 21px; border-radius: 999px;
-    background: rgba(6, 10, 20, 0.62); border: 1px solid rgba(255, 255, 255, 0.17);
-    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
-    font-size: 21px; letter-spacing: 0.05em; color: rgba(244, 247, 252, 0.88);
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
-  }
-  .tl { position: absolute; left: 44px; top: 34px; }
-  .tr { position: absolute; right: 44px; top: 34px; }
-
-  /* ---------- annotations ---------- */
+  /* ---------- 印刷体标注：实心纸片 + 引线，无发光 ---------- */
   .note { position: absolute; display: flex; align-items: center; }
-  .dot {
-    width: 22px; height: 22px; border-radius: 50%; background: #FFB020; flex: none;
-    box-shadow: 0 0 0 7px rgba(255, 176, 32, 0.2), 0 0 24px rgba(255, 176, 32, 0.8);
+  .note-dot {
+    width: 13px; height: 13px; flex: none; background: var(--hot);
+    outline: 3px solid rgba(196, 67, 42, 0.22);
   }
-  .ln { height: 3px; flex: none; background: linear-gradient(90deg, #FFB020, rgba(255, 176, 32, 0.3)); }
-  .note[row-reverse] .ln { background: linear-gradient(270deg, #FFB020, rgba(255, 176, 32, 0.3)); }
-  .lb {
-    padding: 11px 19px; border-radius: 13px; white-space: nowrap;
-    background: rgba(6, 10, 20, 0.8); border: 1px solid rgba(255, 255, 255, 0.17);
-    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 24px;
-    color: #F4F7FC; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  .note-line { height: 1px; flex: none; background: var(--ink); opacity: 0.55; }
+  .note-label {
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 22px;
+    color: var(--ink); background: var(--paper); padding: 8px 15px;
+    border: 1px solid var(--rule-2); white-space: nowrap;
   }
 
-  /* ---------- split screen ---------- */
-  .splitlabel {
-    position: absolute; bottom: 196px; display: flex; flex-direction: column; gap: 8px;
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.6);
+  /* ---------- 对照页 ---------- */
+  .plate-label { position: absolute; display: flex; flex-direction: column; gap: 7px; }
+  .plate-label b {
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+    font-size: 38px; color: var(--ink);
   }
-  .splitlabel b {
-    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
-    font-size: 42px; color: #F4F7FC;
+  .plate-label i {
+    font-style: normal; font-family: 'Noto Sans SC', sans-serif;
+    font-size: 20px; letter-spacing: 0.14em; color: var(--ink-3);
   }
-  .splitlabel i {
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-style: normal;
-    font-size: 22px; letter-spacing: 0.14em; color: rgba(244, 247, 252, 0.58);
-  }
-  .splitdivider {
-    position: absolute; left: 50%; top: 0; height: 100%; width: 4px; margin-left: -2px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 6%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0) 94%);
-  }
+  .vrule { position: absolute; width: 1px; background: var(--rule); }
 
-  /* ---------- subtitles: part of the layout, never a black pill ---------- */
-  .cap {
-    position: absolute; left: 0; right: 0; text-align: center; padding: 0 160px;
-    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
-    font-size: 44px; letter-spacing: 0.015em; color: #FFFFFF;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 60px rgba(0, 0, 0, 0.4);
-  }
-  .cap.low { bottom: 74px; }
-  .cap.high { bottom: 164px; }
-
-  /* ---------- cover lockup ---------- */
-  .coverlock { position: absolute; left: 96px; top: 172px; display: flex; flex-direction: column; align-items: flex-start; }
+  /* ---------- 封面 ---------- */
+  .cover-plate { position: absolute; }
+  .coverlock { position: absolute; left: 72px; top: 132px; }
   .covertitle {
-    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
-    font-size: 164px; line-height: 1.02; letter-spacing: -0.02em; color: #FFFFFF;
-    /* paint-order + halo keeps the lockup readable over the pelican's white body */
-    paint-order: stroke fill;
-    -webkit-text-stroke: 11px rgba(4, 7, 14, 0.46);
-    text-shadow: 0 0 36px rgba(0, 0, 0, 0.85), 0 8px 48px rgba(0, 0, 0, 0.8);
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+    font-size: 176px; line-height: 1.04; letter-spacing: -0.02em; color: var(--ink);
   }
-  .coverrule { width: 216px; height: 9px; border-radius: 5px; background: #FFB020; box-shadow: 0 0 34px rgba(255, 176, 32, 0.7); margin: 34px 0 30px; }
+  .coverrule { width: 190px; height: 8px; background: var(--hot); margin: 32px 0 26px; }
   .coverkick {
-    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 36px;
-    color: rgba(255, 255, 255, 0.9); text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+    font-family: 'Noto Sans SC Medium', sans-serif; font-size: 34px; color: var(--ink-2);
   }
   .coverhot {
-    margin-top: 26px; padding: 15px 28px; border-radius: 14px;
-    background: rgba(255, 176, 32, 0.16); border: 1px solid rgba(255, 176, 32, 0.55);
-    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
-    font-size: 40px; color: #FFB020; text-shadow: 0 0 30px rgba(255, 176, 32, 0.5);
+    margin-top: 26px; padding: 16px 26px; display: inline-block;
+    background: var(--hot); color: #F7F2E8;
+    font-family: 'Noto Sans SC Medium', sans-serif; font-size: 36px;
   }
-  .coverfoot {
-    position: absolute; left: 96px; right: 96px; bottom: 74px;
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 24px;
-    letter-spacing: 0.14em; color: rgba(255, 255, 255, 0.62);
-    padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.18);
+  .covermeta {
+    position: absolute; left: 72px; bottom: 62px; right: 72px;
+    display: flex; justify-content: space-between;
+    font-family: 'Noto Sans SC', sans-serif; font-size: 21px;
+    letter-spacing: 0.14em; color: var(--ink-3);
+    border-top: 1px solid var(--rule); padding-top: 18px;
   }
 </style>
 </head>

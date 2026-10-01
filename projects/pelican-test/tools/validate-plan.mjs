@@ -149,7 +149,8 @@ function longestCommonRun(a, b) {
   return best;
 }
 function screenStrings(u) {
-  const out = [u.chapter, u.meta, u.eyebrow, u.sub, u.footnote, u.kicker, u.handle, ...(u.title ?? []), ...(u.body ?? [])];
+  const out = [u.label, u.chapter, u.meta, u.eyebrow, u.sub, u.footnote, u.kicker, u.handle, u.pull, ...(u.title ?? []), ...(u.body ?? [])];
+  if (u.agenda) out.push(u.agenda.title, ...u.agenda.items);
   for (const n of u.notes ?? []) out.push(n.text);
   for (const f of u.facts ?? []) out.push(f[0], f[1]);
   for (const r of u.side?.rows ?? []) out.push(r[0], r[1]);

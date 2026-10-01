@@ -32,6 +32,10 @@ function parseArgs(argv) {
 const args = parseArgs(process.argv.slice(2));
 const dsf = Math.max(1, Math.min(4, Number(args.dsf ?? 1)));
 const crf = Number(args.crf ?? 15);
+// preset only trades encode time against file size at a fixed CRF — never quality.
+// medium is the default because the paper texture defeats x264's block skipping and
+// slow was the bottleneck for the whole pipeline (2.5fps vs 4.8fps).
+const preset = String(args.preset ?? 'medium');
 const port = Number(args.port ?? 9520);
 const outPath = resolve(args.out ?? join(ROOT, 'render', 'video.mp4'));
 const sampleList = args.sample && args.sample !== true ? String(args.sample).split(',').map(Number) : null;
@@ -68,7 +72,7 @@ if (!isSample && !args.cover) {
     '-hide_banner', '-loglevel', 'error', '-stats',
     '-f', 'image2pipe', '-framerate', '60', '-i', '-',
     '-an',
-    '-c:v', 'libx264', '-preset', 'slow', '-crf', String(crf),
+    '-c:v', 'libx264', '-preset', preset, '-crf', String(crf),
     '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-level', '4.2',
     '-movflags', '+faststart',
     '-y', outPath,
