@@ -1,5 +1,10 @@
 # deck-video v4 转场与进场动效 Stage Spec — 硬切转场 + 旁白同步编排
 
+> 状态：已存档（被 `docs/2026-09-01-mg-arsenal-spec.md` 吸收合并，不再独立施工）
+> 说明：文中 §3 的 `products/lekao-intro/deck-v4.mp4` 等产物不会再被生产。
+> `scripts/check-docs.py` 对标记「状态：已存档」的文档跳过路径存在性检查，
+> 否则这几条 WARN 永远消不掉，只会训练人忽略 WARN。
+
 > 目标：解掉「动画元素的引入不够好」——v3 修的是静帧质感（F1-F5 全绿），但页间交叉溶解 + 页首 1 秒内全落位的进场方式没动，观感仍是「会动的 PPT」。本站在不动素材、不动文案、不动音频的前提下，重造**转场**与**进场动效**两层。
 > 依据：2026-08-31 对标杆片 BV1fShG6LETU 的重测量（证据在 §2，方法可复现）。
 > 产物：`products/lekao-intro/deck-v4.mp4`（DeckVideoV2 渲染，composition 名不变）。

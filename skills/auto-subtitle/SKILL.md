@@ -17,11 +17,16 @@ user-invocable: true
 
 ## Step 2 · 跑转写
 
-venv 已随仓库建好（`templates/asr/.venv`）。重建：`python -m venv .venv` + `.venv/Scripts/python.exe -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`。
+**venv 不入库**（284 MB 级构建产物，`.gitignore` 的 `.venv/` 已覆盖）。本仓约定 skill 模板不带构建产物，与模板不带 `node_modules` 同理，所以 venv 建在**仓库外**，一次建好所有项目复用：
+
+```powershell
+python -m venv "$env:USERPROFILE\.cache\vibe-studio\asr-venv"
+& "$env:USERPROFILE\.cache\vibe-studio\asr-venv\Scripts\python.exe" -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
 
 ```powershell
 cd skills/auto-subtitle/templates/asr
-.venv\Scripts\python.exe transcribe.py <输入.mp4|wav> --outdir <输出目录>
+& "$env:USERPROFILE\.cache\vibe-studio\asr-venv\Scripts\python.exe" transcribe.py <输入.mp4|wav> --outdir <输出目录>
 ```
 
 - 模型默认 `large-v3-turbo`（≈1.6GB 首次自动下载，中文质量线）；快速验证加 `--model small`（≈484MB）。模型缓存在 `~/.cache/huggingface`，下载一次全局复用

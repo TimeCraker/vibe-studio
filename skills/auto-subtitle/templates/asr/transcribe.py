@@ -1,7 +1,7 @@
 """transcribe.py -- transcribe audio/video into SubtitleCue JSON + SRT via faster-whisper.
 
-Usage:
-    .venv/Scripts/python.exe transcribe.py <input.mp4|wav> [--model large-v3-turbo] [--lang zh] [--outdir <dir>]
+Usage (venv lives OUTSIDE the repo, see SKILL.md Step 2):
+    <venv>/Scripts/python.exe transcribe.py <input.mp4|wav> [--model large-v3-turbo] [--lang zh] [--outdir <dir>]
 
 Output: <stem>.cues.json + <stem>.srt next to the input (or --outdir).
 Cue schema matches video-motion SubtitleCue: {start, end, text}, seconds with 3 decimals.

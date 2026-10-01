@@ -3,7 +3,7 @@
 > 代码本体在 `skills/video-motion/templates/remotion-app/src/`（skill 是分发单元，组件跟引擎走）；本簿登记家底与用法，验收后新组件在此登记 + 回写模板。
 > 质量底线见 `docs/2026-08-30-motion-grammar.md`；成页方案见 `patterns.md`。
 
-## scene-kit（场景积木，13 + MG 武器 4）
+## scene-kit（场景积木，23 个组件）
 
 | 组件 | 干什么 | 关键参数 / 坑 |
 |---|---|---|
