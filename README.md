@@ -22,7 +22,7 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 |---|---|---|
 | **PPT / 幻灯片** | [`ppt`](skills/ppt/) | 不要打开视频 skill |
 | **讲解成片**（已有录像、屏录、游戏录像） | [`video-motion`](skills/video-motion/) · `FootageOverlay` | 不要走介绍成片 |
-| **介绍成片**（从项目说明出一条可发布视频） | [`explainer-video`](workflows/explainer-video.md) · 成片 `DeckVideoV2` · 封面 `CoverV3` | 不要用 `DeckVideo` 翻页 PPT；不要把五个 skill 摊开挑 |
+| **介绍成片**（从项目说明出一条可发布视频） | [`explainer-video`](workflows/explainer-video.md) · 成片 `DeckVideoV2` · 封面 `CoverV3` | 不要用 `DeckVideo` 翻页 PPT；不要把六个 skill 摊开挑 |
 
 只要一张标题封面、没有介绍成片任务：走 `Cover` json 三预设。介绍成片的封面跟成片走 `CoverV3`。
 
@@ -55,7 +55,7 @@ Claude Code 只从 `.claude/skills/` 发现 skill。本仓库真身在 `skills/`
 git clone https://github.com/TimeCraker/vibe-studio
 cd vibe-studio
 New-Item -ItemType Directory -Force .claude/skills | Out-Null
-foreach ($s in 'ppt', 'humanizer', 'video-motion', 'narration', 'auto-subtitle') {
+foreach ($s in 'ppt', 'humanizer', 'video-motion', 'narration', 'auto-subtitle', 'publish') {
     New-Item -ItemType Junction -Path "$PWD\.claude\skills\$s" -Target "$PWD\skills\$s" | Out-Null
 }
 ```
@@ -70,18 +70,20 @@ ln -s ~/Desktop/my_workspace/vibe-studio/skills/ppt <project>/.claude/skills/ppt
 
 ```
 vibe-studio/
-├── skills/            # 纯工具：五个 skill（SKILL.md + 模板代码，零素材零产物）
+├── skills/            # 纯工具：六个 skill（SKILL.md + 模板代码，零素材零产物）
 │   ├── ppt/           #   python-pptx 代码画 PPT（primitives / animate / verify）
 │   ├── humanizer/     #   中英文去 AI 腔改写
 │   ├── video-motion/  #   Remotion 引擎（fx 叠动效 + scene-kit 质感组件 + deck 引擎模板）
 │   ├── narration/     #   口播稿工坊（verify_narration.py）
-│   └── auto-subtitle/ #   faster-whisper 自动字幕
+│   ├── auto-subtitle/ #   faster-whisper 自动字幕
+│   └── publish/       #   投稿表单填写（B 站；人登录人发布，脚本只填表）
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映全包 / B 线 Remotion 成片）
 ├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + lottie 动效 + 品牌与测试素材
 ├── projects/          # 施工区：一项目一目录，彼此隔离
 │   ├── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
 │   ├── elephant-plan/ #   elephant-e-ai 2a 冲刺排期 deck 生成脚本（ppt skill）+ v3 两页图
-│   └── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
+│   ├── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
+│   └── pelican-test/  #   HTML 动画逐帧采集 + 代码化导演页成片（CDP + 虚拟时钟 + 程序化配乐）
 ├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
 ├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
 └── scripts/           # 一次性生成脚本与独立小工具（ad-hoc deck / 简历变体 / 产品全景图等，入库可复跑）

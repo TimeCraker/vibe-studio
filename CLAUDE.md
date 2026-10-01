@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 仓库定位
 
-自媒体内容工厂：业务 → 文案 → 画面 → 成片。不承载业务代码，只沉淀内容生产能力。**开工先问交付物，再打开 skill**——产品与工具的权威入口是 [`docs/product-map.md`](docs/product-map.md)：三产品（PPT / 讲解成片 FootageOverlay / 介绍成片 DeckVideoV2+CoverV3）、三工具（humanizer、narration、auto-subtitle，被产品调用，不单独当入口）；新介绍片禁止走存量对照 `DeckVideo`。结构、五区划分、skill 清单**以 README.md 为唯一事实源**（本文件不复述）；总装流程见 `workflows/explainer-video.md`，质量底线见 `docs/2026-08-30-motion-grammar.md`，历站记录见 `docs/workorder-log.md`。工单多由 Zcode 执行，可能并行施工，**提交时只 add 自己站点的文件**。
+自媒体内容工厂：业务 → 文案 → 画面 → 成片。不承载业务代码，只沉淀内容生产能力。**开工先问交付物，再打开 skill**，产品与工具的权威入口是 [`docs/product-map.md`](docs/product-map.md)，清单不在本文件复述；新介绍片禁止走存量对照 `DeckVideo`。结构、五区划分、skill 清单**以 README.md 为唯一事实源**（本文件不复述）；总装流程见 `workflows/explainer-video.md`，质量底线见 `docs/2026-08-30-motion-grammar.md`，历站记录见 `docs/workorder-log.md`。工单多由 Zcode 执行，可能并行施工，**提交时只 add 自己站点的文件**。
 
 ## 单一事实源（改文档前先对表，只碰 owner）
 
