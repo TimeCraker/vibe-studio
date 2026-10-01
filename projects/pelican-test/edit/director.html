@@ -89,11 +89,19 @@
   }
   .agenda-v { font-family: 'Noto Sans SC', sans-serif; font-size: 27px; color: var(--ink-2); }
 
-  /* ---------- 页末引文：印刷体的 pull quote ---------- */
+  /* ---------- 页末引文与署名：定位在固定基线，不靠 auto margin ----------
+     靠 margin-top:auto 收底会随内容高度溢出到字幕带里（实测 scrollHeight 855 >
+     容器 834），所以这两块改成绝对定位、钉在页脚区，内容再长也压不到字幕带。 */
   .pull {
-    margin-top: auto; padding-top: 24px; border-top: 1px solid var(--rule);
+    position: absolute; left: 72px; top: 796px; width: 960px;
+    padding-top: 22px; border-top: 1px solid var(--rule);
     font-family: 'Noto Serif SC Medium', 'Noto Serif SC', serif;
-    font-size: 46px; line-height: 1.48; color: var(--ink); max-width: 960px;
+    font-size: 46px; line-height: 1.48; color: var(--ink);
+  }
+  .handlebar {
+    position: absolute; left: 72px; top: 906px; width: 560px;
+    font-family: 'Noto Sans SC', sans-serif; font-size: 22px;
+    letter-spacing: 0.14em; color: var(--ink-3);
   }
 
   /* ---------- 核对清单：整栏铺开，不挤在窄栏里换行 ---------- */
@@ -151,6 +159,13 @@
     letter-spacing: 0.08em; color: var(--ink-3); width: 84px; flex: none;
   }
   .check-v { font-family: 'Noto Sans SC', sans-serif; font-size: 29px; color: var(--ink-2); }
+  /* numbered manifest rows (factGlyph: 'num') need room for two digits */
+  .check.num i { width: 46px; font-size: 23px; letter-spacing: 0.02em; }
+  .thumblabel {
+    position: absolute;
+    font-family: 'Noto Sans SC', sans-serif; font-size: 22px;
+    letter-spacing: 0.1em; color: var(--ink-3);
+  }
   .stat {
     font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
     font-size: 168px; line-height: 0.94; color: var(--hot); text-align: right;

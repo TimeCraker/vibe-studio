@@ -1,12 +1,16 @@
 /**
  * The cut, as data.
  *
+ * 这条片子的主体是**展示平台生成的东西**，不是评测这道题：画面占比 ~78%，
+ * 讲解型单元全部移除，4.0 的怀疑只在最后一段出现。
+ *
  * Every unit is one visual beat. `a`..`b` are absolute times in the finished
  * video. Source clips are the 3840x2160 captures in frames/<shot>/; `src` is the
  * time to read from inside that clip. `view` is the window into the capture, in
  * normalised source coordinates, so the app's own UI chrome can be cropped out.
  *
- * `label` prints in the caption band's left slot, `meta` in its right slot.
+ * `label` prints in the caption band's left slot, `meta` in its right slot —
+ * both are presentational (which version, what is on screen), never analysis.
  *
  * Reads edit/sections.json for the section grid, so picture and music cannot drift.
  */
@@ -43,191 +47,167 @@ const cam = (z0, z1, x0 = 0, x1 = 0, y0 = 0, y1 = 0, ease = 'inOut') =>
   ({ z: [z0, z1], x: [x0, x1], y: [y0, y1], ease });
 
 // --------------------------------------------------------------------------- //
-// the units
+// the units — 20 beats, section boundaries on the music grid
 // --------------------------------------------------------------------------- //
 const UNITS = [
-  // ===== 01 · hook (0.0 - 4.8) ============================================ //
+  // ===== 01 · 输入 (0.0 - 4.8) — 提示词卡 + 三张缩略图 =================== //
   {
-    id: 'hook', kind: 'hook', a: 0.0, b: 4.8, num: '01',
-    label: '01 · 开场',
-    kicker: '不同模型实测 · 第一期',
-    title: ['鹈鹕测试'],
-    body: ['看着幼稚，其实很考验结构与运动学'],
+    id: 'prompt', kind: 'hook', a: 0.0, b: 4.8,
+    label: '01 · 输入',
+    kicker: '输入',
+    title: ['画一只骑自行车的鹈鹕'],
+    titleSize: 96,
+    body: ['纯 SVG，没有一张位图'],
     footnote: '同一个题目，独立跑了两遍',
     side: {
       rows: [
+        ['平台', 'Antigravity'],
         ['模型', 'Gemini 3.8 Flash'],
-        ['来源', 'Antigravity'],
-        ['输出', '纯 SVG 单文件 · 可交互'],
+        ['档位', 'Flash · 轻量档'],
+        ['产物', '可交互网页 · 纯 SVG'],
       ],
     },
-    agenda: {
-      title: '本片看点',
-      items: [
-        '骨骼动力学：双腿 IK 反解算，不是循环贴图',
-        '交互：按铃、逗鱼、变速、三套昼夜主题',
-        '逐项核对：车轮、传动、腿部结构',
-      ],
-    },
+    thumbs: [
+      { shot: 'a-day', src: 2.00, view: 'aScene', label: '第一版 · 白昼' },
+      { shot: 'b-full', src: 1.60, view: 'bImmers', label: '第二版 · 晚霞' },
+      { shot: 'b-night', src: 1.20, view: 'bImmers', label: '第二版 · 星夜' },
+    ],
   },
 
-  // ===== 02 · version A (4.8 - 19.2) ====================================== //
+  // ===== 02 · 第一版（4.8 - 19.2，纯展示）============================== //
   {
-    id: 'a-full', kind: 'clip', a: 4.80, b: 7.10, shot: 'a-day', src: 0.40,
+    id: 'a1', kind: 'clip', a: 4.80, b: 8.00, shot: 'a-day', src: 1.00,
     view: 'aFull', cam: cam(1.00, 1.05),
-    label: '02 · 版本一', meta: '3840×2160 · 60fps',
+    label: '02 · 第一版', meta: '全屏场景 · 白昼',
   },
   {
-    id: 'a-bike', kind: 'clip', a: 7.10, b: 9.40, shot: 'a-day', src: 3.00,
-    view: 'aBike', cam: cam(1.02, 1.16, -0.015, 0.02, 0.02, -0.01),
-    label: '02 · 版本一', meta: '矢量骨骼动力学',
-    notes: [{ at: 1.20, x: 0.4557, y: 0.6985, text: '轮速是踏频的 1.5 倍', dir: 'right' }],
+    id: 'a2', kind: 'clip', a: 8.00, b: 11.20, shot: 'a-day', src: 2.60,
+    view: 'aBike', cam: cam(1.02, 1.14, -0.015, 0.02, 0.02, -0.01),
+    label: '02 · 第一版', meta: '中景 · 骑行',
   },
   {
-    id: 'a-legs', kind: 'clip', a: 9.40, b: 11.70, shot: 'a-day', src: 8.25,
-    view: 'aMid', cam: cam(1.04, 1.12, -0.05, 0.05),
-    label: '02 · 版本一', meta: '腿部 · 踏板',
-    notes: [{ at: 0.55, x: 0.4693, y: 0.7093, text: '脚掌始终踩在踏板上', dir: 'right' }],
+    id: 'a3', kind: 'clip', a: 11.20, b: 14.20, shot: 'a-sunset', src: 0.60,
+    view: 'aScene', cam: cam(1.00, 1.08),
+    label: '02 · 第一版', meta: '主题 · 晚霞',
   },
   {
-    id: 'a-head', kind: 'clip', a: 11.70, b: 14.00, shot: 'a-day', src: 11.45,
+    id: 'a4', kind: 'clip', a: 14.20, b: 16.80, shot: 'a-night', src: 1.00,
+    view: 'aScene', cam: cam(1.02, 1.10),
+    label: '02 · 第一版', meta: '主题 · 星夜',
+  },
+  {
+    id: 'a5', kind: 'clip', a: 16.80, b: 19.20, shot: 'a-day', src: 11.50,
     view: 'aHead', cam: cam(1.00, 1.10, -0.02, 0.02, 0.02, -0.02),
-    label: '02 · 版本一', meta: '喉囊 / 眨眼 / 呆毛',
-    notes: [{ at: 0.62, x: 0.4975, y: 0.2491, text: '鱼就从这儿蹦出来', dir: 'right' }],
-  },
-  {
-    id: 'a-wide', kind: 'clip', a: 14.00, b: 16.60, shot: 'a-day', src: 5.60,
-    view: 'aScene', cam: cam(1.12, 1.00),
-    label: '02 · 版本一', meta: '视差背景无缝横移',
-  },
-  {
-    id: 'a-sunset', kind: 'clip', a: 16.60, b: 19.20, shot: 'a-sunset', src: 0.55,
-    view: 'aScene', cam: cam(1.00, 1.06),
-    label: '02 · 版本一', meta: '主题 · 晚霞',
+    label: '02 · 第一版', meta: '细节 · 喉囊',
+    notes: [{ at: 0.55, x: 0.4975, y: 0.2491, text: '点它，鱼会跳出来', dir: 'right' }],
   },
 
-  // ===== 03 · version B (19.2 - 36.0) ===================================== //
+  // ===== 03 · 第二版（19.2 - 36.0，6 × 2.8s）========================== //
   {
-    id: 'b-card', kind: 'clip', a: 19.20, b: 21.70, shot: 'b-day', src: 0.40,
-    view: 'bCard', cam: cam(1.00, 1.05),
-    label: '03 · 版本二', meta: '全新美术方向',
+    id: 'b1', kind: 'clip', a: 19.20, b: 22.00, shot: 'b-day', src: 0.40,
+    view: 'bFull', cam: cam(1.00, 1.05),
+    label: '03 · 第二版', meta: '完整界面 · 可交互',
   },
   {
-    id: 'b-app', kind: 'clip', a: 21.70, b: 24.40, shot: 'b-day', src: 3.20,
-    view: 'bFull', cam: cam(1.00, 1.04),
-    label: '03 · 版本二', meta: '可交互应用 · 底部控制台',
+    id: 'b2', kind: 'clip', a: 22.00, b: 24.80, shot: 'b-day', src: 3.20,
+    view: 'bCard', cam: cam(1.02, 1.10),
+    label: '03 · 第二版', meta: '底部控制台',
   },
   {
-    id: 'b-immersive', kind: 'clip', a: 24.40, b: 27.00, shot: 'b-full', src: 0.30,
-    view: 'bImmers', cam: cam(1.00, 1.08, 0, -0.02),
-    label: '03 · 版本二', meta: '显示模式',
+    id: 'b3', kind: 'clip', a: 24.80, b: 27.60, shot: 'b-full', src: 0.70,
+    view: 'bImmers', cam: cam(1.00, 1.10, 0, -0.02),
+    label: '03 · 第二版', meta: '全屏模式',
   },
   {
-    id: 'b-sprint', kind: 'clip', a: 27.00, b: 29.70, shot: 'b-full', src: 3.10,
+    id: 'b4', kind: 'clip', a: 27.60, b: 30.40, shot: 'b-full', src: 3.60,
     view: 'bBike', cam: cam(1.06, 1.14, 0.03, -0.03),
-    label: '03 · 版本二', meta: '速度档位',
+    label: '03 · 第二版', meta: '速度档位',
   },
   {
-    id: 'b-night', kind: 'clip', a: 29.70, b: 32.30, shot: 'b-night', src: 0.55,
+    id: 'b5', kind: 'clip', a: 30.40, b: 33.20, shot: 'b-night', src: 0.50,
     view: 'bImmers', cam: cam(1.00, 1.07),
-    label: '03 · 版本二', meta: '主题 · 星夜',
+    label: '03 · 第二版', meta: '主题 · 星夜',
   },
   {
-    id: 'b-sunset', kind: 'clip', a: 32.30, b: 34.60, shot: 'b-sunset', src: 0.30,
+    id: 'b6', kind: 'clip', a: 33.20, b: 36.00, shot: 'b-sunset', src: 0.30,
     view: 'bImmers', cam: cam(1.00, 1.06),
-    label: '03 · 版本二', meta: '主题 · 晚霞',
-  },
-  {
-    id: 'b-out', kind: 'clip', a: 34.60, b: 36.00, shot: 'b-day', src: 6.40,
-    view: 'bCard', cam: cam(1.06, 1.00),
-    label: '03 · 版本二', meta: '三档速度 · 三套主题',
+    label: '03 · 第二版', meta: '主题 · 晚霞',
   },
 
-  // ===== 04 · why it is hard (36.0 - 52.8) ================================ //
+  // ===== 04 · 生成清单与细节（36.0 - 52.8）============================ //
   {
-    id: 'why', kind: 'statement', a: 36.00, b: 39.00, num: '04',
-    label: '04 · 为什么难',
-    eyebrow: '难点拆解',
-    title: ['佩利骑自行车'],
-    body: ['看着幼稚，考的全是硬功夫'],
-    pull: '比例错一点、关节反一次，整只鸟就废了',
-    side: {
-      rows: [
-        ['难点 01', '车轮与车架的比例'],
-        ['难点 02', '双腿骨骼运动学'],
-        ['难点 03', '细节各自独立驱动'],
-      ],
-    },
+    id: 'manifest', kind: 'statement', a: 36.00, b: 40.20,
+    label: '04 · 生成清单',
+    eyebrow: '这次生成',
+    title: ['一次生成，出来了这些'],
+    titleSize: 92,
+    body: ['没有人补刀，直接可用'],
+    factGlyph: 'num',
+    facts: [
+      ['场景', '海滨、棕榈、灯塔、渐变天色'],
+      ['角色', '戴帽鹈鹕、围巾、车筐里的鱼'],
+      ['动效', '骑行、视差、眨眼、呼吸、围巾'],
+      ['交互', '按铃、逗鱼、变速滑杆、三套主题'],
+    ],
+    side: { stat: ['2', '两个版本，各生成一次'] },
   },
   {
-    id: 'compare', kind: 'split', a: 39.00, b: 43.20,
-    left: { shot: 'a-day', src: 1.20, view: 'aSplit', label: '版本 A', sub: '海滨骑行者' },
-    right: { shot: 'b-day', src: 8.20, view: 'bSplit', label: '版本 B', sub: '佩利漫游记' },
+    id: 'compare', kind: 'split', a: 40.20, b: 43.80,
+    left: { shot: 'a-day', src: 1.20, view: 'aSplit', label: '版本一', sub: '海滨骑行' },
+    right: { shot: 'b-day', src: 8.20, view: 'bSplit', label: '版本二', sub: '佩利漫游记' },
     cam: cam(1.00, 1.05), label: '04 · 对照',
   },
   {
-    id: 'check-wheel', kind: 'clip', a: 43.20, b: 46.80, shot: 'a-day', src: 9.60,
+    id: 'detail-a', kind: 'clip', a: 43.80, b: 48.30, shot: 'a-day', src: 9.40,
     view: 'aWheel', cam: cam(1.02, 1.14, -0.03, 0.03),
-    label: '04 · 逐项核对', meta: '车轮与传动',
+    label: '04 · 细节', meta: '第一版 · 车轮与传动',
     notes: [
-      { at: 0.55, x: 0.3428, y: 0.7024, text: '车轮正圆，辐条等分', dir: 'left' },
-      { at: 1.50, x: 0.4557, y: 0.6985, text: '牙盘与链条对齐', dir: 'right' },
+      { at: 0.60, x: 0.3428, y: 0.7024, text: '辐条是等分的', dir: 'left' },
+      { at: 1.60, x: 0.4557, y: 0.6985, text: '链条咬着牙盘', dir: 'right' },
     ],
   },
   {
-    id: 'check-legs', kind: 'clip', a: 46.80, b: 50.40, shot: 'b-day', src: 8.60,
+    id: 'detail-b', kind: 'clip', a: 48.30, b: 52.80, shot: 'b-day', src: 8.60,
     view: 'bBike', cam: cam(1.04, 1.16, 0.02, -0.02),
-    label: '04 · 逐项核对', meta: '腿部与踏板',
+    label: '04 · 细节', meta: '第二版 · 腿与踏板',
     notes: [
-      { at: 0.55, x: 0.4806, y: 0.5471, text: '膝盖不反折', dir: 'right' },
-      { at: 1.50, x: 0.4930, y: 0.6356, text: '脚掌贴合踏板', dir: 'left' },
+      { at: 0.60, x: 0.4806, y: 0.5471, text: '膝盖不反折', dir: 'right' },
+      { at: 1.60, x: 0.4930, y: 0.6356, text: '脚掌贴着踏板', dir: 'left' },
     ],
-  },
-  {
-    id: 'no-break', kind: 'statement', a: 50.40, b: 52.80, num: '04',
-    label: '04 · 核对结果',
-    eyebrow: '逐项核对',
-    title: ['两版都没崩'],
-    facts: [
-      ['结构', '车轮正圆、辐条等分、车架比例成立'],
-      ['运动', '双脚 IK 闭合，无穿模、无缺件'],
-      ['细节', '眨眼、呼吸、围巾飘动各自独立驱动'],
-    ],
-    side: { stat: ['3/3', '检查项全部通过'] },
   },
 
-  // ===== 05 · verdict (52.8 - 63.4) ====================================== //
+  // ===== 05 · 怀疑（52.8 - 63.4）======================================= //
   {
-    id: 'old-question', kind: 'split', a: 52.80, b: 55.50,
-    left: { shot: 'a-night', src: 0.60, view: 'aSplit', label: '版本 A', sub: '星夜' },
-    right: { shot: 'b-night', src: 0.60, view: 'bSplit', label: '版本 B', sub: '星夜' },
+    id: 'night-pair', kind: 'split', a: 52.80, b: 55.80,
+    left: { shot: 'a-night', src: 0.60, view: 'aSplit', label: '版本一', sub: '星夜' },
+    right: { shot: 'b-night', src: 0.60, view: 'bSplit', label: '版本二', sub: '星夜' },
     cam: cam(1.02, 1.06), label: '05 · 结论',
   },
   {
-    id: 'unlike', kind: 'clip', a: 55.50, b: 58.40, shot: 'a-night', src: 2.60,
+    id: 'night-wide', kind: 'clip', a: 55.80, b: 58.80, shot: 'a-night', src: 2.60,
     view: 'aScene', cam: cam(1.03, 1.10),
-    label: '05 · 结论', meta: '同一题面 · 两版',
+    label: '05 · 结论', meta: '第一版 · 星夜',
   },
   {
-    id: 'verdict', kind: 'verdict', a: 58.40, b: 61.00, num: '05', dark: true,
+    id: 'verdict', kind: 'verdict', a: 58.80, b: 61.20, dark: true,
     label: '05 · 结论',
-    eyebrow: '结论',
-    kicker: '所以我的判断是',
-    title: ['合理怀疑', '已是 Gemini 4.0 的水平'],
-    titleSize: 88, railNarrow: true,
-    body: ['标称的是 3.8 Flash 轻量档', '但这个完成度不像轻量档该有的样子'],
-    pull: '题目没变难，是答卷变强了',
+    eyebrow: '我的怀疑',
+    kicker: '但有一点对不上',
+    title: ['标称 3.8 Flash', '水平更像 Gemini 4.0'],
+    titleSize: 76, railNarrow: true,
+    body: ['Flash 是轻量档，不是旗舰档'],
+    pull: '没有别的解释，只能往版本上想',
     side: {
       rows: [
-        ['车轮', '正圆 · 辐条等分'],
-        ['双腿', 'IK 闭合 · 无穿模'],
-        ['主题', '昼 / 晚霞 / 星夜'],
-        ['跑通', '一次成型 · 无报错'],
+        ['场景', '全屏 · 三套天色'],
+        ['动效', '骑行 · 视差 · 呼吸'],
+        ['交互', '按铃 · 逗鱼 · 变速'],
+        ['生成', '一次成型 · 无报错'],
       ],
     },
   },
   {
-    id: 'outro', kind: 'outro', a: 61.00, b: VIDEO_END,
+    id: 'outro', kind: 'outro', a: 61.20, b: VIDEO_END,
     label: '06 · 完',
     eyebrow: '下一期',
     title: ['你觉得呢？'],
@@ -239,35 +219,34 @@ const UNITS = [
 ];
 
 // --------------------------------------------------------------------------- //
-// subtitles (no narration — these carry the audio channel's meaning)
+// subtitles (no narration — these carry the audio channel's meaning).
+// Showcase voice: describe what is on screen, never why the task is hard.
+// Every cue is checked against the on-screen text by tools/validate-plan.mjs.
 // --------------------------------------------------------------------------- //
 const CUES = [
-  { a: 0.55, b: 2.35, text: '一道 AI 圈的老题目' },
-  { a: 2.45, b: 4.70, text: '画一只骑自行车的鹈鹕' },
+  { a: 0.60, b: 2.40, text: '提示词就这一句' },
+  { a: 2.60, b: 4.70, text: '两版，各生成一次' },
 
-  { a: 4.90, b: 7.00, text: '版本一：纯 SVG 矢量动画' },
-  { a: 7.20, b: 9.30, text: '车轮在转，脚踏在蹬' },
-  { a: 9.50, b: 11.60, text: '两条腿是 IK 反解算的' },
-  { a: 11.80, b: 13.90, text: '点一下，从喉囊里吐条鱼' },
-  { a: 14.10, b: 16.50, text: '眨眼、呼吸、围巾都在动' },
-  { a: 16.70, b: 19.10, text: '一天三套天色，都是写好的' },
+  { a: 4.90, b: 7.90, text: '版本一：一个全屏的 SVG 场景' },
+  { a: 8.10, b: 11.10, text: '车轮、脚踏、围巾，全都在动' },
+  { a: 11.30, b: 14.10, text: '点一下，天色就换了' },
+  { a: 14.30, b: 16.70, text: '星夜：车灯、星光、地面光晕' },
+  { a: 16.90, b: 19.10, text: '喉囊里还藏了一条鱼' },
 
-  { a: 19.30, b: 21.60, text: '同一道题，再让它答一次' },
-  { a: 21.80, b: 24.30, text: '滑轮、按键、主题，全都能点' },
-  { a: 24.50, b: 26.90, text: '一键切成沉浸全屏' },
-  { a: 27.10, b: 29.60, text: '冲刺档：42 km/h' },
-  { a: 29.80, b: 32.20, text: '车灯、星光、地面光晕全都在' },
-  { a: 32.40, b: 34.50, text: '同一个场景，重打一遍光' },
-  { a: 34.70, b: 36.00, text: '同一套骨骼动力学' },
+  { a: 19.30, b: 21.90, text: '版本二：直接做成了网页应用' },
+  { a: 22.10, b: 24.70, text: '底部一整排控件，全都能点' },
+  { a: 24.90, b: 27.50, text: '一键切成沉浸全屏' },
+  { a: 27.70, b: 30.30, text: '冲刺档拉到 42 km/h' },
+  { a: 30.50, b: 33.10, text: '星夜：车灯、星光、光晕' },
+  { a: 33.30, b: 35.90, text: '同一个场景，重新打一遍光' },
 
-  { a: 36.10, b: 38.90, text: '先说说这题到底难在哪' },
-  { a: 39.10, b: 43.10, text: '同一个题面，两种解法' },
-  { a: 43.30, b: 46.70, text: '放大看，每个细节都成立' },
-  { a: 46.90, b: 50.30, text: '两条腿都闭合，没有穿模' },
-  { a: 50.50, b: 52.70, text: '两版都经得起放大看' },
+  { a: 36.10, b: 40.10, text: '这是它的原始输出' },
+  { a: 40.30, b: 43.70, text: '同一个提示词，两次生成' },
+  { a: 43.90, b: 48.20, text: '凑近看，传动是对得上的' },
+  { a: 48.40, b: 52.70, text: '换个美术，动作一样成立' },
 
-  { a: 52.90, b: 55.40, text: '老题目，难度没变' },
-  { a: 55.60, b: 58.30, text: '但答卷的水平不太像 Flash 档' },
-  { a: 58.50, b: 61.00, text: '这只是推断，不是定论' },
-  { a: 61.10, b: 63.30, text: '下期继续测别的大模型' },
+  { a: 52.90, b: 55.70, text: '两版都是一次跑通' },
+  { a: 55.90, b: 58.70, text: '看着看着，就有点不对劲了' },
+  { a: 58.90, b: 61.10, text: '完成度不太像轻量档' },
+  { a: 61.30, b: 63.30, text: '评论区留下你的判断' },
 ];

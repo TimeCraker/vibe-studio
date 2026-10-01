@@ -31,6 +31,8 @@ const L = {
   // comparison plates
   splitL: { x: 72, y: 150, w: 852, h: 620 },
   splitR: { x: 996, y: 150, w: 852, h: 620 },
+  // contact-sheet strip on the input card: three 16:9 thumbnails of the output
+  thumbs: { x: 72, y: 566, w: 576, h: 324, gap: 24 },
 };
 const FULL = { x: 0, y: 0, w: DW, h: DH };
 
@@ -213,11 +215,20 @@ function unitAt(t) {
 // overlay markup
 // --------------------------------------------------------------------------- //
 function headHTML() {
+  // the running head carries provenance on every single frame — this is a
+  // showcase of what the platform generated, so the platform never leaves screen
   return `<div class="head">
-      <span><b>鹈鹕测试</b> · PELICAN ON A BICYCLE</span>
-      <span>ANTIGRAVITY / GEMINI 3.8 FLASH</span>
+      <span><b>ANTIGRAVITY 生成实录</b> · PELICAN ON A BICYCLE</span>
+      <span>GEMINI 3.8 FLASH · 轻量档</span>
     </div><div class="headrule"></div>`;
 }
+
+/** thumbnail geometry for the input card's contact sheet */
+function thumbRect(i, n) {
+  const t = L.thumbs;
+  return { x: t.x + i * (t.w + t.gap), y: t.y, w: t.w, h: t.h };
+}
+function thumbKey(th) { return `${th.shot}#${Math.round(th.src * FPS)}`; }
 
 function bandHTML(unit, t) {
   const cue = CUES.find((c) => t >= c.a && t < c.b);
@@ -286,7 +297,8 @@ function renderHook(unit, t) {
   out.push(`<div class="kicker" style="opacity:${k.o};transform:translateY(${k.y}px)">${unit.kicker}</div>`);
   unit.title.forEach((line, i) => {
     const e = E(0.26 + i * 0.12);
-    out.push(`<div class="display xl" style="opacity:${e.o};transform:translateY(${e.y}px)">${line}</div>`);
+    const fs = unit.titleSize ? `font-size:${unit.titleSize}px;` : '';
+    out.push(`<div class="display xl" style="${fs}opacity:${e.o};transform:translateY(${e.y}px)">${line}</div>`);
   });
   const r = E(0.5);
   out.push(`<div class="rule" style="opacity:${r.o};transform:scaleX(${easeOutQuint(r.p)});transform-origin:left center;width:190px"></div>`);
@@ -313,6 +325,34 @@ function renderHook(unit, t) {
     </div>`;
 }
 
+/** Footer zone of a card: pull quote + handle. Rendered at the OVERLAY root
+ *  (not inside .page) so their fixed y positions are frame coordinates and can
+ *  never be pushed into the caption band by content above. */
+function bottomHTML(unit, t) {
+  const out = [];
+  if (unit.pull) {
+    const e = ent(t, unit.a, 0.5, unit.kind === 'outro' ? 0.6 : 0.62);
+    out.push(`<div class="pull" style="opacity:${e.o};transform:translateY(${e.y}px)">${unit.pull}</div>`);
+  }
+  if (unit.handle) {
+    const e = ent(t, unit.a, 0.5, 0.74);
+    out.push(`<div class="handlebar" style="opacity:${e.o};transform:translateY(${e.y}px)">${unit.handle}</div>`);
+  }
+  return out.join('');
+}
+
+/** captions for the contact-sheet thumbnails. Rendered at the OVERLAY root, not
+ *  inside .page — .page is itself absolutely positioned 118px down, so a frame
+ *  coordinate used inside it would land 118px too low. */
+function thumbsHTML(unit, t) {
+  if (!unit.thumbs) return '';
+  return unit.thumbs.map((th, i) => {
+    const r = thumbRect(i, unit.thumbs.length);
+    const e = ent(t, unit.a, 0.5, 0.82 + i * 0.1);
+    return `<div class="thumblabel" style="left:${r.x}px;top:${r.y + r.h + 16}px;opacity:${e.o}">${th.label}</div>`;
+  }).join('');
+}
+
 function renderStatement(unit, t) {
   const E = (d) => ent(t, unit.a, 0.55, d);
   const out = [];
@@ -329,16 +369,14 @@ function renderStatement(unit, t) {
     const e = E(0.66 + i * 0.12);
     out.push(`<div class="prose" style="opacity:${e.o};transform:translateY(${e.y}px)">${line}</div>`);
   });
-  // checklist lives in the main column at full width so nothing wraps awkwardly
+  // checklist / manifest lives in the main column at full width so nothing wraps
   if (unit.facts) {
+    const num = unit.factGlyph === 'num';
     out.push(`<div class="facts">${unit.facts.map(([k2, v], i) => {
       const e = E(0.72 + i * 0.16);
-      return `<div style="opacity:${e.o};transform:translateY(${e.y}px)"><div class="check"><i>✓</i><span class="check-k">${k2}</span><span class="check-v">${v}</span></div></div>`;
+      const glyph = num ? `0${i + 1}` : '✓';
+      return `<div style="opacity:${e.o};transform:translateY(${e.y}px)"><div class="check${num ? ' num' : ''}"><i>${glyph}</i><span class="check-k">${k2}</span><span class="check-v">${v}</span></div></div>`;
     }).join('')}</div>`);
-  }
-  if (unit.pull) {
-    const e = E(0.95);
-    out.push(`<div class="pull" style="opacity:${e.o};transform:translateY(${e.y}px)">${unit.pull}</div>`);
   }
   let rail = '';
   if (unit.side?.stat) {
@@ -372,10 +410,6 @@ function renderVerdict(unit, t) {
     const e = E(0.8 + i * 0.14);
     out.push(`<div class="prose" style="opacity:${e.o};transform:translateY(${e.y}px)">${line}</div>`);
   });
-  if (unit.pull) {
-    const e = E(0.86);
-    out.push(`<div class="pull" style="opacity:${e.o};transform:translateY(${e.y}px)">${unit.pull}</div>`);
-  }
   const rows = (unit.side?.rows ?? []).map(([k2, v], i) => {
     const e = E(0.7 + i * 0.13);
     return `<div style="opacity:${e.o};transform:translateY(${e.y}px)">${trow(k2, v)}</div>`;
@@ -401,12 +435,6 @@ function renderOutro(unit, t) {
     const e = E(0.4 + i * 0.12);
     out.push(`<div class="prose" style="opacity:${e.o};transform:translateY(${e.y}px)">${line}</div>`);
   });
-  if (unit.pull) {
-    const e = E(0.6);
-    out.push(`<div class="pull" style="opacity:${e.o};transform:translateY(${e.y}px)">${unit.pull}</div>`);
-  }
-  const h = E(0.72);
-  out.push(`<div class="foot" style="opacity:${h.o};transform:translateY(${h.y}px);max-width:700px">${unit.handle}</div>`);
   const stat = unit.side?.stat
     ? `<div style="opacity:${E(0.26).o}"><div class="stat">${unit.side.stat[0]}</div><div class="stat-l">${unit.side.stat[1] ?? ''}</div></div>`
     : '';
@@ -422,6 +450,7 @@ function renderOutro(unit, t) {
 function neededKeys(unit, t) {
   if (unit.kind === 'clip') return [srcKey(unit, t)];
   if (unit.kind === 'split') return [srcKey(unit.left, t, unit.a), srcKey(unit.right, t, unit.a)];
+  if (unit.thumbs) return unit.thumbs.map(thumbKey);
   return [];
 }
 
@@ -452,6 +481,18 @@ function drawFrame(i) {
     for (const p of [L.splitL, L.splitR]) ctx.strokeRect(p.x + 0.5, p.y + 0.5, p.w - 1, p.h - 1);
   }
 
+  // ---- contact sheet on the input card ----
+  if (unit.thumbs) {
+    ctx.strokeStyle = dark ? 'rgba(242,236,225,0.30)' : 'rgba(23,20,15,0.30)';
+    ctx.lineWidth = 1;
+    unit.thumbs.forEach((th, i) => {
+      const r = thumbRect(i, unit.thumbs.length);
+      const bmp = CACHE.get(thumbKey(th));
+      if (bmp) drawPlate(bmp, VIEWS[th.view], r, { z: 1, x: 0, y: 0 });
+      ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
+    });
+  }
+
   // ---- end fade ----
   if (t > VIDEO_END - 1.0) {
     ctx.fillStyle = `rgba(23,20,15,${clamp((t - (VIDEO_END - 1.0)) / 1.0)})`;
@@ -469,7 +510,7 @@ function drawFrame(i) {
     case 'outro': body = renderOutro(unit, t); break;
     default: body = '';
   }
-  overlay.innerHTML = headHTML() + body + bandHTML(unit, t);
+  overlay.innerHTML = headHTML() + body + bottomHTML(unit, t) + thumbsHTML(unit, t) + bandHTML(unit, t);
 }
 
 window.__frame = async (i) => {
@@ -524,16 +565,16 @@ window.__cover = async (opts = {}) => {
 
   overlay.innerHTML = `
     <div class="head">
-      <span><b>鹈鹕测试</b> · PELICAN ON A BICYCLE</span>
-      <span>ANTIGRAVITY / GEMINI 3.8 FLASH</span>
+      <span><b>ANTIGRAVITY 生成实录</b> · PELICAN ON A BICYCLE</span>
+      <span>GEMINI 3.8 FLASH · 轻量档</span>
     </div><div class="headrule"></div>
     <div class="coverlock">
-      <div class="kicker">ANTIGRAVITY · GEMINI 3.8 FLASH 实测</div>
+      <div class="kicker">ANTIGRAVITY 生成实录 · GEMINI 3.8 FLASH</div>
       <div class="covertitle">骑自行车的<br>鹈鹕</div>
       <div class="coverrule"></div>
-      <div class="coverkick">同一个题目 · 两版一次成型</div>
-      <div class="coverhot">合理怀疑：已是 Gemini 4.0 的水平</div>
+      <div class="coverkick">一句话的提示词 · 两版都能点</div>
+      <div class="coverhot">我怀疑它已是 Gemini 4.0 的水平</div>
     </div>
-    <div class="covermeta"><span>@TimeCraker</span><span>纯 SVG 矢量动画 · 无贴图</span></div>`;
+    <div class="covermeta"><span>@TimeCraker</span><span>纯 SVG 矢量动画 · 无一张位图</span></div>`;
   return { ok: true, shot, src, missing: missing.length };
 };
