@@ -147,6 +147,134 @@ async function sendKey(cdp, key) {
   }
 }
 
+// ---- 小红书投稿动作（命令分支与 setup 共用同一份实现） ----
+
+/** 上传视频（直接把文件挂到唯一的 file input 上；小红书接受这种方式，读回 0 但实际生效） */
+async function doUpload(cdp, video) {
+  await cdp.send('DOM.enable');
+  const r = await cdp.send('Runtime.evaluate', {
+    expression: `(() => { const els = [...document.querySelectorAll('input[type=file]')]; return els[0] ?? null; })()`,
+    returnByValue: false,
+  });
+  if (!r.result?.objectId) throw new Error('找不到视频文件输入');
+  await cdp.send('DOM.setFileInputFiles', { files: [video], objectId: r.result.objectId });
+  // 页面会换到发布表单并重渲染（input 被替换，读回 files=0 是正常的）
+  await sleep(5000);
+}
+
+/** 应用一张 AI 推荐封面（默认最后一张） */
+async function doApplyCover(cdp, idx = 2) {
+  const n = await cdp.eval(`[...document.querySelectorAll('.apply-btn')].filter(e => e.getBoundingClientRect().width > 0).length`);
+  if (!n) throw new Error('找不到智能推荐封面的「应用」按钮（封面还没生成？）');
+  const i = Math.min(idx, n - 1);
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('.apply-btn')].filter(e => e.getBoundingClientRect().width > 0)[${i}];
+    el.setAttribute('data-xhs-apply', '1');
+  })()`);
+  await realClick(cdp, '[data-xhs-apply]', 0);
+  await sleep(1200);
+  return `已应用推荐封面 #${i + 1}`;
+}
+
+/** 原创声明开关 + 同意 + 内容类型（笔记含AI合成内容） */
+async function doDeclare(cdp, want = '笔记含AI合成内容') {
+  // 1) 拨原创声明开关（开关图形在行右端，中心点不到它）
+  const pt = await cdp.eval(`(() => {
+    const row = [...document.querySelectorAll('*')].find(e => { const r = e.getBoundingClientRect(); return r.width > 300 && r.height > 30 && r.height < 80 && (e.innerText || '').trim() === '原创声明'; });
+    if (!row) return null;
+    const r = row.getBoundingClientRect();
+    return { x: Math.round(r.right - 25), y: Math.round(r.top + r.height / 2) };
+  })()`);
+  if (!pt) throw new Error('找不到原创声明行');
+  for (const type of ['mousePressed', 'mouseReleased']) {
+    await cdp.send('Input.dispatchMouseEvent', { type, x: pt.x, y: pt.y, button: 'left', clickCount: 1 });
+  }
+  await sleep(1500);
+  // 2) 权益确认框：勾同意 + 点声明原创
+  await cdp.eval(`(() => {
+    const lbl = [...document.querySelectorAll('*')].filter(e => { const r = e.getBoundingClientRect(); return r.width > 300 && r.height > 20 && r.height < 50 && (e.innerText || '').includes('我已阅读并同意'); });
+    lbl[lbl.length - 1]?.setAttribute('data-xhs-agree', '1');
+  })()`);
+  await realClick(cdp, '[data-xhs-agree]', 0);
+  await sleep(700);
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('button,div,span')].filter(e => { const r = e.getBoundingClientRect(); return r.width > 60 && r.height > 25 && (e.innerText || '').trim() === '声明原创'; });
+    el[el.length - 1]?.setAttribute('data-xhs-orig', '1');
+  })()`);
+  await realClick(cdp, '[data-xhs-orig]', 0);
+  await sleep(1200);
+  // 3) 内容类型下拉：选 AI 合成
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('*')].find(e => { const r = e.getBoundingClientRect(); return r.width > 300 && r.height > 25 && r.height < 70 && (e.innerText || '').trim() === '添加内容类型声明'; });
+    el?.setAttribute('data-xhs-type', '1');
+  })()`);
+  await realClick(cdp, '[data-xhs-type]', 0);
+  await sleep(1500);
+  const picked = await cdp.eval(`(() => {
+    const row = [...document.querySelectorAll('*')].find(e => { const r = e.getBoundingClientRect(); return r.width > 200 && r.height > 25 && r.height < 60 && (e.innerText || '').trim() === ${JSON.stringify(want)}; });
+    if (!row) return null;
+    row.click();
+    return (row.innerText || '').trim();
+  })()`);
+  if (!picked) throw new Error(`声明下拉里没有「${want}」`);
+  await sleep(900);
+  return picked;
+}
+
+/** setup 的步骤计划。--dry 在附着浏览器之前就打印它。 */
+function setupPlan() {
+  const video = arg('video', null);
+  const coverIdx = Number(arg('cover-index', 2));
+  const declareTxt = arg('declare', '笔记含AI合成内容');
+  const tags = String(arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
+  return [
+    'goto 发布页',
+    video ? '上传视频' : '上传视频（未给 --video，需要已在表单页）',
+    `fill --spec ${arg('spec', 'xhs-form.json')}`,
+    tags.length ? `topics --names ${tags.join(',')}` : 'topics（未给 --names，跳过）',
+    `应用 AI 推荐封面 #${coverIdx + 1}`,
+    `declare --option ${declareTxt}`,
+    '自检汇总（发布按钮由你点）',
+  ];
+}
+
+/** 话题：点 #话题 按钮（插入一个 # 并弹情境联想）→ 在同一次 eval 里找到名字匹配的
+ *  联想项并点击。跨进程点击会因弹层重渲染点错项（实测踩过）。
+ *  联想是小红书按视频内容给的有限集合：想要的话题没有就删掉 #，不硬凑。 */
+async function doTopics(cdp, names) {
+  const results = [];
+  for (const name of names) {
+    await cdp.eval(`document.querySelector('.contentBtn.topic-btn')?.click()`);
+    await sleep(1400);
+    const picked = await cdp.eval(`(() => {
+      const want = ${JSON.stringify(name)};
+      const cands = [...document.querySelectorAll('*')].filter(e => {
+        const r = e.getBoundingClientRect();
+        if (r.width < 30 || r.height < 18 || r.height > 60 || r.width > 420) return false;
+        const t = (e.innerText || '').trim();
+        return t.startsWith('#') && t.includes(want) && t.length <= want.length + 20;
+      }).map(e => ({ el: e, t: (e.innerText || '').trim(), len: (e.innerText || '').trim().length }));
+      if (!cands.length) return null;
+      cands.sort((a, b) => a.len - b.len);   // 名字最短优先（避免 #AI 选中 #AI绘画）
+      const el = cands[0].el;
+      const hit = cands[0].t;
+      el.click();
+      return hit.slice(0, 26);
+    })()`);
+    await sleep(700);
+    if (!picked) {
+      await cdp.eval(`document.querySelector('.tiptap.ProseMirror')?.focus(), null`);
+      await sleep(120);
+      await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
+      await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
+      results.push({ name, picked: null, note: 'no suggestion, removed the #' });
+      continue;
+    }
+    results.push({ name, picked });
+  }
+  return results;
+}
+
 /** 点第一个「文本完全等于 t」的可见元素 */
 async function tapText(cdp, t) {
   const r = await cdp.eval(`(() => {
@@ -185,7 +313,12 @@ async function launch() {
 
 async function main() {
   if (cmd === 'launch') return launch();
-  if (!cmd) { console.log('commands: launch status tabs goto eval inspect shot scroll pickfile file tap tapText hover type key clear（高层命令登录探明 DOM 后补）'); return; }
+  if (!cmd) { console.log('commands: launch status tabs goto eval inspect shot scroll pickfile file tap tapText hover type key clear fill topics clickxy setup'); return; }
+  // --dry 只打印计划，不碰浏览器
+  if (flag('dry') && cmd === 'setup') {
+    console.log(setupPlan().map((s, i) => `${i + 1}. ${s}`).join('\n'));
+    return;
+  }
   const cdp = await attach();
   try {
     if (cmd === 'status') {
@@ -346,42 +479,9 @@ async function main() {
       }
       console.log(JSON.stringify(out, null, 1));
     } else if (cmd === 'topics') {
-      // 逐个加话题：点 #话题 按钮（插入一个 # 并弹情境联想）→ 在同一次 eval 里
-      // 找到名字匹配的联想项并点击。跨进程点击会因弹层重渲染点错项（实测踩过）。
       const names = String(arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
       if (!names.length) throw new Error('需要 --names A,B,C');
-      const results = [];
-      for (const name of names) {
-        await cdp.eval(`document.querySelector('.contentBtn.topic-btn')?.click()`);
-        await sleep(1400);
-        const picked = await cdp.eval(`(() => {
-          const want = ${JSON.stringify(name)};
-          const cands = [...document.querySelectorAll('*')].filter(e => {
-            const r = e.getBoundingClientRect();
-            if (r.width < 30 || r.height < 18 || r.height > 60 || r.width > 420) return false;
-            const t = (e.innerText || '').trim();
-            return t.startsWith('#') && t.includes(want) && t.length <= want.length + 20;
-          }).map(e => ({ el: e, t: (e.innerText || '').trim(), len: (e.innerText || '').trim().length }));
-          if (!cands.length) return null;
-          cands.sort((a, b) => a.len - b.len);   // 名字最短优先（避免 #AI 选中 #AI绘画）
-          const el = cands[0].el;
-          const hit = cands[0].t;
-          el.click();
-          return hit.slice(0, 26);
-        })()`);
-        await sleep(700);
-        if (!picked) {
-          // 没有匹配的联想项：把悬空的 # 删掉，不留纯文本
-          await cdp.eval(`document.querySelector('.tiptap.ProseMirror')?.focus(), null`);
-          await sleep(120);
-          await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
-          await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
-          results.push({ name, picked: null, note: 'no suggestion, removed the #' });
-          continue;
-        }
-        results.push({ name, picked });
-      }
-      console.log(JSON.stringify(results, null, 1));
+      console.log(JSON.stringify(await doTopics(cdp, names), null, 1));
     } else if (cmd === 'clickxy') {
       // 坐标点击逃生口：开关/滑块这类小控件没有稳定选择器时用
       const x = Math.round(Number(arg('x', 0))), y = Math.round(Number(arg('y', 0)));
@@ -390,6 +490,35 @@ async function main() {
       }
       await sleep(Number(arg('wait', 800)));
       console.log(`clicked at ${x},${y}`);
+    } else if (cmd === 'setup') {
+      // 完整投稿前序列。发布按钮永远由人点 —— 这里到自检为止（--dry 在 main 入口处理）。
+      const video = arg('video', null);
+      const coverIdx = Number(arg('cover-index', 2));
+      const declareTxt = arg('declare', '笔记含AI合成内容');
+      const specPath = resolve(arg('spec', join(PROJECT, 'xhs-form.json')));
+      const tags = String(arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
+
+      const onPublishPage = String(await cdp.eval('location.href')).includes('/publish/publish');
+      if (!onPublishPage) {
+        if (!video) throw new Error('不在发布页，且未提供 --video');
+        await cdp.send('Page.navigate', { url: 'https://creator.xiaohongshu.com/publish/publish?source=official' });
+        await sleep(5000);
+      }
+      // 视频已上传的页面没有 file input
+      const hasInput = await cdp.eval(`[...document.querySelectorAll('input[type=file]')].some(e => e.accept.includes('.mp4') || e.accept.includes('video'))`);
+      if (hasInput) {
+        if (!video) throw new Error('需要上传视频，但未提供 --video');
+        await doUpload(cdp, resolve(video));
+      } else {
+        console.log('视频已上传，跳过上传');
+      }
+      const out = {};
+      out.fill = await doFill(cdp, specPath);
+      if (tags.length) out.topics = await doTopics(cdp, tags);
+      out.cover = await doApplyCover(cdp, coverIdx);
+      out.declare = await doDeclare(cdp, declareTxt);
+      console.log(JSON.stringify(out, null, 1));
+      console.log('表单就绪。发布按钮由你点。');
     } else if (cmd === 'clear') {
       // 清空聚焦的可编辑元素：Ctrl+A + Backspace（富文本编辑器通用，别用 execCommand）
       await cdp.eval(`(() => { const el = document.activeElement; if (el) el.focus(); })()`);
