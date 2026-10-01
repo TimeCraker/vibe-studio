@@ -3,8 +3,10 @@
 
 Checks:
   1. README skills table <-> skills/ directory alignment (both directions)
-  2. Path references in meta docs resolve (products/ = local-only warn)
+  2. Path references in meta docs resolve (products/ = local-only warn; archived docs skipped)
   3. PAT entries in assets/patterns.md have required fields; index rows match
+  3.5 component-catalog scene-kit heading count == table rows
+  3.6 Backticked PascalCase symbols in README / product-map resolve to a real export
   4. README install loop / structure tree / prose count all cover every skill
   5. .claude/skills junctions exist per skill (local machine only, warn)
 
@@ -105,6 +107,30 @@ if os.path.isfile(cat_doc):
         n_rows = len(re.findall(r"(?m)^\| `", sec))
         if int(m_head.group(1)) != n_rows:
             errors.append(f"component-catalog.md: heading says {m_head.group(1)} components, table has {n_rows} rows")
+
+# --- 3.6 入口文档里的反引号符号必须解析到真实的组件/组合 ---
+# README 与 product-map 是「产品入口」的权威文档。它们用反引号写的 PascalCase 名字
+# （CoverV3 / DeckVideoV2 / FootageOverlay …）等于在向读者承诺「这东西存在」。
+# 曾经长期失效：CoverV3 只存在于 projects/lekao-intro/，skill 模板里没有，
+# 新项目按文档走是死路；而第 2 项只认 skills/ 前缀的路径引用，抓不到裸符号。
+# 范围刻意只限这两份入口文档：全仓扫会有大量误报（上游 API、非 src/ 的导出等）。
+ENTRY_DOCS = ["README.md", "docs/product-map.md"]
+UPSTREAM_SYMBOLS = {"TransitionSeries", "WebSocket", "React", "Remotion", "AbsoluteFill"}
+symbols = set()
+for f in sorted(glob.glob("skills/**/src/**/*.ts*", recursive=True)
+                + glob.glob("projects/**/src/**/*.ts*", recursive=True)):
+    st = open(f, encoding="utf-8", errors="ignore").read()
+    symbols |= set(re.findall(r"export (?:const|function|class|type|interface) ([A-Za-z0-9_]+)", st))
+    symbols |= set(re.findall(r"id:\s*[\"']([A-Za-z0-9_]+)[\"']", st))
+    symbols |= set(re.findall(r"id=[\"']([A-Za-z0-9_]+)[\"']", st))
+for doc in ENTRY_DOCS:
+    if not os.path.isfile(doc):
+        continue
+    dt = open(doc, encoding="utf-8").read()
+    for name in sorted(set(re.findall(r"`([A-Z][A-Za-z0-9]{2,})`", dt))):
+        if name in symbols or name in UPSTREAM_SYMBOLS:
+            continue
+        errors.append(f"{doc}: symbol `{name}` resolves to no component/composition export")
 
 # --- 4. README install loop + structure tree + prose count must cover every skill ---
 # 失败模式：新 skill 只加了技能表一行，散文里的数量词、结构树、junction 安装循环全忘了。

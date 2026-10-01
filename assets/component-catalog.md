@@ -85,6 +85,17 @@ v4 §3 全量吸收，默认值 = 标杆片实测。**架构：页间硬切为�
 
 **引擎接线变化（S2）**：DeckVideoV2 页序列改硬切（V2Page 删 fadeIn/fadeOut 交叉溶解、Sequence 时长去 overlap）；build-deck-params 的 `OVERLAP_SECONDS` 0.5→0（lekao 全片 3302→**3287 帧** = 109.57s）；字幕去重与关键词从引擎硬编码改为 deck-scenes 的 `SUBTITLE_CONFIG`（页号声明式，项目内容归项目文件）。
 
+## 封面（介绍成片专用）
+
+| 组件 | 干什么 | 关键参数 / 坑 |
+|---|---|---|
+| `CoverV3`（+ `cover3-index.ts`） | 介绍成片封面：封面即成片语言。深族底 + 浏览器框官网特写 + 150px 金句 + 三枚 chips + mono 域名 + 顶部进度条，零件与成片同源 | 全部文案/截图走 props（`CoverV3Props`），改 `cover-props.ts` 或入口里的 `PROPS` 即可；出图 `--frame=60`（让 spring 走完、光晕落在可见相位）；**不要**拿 v1 的 `Cover`（json 三预设）当介绍片封面 |
+| `Cover`（v1） | 通用封面：只要一张标题封面、不跟某条介绍成片时用 | json 三预设；与 scene-kit 成片不是同一套视觉语言 |
+
+> 回流记录：`CoverV3` 原本只存在于 `projects/lekao-intro/`，而 README 与 `docs/product-map.md`
+> 把它定为介绍成片的封面入口，新项目复制模板却拿不到它（模板只有 v1 的 `Cover.tsx`），按文档走是死路。
+> 2026-10-02 抽出模板版本并把文案改成 props，保留原版面（原实现实际出过片）。
+
 ## 引擎（DeckVideoV2 机制层）
 
 页序列 = deck-params 派生（页时长跟配音走）；每页渲 `deck-scenes.tsx` 对应场景 + 页音频 + TopProgress；字幕走 deck-cues 全局时间轴。

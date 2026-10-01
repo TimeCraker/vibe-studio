@@ -24,7 +24,7 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 | **讲解成片**（已有录像、屏录、游戏录像） | [`video-motion`](skills/video-motion/) · `FootageOverlay` | 不要走介绍成片 |
 | **介绍成片**（从项目说明出一条可发布视频） | [`explainer-video`](workflows/explainer-video.md) · 成片 `DeckVideoV2` · 封面 `CoverV3` | 不要用 `DeckVideo` 翻页 PPT；不要把七个 skill 摊开挑 |
 
-只要一张标题封面、没有介绍成片任务：走 `Cover` json 三预设。介绍成片的封面跟成片走 `CoverV3`。
+只要一张标题封面、没有介绍成片任务：走 `Cover` json 三预设。介绍成片的封面跟成片走 `CoverV3`（模板自带，改 props 即可，不要拿 v1 的 `Cover` 顶）。
 
 ## 产品
 
