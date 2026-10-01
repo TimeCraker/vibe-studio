@@ -336,4 +336,3 @@ skill 模板里只有 v1 的 `Cover.tsx`。**照权威文档走是死路。** �
 **唯一没闭环的验证**：模板不带 `node_modules`，`CoverV3` 跑不了 `remotion still`。
 `tsc --noEmit` 只报缺 react / remotion 的模块错误（与模板里已有组件同款），新代码自身零语法错。
 **下次接项目第一次出封面时，必须目检一次。**
-
