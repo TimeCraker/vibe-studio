@@ -54,14 +54,46 @@ node skills/publish/templates/bili.mjs check
 标题、简介、标签先落到文件里，不要在命令行上手打。理由：命令行参数过 GBK 控制台容易乱码，
 而 `form.json` 是 UTF-8 文件，还能进版本库、能 diff、能复查。
 
-写之前先对表（平台硬限制，超了 `check` 会报）：
+写之前先对表（平台硬限制，以投稿页实测为准）：
 
-| 字段 | B 站上限 |
-|---|---|
-| 标题 | 80 字 |
-| 简介 | 2000 字 |
-| 标签 | 10 个，单个 ≤20 字 |
-| 分区 / 创作声明 / 封面 | **必填** |
+| 字段 | B 站 | 抖音 |
+|---|---|---|
+| 标题 | 80 字 | 30 字（超出被截） |
+| 简介 | 2000 字 | 1000 字（含话题） |
+| 标签 | 10 个，单个 ≤20 字 | 话题走联想弹层，无硬性个数 |
+| 分区 / 创作声明 / 封面 | 分区+声明+封面必填 | 封面建议横 4:3 + 竖 3:4 各一张；声明单选 |
+
+## 平台二：抖音（douyin.mjs）
+
+```bash
+# 独立 profile 与端口（9223），和 B 站窗口互不干扰
+node skills/publish/templates/douyin.mjs launch          # 你扫码登录抖音
+node skills/publish/templates/douyin.mjs goto --url 'https://creator.douyin.com/creator-micro/content/upload'
+node skills/publish/templates/douyin.mjs file --selector 'input[type=file]' --path <成片>.mp4
+node skills/publish/templates/douyin.mjs fill --spec projects/<项目名>/douyin-form.json
+node skills/publish/templates/douyin.mjs hashtags --names AI,Gemini,人工智能
+node skills/publish/templates/douyin.mjs shot --out qa/dy/form.png
+```
+
+**画幅**：抖音上传页明说建议 16:9 / 9:16 / 3:4 / 4:3，且「超过 40 秒的视频建议上传横版视频」。
+**超过 40 秒的横版内容不需要重渲成竖版**，这和 B 站那条「中心安全」要求是两回事。
+
+**抖音特有的坑**：
+
+- **简介编辑器是字节自研 editor-kit**，对它做富文本操作有两条铁律：
+  只 `focus()`，**不要用 Range API 强设光标**。编辑器维护自己的选区，外部强设之后内部不同步，
+  后续插入会落错位置还会成倍重复（实测 7 行写出 18 行）。
+  清空用 **Ctrl+A + Backspace 真实按键**：`document.execCommand` 在它上面选区建了但删不掉。
+- **话题必须走联想弹层**：输入 `#名字` 等弹出 `.mention-suggest-mount-dom`，点第一项才会生成
+  真正的话题节点（`data-mention`，蓝底）。直接打字进去的 `#xxx` 是纯文本，不算话题、不进搜索。
+  联想不到就把打出去的删掉，别留假话题（`hashtags` 命令已带此兜底）。
+- **弹层点完会重渲染**，点之前要重新取元素坐标，别用上一次缓存的坐标（踩过）。
+- **封面要两张**：横 4:3 + 竖 3:4，只设横的会有「竖封面缺失」提醒。上传的图按中心裁切，
+  所以中心安全构图在这里同样吃香。
+- **自主声明**选项与 B 站近似：内容由AI生成 / 个人观点或见解 / 转载信息 / 营销推广 /
+  虚构演绎 / 无需添加。AI 生成内容选「内容由AI生成」。
+- 提交按钮是 Semi Design 的 `button.semi-button`，按 `innerText` 找时页面上可能有同名元素，
+  先打 data 标记再点。
 
 ## Step 2 · 封面必须做「中心安全」构图
 
@@ -78,7 +110,7 @@ cw = int(h * 4 / 3)
 im.crop(((w - cw) // 2, 0, (w - cw) // 2 + cw, h)).save("cover-43-check.png")
 ```
 
-## 坑（都是实测踩出来的，照做即可）
+## 坑（B 站实测；通用经验见上文两节）
 
 - **`el.click()` 开不了文件选择框**：synthetic click 不算用户手势。必须
   `Page.setInterceptFileChooserDialog` + 真实 `Input.dispatchMouseEvent`，再从
