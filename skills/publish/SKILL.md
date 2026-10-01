@@ -140,6 +140,34 @@ cw = int(h * 4 / 3)
 im.crop(((w - cw) // 2, 0, (w - cw) // 2 + cw, h)).save("cover-43-check.png")
 ```
 
+## 平台三：小红书（xhs.mjs）
+
+```bash
+# 独立 profile 与端口（9224）；登录页默认短信验证码，点登录卡右上角二维码角标切 App 扫码
+node skills/publish/templates/xhs.mjs launch
+node skills/publish/templates/xhs.mjs goto --url 'https://creator.xiaohongshu.com/publish/publish?source=official'
+node skills/publish/templates/xhs.mjs file --selector 'input[type=file]' --path <成片>.mp4
+node skills/publish/templates/xhs.mjs fill    --project projects/<项目名>      # 读 xhs-form.json
+node skills/publish/templates/xhs.mjs topics  --project projects/<项目名> --names 鹈鹕,动画制作
+```
+
+**字段硬限制**（页面实测）：标题 20 字；正文 1000 字。视频 ≤4 小时 / 20GB，推荐 mp4/mov。
+
+**小红书特有的坑**：
+
+- **正文编辑器是 TipTap（ProseMirror 系）**，规矩与抖音 editor-kit 相同：
+  只 `focus()` 不碰选区，清空用 Ctrl+A + Backspace 真实按键。
+- **`clear` 命令是「全清」**：Ctrl+A 选中整个编辑器，Backspace 全删。
+  想删几个字符就发几次 Backspace，别拿它当删除键用（实测把整篇清掉了）。
+- **推荐话题条会消失**：上传后页面给出的 AI 推荐话题 chips，一旦编辑过正文就没了。
+  要加话题只能走 `#` 话题按钮 → 情境联想，而联想是**按视频内容给的有限集合**，
+  不是全量话题搜索——想要的话题联想不到就自动删掉 `#`，不硬凑。
+- **原创声明是「开关 + 二段确认」**：先拨开关 → 弹权益确认框 → 勾「我已阅读并同意」→
+  点「声明原创」→ 然后才会解锁「添加内容类型声明」下拉（选「笔记含AI合成内容」）。
+  那个同意复选框是 0 高的隐藏 input，只能按坐标点（`clickxy` 命令）。
+- **封面**：默认取第一帧，「智能推荐封面」会给几张候选（按视频内容生成），点「应用」即可，
+  平台还会自动做封面质量评估。
+
 ## 坑（B 站实测；通用经验见上文两节）
 
 - **`el.click()` 开不了文件选择框**：synthetic click 不算用户手势。必须
