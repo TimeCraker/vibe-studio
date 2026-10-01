@@ -258,3 +258,82 @@
   已改成固定基线绝对定位，内容再长也压不到字幕带。
 - 由此补了 `tools/probe-layout.mjs`：渲染任意帧后打印各元素的真实 bounding box 并**自动告警越界字幕带**。
   这类"文字压到字幕区"的问题看缩略图根本发现不了，必须量。
+
+---
+
+## 2026-10-02 · 全仓只读审计 + 四项结构优化
+
+**起因**：pelican-test 出片后回头问「vibe-studio 还有什么可以优化的」。先做了一次**只读审计**
+（不猜，每条结论都要给文件与行号），再按审计结论分四批施工。审计报告本身没入库，
+结论都落在下面的改动里。
+
+**方法论（这次最有价值的一条）**：审计与施工都守一条规矩 —— **每条新加的检查都要做正反测试**。
+只验「现在通过」等于没验；必须临时把问题造回去，看见它变红，再恢复确认变绿。
+本轮加的三条断言全部这样做过（README 安装循环 / 家底计数 / 入口符号解析）。
+
+### A. 立刻能做的漂移（commit 7c966c8）
+
+- **永久 WARN 不再永久**：check-docs 的 3 条 WARN 全来自一份自述「已被吸收、不再施工」的 spec，
+  引用的产物永远不会生产。约定 spec 首行写 `> 状态：已活跃/已存档`，已存档的跳过路径检查。
+  踩坑：标记只认文首 12 行 —— 全文件搜会误伤，因为 `CLAUDE.md` 里写着这条约定本身的示例，
+  整篇会被当成存档文档跳过检查。
+- **检查面扩到项目与产品 README**：这两类文档带最多跨区引用却从不受检。
+- **家底计数不再漂移**：`component-catalog.md` 标题写「13 + MG 武器 4」而表体 23 行，
+  改成标题与表体互为约束（标题数字必须等于表行数）。
+- **`scripts/` 有了索引**：新增 `scripts/README.md`，一行一表（脚本 → 产物 → 复跑 → 引用），
+  顺带记清 3 个 0 引用孤儿与一个同名分叉（只记录不删）。
+- **venv 出仓**：`auto-subtitle/SKILL.md` 写「venv 已随仓库建好」，实测根本没入库，对 fresh clone 是错的；
+  且 `.gitignore` 自己注明「模板不带 node_modules」，那份 284 MB venv 正落在 skill 目录里。
+  移到 `~/.cache/vibe-studio/asr-venv`，移动后实测解释器与依赖正常。
+
+### B. 抽 skills/web-capture（commit 0832099）
+
+pelican-test 跑通了「HTML 动画 → 成片」这条新管线，但整条管线躺在项目目录里，下个项目只能整份复制。
+
+**抽离判据**：对具体项目零引用的进通用区，与项目数据结构耦合的留下。
+
+- 进 skill：`cdp.mjs` / `vclock.js` / `render-director.mjs` / `capture-all` / `capture-clip` /
+  `probe-ui` / `probe-anchors`，加一个新的 `paths.mjs`。
+- 进 `scripts/`：`make_music.py` / `audio_report.py` / `contact_sheet.py` / `probe_frame.py`。
+- 留项目：`validate-plan` / `probe-layout` / `assemble` / `verify-master` 等与 `timeline.js` 强耦合的，
+  以及 `shots.json` / `anchor-targets.json` / `covers.json` 这些项目数据。
+
+**关键技术改动**：把「harness 自己的位置」和「项目根」分开。
+原来每个工具都写 `ROOT = resolve(HERE, '..')`，从工具自身位置反推项目根 ——
+**这正是它们必须每个项目复制一份的根本原因**。现在 `HERE` 只用来找同级文件，项目根来自 `--project`。
+
+**验证不是「应该能跑」**：封面四张的 KB 数与移动前逐张一致、probe-anchors 坐标逐位一致且重跑后
+已入库的 `anchors.json` 无 diff、`make_music.py` 重生成的 wav 哈希与原件相同、boot 报的
+7 shots / 20 units / 21 cues / 3804 frames 与移动前一致。这些数字能对上，说明这次是纯搬迁，没有行为漂移。
+
+**踩坑**：读 JSON 配置时要过滤 `_` 前缀的元数据键，否则 `_comment` 会被当成条目遍历（写完就炸）。
+
+### C. 补 C 线（commit c0b59ef）
+
+product-map 只有三格交付物、workflow 只有 A/B 两线，pelican-test 那条线在新文档里无处可去。
+
+两条值得记的判断：
+
+1. **判据按「画面来源」立格，不按快慢**。A 剪现成素材、B 组件直绘、C 采集已有网页 ——
+   三条互斥且可判定；而「快/慢」不可判定（同一个项目既能快也能慢）。
+2. **把两条禁令的解除过程写进文档，而不是删掉**。原文「明确不做：自动 BGM 混音、自动发布」
+   都已被现实推翻（`make_music.py` 与 `skills/publish`）。直接删掉会让后人不知道禁令为何消失；
+   改为记下「已推翻 + 保留人工节点」（配乐要人审听、发布要人点）。
+
+### D. CoverV3 回流（commit e00aa84）
+
+**审计评级最高的一条，也是唯一会让新项目走进死路的**：README 与 product-map 一致把 `CoverV3`
+定为介绍成片的封面入口（还明说不要用通用封面），但它只存在于 `projects/lekao-intro/`，
+skill 模板里只有 v1 的 `Cover.tsx`。**照权威文档走是死路。** 这违反回流铁律，且是全仓唯一一处，
+偏偏在最贵的产品线上。
+
+已把版面照搬（原实现实际出过片）、文案与截图抽成 props 后回流模板，并登记进组件家底。
+
+**教训**：旧检查抓不到它，因为 `CoverV3` 是**裸反引号符号**而不是 `skills/` 前缀的路径引用。
+**文档里写代码符号，等于在承诺这东西存在；检查必须能验证这个承诺。** 已加第 3.6 项断言，
+范围只限 README 与 product-map（全仓扫有 12 条误报，限定后 7 个候选 0 误报，且能抓住这个 bug）。
+
+**唯一没闭环的验证**：模板不带 `node_modules`，`CoverV3` 跑不了 `remotion still`。
+`tsc --noEmit` 只报缺 react / remotion 的模块错误（与模板里已有组件同款），新代码自身零语法错。
+**下次接项目第一次出封面时，必须目检一次。**
+
