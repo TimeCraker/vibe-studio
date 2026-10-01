@@ -36,13 +36,13 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 
 ## 工具（被产品调用）
 
-| 工具 | 干什么 |
-|---|---|
-| [`humanizer`](skills/humanizer/) | 去 AI 腔。PPT 和口播稿默认过一遍。 |
-| [`narration`](skills/narration/) | 分段口播稿 + 程序校验。不做语音合成。 |
-| [`auto-subtitle`](skills/auto-subtitle/) | 已有音轨转写成 `SubtitleCue`。 |
-| [`publish`](skills/publish/) | 把成片填进投稿表单（目前 B 站）。**人登录、人点发布**，脚本只填表。 |
-| [`web-capture`](skills/web-capture/) | 把已有网页 / HTML / SVG 代码动画逐帧采集，再用导演页剪成成片（C 线）。 |
+| 工具 | 家族 | 干什么 |
+|---|---|---|
+| [`humanizer`](skills/humanizer/) | 文案 | 去 AI 腔。PPT 和口播稿默认过一遍。 |
+| [`narration`](skills/narration/) | 文案 | 分段口播稿 + 程序校验。不做语音合成。 |
+| [`auto-subtitle`](skills/auto-subtitle/) | 视频 | 已有音轨转写成 `SubtitleCue`，与 video-motion 字幕轨同构。 |
+| [`web-capture`](skills/web-capture/) | 视频 | 把已有网页 / HTML / SVG 代码动画逐帧采集，再用导演页剪成成片（C 线）。 |
+| [`publish`](skills/publish/) | 发布 | 把成片填进投稿表单（B 站 / 抖音 / 小红书）。**人登录、人点发布**，脚本只填表。 |
 
 施工记录和旧版对照在 [`docs/`](docs/)，新任务以产品图为准。
 

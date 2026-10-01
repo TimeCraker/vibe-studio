@@ -30,7 +30,7 @@
 - **版式**（深族）：GlowPulse 光晕（680，intensity 0.5）居中上衬 + logo 漂浮（FloatWrap 4.2s）+ 130px TextReveal 大字（品牌名品牌色高亮）+ 副标 + mono 域名 + 三功能 chips（StaggerList 横排，深色卡片+边光）
 - **组件**：SceneBg(dark) / GlowPulse / FloatWrap / TextReveal / StaggerList / SpringIn
 - **坑**：chips 要双层阴影+1px 边光（深底无阴影=贴纸）；域名用等宽字体
-- **参考帧**：`assets/patterns-frames/p01.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p01-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p01.jpg`
 
 ## PAT-02 · 叙事痛点
 
@@ -38,7 +38,7 @@
 - **版式**（浅族，SceneShell 双栏）：左 StepItem×3（mono 编号+竖线）+ 一句总结；右 TypingTerminal 打字待办清单（$ 品牌提示符+块光标）
 - **组件**：SceneBg(light) / SceneShell / StepItem / TypingTerminal / StaggerList
 - **坑**：清单文案与终端文案同源（同一组事实两个视角）；终端是「进行时证据」（打字+光标闪烁）
-- **参考帧**：`assets/patterns-frames/p02.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p02-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p02.jpg`
 
 ## PAT-03 · 产品总览（对话演示）
 
@@ -46,7 +46,7 @@
 - **版式**（浅族双栏）：左 StepItem×3（产品三件事，每条带交付物口径）+ 引导句；右 ChatReplay 手机壳（shell）对话回放：用户抱怨→AI 应答→交付
 - **组件**：SceneShell / StepItem / ChatReplay(shell, shellTitle=品牌名)
 - **坑**：对话要短（≤5 条）、有交付感；聊天头名称用 shellTitle 传品牌名
-- **参考帧**：`assets/patterns-frames/p03.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p03-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p03.jpg`
 
 ## PAT-04 · 功能演示（上传→识别→生成）
 
@@ -54,7 +54,7 @@
 - **版式**（浅族双栏）：左 StepItem×3（STEP 编号）+ DropCard 成品清单卡（品牌色左边线+mono 小标）；右 ScanCard 插画（扫描线 2.8s 周期+「AI 识别中」角标）
 - **组件**：SceneShell / StepItem / DropCard / ScanCard / GlowPulse / FloatWrap
 - **坑**：ScanCard 的 width 必须显式传（包装组件丢 width = 撑爆版面）；扫描线 = 进行时证据
-- **参考帧**：`assets/patterns-frames/p04.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p04-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p04.jpg`
 
 ## PAT-05 · 功能演示（规格/档位选择）
 
@@ -62,7 +62,7 @@
 - **版式**（浅族全屏）：Chrome 眉题+120px 标题 + 副句 + 居中 IllustCard 大插画（640，角标「规格口径」）+ 底部规格 chips 一排（StaggerList）
 - **组件**：Chrome / IllustCard / StaggerList / FloatWrap
 - **坑**：chips 数字档位用 mono 字体；角标口径必须取自真实文档（禁编造）
-- **参考帧**：`assets/patterns-frames/p05.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p05-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p05.jpg`
 
 ## PAT-06 · 功能演示（速度/效率优势）
 
@@ -70,7 +70,7 @@
 - **版式**（浅族）：左 IllustCard 插画（角标「成品格式」）+ 右 StepItem×3 + CountUp 大数字（如「5 分钟」）
 - **组件**：Chrome / IllustCard / StepItem / CountUp
 - **坑**：CountUp 数字要有出处；「不消耗 XX」类承诺只取真实文档
-- **参考帧**：`assets/patterns-frames/p06.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p06-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p06.jpg`
 
 ## PAT-07 · 数据说服（规则 + 增长曲线）
 
@@ -78,7 +78,7 @@
 - **版式**（深族双栏）：左 RuleRow×3（CoinIcon/币锚 + mono 数字 + 说明，分隔线）+ 一句兜底（如失败退回）；右 ChartGrow 递增柱图（末柱高亮 + 呼吸光环 + 币锚）+ 说明行
 - **组件**：SceneShell(dark) / RuleRow / ChartGrow / CoinIcon / GlowPulse
 - **坑**：柱值与规则行必须同源同口径（出处标进设计表）；末柱光环 = 进行时证据
-- **参考帧**：`assets/patterns-frames/p07.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p07-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p07.jpg`
 
 ## PAT-08 · 体验细节（移动端）
 
@@ -86,7 +86,7 @@
 - **版式**（浅族双栏）：左 StepItem×3（字母编号 A/B/C）；右手机屏两段式 = 上段官网截图特写（高亮圈+「官网首屏」角标）+ 下段深色自绘功能行列表（干净水平分界）
 - **组件**：SceneShell / StepItem / PhoneShell / DeviceFrame(scroll/zoom)
 - **坑**：**长截图先验空白率**（懒加载空图滚动=死空气），内容截断在 54% 以内就改「裁切特写+自绘续接」；灵动岛压浅色段
-- **参考帧**：`assets/patterns-frames/p08.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p08-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p08.jpg`
 
 ## PAT-09 · 流程说明（三步上手）
 
@@ -94,7 +94,7 @@
 - **版式**（浅族全屏横排）：三张 DropCard 大编号卡（mono 58px 编号）+ 卡间 FlowArrow 流动虚线箭头 + 首卡 GlowPulse 衬光 + 末卡「成品」角标 + 底部一句
 - **组件**：Chrome / DropCard / FlowArrow / GlowPulse / FloatWrap
 - **坑**：三卡错峰漂浮（phase 错开）；箭头虚线 dashoffset 流动 = 进行时证据
-- **参考帧**：`assets/patterns-frames/p09.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p09-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p09.jpg`
 
 ## PAT-10 · 价值金句
 
@@ -102,7 +102,7 @@
 - **版式**（深族居中）：GlowPulse + 引导句（弱化）+ 150px 两行金句（关键词品牌色高亮，手动断行）+ IllustCard 对比插画（小，500）
 - **组件**：SceneBg(dark) / GlowPulse / TextReveal / IllustCard / FloatWrap
 - **坑**：150px 行宽实测会超估算，容器留 ~10% 余量 + 显式 `\n`（自动换行会拆词跨行）
-- **参考帧**：`assets/patterns-frames/p10.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p10-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p10.jpg`
 
 ## PAT-11 · 行动号召 CTA
 
@@ -110,7 +110,7 @@
 - **版式**（深族左右）：左 Chrome 眉题 + 150px CTA + mono 域名（品牌亮色）+ 利益句；右 DeviceFrame 浏览器特写（真标签栏+锁形地址）+ 高亮圈圈地址栏 +「官方域名」角标
 - **组件**：SceneBg(dark) / Chrome / DeviceFrame(browser) / GlowPulse / FloatWrap
 - **坑**：浏览器必须有标签条+锁形（F2 放大关）；高亮圈坐标按浏览器宽计算
-- **参考帧**：`assets/patterns-frames/p11.jpg`（完整证据：`products/lekao-intro/v3-kit/frames-v3/p11-*.png`，本机保留）
+- **参考帧**：`assets/patterns-frames/p11.jpg`
 
 ## PAT-12 · 封面出图
 
@@ -126,7 +126,7 @@
 - **版式**（深族自由双栏）：SlideGroup 标题组（0s）+ CascadeList 规则行（0.4s，280ms/项）+ DrawPath 关键词下划线（0.9s）｜右栏 BlurTrail 柱图整组残影进位（对齐段 2 start）+ 柱逐根升起 + LottieLayer 呼吸环挂标题角｜段 3 start 时 WipeIn 揭示兜底行 + 行内 DrawPath 二级下划线；全页 NoiseField dark 0.28 + CameraPush 0.4%/s + TextBreath 标题呼吸
 - **组件**：SceneBg(dark) / SlideGroup / CascadeList / DrawPath / BlurTrail(内包 ChartGrow) / LottieLayer / WipeIn / NoiseField / CameraPush / TextBreath
 - **坑**：transform 包装动词不得直接包 absolute 子树（高度塌 0，S6 双坑）；进场批次锚字幕段 start ±0.3s；柱图整组条件挂载在段 2 start（4.5s 前不在场）
-- **参考帧**：`products/lekao-intro/v3-kit/compare/`（v3 基线）、武装版验收 `products/lekao-intro/deck-video-armed-p7-acceptance.md`（L3 对照表）
+- **参考帧**：武装版验收 `products/lekao-intro/deck-video-armed-p7-acceptance.md`（L3 对照表；v3 基线帧已清理）
 - **复用记录**：lekao P7 首用（S6，2026-09-01）
 
 ---
