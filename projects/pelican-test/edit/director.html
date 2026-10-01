@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>pelican-test · director</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #05080F; }
+  #viewport { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  #bed { position: absolute; inset: 0; display: block; }
+  #overlay { position: absolute; inset: 0; pointer-events: none; }
+
+  /* ---------- shared type scale ---------- */
+  .eyebrow {
+    display: flex; align-items: center; gap: 16px;
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+    font-size: 21px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(244, 247, 252, 0.58); margin-bottom: 30px;
+  }
+  .eyebrow::before {
+    content: ''; width: 12px; height: 12px; background: #FFB020;
+    box-shadow: 0 0 18px rgba(255, 176, 32, 0.7); flex: none;
+  }
+  .h1 {
+    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
+    font-size: 128px; line-height: 1.06; letter-spacing: -0.012em; color: #F4F7FC;
+    text-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
+  }
+  .h1.hot { color: #FFB020; text-shadow: 0 8px 44px rgba(255, 150, 20, 0.42); }
+  .h2 {
+    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
+    font-size: 94px; line-height: 1.1; letter-spacing: -0.01em; color: #F4F7FC;
+    text-shadow: 0 8px 34px rgba(0, 0, 0, 0.5);
+  }
+  .latin {
+    font-family: 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
+    font-size: 25px; letter-spacing: 0.34em; text-transform: uppercase;
+    color: rgba(244, 247, 252, 0.44); margin-top: 26px;
+  }
+  .lead {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei UI', sans-serif;
+    font-size: 34px; line-height: 1.6; color: rgba(244, 247, 252, 0.76);
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.5);
+  }
+  .lead + .lead { margin-top: 6px; }
+  .rule { height: 6px; border-radius: 3px; background: #FFB020; box-shadow: 0 0 26px rgba(255, 176, 32, 0.55); margin: 34px 0 30px; }
+  .kicker {
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
+    font-size: 31px; color: rgba(244, 247, 252, 0.62); margin-bottom: 26px;
+  }
+  .foot {
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 22px;
+    color: rgba(244, 247, 252, 0.5); margin-top: 34px; padding-left: 22px;
+    border-left: 3px solid rgba(255, 176, 32, 0.8);
+  }
+  .handle {
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 26px;
+    color: #38BDF8; margin-top: 38px; letter-spacing: 0.06em;
+  }
+  .fact { display: flex; align-items: baseline; gap: 24px; margin-top: 22px; }
+  .fk {
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 23px;
+    color: #FFB020; width: 92px; flex: none; letter-spacing: 0.04em;
+  }
+  .fv { font-family: 'Noto Sans SC', sans-serif; font-size: 31px; color: rgba(244, 247, 252, 0.8); }
+
+  /* ---------- right rail: kills the dead half of a card and carries real facts ---------- */
+  .side {
+    position: absolute; right: 112px; top: 104px; width: 560px;
+    display: flex; flex-direction: column; align-items: flex-start;
+    text-align: left; padding-top: 26px;
+    border-top: 2px solid rgba(255, 176, 32, 0.55);
+  }
+  .side .row + .row { margin-top: 21px; }
+  .side .rk {
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 19px;
+    letter-spacing: 0.2em; color: rgba(244, 247, 252, 0.42);
+  }
+  .side .rv {
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 27px;
+    color: rgba(244, 247, 252, 0.9); margin-top: 6px;
+  }
+  .side .stat { align-self: flex-end; text-align: right; }
+  .side .sv {
+    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
+    font-size: 158px; line-height: 0.94; color: #FFB020;
+    text-shadow: 0 0 50px rgba(255, 176, 32, 0.45);
+  }
+  .side .sl {
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 22px;
+    letter-spacing: 0.16em; color: rgba(244, 247, 252, 0.6); margin-top: 20px;
+  }
+  .h1 + .lead, .h2 + .lead { margin-top: 42px; }
+  .lead + .foot { margin-top: 34px; }
+
+  /* ---------- footer rail: closes a card so it reads as designed ---------- */
+  .footrail {
+    position: absolute; left: 116px; right: 112px; bottom: 62px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 17px; border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 19px;
+    letter-spacing: 0.18em; color: rgba(244, 247, 252, 0.34);
+  }
+
+  .stack { position: absolute; display: flex; flex-direction: column; align-items: flex-start; }
+  .stack.hook { left: 116px; top: 268px; width: 1320px; }
+  .stack.statement { left: 116px; top: 296px; width: 1420px; }
+  .stack.verdict { left: 116px; top: 246px; width: 1600px; }
+  .stack.outro { left: 116px; top: 336px; width: 1420px; }
+  .stack.hook .rule { margin: 30px 0 26px; }
+
+  /* ---------- chips / labels ---------- */
+  .chip {
+    display: inline-block; padding: 10px 21px; border-radius: 999px;
+    background: rgba(6, 10, 20, 0.62); border: 1px solid rgba(255, 255, 255, 0.17);
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
+    font-size: 21px; letter-spacing: 0.05em; color: rgba(244, 247, 252, 0.88);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  }
+  .tl { position: absolute; left: 44px; top: 34px; }
+  .tr { position: absolute; right: 44px; top: 34px; }
+
+  /* ---------- annotations ---------- */
+  .note { position: absolute; display: flex; align-items: center; }
+  .dot {
+    width: 22px; height: 22px; border-radius: 50%; background: #FFB020; flex: none;
+    box-shadow: 0 0 0 7px rgba(255, 176, 32, 0.2), 0 0 24px rgba(255, 176, 32, 0.8);
+  }
+  .ln { height: 3px; flex: none; background: linear-gradient(90deg, #FFB020, rgba(255, 176, 32, 0.3)); }
+  .note[row-reverse] .ln { background: linear-gradient(270deg, #FFB020, rgba(255, 176, 32, 0.3)); }
+  .lb {
+    padding: 11px 19px; border-radius: 13px; white-space: nowrap;
+    background: rgba(6, 10, 20, 0.8); border: 1px solid rgba(255, 255, 255, 0.17);
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 24px;
+    color: #F4F7FC; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  }
+
+  /* ---------- split screen ---------- */
+  .splitlabel {
+    position: absolute; bottom: 196px; display: flex; flex-direction: column; gap: 8px;
+    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.6);
+  }
+  .splitlabel b {
+    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
+    font-size: 42px; color: #F4F7FC;
+  }
+  .splitlabel i {
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-style: normal;
+    font-size: 22px; letter-spacing: 0.14em; color: rgba(244, 247, 252, 0.58);
+  }
+  .splitdivider {
+    position: absolute; left: 50%; top: 0; height: 100%; width: 4px; margin-left: -2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 6%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0) 94%);
+  }
+
+  /* ---------- subtitles: part of the layout, never a black pill ---------- */
+  .cap {
+    position: absolute; left: 0; right: 0; text-align: center; padding: 0 160px;
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif;
+    font-size: 44px; letter-spacing: 0.015em; color: #FFFFFF;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 60px rgba(0, 0, 0, 0.4);
+  }
+  .cap.low { bottom: 74px; }
+  .cap.high { bottom: 164px; }
+
+  /* ---------- cover lockup ---------- */
+  .coverlock { position: absolute; left: 96px; top: 172px; display: flex; flex-direction: column; align-items: flex-start; }
+  .covertitle {
+    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
+    font-size: 164px; line-height: 1.02; letter-spacing: -0.02em; color: #FFFFFF;
+    /* paint-order + halo keeps the lockup readable over the pelican's white body */
+    paint-order: stroke fill;
+    -webkit-text-stroke: 11px rgba(4, 7, 14, 0.46);
+    text-shadow: 0 0 36px rgba(0, 0, 0, 0.85), 0 8px 48px rgba(0, 0, 0, 0.8);
+  }
+  .coverrule { width: 216px; height: 9px; border-radius: 5px; background: #FFB020; box-shadow: 0 0 34px rgba(255, 176, 32, 0.7); margin: 34px 0 30px; }
+  .coverkick {
+    font-family: 'Noto Sans SC Medium', 'Noto Sans SC', sans-serif; font-size: 36px;
+    color: rgba(255, 255, 255, 0.9); text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+  }
+  .coverhot {
+    margin-top: 26px; padding: 15px 28px; border-radius: 14px;
+    background: rgba(255, 176, 32, 0.16); border: 1px solid rgba(255, 176, 32, 0.55);
+    font-family: 'Noto Sans SC Black', 'Noto Sans SC', sans-serif; font-weight: 900;
+    font-size: 40px; color: #FFB020; text-shadow: 0 0 30px rgba(255, 176, 32, 0.5);
+  }
+  .coverfoot {
+    position: absolute; left: 96px; right: 96px; bottom: 74px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 24px;
+    letter-spacing: 0.14em; color: rgba(255, 255, 255, 0.62);
+    padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+</style>
+</head>
+<body>
+  <div id="viewport">
+    <canvas id="bed" width="1920" height="1080"></canvas>
+    <div id="overlay"></div>
+  </div>
+  <script src="timeline.js"></script>
+  <script src="director.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "_comment": "Single source of truth for the cut. Section boundaries are exact multiples of one beat at 100 BPM (0.6s), so the music lands on the picture. The edit timeline, the music generator and the subtitle track all read this file.",
+  "fps": 60,
+  "bpm": 100,
+  "title": "鹈鹕测试 · Pelican Test",
+  "sections": [
+    { "id": "hook",     "start": 0.0,  "label": "开场钩子", "intent": "抛出老题目，制造期待" },
+    { "id": "reveal-a", "start": 4.8,  "label": "第一版",   "intent": "版本 A 全屏，卡在第一个重拍上" },
+    { "id": "reveal-b", "start": 19.2, "label": "第二版",   "intent": "版本 B 登场，展示交互能力" },
+    { "id": "analysis", "start": 36.0, "label": "为什么可疑", "intent": "拆解题目难点，给证据" },
+    { "id": "verdict",  "start": 52.8, "label": "结论",     "intent": "给出怀疑与互动钩子" }
+  ],
+  "end": 62.4
+}

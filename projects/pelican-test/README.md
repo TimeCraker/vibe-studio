@@ -1,0 +1,94 @@
+# pelican-test — 「鹈鹕测试」实测成片
+
+把两个第三方生成的「鹈鹕骑自行车」SVG 动画 HTML，做成一條可直接发布的 63 秒成片：
+4K 逐帧采集 → 代码化剪辑（运镜 / 标题 / 标注 / 字幕）→ 程序化配乐 → 合成母版。
+
+产物在 [`products/pelican-test/`](../../products/pelican-test/)（含发布文案 `PUBLISH.md`）。
+
+## 素材来源（不在本仓库）
+
+| 版本 | 文件 |
+|---|---|
+| A · 鹈鹕的海滨骑行之旅 | `~/.gemini/antigravity/scratch/pelican-bike/index.html` |
+| B · 佩利漫游记 | `~/.gemini/antigravity/scratch/pelican-cycling/index.html` |
+
+路径写在 `capture/shots.json` 的 `htmlA` / `htmlB`。
+
+## 为什么不是 Remotion / 剪辑软件
+
+两条硬约束决定了技术选型：
+
+1. **原动画是 `requestAnimationFrame` + `performance.now()` 驱动的。**
+   直接录屏会掉帧、不可复现。所以把墙钟、`setTimeout`、`Math.random` 全部虚拟化
+   （`tools/vclock.js`），逐帧推进虚拟时间后截图 —— 同一帧永远长得一样，可重跑、可 diff。
+   `Math.random` 每帧按绝对虚拟时间重新播种，所以分片并行采集和单进程采集**逐字节一致**。
+
+2. **成片需要大量精确的运镜与排版。**
+   与其拼 ffmpeg 滤镜图，不如写一个只有 ~450 行的「导演页」（`edit/director.js`）：
+   canvas 负责画面与运镜，DOM 负责排版，`render(i)` 是帧号的纯函数。
+   一帧 5ms 渲染完，剩下的时间全花在浏览器截屏上。
+
+## 流水线
+
+```
+capture/shots.json ──► tools/capture-all.mjs ──► frames/<shot>/f#####.png   (4K, 60fps, 3540 帧)
+                                                     │
+edit/sections.json ──┐                               │
+edit/timeline.js   ──┴─► tools/validate-plan.mjs ────┤  （先校验再渲染）
+                                                     ▼
+                       tools/render-director.mjs ──► render/video.mp4      (无声画面)
+                                                     │
+                       tools/make_music.py ─────────► audio/music.wav      (62.4s 配乐)
+                                                     ▼
+                       tools/assemble.mjs ──────────► products/pelican-test/
+```
+
+### 工具清单
+
+| 文件 | 作用 |
+|---|---|
+| `tools/cdp.mjs` | 零依赖 Chrome DevTools Protocol 客户端（Node 24 自带 WebSocket，不需要 npm install） |
+| `tools/vclock.js` | 注入页面的虚拟时钟：rAF / 定时器 / `Math.random` 全部确定化 |
+| `tools/capture-clip.mjs` | 采集单个片段的逐帧 PNG |
+| `tools/capture-all.mjs` | 按 `shots.json` 并行采集全部片段并合并；含动作相机、主题、交互触发 |
+| `tools/probe-ui.mjs` | 列出页面所有可交互控件（先探明怎么驱动，再写采集脚本） |
+| `tools/probe-anchors.mjs` | 读出动画里各个部件（车铃、膝盖、牙盘…）的**真实屏幕坐标**，供标注锚点使用 |
+| `tools/validate-plan.mjs` | 渲染前校验：区间连续、段落对齐、素材越界、标注出画、字幕语速 |
+| `tools/render-director.mjs` | 驱动导演页出片；支持 `--sample`（抽帧审图）与 `--cover`（出封面） |
+| `tools/make_music.py` | numpy 程序化配乐（numpy 唯一依赖，无 scipy / 无音源文件） |
+| `tools/audio_report.py` | 音频体检：波形 + 频谱 + 底鼓对齐节拍网格 + 和声走向核对 |
+| `tools/contact_sheet.py` | 抽帧拼图，一眼审全片 |
+| `tools/probe_frame.py` | 单帧数值体检（找色带 / 矩形伪影 / 对比度） |
+| `tools/assemble.mjs` | 合成母版、导出 SRT、响度报告 |
+
+## 三条「先验证再烧时间」的规矩
+
+1. **采集前先探 UI**（`probe-ui.mjs`）：动画脚本是 IIFE 包起来的，外部拿不到内部 state，
+   所以一切控制都走真实 DOM 控件（点按钮、派发 input 事件），不猜内部变量。
+2. **渲染前先校验方案**（`validate-plan.mjs`）：曾经靠它拦下「字幕比镜头长」「跨剪辑点」
+   「素材读到片段外」三类错误。
+3. **不信感觉，量它**：配乐用 `audio_report.py` 量底鼓是否落在节拍网格上（实测中位偏差 +0.5ms）、
+   和声是否真的是 Amin 的 Am7-F-C-G（和弦音命中 99%）；画面用 `contact_sheet.py --lint`
+   量每帧亮度均值/标准差，抓「死帧」和「过曝」。
+
+## 复跑
+
+```powershell
+cd vibe-studio/projects/pelican-test
+node tools/capture-all.mjs                    # 4K 逐帧采集（约 15 分钟，12 核并行）
+node tools/validate-plan.mjs                  # 校验剪辑方案
+node tools/render-director.mjs --out render/video.mp4 --crf 15
+python tools/make_music.py                    # 配乐
+node tools/assemble.mjs                       # 出母版 + SRT
+```
+
+改文案：`edit/timeline.js` 的 `UNITS` / `CUES`。
+改配乐结构：`edit/sections.json`（音乐的重拍、riser、impact 自动跟随段落边界）。
+改运镜：`UNITS[].view` 引用 `VIEWS` 里的取景窗（源片归一化坐标，`w === h` 保证 16:9）。
+
+## 已知边界
+
+- 采集分辨率 4K，成片 1080p。**更紧的特写会放大**：`VIEWS` 里 `w < 0.42` 的取景窗
+  会明显变软（源片该区域像素不够）。需要更近的特写，得按「缩放页面再采集」的方式重采。
+- 成片是 16:9。竖版要另出：改 `VIEWS` 的取景窗比例与字幕位置。
+- 无配音。音乐是纯音乐，后期加人声需要重新配平响度。
