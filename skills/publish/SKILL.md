@@ -22,7 +22,7 @@ user-invocable: true
 
 ## 依赖
 
-本机 Chrome + Node 18 以上（内置 `fetch` / `WebSocket`）。**不装任何 npm 包**，也不是 Playwright ——
+本机 Chrome + Node 18 以上（内置 `fetch` / `WebSocket`）。**不装任何 npm 包**，也不是 Playwright。
 `templates/bili.mjs` 自带一个极简 CDP 客户端，直接驱动一个**可见的** Chrome 窗口。
 
 ## 快速上手
@@ -47,7 +47,7 @@ node skills/publish/templates/bili.mjs check
 ```
 
 `form.json` 结构见 `skills/publish/templates/form.example.json`：`title` / `tags[]` / `description[]`。
-**description 一行就是一个段落，不要写空字符串** —— Quill 会把空行变成多余的空段落。
+**description 一行就是一个段落，不要写空字符串**，Quill 会把空行变成多余的空段落。
 
 ## Step 1 · 先把文案写进 form.json
 
@@ -66,7 +66,7 @@ node skills/publish/templates/bili.mjs check
 ## Step 2 · 封面必须做「中心安全」构图
 
 **B 站首页推荐按 4:3 裁、个人空间按 16:9 裁，两者都是取画面中心。**
-所以封面即使导出 16:9，关键内容（标题、主体、结论）也必须落在**中心 1440×1080（即 x 240–1680）之内**，
+所以封面即使导出 16:9，关键内容（标题、主体、结论）也必须落在**中心 1440×1080（即 x 240 到 x 1680）之内**，
 否则 4:3 那一刀会直接切掉标题。
 
 自查方法（不用上传就能验）：把封面从中心裁 1440×1080 看一眼。

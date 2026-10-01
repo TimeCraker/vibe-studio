@@ -160,6 +160,24 @@ function sendKey(cdp, key) {
   })();
 }
 
+/** 点第一个「文本完全等于 t」的可见元素（B 站多数控件是 div，不是 button） */
+async function tapText(cdp, t) {
+  const r = await cdp.eval(`(() => {
+    const els = [...document.querySelectorAll('div,span,a,button,label,li')]
+      .filter(e => (e.innerText || '').trim() === ${JSON.stringify(t)} && e.getBoundingClientRect().width > 0);
+    if (!els.length) return null;
+    const el = els[els.length - 1];
+    const b = el.getBoundingClientRect();
+    return { x: b.left + b.width / 2, y: b.top + b.height / 2 };
+  })()`);
+  if (!r) return false;
+  for (const type of ['mousePressed', 'mouseReleased']) {
+    await cdp.send('Input.dispatchMouseEvent', { type, x: Math.round(r.x), y: Math.round(r.y), button: 'left', clickCount: 1 });
+  }
+  await sleep(600);
+  return true;
+}
+
 /** 等页面里出现/消失某段文字 */
 async function waitForText(cdp, needle, { timeout = 60000, gone = false } = {}) {
   const t0 = Date.now();
@@ -219,21 +237,12 @@ async function video(cdp) {
   if (!file) throw new Error('需要 --path <视频文件>');
   await cdp.send('Page.navigate', { url: UPLOAD_URL });
   await sleep(5000);
-  // 上传完成后的通知弹窗会挡住表单
-  const modal = await cdp.eval(`(() => {
-    const el = [...document.querySelectorAll('div,button,span')].find(e => (e.innerText || '').trim() === '知道了' && e.getBoundingClientRect().width > 0);
-    return !!el;
-  })()`);
-  if (modal) { await realClick(cdp, 'button'); await sleep(600); }
+  // 上传前/后都可能弹「知道了」通知框，会挡住表单
+  await tapText(cdp, '知道了');
   const box = await pickFile(cdp, 'div.upload-btn', file);
   console.log(`已交给上传控件：${box.text}`);
   await waitForText(cdp, '上传完成', { timeout: 15 * 60 * 1000 });
-  // 上传完成弹窗（若出现）
-  const again = await cdp.eval(`[...document.querySelectorAll('div,button,span')].some(e => (e.innerText||'').trim() === '知道了' && e.getBoundingClientRect().width > 0)`);
-  if (again) {
-    await cdp.eval(`(() => { const el = [...document.querySelectorAll('div,button,span')].find(e => (e.innerText||'').trim() === '知道了' && e.getBoundingClientRect().width > 0); el.click(); return true; })()`);
-    await sleep(600);
-  }
+  await tapText(cdp, '知道了');
   console.log('上传完成，表单已出现。');
 }
 

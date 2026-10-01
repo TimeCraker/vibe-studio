@@ -24,7 +24,7 @@
 
 1. **原动画是 `requestAnimationFrame` + `performance.now()` 驱动的。**
    直接录屏会掉帧、不可复现。所以把墙钟、`setTimeout`、`Math.random` 全部虚拟化
-   （`tools/vclock.js`），逐帧推进虚拟时间后截图 —— 同一帧永远长得一样，可重跑、可 diff。
+   （`tools/vclock.js`），逐帧推进虚拟时间后截图。同一帧永远长得一样，可重跑、可 diff。
    `Math.random` 每帧按绝对虚拟时间重新播种，所以分片并行采集和单进程采集**逐字节一致**。
 
 2. **成片需要大量精确的运镜与排版。**
