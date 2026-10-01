@@ -2,7 +2,10 @@
 """Probe a rendered frame numerically: look for banding / rectangle edges in the
 background and report text contrast, so design problems are measured, not guessed.
 
-    python tools/probe_frame.py qa/samples/f00150.png
+    python scripts/probe_frame.py <frame.png> [<frame2.png> ...]
+
+Takes one or more files. The band/column coordinates below are tuned for a
+1920x1080 title-card layout; they still print useful numbers on other sizes.
 """
 from __future__ import annotations
 
@@ -13,8 +16,7 @@ import numpy as np
 from PIL import Image
 
 
-def main():
-    p = Path(sys.argv[1])
+def probe(p: Path) -> None:
     im = np.asarray(Image.open(p).convert('RGB')).astype(np.float32)
     h, w, _ = im.shape
     lum = im.mean(axis=2)
@@ -49,6 +51,14 @@ def main():
     flat = lum.ravel()
     hi = np.percentile(flat, 99.5)
     print(f'  p99.5 luminance {hi:.0f}, median {np.median(flat):.0f}')
+
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__.strip())
+        raise SystemExit(2)
+    for raw in sys.argv[1:]:
+        probe(Path(raw))
 
 
 if __name__ == '__main__':

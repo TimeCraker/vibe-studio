@@ -1,0 +1,9 @@
+{
+  "_comment": "render-director.mjs --cover 的取景方案。哪一帧好看是关于本片素材的判断，所以留在项目里。",
+  "variants": [
+    { "name": "cover-a-sunset", "shot": "a-sunset", "src": 1.30, "view": { "cx": 0.435, "cy": 0.478, "w": 0.86, "h": 0.86 }, "zoom": 1.07 },
+    { "name": "cover-a-night", "shot": "a-night", "src": 4.20, "view": { "cx": 0.435, "cy": 0.478, "w": 0.86, "h": 0.86 }, "zoom": 1.07 },
+    { "name": "cover-b-sunset", "shot": "b-full", "src": 1.60, "view": { "cx": 0.545, "cy": 0.5, "w": 0.88, "h": 0.88 }, "zoom": 1.05 },
+    { "name": "cover-a-head", "shot": "a-day", "src": 12.20, "view": { "cx": 0.40, "cy": 0.30, "w": 0.52, "h": 0.52 }, "zoom": 1.04 }
+  ]
+}

@@ -22,7 +22,6 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parent.parent
 SR = 48000
 RNG = np.random.default_rng(20261001)
 
@@ -577,16 +576,21 @@ def report(path: Path, L: np.ndarray, R: np.ndarray, sections: dict):
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--sections', default=str(ROOT / 'edit' / 'sections.json'))
-    ap.add_argument('--out', default=str(ROOT / 'audio' / 'music.wav'))
+    ap = argparse.ArgumentParser(description='Programmatic score for a project (numpy only).')
+    ap.add_argument('--project', default='.',
+                    help='project root used for the default --sections/--out paths')
+    ap.add_argument('--sections', default=None, help='default <project>/edit/sections.json')
+    ap.add_argument('--out', default=None, help='default <project>/audio/music.wav')
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
 
-    sections = json.loads(Path(a.sections).read_text(encoding='utf-8'))
+    proj = Path(a.project).resolve()
+    sections_path = Path(a.sections) if a.sections else proj / 'edit' / 'sections.json'
+    out = Path(a.out) if a.out else proj / 'audio' / 'music.wav'
+
+    sections = json.loads(sections_path.read_text(encoding='utf-8'))
     mx = build(sections)
     L, R = master(mx, float(sections["end"]))
-    out = Path(a.out)
     write_wav(out, L, R)
     report(out, L, R, sections)
 

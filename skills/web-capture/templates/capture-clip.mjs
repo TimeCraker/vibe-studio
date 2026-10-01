@@ -1,8 +1,9 @@
-// Capture a deterministic PNG frame sequence from one of the pelican HTML animations.
+// Capture a deterministic PNG frame sequence from one HTML/SVG animation.
 //
-//   node capture-clip.mjs --html <path> --out <dir> [options]
+//   node <skill>/templates/capture-clip.mjs --html <path> --out <dir> [options]
 //
 // Options
+//   --project <dir>     project root, for resolving relative --html (default: cwd)
 //   --fps 60            frames per second of virtual time
 //   --seconds 24        length of the full virtual timeline
 //   --chunk-index 0     which slice of [0,seconds) this process captures
@@ -21,29 +22,19 @@ import { readFileSync, mkdirSync, writeFileSync, rmSync, existsSync } from 'node
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { launchChrome, openPage, addInitScript, navigate, capturePng, sleep } from './cdp.mjs';
+import { parseArgs, projectRoot } from './paths.mjs';
 
+// HERE locates the harness's own siblings (vclock.js); the project comes from --project
 const HERE = dirname(fileURLToPath(import.meta.url));
-
-function parseArgs(argv) {
-  const out = {};
-  for (let i = 0; i < argv.length; i++) {
-    const a = argv[i];
-    if (!a.startsWith('--')) continue;
-    const key = a.slice(2).replace(/-([a-z])/g, (_, c) => c.toUpperCase());
-    const next = argv[i + 1];
-    if (next === undefined || next.startsWith('--')) out[key] = true;
-    else { out[key] = next; i++; }
-  }
-  return out;
-}
-
 const args = parseArgs(process.argv.slice(2));
+const ROOT = projectRoot(args);
+const abs = (p) => (!p ? p : /^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT, p));
 if (!args.html || !args.out) {
   console.error('usage: node capture-clip.mjs --html <path> --out <dir> [--fps 60] [--seconds 24]');
   process.exit(2);
 }
 
-const htmlPath = resolve(args.html);
+const htmlPath = abs(args.html);
 const outDir = resolve(args.out);
 const fps = Number(args.fps ?? 60);
 const seconds = Number(args.seconds ?? 24);

@@ -2,32 +2,33 @@
 // in normalised source coordinates, so annotations can be anchored to real
 // features instead of guessed pixel positions.
 //
-//   node tools/probe-anchors.mjs
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+//   node <skill>/templates/probe-anchors.mjs [--project <dir>]
+//
+// Targets come from <project>/capture/anchor-targets.json (element ids are project
+// data, so they live in the project, not here):
+//   { "A": { "html": "<project-relative or absolute path>",
+//            "ids": ["bike-bell-button", "pelican-pouch", ...] }, ... }
+// Writes <project>/capture/anchors.json.
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { launchChrome, openPage, addInitScript, navigate, sleep } from './cdp.mjs';
+import { parseArgs, projectRoot } from './paths.mjs';
 
+// HERE locates the harness's own siblings (vclock.js); the project comes from --project
 const HERE = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(HERE, '..');
+const args = parseArgs(process.argv.slice(2));
+const ROOT = projectRoot(args);
 const W = 1920;
 const H = 1080;
 
-const TARGETS = {
-  A: {
-    html: 'C:/Users/TimeCraker/.gemini/antigravity/scratch/pelican-bike/index.html',
-    ids: ['bike-bell-button', 'pelican-pouch', 'rear-spokes-group', 'front-spokes-group',
-      'near-crank-arm', 'near-pedal-plate-group', 'basket-sunflower', 'head-crest',
-      'scarf-tail-1', 'pelican-bike-rig', 'ground-shadow'],
-    themes: ['day', 'night'],
-  },
-  B: {
-    html: 'C:/Users/TimeCraker/.gemini/antigravity/scratch/pelican-cycling/index.html',
-    ids: ['bikeBell', 'gularPouch', 'rearSpokes', 'frontSpokes', 'leftCrank', 'rightPedal',
-      'rightKneeCap', 'rightFoot', 'pelicanHeadAndBeak', 'pelicanBodyGroup', 'basketFish'],
-    themes: ['day', 'night'],
-  },
-};
+const targetsPath = join(ROOT, 'capture', 'anchor-targets.json');
+if (!existsSync(targetsPath)) throw new Error(`missing ${targetsPath}`);
+// `_`-prefixed keys are file-local metadata (e.g. "_comment"), not targets
+const TARGETS = Object.fromEntries(
+  Object.entries(JSON.parse(readFileSync(targetsPath, 'utf8'))).filter(([k]) => !k.startsWith('_')),
+);
+const abs = (p) => (/^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT, p));
 
 const out = {};
 let port = 9560;
@@ -36,7 +37,7 @@ for (const [name, cfg] of Object.entries(TARGETS)) {
   try {
     await openPage(browser.cdp, { width: W, height: H, deviceScaleFactor: 1 });
     await addInitScript(browser.cdp, readFileSync(join(HERE, 'vclock.js'), 'utf8'));
-    await navigate(browser.cdp, pathToFileURL(resolve(cfg.html)).href);
+    await navigate(browser.cdp, pathToFileURL(abs(cfg.html)).href);
     await browser.cdp.eval('window.__vclock.tick(), null');
     // let the animation run a couple of seconds so nothing is mid-entrance
     await browser.cdp.eval('window.__vclock.stepTo(2000), null');

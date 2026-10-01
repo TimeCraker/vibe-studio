@@ -69,21 +69,39 @@ edit/timeline.js   ──┴─► tools/validate-plan.mjs ────┤  （�
 
 ### 工具清单
 
+2026-10-02：**通用的那部分已经抽走**，本项目只留项目专属文件。
+抽走的工具靠 `--project` 找到项目（缺省当前目录），所以下面这些命令在哪里跑都行。
+
+**在 skill 里**（[`skills/web-capture/templates/`](../../skills/web-capture/templates/)）：
+
 | 文件 | 作用 |
 |---|---|
-| `tools/cdp.mjs` | 零依赖 Chrome DevTools Protocol 客户端（Node 24 自带 WebSocket，不需要 npm install） |
-| `tools/vclock.js` | 注入页面的虚拟时钟：rAF / 定时器 / `Math.random` 全部确定化 |
-| `tools/capture-clip.mjs` | 采集单个片段的逐帧 PNG |
-| `tools/capture-all.mjs` | 按 `shots.json` 并行采集全部片段并合并；含动作相机、主题、交互触发 |
-| `tools/probe-ui.mjs` | 列出页面所有可交互控件（先探明怎么驱动，再写采集脚本） |
-| `tools/probe-anchors.mjs` | 读出动画里各个部件（车铃、膝盖、牙盘…）的**真实屏幕坐标**，供标注锚点使用 |
+| `cdp.mjs` | 零依赖 Chrome DevTools Protocol 客户端（Node 自带 WebSocket，不需要 npm install） |
+| `vclock.js` | 注入页面的虚拟时钟：rAF / 定时器 / `Math.random` 全部确定化 |
+| `paths.mjs` | `--project` 解析（把 harness 自己的位置与项目根分开） |
+| `capture-clip.mjs` | 采集单个片段的逐帧 PNG |
+| `capture-all.mjs` | 按 `capture/shots.json` 并行采集全部片段并合并 |
+| `probe-ui.mjs` | 列出页面所有可交互控件（先探明怎么驱动，再写采集脚本） |
+| `probe-anchors.mjs` | 读出各部件（车铃、膝盖、牙盘…）的**真实屏幕坐标**，供标注锚点使用 |
+| `render-director.mjs` | 驱动导演页出片；支持 `--sample`（抽帧审图）与 `--cover`（出封面） |
+
+**在 `scripts/` 里**（与具体项目无关的独立小工具，索引见 [`scripts/README.md`](../../scripts/README.md)）：
+`make_music.py` 程序化配乐 · `audio_report.py` 音频体检 · `contact_sheet.py` 抽帧拼图 · `probe_frame.py` 单帧数值体检。
+
+**留在这个项目里**（与 `timeline.js` 的数据结构强耦合，属于项目资产）：
+
+| 文件 | 作用 |
+|---|---|
 | `tools/validate-plan.mjs` | 渲染前校验：区间连续、段落对齐、素材越界、标注出画、字幕语速 |
-| `tools/render-director.mjs` | 驱动导演页出片；支持 `--sample`（抽帧审图）与 `--cover`（出封面） |
-| `tools/make_music.py` | numpy 程序化配乐（numpy 唯一依赖，无 scipy / 无音源文件） |
-| `tools/audio_report.py` | 音频体检：波形 + 频谱 + 底鼓对齐节拍网格 + 和声走向核对 |
-| `tools/contact_sheet.py` | 抽帧拼图，一眼审全片 |
-| `tools/probe_frame.py` | 单帧数值体检（找色带 / 矩形伪影 / 对比度） |
+| `tools/probe-layout.mjs` | 量各元素真实 bounding box，告警文字压进字幕带 |
 | `tools/assemble.mjs` | 合成母版、导出 SRT、响度报告 |
+| `tools/verify-master.mjs` | 母版容器事实 + PSNR 保真核查（要回来重渲参考帧对比） |
+| `tools/audit-text-overlap.mjs` | 打印字幕与画面文字的重复 |
+| `tools/profile-capture.mjs` | 采集性能剖析 |
+| `tools/make-preview-index.mjs` | 分片预览页（本项目分镜布局专用） |
+
+项目数据（harness 读它们，所以必须在项目里）：
+`capture/shots.json` 镜头表 · `capture/anchor-targets.json` 探针目标 · `edit/covers.json` 封面取景方案。
 
 ## 三条「先验证再烧时间」的规矩
 
@@ -99,16 +117,20 @@ edit/timeline.js   ──┴─► tools/validate-plan.mjs ────┤  （�
 
 ```powershell
 cd vibe-studio/projects/pelican-test
-node tools/capture-all.mjs                    # 4K 逐帧采集（约 15 分钟，12 核并行）
-node tools/validate-plan.mjs                  # 校验剪辑方案
-node tools/render-director.mjs --out render/video.mp4 --crf 15
-python tools/make_music.py                    # 配乐
-node tools/assemble.mjs                       # 出母版 + SRT
+S=../../skills/web-capture/templates
+
+node $S/probe-anchors.mjs --project .            # 需要重新量坐标时才跑
+node $S/capture-all.mjs   --project .            # 4K 逐帧采集（约 15 分钟，12 核并行）
+node tools/validate-plan.mjs                     # 校验剪辑方案（项目专属规则）
+node $S/render-director.mjs --project . --out render/video.mp4 --crf 15
+python ../../scripts/make_music.py --project .   # 配乐（确定性，重跑得到同一份 wav）
+node tools/assemble.mjs                          # 出母版 + SRT
 ```
 
 改文案：`edit/timeline.js` 的 `UNITS` / `CUES`。
 改配乐结构：`edit/sections.json`（音乐的重拍、riser、impact 自动跟随段落边界）。
 改运镜：`UNITS[].view` 引用 `VIEWS` 里的取景窗（源片归一化坐标，`w === h` 保证 16:9）。
+出封面：`node $S/render-director.mjs --project . --cover`（方案在 `edit/covers.json`）。
 
 ## 发布
 

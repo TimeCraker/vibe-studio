@@ -1,32 +1,24 @@
-// Load one of the pelican HTML files and dump its interactive controls,
+// Load an HTML/SVG animation and dump its interactive controls,
 // so capture actions can drive the app the same way a user would.
 //
-//   node probe-ui.mjs --html <path> [--width 1920] [--height 1080] [--port 9333]
+//   node <skill>/templates/probe-ui.mjs --html <path> [--project <dir>]
+//        [--width 1920] [--height 1080] [--port 9333] [--shot <out.png>]
 import { readFileSync } from 'node:fs';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { launchChrome, openPage, addInitScript, navigate, capturePng, sleep } from './cdp.mjs';
+import { parseArgs, projectRoot } from './paths.mjs';
 
+// HERE locates the harness's own siblings (vclock.js); the project comes from --project
 const HERE = dirname(fileURLToPath(import.meta.url));
-function parseArgs(argv) {
-  const out = {};
-  for (let i = 0; i < argv.length; i++) {
-    const a = argv[i];
-    if (!a.startsWith('--')) continue;
-    const key = a.slice(2).replace(/-([a-z])/g, (_, c) => c.toUpperCase());
-    const next = argv[i + 1];
-    if (next === undefined || next.startsWith('--')) out[key] = true;
-    else { out[key] = next; i++; }
-  }
-  return out;
-}
-
 const args = parseArgs(process.argv.slice(2));
+const ROOT = projectRoot(args);
+const abs = (p) => (!p ? p : /^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT, p));
 const browser = await launchChrome({ port: Number(args.port ?? 9333) });
 try {
   await openPage(browser.cdp, { width: Number(args.width ?? 1920), height: Number(args.height ?? 1080), deviceScaleFactor: 1 });
   await addInitScript(browser.cdp, readFileSync(join(HERE, 'vclock.js'), 'utf8'));
-  await navigate(browser.cdp, pathToFileURL(resolve(args.html)).href);
+  await navigate(browser.cdp, pathToFileURL(abs(args.html)).href);
   await browser.cdp.eval('window.__vclock.tick(), null');
   const info = await browser.cdp.eval(`(() => {
     const describe = (el) => ({

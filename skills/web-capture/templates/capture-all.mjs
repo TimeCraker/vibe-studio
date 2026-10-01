@@ -1,32 +1,24 @@
-// Orchestrate the whole capture: every shot in capture/shots.json is split into
-// deterministic chunks, captured by parallel Chrome workers, then merged into
+// Orchestrate the whole capture: every shot in <project>/capture/shots.json is split
+// into deterministic chunks, captured by parallel Chrome workers, then merged into
 // frames/<shot>/f#####.png.
 //
-//   node capture-all.mjs [--only a-day,b-day] [--dry] [--fps 60] [--dsf 2]
-//                        [--width 1920] [--height 1080] [--concurrency 6]
-//                        [--chunk-count 3] [--seconds-scale 1] [--out <dir>]
+//   node <skill>/templates/capture-all.mjs [--project <dir>] [--only a-day,b-day]
+//        [--dry] [--fps 60] [--dsf 2] [--width 1920] [--height 1080]
+//        [--concurrency 6] [--chunk-count 3] [--seconds-scale 1] [--out <dir>]
+//
+// --project defaults to the current directory; paths inside shots.json may be
+// project-relative.
 import { readFileSync, writeFileSync, mkdirSync, rmSync, renameSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { spawn } from 'node:child_process';
+import { parseArgs, projectRoot } from './paths.mjs';
 
+// HERE locates the harness's own siblings (capture-clip.mjs), ROOT is the project
 const HERE = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(HERE, '..');
-
-function parseArgs(argv) {
-  const out = {};
-  for (let i = 0; i < argv.length; i++) {
-    const a = argv[i];
-    if (!a.startsWith('--')) continue;
-    const key = a.slice(2).replace(/-([a-z])/g, (_, c) => c.toUpperCase());
-    const next = argv[i + 1];
-    if (next === undefined || next.startsWith('--')) out[key] = true;
-    else { out[key] = next; i++; }
-  }
-  return out;
-}
-
 const args = parseArgs(process.argv.slice(2));
+const ROOT = projectRoot(args);
+const abs = (p) => (!p ? p : /^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT, p));
 const cfg = JSON.parse(readFileSync(join(ROOT, 'capture', 'shots.json'), 'utf8'));
 
 const fps = Number(args.fps ?? cfg.fps ?? 60);
@@ -39,7 +31,7 @@ const secondsScale = Number(args.secondsScale ?? 1);
 const outRoot = resolve(args.out ?? join(ROOT, 'frames'));
 const only = args.only && args.only !== true ? String(args.only).split(',') : null;
 
-const html = { A: resolve(cfg.htmlA), B: resolve(cfg.htmlB) };
+const html = { A: abs(cfg.htmlA), B: abs(cfg.htmlB) };
 const shots = cfg.shots.filter((s) => !only || only.includes(s.id));
 
 const jobs = [];

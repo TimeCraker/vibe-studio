@@ -1,35 +1,25 @@
 // Render the director to a video (or to sample stills for review).
 //
-//   node tools/render-director.mjs --out render/video.mp4 [--dsf 1|2] [--crf 15]
-//   node tools/render-director.mjs --sample 0,60,300,1500 --out render/samples
+//   node <skill>/templates/render-director.mjs [--project <dir>] --out render/video.mp4
+//   node <skill>/templates/render-director.mjs [--project <dir>] --sample 0,60,300
+//   node <skill>/templates/render-director.mjs [--project <dir>] --cover
+//
+// --project defaults to the current directory. The project must expose
+// edit/director.html implementing window.__boot() / __frame(i) / __debug()
+// (and __cover(opts) for --cover); the contract is in SKILL.md.
 //
 // Serves the project over loopback (so the page can fetch frames/*.png and
 // sections.json), drives window.__frame(i) for every frame, and streams each
 // screenshot straight into ffmpeg — no 4 GB of intermediate PNGs on disk.
 import { createServer } from 'node:http';
 import { readFileSync, mkdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join, resolve, extname, normalize } from 'node:path';
+import { join, resolve, extname, normalize } from 'node:path';
 import { spawn } from 'node:child_process';
 import { launchChrome, openPage, addInitScript, navigate, capturePng, sleep } from './cdp.mjs';
-
-const HERE = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(HERE, '..');
-
-function parseArgs(argv) {
-  const out = {};
-  for (let i = 0; i < argv.length; i++) {
-    const a = argv[i];
-    if (!a.startsWith('--')) continue;
-    const key = a.slice(2).replace(/-([a-z])/g, (_, c) => c.toUpperCase());
-    const next = argv[i + 1];
-    if (next === undefined || next.startsWith('--')) out[key] = true;
-    else { out[key] = next; i++; }
-  }
-  return out;
-}
+import { parseArgs, projectRoot } from './paths.mjs';
 
 const args = parseArgs(process.argv.slice(2));
+const ROOT = projectRoot(args);
 const dsf = Math.max(1, Math.min(4, Number(args.dsf ?? 1)));
 const crf = Number(args.crf ?? 15);
 // preset only trades encode time against file size at a fixed CRF — never quality.
@@ -113,15 +103,14 @@ try {
     const dbg = await browser.cdp.eval('window.__debug()');
     if (dbg.missingCount) console.log('missing frames:', JSON.stringify(dbg, null, 1));
   } else if (args.cover) {
-    const variants = [
-      { name: 'cover-a-sunset', shot: 'a-sunset', src: 1.30, view: { cx: 0.435, cy: 0.478, w: 0.86, h: 0.86 }, zoom: 1.07 },
-      { name: 'cover-a-night', shot: 'a-night', src: 4.20, view: { cx: 0.435, cy: 0.478, w: 0.86, h: 0.86 }, zoom: 1.07 },
-      { name: 'cover-b-sunset', shot: 'b-full', src: 1.60, view: { cx: 0.545, cy: 0.5, w: 0.88, h: 0.88 }, zoom: 1.05 },
-      { name: 'cover-a-head', shot: 'a-day', src: 12.20, view: { cx: 0.40, cy: 0.30, w: 0.52, h: 0.52 }, zoom: 1.04 },
-    ];
+    // Cover variants are project data ("which frame looks good" is a judgement about
+    // this project's footage), so they live in the project rather than in the harness.
+    const coversPath = join(ROOT, 'edit', 'covers.json');
+    if (!existsSync(coversPath)) throw new Error(`--cover needs ${coversPath}`);
+    const { variants } = JSON.parse(readFileSync(coversPath, 'utf8'));
     const dir = join(ROOT, 'render', 'covers');
     mkdirSync(dir, { recursive: true });
-    for (const v of variants) {
+    for (const v of variants.filter((x) => x && x.name && x.shot)) {
       await browser.cdp.eval(`window.__cover(${JSON.stringify(v)})`, { awaitPromise: true });
       const png = await capturePng(browser.cdp);
       const p = join(dir, `${v.name}.png`);

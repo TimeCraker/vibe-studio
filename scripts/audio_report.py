@@ -14,8 +14,6 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
-ROOT = Path(__file__).resolve().parent.parent
-
 
 def read_wav(path: Path):
     with wave.open(str(path), 'rb') as w:
@@ -121,17 +119,24 @@ def verify(mono: np.ndarray, sr: int, sections: dict):
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--wav', default=str(ROOT / 'audio' / 'music.wav'))
-    ap.add_argument('--out', default=str(ROOT / 'qa' / 'music-report.png'))
-    ap.add_argument('--sections', default=str(ROOT / 'edit' / 'sections.json'))
+    ap = argparse.ArgumentParser(description='Audio QA: waveform/spectrogram + music checks.')
+    ap.add_argument('--project', default='.',
+                    help='project root used for the default --wav/--sections/--out paths')
+    ap.add_argument('--wav', default=None, help='default <project>/audio/music.wav')
+    ap.add_argument('--out', default=None, help='default <project>/qa/music-report.png')
+    ap.add_argument('--sections', default=None, help='default <project>/edit/sections.json')
     ap.add_argument('--verify-only', action='store_true')
     a = ap.parse_args()
 
-    sr, L, R = read_wav(Path(a.wav))
+    proj = Path(a.project).resolve()
+    wav = Path(a.wav) if a.wav else proj / 'audio' / 'music.wav'
+    out_png = Path(a.out) if a.out else proj / 'qa' / 'music-report.png'
+    sections_path = Path(a.sections) if a.sections else proj / 'edit' / 'sections.json'
+
+    sr, L, R = read_wav(wav)
     mono = (L + R) / 2
     dur = len(mono) / sr
-    sections = json.loads(Path(a.sections).read_text(encoding='utf-8'))
+    sections = json.loads(sections_path.read_text(encoding='utf-8'))
 
     verify(mono, sr, sections)
     if a.verify_only:
@@ -195,12 +200,11 @@ def main():
         b += 1
 
     d.text((6, wv_h + 22), 'spectrogram 0-12kHz', fill=(150, 165, 200))
-    d.text((6, H - 18), f"{Path(a.wav).name}  {dur:.2f}s  {sr}Hz  peak {20*np.log10(max(np.abs(L).max(), np.abs(R).max())):.2f} dBFS  RMS {20*np.log10(np.sqrt((mono**2).mean())):.1f} dBFS", fill=(150, 165, 200))
+    d.text((6, H - 18), f"{wav.name}  {dur:.2f}s  {sr}Hz  peak {20*np.log10(max(np.abs(L).max(), np.abs(R).max())):.2f} dBFS  RMS {20*np.log10(np.sqrt((mono**2).mean())):.1f} dBFS", fill=(150, 165, 200))
 
-    out = Path(a.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    img.save(out)
-    print(out)
+    out_png.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out_png)
+    print(out_png)
 
 
 if __name__ == '__main__':

@@ -8,12 +8,20 @@
 | 脚本 | 产出 | 复跑 | 被谁引用 |
 |---|---|---|---|
 | `check-docs.py` | 无产物，元文档漂移检查（退出码 1 = 有漂移） | `python scripts/check-docs.py` | [`CLAUDE.md`](../CLAUDE.md)、两份 spec |
+| `make_music.py` | 程序化配乐 `music.wav`（numpy，无 scipy 依赖） | `python scripts/make_music.py --project <项目>` | [`skills/web-capture/SKILL.md`](../skills/web-capture/SKILL.md) |
+| `audio_report.py` | 音频核查图（波形 + 频谱）+ 重拍对网格 / 调性检查 | `python scripts/audio_report.py --project <项目>` | 同上 |
+| `contact_sheet.py` | 抽帧联络表 PNG（审图用） | `python scripts/contact_sheet.py --dir <帧目录> --out <图>` | 同上 |
+| `probe_frame.py` | 单帧数值探针：背景色带/矩形边、文字对比度（量出来的，不是看出来的） | `python scripts/probe_frame.py <帧.png> [更多帧]` | 同上 |
 | `gen-asterforge-landscape.py` | AsterForge 产品全景 deck（19 页） | `python scripts/gen-asterforge-landscape.py` | **0 处**，见下「孤儿」 |
 | `gen-ddd-44slides-deck.py` | `ddd-architecture-deck.pptx`（44 页，配 `render-ddd-assets.py`） | `python scripts/gen-ddd-44slides-deck.py` | [`products/ddd-architecture/README.md`](../products/ddd-architecture/README.md) |
 | `render-ddd-assets.py` | DDD deck 的 7 幅架构/时序导图 + 10 幅代码卡片 | `python scripts/render-ddd-assets.py` | [`products/ddd-architecture/README.md`](../products/ddd-architecture/README.md) |
 | `gen-ddd-deck.py` | `ddd-architecture-deck.pptx`（早期版本，同上文件名） | `python scripts/gen-ddd-deck.py` | **0 处**，见下「孤儿」 |
 | `gen-vibe-studio-deck.py` | vibe-studio 项目介绍 deck（10 页，forest 主题） | `python scripts/gen-vibe-studio-deck.py` | **0 处**，见下「孤儿」 |
 | `gen-lekao-deck.py` | `lekao-deck.pptx`（11 页） | `python scripts/gen-lekao-deck.py` | 见下「同名分叉」 |
+
+> 前四个是 2026-10-02 从 `projects/pelican-test/tools/` 抽出来的独立小工具：
+> 它们对具体项目零引用（全部靠 `--project` 或 CLI 参数），所以不该烂在一个项目目录里。
+> 采集与渲染那几个**不在这里**，它们是 `skills/web-capture/` 的模板。
 
 ## 三个 0 引用脚本（待清理，未删）
 
