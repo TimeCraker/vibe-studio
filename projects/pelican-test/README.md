@@ -110,6 +110,26 @@ node tools/assemble.mjs                       # 出母版 + SRT
 改配乐结构：`edit/sections.json`（音乐的重拍、riser、impact 自动跟随段落边界）。
 改运镜：`UNITS[].view` 引用 `VIEWS` 里的取景窗（源片归一化坐标，`w === h` 保证 16:9）。
 
+## 发布
+
+投稿表单的填写走 [`skills/publish/`](../../skills/publish/)（工具在该 skill 里，本项目不再自带副本）：
+
+```powershell
+node ../../skills/publish/templates/bili.mjs launch                                    # 你扫码登录
+node ../../skills/publish/templates/bili.mjs video  --path ../../products/pelican-test/pelican-test-1080p.mp4
+node ../../skills/publish/templates/bili.mjs declare --option 含AI生成内容
+node ../../skills/publish/templates/bili.mjs category --name 人工智能
+node ../../skills/publish/templates/bili.mjs fill   --spec form.json
+node ../../skills/publish/templates/bili.mjs cover  --image ../../products/pelican-test/pelican-test-cover.png
+node ../../skills/publish/templates/bili.mjs check                                      # 自检，然后你自己点发布
+```
+
+表单内容在 [`form.json`](form.json)（标题 / 标签 / 简介），改文案只改这个文件。
+
+**封面必须中心安全**：B 站首页推荐按 4:3 裁、个人空间按 16:9 裁，都取画面中心，
+所以封面是居中海报式构图，关键内容收在中心 1440×1080 内。
+`director.js` 里 `__cover` 的注释写了这条约束。
+
 ## 已知边界
 
 - 采集分辨率 4K，成片 1080p。**更紧的特写会放大**：`VIEWS` 里 `w < 0.42` 的取景窗

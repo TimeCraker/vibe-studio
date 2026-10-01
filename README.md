@@ -41,6 +41,7 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 | [`humanizer`](skills/humanizer/) | 去 AI 腔。PPT 和口播稿默认过一遍。 |
 | [`narration`](skills/narration/) | 分段口播稿 + 程序校验。不做语音合成。 |
 | [`auto-subtitle`](skills/auto-subtitle/) | 已有音轨转写成 `SubtitleCue`。 |
+| [`publish`](skills/publish/) | 把成片填进投稿表单（目前 B 站）。**人登录、人点发布**，脚本只填表。 |
 
 施工记录和旧版对照在 [`docs/`](docs/)，新任务以产品图为准。
 
