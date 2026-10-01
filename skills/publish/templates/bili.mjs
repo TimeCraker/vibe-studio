@@ -445,7 +445,27 @@ async function check(cdp) {
 // --------------------------------------------------------------------------- //
 async function main() {
   if (cmd === 'launch') return launch();
-  if (!cmd) { console.log(readFileSync(new URL(import.meta.url), 'utf8').split('* ── 高层命令')[1]?.slice(0, 900) ?? ''); return; }
+  if (!cmd) { console.log('commands: launch state video declare category fill cover check shot tabs goto eval inspect'); return; }
+
+  // --dry 只打印计划，不碰浏览器（没有登录窗口也能核对流程）
+  if (flag('dry') && cmd === 'setup') {
+    const spec = arg('spec', 'form.json');
+    const video = arg('path', null);
+    const cover = arg('image', null);
+    const declareTxt = arg('declare', null);
+    const cat = arg('category', null);
+    const steps = [
+      'goto 投稿页',
+      video ? `上传视频 ${video}` : '上传视频（未给 --path，需要已在表单页）',
+      declareTxt ? `declare --option ${declareTxt}` : 'declare（未给 --declare，跳过）',
+      cat ? `category --name ${cat}` : 'category（未给 --category，跳过）',
+      `fill --spec ${spec}`,
+      cover ? `cover --image ${cover}` : 'cover（未给 --image，跳过）',
+      'check 自检（发布按钮由你点）',
+    ];
+    console.log(steps.map((s, i) => `${i + 1}. ${s}`).join('\n'));
+    return;
+  }
 
   const cdp = await attach();
   try {
@@ -453,6 +473,29 @@ async function main() {
       video: () => video(cdp), declare: () => declare(cdp), category: () => category(cdp),
       fill: () => fill(cdp), cover: () => cover(cdp), check: () => check(cdp) };
     if (HIGH[cmd]) return await HIGH[cmd]();
+
+    if (cmd === 'setup') {
+      // 完整投稿前序列。发布按钮永远由人点 —— 这里到 check 为止。
+      // 底层动作各自从 argv 取参（--path/--spec/--image/--declare/--category），setup 负责编排。
+      const videoPath = arg('path', null);
+      const declareTxt = arg('declare', null);
+      const cat = arg('category', null);
+
+      await cdp.send('Page.navigate', { url: 'https://member.bilibili.com/platform/upload/video/frame' });
+      await sleep(5000);
+      const already = await cdp.eval(STATE_JS);
+      if (!already.uploaded) {
+        if (!videoPath) throw new Error('视频未上传，且未提供 --path');
+        await video(cdp);
+      } else {
+        console.log('视频已上传，跳过上传');
+      }
+      if (declareTxt) await declare(cdp);
+      if (cat) await category(cdp);
+      await fill(cdp);
+      if (arg('image', null)) await cover(cdp);
+      return check(cdp);
+    }
 
     // ---- 逃生口 ----
     if (cmd === 'tabs') {

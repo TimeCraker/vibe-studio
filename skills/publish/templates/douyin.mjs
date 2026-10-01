@@ -41,7 +41,9 @@ const PORT = Number(arg('port', 9223));
 // 独立 profile：抖音的登录态与 B 站分开，一个平台一个浏览器身份
 const PROFILE = resolve(arg('profile', join(homedir(), '.douyin-upload-profile')));
 const CHROME = arg('chrome', process.env.CHROME_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe');
-const WORK = resolve(arg('work', process.cwd()));
+// 项目根：spec / 截图等默认路径的基准。--project 优先，兼容 --work
+const PROJECT = resolve(arg('project', arg('work', process.cwd())));
+const WORK = PROJECT;
 
 // --------------------------------------------------------------------------- //
 // 极简 CDP 客户端
@@ -148,6 +150,203 @@ async function sendKey(cdp, key) {
   }
 }
 
+/** 清空简介编辑器：Ctrl+A + Backspace 走编辑器自己的输入管线。
+ *  document.execCommand 在 editor-kit 上选区建了但删不掉（实测），所以必须用真实按键。 */
+async function clearEditor(cdp) {
+  await cdp.eval(`document.querySelector('.zone-container.editor-kit-container')?.focus(), null`);
+  await sleep(150);
+  for (const type of ['keyDown', 'keyUp']) {
+    await cdp.send('Input.dispatchKeyEvent', { type, key: 'a', code: 'KeyA', windowsVirtualKeyCode: 65, nativeVirtualKeyCode: 65, modifiers: 2 });
+  }
+  await sleep(120);
+  for (const type of ['keyDown', 'keyUp']) {
+    await cdp.send('Input.dispatchKeyEvent', { type, key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
+  }
+  await sleep(300);
+  return cdp.eval(`(document.querySelector('.zone-container.editor-kit-container')?.innerText || '').length`);
+}
+
+/** setup 的步骤计划。--dry 在附着浏览器之前就打印它（核对流程不需要登录窗口）。 */
+function setupPlan() {
+  const video = arg('video', null);
+  const cover = arg('image', null);
+  const declareTxt = arg('declare', '内容由AI生成');
+  const tags = String(arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
+  return [
+    'goto 投稿页',
+    video ? '上传视频' : '上传视频（未给 --video，需要已在表单页）',
+    `fill --spec ${arg('spec', 'douyin-form.json')}`,
+    tags.length ? `hashtags --names ${tags.join(',')}` : 'hashtags（未给 --names，跳过）',
+    cover ? `cover --image ${cover}` : '封面（未给 --cover，跳过）',
+    `declare --option ${declareTxt}`,
+    '自检汇总（发布按钮由你点）',
+  ];
+}
+
+// ---- 抖音投稿动作（命令分支与 setup 共用同一份实现） ----
+
+/** 上传视频并等表单出现 */
+async function doUpload(cdp, video) {
+  await tapText(cdp, '知道了');
+  await pickFile(cdp, 'div[class*="container-drag-btn"]', video);
+  console.log('视频已交给上传控件，等待表单出现…');
+  await sleep(4000);
+  await tapText(cdp, '知道了');
+}
+
+/** 标题 + 简介。简介逐行写完且写前先清空，因此可重复执行。 */
+async function doFill(cdp, specPath) {
+  if (!existsSync(specPath)) throw new Error(`找不到 spec: ${specPath}`);
+  const spec = JSON.parse(readFileSync(specPath, 'utf8'));
+  const out = {};
+  if (spec.title) {
+    const ok = await cdp.eval(`(() => {
+      const el = [...document.querySelectorAll('input[placeholder*="填写作品标题"]')].find(e => e.getBoundingClientRect().width > 0);
+      if (!el) return '找不到标题框';
+      el.focus(); el.select(); return 'ok';
+    })()`);
+    if (ok !== 'ok') throw new Error(ok);
+    await cdp.send('Input.insertText', { text: spec.title });
+    await sleep(300);
+    out.title = await cdp.eval(`document.querySelector('input[placeholder*="填写作品标题"]')?.value ?? null`);
+  }
+  if (spec.description?.length) {
+    out.clearedTo = await clearEditor(cdp);
+    // 只 focus，不要用 Range API 设光标：editor-kit 维护自己的选区，
+    // 外部强设之后内部不同步，后续插入会落错位置还会重复（实测踩过）。
+    await cdp.eval(`document.querySelector('.zone-container.editor-kit-container')?.focus(), null`);
+    await sleep(200);
+    const lines = spec.description;
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i]) await cdp.send('Input.insertText', { text: lines[i] });
+      if (i < lines.length - 1) await sendKey(cdp, 'Enter');
+      await sleep(70);
+    }
+    await sleep(400);
+    out.descLen = await cdp.eval(`(() => {
+      const el = document.querySelector('.zone-container.editor-kit-container');
+      return el ? (el.innerText || '').trimEnd().length : null;
+    })()`);
+  }
+  return out;
+}
+
+/** 话题：走联想弹层点第一项；联想不到就删掉打出去的字，不留纯文本假话题 */
+async function doHashtags(cdp, names) {
+  const results = [];
+  for (const name of names) {
+    await cdp.eval(`document.querySelector('.zone-container.editor-kit-container')?.focus(), null`);
+    await sleep(200);
+    await cdp.send('Input.insertText', { text: `#${name}` });
+    let popup = null;
+    for (let i = 0; i < 16 && !popup; i++) {
+      await sleep(180);
+      popup = await cdp.eval(`(() => {
+        const m = document.querySelector('.mention-suggest-mount-dom');
+        if (!m) return null;
+        const items = [...m.querySelectorAll('*')].filter(e => {
+          const r = e.getBoundingClientRect();
+          return r.width > 100 && r.height > 25 && r.height < 60 && (e.innerText || '').trim().startsWith('#');
+        });
+        const first = items[0];
+        if (!first) return null;
+        const r = first.getBoundingClientRect();
+        return { txt: (first.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 24) };
+      })()`);
+    }
+    if (!popup) {
+      for (let i = 0; i < name.length + 1; i++) {
+        for (const type of ['keyDown', 'keyUp']) {
+          await cdp.send('Input.dispatchKeyEvent', { type, key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
+        }
+        await sleep(40);
+      }
+      results.push({ name, picked: null, note: 'no suggestion, removed' });
+      continue;
+    }
+    await cdp.eval(`(() => {
+      const m = document.querySelector('.mention-suggest-mount-dom');
+      const items = [...m.querySelectorAll('*')].filter(e => {
+        const r = e.getBoundingClientRect();
+        return r.width > 100 && r.height > 25 && r.height < 60 && (e.innerText || '').trim().startsWith('#');
+      });
+      items[0]?.click();
+      return true;
+    })()`);
+    await sleep(600);
+    const gone = await cdp.eval(`!document.querySelector('.mention-suggest-mount-dom')`);
+    results.push({ name, picked: popup.txt, ok: gone });
+  }
+  return results;
+}
+
+/** 横封面（4:3）上传。竖封面需要单独设计的竖构图，这里不代做。 */
+async function doCover(cdp, img) {
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('*')].find(e => {
+      const r = e.getBoundingClientRect();
+      return r.width > 60 && r.height > 8 && (e.innerText || '').trim() === '选择封面'
+        && /横封面/.test(e.parentElement?.innerText || '');
+    });
+    if (!el) throw new Error('找不到「横封面4:3」的选择封面');
+    el.setAttribute('data-dy-cover-open', '1');
+  })()`);
+  await realClick(cdp, '[data-dy-cover-open]', 0);
+  await sleep(2000);
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('*')].find(e => (e.innerText || '').trim() === '上传封面' && e.getBoundingClientRect().width > 60);
+    if (!el) throw new Error('找不到「上传封面」按钮（封面编辑器没开？）');
+    el.setAttribute('data-dy-cover-up', '1');
+  })()`);
+  await pickFile(cdp, '[data-dy-cover-up]', img);
+  await sleep(4000);
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('button.semi-button')].find(e => (e.innerText || '').trim() === '完成' && e.getBoundingClientRect().width > 0);
+    if (!el) throw new Error('找不到「完成」按钮');
+    el.setAttribute('data-dy-cover-done', '1');
+  })()`);
+  await realClick(cdp, '[data-dy-cover-done]', 0);
+  await sleep(1500);
+  // upsell 会弹「设置竖封面获更多流量」，竖构图封面是设计活，这里不代做
+  await tapText(cdp, '暂不设置');
+}
+
+/** 自主声明（内容由AI生成 等） */
+async function doDeclare(cdp, want) {
+  const ok = await cdp.eval(`(() => {
+    const row = [...document.querySelectorAll('*')].find(e => {
+      const r = e.getBoundingClientRect();
+      return r.width > 300 && (e.innerText || '').trim().startsWith('自主声明') && e.querySelector('[class*="selectBox"]');
+    });
+    const box = row?.querySelector('[class*="selectBox"]');
+    if (!box) return '找不到自主声明行';
+    box.click();
+    return 'ok';
+  })()`);
+  if (ok !== 'ok') throw new Error(ok);
+  await sleep(1500);
+  const picked = await cdp.eval(`(() => {
+    const row = [...document.querySelectorAll('*')].find(e => {
+      const r = e.getBoundingClientRect();
+      return r.width > 500 && r.height > 30 && r.height < 60 && (e.innerText || '').trim() === ${JSON.stringify(want)};
+    });
+    if (!row) return null;
+    row.click();
+    return 'ok';
+  })()`);
+  if (picked !== 'ok') throw new Error(`声明面板里没有「${want}」`);
+  await sleep(500);
+  await cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('button')].find(e => (e.innerText || '').trim() === '确定' && e.getBoundingClientRect().width > 0);
+    el?.click();
+  })()`);
+  await sleep(1200);
+  return cdp.eval(`(() => {
+    const el = [...document.querySelectorAll('*')].find(e => { const r = e.getBoundingClientRect(); return r.width > 300 && (e.innerText || '').trim().startsWith('自主声明'); });
+    return (el?.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 40);
+  })()`);
+}
+
 /** 点第一个「文本完全等于 t」的可见元素 */
 async function tapText(cdp, t) {
   const r = await cdp.eval(`(() => {
@@ -186,7 +385,12 @@ async function launch() {
 
 async function main() {
   if (cmd === 'launch') return launch();
-  if (!cmd) { console.log('commands: launch status tabs goto eval inspect shot scroll pickfile file tap tapText hover type key popup pick cascade'); return; }
+  if (!cmd) { console.log('commands: launch status tabs goto eval inspect shot scroll pickfile file tap tapText hover type key fill hashtags cover declare clear setup'); return; }
+  // --dry 只打印计划，不碰浏览器（没有登录窗口也能核对流程）
+  if (flag('dry') && cmd === 'setup') {
+    console.log(setupPlan().map((s, i) => `${i + 1}. ${s}`).join('\n'));
+    return;
+  }
 
   const cdp = await attach();
   try {
@@ -308,119 +512,52 @@ async function main() {
       await sendKey(cdp, arg('key', 'Escape'));
       console.log('sent');
     } else if (cmd === 'clear') {
-      // 清空简介编辑器：Ctrl+A + Backspace 走编辑器自己的输入管线。
-      // document.execCommand 在 editor-kit 上不可靠（实测选区建了但删不掉）。
-      await cdp.eval(`document.querySelector('.zone-container.editor-kit-container')?.focus(), null`);
-      await sleep(150);
-      for (const type of ['keyDown', 'keyUp']) {
-        await cdp.send('Input.dispatchKeyEvent', { type, key: 'a', code: 'KeyA', windowsVirtualKeyCode: 65, nativeVirtualKeyCode: 65, modifiers: 2 });
-      }
-      await sleep(120);
-      for (const type of ['keyDown', 'keyUp']) {
-        await cdp.send('Input.dispatchKeyEvent', { type, key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
-      }
-      await sleep(300);
-      const len = await cdp.eval(`(document.querySelector('.zone-container.editor-kit-container')?.innerText || '').length`);
+      // 清空简介编辑器（走 clearEditor 的真实按键路径）
+      const len = await clearEditor(cdp);
       console.log(`editor length after clear: ${len}`);
     } else if (cmd === 'fill') {
       // 抖音的描述分两层：标题 input（30 字）+ 富文本简介（1000 字）。
-      // 简介必须在一个进程里逐行写完：换行后光标停在段尾，跨进程重新 focus 可能跳回开头。
-      const specPath = resolve(arg('spec', join(WORK, 'douyin-form.json')));
-      if (!existsSync(specPath)) throw new Error(`找不到 spec: ${specPath}`);
-      const spec = JSON.parse(readFileSync(specPath, 'utf8'));
-      const out = {};
-
-      if (spec.title) {
-        const ok = await cdp.eval(`(() => {
-          const el = [...document.querySelectorAll('input[placeholder*="填写作品标题"]')].find(e => e.getBoundingClientRect().width > 0);
-          if (!el) return '找不到标题框';
-          el.focus(); el.select(); return 'ok';
-        })()`);
-        if (ok !== 'ok') throw new Error(ok);
-        await cdp.send('Input.insertText', { text: spec.title });
-        await sleep(300);
-        out.title = await cdp.eval(`document.querySelector('input[placeholder*="填写作品标题"]')?.value ?? null`);
-      }
-
-      if (spec.description?.length) {
-        // 只 focus，不要用 Range API 设光标：editor-kit 维护自己的选区，
-        // 外部强设之后内部不同步，后续插入会落错位置还会重复（实测踩过）。
-        const ok = await cdp.eval(`(() => {
-          const el = document.querySelector('.zone-container.editor-kit-container');
-          if (!el) return '找不到简介编辑器';
-          el.focus();
-          return 'ok';
-        })()`);
-        if (ok !== 'ok') throw new Error(ok);
-        await sleep(200);
-        const lines = spec.description;
-        for (let i = 0; i < lines.length; i++) {
-          if (lines[i]) await cdp.send('Input.insertText', { text: lines[i] });
-          if (i < lines.length - 1) await sendKey(cdp, 'Enter');
-          await sleep(70);
-        }
-        await sleep(400);
-        out.descLen = await cdp.eval(`(() => {
-          const el = document.querySelector('.zone-container.editor-kit-container');
-          return el ? (el.innerText || '').trimEnd().length : null;
-        })()`);
-      }
+      const out = await doFill(cdp, resolve(arg('spec', join(PROJECT, 'douyin-form.json'))));
       console.log(JSON.stringify(out, null, 1));
     } else if (cmd === 'hashtags') {
-      // 逐个加话题：输入 #名字 → 等联想弹层 → 点第一项 → 变成真正的话题节点。
-      // 联想不到（没有这个话题）就把打出去的 "#名字" 删掉，不留纯文本假话题。
       const names = String(arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
       if (!names.length) throw new Error('需要 --names A,B,C');
-      const results = [];
-      for (const name of names) {
-        await cdp.eval(`document.querySelector('.zone-container.editor-kit-container')?.focus(), null`);
-        await sleep(200);
-        await cdp.send('Input.insertText', { text: `#${name}` });
-        let popup = null;
-        for (let i = 0; i < 16 && !popup; i++) {
-          await sleep(180);
-          popup = await cdp.eval(`(() => {
-            const m = document.querySelector('.mention-suggest-mount-dom');
-            if (!m) return null;
-            const items = [...m.querySelectorAll('*')].filter(e => {
-              const r = e.getBoundingClientRect();
-              return r.width > 100 && r.height > 25 && r.height < 60 && (e.innerText || '').trim().startsWith('#');
-            });
-            const first = items[0];
-            if (!first) return null;
-            const r = first.getBoundingClientRect();
-            return { x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2), txt: (first.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 24) };
-          })()`);
-        }
-        if (!popup) {
-          // 没有联想结果：删掉 "#名字"，不留纯文本假话题
-          for (let i = 0; i < name.length + 1; i++) {
-            for (const type of ['keyDown', 'keyUp']) {
-              await cdp.send('Input.dispatchKeyEvent', { type, key: 'Backspace', code: 'Backspace', windowsVirtualKeyCode: 8, nativeVirtualKeyCode: 8 });
-            }
-            await sleep(40);
-          }
-          results.push({ name, picked: null, note: 'no suggestion, removed' });
-          continue;
-        }
-        await cdp.eval(`(() => {
-          const m = document.querySelector('.mention-suggest-mount-dom');
-          const items = [...m.querySelectorAll('*')].filter(e => {
-            const r = e.getBoundingClientRect();
-            return r.width > 100 && r.height > 25 && r.height < 60 && (e.innerText || '').trim().startsWith('#');
-          });
-          items[0]?.click();
-          return true;
-        })()`);
-        await sleep(600);
-        const gone = await cdp.eval(`!document.querySelector('.mention-suggest-mount-dom')`);
-        results.push({ name, picked: popup.txt, ok: gone });
+      console.log(JSON.stringify(await doHashtags(cdp, names), null, 1));
+    } else if (cmd === 'cover') {
+      const img = resolve(arg('image', ''));
+      if (!img) throw new Error('需要 --image <封面图>');
+      await doCover(cdp, img);
+      console.log('横封面已上传（竖封面需要单独设计竖构图，暂未设置）');
+    } else if (cmd === 'declare') {
+      console.log(`自主声明 = ${JSON.stringify(await doDeclare(cdp, arg('option', '内容由AI生成')))}`);
+    } else if (cmd === 'setup') {
+      // 完整投稿前序列。发布按钮永远由人点 —— 这里到自检为止（--dry 在 main 入口处理）。
+      const video = arg('video', null);
+      const cover = arg('cover', null);
+      const declareTxt = arg('declare', '内容由AI生成');
+      const specPath = resolve(arg('spec', join(PROJECT, 'douyin-form.json')));
+      const tags = String(arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
+
+      await cdp.send('Page.navigate', { url: UPLOAD_URL });
+      await sleep(5000);
+      const onPostPage = String(await cdp.eval('location.href')).includes('/content/post/video');
+      if (!onPostPage) {
+        if (!video) throw new Error('不在发布表单页，且未提供 --video');
+        await doUpload(cdp, resolve(video));
+      } else {
+        console.log('已在发布表单页，跳过上传');
       }
-      console.log(JSON.stringify(results, null, 1));
+      const out = {};
+      out.fill = await doFill(cdp, specPath);
+      if (tags.length) out.hashtags = await doHashtags(cdp, tags);
+      if (cover) { await doCover(cdp, resolve(cover)); out.cover = '横封面已上传'; }
+      out.declare = await doDeclare(cdp, declareTxt);
+      console.log(JSON.stringify(out, null, 1));
+      console.log('表单就绪。发布按钮由你点。');
     } else if (cmd === 'popup' || cmd === 'pick' || cmd === 'cascade') {
       console.log('这三个命令是 B 站组件专用的；抖音的下拉/弹层结构探明后再补对应命令');
     } else {
-      console.log('未知命令。可用：launch status tabs goto eval inspect shot scroll pickfile file tap tapText hover type key');
+      console.log('未知命令。可用：launch status tabs goto eval inspect shot scroll pickfile file tap tapText hover type key fill hashtags cover declare clear setup');
     }
   } finally {
     cdp.close();

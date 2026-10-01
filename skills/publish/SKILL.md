@@ -27,27 +27,57 @@ user-invocable: true
 
 ## 快速上手
 
+**多平台一起发，用 `run.mjs`（推荐入口）**：
+
 ```bash
-# 1. 开窗口，然后你自己扫码登录（登录态留在 ~/.bili-upload-profile，下次不用重扫）
+# 1. 每个平台各开一个窗口，你自己扫码（各自独立 profile，互不干扰）
 node skills/publish/templates/bili.mjs launch
+node skills/publish/templates/douyin.mjs launch
 
-# 2. 上传视频（自动开投稿页、处理「上传完成」弹窗、等上传结束）
-node skills/publish/templates/bili.mjs video --path products/<项目名>/<成片>.mp4
+# 2. 一条命令并行填所有平台的表（先 --dry 核对步骤）
+node skills/publish/templates/run.mjs --project projects/<项目名> --dry
+node skills/publish/templates/run.mjs --project projects/<项目名>
 
-# 3. 填表。三个必填项有专用命令，其余走 --spec
-node skills/publish/templates/bili.mjs declare  --option 含AI生成内容
-node skills/publish/templates/bili.mjs category --name 人工智能
-node skills/publish/templates/bili.mjs fill     --spec projects/<项目名>/form.json
-node skills/publish/templates/bili.mjs cover    --image products/<项目名>/<封面>.png
-
-# 4. 自检：必填项齐不齐、有没有页面报错
-node skills/publish/templates/bili.mjs check
-
-# 5. 你自己在窗口里点「立即投稿」
+# 3. 每个平台各自的窗口里，你自己点「发布」
 ```
+
+清单写在 `projects/<项目名>/publish-plan.json`：`video` / `cover` / `platforms`，
+每个平台一块（spec 路径、声明、分区、话题等）。结构见本文件头注释或
+`projects/pelican-test/publish-plan.json`。
+
+**单平台手动跑**（调试或只发一家）：
+
+```bash
+# B 站
+node skills/publish/templates/bili.mjs launch                     # 扫码
+node skills/publish/templates/bili.mjs setup --project projects/<项目名> \
+  --path products/<项目名>/<成片>.mp4 --image products/<项目名>/<封面>.png \
+  --spec projects/<项目名>/form.json \
+  --declare 含AI生成内容 --category 人工智能
+node skills/publish/templates/bili.mjs check                      # 自检，然后你点「立即投稿」
+
+# 抖音
+node skills/publish/templates/douyin.mjs launch                   # 扫码
+node skills/publish/templates/douyin.mjs setup --project projects/<项目名> \
+  --video products/<项目名>/<成片>.mp4 --image products/<项目名>/<封面>.png \
+  --spec projects/<项目名>/douyin-form.json --names AI,Gemini,人工智能
+# （封面在抖音表单里走 cover --image，见下文平台二）
+```
+
+`setup` 是幂等的：已上传的视频会跳过、简介写之前先清空，所以重复跑不会叠加。
 
 `form.json` 结构见 `skills/publish/templates/form.example.json`：`title` / `tags[]` / `description[]`。
 **description 一行就是一个段落，不要写空字符串**，Quill 会把空行变成多余的空段落。
+
+## 为什么能并行
+
+每个平台工具**自带独立的 Chrome profile 和调试端口**（B 站 = 9222，抖音 = 9223），
+是两个互不相干的浏览器实例，所以可以同时开、同时填、同时上传。
+`run.mjs` 就是把「每个平台 spawn 一个 `setup` 进程」包起来，输出按 `[平台名]` 加前缀，
+最后给一张就绪汇总表。
+
+**并行只到填表为止。** 发布是每个平台各点一次的人工动作：
+不可逆，且多平台风控政策不同，这一步永远留在人手里。
 
 ## Step 1 · 先把文案写进 form.json
 
