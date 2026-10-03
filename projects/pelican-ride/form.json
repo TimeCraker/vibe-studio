@@ -1,6 +1,6 @@
 {
   "_comment": "B 站投稿表单的填写内容。description 一行 = 一个段落，不要放空行（Quill 里空行会变成多余的空段落）。",
-  "title": "一句话交给 Codex 的 GPT-6.1 Sol，7 分钟后它生成了这个",
+  "title": "鹈鹕测试又来了：这次是 GPT-6.1 Sol，效果如何",
   "tags": ["AI", "人工智能", "GPT", "Codex", "OpenAI", "SVG", "矢量动画", "AI绘画", "大模型", "程序员"],
   "description": [
     "先看东西，再谈感受。",
