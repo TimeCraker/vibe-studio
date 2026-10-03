@@ -1,0 +1,14 @@
+{
+  "_comment": "剪辑与配乐共用的唯一时间网格。96 BPM = 一拍 0.625s，一小节 2.5s；全片 24 小节 = 60.0s，音乐在 end 处收束，成片再多走 1.0s 环出（VIDEO_END = 61.0）。段落边界全部落在小节线上，重拍 / riser / impact 自动对齐。",
+  "fps": 60,
+  "bpm": 96,
+  "title": "鹈鹕骑行 · Codex 实录",
+  "sections": [
+    { "id": "hook",     "start": 0.0,  "label": "输入", "intent": "一句话提示词 + 规格表 + Codex 生成实录截图" },
+    { "id": "reveal",   "start": 5.0,  "label": "成品", "intent": "整页版式与场景全景，卡在第一个重拍上揭幕" },
+    { "id": "details",  "start": 20.0, "label": "细节", "intent": "IK 双腿 / 1:1.9 传动 / 五层视差 / 喙囊特写" },
+    { "id": "interact", "start": 37.5, "label": "交互", "intent": "2× 变速 / 控制台 / 暂停状态机 / 重播归位" },
+    { "id": "verdict",  "start": 50.0, "label": "清单", "intent": "生成清单 + 双端对照 + 结论与互动钩子" }
+  ],
+  "end": 60.0
+}

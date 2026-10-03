@@ -37,9 +37,12 @@ def spectrogram(mono: np.ndarray, sr: int, n_fft: int = 2048, hop: int = 512):
     return S
 
 
-def verify(mono: np.ndarray, sr: int, sections: dict):
+def verify(mono: np.ndarray, sr: int, sections: dict, style: str = 'lofi'):
     """Objective checks: are the kicks on the beat grid, and is the harmony
-    actually following the Am7-F-C-G loop?"""
+    actually following the style's 4-chord loop?"""
+    from make_music import CHORDS, SEA_CHORDS  # 单一事实源：和弦表跟配乐脚本共用
+    chords = SEA_CHORDS if style == 'seabreeze' else CHORDS
+    loop_name = 'C-G-Am7-F' if style == 'seabreeze' else 'Am7-F-C-G'
     beat = 60.0 / float(sections['bpm'])
     end = float(sections['end'])
 
@@ -80,12 +83,6 @@ def verify(mono: np.ndarray, sr: int, sections: dict):
               f"within +-35ms of a beat: {on_grid:.0f}%")
 
     # --- chroma vs chord loop ---
-    chords = [
-        ("Am7", [57, 60, 64, 67], 45, [57, 64, 67, 72]),
-        ("F",   [53, 57, 60, 64], 41, [57, 60, 64, 69]),
-        ("C",   [52, 55, 60, 64], 36, [60, 64, 67, 72]),
-        ("G",   [55, 59, 62, 67], 43, [55, 62, 67, 71]),
-    ]
     bar = beat * 4
     nfft = 16384
     win_h = np.hanning(nfft)
@@ -115,7 +112,7 @@ def verify(mono: np.ndarray, sr: int, sections: dict):
         agree += len(want & got)
         total += len(want)
     print(f"chord tones       guessed from chroma: {agree}/{total} of the expected "
-          f"Am7-F-C-G tones are in the top-4 energy bins ({100*agree/max(total,1):.0f}%)")
+          f"{loop_name} tones are in the top-4 energy bins ({100*agree/max(total,1):.0f}%)")
 
 
 def main():
@@ -125,6 +122,8 @@ def main():
     ap.add_argument('--wav', default=None, help='default <project>/audio/music.wav')
     ap.add_argument('--out', default=None, help='default <project>/qa/music-report.png')
     ap.add_argument('--sections', default=None, help='default <project>/edit/sections.json')
+    ap.add_argument('--style', default='lofi', choices=['lofi', 'seabreeze'],
+                    help='和弦表选择，与 make_music.py --style 一致')
     ap.add_argument('--verify-only', action='store_true')
     a = ap.parse_args()
 
@@ -138,7 +137,7 @@ def main():
     dur = len(mono) / sr
     sections = json.loads(sections_path.read_text(encoding='utf-8'))
 
-    verify(mono, sr, sections)
+    verify(mono, sr, sections, style=a.style)
     if a.verify_only:
         return
 

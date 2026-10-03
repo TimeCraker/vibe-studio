@@ -10,6 +10,8 @@ network, fully reproducible.
     python tools/make_music.py --check         # print level report per section
 
 Style: mid-tempo electronic / lo-fi tech review groove, A minor, 100 BPM.
+       --style lofi      A 小调评测向（pelican-test，段落词表 hook/reveal-*/analysis/verdict）
+       --style seabreeze C 大调海风系（pelican-ride，段落词表 hook/reveal/details/interact/verdict）
 """
 from __future__ import annotations
 
@@ -254,6 +256,15 @@ CHORDS = [
     ("G",   [55, 59, 62, 67], 43, [55, 62, 67, 71]),
 ]
 
+# C major I-V-vi-IV, brighter and airier — the "sea breeze" palette for
+# pelican-ride (96 BPM, 24 bars). Same tuple layout as CHORDS.
+SEA_CHORDS = [
+    ("C",    [60, 64, 67, 71], 36, [72, 76, 79, 83]),
+    ("G",    [55, 59, 62, 67], 43, [71, 74, 79, 83]),
+    ("Am7",  [57, 60, 64, 67], 45, [69, 72, 76, 81]),
+    ("Fmaj7",[53, 57, 60, 64], 41, [69, 72, 77, 81]),
+]
+
 
 class Mixer:
     def __init__(self, dur: float):
@@ -278,7 +289,7 @@ class Mixer:
         self.R[i : i + len(seg_b)] += seg_b * gain
 
 
-def build(sections: dict) -> Mixer:
+def _build_lofi(sections: dict) -> Mixer:
     end = float(sections["end"])
     bpm = float(sections["bpm"])
     beat = 60.0 / bpm
@@ -459,6 +470,182 @@ def build(sections: dict) -> Mixer:
     return Mixer.from_arrays(mx.L + 0.16 * wet_l[:n], mx.R + 0.16 * wet_r[:n], n)
 
 
+def _build_seabreeze(sections: dict) -> Mixer:
+    """海风系：C 大调 I-V-vi-IV，软底鼓、 airy hat、尼龙拨弦。
+
+    段落词汇表对齐 pelican-ride/edit/sections.json：
+    hook(输入卡) / reveal(成品) / details(细节) / interact(交互) / verdict(清单+结论)。
+    富 airstrip 全部来自现有乐器函数，只改增益与滤波参数；重拍/riser/impact
+    仍然严格落在段落边界（网格来自 sections.json）。
+    """
+    end = float(sections["end"])
+    bpm = float(sections["bpm"])
+    beat = 60.0 / bpm
+    bar = beat * 4.0
+    bounds = [float(s["start"]) for s in sections["sections"]]
+    names = [s["id"] for s in sections["sections"]]
+
+    mx = Mixer(end)
+    ir = make_ir()
+    n_bars = int(round(end / bar))
+
+    def bar_time(b: int) -> float:
+        return b * bar
+
+    def section_of(bar_index: int) -> str:
+        t = bar_time(bar_index)
+        cur = names[0]
+        for b, nm in zip(bounds, names):
+            if t >= b - 1e-6:
+                cur = nm
+        return cur
+
+    chord_of = lambda b: SEA_CHORDS[b % 4]
+
+    GROOVE = ("reveal", "details", "interact")
+
+    # ---------------- pad：更亮更透 ---------------- #
+    b = 0
+    while b < n_bars:
+        nm = section_of(b)
+        st = bar_time(b)
+        run = 1
+        while b + run < n_bars and section_of(b + run) == nm:
+            run += 1
+        if nm == "hook":
+            c_from, c_to, g = 500.0, 1400.0, 0.9
+        elif nm == "verdict":
+            c_from, c_to, g = 450.0, 1200.0, 0.95
+        else:
+            c_from, c_to, g = 700.0, 3000.0, 1.0
+        for k in range(run):
+            _, tones, _, _ = chord_of(b + k)
+            seg = pad_chord([midi(m) for m in tones], bar * 1.12, c_from, c_to)
+            mx.add(seg, st + k * bar, gain=g * 0.85, pan=-0.18)
+        b += run
+
+    # ---------------- 编排 ---------------- #
+    for bi in range(n_bars):
+        nm = section_of(bi)
+        t0 = bar_time(bi)
+        _, tones, bass_root, lead = chord_of(bi)
+        bt = midi(bass_root)
+
+        if nm == "hook":
+            if bi == 1:
+                mx.add(kick(0.5), t0 + beat * 1.5, 0.5)
+                mx.add(kick(0.5), t0 + beat * 3.0, 0.42)
+            mx.add(riser(bar * 1.0), t0, 0.9)
+
+        elif nm in GROOVE:
+            # kick：四下但软，reveal 每 4 小节留一口呼吸
+            for q in range(4):
+                if nm == "reveal" and bi % 4 == 3 and q == 3:
+                    continue
+                mx.add(kick(0.5), t0 + q * beat, 0.74 if q in (0, 2) else 0.6)
+            # clap/snare 在 2、4，轻
+            for q in (1, 3):
+                mx.add(clap() if bi % 2 else snare(), t0 + q * beat, 0.4)
+            # hats：8 分，airier（略长的衰减）
+            for q in range(8):
+                acc = 1.0 if q % 2 == 0 else 0.6
+                mx.add(hat(0.05, 0.3 * acc), t0 + q * beat * 0.5, 0.95, pan=0.16 * ((-1) ** q))
+            if bi % 2 == 1:
+                mx.add(openhat(), t0 + beat * 3.5, 0.7, pan=0.2)
+            # bass：温和的 8 分
+            pattern = [1.0, 0.0, 0.6, 0.7, 0.0, 0.6, 0.62, 0.0]
+            if nm == "interact":
+                pattern = [1.0, 0.6, 0.0, 0.7, 0.6, 0.0, 0.7, 0.62]
+            for q, g in enumerate(pattern):
+                if g <= 0:
+                    continue
+                mx.add(bass(bt, beat * 0.46, cut=460.0 + 90 * g), t0 + q * beat * 0.5, 0.36 * g)
+            # 拨弦：尼龙质感 16 分
+            seq = [0, 2, 1, 3, 2, 3, 1, 2, 0, 2, 3, 1, 2, 1, 3, 2]
+            if nm == "details":
+                seq = [0, 2, 3, 2, 1, 2, 3, 1, 0, 2, 3, 2, 1, 3, 2, 1]
+            for q in range(16):
+                deg = seq[q]
+                octv = 12 if (q in (6, 14)) else 0
+                f = midi(lead[deg % 4] + octv)
+                g = 0.26 if q % 4 == 0 else 0.17
+                mx.add(pluck(f, 0.42, bright=3200.0), t0 + q * beat * 0.25,
+                       g, pan=0.3 * math.sin(q * 1.7))
+            if nm == "interact" and bi % 4 == 0:
+                for m in lead:
+                    mx.add(pluck(midi(m), 0.7, bright=2600.0), t0, 0.14, pan=-0.1)
+            # 进 verdict 前一小节 riser
+            if bi == n_bars - 5:
+                mx.add(riser(bar), t0, 0.75)
+
+        elif nm == "verdict":
+            # 收束：只有小节头一记软 kick，pad 顶上来，拨弦稀疏
+            mx.add(kick(0.5), t0, 0.5)
+            motif = [0, 2, 1, 3]
+            for q, deg in enumerate(motif):
+                f = midi(lead[deg % 4] + 12)
+                mx.add(pluck(f, 0.6, bright=2600.0), t0 + q * beat * 1.1, 0.2, pan=0.24 * math.cos(q * 1.3))
+            if bi % 2 == 1:
+                for q in range(8):
+                    mx.add(hat(0.05, 0.22 if q % 2 == 0 else 0.14), t0 + q * beat * 0.5, 0.6, pan=0.18 * ((-1) ** q))
+
+        # 段落 impact 正好压在剪辑点上
+        for st, nm2 in zip(bounds, names):
+            if abs(t0 - st) < 1e-6 and bi > 0:
+                mx.add(impact(1.4), st, 0.62)
+
+    # 转场 whoosh 收在剪辑点上
+    for st, nm in zip(bounds, names):
+        if st <= 0:
+            continue
+        mx.add(whoosh(0.9), st - 0.86, 0.44 if nm != "verdict" else 0.55)
+
+    # 尾音：C 大调双铃
+    mx.add(bell(midi(84), 2.2, 0.2), end - 0.31, 1.0, pan=0.1)
+    mx.add(bell(midi(76), 2.6, 0.18), end - 0.31, 1.0, pan=-0.2)
+
+    # ---------------- sidechain（跟着软 kick 走） ---------------- #
+    duck = np.ones(mx.n)
+    for bi in range(n_bars):
+        nm = section_of(bi)
+        if nm == "hook":
+            beats = [(1.5, 0.5), (3.0, 0.42)] if bi == 1 else []
+        elif nm == "verdict":
+            beats = [(0.0, 0.5)]
+        else:
+            beats = [(float(q), 0.74 if q in (0, 2) else 0.6) for q in range(4)]
+        for q, g in beats:
+            i = int(round((bar_time(bi) + q * beat) * SR))
+            ln = int(0.30 * SR)
+            if i >= mx.n:
+                continue
+            seg = 1.0 - (0.38 * g) * np.exp(-np.arange(min(ln, mx.n - i)) / SR / 0.085)
+            duck[i : i + len(seg)] = np.minimum(duck[i : i + len(seg)], seg)
+
+    mx.L *= duck
+    mx.R *= duck
+
+    # ---------------- reverb send ---------------- #
+    dry_peak = max(float(np.max(np.abs(mx.L))), float(np.max(np.abs(mx.R))))
+    dry_rms = float(np.sqrt(np.mean((mx.L + mx.R) ** 2 / 4)))
+    print(f"  dry mix: peak {20*math.log10(max(dry_peak,1e-9)):.2f} dBFS  "
+          f"rms {20*math.log10(max(dry_rms,1e-9)):.2f} dBFS  "
+          f"crest {20*math.log10(max(dry_peak,1e-9)/max(dry_rms,1e-9)):.1f} dB")
+
+    wet_l = fft_convolve(mx.L, ir)
+    wet_r = fft_convolve(mx.R, ir * 0.97)
+    n = mx.n
+    return Mixer.from_arrays(mx.L + 0.18 * wet_l[:n], mx.R + 0.18 * wet_r[:n], n)
+
+
+def build(sections: dict, style: str = 'lofi') -> Mixer:
+    if style == 'seabreeze':
+        return _build_seabreeze(sections)
+    if style != 'lofi':
+        raise SystemExit(f'unknown style: {style} (lofi | seabreeze)')
+    return _build_lofi(sections)
+
+
 def _from_arrays(L, R, n):
     m = Mixer.__new__(Mixer)
     m.L, m.R, m.n = L[:n], R[:n], n
@@ -581,6 +768,8 @@ def main():
                     help='project root used for the default --sections/--out paths')
     ap.add_argument('--sections', default=None, help='default <project>/edit/sections.json')
     ap.add_argument('--out', default=None, help='default <project>/audio/music.wav')
+    ap.add_argument('--style', default='lofi', choices=['lofi', 'seabreeze'],
+                    help='lofi = A 小调评测向（pelican-test）；seabreeze = C 大调海风系（pelican-ride）')
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
 
@@ -589,7 +778,7 @@ def main():
     out = Path(a.out) if a.out else proj / 'audio' / 'music.wav'
 
     sections = json.loads(sections_path.read_text(encoding='utf-8'))
-    mx = build(sections)
+    mx = build(sections, style=a.style)
     L, R = master(mx, float(sections["end"]))
     write_wav(out, L, R)
     report(out, L, R, sections)

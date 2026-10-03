@@ -1,0 +1,17 @@
+{
+  "_comment": "render-director.mjs --cover 的取景方案。mode: wide=1920x1080 横版（内容收中心 1440，B 站 4:3 裁切安全）；v43=同 wide 构图但文字版心进一步收窄，事后居中裁 1440x1080 给抖音横封面；v34=竖版海报构图（文字收中心 810x1080），事后居中裁 810x1080 给抖音竖封面与小红书。",
+  "variants": [
+    { "name": "cover-bili-16x9", "mode": "wide", "shot": "scene-main", "src": 6.6,
+      "view": { "cx": 0.467, "cy": 0.5, "w": 0.62, "h": 0.62 }, "zoom": 1.05,
+      "kicker": "CODEX 生成实录 · GPT-6.1 SOL", "title": "会踩踏板的鹈鹕", "hot": "一句话 · 7 分 19 秒 · 直接能跑" },
+    { "name": "cover-douyin-4x3", "mode": "v43", "shot": "scene-main", "src": 6.6,
+      "view": { "cx": 0.467, "cy": 0.5, "w": 0.62, "h": 0.62 }, "zoom": 1.05,
+      "kicker": "CODEX 生成实录", "title": "会踩踏板的鹈鹕", "hot": "GPT-6.1 Sol · 一次生成" },
+    { "name": "cover-douyin-3x4", "mode": "v34", "shot": "scene-main", "src": 7.4,
+      "view": { "cx": 0.467, "cy": 0.5, "w": 0.72, "h": 0.72 }, "zoom": 1.06,
+      "kicker": "CODEX · GPT-6.1 SOL", "title": "会踩踏板的|鹈鹕", "hot": "一句话生成 · 供参考" },
+    { "name": "cover-xhs-3x4", "mode": "v34", "shot": "scene-main", "src": 8.2,
+      "view": { "cx": 0.467, "cy": 0.5, "w": 0.72, "h": 0.72 }, "zoom": 1.06,
+      "kicker": "AI 实测 · 鹈鹕测试", "title": "鹈鹕骑车|给你看", "hot": "GPT-6.1 Sol 画的" }
+  ]
+}

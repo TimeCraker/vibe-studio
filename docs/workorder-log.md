@@ -412,3 +412,54 @@ skill 模板补齐三份 spec 样例。下条视频的发布 = 写三份文案�
 **没闭环的**：小红书 `setup` 的 dry 验证过，live 全链路要等下次真实发布。
 另外这次试出来一个公共资产的坑：**三个平台三种封面裁切**（B 站 4:3、抖音横竖各一、
 小红书 3:4），下条片子值得在导演页里一次出齐全套封面，而不是每次临场裁。
+
+---
+
+## 2026-10-03 · pelican-ride — 「鹈鹕测试」Codex 篇（GPT-6.1 Sol）+ 发布管线换 Playwright
+
+**目标**：把 Codex 里 GPT-6.1 Sol（思考等级：高）一次生成的「海风骑行 · 鹈鹕的慢旅行」
+SVG 动画（单文件 214 行），做成 61 秒可直接发布的成片；发布改用 Playwright 填表。
+**结果**：成片 61.0s / 1920×1080 / 60fps / 33.1 MB，-13.8 LUFS；20 条字幕烧录 + SRT；
+封面一次出齐三端四张；PSNR 6/6 ≥36 dB（39.9–43.3）；配乐换海风系
+（`make_music.py --style seabreeze`，重拍中位偏差 +0.9 ms，和弦命中 90/90）。
+
+**关键决策与理由**
+- **主语声明先行**（上集最大教训落成制度）：动笔前先写「主语是 Codex 生成出来的这个东西」，
+  本集口径为展示 + 供参考，不做「已是某某水平」的版本断言；模型名/用时/+214 行全部取自
+  Codex 界面截图，逐项可溯源（PUBLISH.md 诚实性表）。
+- **发布管线换 Playwright（用户拍板）**：`skills/publish` 的 launch（独立 profile + 端口）不动，
+  填表走 `pw/` 脚本 `connectOverCDP` 附着；Playwright 复用 `hsr-currency-war/pw` 已装包，零安装。
+  脚本**永远不点发布**：填完表 + 全页自查截图，人看完自己点；选择器失灵时 `dumpForm` 转储真实 DOM。
+  动机：上集 CDP 手写的填表层坑多（隐藏 input、下拉自关、坐标点击），hsr 那次已验证 Playwright 层能解。
+- **采集双视口**：`page-*` 1920×1180 整页版式 + `scene-*` 2880×1560 图版模式（boot 注入 CSS
+  场景铺满）。2880 是算出来的：最紧特写区域 ≥1613px 源像素（上集 w<0.42 发软线换算）。
+  素材入项目（`capture/src/`），不再引用仓库外路径。
+- **配乐风格参数化**：`--style {lofi,seabreeze}`，lofi 路径整函数改名原样保留（旧项目复跑逐字节不变），
+  seabreeze = C 大调 I-V-vi-IV、软底鼓、尼龙拨弦，重拍/riser/impact 机制复用；段落 id 换成
+  本片词表（hook/reveal/details/interact/verdict）。`audio_report.py --style` 和弦表同源导入。
+- **封面一次出齐**（上集工单留的待办兑现）：`covers.json` 四方案 + `export-covers.py` 居中裁切，
+  v34 竖版文字收中心 810×1080，盲裁不切字。
+
+**踩坑（都修了）**
+- **沙箱令牌杀 crashpad**：headless Chrome 在受限令牌下 crashpad `OpenProcess 0x5` 自我退出，
+  `--disable-crashpad`/`--no-sandbox` 都无效；运行时切 danger-full-access 后消失。结论：
+  采集/发布这类要拉 Chrome 的命令，跑在被限权沙箱里会死在启动阶段。
+- **并发 6 采集间歇性死锁**：多 Chrome 并发下某个工人永远停在首帧截图（两批都复现，页批/场景批各死一次）。
+  解法：低并发（≤2）+ 单进程补采（单进程 60–400ms/帧从没卡过）。补采分块时**别忘了 --boot**
+  （scene-main c2 第一次补采漏了 plate CSS，d4 整单元渲成整页画面，抽帧对比才抓到）。
+- **skill 模板两处潜伏 bug**：`render-director.mjs` 全片渲染分支用了未导入的 `dirname`
+  （sample/cover 不触发，第一次全片渲染必炸）；`probe-layout.mjs`/`verify-master.mjs` 抽走后
+  `./cdp.mjs` 断链。均已修。
+- **导演页三处取景/版式**（多模态审图抓的）：pFull 全页视图在 2.162 图版里硬裁标题与控制台
+  （改成 .453/.753 主带 + pMid 中带）；pCtl 居中取景框住控制行的空白中段（控制行内容不居中，
+  改滑杆簇特写）；hook 截图压字幕带且整窗太小（挪右栏 + 裁对话面板 + cover-fit 防拉伸）。
+  另外：renderHook 重写时把参考实现的 agenda 块弄丢了，第一次渲染没发现，对比才补回。
+- **`merge-chunks.mjs`**：分块单独补采后的合并路径（capture-all 的 merge 够不着），顺手修
+  clip.json 的按镜头宽高。
+
+**遗留**
+- `pw/` 三端选择器按 2026-10 DOM 写，live 填表前先 `--dry` 看探针；三端 live 全链路等真实发布闭环。
+- Playwright 依赖还挂在 hsr 项目下，收录进 skills/publish 时要正经化（装包或 vendoring 决策）。
+- scene-* 采集参数（2880×1560）要跟 `--width/--height` 一起传，shots.json 里没有按镜头视口字段；
+  下个 C 线项目值得把 per-shot viewport 收进 shots.json。
+

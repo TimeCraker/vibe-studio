@@ -1,0 +1,9 @@
+# 生成物 / 采集物一律不入库（脚本可复跑，见 README）
+frames/
+render/
+audio/
+qa/
+_probe/
+products/
+capture/capture.log
+*.log

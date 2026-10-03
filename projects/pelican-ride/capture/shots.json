@@ -1,0 +1,28 @@
+{
+  "_comment": "单 HTML 多镜头。page-* = 1920x1180 整页版式（3840x2360 实采）；scene-* = 2880x1560 图版特写，boot 注入 plate CSS 让场景铺满画面（5760x3120 实采，第二次 capture-all 用 --width 2880 --height 1560 覆盖；2880 保证最紧特写区域 >=1613px 源像素，即旧片 w<0.42 发软线）；page-narrow 由 capture-clip 单独采 390px 移动断点。动作镜头自动单进程，免事件鬼影。",
+  "fps": 60,
+  "dsf": 2,
+  "width": 1920,
+  "height": 1180,
+  "chunkCount": 3,
+  "concurrency": 6,
+  "htmlA": "capture/src/pelican-ride.html",
+  "shots": [
+    { "id": "page-main",    "src": "A", "seconds": 18, "chunkCount": 3 },
+    { "id": "page-2x",      "src": "A", "seconds": 10, "boot": "speed-2.js",  "chunkCount": 2 },
+    { "id": "page-05x",     "src": "A", "seconds": 8,  "boot": "speed-05.js", "chunkCount": 2 },
+    { "id": "page-pause",   "src": "A", "seconds": 6,
+      "actions": [
+        { "sec": 1.2, "code": "document.getElementById('toggle').click();" },
+        { "sec": 3.8, "code": "document.getElementById('toggle').click();" }
+      ] },
+    { "id": "page-restart", "src": "A", "seconds": 6,
+      "actions": [
+        { "sec": 2.0, "code": "document.getElementById('restart').click();" }
+      ] },
+
+    { "id": "scene-main",   "src": "A", "seconds": 18, "boot": "plate-1x.js",  "chunkCount": 3 },
+    { "id": "scene-2x",     "src": "A", "seconds": 8,  "boot": "plate-2x.js",  "chunkCount": 2 },
+    { "id": "scene-05x",    "src": "A", "seconds": 6,  "boot": "plate-05.js",  "chunkCount": 2 }
+  ]
+}
