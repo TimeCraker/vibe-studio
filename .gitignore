@@ -38,5 +38,11 @@ Thumbs.db
 output/
 scripts/resume/_qa*.png
 
+# 项目 QA / 发布过程截图与渲染日志（核查产物可复跑，不入库；发布截图含登录态页面）
+projects/*/qa/
+projects/*/pw/qa/
+projects/*/render/
+*.log
+
 # Playwright MCP 临时快照
 .playwright-mcp/
