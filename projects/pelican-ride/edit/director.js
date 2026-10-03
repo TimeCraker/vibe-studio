@@ -278,6 +278,33 @@ function unitAt(t) {
 }
 
 // --------------------------------------------------------------------------- //
+// 印刷件例 v2：对版十字线 + 分区色键线 + 图版编号 + 书脊 + 印章
+// --------------------------------------------------------------------------- //
+const KEY = { sand: '#E4D9B5', sea: '#A6CBC1', sage: '#A8C2AC' };
+const KEY_ROT = ['sand', 'sea', 'sage'];
+function keyColor(unit) {
+  const m = /SEC 0(\d)/.exec(unit.chapter ?? '');
+  return KEY[KEY_ROT[(Number(m?.[1] ?? 1) - 1) % 3]];
+}
+/** 图版四角对版十字线 + 顶部色键线（印刷装订语汇，确定性绘制） */
+function platePrint(dst, unit, dark) {
+  const key = keyColor(unit);
+  ctx.fillStyle = key;
+  ctx.fillRect(dst.x, dst.y, dst.w, 4);
+  ctx.strokeStyle = dark ? 'rgba(239,240,228,0.4)' : 'rgba(52,73,66,0.4)';
+  ctx.lineWidth = 1;
+  for (const [cx, cy] of [
+    [dst.x + 20, dst.y + 20], [dst.x + dst.w - 20, dst.y + 20],
+    [dst.x + 20, dst.y + dst.h - 20], [dst.x + dst.w - 20, dst.y + dst.h - 20],
+  ]) {
+    ctx.beginPath();
+    ctx.moveTo(cx - 7, cy); ctx.lineTo(cx + 7, cy);
+    ctx.moveTo(cx, cy - 7); ctx.lineTo(cx, cy + 7);
+    ctx.stroke();
+  }
+}
+
+// --------------------------------------------------------------------------- //
 // overlay markup
 // --------------------------------------------------------------------------- //
 function headHTML(t) {
@@ -291,7 +318,14 @@ function headHTML(t) {
 function folioHTML(unit, t) {
   if (!unit.chapter) return '';
   const e = ent(t, unit.a, 0.4, 0.1);
-  return `<div class="folio" style="opacity:${e.o}">${unit.chapter}</div>`;
+  const isCard = unit.kind === 'hook' || unit.kind === 'statement' || unit.kind === 'verdict' || unit.kind === 'outro';
+  const spine = isCard
+    ? `<div class="spine" style="opacity:${(e.o * 0.9).toFixed(2)}">鹈鹕测试 · PELICAN RIDE · CODEX 实测</div>`
+    : '';
+  const fig = unit.fig
+    ? `<div class="figlabel" style="opacity:${e.o}"><i>${unit.fig}</i><b>PELICAN RIDE · CODEX</b></div>`
+    : '';
+  return `<div class="folio" style="opacity:${e.o}">${unit.chapter}</div>` + spine + fig;
 }
 
 function bandHTML(unit, t) {
@@ -376,6 +410,10 @@ function renderHook(unit, t) {
   if (unit.quote) {
     const q = E(0.62);
     out.push(`<div class="quote" style="opacity:${q.o};transform:translateY(${q.y}px)">${unit.quote}</div>`);
+    if (unit.stamp) {
+      const s = E(0.85);
+      out.push(`<div class="stamp" style="left:930px;top:236px;opacity:${(s.o * 0.94).toFixed(2)}">${unit.stamp}</div>`);
+    }
   }
   (unit.body ?? []).forEach((line, i) => {
     const e = E(0.68 + i * 0.12);
@@ -493,7 +531,8 @@ function bottomHTML(unit, t) {
   const out = [];
   if (unit.pull) {
     const e = ent(t, unit.a, 0.5, unit.kind === 'outro' ? 0.4 : 0.5);
-    out.push(`<div class="pull" style="opacity:${e.o};transform:translateY(${e.y}px)">${unit.pull}</div>`);
+    const body = unit.seal ? `<span class="seal">${unit.pull}</span>` : unit.pull;
+    out.push(`<div class="pull" style="opacity:${e.o};transform:translateY(${e.y}px)">${body}</div>`);
   }
   if (unit.handle) {
     const e = ent(t, unit.a, 0.5, 0.55);
@@ -580,12 +619,16 @@ function drawFrame(i) {
 
   if (unit.kind === 'clip') {
     const bmp = CACHE.get(srcKey(unit, t));
-    if (bmp) drawPlateRevealed(bmp, VIEWS[unit.view], L.plate, cv, unit.shot, unit.reveal ?? null, revealP);
+    if (bmp) {
+      drawPlateRevealed(bmp, VIEWS[unit.view], L.plate, cv, unit.shot, unit.reveal ?? null, revealP);
+      platePrint(L.plate, unit, dark);
+    }
   } else if (unit.kind === 'split') {
     const bl = CACHE.get(srcKey(unit.left, t, unit.a));
     const br = CACHE.get(srcKey(unit.right, t, unit.a));
     if (bl) drawPlateRevealed(bl, VIEWS[unit.left.view], L.splitL, cv, unit.left.shot, 'wipe-l', revealP);
     if (br) drawPlateRevealed(br, VIEWS[unit.right.view], L.splitR, cv, unit.right.shot, 'wipe-r', revealP);
+    if (bl || br) { platePrint(L.splitL, unit, dark); platePrint(L.splitR, unit, dark); }
   }
   if (unit.snap) drawSnap(unit, t);
 

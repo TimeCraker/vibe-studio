@@ -97,6 +97,35 @@
   }
   .agenda-v { font-family: 'Noto Sans SC', sans-serif; font-size: 27px; color: var(--ink-2); }
 
+  /* ---------- 印刷件例 v2：书脊竖排 / 图版编号 / 印章 ---------- */
+  .spine {
+    position: absolute; right: 20px; top: 150px; bottom: 150px;
+    writing-mode: vertical-rl;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Sans SC', sans-serif; font-size: 13px;
+    letter-spacing: 0.52em; color: var(--ink-3);
+  }
+  .figlabel { position: absolute; left: 26px; top: 84px; display: flex; align-items: baseline; gap: 12px; }
+  .figlabel i {
+    font-family: 'Noto Serif SC', Georgia, serif; font-style: italic;
+    font-size: 23px; color: #344942;
+  }
+  .figlabel b {
+    font-family: 'Noto Sans SC', sans-serif; font-weight: 400;
+    font-size: 14px; letter-spacing: 0.2em; color: rgba(52, 73, 66, 0.72);
+  }
+  .stamp {
+    position: absolute; border: 3px solid var(--hot); color: var(--hot);
+    padding: 6px 16px; transform: rotate(-6deg); opacity: 0.94;
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+    font-size: 30px; letter-spacing: 0.3em; text-indent: 0.3em;
+  }
+  .seal {
+    display: inline-block; border: 2px solid var(--hot); color: var(--hot);
+    padding: 8px 20px; transform: rotate(-2deg);
+    font-family: 'Noto Serif SC Black', 'Noto Serif SC', serif; font-weight: 900;
+  }
+
   /* ---------- 提示词引用卡：实心纸片 + 左侧锈红 stoodge ---------- */
   .quote {
     margin-top: 40px; max-width: 1000px;

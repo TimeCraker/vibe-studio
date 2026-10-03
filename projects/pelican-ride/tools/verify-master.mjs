@@ -39,10 +39,10 @@ console.log(`  audio    ${a ? `${a.codec_name} ${a.sample_rate}Hz ${a.channels}c
 if (!a) problems.push('no audio stream');
 if (v.width !== 1920 || v.height !== 1080) problems.push(`unexpected frame size ${v.width}x${v.height}`);
 if (v.pix_fmt !== 'yuv420p') problems.push(`pix_fmt ${v.pix_fmt} is not broadly compatible`);
-if (Math.abs(dur - 61.0) > 0.15) problems.push(`duration ${dur.toFixed(2)}s is not the expected 61.0s`);
+if (Math.abs(dur - 41.0) > 0.15) problems.push(`duration ${dur.toFixed(2)}s is not the expected 41.0s`);
 
 // ---- 2. fidelity: compare encoded frames against fresh references ---------- //
-const REF = [150, 500, 1400, 2300, 2900, 3560];
+const REF = [120, 400, 900, 1500, 2100, 2380];
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png' };
 const port = 9590;
 const server = createServer((req, res) => {
