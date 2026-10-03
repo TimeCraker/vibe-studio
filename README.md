@@ -85,7 +85,8 @@ vibe-studio/
 │   ├── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
 │   ├── elephant-plan/ #   elephant-e-ai 2a 冲刺排期 deck 生成脚本（ppt skill）+ v3 两页图
 │   ├── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
-│   └── pelican-test/  #   HTML 动画逐帧采集 + 代码化导演页成片（C 线首个项目）
+│   ├── pelican-test/  #   HTML 动画逐帧采集 + 代码化导演页成片（C 线首个项目）
+│   └── hsr-currency-war/ #  崩铁「货币战争」爽局介绍成片（Remotion 场景 + 三平台投稿表单）
 ├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
 ├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
 └── scripts/           # 一次性生成脚本与独立小工具（索引见 scripts/README.md，入库可复跑）
