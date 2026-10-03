@@ -188,6 +188,11 @@ node skills/publish/templates/xhs.mjs topics  --project projects/<项目名> --n
 
 ## 坑（B 站实测；通用经验见上文两节）
 
+- **（2026-10-03）Playwright 混合管线已三端全链路实测**：本 skill 的 launch/cover/check 照用，
+  上传与填表换 Playwright（connectOverCDP 附着同一窗口），能消掉下面大半条目
+  （filechooser 事件接上传、locator 自动等待、声明弹窗重跑验证）。
+  可用的参考实现：`projects/pelican-ride/pw/`（含每步截图与「声明弹窗吞点击」的定点修复）。
+  收录为正式模板前先解决其 playwright 依赖位置（暂借 hsr 项目的 node_modules）。
 - **`el.click()` 开不了文件选择框**：synthetic click 不算用户手势。必须
   `Page.setInterceptFileChooserDialog` + 真实 `Input.dispatchMouseEvent`，再从
   `Page.fileChooserOpened` 拿 `backendNodeId` 去 `DOM.setFileInputFiles`。脚本已封装成 `pickfile`。
