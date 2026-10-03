@@ -13,7 +13,7 @@
 // screenshot straight into ffmpeg — no 4 GB of intermediate PNGs on disk.
 import { createServer } from 'node:http';
 import { readFileSync, mkdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
-import { join, resolve, extname, normalize } from 'node:path';
+import { join, resolve, extname, normalize, dirname } from 'node:path';
 import { spawn } from 'node:child_process';
 import { launchChrome, openPage, addInitScript, navigate, capturePng, sleep } from './cdp.mjs';
 import { parseArgs, projectRoot } from './paths.mjs';
