@@ -1,0 +1,17 @@
+{
+  "_comment": "多平台投稿清单。复制到 projects/<项目名>/publish-plan.json 后修改。",
+  "video": "../../products/<项目名>/成片.mp4",
+  "cover": "../../products/<项目名>/封面.png",
+  "platforms": {
+    "bili": {
+      "declare": "含AI生成内容",
+      "category": "人工智能"
+    },
+    "douyin": {
+      "names": "AI,科技,演示"
+    },
+    "xhs": {
+      "names": "设计,动画,科技"
+    }
+  }
+}

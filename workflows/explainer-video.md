@@ -28,7 +28,7 @@
 
 ---
 
-## B 线 · 八步（闭环）
+## B 线 · 九步（闭环）
 
 ```
 【0 开工】 ⚙ video-motion
@@ -57,12 +57,16 @@
    抽首/中/尾听音画同步；封面文字完整；BGM 剪映加、别盖人声
    ★ 回流铁律：组件改进回写 skill 模板；新成页方案登记 assets/patterns.md；
      教训进 docs/workorder-log.md（详见 assets/README.md）
+【8 发布与清场（Publish & Cleanup）】 ⚙ publish
+   node skills/publish/templates/run.mjs --project projects/<项目>
+   跨平台填报发布；封面、发稿元数据、验收报告沉淀至 products/<项目>/；
+   ★ 施工现场即刻清场：彻底删除 projects/<项目>/ 施工工程及中间帧，零历史包袱
 ```
 
 **可选校准**：对成片音轨跑 auto-subtitle，比对 cues 与片内字幕时间差——漂移 >0.5s 回第 5 步。
 **旁路**：已有视频素材 → FootageOverlay 叠动效（cues 声明式）；封面 → cover still 一条命令。
 
-## C 线 · 七步（代码化采集）
+## C 线 · 八步（代码化采集）
 
 ```
 【0 开工】 ⚙ web-capture
@@ -85,6 +89,8 @@
    核查：contact_sheet 抽帧审图 / audio_report 响度与频谱 / 项目自带 verify-master 对 PSNR
 【7 终审（人工，不可跳）】
    抽首/中/尾看音画同步；封面按平台比例自查（见 publish SKILL.md 的中心安全要求）
+【8 发布与清场（Publish & Cleanup）】 ⚙ publish
+   同 B 线：跨平台表单填报发布 → 成品信息沉淀归档至 products/<项目>/ → 施工现场即刻清场
 ```
 
 **与 B 线的关键差别**：B 线是「写组件画画面」，C 线是「采集别人已经画好的画面」。
@@ -102,9 +108,9 @@
 
 ## 约定
 
-- 五区各归其位：施工在 `projects/<项目>/`（代码+设计文档入库，素材 public/ 不入）；产出在 `products/<项目>/`（README 标注入库，二进制不入）；复用家底在 `assets/`。
+- 五区各归其位：施工在 `projects/<项目>/`（临时作业沙盒）；产出沉淀在 `products/<项目>/`（README 标注入库，二进制大文件不入）；**交付完成后施工现场即刻清场**；可复用沉淀进 `skills/` 与 `assets/`。
 - 质量关不重复建设：各 skill 的核查流程就是关卡，本图只加终审。
-- **复用闭环**：开工复制模板（带出）→ 查 PAT 套方案（复用）→ 验收回流组件 + 登记方案（增值）。
+- **复用闭环**：开工复制模板（带出）→ 查 PAT 套方案（复用）→ 验收回流组件 + 登记方案（增值）→ 交付清场（零负担）。
 - 明确不做：多语种。**配音仍走人工**（剪映或后期自行处理），vibe-studio 不做语音合成。
 - **已推翻的两条旧禁令**（2026-10-02 更正）：本图原写「不做自动 BGM 混音、不做自动发布」。
   前者已被 `scripts/make_music.py` 推翻（C 线的配乐就是程序化生成再混音），

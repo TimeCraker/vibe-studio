@@ -25,7 +25,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 结构要点（只记 README 里没有的）
 
 - `.claude/skills/<name>` 是指向 `skills/<name>` 的本机 junction（Claude Code 只认这个路径；已 gitignore，克隆后按 README「使用」节重建）。
-- 施工工程在 `projects/<项目>/remotion-app/`（从 video-motion 模板复制起步，换项目只改 `deck-scenes.tsx`）。
+- `projects/` 是临时施工流水线（Ephemeral Workspace）：开工复制模板到 `projects/<项目>/`，施工中在此调试渲染；**成果交付归档至 `products/<项目>/` 且必要组件回流后，必须立即清场删除施工现场**。非作业期保持零工程残留。
 
 ## 常用命令
 
@@ -66,4 +66,5 @@ ppt 验收 = 三级渲染核查：程序初筛 → 模型读图四项（溢出/�
 - **GBK 控制台**：脚本 print 禁用 `✓` 等非 ASCII 字符，用 `OK`
 - **图像分析路径坑**：视觉核查工具读含反斜杠的深路径会解析失败，先复制到 `C:\pc\` 短路径再读；复查修复须换新文件名防缓存
 - 提交：Conventional Commits + 中英文对照，例如 `feat(skills): 中文描述 / English description`
+- **施工区清场铁律**：`projects/` 是临时中间态作业空间。交付至 `products/` 后必须彻底删除 `projects/<项目>/` 与中间帧缓存，严禁长期堆积已结项历史工程
 - 本仓库文案（README / SKILL.md / docs）遵循 humanizer 的 TimeCraker 偏好：说人话、数字优先于形容词、破折号中英双禁

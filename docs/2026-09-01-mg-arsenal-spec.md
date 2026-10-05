@@ -1,6 +1,6 @@
 # MG 武器库全量升级 Stage Spec — 官方包 + 社区库 + Lottie 资产
 
-> 状态：活跃
+> 状态：已存档（历史 spec 已完工落地）
 > 目标:解「介绍成片质感三连否」(v1 太素 → v2 太 low → v3 勉强及格)的装备层根因:Remotion 官方 30+ 包模板只装 4 个,只用 DOM/CSS 子集画画面。本站把 MG(Motion Graphics)武器全量装进 `skills/video-motion/templates/remotion-app/`,并吸收合并未施工的 v4 转场/进场工单。
 > 定位校准:我们要做的是 MG(行业成熟学科,AE 生态为参照),Remotion 是代码版 MG 工具;天花板 = 网页视觉全栈(Vox / Kurzgesagt / 苹果发布会图文级),不是 AI 生成实拍颗粒。
 > 产物:模板升级(13 个官方包 + 三件套社区库 vendor + assets 资产目录)+ lekao P7 一页全副武装对照 + 回流五连。

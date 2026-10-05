@@ -92,7 +92,7 @@ v4 §3 全量吸收，默认值 = 标杆片实测。**架构：页间硬切为�
 | `CoverV3`（+ `cover3-index.ts`） | 介绍成片封面：封面即成片语言。深族底 + 浏览器框官网特写 + 150px 金句 + 三枚 chips + mono 域名 + 顶部进度条，零件与成片同源 | 全部文案/截图走 props（`CoverV3Props`），改 `cover-props.ts` 或入口里的 `PROPS` 即可；出图 `--frame=60`（让 spring 走完、光晕落在可见相位）；**不要**拿 v1 的 `Cover`（json 三预设）当介绍片封面 |
 | `Cover`（v1） | 通用封面：只要一张标题封面、不跟某条介绍成片时用 | json 三预设；与 scene-kit 成片不是同一套视觉语言 |
 
-> 回流记录：`CoverV3` 原本只存在于 `projects/lekao-intro/`，而 README 与 `docs/product-map.md`
+> 回流记录：`CoverV3` 原本只存在于 lekao-intro 施工工程（成片已归档 `products/lekao-intro/`），而 README 与 `docs/product-map.md`
 > 把它定为介绍成片的封面入口，新项目复制模板却拿不到它（模板只有 v1 的 `Cover.tsx`），按文档走是死路。
 > 2026-10-02 抽出模板版本并把文案改成 props，保留原版面（原实现实际出过片）。
 

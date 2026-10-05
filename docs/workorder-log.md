@@ -108,7 +108,7 @@
 **结果**：见当次提交。
 
 **关键决策与理由**
-- lekao 施工工程整体迁出 skill → `projects/lekao-intro/`（项目隔离，代码入库）；skill 模板重建为纯净态（引擎 + demo 场景 + 示例数据，开箱可渲，`compositions` 七项全过验证）。
+- lekao 施工工程整体迁出 skill → projects/lekao-intro/（项目隔离）；skill 模板重建为纯净态（引擎 + demo 场景 + 示例数据，开箱可渲，`compositions` 七项全过验证）。
 - **引擎/场景拆分**：DeckVideoV2.tsx 拆为引擎（页序/字幕/音频机制，模板与项目同源）+ deck-scenes.tsx（项目场景，换项目只换这一个文件）；ChatReplay 硬编码的「LeKao 智能助教」表头改为 `shellTitle` prop。拆分后 compositions 3302 帧与 v3 封箱态逐帧一致（零行为变化）。
 - 素材归属三规则：项目素材跟项目（projects/<p>/…/public/）、可复用测试素材进 assets/（footage.mp4）、成品进 products/。
 - docs 不设 archive：完成工单收编本台账一节，原文不单独留存；产物 README 标注入库、二进制不入库。
@@ -323,7 +323,7 @@ product-map 只有三格交付物、workflow 只有 A/B 两线，pelican-test �
 ### D. CoverV3 回流（commit e00aa84）
 
 **审计评级最高的一条，也是唯一会让新项目走进死路的**：README 与 product-map 一致把 `CoverV3`
-定为介绍成片的封面入口（还明说不要用通用封面），但它只存在于 `projects/lekao-intro/`，
+定为介绍成片的封面入口（还明说不要用通用封面），但它只存在于当时的 projects/lekao-intro/（历史施工工程，现已清场归档），
 skill 模板里只有 v1 的 `Cover.tsx`。**照权威文档走是死路。** 这违反回流铁律，且是全仓唯一一处，
 偏偏在最贵的产品线上。
 

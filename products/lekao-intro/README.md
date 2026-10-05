@@ -11,4 +11,4 @@
 
 > 2026-10 清理：v1/v2 轮成片、旧封面、v1 页图（pages/）与全部验收抽帧证据
 > （v2-kit/ v3-kit/，几百张 PNG）已删除，验收结论以各 acceptance.md 为准。
-> 施工工程：`projects/lekao-intro/`。
+> 施工工程：已完成交付并清场归档（原施工工程 projects/lekao-intro/）。

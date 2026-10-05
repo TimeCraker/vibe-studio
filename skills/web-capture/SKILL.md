@@ -54,7 +54,7 @@ projects/<项目>/
 | `window.__debug()` | 返回 `{ missing }`，报告缺哪些源帧 |
 | `window.__cover(opts)` | 渲染封面用的单帧 |
 
-导演页怎么写：从项目里已有的实现起步（本仓参考实现见 `projects/pelican-test/edit/director.js`），
+导演页怎么写：从项目施工目录起步（首例参考实现见 pelican-test 项目，成片已归档至 `products/pelican-test/`），
 或按契约自己写。**版式与文案属于项目，不属于本 skill**。
 
 ## 命令

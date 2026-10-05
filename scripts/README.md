@@ -21,5 +21,5 @@
 - **AsterForge 全景幻灯片**：由 `products/asterforge-landscape/gen-asterforge-landscape.py` 驱动；
 - **vibe-studio 介绍幻灯片**：由 `products/vibe-studio-deck/gen-vibe-studio-deck.py` 驱动；
 - **乐考宣讲幻灯片**：由 `products/lekao-intro/gen-lekao-deck.py` 驱动；
-- **HTML 简历多版本生成器**：已迁移至 `projects/resume-generator/` 独立工程。
+- **HTML 简历多版本生成器**：已完成历史交付并归档清理。
 - **历史孤儿/冲突脚本**（`gen-ddd-deck.py` 旧版、`scripts/gen-lekao-deck.py` 旧版）已彻底清理删除。

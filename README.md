@@ -81,15 +81,9 @@ vibe-studio/
 │   └── web-capture/   #   网页/代码动画逐帧采集 + 导演页渲染（C 线：CDP + 虚拟时钟）
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映 / B 线 Remotion / C 线代码化采集）
 ├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + lottie 动效 + 品牌与测试素材
-├── projects/          # 施工区：一项目一目录，彼此隔离
-│   ├── resume-generator/ # HTML 简历多版本生成器（ai-agent / fullstack / game-client）
-│   ├── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
-│   ├── elephant-plan/ #   elephant-e-ai 2a 冲刺排期 deck 生成脚本（ppt skill）+ v3 两页图
-│   ├── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
-│   ├── pelican-test/  #   HTML 动画逐帧采集 + 代码化导演页成片（C 线首个项目）
-│   ├── hsr-currency-war/ #  崩铁「货币战争」爽局介绍成片（Remotion 场景 + 三平台投稿表单）
-│   └── pelican-ride/ #   「鹈鹕测试」Codex 篇成片（C 线采集 + Playwright 三端发布，已闭环）
-├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
+├── projects/          # 施工流水线：临时作业空间（Ephemeral Workspace，交付后即刻清场）
+│   └── README.md      #   施工规范、开工模板与清场闭环 SOP（非作业期保持零残留）
+├── products/          # 成品档案库：按项目分目录带 README 标注（交付即沉淀，不可变资产）
 ├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
 └── scripts/           # 系统级工作台独立小工具（索引见 scripts/README.md，入库可复跑）
 ```
@@ -98,7 +92,7 @@ vibe-studio/
 
 - 每个 skill 必须可独立运行（自带模板，不依赖本仓库外文件）
 - **skill 是纯工具**：只放流程（SKILL.md）、脚本与模板；素材、产物、中间文件一律不进 skill
-- **仓库五区**：`skills/` 纯工具（零素材零产物）· `workflows/` 蓝图 · `assets/` 可复用资产 · `projects/` 施工区（一项目一目录，代码入库）· `products/` 产出（按项目标注，README 入库、二进制不入）。素材归属三规则：项目素材跟项目走、可复用测试素材进 `assets/`、成品进 `products/`
+- **仓库五区**：`skills/` 纯工具（零素材零产物）· `workflows/` 蓝图 · `assets/` 可复用资产 · `projects/` 施工流水线（临时作业空间，交付即清场）· `products/` 产出成品库（按项目标注，README 与元数据入库、大文件二进制不入）。素材归属三规则：项目施工素材局限在临时项目内、可复用测试素材进 `assets/`、交付成果沉淀进 `products/`
 - 决策记录进 `docs/`——选了什么、放弃了什么、为什么，避免后人重新踩。**入口以 [产品图](docs/product-map.md) 为准，不以 skill 文件名为准**
 - 提交：Conventional Commits + 中英文对照
 
