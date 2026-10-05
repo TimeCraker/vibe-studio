@@ -22,8 +22,16 @@ user-invocable: true
 
 ## 依赖
 
-本机 Chrome + Node 18 以上（内置 `fetch` / `WebSocket`）。**不装任何 npm 包**，也不是 Playwright。
-`templates/bili.mjs` 自带一个极简 CDP 客户端，直接驱动一个**可见的** Chrome 窗口。
+本机 Chrome + Node 18 以上（内置 `fetch` / `WebSocket`）。
+基础层（`bili.mjs` / `douyin.mjs` / `xhs.mjs` / `run.mjs`）**不装任何 npm 包**：
+自带极简 CDP 客户端，直接驱动一个**可见的** Chrome 窗口。
+Playwright 填表层（`pw/` 脚本族，见「坑」2026-10-03 条）依赖由 `templates/package.json`
+托管（`connectOverCDP` 附着已开的窗口，不需要下载 playwright 浏览器）。
+克隆或换机后第一次用，先装一次：
+
+```bash
+cd skills/publish/templates && npm install
+```
 
 ## 快速上手
 
@@ -191,7 +199,9 @@ node skills/publish/templates/xhs.mjs topics  --project projects/<项目名> --n
   上传与填表换 Playwright（connectOverCDP 附着同一窗口），能消掉下面大半条目
   （filechooser 事件接上传、locator 自动等待、声明弹窗重跑验证）。
   经 pelican-ride 项目实测验证（含每步截图与「声明弹窗吞点击」的定点修复）。
-  收录为正式模板前先解决其 playwright 依赖统一管理。
+  playwright 依赖已正经化：`templates/package.json` 托管（pin 1.63.0，换机先 `npm install`，
+  见「依赖」节）；pw 脚本本体现存 git 历史（pelican-ride 清场前快照，commit 7277880），
+  收录时把 `pw/util.js` 里 `loadPlaywright` 的 hsr 硬路径退役，改直连 `require('playwright')`。
 - **`el.click()` 开不了文件选择框**：synthetic click 不算用户手势。必须
   `Page.setInterceptFileChooserDialog` + 真实 `Input.dispatchMouseEvent`，再从
   `Page.fileChooserOpened` 拿 `backendNodeId` 去 `DOM.setFileInputFiles`。脚本已封装成 `pickfile`。

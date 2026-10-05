@@ -1,0 +1,12 @@
+{
+  "name": "publish-templates",
+  "version": "1.0.0",
+  "private": true,
+  "description": "publish skill deps: playwright for the connectOverCDP fill layer (attaches to user-launched Chrome, no bundled browsers needed)",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}
