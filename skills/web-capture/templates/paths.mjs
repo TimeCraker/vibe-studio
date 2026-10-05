@@ -29,3 +29,38 @@ export function parseArgs(argv) {
 export function projectRoot(args) {
   return resolve(args?.project ?? process.cwd());
 }
+
+// Default capture viewport, i.e. capture-clip.mjs's historical defaults.
+const DEFAULT_VIEWPORT = { width: 1920, height: 1080 };
+
+/**
+ * Effective capture viewport for one shot.
+ *
+ * Priority: shot.viewport > cli (--width/--height) > cfg (shots.json top-level
+ * width/height) > 1920x1080. A shot.viewport that is not a positive-integer pair
+ * (one side missing, zero/negative/fractional) is taken or ignored as a whole and
+ * falls back to the global viewport with a warning: never merge shot values with
+ * global values (mangled aspect), never abort the whole batch over one typo.
+ */
+export function resolveShotViewport(shot, cli = {}, cfg = {}) {
+  const fallback = {
+    width: Number(cli.width ?? cfg.width ?? DEFAULT_VIEWPORT.width),
+    height: Number(cli.height ?? cfg.height ?? DEFAULT_VIEWPORT.height),
+  };
+  const vp = shot?.viewport;
+  if (vp == null) return fallback;
+  const bad = (why) => {
+    console.error(`[viewport] shot ${shot?.id ?? '?'}: ${why}; ignoring shot viewport, capturing at ${fallback.width}x${fallback.height}`);
+    return fallback;
+  };
+  if (typeof vp !== 'object' || Array.isArray(vp)) {
+    return bad('viewport must be {"width": <int>, "height": <int>}');
+  }
+  if (vp.width === undefined || vp.height === undefined) {
+    return bad('viewport needs both width and height');
+  }
+  if (!Number.isInteger(Number(vp.width)) || !Number.isInteger(Number(vp.height)) || Number(vp.width) <= 0 || Number(vp.height) <= 0) {
+    return bad(`viewport width/height must be positive integers (got ${JSON.stringify(vp.width)}x${JSON.stringify(vp.height)})`);
+  }
+  return { width: Number(vp.width), height: Number(vp.height) };
+}

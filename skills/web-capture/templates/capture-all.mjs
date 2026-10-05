@@ -7,12 +7,14 @@
 //        [--concurrency 6] [--chunk-count 3] [--seconds-scale 1] [--out <dir>]
 //
 // --project defaults to the current directory; paths inside shots.json may be
-// project-relative.
+// project-relative. --width/--height are the global default; a shot overrides
+// both per shot via "viewport": {"width": .., "height": ..} in shots.json
+// (resolution order in paths.mjs resolveShotViewport).
 import { readFileSync, writeFileSync, mkdirSync, rmSync, renameSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { spawn } from 'node:child_process';
-import { parseArgs, projectRoot } from './paths.mjs';
+import { parseArgs, projectRoot, resolveShotViewport } from './paths.mjs';
 
 // HERE locates the harness's own siblings (capture-clip.mjs), ROOT is the project
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -23,8 +25,9 @@ const cfg = JSON.parse(readFileSync(join(ROOT, 'capture', 'shots.json'), 'utf8')
 
 const fps = Number(args.fps ?? cfg.fps ?? 60);
 const dsf = Number(args.dsf ?? cfg.dsf ?? 2);
-const width = Number(args.width ?? cfg.width ?? 1920);
-const height = Number(args.height ?? cfg.height ?? 1080);
+// Global viewport, same chain as before (CLI > shots.json top-level > 1920x1080):
+// resolving it through resolveShotViewport with no shot keeps one code path.
+const { width, height } = resolveShotViewport({}, args, cfg);
 const chunkCount = Number(args.chunkCount ?? cfg.chunkCount ?? 1);
 const concurrency = Number(args.concurrency ?? cfg.concurrency ?? 4);
 const secondsScale = Number(args.secondsScale ?? 1);
@@ -33,6 +36,9 @@ const only = args.only && args.only !== true ? String(args.only).split(',') : nu
 
 const html = { A: abs(cfg.htmlA), B: abs(cfg.htmlB) };
 const shots = cfg.shots.filter((s) => !only || only.includes(s.id));
+// Per-shot viewport (shot.viewport > global), resolved once here so a bad one
+// warns exactly once and worker argv, --dry output and clip.json all agree.
+const shotViewport = new Map(shots.map((s) => [s.id, resolveShotViewport(s, args, cfg)]));
 
 const jobs = [];
 let port = 9400;
@@ -45,7 +51,11 @@ for (const shot of shots) {
 }
 
 if (args.dry) {
-  console.log(JSON.stringify({ fps, dsf, width, height, chunkCount, concurrency, outRoot, jobs: jobs.length, shots: shots.map((s) => s.id) }, null, 1));
+  console.log(JSON.stringify({
+    fps, dsf, width, height, chunkCount, concurrency, outRoot, jobs: jobs.length,
+    shots: shots.map((s) => s.id),
+    viewports: shots.map((s) => ({ id: s.id, ...shotViewport.get(s.id) })),
+  }, null, 1));
   process.exit(0);
 }
 
@@ -57,6 +67,7 @@ mkdirSync(dirname(logPath), { recursive: true });
 function runJob(job) {
   return new Promise((resolvePromise) => {
     const { shot, seconds, chunkIndex, port: p, n } = job;
+    const vp = shotViewport.get(shot.id);
     const dir = join(chunkRoot, shot.id, `c${chunkIndex}`);
     rmSync(dir, { recursive: true, force: true });
     mkdirSync(dir, { recursive: true });
@@ -71,8 +82,8 @@ function runJob(job) {
       '--seconds', String(seconds),
       '--chunk-index', String(chunkIndex),
       '--chunk-count', String(n),
-      '--width', String(width),
-      '--height', String(height),
+      '--width', String(vp.width),
+      '--height', String(vp.height),
       '--dsf', String(dsf),
       '--port', String(p),
       '--label', `${shot.id}#${chunkIndex}`,
@@ -152,9 +163,12 @@ for (const shot of shots) {
     if (endSec - s > 0.2) usableRanges.push([Number(s.toFixed(3)), Number(endSec.toFixed(3))]);
   }
 
+  // clip.json records the shot's EFFECTIVE viewport (per-shot if set), so the
+  // edit side can trust frames/<shot>/ dimensions per shot, not just globally.
+  const vp = shotViewport.get(shot.id);
   const entry = {
     id: shot.id, src: shot.src, html: html[shot.src], fps, dsf,
-    width, height, seconds: Number((shot.seconds * secondsScale).toFixed(3)),
+    width: vp.width, height: vp.height, seconds: Number((shot.seconds * secondsScale).toFixed(3)),
     frames, expected: Math.round(fps * shot.seconds * secondsScale),
     bytes, mb: Number((bytes / 1048576).toFixed(1)),
     boot: shot.boot ?? null, actions: shot.actions ?? [],
