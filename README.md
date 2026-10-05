@@ -84,7 +84,7 @@ vibe-studio/
 │   ├── publish/       #   投稿表单填写（B 站/抖音/小红书；人登录人发布，脚本只填表）
 │   └── web-capture/   #   网页/代码动画逐帧采集 + 导演页渲染（C 线：CDP + 虚拟时钟）
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映 / B 线 Remotion / C 线代码化采集）
-├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + lottie 动效 + 品牌与测试素材
+├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + art 美术资产 + lottie 动效 + 品牌与测试素材
 ├── projects/          # 施工流水线：临时作业空间（Ephemeral Workspace，交付后即刻清场）
 │   └── README.md      #   施工规范、开工模板与清场闭环 SOP（非作业期保持零残留）
 ├── products/          # 成品档案库：按项目分目录带 README 标注（交付即沉淀，不可变资产）

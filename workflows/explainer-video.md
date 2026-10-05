@@ -52,7 +52,7 @@
 【6 渲染 + 四级验收】 ⚙ video-motion
    render DeckVideoV2 → products/<项目>/deck.mp4
    L1 程序对账 / L2 每页 4 帧 + 道具 200% / L2.5 静音盲答 / L3 报告
-   底线 = docs/motion-grammar（八问 + F1-F5 + PPT 感一票否决）
+   底线 = docs/motion-grammar（八问 + F1-F6 + PPT 感一票否决）
 【7 终审（人工，不可跳）+ 回流】
    抽首/中/尾听音画同步；封面文字完整；BGM 剪映加、别盖人声
    ★ 回流铁律：组件改进回写 skill 模板；新成页方案登记 assets/patterns.md；
