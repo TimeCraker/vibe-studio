@@ -530,5 +530,25 @@ SVG 动画（单文件 214 行），做成 61 秒可直接发布的成片；发�
 
 **教训**：铁律只写在 SKILL.md 里、没有检查器看管时，等于说给人听、没说给机器听，实现照样会漂。这与 3.5/3.6 的历史（标题计数、裸符号）是同一根病因：**文档里的承诺必须有机器可验证的对应物**。
 
+---
+
+## 2026-10-05 · 第五波并行工单（agent-hive wave5）— 升级计划 P0/P1 落地
+
+**方式**：agent-hive 并行派发 5 任务（4 文本 + 1 多模态目检），同仓并行施工各站只 add 自己文件，主控逐任务独立复核后全 accept。
+
+**PUBD · publish 依赖自足化**（`15d6d1e`）：templates/ 补 package.json（playwright 精确 pin 1.63.0；connectOverCDP 附着已开窗口，零浏览器下载），SKILL.md 依赖节双轨制（CDP 基础层零 npm 包不变）。**前提修正**：工单原以为 Playwright 挂在 products/hsr-currency-war/pw/，实为 projects/ 且已被 140127c 清场删除；pw 脚本本体在 git 历史 `7277880`，收录进模板是后续工单（收录时退役 loadPlaywright 的 hsr 硬路径）。验证：临时目录脱离 hsr，dry-run 三端计划全打印 exit 0。
+
+**WCBP · web-capture per-shot viewport**（`7b54d22`）：shots.json 镜头级可选 `viewport` 字段，优先级 shot > CLI > 顶层 > 1920×1080；非法值整组忽略 + warn 回落（不做半合并，一个 typo 不杀整晚采集）。resolveShotViewport 落 paths.mjs，10 例单测 + fixture dry 三档对证；缺省路径零变化（主控独立复跑一致）。pelican-ride 遗留收口：混用视口写进同一份 shots.json，补采前 `--dry` 核对每镜生效尺寸。遗留：probe-anchors 仍硬编码 1920×1080（不读 shots.json，需要时再议）。
+
+**VCUE · verify-cues 校验器**（`72dba39`）：`skills/video-motion/templates/remotion-app/scripts/verify-cues.mjs`（338 行零依赖，Node 24 原生 TS 直载）。error 级：字幕 >2s / 时间重叠 / 负值 / 超总时长、坐标越 1920×1080 设计空间、必填字段缺失；warn 级：重复字幕文本、arrow h≠0。正反测试：demo 全绿 0 错退出 0，sabotaged 14 错退出 1（主控自造样本复核同判）。**设计修正**：总时长按文件名配对链（deck-cues↔deck-params，其余↔footage-params），跨链取时长会让 demo 误报。遗留：probe-footage.mjs 不产出 durationInFrames，时长窗口规则暂跳过（探针补 3 行即自动启用）。用法行已集成进 SKILL.md Step 3。
+
+**VMBL · Remotion 升级安全网**（`deb0683`）：**4.0.518 → 4.0.533 采纳**。先出 still 基线 11+11 帧（FootageOverlay 9 相位 + CoverV3 + API 探针帧，`.baseline/` 两版本常驻、已 gitignore），升级后全链对照：typecheck 0 错（主控全新安装复验）、compositions 7/7 一致、**PSNR 10/10 全 inf dB 逐位一致（主控复算确认）**、API 四条形状不变。新发现补记 SKILL.md：parseSrt 入参是 `{input}` 对象，裸字符串报错。踩坑：chrome-headless-shell 实际落在模板 `node_modules/.remotion/` 而非 `~/.remotion`，ensure 卡 600s 无输出但已在下载，重试即命中（后续先查该路径再判卡死）。
+
+**CVIX · 封面与基线帧目检**（零提交）：flash 多模态读图 10/10 全 PASS（封面 4 项 + 基线帧 5 项口径）；testsrc2 烧录时间码与帧号 ÷60 换算逐张吻合（抗幻觉旁证，主控复核数学全对）。遗留观察：arrow 三角头与引线入场中间态小间隙（非缺陷）、数据柱高度非严格线性比例（模板样式，供复核）。
+
+**流程沉淀**（agent-hive 仓 `e221586`）：新增「控制台入口先行」铁律，服务起来先交面板 URL 再派发（本次实犯，用户来问才补交）。
+
+**台账口径**：vibe-studio 4 commits（15d6d1e / 7b54d22 / 72dba39 / deb0683）+ 本条补记与 SKILL.md 集成行；check-docs 全程 0 fail；模板 node_modules 施工后清场、`.baseline/` 留存约 15MB 作下次升级对照。
+
 
 

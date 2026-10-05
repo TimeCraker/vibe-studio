@@ -26,6 +26,8 @@ user-invocable: true
 
 ## Step 3 · 生成（一条命令）
 
+渲染前先过校验：`node scripts/verify-cues.mjs`（deck 字幕换 `src/deck-cues.ts` 参数），error 清零才进渲染；总时长 warn 只提醒不拦。
+
 ```bash
 cd <remotion-app>
 npx remotion render remotion/index.ts FootageOverlay <仓库>/products/<项目名>/demo.mp4 --crf=16 --public-dir <素材目录>
