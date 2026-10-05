@@ -23,6 +23,7 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 | **PPT / 幻灯片** | [`ppt`](skills/ppt/) | 不要打开视频 skill |
 | **讲解成片**（已有录像、屏录、游戏录像） | [`video-motion`](skills/video-motion/) · `FootageOverlay` | 不要走介绍成片 |
 | **介绍成片**（从项目说明出一条可发布视频） | [`explainer-video`](workflows/explainer-video.md) · 成片 `DeckVideoV2` · 封面 `CoverV3` | 不要用 `DeckVideo` 翻页 PPT；不要把七个 skill 摊开挑 |
+| **程序化动画成片**（画面已是能跑的网页 / HTML / SVG 代码动画） | [`web-capture`](skills/web-capture/) · C 线 | 不要用 B 线重绘画面 |
 
 只要一张标题封面、没有介绍成片任务：走 `Cover` json 三预设。介绍成片的封面跟成片走 `CoverV3`（模板自带，改 props 即可，不要拿 v1 的 `Cover` 顶）。
 
@@ -33,6 +34,7 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 | **PPT** | 代码画幻灯片：15 种页面范式、3 套主题、动画 auto 编排、三级渲染核查。文案过 humanizer。 |
 | **讲解成片** | 真实底材叠字幕 / 数据柱 / 圈注。素材 + `cues.ts`，一条命令出片。 |
 | **介绍成片** | scene-kit 直绘动效场景（不是 PPT 录屏）。工作流里取材用 ppt、出稿用 narration、配音用剪映、渲染用 `DeckVideoV2`。 |
+| **程序化动画成片** | 已有网页 / 代码动画逐帧采集（虚拟时钟保可复现），导演页剪成片，配乐程序化生成，一条命令出片。 |
 
 ## 工具（被产品调用）
 
