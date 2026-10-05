@@ -82,6 +82,21 @@ node skills/publish/templates/xhs.mjs setup --project projects/<项目名> \
 `form.json` 结构见 `skills/publish/templates/form.example.json`：`title` / `tags[]` / `description[]`。
 **description 一行就是一个段落，不要写空字符串**，Quill 会把空行变成多余的空段落。
 
+**Playwright 填表层（`pw/`，页面复杂或基础层选择器失效时用）**：
+
+```bash
+cd skills/publish/templates && npm install   # 首次，见「依赖」节
+# 基础层 launch 开窗、你扫码，然后一条命令完成上传 + 全表单填写：
+node skills/publish/templates/pw/bili-fill.js --project projects/<项目名> --video products/<项目名>/<成片>.mp4 [--dry]
+# 抖音 / 小红书同构：pw/douyin-fill.js（9223，话题 --names A,B,C）、pw/xhs-fill.js（9224，话题 --topics A,B）
+```
+
+`pw/` 共 9 件（2026-10-03 pelican-ride 三端 live 实测版）：三个 `*-fill.js` 主脚本；
+`bili-discard / restore / replace / fix3` 与 `douyin-declare-fix` 是实测沉淀的定点修复工具
+（旧草稿处置、「声明弹窗吞点击」重跑）；`util.js` 公共件（filechooser 上传、dumpForm 探针、
+逐段输入、race 超时保护）。选择器会随平台改版失效：先跑 `--dry`（只转储表单 DOM 不写），
+看着真实结构再改脚本，不凭记忆改。截图归档到 `<项目>/qa/`。
+
 ## 为什么能并行
 
 每个平台工具**自带独立的 Chrome profile 和调试端口**（B 站 = 9222，抖音 = 9223，小红书 = 9224），
@@ -200,8 +215,8 @@ node skills/publish/templates/xhs.mjs topics  --project projects/<项目名> --n
   （filechooser 事件接上传、locator 自动等待、声明弹窗重跑验证）。
   经 pelican-ride 项目实测验证（含每步截图与「声明弹窗吞点击」的定点修复）。
   playwright 依赖已正经化：`templates/package.json` 托管（pin 1.63.0，换机先 `npm install`，
-  见「依赖」节）；pw 脚本本体现存 git 历史（pelican-ride 清场前快照，commit 7277880），
-  收录时把 `pw/util.js` 里 `loadPlaywright` 的 hsr 硬路径退役，改直连 `require('playwright')`。
+  见「依赖」节）；pw 脚本九件已收录进 `templates/pw/`（源自 pelican-ride 清场前快照
+  7277880，`loadPlaywright` 直连 `require('playwright')`，用法见「快速上手」pw 段）。
 - **`el.click()` 开不了文件选择框**：synthetic click 不算用户手势。必须
   `Page.setInterceptFileChooserDialog` + 真实 `Input.dispatchMouseEvent`，再从
   `Page.fileChooserOpened` 拿 `backendNodeId` 去 `DOM.setFileInputFiles`。脚本已封装成 `pickfile`。
