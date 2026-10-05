@@ -61,7 +61,7 @@ npx remotion render remotion/index.ts FootageOverlay <仓库>/products/<项目�
 
 ## 场景化成片 v2→v3 质感工艺（scene-kit 直绘，第三种成片）
 
-PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion 组件直绘的动效场景（`src/scene-kit/` 13+ 组件），页时长/音频/字幕机制沿用 deck-params 派生链。判「素」判「low」对照 `docs/2026-08-30-motion-grammar.md`；本节是质感工艺的硬规则。
+PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion 组件直绘的动效场景（`src/scene-kit/` 24 组件），页时长/音频/字幕机制沿用 deck-params 派生链。判「素」判「low」对照 `docs/2026-08-30-motion-grammar.md`；本节是质感工艺的硬规则。
 
 ### 质量底线（验收硬关，逐条可判）
 
@@ -71,6 +71,7 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 - **F3 无死空间**：单块零信息区 ≤ 画面 20%（九宫格任一格不全空）；主体之外用次级内容填格（批注/箭头/元信息）。
 - **F4 版面一体**：字幕并入版面语言（浅底白半透明面板+深字 / 深底黑半透明面板+白字，同字体同圆角），不贴「黑药丸」；固定底带，任何道具不得侵入；画面大字与字幕重复（相似度 ≥0.8）时字幕让路（去重）。
 - **F5 信息自足（静音测试，硬关）**：每页除主标题外 ≥2 组真实支撑信息（数字/步骤/事实，只取材口播稿与项目真实文档，禁编造、禁词表照查）+ ≥1 层主体标注（角标/高亮圈/扫描线/引线）；judge 逐页盲答「这页讲什么」，11/11 答出才算过。
+- **F6 画面主体是真图（美术层，spec 2026-10-05）**：主体画面优先 SVG 插画 / AI 出图（`ArtLayer` 承载：`svg` 内联或 `src` 文件双通道），**CSS 只做排版不做画面**（S6 根因）；底图必须过 F1（vignette/tint/SHADOW 同 tokens，图是「空间」不是贴图）；运镜克制 kenBurns ≤1.05 线性慢推；AI 图走 `assets/art/` 登记制（可商用许可 / 源图分辨率 ≥ 目标画布 / 风格匹配背景族）。
 - **PPT 感一票否决（硬关）**：随机抽稳定帧问「放进静态 PPT 违和吗」——完成态帧必须有**静帧可见的进行时证据**（闪烁光标/呼吸光环/流动虚线/扫描线），否则就是幻灯片，打回。
 - 主标题 ≥ 画高 11%（1080p 即 ≥120px），金句/CTA 页 ≥150px；手动断行时容器宽度留 ~10% 余量（150px 大字实测行宽会超估算，自动换行会抢在 `\n` 前面把词拆跨行）。
 
@@ -86,7 +87,7 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 
 ## MG 武器库（S0-S6，成片质感的主力弹药）
 
-模板自带全套武器，家底与逐组件用法以 `assets/component-catalog.md` 为准（scene-kit 23 组件 / entrance-kit 九动词 / vendor 社区精选 / fonts），此处只记铁律：
+模板自带全套武器，家底与逐组件用法以 `assets/component-catalog.md` 为准（scene-kit 24 组件 / entrance-kit 九动词 / vendor 社区精选 / fonts），此处只记铁律：
 
 - **版本铁律**：所有 `@remotion/*` 必须精确同版（如 4.0.533，不带 `^`）——版本错配是 Remotion 硬报错不是警告；新增包先对齐存量版本（check-docs 第 3.7 项断言看管，漂了会红）
 - **4.0.533 API 事实**（与文档/记忆有出入，已实测；4.0.518→4.0.533 升级经 still 基线 PSNR 全 inf 对照，API 形状不变）：`evolvePath` 返回 dash 属性对非裁剪 path；`interpolatePath(value, from, to)` 三独立参数；`fitText` 只吃 `withinWidth` 且返回 `{fontSize}` 对象；中文多行不能用 `fitTextOnNLines`（按空格分词）；`parseSrt` 吃 `{input}` 对象（裸字符串报 undefined.split）、返回 `{captions:[{text,startMs,endMs}]}` 毫秒制

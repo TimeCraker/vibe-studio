@@ -3,7 +3,7 @@
 > 代码本体在 `skills/video-motion/templates/remotion-app/src/`（skill 是分发单元，组件跟引擎走）；本簿登记家底与用法，验收后新组件在此登记 + 回写模板。
 > 质量底线见 `docs/2026-08-30-motion-grammar.md`；成页方案见 `patterns.md`。
 
-## scene-kit（场景积木，23 个组件）
+## scene-kit（场景积木，24 个组件）
 
 | 组件 | 干什么 | 关键参数 / 坑 |
 |---|---|---|
@@ -30,6 +30,7 @@
 | `LottieLayer` | Lottie 资产层：吃 AE 生态成品（assets/lottie/） | 内联 animationData 优先；src 走 fetch+delayRender；playbackRate 自动 = compFps/lottieFr；**intake 禁带 expressions 的 JSON** |
 | `GifLayer` | GIF 循环小动效（@remotion/gif） | src 是 public/ 相对路径（assets/media 复制进项目后用） |
 | `ThreeStage` | 3D 运镜容器（@remotion/three ThreeCanvas）：真透视/光影/相机运动 | **内部禁 r3f useFrame**，动画与运镜一律 useCurrentFrame 派生（相机动画用 useThree 拿 camera 按 frame 赋值）；只 WebGL；性能：简单场景 ~17 帧/s（vs 2D 21.6），复杂 3D 段单帧可到数倍，成片「重武器每片 ≤1 处」；remotion.config.ts 无需建（SwiftShader 开箱可用，S4 已验证） |
+| `ArtLayer` | 美术层（spec 2026-10-05）：画面主体真图一等公民——SVG 插画（首选）/ AI 出图 raster，全出血底图或卡片道具双形态 | `svg` 内联字符串（零 IO）或 `src` 文件（assets/art/ 复制进项目 public/ 后引用）二选一；`kenBurns` 慢推 ≤1.05 线性（克制：可感不可察）；`vignette` 默认开 + `tint` 色温把图折进 F1 空间；`shadow/radius` 走 tokens；transform 只落 `<Img>` 叶子（避开 transform-containing-block 坑）；**CSS 只排版不画面（S6 根因）** |
 
 ## tokens（取值单源）
 

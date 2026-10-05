@@ -1,7 +1,7 @@
 import React from "react";
 import { Composition, staticFile } from "remotion";
 import { getVideoMetadata } from "@remotion/media-utils";
-import { DataBarsDemo, SpotlightDemo, SubtitleDemo } from "./Demos";
+import { ArtLayerDemo, DataBarsDemo, SpotlightDemo, SubtitleDemo } from "./Demos";
 import { DeckVideo } from "./DeckVideo";
 import { DeckVideoV2 } from "./DeckVideoV2";
 import { deckParams } from "./deck-params";
@@ -33,15 +33,28 @@ export const RemotionRoot: React.FC = () => {
         height={footageParams.height}
         defaultProps={{}}
         calculateMetadata={async () => {
-          const { durationInSeconds } = await getVideoMetadata(
-            staticFile("footage.mp4"),
-          );
-          return {
-            durationInFrames: Math.floor(durationInSeconds * footageParams.fps),
-            width: footageParams.width,
-            height: footageParams.height,
-            fps: footageParams.fps,
-          };
+          // 素材不在（模板纯净态 / 换素材间隙）时回落 footageParams 探针值，
+          // compositions 与 Studio 不因缺 footage.mp4 挂起（2026-10-05 实抓）
+          try {
+            const { durationInSeconds } = await getVideoMetadata(
+              staticFile("footage.mp4"),
+            );
+            return {
+              durationInFrames: Math.floor(durationInSeconds * footageParams.fps),
+              width: footageParams.width,
+              height: footageParams.height,
+              fps: footageParams.fps,
+            };
+          } catch {
+            return {
+              // 探针在容器缺时长时会省略该字段（probe-footage 优雅降级），安全访问
+              durationInFrames:
+                (footageParams as { durationInFrames?: number }).durationInFrames ?? 1,
+              width: footageParams.width,
+              height: footageParams.height,
+              fps: footageParams.fps,
+            };
+          }
         }}
       />
       <Composition
@@ -79,6 +92,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="SpotlightDemo"
         component={SpotlightDemo}
+        durationInFrames={DEMO_DURATION}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="ArtLayerDemo"
+        component={ArtLayerDemo}
         durationInFrames={DEMO_DURATION}
         fps={FPS}
         width={WIDTH}
