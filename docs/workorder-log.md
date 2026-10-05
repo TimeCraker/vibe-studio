@@ -550,5 +550,21 @@ SVG 动画（单文件 214 行），做成 61 秒可直接发布的成片；发�
 
 **台账口径**：vibe-studio 4 commits（15d6d1e / 7b54d22 / 72dba39 / deb0683）+ 本条补记与 SKILL.md 集成行；check-docs 全程 0 fail；模板 node_modules 施工后清场、`.baseline/` 留存约 15MB 作下次升级对照。
 
+---
+
+## 2026-10-05 · 第五波尾巴清偿（PWAD 派发 + 三件主控直修）
+
+用户拍板：10 分钟级小修不派发、主控直修更快（写任务包 + 会话冷启动 + 验收复核的开销大过活本身，蜂巢留给长任务并行）。PWAD 因体量与独立性保留派发。
+
+**PWAD · pw 填表脚本收录**（`97e1fe2`，agent-hive 派发）：从 git 历史 `7277880`（pelican-ride 清场前快照）捞回三端 live 实测版 pw 九件套，收录为 `skills/publish/templates/pw/`。适配三点：loadPlaywright 的 hsr 硬路径退役改 `require('playwright')`（依赖由 PUBD 的 templates/package.json 托管）；spec 读取与 qa/ 截图输出项目化（`--project` 与基础层同构）；hsr 字样清零。验证：`node --check` 9/9、hsr 引用 0、临时目录 npm install 2 包秒装、util 零副作用加载全通（主控复核语法 9/9 + hsr 0）。至此 publish 模板三层齐备（launch 基础层 / CDP 探针 / Playwright 填表层），2026-10-03「收录前先解决依赖」遗留完整闭环。遗留：run.mjs 未挂 pw 层调度（后续拍板）；选择器时效性（平台改版即失效，纪律：先 dumpForm 看真实 DOM 不凭记忆改）；下次真实投稿顺带 live 回归 `--project`/qaPath 改造。
+
+**PFDR · probe-footage 补 durationInFrames**（`307cad6`，主控直修）：ffprobe format=duration → durationInFrames 输出（容器拿不到时长时优雅降级不阻断分辨率产出）；demo footage-params.ts 同步 1830 帧。verify-cues 时长窗口规则点亮：demo 链不再 WARN duration-unknown；正例 0 错退出 0、反例 end=6s 超 5s 总时长双规则红退出 1（ffmpeg testsrc2 5s@30 实测）。
+
+**PRAV · probe-anchors 条目级视口**（`7650900`，主控直修）：anchor-targets.json 条目可选 `viewport` 字段，**复用 WCBP 的 resolveShotViewport 零分叉**（空 cli/cfg 即默认回落）；量锚视口与采集视口一致时归一化比例可直接复用到对应帧。缺省 1920×1080 行为零变化。单测 4 例过（显式 / 缺省 / 缺边 warn 回落 / 数值字符串）。
+
+**RDLC · README license 口径**（`2a28598`，主控直修）：README 记 Remotion source-available 口径一行（个人与 ≤3 人团队免费、4 人及以上公司商业用途需购买 license，以 remotion.dev/license 页为准，2026-10 查证）。
+
+**流程注记**：PFDR/PRAV 曾误派发（RDLC 派发失败未起），用户叫停后 kill 会话改直修，batch.json 三任务标 cancelled；PFDR 被杀会话在 probe-footage.mjs 留下的半成品经审查质量合格（缺时长优雅降级设计正确）被收编进直修提交。
+
 
 
