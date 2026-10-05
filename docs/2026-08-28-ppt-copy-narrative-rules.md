@@ -1,6 +1,7 @@
 # ppt skill 文案与叙事规则重构
 
-2026-08-28 · 由 vibe-studio 介绍 deck 的实际产出触发，经无上下文 agent 诊断验证
+> 状态：已存档（已被 skills/ppt/SKILL.md 吸收）
+> 2026-08-28 · 由 vibe-studio 介绍 deck 的实际产出触发，经无上下文 agent 诊断验证
 
 ## 起因
 

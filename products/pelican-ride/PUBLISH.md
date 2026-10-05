@@ -93,25 +93,15 @@
 ## 8. 发布流程（Playwright 混合管线）
 
 ```powershell
-# 三窗口各自扫码（skills/publish launch：独立 profile + 端口 9222/9223/9224）
+# 1. 三窗口各自扫码（skills/publish launch：独立 profile + 端口 9222/9223/9224）
 node skills/publish/templates/bili.mjs launch
 node skills/publish/templates/douyin.mjs launch
 node skills/publish/templates/xhs.mjs launch
 
-# --dry 探针各表单（转储真实输入框/编辑器；平台改版时照输出改 pw 脚本）
-node projects/pelican-ride/pw/bili-fill.js --dry
-node projects/pelican-ride/pw/douyin-fill.js --dry
-node projects/pelican-ride/pw/xhs-fill.js --dry
+# 2. 自动化填表与上传（先 --dry 验证，再正式填报）
+# 依托 skills/publish 标准模板完成 B 站/抖音/小红书自动填表与封面绑定
 
-# 真跑：上传 + 填表 + 声明 + 自查截图（qa/pw-*.png）
-node projects/pelican-ride/pw/bili-fill.js   --video products/pelican-ride/pelican-ride-1080p.mp4
-node projects/pelican-ride/pw/douyin-fill.js --video products/pelican-ride/pelican-ride-1080p.mp4
-node projects/pelican-ride/pw/xhs-fill.js    --video products/pelican-ride/pelican-ride-1080p.mp4
-
-# B 站封面（已验证的命令）
-node skills/publish/templates/bili.mjs cover --image products/pelican-ride/pelican-ride-cover.png
-
-# 最后：三个窗口里，人自己点「发布」（脚本永远不点）
+# 3. 最后：三个窗口里，人自己点「发布」（脚本永远不点，安全硬约束）
 ```
 
 > 分工是硬约束：脚本填表，人登录、人看自查截图、人点发布。

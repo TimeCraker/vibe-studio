@@ -1,6 +1,6 @@
 # Lottie 资产库
 
-免费商用 Lottie JSON 的家底。**项目用时装载**:把 JSON 复制进 `projects/<项目>/remotion-app/public/lottie/`,渲染时 `LottieLayer src="lottie/<文件名>.json"`(src 是 public/ 相对路径);或直接 `import` 后走 `animationData`(零 IO,更确定性)。
+免费商用 Lottie JSON 的家底。**施工装载**：在研项目施工期间，将所需 JSON 复制进临时施工工程 `remotion-app/public/lottie/`，渲染时 `LottieLayer src="lottie/<文件名>.json"`（src 是 public/ 相对路径）；或直接 `import` 后走 `animationData`（零 IO，更具确定性）。成片交付后临时工程清场，本目录资产长期保留。
 
 ## 登记表(每个资产一行,来源与许可证是硬字段)
 
