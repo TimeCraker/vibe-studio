@@ -566,5 +566,23 @@ SVG 动画（单文件 214 行），做成 61 秒可直接发布的成片；发�
 
 **流程注记**：PFDR/PRAV 曾误派发（RDLC 派发失败未起），用户叫停后 kill 会话改直修，batch.json 三任务标 cancelled；PFDR 被杀会话在 probe-footage.mjs 留下的半成品经审查质量合格（缺时长优雅降级设计正确）被收编进直修提交。
 
+---
+
+## 2026-10-05 · 美术层 S1-S4 — 画面主体升级为 SVG/AI 图一等公民
+
+**起因**：P2 升级方向（S6 复盘认定的「下一方向」），用户拍板开工并定调技术路线：**CSS 画图不如 SVG 画图**。Stage Spec 前置（`docs/2026-10-05-art-layer-spec.md`，状态：活跃）。
+
+**交付**
+- `ArtLayer`（scene-kit 第 24 件）：`svg` 内联 / `src` 文件双通道（与 LottieLayer 资产流同构）；kenBurns ≤1.05 线性慢推（克制：可感不可察）；vignette/tint/SHADOW/radius 光影钩子把底图折进 F1 空间；transform 只落 `<Img>` 叶子（规避 containing-block 坑）
+- `assets/art/` 资产流：登记表五字段 + 收录铁律四条（只收可商用 / 源图分辨率 ≥ 目标画布 / 风格匹配背景族 / kebab-case），照抄 lottie 范式
+- 工艺回写：SKILL.md 新增 **F6 画面主体是真图**（「CSS 只排版不画面」正式条款化，S6 根因关闭）；catalog 登记（标题 23→24，与 SKILL 声明三方互锁——3.5 扩展断言首次实战通过）
+- `ArtLayerDemo`：内联 SVG 程序化插画（印刷图鉴风山景），全出血底图 + 卡片道具双模式同帧验证
+
+**顺手修的模板健壮性缺陷**：FootageOverlay 的 calculateMetadata 在 `public/footage.mp4` 缺席时挂起（compositions 卡死实抓，清场后模板必现）——try/catch 回落 `footageParams.durationInFrames`（安全访问，fresh 探针省略字段不炸 typecheck），compositions 从此不依赖素材在场。
+
+**验证**：typecheck 0 错；compositions 8/8（FootageOverlay 回落 1830 帧与真素材一致）；still 双帧（f0/f140，kenBurns 首末相位）出图用户终审。
+
+**边界（spec 明确不做）**：AI 出图生成器不做（外部工具的事）；矢量路径动画（evolvePath 逐帧描线）留 Stage 2 等真项目需求；不扩充动效武器（S6 铁训）。
+
 
 
