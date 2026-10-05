@@ -77,7 +77,7 @@ vibe-studio/
 │   ├── video-motion/  #   Remotion 引擎（fx 叠动效 + scene-kit 质感组件 + deck 引擎模板）
 │   ├── narration/     #   口播稿工坊（verify_narration.py）
 │   ├── auto-subtitle/ #   faster-whisper 自动字幕
-│   ├── publish/       #   投稿表单填写（B 站；人登录人发布，脚本只填表）
+│   ├── publish/       #   投稿表单填写（B 站/抖音/小红书；人登录人发布，脚本只填表）
 │   └── web-capture/   #   网页/代码动画逐帧采集 + 导演页渲染（C 线：CDP + 虚拟时钟）
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映 / B 线 Remotion / C 线代码化采集）
 ├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + lottie 动效 + 品牌与测试素材
@@ -86,7 +86,8 @@ vibe-studio/
 │   ├── elephant-plan/ #   elephant-e-ai 2a 冲刺排期 deck 生成脚本（ppt skill）+ v3 两页图
 │   ├── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
 │   ├── pelican-test/  #   HTML 动画逐帧采集 + 代码化导演页成片（C 线首个项目）
-│   └── hsr-currency-war/ #  崩铁「货币战争」爽局介绍成片（Remotion 场景 + 三平台投稿表单）
+│   ├── hsr-currency-war/ #  崩铁「货币战争」爽局介绍成片（Remotion 场景 + 三平台投稿表单）
+│   └── pelican-ride/ #   「鹈鹕测试」Codex 篇成片（C 线采集 + Playwright 三端发布，已闭环）
 ├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
 ├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
 └── scripts/           # 一次性生成脚本与独立小工具（索引见 scripts/README.md，入库可复跑）
