@@ -1,5 +1,5 @@
 import React from "react";
-import { Composition, registerRoot } from "remotion";
+import { Composition, registerRoot, type AnyZodObject } from "remotion";
 import { CoverV3, DEFAULT_COVER_V3_PROPS, type CoverV3Props } from "./CoverV3";
 
 // CoverV3 独立入口：不进 Root.tsx，与 v1 的 Cover 并行零冲突。
@@ -13,7 +13,7 @@ const DURATION_IN_FRAMES = 90; // 需容纳 --frame=60（入场 spring 走完 + 
 const PROPS: CoverV3Props = DEFAULT_COVER_V3_PROPS;
 
 const CoverV3Root: React.FC = () =>
-  React.createElement(Composition, {
+  React.createElement(Composition<AnyZodObject, CoverV3Props>, {
     id: "CoverV3",
     component: CoverV3,
     defaultProps: PROPS,

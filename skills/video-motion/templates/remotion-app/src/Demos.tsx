@@ -35,7 +35,7 @@ const demoSpotlights: SpotlightCue[] = [
     h: 240,
     text: "Target area",
   },
-  { t: 2.8, ttl: 1.8, kind: "arrow", x: 860, y: 620, w: 520, text: "Look here" },
+  { t: 2.8, ttl: 1.8, kind: "arrow", x: 860, y: 620, w: 520, h: 0, text: "Look here" },
 ];
 
 export const SubtitleDemo: React.FC = () => (

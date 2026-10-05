@@ -19,7 +19,7 @@ user-invocable: true
 
 ## Step 2 · 工程与规格（随素材自适应）
 
-1. 复制 `templates/remotion-app/` 到工作目录，`npm install`（Remotion 各子包必须同批安装，版本严格联动）
+1. 复制 `templates/remotion-app/` 到工作目录，`npm install`（Remotion 各子包必须同批安装，版本严格联动）；装完跑 `npm run typecheck`（esbuild 容忍不等于类型干净，tsc 一过才现形；模板含 typescript devDependency，随装随跑）
 2. **原生规格**：`node scripts/probe-footage.mjs <素材路径>` 用 ffprobe 生成 `src/footage-params.ts`——输出分辨率 / 帧率随素材走，不写死；换素材重跑该脚本即可
 3. **素材不进 skill**：渲染带 `--public-dir <素材目录>`（`staticFile` 直读项目素材库）；只有不便带参数时才把素材复制为 `public/footage.mp4`
 4. cues 按 **1080p 设计坐标**书写，`FootageOverlay` 已内置 `transformOrigin: "top left"` 整体缩放适配任意画布——换分辨率不改 cues，动效落点不漂移
@@ -86,7 +86,7 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 
 模板自带全套武器，家底与逐组件用法以 `assets/component-catalog.md` 为准（scene-kit 17 组件 / entrance-kit 九动词 / vendor 社区精选 / fonts），此处只记铁律：
 
-- **版本铁律**：所有 `@remotion/*` 必须精确同版（如 4.0.518，不带 `^`）——版本错配是 Remotion 硬报错不是警告；新增包先对齐存量版本
+- **版本铁律**：所有 `@remotion/*` 必须精确同版（如 4.0.518，不带 `^`）——版本错配是 Remotion 硬报错不是警告；新增包先对齐存量版本（check-docs 第 3.7 项断言看管，漂了会红）
 - **4.0.518 API 事实**（与文档/记忆有出入，已实测）：`evolvePath` 返回 dash 属性对非裁剪 path；`interpolatePath(value, from, to)` 三独立参数；`fitText` 只吃 `withinWidth` 且返回 `{fontSize}` 对象；中文多行不能用 `fitTextOnNLines`（按空格分词）；`parseSrt` 返回 `{captions:[{text,startMs,endMs}]}` 毫秒制
 - **transform 包装坑**（S6 双坑实录）：带 transform 的包装动词（CameraPush/SlideGroup/TextBreath/BlurTrail）不得直接包 `position:absolute` 子树——transform 元素是 absolute 后代的 containing block，流内高度塌 0、内容顶格溢出。组件已自足（CameraPush 根 inset 0、BlurTrail 主层流内），使用时仍避免在无尺寸的 absolute 父级里裸包
 - **官方 `<Trail>`/`TransitionSeries` 语义**：Trail 根是 AbsoluteFill（页级覆盖语义），元素级残影用 scene-kit 的 BlurTrail（已 relative 化）；TransitionSeries 转场吃相邻页时长，成片引擎默认零转场（Series 硬切）+ 页内动词

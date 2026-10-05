@@ -512,5 +512,23 @@ SVG 动画（单文件 214 行），做成 61 秒可直接发布的成片；发�
   必须杀 worker 进程本身让 capture-all 的 close 事件触发。
 - 小红书话题按钮文案是「话题」不是「#」（定位失败原因）；原创声明开关仍是坐标点击，留人工。
 
+---
+
+## 2026-10-05 · video-motion 模板漂移修复（版本铁律落地 + typecheck 补齐）
+
+**起因**：巡检发现 SKILL.md 版本铁律（@remotion/* 精确同版、不带 ^）与模板实况（package.json 17 个依赖全带 `^4.0.518`）漂移，只靠 package-lock 兜底。`npm update` 或 lock 重建就会静默漂到最新 4.0.x，而 SKILL.md 记录的「4.0.518 API 事实」只对锁定的那个版本成立。
+
+**改动**
+- 17 个 `remotion` / `@remotion/*` 依赖 pin 为精确 `4.0.518`，lock 用 `npm install` 同步（esbuild 的 postinstall 在受限沙箱里 spawn 被拒，加 `--ignore-scripts` 通过；`@esbuild/win32-x64` 二进制走 optionalDependencies 已就位，不影响后续渲染）
+- 补 `typecheck` script 与 devDependencies（typescript 5.9.3 / @types/react 19.2.18）：2026-09-01「每站该跑 tsc 而不是只渲绿」的教训落进模板，不再靠每站人肉想起来
+- 补 `engines.node >= 18`
+- tsc 首跑抓出 **2 个存量类型错**，坐实 2026-10-02 那次「模板没装 node_modules、tsc 只报缺模块」的验证确实没闭环：
+  ① `cover3-index.ts` 的 `Composition` 没给类型参数，4.0.518 是 `<Schema, Props>` 双泛型，正确写法 `Composition<AnyZodObject, CoverV3Props>`（`AnyZodObject` 从 remotion 导入，查的是 node_modules 里的真实 .d.ts，不是记忆）；
+  ② `Demos.tsx` 的 arrow cue 缺 `h`（引擎 demo 的约定是 `h: 0`，w=箭头长度）。
+  修后模板 `tsc --noEmit` 0 错，typecheck 从此是模板自带能力
+- check-docs.py 新增 **3.7 断言**：模板 @remotion/* 必须精确同版。正反测试过：改回 `^` 会红、版本改乱会红、恢复后绿
+
+**教训**：铁律只写在 SKILL.md 里、没有检查器看管时，等于说给人听、没说给机器听，实现照样会漂。这与 3.5/3.6 的历史（标题计数、裸符号）是同一根病因：**文档里的承诺必须有机器可验证的对应物**。
+
 
 

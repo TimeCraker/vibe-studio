@@ -7,12 +7,14 @@ Checks:
   3. PAT entries in assets/patterns.md have required fields; index rows match
   3.5 component-catalog scene-kit heading count == table rows
   3.6 Backticked PascalCase symbols in README / product-map resolve to a real export
+  3.7 video-motion template package.json pins @remotion/* exact and uniform (SKILL.md rule)
   4. README install loop / structure tree / prose count all cover every skill
   5. .claude/skills junctions exist per skill (local machine only, warn)
 
 GBK console safe: ASCII-only output.
 """
 import glob
+import json
 import os
 import re
 import sys
@@ -131,6 +133,28 @@ for doc in ENTRY_DOCS:
         if name in symbols or name in UPSTREAM_SYMBOLS:
             continue
         errors.append(f"{doc}: symbol `{name}` resolves to no component/composition export")
+
+# --- 3.7 video-motion 模板 @remotion/* 版本铁律 ---
+# SKILL.md 版本铁律：所有 @remotion/*（含 remotion 本体）精确同版，不带 ^。
+# 实测漂移过：模板 package.json 17 个依赖全带 ^4.0.518，只靠 lock 兜底；
+# npm update 或 lock 重建就会静默漂到最新 4.0.x，而 SKILL.md 记录的
+# 「4.0.518 API 事实」只对锁定的那个版本成立。让声明与铁律互为约束。
+TPL_PKG = "skills/video-motion/templates/remotion-app/package.json"
+if os.path.isfile(TPL_PKG):
+    with open(TPL_PKG, encoding="utf-8") as f:
+        tpl_pkg = json.load(f)
+    rem_specs = {k: v for k, v in tpl_pkg.get("dependencies", {}).items()
+                 if k == "remotion" or k.startswith("@remotion/")}
+    if not rem_specs:
+        errors.append(f"{TPL_PKG}: no remotion/@remotion/* deps found, checker 3.7 out of date")
+    exact_versions = set()
+    for dep, spec in sorted(rem_specs.items()):
+        if re.fullmatch(r"\d+\.\d+\.\d+", spec):
+            exact_versions.add(spec)
+        else:
+            errors.append(f"{TPL_PKG}: {dep} uses '{spec}', rule requires exact pin like 4.0.518 (no ^)")
+    if len(exact_versions) > 1:
+        errors.append(f"{TPL_PKG}: @remotion/* versions not uniform: {sorted(exact_versions)}")
 
 # --- 4. README install loop + structure tree + prose count must cover every skill ---
 # 失败模式：新 skill 只加了技能表一行，散文里的数量词、结构树、junction 安装循环全忘了。
