@@ -46,3 +46,6 @@ projects/*/render/
 
 # Playwright MCP 临时快照
 .playwright-mcp/
+
+# VMBL 升级核查基线（still 对照产物，不入库）
+skills/video-motion/templates/remotion-app/.baseline/

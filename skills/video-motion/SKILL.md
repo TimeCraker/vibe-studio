@@ -86,8 +86,8 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 
 模板自带全套武器，家底与逐组件用法以 `assets/component-catalog.md` 为准（scene-kit 17 组件 / entrance-kit 九动词 / vendor 社区精选 / fonts），此处只记铁律：
 
-- **版本铁律**：所有 `@remotion/*` 必须精确同版（如 4.0.518，不带 `^`）——版本错配是 Remotion 硬报错不是警告；新增包先对齐存量版本（check-docs 第 3.7 项断言看管，漂了会红）
-- **4.0.518 API 事实**（与文档/记忆有出入，已实测）：`evolvePath` 返回 dash 属性对非裁剪 path；`interpolatePath(value, from, to)` 三独立参数；`fitText` 只吃 `withinWidth` 且返回 `{fontSize}` 对象；中文多行不能用 `fitTextOnNLines`（按空格分词）；`parseSrt` 返回 `{captions:[{text,startMs,endMs}]}` 毫秒制
+- **版本铁律**：所有 `@remotion/*` 必须精确同版（如 4.0.533，不带 `^`）——版本错配是 Remotion 硬报错不是警告；新增包先对齐存量版本（check-docs 第 3.7 项断言看管，漂了会红）
+- **4.0.533 API 事实**（与文档/记忆有出入，已实测；4.0.518→4.0.533 升级经 still 基线 PSNR 全 inf 对照，API 形状不变）：`evolvePath` 返回 dash 属性对非裁剪 path；`interpolatePath(value, from, to)` 三独立参数；`fitText` 只吃 `withinWidth` 且返回 `{fontSize}` 对象；中文多行不能用 `fitTextOnNLines`（按空格分词）；`parseSrt` 吃 `{input}` 对象（裸字符串报 undefined.split）、返回 `{captions:[{text,startMs,endMs}]}` 毫秒制
 - **transform 包装坑**（S6 双坑实录）：带 transform 的包装动词（CameraPush/SlideGroup/TextBreath/BlurTrail）不得直接包 `position:absolute` 子树——transform 元素是 absolute 后代的 containing block，流内高度塌 0、内容顶格溢出。组件已自足（CameraPush 根 inset 0、BlurTrail 主层流内），使用时仍避免在无尺寸的 absolute 父级里裸包
 - **官方 `<Trail>`/`TransitionSeries` 语义**：Trail 根是 AbsoluteFill（页级覆盖语义），元素级残影用 scene-kit 的 BlurTrail（已 relative 化）；TransitionSeries 转场吃相邻页时长，成片引擎默认零转场（Series 硬切）+ 页内动词
 - **vendor 纪律**：copy-paste 入库非 npm 依赖；升级=重新拉取重做 intake；纪律四条见模板 `src/vendor/README.md`
