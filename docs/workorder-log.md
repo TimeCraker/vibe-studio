@@ -187,7 +187,7 @@
 **关键决策与理由**
 - 渲染不引 PDF 库：render-pdf.py 自动探测本机 Chrome / Edge 无头打印，零额外依赖。
 - opt-a~d 是方案探索留档，D 方案胜出后由 build_variants.py（699 行）承接：母版 D + 分方向配色 / 纹样 / 侧重点。
-- 简历属个人产出不入 products/，管线与源码原入 scripts/resume/（2026-10-05 统一正规化移入 projects/resume-generator/）。
+- 简历属个人产出不入 products/，管线与源码原入 scripts/resume/，2026-10-05 先归位 projects/resume-generator/，同日随 ephemeral workspace 重构清场删除（git 历史 1b1a91f / 140127c 可查）。
 
 ---
 
