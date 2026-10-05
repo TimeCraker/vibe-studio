@@ -5,7 +5,7 @@ Checks:
   1. README skills table <-> skills/ directory alignment (both directions)
   2. Path references in meta docs resolve (products/ = local-only warn; archived docs skipped)
   3. PAT entries in assets/patterns.md have required fields; index rows match
-  3.5 component-catalog scene-kit heading count == table rows
+  3.5 component-catalog scene-kit heading count == table rows == SKILL.md claim
   3.6 Backticked PascalCase symbols in README / product-map resolve to a real export
   3.7 video-motion template package.json pins @remotion/* exact and uniform (SKILL.md rule)
   4. README install loop / structure tree / prose count all cover every skill
@@ -109,6 +109,14 @@ if os.path.isfile(cat_doc):
         n_rows = len(re.findall(r"(?m)^\| `", sec))
         if int(m_head.group(1)) != n_rows:
             errors.append(f"component-catalog.md: heading says {m_head.group(1)} components, table has {n_rows} rows")
+        # SKILL.md 侧的组件数口径与家底标题互为约束（2026-10-05 实抓：SKILL 写 17、家底已是 23；
+        # 3.5 原来只管 catalog 内部自洽，管不到外部文档引用的数字——同款病换了宿主）
+        sk_doc = "skills/video-motion/SKILL.md"
+        if os.path.isfile(sk_doc):
+            sk_t = open(sk_doc, encoding="utf-8").read()
+            m_claim = re.search(r"scene-kit\s*(\d+)\s*个?组件", sk_t)
+            if m_claim and int(m_claim.group(1)) != int(m_head.group(1)):
+                errors.append(f"{sk_doc}: claims scene-kit {m_claim.group(1)} components, catalog heading says {m_head.group(1)}")
 
 # --- 3.6 入口文档里的反引号符号必须解析到真实的组件/组合 ---
 # README 与 product-map 是「产品入口」的权威文档。它们用反引号写的 PascalCase 名字
