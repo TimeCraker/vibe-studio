@@ -48,6 +48,8 @@ projects/<项目>/
 **shots.json 镜头视口**：每镜可选 `"viewport": {"width": 2880, "height": 1560}` 单独指定采集视口，同一批里整页版式 1920×1180 与图版模式 2880×1560 混用时不再分批传参。优先级
 shot > `--width/--height`（含 shots.json 顶层 `width`/`height`）> 默认 1920×1080。非法值（缺一边、非正整数）整组忽略并 warn，回落全局。每镜实际生效尺寸记录在 `frames/index.json` 与 `frames/<shot>/clip.json` 的 `width`/`height`，补采前先 `--dry` 核对。
 
+**anchor-targets.json 条目视口**：条目可选同款 `"viewport"` 字段——该组按什么视口开页、量锚；缺省 1920×1080，非法值同规则 warn 回落。**量锚视口要与该场景的采集视口一致**，anchors.json 里的归一化比例才能直接复用到对应帧上；非默认视口采集的镜头，量锚时记得带上同一份 viewport。
+
 **导演页契约**（这是工具与项目之间唯一的接口）：
 
 | 函数 | 作用 |

@@ -7,20 +7,22 @@
 // Targets come from <project>/capture/anchor-targets.json (element ids are project
 // data, so they live in the project, not here):
 //   { "A": { "html": "<project-relative or absolute path>",
-//            "ids": ["bike-bell-button", "pelican-pouch", ...] }, ... }
+//            "ids": ["bike-bell-button", "pelican-pouch", ...],
+//            "viewport": {"width": 2880, "height": 1560} }, ... }
+// `viewport` is optional per entry (default 1920x1080). Set it to the viewport the
+// scene is CAPTURED at, so the normalised ratios in anchors.json line up with the
+// frames they will be drawn over. Invalid pairs are ignored with a warning.
 // Writes <project>/capture/anchors.json.
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import { launchChrome, openPage, addInitScript, navigate, sleep } from './cdp.mjs';
-import { parseArgs, projectRoot } from './paths.mjs';
+import { parseArgs, projectRoot, resolveShotViewport } from './paths.mjs';
 
 // HERE locates the harness's own siblings (vclock.js); the project comes from --project
 const HERE = dirname(fileURLToPath(import.meta.url));
 const args = parseArgs(process.argv.slice(2));
 const ROOT = projectRoot(args);
-const W = 1920;
-const H = 1080;
 
 const targetsPath = join(ROOT, 'capture', 'anchor-targets.json');
 if (!existsSync(targetsPath)) throw new Error(`missing ${targetsPath}`);
@@ -33,9 +35,10 @@ const abs = (p) => (/^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT
 const out = {};
 let port = 9560;
 for (const [name, cfg] of Object.entries(TARGETS)) {
+  const vp = resolveShotViewport({ ...cfg, id: name }, {}, {});
   const browser = await launchChrome({ port: port++ });
   try {
-    await openPage(browser.cdp, { width: W, height: H, deviceScaleFactor: 1 });
+    await openPage(browser.cdp, { width: vp.width, height: vp.height, deviceScaleFactor: 1 });
     await addInitScript(browser.cdp, readFileSync(join(HERE, 'vclock.js'), 'utf8'));
     await navigate(browser.cdp, pathToFileURL(abs(cfg.html)).href);
     await browser.cdp.eval('window.__vclock.tick(), null');
@@ -49,10 +52,10 @@ for (const [name, cfg] of Object.entries(TARGETS)) {
         const r = el.getBoundingClientRect();
         if (!r.width && !r.height) return { missing: 'zero-size' };
         return {
-          cx: +(((r.left + r.right) / 2) / ${W}).toFixed(4),
-          cy: +(((r.top + r.bottom) / 2) / ${H}).toFixed(4),
-          w: +(r.width / ${W}).toFixed(4),
-          h: +(r.height / ${H}).toFixed(4),
+          cx: +(((r.left + r.right) / 2) / ${vp.width}).toFixed(4),
+          cy: +(((r.top + r.bottom) / 2) / ${vp.height}).toFixed(4),
+          w: +(r.width / ${vp.width}).toFixed(4),
+          h: +(r.height / ${vp.height}).toFixed(4),
         };
       };
       const ids = ${JSON.stringify(cfg.ids)};
