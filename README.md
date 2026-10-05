@@ -82,6 +82,7 @@ vibe-studio/
 ├── workflows/         # 蓝图：explainer-video.md（A 线剪映 / B 线 Remotion / C 线代码化采集）
 ├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + lottie 动效 + 品牌与测试素材
 ├── projects/          # 施工区：一项目一目录，彼此隔离
+│   ├── resume-generator/ # HTML 简历多版本生成器（ai-agent / fullstack / game-client）
 │   ├── lekao-intro/   #   remotion-app 施工工程（deck-scenes 场景 + 素材 public/）+ 设计文档
 │   ├── elephant-plan/ #   elephant-e-ai 2a 冲刺排期 deck 生成脚本（ppt skill）+ v3 两页图
 │   ├── eai-ops-training/ #   小象智汇执行器运营培训教材 deck 生成脚本（ppt skill）
@@ -90,7 +91,7 @@ vibe-studio/
 │   └── pelican-ride/ #   「鹈鹕测试」Codex 篇成片（C 线采集 + Playwright 三端发布，已闭环）
 ├── products/          # 产出：按项目分目录带 README 标注（成品不入 git）
 ├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
-└── scripts/           # 一次性生成脚本与独立小工具（索引见 scripts/README.md，入库可复跑）
+└── scripts/           # 系统级工作台独立小工具（索引见 scripts/README.md，入库可复跑）
 ```
 
 ## 约定

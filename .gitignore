@@ -36,7 +36,7 @@ Thumbs.db
 
 # 渲染核查产物（PNG 等）
 output/
-scripts/resume/_qa*.png
+projects/resume-generator/_qa*.png
 
 # 项目 QA / 发布过程截图与渲染日志（核查产物可复跑，不入库；发布截图含登录态页面）
 projects/*/qa/

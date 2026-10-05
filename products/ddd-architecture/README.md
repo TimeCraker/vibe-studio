@@ -1,7 +1,7 @@
 # 小象培训管理系统 DDD 44 页全景深度演示文稿交付报告
 
 > 状态：产物二进制（pptx / pdf / 逐页图 / 素材库）已清理，需要时按
-> `scripts/render-ddd-assets.py` → `scripts/gen-ddd-44slides-deck.py` 复跑再生。
+> `products/ddd-architecture/render-ddd-assets.py` → `products/ddd-architecture/gen-ddd-44slides-deck.py` 复跑再生。
 > 下文为交付当时的完整报告存档。
 
 ## 一、交付物总览
