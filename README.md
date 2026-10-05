@@ -50,6 +50,8 @@ TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的�
 
 > 为什么代码画 PPT：网格、字号、色板全部写在脚本里，可复跑、可 diff、可版本化；渲染核查保证所见即所写。
 
+> 依赖口径：video-motion 基于 Remotion（source-available，非开源）——个人与 ≤3 人团队免费，4 人及以上公司的商业用途需购买 license；以 remotion.dev/license 页为准（2026-10 查证）。
+
 ## 使用
 
 Claude Code 只从 `.claude/skills/` 发现 skill。本仓库真身在 `skills/`，`.claude/skills/` 下是指过去的 junction（Windows 免管理员）。克隆后跑一次：
