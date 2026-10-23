@@ -11,7 +11,7 @@ const spec = hasFlag('probe') ? {title:'',description:[]} : loadSpec('douyin-for
 const VIDEO = arg('video', '');
 const NAMES = (arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
 
-if (DRY) { console.log(JSON.stringify({dry:true, platform:'douyin', title:spec.title, video:VIDEO, action:'validate-only; no browser connection'})); process.exit(0); }
+if (!hasFlag('probe')) { const plan=require('./util').preflight('douyin',spec); if (DRY) { console.log(JSON.stringify(plan)); process.exit(0); } }
 
 (async () => {
   const { chromium } = loadPlaywright();

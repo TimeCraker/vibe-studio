@@ -77,4 +77,3 @@ export class Cdp {
     try { this.ws.close(); } catch { /* ignore */ }
   }
 }
-

@@ -1,3 +1,5 @@
+// Historical auto-publication is disabled; current publication is a human action.
+throw new Error('Archived auto-publish is disabled. Use skills/publish to fill the form; publish manually.');
 // dy-fill.js — 抖音发布表单：标题 + 正文 + 话题 + 声明 + 自查 + 发布
 const { chromium } = require('playwright');
 const fs = require('fs');

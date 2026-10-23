@@ -100,3 +100,16 @@ async function selfCheck(page, tag) {
 }
 
 module.exports = { loadPlaywright, arg, hasFlag, ROOT, loadSpec, qaPath, setFiles, dumpForm, typeParagraphs, selfCheck, race, evalSafe };
+
+// Offline checks are shared by direct invocation and the orchestrator.
+function preflight(platform, spec) {
+  if (!spec.title || !Array.isArray(spec.description) || !spec.description.length || spec.description.some(p => typeof p !== 'string' || !p.trim())) throw new Error('Invalid title/description');
+  for (const key of ['video', 'cover']) {
+    const file = arg(key, '');
+    if (file && (!FS.existsSync(file) || !FS.statSync(file).isFile())) throw new Error('Missing ' + key + ': ' + file);
+  }
+  const declarations = {bili:'含AI生成内容',douyin:'内容由AI生成',xhs:'笔记含AI合成内容'};
+  if (arg('declare', '') && arg('declare') !== declarations[platform]) throw new Error('Unsupported declaration; select it manually or use basic driver');
+  return {dry:true,platform,title:spec.title,video:arg('video',''),action:'validate-only; no browser connection'};
+}
+module.exports.preflight = preflight;

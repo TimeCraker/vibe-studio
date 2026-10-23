@@ -107,6 +107,7 @@ vibe-studio/
 npm test
 python scripts/check-docs.py
 node tests/browser-capture.mjs
+npm run verify:workflow
 ```
 
 测试通过只代表对应技术范围。交付前按 [质量规范](docs/2026-08-30-motion-grammar.md) 看真实画面、听音频、检查手机尺寸。Stage 进度与本轮证据见 [生产工作流修复](docs/2026-10-23-production-workflow-spec.md)。

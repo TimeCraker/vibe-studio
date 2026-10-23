@@ -1,3 +1,5 @@
+// Historical auto-publication is disabled; current publication is a human action.
+throw new Error('Archived auto-publish is disabled. Use skills/publish to fill the form; publish manually.');
 // bili-publish.js — Playwright 连接已登录的 B 站 Chrome（CDP 9222），完成声明选择并发布。
 const { chromium } = require('playwright');
 

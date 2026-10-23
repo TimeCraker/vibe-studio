@@ -11,7 +11,7 @@ const spec = hasFlag('probe') ? {title:'',description:[]} : loadSpec('xhs-form.j
 const VIDEO = arg('video', '');
 const TOPICS = (arg('topics', '')).split(',').map((s) => s.trim()).filter(Boolean);
 
-if (DRY) { console.log(JSON.stringify({dry:true, platform:'xhs', title:spec.title, video:VIDEO, action:'validate-only; no browser connection'})); process.exit(0); }
+if (!hasFlag('probe')) { const plan=require('./util').preflight('xhs',spec); if (DRY) { console.log(JSON.stringify(plan)); process.exit(0); } }
 
 (async () => {
   const { chromium } = loadPlaywright();

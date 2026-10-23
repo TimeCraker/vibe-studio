@@ -53,6 +53,8 @@ node skills/publish/templates/run.mjs --project projects/<项目名>
 
 总调度默认 `driver: "pw"`；需要基础 CDP 层时指定 `--driver basic` 或在清单逐平台设 driver。各平台可覆盖 video/cover/spec，分别选择横竖版。`--dry` 只核对本地输入和参数，不连接浏览器、不上传；缺文件、空正文、未知平台或超时返回非零。真实运行报告为 `filled-needs-human-check`，不代表已经发布或所有表单字段通过人工核对。
 
+pw 主脚本负责视频和文字；总调度在 B 站填表后调用已有 cover 动作应用指定封面。抖音/小红书的自定义封面在此驱动下保留 manualPending；不要把“传入了封面路径”报成“封面已经应用”。抖音基础层支持横 4:3，竖封面与小红书自定义封面仍按真实 UI 核对。未声明的分区或 AI/原创声明不自动替用户选择。
+
 **单平台手动跑**（调试或只发一家）：
 
 ```bash

@@ -67,7 +67,7 @@
   // Keep a real escape hatch for the harness itself (not used by page code).
   window.__realSetTimeout = realSetTimeout;
 
-  const MAX_PASSES = 12;
+  const MAX_PASSES = 10000;
   function runDueTimers(now) {
     let firedAny = false;
     for (let pass = 0; pass < MAX_PASSES; pass++) {
@@ -82,6 +82,7 @@
         t.cb(...t.args);
       }
     }
+    if (timers.some(t => t.due <= now)) throw new Error('Virtual timer callback budget exceeded');
     return firedAny;
   }
 

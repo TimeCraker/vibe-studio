@@ -682,33 +682,33 @@ def build_deck():
     print("Applying PowerPoint entrance animations via COM...")
     try:
         anim = Anim(prs)
-        
+
         for idx, slide in enumerate(prs.slides):
             page_no = idx + 1
-            
+
             # 封面与尾页有固定序列
             if page_no in [1, 44]:
                 continue
-                
+
             # 章节过场使用专属破题序列
             if page_no in [4, 10, 16, 27, 32, 37, 41]:
                 continue
-                
+
             # 图片浮现
             pics = [shp for shp in slide.shapes if "media" in shp.name]
             for p_shp in pics:
                 anim.fx(p_shp, "float_up", dur=0.5, delay=0.1)
-                
+
             # 查找卡片组并做级联浮现
             cards = P.shape_groups(slide, "card")
             if cards:
                 anim.stagger(cards, "float_up", step=0.12)
-                
+
             # 查找对比组
             vs_groups = P.shape_groups(slide, "vs")
             if vs_groups:
                 anim.stagger(vs_groups, "float_up", step=0.15)
-                
+
             # 查找流程链节点
             nodes = P.shape_groups(slide, "node")
             if nodes:

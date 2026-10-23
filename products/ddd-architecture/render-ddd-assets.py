@@ -28,20 +28,20 @@ BASE_CSS = """
   --ink-soft: #57534E;
   --muted: #78716C;
   --line: #E7E0D8;
-  
+
   /* 丰富语义辅助色 */
   --emerald: #2E7D32;
   --emerald-bg: #E8F5E9;
   --emerald-border: #A5D6A7;
-  
+
   --amber: #D97706;
   --amber-bg: #FEF3C7;
   --amber-border: #FCD34D;
-  
+
   --blue: #2563EB;
   --blue-bg: #EFF6FF;
   --blue-border: #BFDBFE;
-  
+
   --purple: #7C3AED;
   --purple-bg: #F3E8FF;
   --purple-border: #DDD6FE;
@@ -94,7 +94,7 @@ def main():
                 </div>
                 <div style="font-size: 13px; color: var(--muted); background: var(--cream); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--line);">从业务破局到代码实证</div>
             </div>
-            
+
             <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; margin-top: 20px;">
                 <!-- 阶段 1 -->
                 <div style="background: var(--cream); border: 1.5px solid var(--coral-border); border-radius: 12px; padding: 18px 14px; display: flex; flex-direction: column;">
@@ -168,7 +168,7 @@ def main():
                 <span style="font-size: 12px; font-weight: 700; color: var(--coral); letter-spacing: 0.08em; text-transform: uppercase;">Business Pipeline</span>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--ink); margin-top: 2px;">培训机构运营五大阶段与上下文协同流水线</h2>
             </div>
-            
+
             <div style="display: flex; justify-content: space-between; position: relative; margin: 30px 0;">
                 <!-- 流程步骤卡片 1 -->
                 <div style="width: 18%; background: var(--cream); border: 1.5px solid var(--coral-border); border-radius: 12px; padding: 16px; text-align: center;">
@@ -505,7 +505,7 @@ def main():
                 <div style="flex: 1; background: var(--amber-bg); border: 1.5px solid var(--amber-border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column;">
                     <div style="font-size: 13px; font-weight: 700; color: var(--amber); margin-bottom: 8px;">阶段一：本地单事务原子双写</div>
                     <div style="font-size: 12px; color: var(--ink-soft); margin-bottom: 12px;">在同一个数据库连接 (BEGIN ... COMMIT) 内完成两件事：</div>
-                    
+
                     <div style="background: white; border: 1px solid var(--amber-border); border-radius: 8px; padding: 10px; margin-bottom: 8px;">
                         <div style="font-weight: 700; font-size: 12px; color: var(--ink);">1. 更新业务聚合根状态</div>
                         <code style="font-size: 11px; color: var(--coral-deep); font-family: monospace;">UPDATE orders SET status='PAID'</code>

@@ -2,7 +2,7 @@
 // 端口 9222（`bili.mjs launch` 开的窗口，人已扫码登录）。
 // 不点「立即投稿」——那是人的动作。
 //
-//   node pw/bili-fill.js [--dry]      # --dry 只探针转储表单，不写
+//   node pw/bili-fill.js [--dry]      # --dry 离线预检；--probe 只读已打开页面
 const { arg, hasFlag, loadPlaywright, loadSpec, qaPath, setFiles, dumpForm, typeParagraphs, selfCheck, race } = require('./util');
 
 const DRY = hasFlag('dry');
@@ -11,7 +11,7 @@ const spec = hasFlag('probe') ? {title:'',description:[]} : loadSpec('form.json'
 const VIDEO = arg('video', '');
 const COVER = arg('cover', '');
 
-if (DRY) { console.log(JSON.stringify({dry:true, platform:'bili', title:spec.title, video:VIDEO, action:'validate-only; no browser connection'})); process.exit(0); }
+if (!hasFlag('probe')) { const plan=require('./util').preflight('bili',spec); if (DRY) { console.log(JSON.stringify(plan)); process.exit(0); } }
 
 (async () => {
   const { chromium } = loadPlaywright();
@@ -88,6 +88,7 @@ if (DRY) { console.log(JSON.stringify({dry:true, platform:'bili', title:spec.tit
   console.log('标签 x', spec.tags.length);
   await shot(4);
 
+  if (arg('category','') === '人工智能') {
   // 4) 分区（级联下拉）：目标 科技 → 人工智能。失败不阻塞，人工兜底
   try {
     const cur = page.locator('text=绘画').first();
@@ -101,6 +102,8 @@ if (DRY) { console.log(JSON.stringify({dry:true, platform:'bili', title:spec.tit
   } catch (e) {
     console.log('分区自动选择失败（人工兜底）：', e.message.slice(0, 80));
   }
+
+  } else if (arg('category','')) console.log('Category needs human selection: '+arg('category'));
 
   if (DECLARE) {
   // 5) 创作声明：含AI生成内容

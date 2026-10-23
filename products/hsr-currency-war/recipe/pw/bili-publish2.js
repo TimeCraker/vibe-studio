@@ -1,3 +1,5 @@
+// Historical auto-publication is disabled; current publication is a human action.
+throw new Error('Archived auto-publish is disabled. Use skills/publish to fill the form; publish manually.');
 // bili-publish2.js — 声明选择 + 发布前自查 + 点「立即投稿」+ 结果验证
 const { chromium } = require('playwright');
 

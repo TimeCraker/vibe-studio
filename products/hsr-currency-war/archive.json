@@ -16,7 +16,8 @@
   ],
   "notes": [
     "Source hashes verified. Historical timing and capture semantics are preserved as evidence; restore into projects before adapting to the current engine.",
-    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated."
+    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated.",
+    "2026-10-23: Three historical auto-publish entrypoints are guarded before any browser connection. Original source hashes are retained; current workflow never clicks publish."
   ],
   "files": [
     {
@@ -58,22 +59,28 @@
       "path": "pw/bili-publish.js",
       "stored": "recipe/pw/bili-publish.js",
       "kind": "source",
-      "bytes": 1683,
-      "sha256": "f018b13d9d0b0a8ef1d611db70afcf3da6aafd80b5b61798215f8fa96edb1546"
+      "bytes": 1876,
+      "sha256": "7dc57f10854522391dbfe9c05e7d953faf90e42c35e5cf89ddfc8755e5bee606",
+      "originalSha256": "f018b13d9d0b0a8ef1d611db70afcf3da6aafd80b5b61798215f8fa96edb1546",
+      "transformation": "Fail-closed guard for historical auto-publication; original bytes remain at sourceCommit/sourcePath."
     },
     {
       "path": "pw/bili-publish2.js",
       "stored": "recipe/pw/bili-publish2.js",
       "kind": "source",
-      "bytes": 2545,
-      "sha256": "d24cfeace7f141a98b28a911973cd27fa41d08d1a5f0abc5c4a9d11fdbc03634"
+      "bytes": 2738,
+      "sha256": "c9f0e352092788b5463ef6d68311306b10692cab4ab58a4007720f954741ef5b",
+      "originalSha256": "d24cfeace7f141a98b28a911973cd27fa41d08d1a5f0abc5c4a9d11fdbc03634",
+      "transformation": "Fail-closed guard for historical auto-publication; original bytes remain at sourceCommit/sourcePath."
     },
     {
       "path": "pw/dy-fill.js",
       "stored": "recipe/pw/dy-fill.js",
       "kind": "source",
-      "bytes": 5693,
-      "sha256": "1bcc536f478cd71dc0bc20f0639955e6c57a2b54ffbe7fb823927895c82db0e0"
+      "bytes": 5886,
+      "sha256": "17a3da7bdbb183f78794dcd17c5f6e64f6a6e7ec30618fa66fe5814ab16f7d96",
+      "originalSha256": "1bcc536f478cd71dc0bc20f0639955e6c57a2b54ffbe7fb823927895c82db0e0",
+      "transformation": "Fail-closed guard for historical auto-publication; original bytes remain at sourceCommit/sourcePath."
     },
     {
       "path": "pw/dy-form-probe.js",

@@ -12,6 +12,7 @@ if(args.variant){
   if(!/^[a-z0-9-]+$/.test(args.variant))throw new Error('Invalid variant id');
   Object.assign(base,JSON.parse(readFileSync(join(ROOT,'exports',args.variant,'render-spec.json'),'utf8')));
 }
+const dsf=Number(args.dsf??1);if(!Number.isFinite(dsf)||dsf<1||dsf>4)throw new Error('dsf must be between 1 and 4');
 const config={...base,width:Number(args.width??base.width??1920),height:Number(args.height??base.height??1080),fps:Number(args.fps??base.fps??60)};
 if(![config.width,config.height].every(n=>Number.isInteger(n)&&n>0&&n%2===0)||!Number.isFinite(config.fps)||config.fps<=0)throw new Error('Invalid video dimensions/fps');
 const out=resolve(ROOT,args.out??'render/video.mp4');
@@ -29,7 +30,7 @@ let browser,ff,ffDone;
 try{
   browser=await launchChrome({port:Number(args.chromePort??9333)});
   async function boot(options){
-    await openPage(browser.cdp,{width:options.width,height:options.height,deviceScaleFactor:Number(args.dsf??1)});
+    await openPage(browser.cdp,{width:options.width,height:options.height,deviceScaleFactor:dsf});
     await addInitScript(browser.cdp,`window.__CAPTURE_CONFIG=${JSON.stringify(options)};window.__DSF=${Number(args.dsf??1)};`);
     await navigate(browser.cdp,`http://127.0.0.1:${server.address().port}/edit/director.html`);
     const info=await browser.cdp.eval(`window.__boot(${JSON.stringify(options)})`,{awaitPromise:true});
@@ -43,7 +44,7 @@ try{
       if(!/^[a-zA-Z0-9_-]+$/.test(variant.name))throw new Error('Invalid cover name');
       const options={...config,width:variant.width??config.width,height:variant.height??config.height};
       await boot(options);await browser.cdp.eval(`window.__cover(${JSON.stringify(variant)})`,{awaitPromise:true});
-      writeFileSync(join(dir,`${variant.name}.png`),await capturePng(browser.cdp));
+      writeFileSync(join(dir,`${variant.name}.png`),await capturePng(browser.cdp,{clip:{x:0,y:0,width:options.width,height:options.height,scale:1/dsf}}));
     }
     console.log(JSON.stringify({ok:true,covers:data.variants.length,out:dir}));
   }else{
@@ -64,7 +65,7 @@ try{
       const codecArgs=['-hide_banner','-loglevel','error','-f','image2pipe','-framerate',String(config.fps),'-i','-'];
       if(args.audio)codecArgs.push('-ss',String(start/config.fps),'-i',resolve(ROOT,args.audio),'-map','0:v','-map','1:a','-af','apad','-shortest','-c:a','aac','-b:a','192k');else codecArgs.push('-an');
       mkdirSync(dirname(out),{recursive:true});
-      ff=spawn('ffmpeg',[...codecArgs,'-c:v','libx264','-preset',String(args.preset??'medium'),'-crf',String(args.crf??16),'-pix_fmt','yuv420p','-movflags','+faststart','-y',out],{stdio:['pipe','ignore','inherit']});
+      ff=spawn('ffmpeg',[...codecArgs,'-vf',`scale=${config.width}:${config.height}`,'-c:v','libx264','-preset',String(args.preset??'medium'),'-crf',String(args.crf??16),'-pix_fmt','yuv420p','-movflags','+faststart','-y',out],{stdio:['pipe','ignore','inherit']});
       ff.stdin.on('error',()=>{});
       ffDone=new Promise((ok)=>{ff.once('error',()=>ok(1));ff.once('close',ok);});
       for(let i=start;i<end;i++){

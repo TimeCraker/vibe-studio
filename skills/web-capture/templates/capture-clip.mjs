@@ -31,12 +31,12 @@ try {
   await openPage(browser.cdp, { width, height, deviceScaleFactor: dsf });
   await addInitScript(browser.cdp, readFileSync(join(HERE, 'vclock.js'), 'utf8'));
   if (args.setup) await addInitScript(browser.cdp, readFileSync(abs(args.setup), 'utf8'));
+  let pageError = null;
+  browser.cdp.on('Runtime.exceptionThrown', (event) => { pageError = event.exceptionDetails?.exception?.description ?? event.exceptionDetails?.text ?? 'page exception'; });
   await navigate(browser.cdp, pathToFileURL(abs(args.html)).href);
   if (args.boot) await browser.cdp.eval(`(() => { ${readFileSync(abs(args.boot), 'utf8')} })()`);
   await browser.cdp.eval('Promise.all([document.fonts.ready, ...Array.from(document.images, img => img.decode())]).then(()=>null)', { awaitPromise: true });
   if (mode === 'seek' && !await browser.cdp.eval('typeof window.__captureSeek === "function"')) throw new Error('Seek mode requires window.__captureSeek(ms)');
-  let pageError = null;
-  browser.cdp.on('Runtime.exceptionThrown', (event) => { pageError = event.exceptionDetails?.text ?? 'page exception'; });
   for (let i = mode === 'replay' ? 0 : i0; i < i1; i++) {
     const ms = i * 1000 / fps;
     if (mode === 'seek') {
