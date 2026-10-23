@@ -6,9 +6,10 @@ import { dirname, join, resolve } from "node:path";
 import { git, Snapshot } from "../scripts/lib/docs-source.mjs";
 import { generatedPlan, syncGenerated } from "../scripts/lib/docs-generate.mjs";
 import { checkDocs, impact } from "../scripts/lib/docs-analyze.mjs";
+import { discoverRepos, indexWorkspace, searchWorkspace } from "../scripts/lib/docs-index.mjs";
 
-function fixture() {
-  const root = mkdtempSync(join(tmpdir(), "vibe-docs-"));
+function fixture(parent = tmpdir()) {
+  const root = mkdtempSync(join(parent, "vibe-docs-"));
   git(root, ["init", "-q"]);
   git(root, ["config", "user.name", "Fixture"]);
   git(root, ["config", "user.email", "fixture@example.invalid"]);
@@ -80,4 +81,30 @@ test("guard catches newly broken links and removed targets, preserves staged bou
   assert.deepEqual(staged.brokenLinks.map((r) => r.path), ["docs/unstaged.md"]);
   git(f.root, ["rm", "docs/good.md"]);
   assert.ok(checkDocs(new Snapshot(f.root, { staged: true }), { newOnly: true }).brokenLinks.some((r) => r.path === "docs/good.md"));
+});
+
+test("workspace search refreshes edited source docs, separates history and excludes secrets and index symlinks", () => {
+  const workspace = mkdtempSync(join(tmpdir(), "vibe-workspace-"));
+  const cacheDir = join(workspace, ".cache");
+  const f = fixture(workspace), other = fixture(workspace);
+  f.put("README.md", "# 网页采集\nUse `node scripts/capture.mjs`.\n");
+  f.put("scripts/capture.mjs", "original");
+  f.put("docs/history.md", "> 状态：已存档\n# 网页采集旧版\nlegacyneedle\n");
+  f.put("docs/credentials.md", "supersecretneedle");
+  other.put("README.md", "# 图片转换\nimage conversion\n"); f.commit(); other.commit();
+  const blob = git(f.root, ["hash-object", "-w", "--stdin"], { input: "../outside-private.md" }).trim();
+  git(f.root, ["update-index", "--add", "--cacheinfo", `120000,${blob},docs/link.md`]);
+  assert.equal(new Snapshot(f.root, { staged: true }).read("docs/link.md"), null);
+  assert.equal(discoverRepos(workspace).length, 2);
+  assert.equal(searchWorkspace(workspace, "网页采集", { cacheDir }).results[0].path, "README.md");
+  assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir }).results.length, 0);
+  assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir, history: true }).results[0].kind, "historical");
+  f.put("docs/new.md", "# 新知识\nuniquerefreshneedle\n");
+  assert.equal(searchWorkspace(workspace, "uniquerefreshneedle", { cacheDir }).results[0].path, "docs/new.md");
+  f.put("scripts/capture.mjs", "changed");
+  assert.equal(searchWorkspace(workspace, "网页采集", { cacheDir }).results[0].sourceState.status, "needs-review");
+  const indexed = indexWorkspace(workspace, { cacheDir });
+  const cache = readFileSync(indexed.cache, "utf8");
+  assert.doesNotMatch(cache, /supersecretneedle|outside-private/);
+  assert.ok(!indexed.data.entries.some((e) => e.path.endsWith("credentials.md")));
 });
