@@ -313,9 +313,10 @@ try {
       : { steps: {} };
   else {
     console.log(
-      "studio init --id NAME --line a|b|c|ppt|footage [--project DIR]\nstudio doctor [--line LINE] [--project DIR]\nstudio validate --project DIR [--require-reviewed]\nstudio run --project DIR [--step ID | --from ID] [--dry]\nstudio status --project DIR\nstudio qc --project DIR --video FILE [--srt FILE] [--config FILE]\nstudio derive --project DIR\nstudio review --project DIR\nstudio archive --project DIR [--id NEW-REVISION] [--source-only]\nstudio verify-archive --archive FILE [--source-only]\nstudio restore --archive FILE --project DIR [--source-only]",
+      readJson(join(REPO, "scripts/studio-commands.json")).commands
+        .map((c) => `studio ${c.syntax}\n  ${c.description}`).join("\n"),
     );
-    process.exitCode = cmd ? 1 : 0;
+    process.exitCode = cmd && !["help", "--help"].includes(cmd) ? 1 : 0;
   }
   if (result) {
     console.log(JSON.stringify(result, null, 2));

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "commands": [
+    {"syntax":"init --id NAME --line a|b|c|ppt|footage [--project DIR]","description":"初始化制作工程与契约"},
+    {"syntax":"doctor [--line LINE] [--project DIR]","description":"检查制作环境"},
+    {"syntax":"validate --project DIR [--require-reviewed]","description":"校验任务、分镜与已有审阅记录"},
+    {"syntax":"run --project DIR [--step ID | --from ID] [--dry]","description":"运行、预检或续跑声明步骤"},
+    {"syntax":"status --project DIR","description":"查看技术步骤状态"},
+    {"syntax":"qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]","description":"检查实际媒体与字幕"},
+    {"syntax":"derive --project DIR","description":"按配置派生平台物料"},
+    {"syntax":"review --project DIR","description":"根据真实统计生成复盘"},
+    {"syntax":"archive --project DIR [--id NEW-REVISION] [--source-only]","description":"保存制作配方、输入与指定交付物"},
+    {"syntax":"verify-archive --archive FILE [--source-only]","description":"校验归档完整性"},
+    {"syntax":"restore --archive FILE --project DIR [--source-only]","description":"恢复到不存在或空的目录"}
+  ]
+}

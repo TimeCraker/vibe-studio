@@ -15,16 +15,21 @@
 
 ## 工具与职责
 
-| 技能 | 用途 |
+<!-- docs:auto skills -->
+| 技能 | 用途（来自 SKILL.md） |
 |---|---|
-| [content-director](skills/content-director/) | 受众、事实来源、分镜、美术简报与短样片 |
-| [humanizer](skills/humanizer/) | 保持事实不变，改口语与文风 |
-| [narration](skills/narration/) | 分段口播、字幕与时长预算 |
-| [auto-subtitle](skills/auto-subtitle/) | 词级时间戳转写、字幕对齐 |
-| [media-qc](skills/media-qc/) | 解码、规格、字幕、响度、抽帧证据与待人工清单 |
-| [content-repurpose](skills/content-repurpose/) | 选镜头、重排时间轴、画幅、安全区与平台文案 |
-| [publish](skills/publish/) | B 站/抖音/小红书填表，按平台选视频与封面 |
-| [content-review](skills/content-review/) | 真实发布数据、制作成本与系列复盘 |
+| [auto-subtitle](skills/auto-subtitle/) | 转写工具，不是成片入口。faster-whisper 把 mp4/wav/flac 转成 cues.json + srt，字段与 video-motion SubtitleCue 对齐。用户说「自动字幕 / 语音转字幕 / 转写 / 出字幕文件 / faste… |
+| [content-director](skills/content-director/) | 为产品介绍、科技讲解或内容视频做受众定位、事实取材、口播与镜头设计。适用于选题、写分镜、画面单薄或正式制作前的策划；已有定稿的采集和渲染交给对应制作 skill。 |
+| [content-repurpose](skills/content-repurpose/) | 把同一份已核实视频策划派生成不同画幅、镜头长度、封面与平台文案。适用于横竖版、短切片、三平台物料适配；不负责账号登录或点击发布。 |
+| [content-review](skills/content-review/) | 用真实发布数据和制作成本复盘内容表现，支持同平台同观察窗口的系列对照。适用于内容复盘、完播/点击/转粉与制作效率分析；不抓取账号凭证、不代发内容、不编造缺失数据。 |
+| [humanizer](skills/humanizer/) | 中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。 去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。 基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检… |
+| [media-qc](skills/media-qc/) | 对完成的视频或短样片做技术质检、字幕时间检查、响度测量和抽帧取证。适用于渲染后核查与交付前验收；技术检查不代替人工看片、听音或品牌视觉终审。 |
+| [narration](skills/narration/) | 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 work… |
+| [ppt](skills/ppt/) | 用 python-pptx 代码生成专业 PPT / 幻灯片 / 演示文稿（deck / slides / pptx）。用户说「做个 PPT / 幻灯片 / 演示文稿 / 项目介绍 deck / 把项目做成 slides」时使用；改现有 pptx 同样适用。用… |
+| [publish](skills/publish/) | 发布辅助工具，不是成片入口。把已经做好的成片按平台要求填进投稿表单（B 站 / 抖音 / 小红书三端），人机分工是硬约束：你登录、你点发布，脚本只填表。用户说「发 B 站 / 发抖音 / 发小红书 / 投稿 / 帮我填投稿信息 / 自动发布」时使用。片子还没做… |
+| [video-motion](skills/video-motion/) | 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。 |
+| [web-capture](skills/web-capture/) | 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动… |
+<!-- /docs:auto -->
 
 美术需要位图时，content-director 按当前环境可用的 imagegen 工具生成素材，再走 assets/art 登记与消费；真实界面和结构图仍使用截图或 SVG。没有工具时保留简报，不声称已生图。
 
@@ -55,6 +60,24 @@ B/录像线 `init --line b|footage` 复制 Remotion 模板并配置依赖安装�
 
 ## 编排、派生与归档
 
+命令速查与 CLI 帮助来自同一声明，生成区域无需手改：
+
+<!-- docs:auto commands source="scripts/studio-commands.json" -->
+| 命令（node scripts/studio.mjs 后的参数） | 用途 |
+|---|---|
+| `init --id NAME --line a\|b\|c\|ppt\|footage [--project DIR]` | 初始化制作工程与契约 |
+| `doctor [--line LINE] [--project DIR]` | 检查制作环境 |
+| `validate --project DIR [--require-reviewed]` | 校验任务、分镜与已有审阅记录 |
+| `run --project DIR [--step ID \| --from ID] [--dry]` | 运行、预检或续跑声明步骤 |
+| `status --project DIR` | 查看技术步骤状态 |
+| `qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]` | 检查实际媒体与字幕 |
+| `derive --project DIR` | 按配置派生平台物料 |
+| `review --project DIR` | 根据真实统计生成复盘 |
+| `archive --project DIR [--id NEW-REVISION] [--source-only]` | 保存制作配方、输入与指定交付物 |
+| `verify-archive --archive FILE [--source-only]` | 校验归档完整性 |
+| `restore --archive FILE --project DIR [--source-only]` | 恢复到不存在或空的目录 |
+<!-- /docs:auto -->
+
 job.json 为命令数组声明输入、输出、工作目录和超时；命令不经 shell 拼接。状态与日志在项目 .studio，输入、工具或输出变化会使缓存失效。
 
 ```powershell
@@ -78,28 +101,34 @@ node scripts/studio.mjs restore --archive products/first-video/archive.json --pr
 
 ## 结构
 
+<!-- docs:auto tree -->
 ```
 vibe-studio/
-├── skills/            # 技能正本、脚本与模板
-│   ├── ppt/
-│   ├── humanizer/
-│   ├── narration/
-│   ├── video-motion/
+├── assets/
+├── docs/
+├── products/
+├── projects/
+├── scripts/
+├── skills/
 │   ├── auto-subtitle/
-│   ├── web-capture/
-│   ├── publish/
 │   ├── content-director/
-│   ├── media-qc/
 │   ├── content-repurpose/
-│   └── content-review/
-├── workflows/         # 制作总装流程
-├── assets/            # 版式、组件登记、美术、品牌素材
-├── projects/          # 在研施工区，临时帧与依赖可清理
-├── products/          # 配方、成品清单、字幕、封面、来源与验收记录
-├── scripts/           # CLI、归档、环境诊断、配乐等通用工具
-├── tests/             # 数据、故障、归档与浏览器回归
-└── docs/              # 产品边界、质量规范、Stage Spec 与工单台账
+│   ├── content-review/
+│   ├── humanizer/
+│   ├── media-qc/
+│   ├── narration/
+│   ├── ppt/
+│   ├── publish/
+│   ├── video-motion/
+│   └── web-capture/
+├── tests/
+├── workflows/
+├── AGENTS.md
+├── CLAUDE.md
+├── README.md
+└── package.json
 ```
+<!-- /docs:auto -->
 
 ## 维护检查
 
