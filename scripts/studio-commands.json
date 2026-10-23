@@ -7,6 +7,7 @@
     {"syntax":"run --project DIR [--step ID | --from ID] [--dry]","description":"运行、预检或续跑声明步骤"},
     {"syntax":"status --project DIR","description":"查看技术步骤状态"},
     {"syntax":"audio --project DIR [--config FILE] [--out FILE]","description":"编排音轨、音乐避让、混音与两遍响度处理"},
+    {"syntax":"animatic --project DIR [--config FILE] [--out FILE]","description":"按分镜时间生成带预览标记的动态分镜"},
     {"syntax":"qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]","description":"检查实际媒体与字幕"},
     {"syntax":"derive --project DIR","description":"按配置派生平台物料"},
     {"syntax":"review --project DIR","description":"根据真实统计生成复盘"},

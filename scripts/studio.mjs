@@ -21,6 +21,7 @@ import { checkMedia } from "../skills/media-qc/scripts/check.mjs";
 import { derive } from "../skills/publish/scripts/derive.mjs";
 import { writeReview } from "../skills/publish/scripts/report.mjs";
 import { mixAudio } from "../skills/audio-post/scripts/mix.mjs";
+import { renderAnimatic } from "../skills/content-director/scripts/animatic.mjs";
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [cmd, ...argv] = process.argv.slice(2);
 const args = {};
@@ -87,6 +88,10 @@ function init() {
     targets: ["bili", "douyin", "xhs"],
   });
   writeJson(join(root, "storyboard.json"), storyboard);
+  writeJson(join(root, "animatic.json"), {
+    schemaVersion: 1, width: 640, height: 360, fps: 24,
+    allowPlaceholders: true, frames: {},
+  });
   writeFileSync(
     join(root, "brief.md"),
     "# 制作简报\n\n填写受众、核心承诺、片长、画幅、目标行为与事实来源。先看短样片，再制作全片。\n",
@@ -255,6 +260,8 @@ try {
     });
   else if (cmd === "audio")
     result = mixAudio(project, { configPath: args.config, out: args.out });
+  else if (cmd === "animatic")
+    result = renderAnimatic(project, { configPath: args.config, out: args.out });
   else if (cmd === "qc")
     result = checkMedia(project, String(args.video ?? "render/video.mp4"), {
       srt: args.srt,

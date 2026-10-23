@@ -85,6 +85,7 @@ B/录像线 `init --line b|footage` 复制 Remotion 模板并配置依赖安装�
 | `run --project DIR [--step ID \| --from ID] [--dry]` | 运行、预检或续跑声明步骤 |
 | `status --project DIR` | 查看技术步骤状态 |
 | `audio --project DIR [--config FILE] [--out FILE]` | 编排音轨、音乐避让、混音与两遍响度处理 |
+| `animatic --project DIR [--config FILE] [--out FILE]` | 按分镜时间生成带预览标记的动态分镜 |
 | `qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]` | 检查实际媒体与字幕 |
 | `derive --project DIR` | 按配置派生平台物料 |
 | `review --project DIR` | 根据真实统计生成复盘 |
