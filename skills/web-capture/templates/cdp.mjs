@@ -1,23 +1,34 @@
 // Minimal zero-dependency Chrome DevTools Protocol client.
 // Node >= 22 provides global WebSocket + fetch, so no npm install is required.
 import { spawn } from 'node:child_process';
-import { mkdtempSync } from 'node:fs';
+import { existsSync, mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export class Cdp {
-  constructor(ws) {
+  constructor(ws, { timeoutMs = 30000 } = {}) {
     this.ws = ws;
     this.seq = 0;
     this.pending = new Map();
     this.handlers = new Map();
     this.sessionId = null;
+    this.timeoutMs = timeoutMs;
+    this.closed = false;
+    const disconnect = (reason) => {
+      this.closed = true;
+      for (const { reject, timer } of this.pending.values()) { clearTimeout(timer); reject(new Error(reason)); }
+      this.pending.clear();
+      this.handlers.get('disconnected')?.({ reason });
+    };
+    ws.addEventListener('close', () => disconnect('CDP disconnected'));
+    ws.addEventListener('error', () => disconnect('CDP socket error'));
     ws.addEventListener('message', (ev) => {
       const msg = JSON.parse(ev.data);
       if (msg.id !== undefined && this.pending.has(msg.id)) {
-        const { resolve, reject } = this.pending.get(msg.id);
+        const { resolve, reject, timer } = this.pending.get(msg.id);
+        clearTimeout(timer);
         this.pending.delete(msg.id);
         if (msg.error) reject(new Error(`${msg.error.message} ${JSON.stringify(msg.error.data ?? '')}`));
         else resolve(msg.result);
@@ -30,22 +41,27 @@ export class Cdp {
     });
   }
 
-  static async connect(url) {
+  static async connect(url, options = {}) {
     const ws = new WebSocket(url);
     await new Promise((resolve, reject) => {
-      ws.addEventListener('open', () => resolve(), { once: true });
-      ws.addEventListener('error', (e) => reject(new Error(`ws connect failed: ${e.message ?? e.type}`)), { once: true });
+      const timer = setTimeout(() => { ws.close(); reject(new Error('CDP connection timeout')); }, options.timeoutMs ?? 30000);
+      ws.addEventListener('open', () => { clearTimeout(timer); resolve(); }, { once: true });
+      ws.addEventListener('error', (e) => { clearTimeout(timer); reject(new Error(`ws connect failed: ${e.message ?? e.type}`)); }, { once: true });
+      ws.addEventListener('close', () => { clearTimeout(timer); reject(new Error('CDP closed before connection')); }, { once: true });
     });
-    return new Cdp(ws);
+    return new Cdp(ws, options);
   }
 
   send(method, params = {}, sessionId = this.sessionId) {
+    if (this.closed) return Promise.reject(new Error('CDP is closed'));
     const id = ++this.seq;
     const payload = { id, method, params };
     if (sessionId) payload.sessionId = sessionId;
     return new Promise((resolve, reject) => {
-      this.pending.set(id, { resolve, reject });
-      this.ws.send(JSON.stringify(payload));
+      const timer = setTimeout(() => { this.pending.delete(id); reject(new Error(`CDP timeout: ${method}`)); }, this.timeoutMs);
+      this.pending.set(id, { resolve, reject, timer });
+      try { this.ws.send(JSON.stringify(payload)); }
+      catch (error) { clearTimeout(timer); this.pending.delete(id); reject(error); }
     });
   }
 
@@ -62,17 +78,23 @@ export class Cdp {
     return r.result.value;
   }
 
-  close() { try { this.ws.close(); } catch { /* ignore */ } }
+  close() {
+    this.closed = true;
+    for (const { reject, timer } of this.pending.values()) { clearTimeout(timer); reject(new Error('CDP closed')); }
+    this.pending.clear();
+    try { this.ws.close(); } catch { /* ignore */ }
+  }
 }
 
 export async function launchChrome({
   port = 9333,
-  chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  chromePath = process.env.CHROME_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
   userDataDir,
   extraArgs = [],
   noFlush = false,
   onStderr,
 } = {}) {
+  if (!existsSync(chromePath)) throw new Error(`Chrome not found: ${chromePath}; set CHROME_PATH`);
   const dir = userDataDir ?? mkdtempSync(join(tmpdir(), 'cdp-profile-'));
   const args = [
     '--headless=new',
@@ -98,12 +120,15 @@ export async function launchChrome({
     'about:blank',
   ];
   const proc = spawn(chromePath, args, { stdio: ['ignore', 'ignore', onStderr ? 'pipe' : 'ignore'] });
+  let launchError = null;
+  proc.on('error', (error) => { launchError = error; });
   if (onStderr) proc.stderr.on('data', (d) => onStderr(String(d)));
 
   let version = null;
   for (let i = 0; i < 200; i++) {
+    if (launchError || proc.exitCode !== null) throw launchError ?? new Error(`Chrome exited: ${proc.exitCode}`);
     try {
-      const res = await fetch(`http://127.0.0.1:${port}/json/version`);
+      const res = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(1000) });
       if (res.ok) { version = await res.json(); break; }
     } catch { /* not up yet */ }
     await sleep(100);
@@ -113,7 +138,9 @@ export async function launchChrome({
     throw new Error('Chrome did not expose a DevTools endpoint in time');
   }
 
-  const cdp = await Cdp.connect(version.webSocketDebuggerUrl);
+  let cdp;
+  try { cdp = await Cdp.connect(version.webSocketDebuggerUrl); }
+  catch (error) { proc.kill(); throw error; }
   return {
     cdp,
     proc,

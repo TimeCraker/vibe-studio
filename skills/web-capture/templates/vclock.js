@@ -5,12 +5,14 @@
 // Determinism guarantees:
 //   * performance.now() / Date.now() read from a virtual clock
 //   * setTimeout / setInterval are virtual timers fired during the frame flush
-//   * Math.random is a seeded PRNG that is RE-SEEDED per frame from the absolute
-//     virtual time, so any frame looks identical no matter which chunk produced it
+//   * Math.random is seeded per frame. Stateful pages additionally need replay
+//     from frame zero (capture-clip default), or an explicit pure seek adapter.
+// CSS/WAAPI, media playback, workers, network and crypto RNG are outside this clock.
 (() => {
   const state = { t: 0 };
   const rafQueue = [];
   let rafSeq = 0;
+  const cancelledRaf = new Set();
   let timerSeq = 0;
   let timers = [];
 
@@ -44,7 +46,7 @@
 
   // ---- virtual rAF ---------------------------------------------------------
   window.requestAnimationFrame = (cb) => { const id = ++rafSeq; rafQueue.push({ id, cb }); return id; };
-  window.cancelAnimationFrame = (id) => { const i = rafQueue.findIndex((q) => q.id === id); if (i >= 0) rafQueue.splice(i, 1); };
+  window.cancelAnimationFrame = (id) => { cancelledRaf.add(id); const i = rafQueue.findIndex((q) => q.id === id); if (i >= 0) rafQueue.splice(i, 1); };
 
   // ---- virtual timers ------------------------------------------------------
   const realSetTimeout = window.setTimeout.bind(window);
@@ -73,25 +75,27 @@
       if (!due.length) return firedAny;
       firedAny = true;
       for (const t of due) {
-        if (t.interval) t.due = now + t.interval;
+        if (!timers.some((x) => x.id === t.id)) continue;
+        if (t.interval) t.due += t.interval;
         else timers = timers.filter((x) => x.id !== t.id);
-        try { t.cb(...t.args); } catch (e) { console.error('[vclock] timer failed:', e); }
+        if (typeof t.cb !== 'function') throw new Error('vclock requires function timer callbacks');
+        t.cb(...t.args);
       }
     }
     return firedAny;
   }
 
   function runFrames(now) {
-    for (let pass = 0; pass < MAX_PASSES; pass++) {
-      const batch = rafQueue.splice(0, rafQueue.length);
-      if (!batch.length) return;
-      for (const { cb } of batch) {
-        try { cb(now); } catch (e) { console.error('[vclock] rAF callback failed:', e); }
-      }
+    // Take one snapshot. Callbacks scheduled by this batch belong to NEXT frame.
+    const batch = rafQueue.splice(0, rafQueue.length);
+    for (const { id, cb } of batch) {
+      if (cancelledRaf.delete(id)) continue;
+      cb(now);
     }
   }
 
   function flush(now) {
+    if (!Number.isFinite(now) || now < state.t) throw new Error('vclock time must be finite and monotonic; reload to replay');
     state.t = now;
     reseed(now);
     runDueTimers(now);
@@ -101,7 +105,9 @@
   }
 
   window.__vclock = {
-    reset() { state.t = 0; rafQueue.length = 0; timers = []; timerSeq = 0; reseed(0); },
+    reset() { state.t = 0; rafQueue.length = 0; cancelledRaf.clear(); timers = []; timerSeq = 0; rafSeq = 0; reseed(0); },
+    /** Set action scheduling time without executing another rAF batch. */
+    setTime(ms) { if (!Number.isFinite(ms) || ms < state.t) throw new Error('vclock time must be monotonic'); state.t = ms; reseed(ms); },
     now() { return state.t; },
     /** Advance to an absolute virtual time (ms) and run exactly one frame. */
     stepTo(ms) { flush(ms); },

@@ -1,6 +1,6 @@
 ---
 name: web-capture
-description: 把已有的网页 / HTML / SVG / 代码动画逐帧采集，再用代码化「导演页」剪成成片（触发词：HTML 动画成片 / 网页动画导出视频 / SVG 动画做成视频 / 逐帧采集 / web capture）。零依赖 CDP 逐帧截图、虚拟时钟保证可复现、ffmpeg 直出，不装 npm 包也不用 Playwright。用户说做介绍成片走 workflows/explainer-video.md；已有录像叠动效走 video-motion。
+description: 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动效走 video-motion。
 user-invocable: true
 ---
 
@@ -21,9 +21,11 @@ user-invocable: true
 这是整条线可复现的前提。注入 `templates/vclock.js` 后会接管 `performance.now` / `Date.now` /
 `requestAnimationFrame` / `setTimeout` / `setInterval` / `Math.random`：
 
-- 时间由帧号推出，**同一帧永远长得一样**，可重跑、可 diff、可并行分块采集。
-- `Math.random` 每帧用绝对虚拟时间重新播种（mulberry32），所以并行分块的结果和单进程逐帧**逐字节一致**。
-- 页面里的动画不需要改代码，只要它走 rAF 或定时器。
+- Node 22 以上、Chrome（可用 `CHROME_PATH` 指定）和 FFmpeg 是运行依赖；不需要安装 npm 包。
+- 默认 `mode: "replay"`：每个分块从第零帧执行相同的 rAF、计时器和动作历史，只在所属区间截图。有状态动画不能直接跳过前面的帧。
+- `mode: "seek"`：页面必须提供纯函数 `window.__captureSeek(ms)`，可直接定位。此模式不允许额外 UI actions，状态由适配器负责。
+- rAF 每次推进只执行一次队列快照，下一次 rAF 留到下一帧；随机数按帧播种是辅助条件，不能代替状态重放。
+- 保证范围限固定浏览器、字体、输入和支持的时钟。CSS/WAAPI、媒体播放、Worker、网络与 crypto 随机源不由虚拟时钟接管，需显式适配或换采集方式；不要承诺任意网页都逐字节一致。
 
 没有这一步，采集出来的片子每次都不一样，也就没法迭代。
 
@@ -59,8 +61,7 @@ shot > `--width/--height`（含 shots.json 顶层 `width`/`height`）> 默认 19
 | `window.__debug()` | 返回 `{ missing }`，报告缺哪些源帧 |
 | `window.__cover(opts)` | 渲染封面用的单帧 |
 
-导演页怎么写：从项目施工目录起步（首例参考实现见 pelican-test 项目，成片已归档至 `products/pelican-test/`），
-或按契约自己写。**版式与文案属于项目，不属于本 skill**。
+历史参考制作配方在 `products/pelican-test/recipe/` 与 `products/pelican-ride/recipe/`。先恢复到施工区再修改，不在归档中施工。版式与文案属于项目；新任务优先用本 skill 的通用 project 模板。
 
 ## 命令
 
@@ -97,6 +98,8 @@ node $S/render-director.mjs --project <项目> --cover
 - **配置文件里的 `_comment` 键**：读取时要过滤掉 `_` 前缀的元数据键，否则会被当成条目遍历（踩过）。
 - **录制顺序**：先定 `sections.json` 的段落边界，画面和配乐共用同一张网格，
   这样剪辑点、音乐重拍、章节时间轴三者天然对齐，改一处不用手工对齐另外两处。
+- **失败退出**：CDP 请求与 worker 有超时；浏览器断连会拒绝未完成请求。失败分块不替换上一份完整帧。已有帧目录需带本工具的 `.capture-owner.json`，无标记时使用新的输出目录。
+- **回归**：`node tests/browser-capture.mjs` 用真实浏览器比较带状态、随机数、计时器与动作的顺序/分块 PNG。
 
 ## 边界与不做
 
