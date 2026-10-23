@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23T06:21:26.868Z",
+  "id": "pelican-test",
+  "line": "c",
+  "sourceCommit": "acbcbe00a3734799ecfaf6a956796b5853c81bc3",
+  "sourcePath": "projects/pelican-test/",
+  "provenance": "historical-source-recovery",
+  "reproducibility": "source-restored-inputs-not-fully-verified",
+  "missingExternalInputs": [],
+  "notes": [
+    "Source hashes verified. Historical timing and capture semantics are preserved as evidence; restore into projects before adapting to the current engine.",
+    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated."
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "stored": "recipe/.gitignore",
+      "kind": "source",
+      "bytes": 148,
+      "sha256": "ae452af9ab671497d57e45cbb972e862702c95a8a28c1df46153cac239816caf"
+    },
+    {
+      "path": "capture/anchor-targets.json",
+      "stored": "recipe/capture/anchor-targets.json",
+      "kind": "source",
+      "bytes": 1008,
+      "sha256": "943bd34cb60f424949d69b6a18bddec0f32546083e88dd14e9ea549d47a750cc"
+    },
+    {
+      "path": "capture/anchors.json",
+      "stored": "recipe/capture/anchors.json",
+      "kind": "source",
+      "bytes": 2818,
+      "sha256": "2e7afdd08e447b0e4f2e0f71c95c228a382c8e980b1c7925c93948ccc63f175c"
+    },
+    {
+      "path": "capture/boot/a-day.js",
+      "stored": "recipe/capture/boot/a-day.js",
+      "kind": "source",
+      "bytes": 224,
+      "sha256": "65eebf635ec30837324dec4dd0c4a01b3188cfa7c44913281bb4762258179332"
+    },
+    {
+      "path": "capture/boot/a-night.js",
+      "stored": "recipe/capture/boot/a-night.js",
+      "kind": "source",
+      "bytes": 290,
+      "sha256": "79b25c77cc9c8bd1cfb882cd60cfb36a5a4cf82aea9d065a0f305bfefa46837f"
+    },
+    {
+      "path": "capture/boot/a-sunset.js",
+      "stored": "recipe/capture/boot/a-sunset.js",
+      "kind": "source",
+      "bytes": 304,
+      "sha256": "7924737d25f256f22fd2d252f379e1be1c9fb9eb62e79eccf8307f0d49c53fc3"
+    },
+    {
+      "path": "capture/boot/b-day.js",
+      "stored": "recipe/capture/boot/b-day.js",
+      "kind": "source",
+      "bytes": 143,
+      "sha256": "9a00f7979e1fec5e2e82c57177b5e2eaae563b4acf1596d966f85aca1700e9b7"
+    },
+    {
+      "path": "capture/boot/b-full.js",
+      "stored": "recipe/capture/boot/b-full.js",
+      "kind": "source",
+      "bytes": 251,
+      "sha256": "668cc404d2009a09ff1dee7ef2cf87a503f705e83353079ddecd045bd7b1348e"
+    },
+    {
+      "path": "capture/boot/b-night.js",
+      "stored": "recipe/capture/boot/b-night.js",
+      "kind": "source",
+      "bytes": 147,
+      "sha256": "3692bf54fd9a7e0c123b8721f3f61cc376a42c461f0260c6bc534c4b9cbc592c"
+    },
+    {
+      "path": "capture/boot/b-sunset.js",
+      "stored": "recipe/capture/boot/b-sunset.js",
+      "kind": "source",
+      "bytes": 149,
+      "sha256": "779fb35640aa2ce9215a930a647482c6256f814987acf604a14d701680e6c398"
+    },
+    {
+      "path": "capture/shots.json",
+      "stored": "recipe/capture/shots.json",
+      "kind": "source",
+      "bytes": 2369,
+      "sha256": "998a985c4613ff98d6d1f8c89f15937774688540bd4c2bbd6b2fe0d9491e5df4"
+    },
+    {
+      "path": "douyin-form.json",
+      "stored": "recipe/douyin-form.json",
+      "kind": "source",
+      "bytes": 829,
+      "sha256": "fd8c69159aacc18bec559b79aa86ae39c9b01af76e8f8f122043442d23881b6a"
+    },
+    {
+      "path": "edit/covers.json",
+      "stored": "recipe/edit/covers.json",
+      "kind": "source",
+      "bytes": 711,
+      "sha256": "eb267e4ad195095d94d9b62d098aa2d0beaf6fc85bb9ad0a798b848ff3381d61"
+    },
+    {
+      "path": "edit/director.html",
+      "stored": "recipe/edit/director.html",
+      "kind": "source",
+      "bytes": 10399,
+      "sha256": "8341da64d840c0a664d0e4ad7bf5154f5c51ec066be254dd717dc7f1ca6d0132"
+    },
+    {
+      "path": "edit/director.js",
+      "stored": "recipe/edit/director.js",
+      "kind": "source",
+      "bytes": 24181,
+      "sha256": "2d2bec8bea8a965be394bd923a6d1a7cba6562a1bfeb296568f92a5a14099e02"
+    },
+    {
+      "path": "edit/sections.json",
+      "stored": "recipe/edit/sections.json",
+      "kind": "source",
+      "bytes": 911,
+      "sha256": "459be4006446661c08d78e6b78be35cf46294d822bd62c3099c5065ae9dbc52d"
+    },
+    {
+      "path": "edit/timeline.js",
+      "stored": "recipe/edit/timeline.js",
+      "kind": "source",
+      "bytes": 11125,
+      "sha256": "e42dbb936ddb2137eb7fa7a6d5e8633e5aa16aaba7689dedeb49993ceec9a8b2"
+    },
+    {
+      "path": "form.json",
+      "stored": "recipe/form.json",
+      "kind": "source",
+      "bytes": 1880,
+      "sha256": "7ad1bd1e7b7b70e7c42926dd70ee24939be59c44ffb8dbabe237a393da6ddc15"
+    },
+    {
+      "path": "publish-plan.json",
+      "stored": "recipe/publish-plan.json",
+      "kind": "source",
+      "bytes": 872,
+      "sha256": "b8a298261fb921f64d65926dfe15fa9e9f52ac40ece733d0485e088bbc5f93ee"
+    },
+    {
+      "path": "README.md",
+      "stored": "recipe/README.md",
+      "kind": "source",
+      "bytes": 9612,
+      "sha256": "9eb9049f34070537b3e6ff7d028d12ceec479a942dac586dd907e4514a685f16"
+    },
+    {
+      "path": "tools/assemble.mjs",
+      "stored": "recipe/tools/assemble.mjs",
+      "kind": "source",
+      "bytes": 4333,
+      "sha256": "1578ce9123a187a7b7fc96142febd3169f28ca0b5db4abe30866fa2b01511c83"
+    },
+    {
+      "path": "tools/audit-text-overlap.mjs",
+      "stored": "recipe/tools/audit-text-overlap.mjs",
+      "kind": "source",
+      "bytes": 2801,
+      "sha256": "1d61669fa861f74ca6700563a16163e422ff3d2c5441dc3f4a2fc431a6f9a5bd"
+    },
+    {
+      "path": "tools/make-preview-index.mjs",
+      "stored": "recipe/tools/make-preview-index.mjs",
+      "kind": "source",
+      "bytes": 2046,
+      "sha256": "a89454217de0f4b6ba47fc4f71f44287e92cd12e59bc0295e87bd064ba65ea09"
+    },
+    {
+      "path": "tools/probe-layout.mjs",
+      "stored": "recipe/tools/probe-layout.mjs",
+      "kind": "source",
+      "bytes": 4597,
+      "sha256": "472ae6ad62ce410677ee2f02bb4649d287a07de941845e853804d5bf002edccc"
+    },
+    {
+      "path": "tools/profile-capture.mjs",
+      "stored": "recipe/tools/profile-capture.mjs",
+      "kind": "source",
+      "bytes": 3132,
+      "sha256": "cd020e5a05bae32b6549c676396fecb77e203372af3339678ed78503d8f09177"
+    },
+    {
+      "path": "tools/validate-plan.mjs",
+      "stored": "recipe/tools/validate-plan.mjs",
+      "kind": "source",
+      "bytes": 9084,
+      "sha256": "ffb2bb6bd3977177b57bce7ba3b37d2be900f145fc7abe5300f4ed77f4485150"
+    },
+    {
+      "path": "tools/verify-master.mjs",
+      "stored": "recipe/tools/verify-master.mjs",
+      "kind": "source",
+      "bytes": 5869,
+      "sha256": "f31dc2dc1f84a9d83559f93fd073ccf444eee7eb20262dca8d32d29007342600"
+    },
+    {
+      "path": "xhs-form.json",
+      "stored": "recipe/xhs-form.json",
+      "kind": "source",
+      "bytes": 783,
+      "sha256": "ec53f2d21ad9fdc41c69041bf0904335725ed9d162582ffbcd12bb788e9c4c4b"
+    }
+  ]
+}

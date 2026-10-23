@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23T06:21:25.500Z",
+  "id": "lekao-intro",
+  "line": "b",
+  "sourceCommit": "acbcbe00a3734799ecfaf6a956796b5853c81bc3",
+  "sourcePath": "projects/lekao-intro/",
+  "provenance": "historical-source-recovery",
+  "reproducibility": "source-restored-inputs-not-fully-verified",
+  "missingExternalInputs": [
+    {
+      "kind": "voice-and-screenshots",
+      "path": "remotion-app/public/deck/",
+      "reason": "original per-page voice and project public assets were not tracked; final mp4 is not a substitute"
+    }
+  ],
+  "notes": [
+    "Source hashes verified. Historical timing and capture semantics are preserved as evidence; restore into projects before adapting to the current engine.",
+    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated."
+  ],
+  "files": [
+    {
+      "path": "asset-prompts.md",
+      "stored": "recipe/asset-prompts.md",
+      "kind": "source",
+      "bytes": 3396,
+      "sha256": "abd0ce5aa01253ea3136dc484482ec772b67706fa5e482bd85b9f32bbb1dce3d"
+    },
+    {
+      "path": "brief.md",
+      "stored": "recipe/brief.md",
+      "kind": "source",
+      "bytes": 2255,
+      "sha256": "87152c4cc489bf302d542b8c59663f941f47c390eb27dbbc0710b6d0638e984b"
+    },
+    {
+      "path": "mg-armed-design.md",
+      "stored": "recipe/mg-armed-design.md",
+      "kind": "source",
+      "bytes": 3628,
+      "sha256": "16761a03197150e590a26475a5262e00ccb5a81f8ab28b860f0545c345153180"
+    },
+    {
+      "path": "README.md",
+      "stored": "recipe/README.md",
+      "kind": "source",
+      "bytes": 1713,
+      "sha256": "dc54e6a8f21a4f5d08297f74b58b4b0403a6b058d50b8a978f12921262e45daa"
+    },
+    {
+      "path": "remotion-app/.npmrc",
+      "stored": "recipe/remotion-app/.npmrc",
+      "kind": "source",
+      "bytes": 40,
+      "sha256": "3fc62c79e2d5c41dd6446a8b328705ea8384bd99c9a6b3ec2f6e9de1dbe612bc"
+    },
+    {
+      "path": "remotion-app/package-lock.json",
+      "stored": "recipe/remotion-app/package-lock.json",
+      "kind": "source",
+      "bytes": 156516,
+      "sha256": "919b6ac935281901b942bf96876725661f17667857e8561cca1fd595a5a7ad25"
+    },
+    {
+      "path": "remotion-app/package.json",
+      "stored": "recipe/remotion-app/package.json",
+      "kind": "source",
+      "bytes": 1172,
+      "sha256": "9afcf6cbc183d941813fb4904eeda88634e80529344f8dea9a538cfe04b7fe01"
+    },
+    {
+      "path": "remotion-app/remotion/demo-index.ts",
+      "stored": "recipe/remotion-app/remotion/demo-index.ts",
+      "kind": "source",
+      "bytes": 276,
+      "sha256": "e547ac757e8df5971a79f81cb92762a6454ce7669e72fe9e21ff09bf403e6d62"
+    },
+    {
+      "path": "remotion-app/remotion/index.ts",
+      "stored": "recipe/remotion-app/remotion/index.ts",
+      "kind": "source",
+      "bytes": 114,
+      "sha256": "769e484ef1a96bbc65d14b1a83a5a87d5c79a3e0e3bb44b560049f0963ae61b6"
+    },
+    {
+      "path": "remotion-app/scripts/build-deck-params.mjs",
+      "stored": "recipe/remotion-app/scripts/build-deck-params.mjs",
+      "kind": "source",
+      "bytes": 4003,
+      "sha256": "a0fb674d1465ca23137abe3c346773780a94041dcd6b08a3459b03bbec6efc32"
+    },
+    {
+      "path": "remotion-app/scripts/extract_pages.py",
+      "stored": "recipe/remotion-app/scripts/extract_pages.py",
+      "kind": "source",
+      "bytes": 2047,
+      "sha256": "555c544f9b03f61ea277762dccc0bc24339d3f5a3e9aeb74b3e1f03b0b093080"
+    },
+    {
+      "path": "remotion-app/scripts/make_deck_audio.ps1",
+      "stored": "recipe/remotion-app/scripts/make_deck_audio.ps1",
+      "kind": "source",
+      "bytes": 2314,
+      "sha256": "fab7339dac0ed3dbf2ec834079427a0b442bc1f0630b60668179bf5fd3e45c2c"
+    },
+    {
+      "path": "remotion-app/scripts/probe-footage.mjs",
+      "stored": "recipe/remotion-app/scripts/probe-footage.mjs",
+      "kind": "source",
+      "bytes": 1491,
+      "sha256": "90d00773ff80953dfee648fe4c7cd324503969f932ba7e35ce504b0761657dad"
+    },
+    {
+      "path": "remotion-app/src/cover-index.ts",
+      "stored": "recipe/remotion-app/src/cover-index.ts",
+      "kind": "source",
+      "bytes": 1027,
+      "sha256": "03668e743ef9130e12b4132d4709cad864c69f957435ed24a51236f584558271"
+    },
+    {
+      "path": "remotion-app/src/Cover.tsx",
+      "stored": "recipe/remotion-app/src/Cover.tsx",
+      "kind": "source",
+      "bytes": 3995,
+      "sha256": "14b4159506c007d0e0b4555a2c3d1b2911f87d17a1f45b51c9df10e34f47f40c"
+    },
+    {
+      "path": "remotion-app/src/cover3-index.ts",
+      "stored": "recipe/remotion-app/src/cover3-index.ts",
+      "kind": "source",
+      "bytes": 676,
+      "sha256": "712e0fc44dff1e0c178c70271b27167558c6a06445b8371f16f4fe3c46034a34"
+    },
+    {
+      "path": "remotion-app/src/CoverV3.tsx",
+      "stored": "recipe/remotion-app/src/CoverV3.tsx",
+      "kind": "source",
+      "bytes": 4715,
+      "sha256": "d11b10e2774ba22045e3d4c3d91cffd17c999ff2b917f2ecdc7fb2d664aa0f67"
+    },
+    {
+      "path": "remotion-app/src/cues.ts",
+      "stored": "recipe/remotion-app/src/cues.ts",
+      "kind": "source",
+      "bytes": 2551,
+      "sha256": "03df7add8978c9180ba036eaa61e325d708cc6be6ce95fd7217f4b1272fbabef"
+    },
+    {
+      "path": "remotion-app/src/deck-cues.ts",
+      "stored": "recipe/remotion-app/src/deck-cues.ts",
+      "kind": "source",
+      "bytes": 2345,
+      "sha256": "68dc4ea6b543e3acd1c873290fb43593b9f20519c864d82c9cbbaf674853fd8a"
+    },
+    {
+      "path": "remotion-app/src/deck-params.ts",
+      "stored": "recipe/remotion-app/src/deck-params.ts",
+      "kind": "source",
+      "bytes": 1056,
+      "sha256": "ae3a4b962eaf56acedff7ed2474bbc40ec5d93f1c86f1ea721f233a2aad33b83"
+    },
+    {
+      "path": "remotion-app/src/deck-scenes.tsx",
+      "stored": "recipe/remotion-app/src/deck-scenes.tsx",
+      "kind": "source",
+      "bytes": 39083,
+      "sha256": "6d890961184e3179fbf471b7bbe88959e7eb4588a19557d1b034f69ba24d8e1a"
+    },
+    {
+      "path": "remotion-app/src/DeckVideo.tsx",
+      "stored": "recipe/remotion-app/src/DeckVideo.tsx",
+      "kind": "source",
+      "bytes": 2059,
+      "sha256": "10306c827c16edb1a05e017c2e78a50be1a0f9863dd47050d9652f7896b72768"
+    },
+    {
+      "path": "remotion-app/src/DeckVideoV2.tsx",
+      "stored": "recipe/remotion-app/src/DeckVideoV2.tsx",
+      "kind": "source",
+      "bytes": 3667,
+      "sha256": "713dc8060da4189eea438efec5b0dc2f49a2241d77495eaf58c3d176aefeae7b"
+    },
+    {
+      "path": "remotion-app/src/Demos.tsx",
+      "stored": "recipe/remotion-app/src/Demos.tsx",
+      "kind": "source",
+      "bytes": 1546,
+      "sha256": "1a4cbd3b928c70632d5b51667bf307079b961bb5712ec3d77ecf3e1914cb141a"
+    },
+    {
+      "path": "remotion-app/src/fonts.ts",
+      "stored": "recipe/remotion-app/src/fonts.ts",
+      "kind": "source",
+      "bytes": 1424,
+      "sha256": "51f1efb67ef828dcc6da2cc8389fed5a54773855256481137380ce775f22e718"
+    },
+    {
+      "path": "remotion-app/src/footage-params.ts",
+      "stored": "recipe/remotion-app/src/footage-params.ts",
+      "kind": "source",
+      "bytes": 169,
+      "sha256": "ec075317c6b427ae2ffb8120636eaf8d82fec8992ff02a02aeb410276563512b"
+    },
+    {
+      "path": "remotion-app/src/FootageOverlay.tsx",
+      "stored": "recipe/remotion-app/src/FootageOverlay.tsx",
+      "kind": "source",
+      "bytes": 1187,
+      "sha256": "40eb1e59e7061edb4e24fe9d061ee7b946d7147c1449a7af26c8a9efee045454"
+    },
+    {
+      "path": "remotion-app/src/fx/DataBars.tsx",
+      "stored": "recipe/remotion-app/src/fx/DataBars.tsx",
+      "kind": "source",
+      "bytes": 4408,
+      "sha256": "1a95f797cdee2209eed62e2b273a368a5dcdbb9452f91c94b2e293add1839f17"
+    },
+    {
+      "path": "remotion-app/src/fx/Spotlight.tsx",
+      "stored": "recipe/remotion-app/src/fx/Spotlight.tsx",
+      "kind": "source",
+      "bytes": 4316,
+      "sha256": "5d6290208de7089ec0c1713653c4a420124b12d20295848b493a2893049e9532"
+    },
+    {
+      "path": "remotion-app/src/fx/srt-adapter.ts",
+      "stored": "recipe/remotion-app/src/fx/srt-adapter.ts",
+      "kind": "source",
+      "bytes": 553,
+      "sha256": "d1844f2071d8a126e674ab187038c5de212d7330ceea1fee34d2cbdd79fa37b9"
+    },
+    {
+      "path": "remotion-app/src/fx/SubtitleTrack.tsx",
+      "stored": "recipe/remotion-app/src/fx/SubtitleTrack.tsx",
+      "kind": "source",
+      "bytes": 6335,
+      "sha256": "6c2a81f13d5ecf13d1c8b8a1bd2c1ec4e38eb73b0d9ad8e1697b2daeba9f9658"
+    },
+    {
+      "path": "remotion-app/src/kit-demos.tsx",
+      "stored": "recipe/remotion-app/src/kit-demos.tsx",
+      "kind": "source",
+      "bytes": 22764,
+      "sha256": "26c0f7779e66cdd236b2287917eea3fa93f45689f46478ba9fd175e93ed271c6"
+    },
+    {
+      "path": "remotion-app/src/Root.tsx",
+      "stored": "recipe/remotion-app/src/Root.tsx",
+      "kind": "source",
+      "bytes": 2919,
+      "sha256": "161a9ce550416c093f254e51e9d1a4ed1f5a5c190c8834d27274cacec04933be"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/BlurTrail.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/BlurTrail.tsx",
+      "kind": "source",
+      "bytes": 2582,
+      "sha256": "9ffc0a0f32e2b57ebb2a2c30215bec2b73674bb66a5b3926c8fb854b5f5971a4"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ChartGrow.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ChartGrow.tsx",
+      "kind": "source",
+      "bytes": 8513,
+      "sha256": "ae190dc23f5cc195b9dd52e9bb4fc7c1bc1490f392db04d7550a47bc84c8c2f4"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ChatReplay.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ChatReplay.tsx",
+      "kind": "source",
+      "bytes": 11714,
+      "sha256": "8d558cfdf507e8a71ea9d7a535fa6c8bc7eb3490c00524da13cf58dd9ca6bf9f"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/CountUp.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/CountUp.tsx",
+      "kind": "source",
+      "bytes": 1584,
+      "sha256": "48579f4a6b40ceb027a2e39bc7eca4b8552910f5d10675ed54bf73900e4dbe22"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/DeviceFrame.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/DeviceFrame.tsx",
+      "kind": "source",
+      "bytes": 10324,
+      "sha256": "570f40d7b6e00cdc3d1d47adcb572c8aab5dbb777cb3eee1d65da5362be3f873"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/DrawPath.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/DrawPath.tsx",
+      "kind": "source",
+      "bytes": 3122,
+      "sha256": "82ddbefa5e8dac358e7d25212ad5e40c101361626177373e0342e415ddd73c27"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/DropCard.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/DropCard.tsx",
+      "kind": "source",
+      "bytes": 2587,
+      "sha256": "b34ae1e0a226196b08230d688a141fe28d09eb5c64e7a4ca986e3e34483aaf22"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/entrance-kit.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/entrance-kit.tsx",
+      "kind": "source",
+      "bytes": 6920,
+      "sha256": "dc933a2850f3eff2ae364895062db9e7ea691adeb960dd7c83b91083325111a5"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/FitText.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/FitText.tsx",
+      "kind": "source",
+      "bytes": 3108,
+      "sha256": "d802b0f4f1ede56aad825e95ef3140d83bcc381d79d98e014581054af9f66687"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/FloatWrap.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/FloatWrap.tsx",
+      "kind": "source",
+      "bytes": 780,
+      "sha256": "87ac64288b5a73373072e4e2cf0100961a22684536c40b1b2d7ea10646801c18"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/GifLayer.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/GifLayer.tsx",
+      "kind": "source",
+      "bytes": 706,
+      "sha256": "927a768e50f55d5adeb5c41a0a036d1eeb0cae306c0bec5625e115889b62d758"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/GlowPulse.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/GlowPulse.tsx",
+      "kind": "source",
+      "bytes": 1160,
+      "sha256": "b85c9892dc1c1ce15e46ccf110670aee3492e63bea9909182272790e81a3fbdc"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/LottieLayer.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/LottieLayer.tsx",
+      "kind": "source",
+      "bytes": 2406,
+      "sha256": "f5219c2e13a79536764270c0e1bf51050f5b665c62d2887c0150a7194e33fb23"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/NoiseField.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/NoiseField.tsx",
+      "kind": "source",
+      "bytes": 2513,
+      "sha256": "3a6fca6755ac10562ab7a277b594e48c3cc1dd69503867dea5f2c849801f8798"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/SceneBg.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/SceneBg.tsx",
+      "kind": "source",
+      "bytes": 3178,
+      "sha256": "b4863383255652f13023cad41e5c6fedc2ce41e946de3b04a8d82cadacfa3ff7"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/SceneShell.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/SceneShell.tsx",
+      "kind": "source",
+      "bytes": 3707,
+      "sha256": "355c156b673d51b9cf4e0b4c1558260e906fa109d4ab4aa8e27ec5a3f4242bb6"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ShapeMorph.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ShapeMorph.tsx",
+      "kind": "source",
+      "bytes": 2386,
+      "sha256": "7be57ddc90d1127546ef6577edf654e479b43cfae561fa1cec73ab6c17082ad6"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ShutterBlur.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ShutterBlur.tsx",
+      "kind": "source",
+      "bytes": 772,
+      "sha256": "cf3df4b3f725c1dca98295717e2af422a60849e414b4ab1412846271344d8ec3"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/StaggerList.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/StaggerList.tsx",
+      "kind": "source",
+      "bytes": 1518,
+      "sha256": "7d926537f4be2336396f189241928d6909ca8aeb226e3798425df59d5c63e0c0"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/TextReveal.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/TextReveal.tsx",
+      "kind": "source",
+      "bytes": 3146,
+      "sha256": "d60c098e860e89e230033a0270e65f4328eb51075343047900f89b4511587864"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ThreeStage.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ThreeStage.tsx",
+      "kind": "source",
+      "bytes": 1394,
+      "sha256": "134dc44117975524148a9a153cd07202bc43d5dcef0750ff3aca117dcf21697e"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/tokens.ts",
+      "stored": "recipe/remotion-app/src/scene-kit/tokens.ts",
+      "kind": "source",
+      "bytes": 1567,
+      "sha256": "ff52cc13f36353814334b9c250dfc16f2c42e9c3d5737135a49c88cd2cbe0c68"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/TopProgress.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/TopProgress.tsx",
+      "kind": "source",
+      "bytes": 1426,
+      "sha256": "6830363f19518417cdccc71ddd06b2ef51d9e12bbc6c9b2b4b4d00a03edf2d41"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/TypingTerminal.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/TypingTerminal.tsx",
+      "kind": "source",
+      "bytes": 3469,
+      "sha256": "b2c2080b67286f74dcdcf3ed3e283c5997d8f58d5c23fd538ff1515745a175b1"
+    },
+    {
+      "path": "remotion-app/src/transitions.tsx",
+      "stored": "recipe/remotion-app/src/transitions.tsx",
+      "kind": "source",
+      "bytes": 1912,
+      "sha256": "b41c430dfdca08e3a6448ad1267530f908435e7cac87983ec26f5c30e89715a4"
+    },
+    {
+      "path": "remotion-app/src/vendor/onda/depth-push.tsx",
+      "stored": "recipe/remotion-app/src/vendor/onda/depth-push.tsx",
+      "kind": "source",
+      "bytes": 2750,
+      "sha256": "2bd9880f41262c8d8863a8f34b41936fb842b167399d65eb511bdd6f10431d27"
+    },
+    {
+      "path": "remotion-app/src/vendor/README.md",
+      "stored": "recipe/remotion-app/src/vendor/README.md",
+      "kind": "source",
+      "bytes": 2466,
+      "sha256": "e15626126cc33ba88475655d6107d8be83103f6821e587324af37a557f8e217c"
+    },
+    {
+      "path": "remotion-app/src/vendor/snapcn/cursor-track.tsx",
+      "stored": "recipe/remotion-app/src/vendor/snapcn/cursor-track.tsx",
+      "kind": "source",
+      "bytes": 14476,
+      "sha256": "1bccc515c55d097d8f6d40ff2ff0ce62c762bc314740f141968f77ed0f73abe2"
+    },
+    {
+      "path": "remotion-app/tsconfig.json",
+      "stored": "recipe/remotion-app/tsconfig.json",
+      "kind": "source",
+      "bytes": 418,
+      "sha256": "cb6d04ded64d24fdb00ecdb9939ad42ff647e2c53e1be06497e6ef47cbf84355"
+    },
+    {
+      "path": "scene-design.md",
+      "stored": "recipe/scene-design.md",
+      "kind": "source",
+      "bytes": 15102,
+      "sha256": "fe72cfd7ae020e232c0c5bad50d8dffbb91e1c4d7f5ce1247524bd80f682e019"
+    },
+    {
+      "path": "script.json",
+      "stored": "recipe/script.json",
+      "kind": "source",
+      "bytes": 4003,
+      "sha256": "a5104e3d3b809eaa6a07dc380c6087b954f0748da5bd18f717066f3160e1a369"
+    }
+  ]
+}

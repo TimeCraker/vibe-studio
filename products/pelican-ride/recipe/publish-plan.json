@@ -1,0 +1,27 @@
+{
+  "_comment": "并行发布清单。launch 仍用 skills/publish 的 launch 命令（独立 profile + 调试端口：bili=9222, douyin=9223, xhs=9224），填表走本项目 pw/ 的 Playwright 脚本（connectOverCDP 附着），默认 --dry 只填表 + 自查截图；发布按钮由人在每个平台各自点。video/cover 路径相对本目录。",
+  "video": "../../products/pelican-ride/pelican-ride-1080p.mp4",
+  "cover": "../../products/pelican-ride/pelican-ride-cover.png",
+  "covers": {
+    "douyin-h": "../../projects/pelican-ride/render/covers/pelican-ride-cover-douyin-h.png",
+    "douyin-v": "../../projects/pelican-ride/render/covers/pelican-ride-cover-douyin-v.png",
+    "xhs": "AI 推荐封面，发布页现场「应用」"
+  },
+  "platforms": {
+    "bili": {
+      "spec": "form.json",
+      "declare": "含AI生成内容",
+      "category": "人工智能"
+    },
+    "douyin": {
+      "spec": "douyin-form.json",
+      "names": "AI,GPT,Codex,人工智能,程序员",
+      "declare": "内容由AI生成"
+    },
+    "xhs": {
+      "spec": "xhs-form.json",
+      "topics": "鹈鹕,AI绘画,Codex,GPT",
+      "declare": "笔记含AI合成内容"
+    }
+  }
+}

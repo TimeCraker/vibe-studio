@@ -1,0 +1,16 @@
+{
+  "name": "vertical",
+  "output": "render/rough-vertical.mp4",
+  "_comment": "抖音竖版 45s 粗剪。顺序：hook 万亿数字 → GM台银狼语音 → 蓝紫ult → 昔涟完整体 → 万亿第二波 → 真伤雨 → 挑战成功 → 黑场收尾。",
+  "segments": [
+    { "id": "V01", "src": "dvr", "ss": 238.6, "dur": 2.8, "speed": 1.0, "audio": true,  "note": "hook：万亿数字直出" },
+    { "id": "V02", "src": "long", "ss": 738.0, "dur": 6.0, "speed": 1.0, "audio": true,  "note": "GM操作台+银狼语音（题眼）" },
+    { "id": "V03", "src": "dvr", "ss": 222.5, "dur": 6.0, "speed": 1.0, "audio": true,  "note": "蓝紫ult+拟似黑渊" },
+    { "id": "V04", "src": "dvr", "ss": 242.0, "dur": 8.0, "speed": 1.0, "audio": true,  "note": "昔涟完整体ult" },
+    { "id": "V05", "src": "dvr", "ss": 253.0, "dur": 4.5, "speed": 1.0, "audio": true,  "note": "粉发特写→幸运暴击5566亿" },
+    { "id": "V06", "src": "dvr", "ss": 266.5, "dur": 4.0, "speed": 1.0, "audio": true,  "note": "万亿数字第二波" },
+    { "id": "V07", "src": "dvr", "ss": 271.0, "dur": 5.5, "speed": 1.0, "audio": true,  "note": "真伤数字雨" },
+    { "id": "V08", "src": "dvr", "ss": 276.5, "dur": 2.2, "speed": 1.0, "audio": true,  "note": "挑战成功" },
+    { "id": "V09", "src": "color", "color": "#0A0D16", "dur": 3.5, "speed": 1.0, "audio": false, "note": "收尾黑场" }
+  ]
+}

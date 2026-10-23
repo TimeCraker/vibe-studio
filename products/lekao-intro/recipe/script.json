@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "LeKao 产品介绍视频",
+    "lang": "zh",
+    "budgetSeconds": 75,
+    "charsPerSecond": 4.5,
+    "bannedWords": [
+      "赋能",
+      "闭环",
+      "沉淀",
+      "矩阵",
+      "生态",
+      "一站式",
+      "端到端",
+      "付费",
+      "充值",
+      "价格",
+      "收费",
+      "免费",
+      "退款",
+      "成本",
+      "花钱"
+    ]
+  },
+  "segments": [
+    {
+      "id": 1,
+      "kind": "subtitle",
+      "text": "LeKao，AI 智能助教助手。",
+      "ref": "page 1"
+    },
+    {
+      "id": 2,
+      "kind": "subtitle",
+      "text": "K12 机构助教的 AI 工作台。",
+      "ref": "page 1"
+    },
+    {
+      "id": 3,
+      "kind": "subtitle",
+      "text": "每次课，抄错题、写小结、写反馈。",
+      "ref": "page 2"
+    },
+    {
+      "id": 4,
+      "kind": "subtitle",
+      "text": "三件事，吃掉 1 到 2 个小时。",
+      "ref": "page 2"
+    },
+    {
+      "id": 5,
+      "kind": "subtitle",
+      "text": "这三件事，LeKao 一次接走。",
+      "ref": "page 3"
+    },
+    {
+      "id": 6,
+      "kind": "subtitle",
+      "text": "小结、反馈、错题集，全是成品。",
+      "ref": "page 3"
+    },
+    {
+      "id": 7,
+      "kind": "subtitle",
+      "text": "讲义拍照上传，AI 先读图。",
+      "ref": "page 4"
+    },
+    {
+      "id": 8,
+      "kind": "subtitle",
+      "text": "学科、章节、知识点，自动认。",
+      "ref": "page 4"
+    },
+    {
+      "id": 9,
+      "kind": "subtitle",
+      "text": "10 条反馈加一段小结，直接出。",
+      "ref": "page 4"
+    },
+    {
+      "id": 10,
+      "kind": "subtitle",
+      "text": "作业堂测，同样传图生成。",
+      "ref": "page 5"
+    },
+    {
+      "id": 11,
+      "kind": "subtitle",
+      "text": "逐题反馈，再加总体小结。",
+      "ref": "page 5"
+    },
+    {
+      "id": 12,
+      "kind": "subtitle",
+      "text": "字数四挡，标准到三倍随意选。",
+      "ref": "page 5"
+    },
+    {
+      "id": 13,
+      "kind": "subtitle",
+      "text": "全班错题集，五分钟成档。",
+      "ref": "page 6"
+    },
+    {
+      "id": 14,
+      "kind": "subtitle",
+      "text": "Excel 模板填好，图片拖进来。",
+      "ref": "page 6"
+    },
+    {
+      "id": 15,
+      "kind": "subtitle",
+      "text": "浏览器里直接生成 Word。",
+      "ref": "page 6"
+    },
+    {
+      "id": 16,
+      "kind": "subtitle",
+      "text": "T-Coin 哪里来？每天签到。",
+      "ref": "page 7"
+    },
+    {
+      "id": 17,
+      "kind": "subtitle",
+      "text": "连续签到，从 2 币涨到 8 币。",
+      "ref": "page 7"
+    },
+    {
+      "id": 18,
+      "kind": "subtitle",
+      "text": "生成一次花 1 币，失败自动退回。",
+      "ref": "page 7"
+    },
+    {
+      "id": 19,
+      "kind": "subtitle",
+      "text": "手机上传，图片自动压缩。",
+      "ref": "page 8"
+    },
+    {
+      "id": 20,
+      "kind": "subtitle",
+      "text": "生成流式显示，边跑边出。",
+      "ref": "page 8"
+    },
+    {
+      "id": 21,
+      "kind": "subtitle",
+      "text": "历史存在本地，随时回看。",
+      "ref": "page 8"
+    },
+    {
+      "id": 22,
+      "kind": "subtitle",
+      "text": "邮箱加验证码，注册就能用。",
+      "ref": "page 9"
+    },
+    {
+      "id": 23,
+      "kind": "subtitle",
+      "text": "传讲义，选功能，拿结果。",
+      "ref": "page 9"
+    },
+    {
+      "id": 24,
+      "kind": "subtitle",
+      "text": "记住一句话就够了。",
+      "ref": "page 10"
+    },
+    {
+      "id": 25,
+      "kind": "subtitle",
+      "text": "把每次课的 1 到 2 小时，还给教学。",
+      "ref": "page 10"
+    },
+    {
+      "id": 26,
+      "kind": "subtitle",
+      "text": "打开官网，现在就能试。",
+      "ref": "page 11"
+    },
+    {
+      "id": 27,
+      "kind": "subtitle",
+      "text": "每次课，省回 1 到 2 小时。",
+      "ref": "page 11"
+    }
+  ]
+}

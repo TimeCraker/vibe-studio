@@ -1,0 +1,7 @@
+{
+  "_comment": "页面模式锚点（探针固定 1920x1080 视口，归一化坐标）。scene-* 镜头场景铺满画面，其锚点由 SVG viewBox 1200x650 直接归一化换算，不依赖本文件。探针在虚拟时间 2s 处量，腿是运动部件，坐标为该瞬间包围盒。",
+  "A": {
+    "html": "capture/src/pelican-ride.html",
+    "ids": ["scene", "sceneShell", "rearWheel", "frontWheel", "crank", "nearLeg", "farLeg", "birdBody", "scarfTail", "toggle", "restart", "speed", "stateLabel", "toggleText", "speedValue"]
+  }
+}

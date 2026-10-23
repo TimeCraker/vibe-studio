@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23T06:21:28.795Z",
+  "id": "pelican-ride",
+  "line": "c",
+  "sourceCommit": "acbcbe00a3734799ecfaf6a956796b5853c81bc3",
+  "sourcePath": "projects/pelican-ride/",
+  "provenance": "historical-source-recovery",
+  "reproducibility": "source-restored-inputs-not-fully-verified",
+  "missingExternalInputs": [],
+  "notes": [
+    "Source hashes verified. Historical timing and capture semantics are preserved as evidence; restore into projects before adapting to the current engine.",
+    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated."
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "stored": "recipe/.gitignore",
+      "kind": "source",
+      "bytes": 144,
+      "sha256": "a0858c289af6474afe86c3d32c88a28d1f815ae084d61cbf6ffdfcdef941ed04"
+    },
+    {
+      "path": "capture/anchor-targets.json",
+      "stored": "recipe/capture/anchor-targets.json",
+      "kind": "source",
+      "bytes": 542,
+      "sha256": "8d953e9520972e2379d131842c9e4e15e6d4962a34c218c3870f1e59b1f87501"
+    },
+    {
+      "path": "capture/anchors.json",
+      "stored": "recipe/capture/anchors.json",
+      "kind": "source",
+      "bytes": 1794,
+      "sha256": "e423e8cd3bf5f1a9446313c579eb54e27e57f98470d14d376bfd0bd44fe5c6ca"
+    },
+    {
+      "path": "capture/assets/codex-session.png",
+      "stored": "media/capture/assets/codex-session.png",
+      "kind": "media",
+      "bytes": 342641,
+      "sha256": "2657280ec8358b392bbebc086b248e7a478d9ead169f07abfbc937a6f1791f5e"
+    },
+    {
+      "path": "capture/boot/plate-05.js",
+      "stored": "recipe/capture/boot/plate-05.js",
+      "kind": "source",
+      "bytes": 748,
+      "sha256": "b7b1fd757d766ad208405b798a7b68025aa67561b3765c9da9ac0321e0377006"
+    },
+    {
+      "path": "capture/boot/plate-1x.js",
+      "stored": "recipe/capture/boot/plate-1x.js",
+      "kind": "source",
+      "bytes": 823,
+      "sha256": "ac33d08dae53b52de031d5a14e728806acf2f46612451f0c13ebbe103d5ef647"
+    },
+    {
+      "path": "capture/boot/plate-2x.js",
+      "stored": "recipe/capture/boot/plate-2x.js",
+      "kind": "source",
+      "bytes": 729,
+      "sha256": "a08994cd8bc025f81163ac66c61045b30e01e38f45916b39fb8781a7110d41ee"
+    },
+    {
+      "path": "capture/boot/speed-05.js",
+      "stored": "recipe/capture/boot/speed-05.js",
+      "kind": "source",
+      "bytes": 245,
+      "sha256": "de2088ad56cc9c55d94ac284eadd3a67430ee6e0e6837d347abccb0bbe06bab5"
+    },
+    {
+      "path": "capture/boot/speed-2.js",
+      "stored": "recipe/capture/boot/speed-2.js",
+      "kind": "source",
+      "bytes": 241,
+      "sha256": "924d911ace8f1cc3ea9b68f6d8668625c1db4d0598573d7920308d750bb16e5c"
+    },
+    {
+      "path": "capture/finalize-frames.mjs",
+      "stored": "recipe/capture/finalize-frames.mjs",
+      "kind": "source",
+      "bytes": 2584,
+      "sha256": "b79cc27af4f27479d07046be8e413fb84916e247b2cc49d51ff81ce897da2da1"
+    },
+    {
+      "path": "capture/merge-chunks.mjs",
+      "stored": "recipe/capture/merge-chunks.mjs",
+      "kind": "source",
+      "bytes": 3647,
+      "sha256": "a23eddf95c67622b7da77d1777d27d73d6e15dc35c890ba100b5f36539a34870"
+    },
+    {
+      "path": "capture/shots.json",
+      "stored": "recipe/capture/shots.json",
+      "kind": "source",
+      "bytes": 1868,
+      "sha256": "a94371f276e7c0a81e73262d2cd8a14a0f449bb2d4ba47a145588bb433873ac9"
+    },
+    {
+      "path": "capture/src/pelican-ride.html",
+      "stored": "recipe/capture/src/pelican-ride.html",
+      "kind": "source",
+      "bytes": 21150,
+      "sha256": "bdf26fb1426f04e28a0e5886e3a2adfe20a282f80666d3c542917ff716814f86"
+    },
+    {
+      "path": "douyin-form.json",
+      "stored": "recipe/douyin-form.json",
+      "kind": "source",
+      "bytes": 919,
+      "sha256": "7308b6810ad3f3ae02828c89e31ce0e1387661536ffb288332347d14c70d4922"
+    },
+    {
+      "path": "edit/covers.json",
+      "stored": "recipe/edit/covers.json",
+      "kind": "source",
+      "bytes": 1501,
+      "sha256": "7878d10742ba778956507cc0697ebf8d31dceab08b437d0a8ffea417768f9a7a"
+    },
+    {
+      "path": "edit/director.html",
+      "stored": "recipe/edit/director.html",
+      "kind": "source",
+      "bytes": 12252,
+      "sha256": "c22823cdcea53f0628f2791fd8f06fc3139fb7cf5f1e2146fdfb6a63d0f8d5f1"
+    },
+    {
+      "path": "edit/director.js",
+      "stored": "recipe/edit/director.js",
+      "kind": "source",
+      "bytes": 30092,
+      "sha256": "a30451b0eda122d43aa80b13de8e82fc11844c526d83c96b4133151a50c41ccc"
+    },
+    {
+      "path": "edit/sections.json",
+      "stored": "recipe/edit/sections.json",
+      "kind": "source",
+      "bytes": 1070,
+      "sha256": "b7b3b045aa7816c724bd2b51c2d29d77af4c76915ee9cd62698c35b004a1eb82"
+    },
+    {
+      "path": "edit/timeline.js",
+      "stored": "recipe/edit/timeline.js",
+      "kind": "source",
+      "bytes": 11124,
+      "sha256": "3988d1cf82547287bbf95cc1803fc831d4afab4ec958d2456fd27a952b767989"
+    },
+    {
+      "path": "form.json",
+      "stored": "recipe/form.json",
+      "kind": "source",
+      "bytes": 1816,
+      "sha256": "f76fa38b0e6eec94c28f2fc1ece74fd7f9d9d478e99eafc7be4859e1bcb7db8f"
+    },
+    {
+      "path": "publish-plan.json",
+      "stored": "recipe/publish-plan.json",
+      "kind": "source",
+      "bytes": 1177,
+      "sha256": "1163258866cf1406d0dc12db681c9f03c7030183b1520ac7340327822dd36980"
+    },
+    {
+      "path": "PUBLISH.md",
+      "stored": "recipe/PUBLISH.md",
+      "kind": "source",
+      "bytes": 5369,
+      "sha256": "94943b0ea9fc6e6307b629183d040433620972a49b3e01e939dfb6de4bc02363"
+    },
+    {
+      "path": "pw/bili-discard.js",
+      "stored": "recipe/pw/bili-discard.js",
+      "kind": "source",
+      "bytes": 1002,
+      "sha256": "2cde06c0b9f695af9f08911c7801757f56279da050db8faf50bf285593cdf840"
+    },
+    {
+      "path": "pw/bili-fill.js",
+      "stored": "recipe/pw/bili-fill.js",
+      "kind": "source",
+      "bytes": 5125,
+      "sha256": "2124abfd1a582a3745303d9fb823bd7b75af02558754c21d6ddbf2f3692aee65"
+    },
+    {
+      "path": "pw/bili-fix3.js",
+      "stored": "recipe/pw/bili-fix3.js",
+      "kind": "source",
+      "bytes": 2694,
+      "sha256": "757968945877c96c2b5d24ff57db0bee3d58817dd16fae768261145f3e25ef28"
+    },
+    {
+      "path": "pw/bili-replace.js",
+      "stored": "recipe/pw/bili-replace.js",
+      "kind": "source",
+      "bytes": 4465,
+      "sha256": "c74bf5a02a044ccab90c4f3a6f9b362d63c7779ed3494cbcf8cf6535a5489213"
+    },
+    {
+      "path": "pw/bili-restore.js",
+      "stored": "recipe/pw/bili-restore.js",
+      "kind": "source",
+      "bytes": 2025,
+      "sha256": "71b9758c951b080443fa8c44fc6db1cb726027d93fc6221b6df57bad26aea947"
+    },
+    {
+      "path": "pw/douyin-declare-fix.js",
+      "stored": "recipe/pw/douyin-declare-fix.js",
+      "kind": "source",
+      "bytes": 1974,
+      "sha256": "bf2591582c6032a255927731356195f8c484d29e89cab365c09990acdb11b207"
+    },
+    {
+      "path": "pw/douyin-fill.js",
+      "stored": "recipe/pw/douyin-fill.js",
+      "kind": "source",
+      "bytes": 5273,
+      "sha256": "beec836e6e5688e4030f08e32f865c2f0443f5266109b72ff083041f818cd922"
+    },
+    {
+      "path": "pw/util.js",
+      "stored": "recipe/pw/util.js",
+      "kind": "source",
+      "bytes": 4228,
+      "sha256": "89ea84bf365f674f903e8db02a5292c3912c8251700976e0abb3c216c4c0bc82"
+    },
+    {
+      "path": "pw/xhs-fill.js",
+      "stored": "recipe/pw/xhs-fill.js",
+      "kind": "source",
+      "bytes": 4504,
+      "sha256": "680b7ccd7c954c8af78e924184aad1113e7cdec465d1d5cfca96b393b6b9bd6e"
+    },
+    {
+      "path": "README.md",
+      "stored": "recipe/README.md",
+      "kind": "source",
+      "bytes": 6210,
+      "sha256": "931e74a4791768412e02f37493bf588f952c5746a6d6d61df866f93809a6137a"
+    },
+    {
+      "path": "tools/assemble.mjs",
+      "stored": "recipe/tools/assemble.mjs",
+      "kind": "source",
+      "bytes": 4335,
+      "sha256": "eb60cf35f2bff1e911dc780ba719c53a5d15974e096f639bd9d57f0eaa2f38c3"
+    },
+    {
+      "path": "tools/audit-text-overlap.mjs",
+      "stored": "recipe/tools/audit-text-overlap.mjs",
+      "kind": "source",
+      "bytes": 2801,
+      "sha256": "1d61669fa861f74ca6700563a16163e422ff3d2c5441dc3f4a2fc431a6f9a5bd"
+    },
+    {
+      "path": "tools/export-covers.py",
+      "stored": "recipe/tools/export-covers.py",
+      "kind": "source",
+      "bytes": 1913,
+      "sha256": "a2acc2066aee11cee29fe6c623e2a5819d66f85f68673dd42efe60c0bb280100"
+    },
+    {
+      "path": "tools/probe-layout.mjs",
+      "stored": "recipe/tools/probe-layout.mjs",
+      "kind": "source",
+      "bytes": 4633,
+      "sha256": "2f351da635f47e3f4f1821aa48dd676c5967048e2dba6d6dd22f9c798fb9eb58"
+    },
+    {
+      "path": "tools/validate-plan.mjs",
+      "stored": "recipe/tools/validate-plan.mjs",
+      "kind": "source",
+      "bytes": 9084,
+      "sha256": "ffb2bb6bd3977177b57bce7ba3b37d2be900f145fc7abe5300f4ed77f4485150"
+    },
+    {
+      "path": "tools/verify-master.mjs",
+      "stored": "recipe/tools/verify-master.mjs",
+      "kind": "source",
+      "bytes": 5904,
+      "sha256": "3bea28934db0eec22dd64d4c7acedef4dc9b6956c839b992809c02a6de0d7d93"
+    },
+    {
+      "path": "xhs-form.json",
+      "stored": "recipe/xhs-form.json",
+      "kind": "source",
+      "bytes": 853,
+      "sha256": "4180e40cbd0ee14c43deecb59e0e029785b5e81b97599a7b39da2aaa3366303b"
+    }
+  ]
+}

@@ -18,10 +18,24 @@ out/
 *.pdf
 !docs/**/*.pdf
 
-# 产出区：成品二进制不入库，README 标注入库
+# 成品大媒体不入库；制作配方、归档清单、字幕、发布配置和封面必须入库
 products/**
 !products/**/
 !products/**/*.md
+!products/**/recipe/**
+!products/**/archive.json
+!products/**/*.srt
+!products/**/gen-*.py
+!products/**/render-*.py
+!products/**/primitives.py
+!products/**/cover*.png
+!products/**/*-cover*.png
+products/**/media/
+products/**/recipe/**/node_modules/
+products/**/recipe/**/frames/
+products/**/recipe/**/__pycache__/
+products/**/recipe/**/*.mp4
+products/**/recipe/**/*.wav
 
 # 施工区：项目素材与本地产物不入库（场景代码、设计文档、生成数据入库）
 projects/*/remotion-app/public/
@@ -33,6 +47,9 @@ Thumbs.db
 
 # .claude/skills 是指向 skills/ 的本机 junction（绝对路径，不可跨机）
 .claude/skills/
+.agents/skills/
+.cache/
+**/.studio/
 
 # 渲染核查产物（PNG 等）
 output/
