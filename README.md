@@ -15,6 +15,8 @@
 
 视频质量流程：先分析参考并确定视觉方向，按需用分镜图和临时配音做可播放粗样片；调整结构后制作正式画面与混音，再依据实际视频的时间码返修。方法与裁剪方式统一见[制作流程](workflows/explainer-video.md)，不要求所有任务遍历全部步骤。
 
+设计、生图复用环境已有技能；技术可视化、Lottie、3D 和 Remotion 专项融入导演与制作分支。按需从[视觉能力选路](skills/content-director/references/visual-routing.md)进入，不额外增加项目技能入口；没有相应工具或素材时明确交付范围。
+
 ## 工具与职责
 
 内容技能分四个板块，板块来自各技能的元信息；日常按交付物调用，不要求每个任务遍历所有技能。工作区文档维护由 `config/workspace-tools` 管理，已移出本项目的技能列表。
@@ -22,13 +24,13 @@
 <!-- docs:auto skills -->
 | 板块 | 技能 | 用途（来自 SKILL.md） |
 |---|---|---|
-| 策划与文案 | [content-director](skills/content-director/) | 为产品介绍、科技讲解和内容视频做受众定位、参考片分析、事实核查、视觉方向、分镜与粗样片迭代。适用于选题、策划和制作中审稿；已有定稿的采集和渲染交给对应制作技能。 |
+| 策划与文案 | [content-director](skills/content-director/) | 为产品介绍、科技讲解和内容视频做受众定位、参考分析、事实核查、视觉能力选路、分镜与粗样片迭代。按镜头需要调度设计、生图、技术可视化及专项素材；已有定稿的采集和渲染交给对应制作技能。 |
 | 策划与文案 | [humanizer](skills/humanizer/) | 中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。 去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。 基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检… |
 | 策划与文案 | [narration](skills/narration/) | 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 work… |
 | 内容制作 | [audio-post](skills/audio-post/) | 对真人录音或 TTS 已生成音轨做声音后期：剪取与编排、增益和基础滤波、音乐自动避让、音效混合、淡入淡出、两遍响度处理及测量。适用于配音完成后的混音，不生成配音、不代替人工审听。 |
 | 内容制作 | [auto-subtitle](skills/auto-subtitle/) | 转写工具，不是成片入口。faster-whisper 把 mp4/wav/flac 转成 cues.json + srt，字段与 video-motion SubtitleCue 对齐。用户说「自动字幕 / 语音转字幕 / 转写 / 出字幕文件 / faste… |
 | 内容制作 | [ppt](skills/ppt/) | 用 python-pptx 代码生成专业 PPT / 幻灯片 / 演示文稿（deck / slides / pptx）。用户说「做个 PPT / 幻灯片 / 演示文稿 / 项目介绍 deck / 把项目做成 slides」时使用；改现有 pptx 同样适用。用… |
-| 内容制作 | [video-motion](skills/video-motion/) | 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。 |
+| 内容制作 | [video-motion](skills/video-motion/) | 用 Remotion 制作录像标注、技术可视化、介绍片场景与封面，并按需接入 Lottie、3D 和官方专项指导。适用于视频图形与动效制作；介绍片由总装工作流调度，已有网页动画走 web-capture。 |
 | 内容制作 | [web-capture](skills/web-capture/) | 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动… |
 | 成片审查 | [media-qc](skills/media-qc/) | 对粗样片或成片做媒体技术检查，并记录绑定实际视频版本、带时间码的视听审稿观察与局部返修建议。适用于制作中和交付前审查；工具不自动看片听音，技术通过不代替人工接受。 |
 | 发布与运营 | [publish](skills/publish/) | 视频的发布与运营：按需准备平台画幅、切片、标题封面和投稿物料，辅助 B 站/抖音/小红书上传填表，或用真实数据做发布后复盘。可只执行其中一阶段；视频制作走对应制作技能，用户登录并亲自点击发布。 |
@@ -161,6 +163,9 @@ python scripts/check-docs.py
 node tests/browser-capture.mjs
 npm run verify:workflow
 npm run verify:quality
+npm run verify:visual
 ```
 
 测试通过只代表对应技术范围。交付前按 [质量规范](docs/2026-08-30-motion-grammar.md) 看真实画面、听音频、检查手机尺寸。当前整理与验证范围见 [Agent 视频质量流程](docs/2026-10-23-agent-video-quality-spec.md)，前期修复保留在 [生产工作流修复](docs/2026-10-23-production-workflow-spec.md)。
+
+视觉能力接入、Lottie 修复与文档核对见[视觉接入记录](docs/2026-10-23-visual-integration-spec.md)。verify:visual 首次在 .cache 内安装锁定模板依赖，使用已有 Chrome（可设 CHROME_PATH），不下载浏览器或模型；产物为技术验证，不是对正式作品的美术接受。

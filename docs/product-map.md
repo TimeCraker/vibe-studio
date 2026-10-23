@@ -20,4 +20,6 @@
 
 高质量视频先用 content-director 确定参考方法与视觉方向，按需生成可播放动态分镜；正式画面与实际配音稳定后由 audio-post 做声音处理，media-qc 核查实际成片并记录视听观察。平台适配、投稿与发布后复盘统一归 publish，三个阶段可独立使用。
 
+各类画面素材与专项能力的职责统一见[视觉选路](../skills/content-director/references/visual-routing.md)：通用设计与位图生图按环境调用，技术图解/Lottie/3D 由 video-motion 的相关分支实现，不另复制一套工具清单。
+
 作品状态与历史证据的解释见[文档维护约定](documentation.md#作品状态记录)。

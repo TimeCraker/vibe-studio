@@ -1,6 +1,6 @@
 ---
 name: video-motion
-description: 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。
+description: 用 Remotion 制作录像标注、技术可视化、介绍片场景与封面，并按需接入 Lottie、3D 和官方专项指导。适用于视频图形与动效制作；介绍片由总装工作流调度，已有网页动画走 web-capture。
 metadata:
   category: 2. 内容制作
 ---
@@ -8,6 +8,8 @@ metadata:
 # video-motion — 视频底材叠动效（Remotion）
 
 **设计即代码**：坐标 / 时刻 / 文本全部声明在 `src/cues.ts`（数据契约，字段不许改），fx 组件零硬编码；改 cues 重跑一条命令即复跑成片。三层动效：字幕 `SubtitleTrack` / 数据柱 `DataBars` / 圈注 `Spotlight`（circle / arrow / box）。
+
+技术图解、流程/数据画面、Lottie、3D、地图或 Studio 参数编辑按[专项视觉制作](references/visual-production.md)读取相关分支。导演给出内容与视觉方向，制作模块交付实际项目素材/代码和渲染证据；当前组件、类型与锁定引擎接口优先。
 
 ## Step 1 · 剧本设计（看素材，不猜画面）
 
@@ -90,11 +92,11 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 - **官方 `<Trail>`/`TransitionSeries` 语义**：Trail 根是 AbsoluteFill（页级覆盖语义），元素级残影用 scene-kit 的 BlurTrail（已 relative 化）；TransitionSeries 转场吃相邻页时长，成片引擎默认零转场（Series 硬切）+ 页内动词
 - **vendor 纪律**：copy-paste 入库非 npm 依赖；升级=重新拉取重做 intake；纪律四条见模板 `src/vendor/README.md`
 - **Lottie 资产流**：免费商用 JSON 进 `assets/lottie/`（README 三字段登记）→ 用时复制进项目 `public/` → `LottieLayer src` 引用；intake 禁带 expressions 的 JSON（渲染不确定）
-- **重武器限额**：ShutterBlur（×samples）与 ThreeStage（SwiftShader ~17 帧/s）每片 ≤1 处；BlurTrail 慎包重子树（×layers 重渲）
+- **复杂效果预算**：ShutterBlur 的 samples 和 BlurTrail 的 layers 会增加渲染成本；ThreeStage 按场景与机器差异实测。先渲染代表帧/短片，再决定规模，不设全片固定镜头配额。
 
 ### 验收流程（四级）
 
-L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositions 帧数对账）；L2 抽帧（每页 4 张：进场中间态/稳定全景/信息包特写/道具 200% 放大 + 字幕帧逐字核对 + 去重证据帧，judge 读图）；L2.5 静音测试（逐页盲答主旨）；L3 报告（含技术范围、关键帧证据、人工待审项与需要时的新旧对照）。确认具有通用价值的组件、tokens 与版式再按[资产回流约定](../../assets/README.md#有复用价值时回流)回写模板/登记簿；项目专用内容保留在项目内，没有新经验不另造工单。渲染命令同 DeckVideo（composition 换成场景化组件，如 `DeckVideoV2`），封面用 `npx remotion still` 出图（still 帧号要容纳入场 spring 时长）。
+L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositions 帧数对账）；L2 抽帧（按风险选择进场/稳定全景/信息特写/转场及字幕代表帧，核对实际图；放大仅用于检查细节，不固定每页数量）；L2.5 静音测试（逐页盲答主旨）；L3 报告（含技术范围、关键帧证据、人工待审项与需要时的新旧对照）。确认具有通用价值的组件、tokens 与版式再按[资产回流约定](../../assets/README.md#有复用价值时回流)回写模板/登记簿；项目专用内容保留在项目内，没有新经验不另造工单。渲染命令同 DeckVideo（composition 换成场景化组件，如 `DeckVideoV2`），封面用 `npx remotion still` 出图（still 帧号要容纳入场 spring 时长）。
 
 ## 封面出图（Cover，第四种产物）
 
@@ -102,11 +104,11 @@ L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositio
 
 1. **props**：`products/<项目名>/cover-<名>.json` 写 `{ title, subtitle?, badge?, bg?, preset }`。`preset` ∈ `photo`（bg 图铺满 + 底部 55% 黑渐变遮罩保对比度）/ `dark`（深色渐变，缺省）/ `clean`（浅底 + 顶部细线）；`bg` 是 remotion-app `public/` 下相对路径。**subtitle 省略即不渲染；badge 省略回落 ASTERFORGE 品牌角标**
 2. **渲染**：`npx remotion still src/cover-index.ts Cover <输出>.png --props=<json 文件路径>`（独立入口不经 Root.tsx，与 DeckVideo 并行施工零冲突）
-3. **核查**：读图查标题完整不截断（超长标题须两行内折行）、photo 遮罩下文字可读、无乱码方块；读图走 `C:\pc\` 短路径，复查须换新文件名防缓存
+3. **核查**：读图查标题完整不截断、photo 遮罩下文字可读、无乱码方块；使用实际产物绝对路径，复查核对当前版本或哈希。标题行数按目标画幅与阅读需要调整。
 
 ## 边界与坑
 
-- 读图坑：路径含反斜杠解析失败 → 先复制 `C:\pc\` 短路径；复查修复效果必须换新文件名（同路径图片会被缓存返回旧图）
+- 使用实际产物绝对路径读图，复查核对当前文件版本或哈希；仅在具体工具确有路径限制时才转换路径。
 - GBK 控制台：print 全英文
 - Chrome Headless Shell 首次 `npx remotion browser ensure` 从 Google 源下载（百 MB 级），中国网络可能超时——失败即报，不反复重试大文件下载
 - 大媒体、依赖与缓存不进 Git；制作配方、封面、字幕、发布配置与验收元数据按归档规则保留。

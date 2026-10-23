@@ -19,6 +19,7 @@ README 中 skills、tree、commands、versions 为生成区，块外说明人工
 | 产品与交付物选路 | [product-map](product-map.md) | 不另维护一份完整产品列表 |
 | 制作阶段、交接、流程裁剪 | [视频制作流程](../workflows/explainer-video.md) | skill 链接流程，工艺留在本 skill |
 | 各技能工艺、模板接口 | 对应 skills 下的 SKILL.md 与代码 | 参数事实以实际解析器/模板为准，改接口同时改示例 |
+| 视觉能力选路与专项制作 | [导演选路](../skills/content-director/references/visual-routing.md)、[制作分支](../skills/video-motion/references/visual-production.md) | 根入口与流程只保留摘要/链接；共享技能按环境发现，不维护重复副本 |
 | 共用资产与版式、组件 | [assets](../assets/README.md)、[版式库](../assets/patterns.md)、[组件目录](../assets/component-catalog.md) | 项目保留实际使用版本与来源 |
 | 当前作品状态与后续动作 | 作品 README，规则见下节 | 根目录说明不维护动态的“全部完成”等结论 |
 | 历史实施与验收证据 | 对应 Stage Spec、验收记录 | 保留当时版本和范围，不用历史 PASS 推断当前可用 |

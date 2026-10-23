@@ -5,7 +5,7 @@ import { ThreeCanvas } from "@remotion/three";
 // 铁律:内部**禁 r3f 的 useFrame**(帧不 确定),动画与运镜一律 useCurrentFrame 派生
 // (官方模式);相机动画用 useThree 拿 camera 后按 frame 直接赋值,同样确定。
 // 只走 WebGL(WebGPU canvas 不进 headless 渲染链)。成本提示:3D 段单帧耗时可到
-// 2D 段的数倍,成片「重武器每片 ≤1 处」;SwiftShader 下尤甚。
+// 2D 段的数倍;先实测代表帧与短片,再按本片预算决定规模。
 // 用法:ThreeStage 里放 R3F 元素(mesh/boxGeometry/meshStandardMaterial/自定义 CamRig)。
 export const ThreeStage: React.FC<{
   width: number;

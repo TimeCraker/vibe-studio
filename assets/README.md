@@ -18,6 +18,8 @@
 
 确认来源、使用条件和复用价值后，再将通用素材回流本库。项目特有文案、数据、品牌内容和临时修补不直接写回通用模板。
 
+生图选定产物、技术图解的 SVG/数据、Lottie JSON 及其依赖、3D 模型/贴图和地图来源均保留实际使用版本与来源记录。优先留在项目；没有可复用且已核查的资产时，不为新增能力建立空的公共分区。调用与制作方法统一见[视觉选路](../skills/content-director/references/visual-routing.md)。
+
 ## 有复用价值时回流
 
 1. **组件回流**：验证过的通用 scene-kit 组件与 tokens，回写 `skills/video-motion/templates/remotion-app/src/scene-kit/`，同步登记簿；项目专用实现保留在项目里。

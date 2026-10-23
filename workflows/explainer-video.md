@@ -54,6 +54,8 @@ node scripts/studio.mjs init --id demo-video --line c
 
 策划由 [content-director](../skills/content-director/SKILL.md) 指导；真实界面优先使用截图/录像，结构图可用 SVG。需要插画时按美术简报调用当前可用的 imagegen 工具；工具不可用就保留简报与缺项，不声称已生成素材。
 
+具体画面需求按[视觉能力选路](../skills/content-director/references/visual-routing.md)处理：设计与生图按环境调用，技术可视化、Lottie、3D 和官方专项由现有制作分支实现。代表画面落到真实项目素材/代码后再扩展；共享技能的网页默认设置不直接替代本片品牌和帧驱动时序。
+
 项目专用素材先保存在项目中，Remotion 消费的文件放 `remotion-app/public/` 对应目录；有跨项目价值时再按[资产库约定](../assets/README.md)回流。使用共用资产也要把实际使用版本带入项目，不能只依赖库里同名文件。
 
 时间安排先按稿件估算，再以实际配音调整；[auto-subtitle](../skills/auto-subtitle/SKILL.md) 用于转写与词级对齐。正式配音保留人工环节；占位音频要标记，不能当作正式交付。

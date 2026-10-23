@@ -7,6 +7,7 @@
 - 交付保留 recipe 与 archive.json，原始媒体和成片单独备份；验证归档前不清场。
 - 人工配音、分镜/视觉终审、登录、点击发布保留人工状态；技术通过不能写成人工通过。
 - 官方 Remotion skill 是技术参考。本仓模板锁定的渲染版本、项目边界和发布约束优先，不自动升级依赖或重建已有项目。
+- 设计/生图等共享技能按实际环境调用，视觉选路以 content-director 的相关参考为准；品牌与视频帧驱动要求优先，不复制全局技能或把网页自动播放默认值搬入视频。
 - 检查：`npm test`、`python scripts/check-docs.py`、`git diff --check`；采集修改另跑 `node tests/browser-capture.mjs`。界面/视频修改须实际渲染取证。
 - 保留其他人的改动；提交仅包含当前实现单元。临时依赖和验证产物放仓库外或 .cache，不提交账号状态、缓存与大媒体。
 - 文档改动收尾运行 `npm run docs:maintain`：工具更新确定事实并给出影响清单，当前 Agent 按 diff 修订相关现有说明；不新增逐次报告。先用 npm ci 安装固定的离线工具依赖；doc-maintainer 由 workspace 管理，不属于本项目技能。细节见[维护说明](docs/documentation.md)。

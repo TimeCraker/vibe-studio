@@ -1,61 +1,74 @@
 import React from "react";
 import { Lottie, getLottieMetadata } from "@remotion/lottie";
-import { continueRender, delayRender, staticFile, useVideoConfig } from "remotion";
+import { cancelRender, continueRender, delayRender, Sequence, staticFile, useVideoConfig } from "remotion";
 
-// Lottie 资产层(@remotion/lottie):吃 AE 生态的成品动效(LottieFiles 免费商用库 / assets/lottie/)。
-// 确定性铁律(4.0.518 事实):
-// - <Lottie> 只吃 animationData 对象;src 路径模式由本组件 fetch + delayRender 装载
-// - playbackRate 必须 = 合成 fps / lottie fr,否则播放速度失真
-// - **intake 禁带 expressions 的 JSON**(逐帧闪烁,渲染不确定);下载时人工确认
-export const LottieLayer: React.FC<{
-  animationData?: object; // 内联动画对象(优先,零 IO)
-  src?: string; // staticFile 相对路径(assets/lottie 复制进项目 public/ 后用)
+type LayerProps = {
+  animationData?: object;
+  src?: string; // Relative to this project's public directory.
   width: number;
-  height?: number; // 默认 = width
-  loop?: boolean; // 默认 true
-  playbackRate?: number; // 默认自动 = compFps / lottieFps
-  delay?: number; // s,起始延迟(组件只控制挂载时机)
+  height?: number;
+  loop?: boolean; // Preserve the existing wrapper default: true.
+  playbackRate?: number; // Original-speed multiplier; wrapper converts for the pinned renderer.
+  delay?: number; // Seconds, relative to the enclosing sequence.
   style?: React.CSSProperties;
-}> = ({ animationData, src, width, height, loop = true, playbackRate, delay = 0, style }) => {
+};
+type FrameProps = Omit<LayerProps, "src"> & { animationData: object };
+
+const LottieFrame: React.FC<FrameProps> = ({ animationData, width, height, loop = true, playbackRate = 1, delay = 0, style }) => {
   const { fps } = useVideoConfig();
-  const [fetched, setFetched] = React.useState<object | null>(animationData ?? null);
-  const [handle] = React.useState(() =>
-    src && !animationData ? delayRender(`LottieLayer: loading ${src}`) : null,
-  );
-
-  React.useEffect(() => {
-    if (!src || animationData) return;
-    let alive = true;
-    fetch(staticFile(src))
-      .then((r) => r.json())
-      .then((data: object) => {
-        if (!alive) return;
-        setFetched(data);
-        if (handle !== null) continueRender(handle);
-      })
-      .catch(() => {
-        console.warn(`[LottieLayer] ${src} load failed`);
-        if (handle !== null) continueRender(handle);
-      });
-    return () => {
-      alive = false;
-    };
-  }, [src, animationData, handle]);
-
-  if (!fetched) return null;
-  const meta = getLottieMetadata(fetched as Parameters<typeof getLottieMetadata>[0]);
-  const rate = playbackRate ?? (meta ? fps / meta.fps : 1);
-
+  if (!Number.isFinite(delay) || delay < 0 || !Number.isFinite(playbackRate) || playbackRate <= 0)
+    throw new Error("LottieLayer needs a nonnegative delay and positive playbackRate");
+  const metadata = getLottieMetadata(animationData as Parameters<typeof getLottieMetadata>[0]);
+  if (!metadata || !Number.isFinite(metadata.fps) || metadata.fps <= 0)
+    throw new Error("LottieLayer needs valid animation frame rate metadata");
+  // @remotion/lottie 4.0.533 advances asset frames from composition frames.
+  const nativeRate = playbackRate * metadata.fps / fps;
   return (
-    <div style={{ opacity: delay > 0 ? 0 : 1, ...style }}>
-      {delay > 0 ? null : (
+    <div style={style}>
+      <Sequence from={Math.round(delay * fps)} layout="none">
         <Lottie
-          animationData={fetched as Parameters<typeof Lottie>[0]["animationData"]}
+          animationData={animationData as Parameters<typeof Lottie>[0]["animationData"]}
           loop={loop}
-          playbackRate={rate}
+          playbackRate={nativeRate}
           style={{ width, height: height ?? width }}
         />
-      )}
+      </Sequence>
     </div>
   );
+};
+
+const RemoteLottie: React.FC<Omit<LayerProps, "animationData"> & { src: string }> = ({ src, ...props }) => {
+  const [data, setData] = React.useState<object | null>(null);
+  const [initialHandle] = React.useState(() => delayRender(`LottieLayer: ${src}`));
+  React.useEffect(() => {
+    // Each effect owns its wait handle, including React's development remounts.
+    const handle = delayRender(`LottieLayer: loading ${src}`);
+    continueRender(initialHandle);
+    const controller = new AbortController();
+    let active = true;
+    fetch(staticFile(src), { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`LottieLayer: ${src} returned HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((animation: unknown) => {
+        if (!animation || typeof animation !== "object" || Array.isArray(animation))
+          throw new Error(`LottieLayer: ${src} is not an animation object`);
+        if (!active) return;
+        setData(animation);
+        continueRender(handle);
+      })
+      .catch((error: unknown) => {
+        if (active) cancelRender(error instanceof Error ? error : new Error(String(error)));
+      });
+    return () => { active = false; controller.abort(); continueRender(handle); };
+  }, [src, initialHandle]);
+  return data ? <LottieFrame {...props} animationData={data} /> : null;
+};
+
+export const LottieLayer: React.FC<LayerProps> = ({ animationData, src, ...props }) => {
+  if (animationData) return <LottieFrame {...props} animationData={animationData} />;
+  if (!src) throw new Error("LottieLayer requires animationData or src");
+  // A source change remounts the loader instead of showing a previous asset.
+  return <RemoteLottie key={src} src={src} {...props} />;
 };

@@ -26,10 +26,10 @@
 | `NoiseField` | 有机颗粒流场（noise3D）：点阵网格逐点漂移+明暗呼吸，叠 SceneBg 上当活背景 | `variant` 双族；seed 固定数字保确定性；22×12 网格每帧 720 次 noise3D，性能无压力 |
 | `FitText` | 程序排版：字号由测量算出，盒内不溢出不截断，免手动断行留余量 | 单行走 fitText（`withinWidth`）；**中文多行不能直接用 fitTextOnNLines（按空格分词）**，组件内置字符等分兜底；字体须先装载再测量 |
 | `BlurTrail` | 进场残影（Trail 同构 relative 化）：快速进位拖出运动残影，内置 spring 位移 | layers(8) / lagInFrames(2) / trailOpacity(0.36)；**官方 Trail 根是 AbsoluteFill（页级覆盖语义），元素级用本件**（主层流内撑尺寸、残影层 absolute 叠加，S6 修）；成本 = 子树重渲 ×layers，重元素慎用 |
-| `ShutterBlur` | 快门模糊（CameraMotionBlur）：整帧自然 motion blur，拖影跟运动方向 | shutterAngle(180) / samples(10)；成本 ×samples，**spot-only，重武器每片 ≤1 处** |
-| `LottieLayer` | Lottie 资产层：吃 AE 生态成品（assets/lottie/） | 内联 animationData 优先；src 走 fetch+delayRender；playbackRate 自动 = compFps/lottieFr；**intake 禁带 expressions 的 JSON** |
+| `ShutterBlur` | 快门模糊（CameraMotionBlur）：整帧自然 motion blur，拖影跟运动方向 | shutterAngle(180) / samples(10)；成本随 samples 增加；先验证代表镜头的效果和耗时，再决定使用范围 |
+| `LottieLayer` | Lottie 资产层：吃 AE 生态成品（assets/lottie/） | 内联 animationData 优先；src 走 fetch+delayRender；playbackRate 为原速倍率（默认 1），底层按素材 fps/合成 fps 换算；delay 秒数以局部时间轴实现；源加载失败停止渲染；**intake 禁带 expressions 的 JSON** |
 | `GifLayer` | GIF 循环小动效（@remotion/gif） | src 是 public/ 相对路径（assets/media 复制进项目后用） |
-| `ThreeStage` | 3D 运镜容器（@remotion/three ThreeCanvas）：真透视/光影/相机运动 | **内部禁 r3f useFrame**，动画与运镜一律 useCurrentFrame 派生（相机动画用 useThree 拿 camera 按 frame 赋值）；只 WebGL；性能：简单场景 ~17 帧/s（vs 2D 21.6），复杂 3D 段单帧可到数倍，成片「重武器每片 ≤1 处」；remotion.config.ts 无需建（SwiftShader 开箱可用，S4 已验证） |
+| `ThreeStage` | 3D 运镜容器（@remotion/three ThreeCanvas）：真透视/光影/相机运动 | **内部禁 r3f useFrame**，动画与运镜一律 useCurrentFrame 派生（相机动画用 useThree 拿 camera 按 frame 赋值）；只 WebGL；性能取决于场景、GPU/软件渲染和机器；先实测代表帧与短片，不以历史跑分或固定镜头配额承诺效果。渲染参数按本项目验证 |
 | `ArtLayer` | 美术层（spec 2026-10-05）：画面主体真图一等公民——SVG 插画（首选）/ AI 出图 raster，全出血底图或卡片道具双形态 | `svg` 内联字符串（零 IO）或 `src` 文件（assets/art/ 复制进项目 public/ 后引用）二选一；`kenBurns` 慢推 ≤1.05 线性（克制：可感不可察）；`vignette` 默认开 + `tint` 色温把图折进 F1 空间；`shadow/radius` 走 tokens；transform 只落 `<Img>` 叶子（避开 transform-containing-block 坑）；**CSS 只排版不画面（S6 根因）** |
 
 ## tokens（取值单源）
