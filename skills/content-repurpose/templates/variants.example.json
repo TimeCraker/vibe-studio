@@ -1,0 +1,8 @@
+{
+  "schemaVersion":1,
+  "platforms": {
+    "bili": {"title":"替换为完整讲解标题","description":["替换为已核实内容"],"tags":[],"sceneIds":["demo"],"format":{"width":1280,"height":720,"fps":30},"video":"render/bili.mp4","cover":"render/covers/cover-landscape.png","safeArea":{"top":0.08,"bottom":0.12,"left":0.06,"right":0.06}},
+    "douyin": {"title":"替换为短版标题","description":["替换为核心演示说明"],"tags":[],"sceneIds":["demo"],"format":{"width":720,"height":1280,"fps":30},"video":"render/douyin.mp4","cover":"render/covers/cover-portrait.png","safeArea":{"top":0.12,"bottom":0.20,"left":0.06,"right":0.15}},
+    "xhs": {"title":"替换为教程标题","description":["替换为步骤说明"],"tags":[],"sceneIds":["demo"],"format":{"width":720,"height":1280,"fps":30},"video":"render/xhs.mp4","cover":"render/covers/cover-portrait.png","safeArea":{"top":0.12,"bottom":0.18,"left":0.06,"right":0.12}}
+  }
+}

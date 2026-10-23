@@ -101,6 +101,10 @@ export const ArtLayerDemo: React.FC = () => (
         position: "absolute",
         left: 120,
         bottom: 108,
+        width: 1040,
+        padding: 24,
+        borderRadius: 16,
+        backgroundColor: "#F5F1E8",
         fontFamily: FONT.sans,
         color: "#1A2233",
       }}

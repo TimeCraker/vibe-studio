@@ -31,3 +31,10 @@ test('restore rejects traversal and occupied destinations', () => {
   manifest.files[0].path = '../outside.js'; writeFileSync(manifestPath, JSON.stringify(manifest));
   assert.throws(() => verifyArchive(manifestPath), /Unsafe/);
 });
+test('declared final video survives cache exclusion and missing final output blocks delivery', () => {
+  const base=mkdtempSync(join(tmpdir(),'vibe-delivery-'));const project=join(base,'project');mkdirSync(join(project,'render'),{recursive:true});
+  writeFileSync(join(project,'source.js'),'source');writeFileSync(join(project,'render/final.mp4'),'final bytes');
+  assert.throws(()=>archiveProject(project,join(base,'missing'),{},{deliverables:['render/absent.mp4']}),/Missing deliverable/);
+  const result=archiveProject(project,join(base,'product'),{},{deliverables:['render/final.mp4']});restoreArchive(result.manifestPath,join(base,'restored'));
+  assert.equal(readFileSync(join(base,'restored/render/final.mp4'),'utf8'),'final bytes');
+});

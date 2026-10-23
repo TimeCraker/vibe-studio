@@ -8,6 +8,10 @@ import { parseArgs, projectRoot } from './paths.mjs';
 const args=parseArgs(process.argv.slice(2)), ROOT=projectRoot(args);
 const videoPath=join(ROOT,'edit','video.json');
 const base=existsSync(videoPath)?JSON.parse(readFileSync(videoPath,'utf8')):{};
+if(args.variant){
+  if(!/^[a-z0-9-]+$/.test(args.variant))throw new Error('Invalid variant id');
+  Object.assign(base,JSON.parse(readFileSync(join(ROOT,'exports',args.variant,'render-spec.json'),'utf8')));
+}
 const config={...base,width:Number(args.width??base.width??1920),height:Number(args.height??base.height??1080),fps:Number(args.fps??base.fps??60)};
 if(![config.width,config.height].every(n=>Number.isInteger(n)&&n>0&&n%2===0)||!Number.isFinite(config.fps)||config.fps<=0)throw new Error('Invalid video dimensions/fps');
 const out=resolve(ROOT,args.out??'render/video.mp4');

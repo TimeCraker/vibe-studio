@@ -1,9 +1,13 @@
 import { createHash, randomUUID } from 'node:crypto';
-import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, writeFileSync } from 'node:fs';
+import { closeSync, existsSync, lstatSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, realpathSync, renameSync, writeFileSync } from 'node:fs';
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 
 export const readJson = (path) => JSON.parse(readFileSync(path, 'utf8').replace(/^\uFEFF/, ''));
-export const hashFile = (path) => createHash('sha256').update(readFileSync(path)).digest('hex');
+export function hashFile(path) {
+  const hash=createHash('sha256'),fd=openSync(path,'r'),buffer=Buffer.allocUnsafe(1024*1024);
+  try { let n; while((n=readSync(fd,buffer,0,buffer.length,null))>0)hash.update(buffer.subarray(0,n));return hash.digest('hex'); }
+  finally { closeSync(fd); }
+}
 export const hashValue = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export function writeJson(path, data) {
   mkdirSync(dirname(path), { recursive: true });

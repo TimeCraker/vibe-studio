@@ -11,7 +11,7 @@ export function archiveSkip(rel) {
     || (/^\.env(?:\.|$)/.test(leaf) && !/\.(?:example|template)$/.test(leaf))
     || /^(?:auth\.json|cookies?\.json|storage-state\.json)$/i.test(leaf);
 }
-export function archiveProject(project, destination, metadata = {}) {
+export function archiveProject(project, destination, metadata = {}, { deliverables = [] } = {}) {
   project = resolve(project); destination = resolve(destination);
   if (!existsSync(project) || !lstatSync(project).isDirectory()) throw new Error('Project directory does not exist');
   if (project === destination || inside(project, destination) || inside(destination, project)) throw new Error('Archive and project must be separate');
@@ -23,6 +23,12 @@ export function archiveProject(project, destination, metadata = {}) {
     const source = SOURCE_EXT.has(extname(path).toLowerCase()) || /^\.(?:gitignore|npmrc)$/.test(path.split('/').at(-1)) || path.split('/').at(-1) === 'LICENSE';
     return { path, stored: `${source ? 'recipe' : 'media'}/${path}`, kind: source ? 'source' : 'media', bytes: lstatSync(safePath(project, path)).size, sha256: hashFile(safePath(project, path)) };
   });
+  for (const path of deliverables) {
+    const original = safePath(project, path);
+    if (!existsSync(original) || !lstatSync(original).isFile()) throw new Error(`Missing deliverable: ${path}`);
+    if (files.some((f) => f.path === path)) throw new Error(`Deliverable already included as input: ${path}`);
+    files.push({ path, stored: `deliverables/${path}`, kind: 'deliverable', bytes: lstatSync(original).size, sha256: hashFile(original) });
+  }
   // Preflight the entire copy before creating anything. Never replace a different file.
   for (const entry of files) {
     const target = safePath(destination, entry.stored);
@@ -51,8 +57,8 @@ export function verifyArchive(manifestPath, { sourceOnly = false } = {}) {
     const key = entry.path.toLowerCase();
     if (seen.has(key)) throw new Error(`Duplicate archive path: ${entry.path}`);
     seen.add(key);
-    if (!['source', 'media'].includes(entry.kind) || !/^[a-f0-9]{64}$/.test(entry.sha256)) throw new Error(`Invalid archive entry: ${entry.path}`);
-    if (sourceOnly && entry.kind === 'media') continue;
+    if (!['source', 'media', 'deliverable'].includes(entry.kind) || !/^[a-f0-9]{64}$/.test(entry.sha256)) throw new Error(`Invalid archive entry: ${entry.path}`);
+    if (sourceOnly && entry.kind !== 'source') continue;
     if (!existsSync(path)) errors.push(`missing: ${entry.stored}`);
     else if (!lstatSync(path).isFile() || hashFile(path) !== entry.sha256) errors.push(`hash mismatch: ${entry.stored}`);
   }
@@ -68,7 +74,7 @@ export function restoreArchive(manifestPath, target, { sourceOnly = false } = {}
   if (target === root || inside(root, target) || inside(target, root)) throw new Error('Restore target overlaps archive');
   let restored = 0;
   for (const entry of manifest.files) {
-    if (sourceOnly && entry.kind === 'media') continue;
+    if (sourceOnly && entry.kind !== 'source') continue;
     const dest = safePath(target, entry.path);
     mkdirSync(dirname(dest), { recursive: true });
     copyFileSync(safePath(root, entry.stored), dest);
