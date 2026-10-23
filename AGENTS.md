@@ -9,4 +9,4 @@
 - 官方 Remotion skill 是技术参考。本仓模板锁定的渲染版本、项目边界和发布约束优先，不自动升级依赖或重建已有项目。
 - 检查：`npm test`、`python scripts/check-docs.py`、`git diff --check`；采集修改另跑 `node tests/browser-capture.mjs`。界面/视频修改须实际渲染取证。
 - 保留其他人的改动；提交仅包含当前实现单元。临时依赖和验证产物放仓库外或 .cache，不提交账号状态、缓存与大媒体。
-- 文档正本、更新触发条件与作品状态见 [文档维护约定](docs/documentation.md)。收尾按本次 diff 核对受影响的入口、命令、skill 和进度，在同一提交同步；无需更新时简述原因。不要用自动检查通过代替内容核对。
+- 文档改动收尾运行 `node scripts/docs.mjs maintain`：工具更新确定事实并给出影响清单，当前 Agent 按 diff 修订相关现有说明；不新增逐次报告。细节见 [doc-maintainer](skills/doc-maintainer/SKILL.md) 与[维护说明](docs/documentation.md)。

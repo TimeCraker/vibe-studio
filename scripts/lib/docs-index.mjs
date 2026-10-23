@@ -6,6 +6,7 @@ import { Snapshot, changedPaths, digest, git, historical, normalize, redact } fr
 import { references } from "./docs-analyze.mjs";
 
 const TOOL_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+const INDEX_VERSION = 2; // Bump when tokenization, reference or history rules change.
 const SKIP = new Set(["archive", "node_modules", "vendor", "dist", "build", "out", "target"]);
 
 export function discoverRepos(workspace, { depth = 3 } = {}) {
@@ -48,7 +49,7 @@ export function indexWorkspace(workspace, { cacheDir } = {}) {
   const path = cachePath(workspace, cacheDir);
   let previous;
   try { previous = JSON.parse(readFileSync(path, "utf8")); } catch { previous = {}; }
-  if (previous.schemaVersion !== 1 || previous.workspace !== workspace || !Array.isArray(previous.entries)) previous = {};
+  if (previous.schemaVersion !== INDEX_VERSION || previous.workspace !== workspace || !Array.isArray(previous.entries)) previous = {};
   const old = new Map((previous.entries || []).map((e) => [`${e.repo}\0${e.path}`, e]));
   const entries = [], repos = [], errors = [];
   let refreshed = 0;
@@ -83,7 +84,7 @@ export function indexWorkspace(workspace, { cacheDir } = {}) {
     entries.push({ repo: workspace, path: doc, hash, title: redact(title), workspaceOnly: true,
       historical: false, terms: frequencies(text), titleTerms: frequencies(title + " " + doc), references: [] });
   }
-  const data = { schemaVersion: 1, workspace, indexedAt: new Date().toISOString(), repos, entries, errors };
+  const data = { schemaVersion: INDEX_VERSION, workspace, indexedAt: new Date().toISOString(), repos, entries, errors };
   mkdirSync(dirname(path), { recursive: true });
   const temp = `${path}.${randomUUID()}.tmp`;
   writeFileSync(temp, JSON.stringify(data), "utf8"); renameSync(temp, path);
@@ -127,8 +128,11 @@ export function searchWorkspace(workspace, query, { limit = 5, history = false, 
   const snapshots = new Map();
   const results = matches.map(({ entry, score }) => {
     if (!entry.workspaceOnly && !snapshots.has(entry.repo)) snapshots.set(entry.repo, new Snapshot(entry.repo));
-    const snapshot = snapshots.get(entry.repo), current = entry.workspaceOnly
-      ? readFileSync(resolve(entry.repo, entry.path), "utf8") : snapshot.read(entry.path);
+    const snapshot = snapshots.get(entry.repo);
+    const rootFile = resolve(entry.repo, entry.path);
+    const current = entry.workspaceOnly
+      ? (existsSync(rootFile) && !lstatSync(rootFile).isSymbolicLink() && lstatSync(rootFile).isFile() && lstatSync(rootFile).size <= 2 * 1024 * 1024 ? readFileSync(rootFile, "utf8") : null)
+      : snapshot.read(entry.path);
     const lines = normalize(current || "").split("\n");
     const snippets = lines.map((text, i) => ({ line: i + 1, text: redact(text), score: queryTerms.filter((q) => terms(text).includes(q)).length }))
       .filter((r) => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 2).map(({ line, text }) => ({ line, text: [...text].slice(0, 240).join("") }));

@@ -22,6 +22,7 @@
 | [content-director](skills/content-director/) | 为产品介绍、科技讲解或内容视频做受众定位、事实取材、口播与镜头设计。适用于选题、写分镜、画面单薄或正式制作前的策划；已有定稿的采集和渲染交给对应制作 skill。 |
 | [content-repurpose](skills/content-repurpose/) | 把同一份已核实视频策划派生成不同画幅、镜头长度、封面与平台文案。适用于横竖版、短切片、三平台物料适配；不负责账号登录或点击发布。 |
 | [content-review](skills/content-review/) | 用真实发布数据和制作成本复盘内容表现，支持同平台同观察窗口的系列对照。适用于内容复盘、完播/点击/转粉与制作效率分析；不抓取账号凭证、不代发内容、不编造缺失数据。 |
+| [doc-maintainer](skills/doc-maintainer/) | 代码改动收尾时生成仓库清单、定位受影响说明并直接修订现有文档，也支持本地 workspace 文档检索。适用于文档过期、接口说明同步和知识查找；不用于普通文案创作，不把 Git 或机器通过推断为人工接受与上线。 |
 | [humanizer](skills/humanizer/) | 中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。 去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。 基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检… |
 | [media-qc](skills/media-qc/) | 对完成的视频或短样片做技术质检、字幕时间检查、响度测量和抽帧取证。适用于渲染后核查与交付前验收；技术检查不代替人工看片、听音或品牌视觉终审。 |
 | [narration](skills/narration/) | 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 work… |
@@ -31,17 +32,26 @@
 | [web-capture](skills/web-capture/) | 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动… |
 <!-- /docs:auto -->
 
-美术需要位图时，content-director 按当前环境可用的 imagegen 工具生成素材，再走 assets/art 登记与消费；真实界面和结构图仍使用截图或 SVG。没有工具时保留简报，不声称已生图。
+美术需要位图时，content-director 按当前环境可用的 imagegen 工具生成素材，先放项目内，确认可复用后再登记到共用资产库；真实界面和结构图仍使用截图或 SVG。没有工具时保留简报，不声称已生图。
 
-另接入 [Remotion 官方技能](https://www.remotion.dev/docs/ai/skills) 作为技术参考，来源固定在 `skills/video-motion/references/upstream.json`。参考包版本与渲染包版本分别管理；本仓 Remotion 继续锁定 4.0.533，新增 API 先做类型检查和实际渲染，不自动升级依赖。许可见 [Remotion 官方条款](https://www.remotion.dev/license)。
+另接入 [Remotion 官方技能](https://www.remotion.dev/docs/ai/skills) 作为技术参考，来源固定在 `skills/video-motion/references/upstream.json`。参考包版本与渲染包版本分别管理，实际渲染声明如下表；新增 API 先做类型检查和实际渲染，不自动升级依赖。许可见 [Remotion 官方条款](https://www.remotion.dev/license)。
+
+<!-- docs:auto versions source="skills/video-motion/templates/remotion-app/package.json" -->
+| 运行 / 渲染依赖（来自配置） | 声明版本 |
+|---|---|
+| node（运行要求） | >=22 |
+| Remotion / @remotion/* | 4.0.533 |
+<!-- /docs:auto -->
 
 ## 开始使用
 
-环境：Node 22+、Python 3.10+、Chrome、FFmpeg/ffprobe。PPT 的渲染核查还需要 MS Office 或 LibreOffice；各线的额外依赖由 doctor 报告。
+环境：Node（版本要求见上表）、Python 3.10+、Chrome、FFmpeg/ffprobe。PPT 的渲染核查还需要 MS Office 或 LibreOffice；各线的额外依赖由 doctor 报告。
 
 ```powershell
 # 创建项目本地的 Claude Code / Codex 技能发现链接
 node scripts/setup-skills.mjs
+# 安装本仓库提交检查；既有自定义钩子默认保留
+node scripts/docs.mjs hooks
 # 可选官方技术参考：固定提交，验证已有缓存，不覆盖本地修改
 python scripts/install-upstream-skills.py
 node scripts/setup-skills.mjs
@@ -104,6 +114,7 @@ node scripts/studio.mjs restore --archive products/first-video/archive.json --pr
 <!-- docs:auto tree -->
 ```
 vibe-studio/
+├── .github/
 ├── assets/
 ├── docs/
 ├── products/
@@ -114,6 +125,7 @@ vibe-studio/
 │   ├── content-director/
 │   ├── content-repurpose/
 │   ├── content-review/
+│   ├── doc-maintainer/
 │   ├── humanizer/
 │   ├── media-qc/
 │   ├── narration/
@@ -132,10 +144,11 @@ vibe-studio/
 
 ## 维护检查
 
-文档正本、按改动更新的对照表，以及“制作中项目 README → 归档后作品 README”的状态交接见[文档与作品状态维护](docs/documentation.md)。目录说明不维护“全部项目已完成”等动态结论；技术运行状态与人工接受分别记录。
+Agent 收尾运行 `npm run docs:maintain`，自动更新技能/目录/命令生成区并定位相关说明；按实际 diff 修订现有段落即可。提交钩子检查暂存区，不自动改写或暂存。workspace 检索与接入见[文档维护说明](docs/documentation.md)，无需再维护一份中央项目文档副本。
 
 ```powershell
 npm test
+npm run docs:check
 python scripts/check-docs.py
 node tests/browser-capture.mjs
 npm run verify:workflow

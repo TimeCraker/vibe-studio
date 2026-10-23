@@ -19,5 +19,7 @@ jobs:
         run: npm test
       - name: Docs and source archive checks
         run: python scripts/check-docs.py
+      - name: Generated facts and documentation links
+        run: npm run docs:check
       - name: Whitespace checks
         run: git diff --check

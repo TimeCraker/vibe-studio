@@ -7,6 +7,7 @@ const quote = (s) => `'${s.replaceAll("\\", "/").replaceAll("'", `'"'"'`)}'`;
 
 function chainHusky(root, tool, { remove }) {
   const file = join(root, ".husky", "pre-commit");
+  if (existsSync(join(root, ".husky")) && lstatSync(join(root, ".husky")).isSymbolicLink()) return { repo: root, status: "skipped-linked-husky-directory" };
   if (!existsSync(file) || lstatSync(file).isSymbolicLink()) return { repo: root, status: "skipped-unsupported-husky" };
   const text = readFileSync(file, "utf8"), nl = text.includes("\r\n") ? "\r\n" : "\n";
   const command = quote(relative(root, resolve(tool)));
@@ -31,7 +32,9 @@ export function installHook(repo, tool, { remove = false, chainExisting = false 
   const root = repoRoot(repo);
   const custom = git(root, ["config", "--get", "core.hooksPath"], { optional: true })?.trim();
   if (custom) {
-    if (chainExisting && /(?:^|\/)\.husky\/_\/?$/.test(custom.replaceAll("\\", "/"))) return chainHusky(root, tool, { remove });
+    const configured = resolve(root, custom), localHusky = resolve(root, ".husky/_");
+    const matches = process.platform === "win32" ? configured.toLowerCase() === localHusky.toLowerCase() : configured === localHusky;
+    if (chainExisting && matches) return chainHusky(root, tool, { remove });
     return { repo: root, status: "skipped-existing-hooksPath" };
   }
   const hooks = resolve(root, git(root, ["rev-parse", "--git-path", "hooks"]).trim());

@@ -1,4 +1,5 @@
 import test from "node:test";
+import { spawnSync } from "node:child_process";
 import assert from "node:assert/strict";
 import { chmodSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -53,6 +54,16 @@ test("generation checks the staged snapshot and never masks a partially staged s
   assert.throws(() => syncGenerated(new Snapshot(f.root, { staged: true })), /never modified automatically/);
 });
 
+test("literal generated markers in prose and fenced examples are not interpreted", () => {
+  const f = fixture();
+  const example = "Inline `<!-- docs:auto skills -->` stays.\n```markdown\n<!-- docs:auto unknown -->\nexample\n<!-- /docs:auto -->\n```\n";
+  f.put("README.md", example + "<!-- docs:auto skills -->\nold\n<!-- /docs:auto -->\n");
+  f.put("skills/a/SKILL.md", "---\nname: a\ndescription: original\n---\n");
+  syncGenerated(new Snapshot(f.root));
+  assert.ok(readFileSync(join(f.root, "README.md"), "utf8").startsWith(example));
+  assert.equal(generatedPlan(new Snapshot(f.root)).length, 0);
+});
+
 export { fixture };
 
 test("impact locates command and directory consumers after deletes and renames", () => {
@@ -92,6 +103,8 @@ test("workspace search refreshes edited source docs, separates history and exclu
   f.put("README.md", "# 网页采集\nUse `node scripts/capture.mjs`.\n");
   f.put("scripts/capture.mjs", "original");
   f.put("docs/history.md", "> 状态：已存档\n# 网页采集旧版\nlegacyneedle\n");
+  f.put("docs/2026-10-01-acceptance.md", "# 验收记录\nacceptanceneedle\n");
+  f.put("docs/2026-10-23-current-spec.md", "> 状态：活跃\n# 当前开发\nactivespecneedle\n");
   f.put("docs/credentials.md", "supersecretneedle");
   other.put("README.md", "# 图片转换\nimage conversion\n"); f.commit(); other.commit();
   const blob = git(f.root, ["hash-object", "-w", "--stdin"], { input: "../outside-private.md" }).trim();
@@ -100,6 +113,8 @@ test("workspace search refreshes edited source docs, separates history and exclu
   assert.equal(discoverRepos(workspace).length, 2);
   assert.equal(searchWorkspace(workspace, "网页采集", { cacheDir }).results[0].path, "README.md");
   assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir }).results.length, 0);
+  assert.equal(searchWorkspace(workspace, "acceptanceneedle", { cacheDir }).results.length, 0);
+  assert.equal(searchWorkspace(workspace, "activespecneedle", { cacheDir }).results[0].kind, "current");
   assert.equal(searchWorkspace(workspace, "rootentryneedle", { cacheDir }).results[0].head, undefined);
   assert.equal(searchWorkspace(workspace, "constructor", { cacheDir }).results[0].path, "AGENTS.md");
   assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir, history: true }).results[0].kind, "historical");
@@ -159,4 +174,35 @@ test("Husky chaining preserves original checks, propagates their failures and re
   } finally { process.env.PATH = oldPath; }
   assert.equal(installHook(f.root, tool, { chainExisting: true, remove: true }).status, "removed-existing-husky");
   assert.equal(readFileSync(join(f.root, ".husky/pre-commit"), "utf8"), original);
+});
+
+test("tree and version generation are portable across clone directory names and follow dependency changes", () => {
+  const f = fixture();
+  f.put("package.json", JSON.stringify({ name: "stable-name", engines: { node: ">=22" } }));
+  f.put("config/runtime.json", JSON.stringify({ dependencies: { remotion: "4.0.533", react: "19.1.0" } }));
+  f.put("README.md", "# Stable\n<!-- docs:auto tree -->\nold\n<!-- /docs:auto -->\n<!-- docs:auto versions source=\"config/runtime.json\" -->\nold\n<!-- /docs:auto -->\n");
+  f.put("docs/intro.md", "[root](../)\n");
+  syncGenerated(new Snapshot(f.root)); f.commit();
+  assert.equal(checkDocs(new Snapshot(f.root, { staged: true })).ok, true);
+  const workspace = mkdtempSync(join(tmpdir(), "vibe-docs-clone-")), clone = join(workspace, "different-name");
+  git(workspace, ["clone", "-q", "--no-hardlinks", f.root, clone]);
+  assert.equal(generatedPlan(new Snapshot(clone)).length, 0);
+  assert.equal(checkDocs(new Snapshot(clone)).ok, true);
+  f.put("config/runtime.json", JSON.stringify({ dependencies: { remotion: "4.0.534", react: "19.1.0" } }));
+  const planned = generatedPlan(new Snapshot(f.root));
+  assert.match(planned[0].expected, /4\.0\.534/);
+  assert.doesNotMatch(planned[0].expected, /4\.0\.533/);
+});
+
+test("CLI help works outside Git and invalid values fail without creating files", () => {
+  const cwd = mkdtempSync(join(tmpdir(), "vibe-docs-help-")), tool = resolve("scripts/docs.mjs");
+  const help = spawnSync(process.execPath, [tool, "--help"], { cwd, encoding: "utf8" });
+  assert.equal(help.status, 0, help.stderr);
+  assert.ok(JSON.parse(help.stdout).commands.some((c) => c.includes("--chain-existing")));
+  const invalid = spawnSync(process.execPath, [tool, "search", "--workspace", cwd, "--limit", "NaN", "--query", "word"], { cwd, encoding: "utf8" });
+  assert.equal(invalid.status, 1);
+  assert.match(invalid.stderr, /--limit/);
+  const missing = spawnSync(process.execPath, [tool, "sync", "--repo"], { cwd, encoding: "utf8" });
+  assert.equal(missing.status, 1);
+  assert.match(missing.stderr, /needs a value/);
 });

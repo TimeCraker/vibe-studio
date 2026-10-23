@@ -32,8 +32,11 @@ export function documentPath(path) {
   );
 }
 export function historical(path, text) {
-  return /(?:^|\/)(?:_?archive|archived|completed|recipe)(?:\/|$)/i.test(path) ||
-    /状态[:：]\s*已存档/.test(text.split("\n").slice(0, 12).join("\n"));
+  const header = text.split("\n").slice(0, 12).join("\n");
+  if (/(?:^|\/)(?:_?archive|archived|completed|recipe|reports?|handoffs?)(?:\/|$)/i.test(path) ||
+    /状态[:：]\s*已存档|status:\s*archived/i.test(header)) return true;
+  if (/状态[:：]\s*活跃|status:\s*active/i.test(header)) return false;
+  return /(?:^|\/)(?:\d{4}-\d{2}-\d{2}[-_].*|stage[-_]?\d+[-_].*)(?:acceptance|verification|report|handoff)\.md$/i.test(path);
 }
 
 export class Snapshot {
@@ -49,6 +52,11 @@ export class Snapshot {
     const args = staged ? ["ls-files", "-z"] : ["ls-files", "--cached", "--others", "--exclude-standard", "-z"];
     this.files = [...new Set(git(this.root, args).split("\0").filter(Boolean))].sort();
     this.fileSet = new Set(this.files);
+    this.directories = new Set();
+    for (const file of this.files) {
+      const parts = file.split("/");
+      for (let i = 1; i < parts.length; i++) this.directories.add(parts.slice(0, i).join("/"));
+    }
     this.cache = new Map();
     if (staged) this.preloadDocuments();
   }
@@ -106,8 +114,9 @@ export class Snapshot {
     return text;
   }
   exists(path) {
+    if (path === ".") return true;
     if (!this.safe(path)) return false;
-    if (this.staged) return this.fileSet.has(path) || this.files.some((p) => p.startsWith(`${path.replace(/\/$/, "")}/`));
+    if (this.staged) return this.fileSet.has(path) || this.directories.has(path.replace(/\/$/, ""));
     return existsSync(resolve(this.root, path));
   }
   documents({ history = true } = {}) {
