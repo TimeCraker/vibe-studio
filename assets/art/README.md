@@ -2,7 +2,7 @@
 
 SVG 插画与 AI 出图的家底——需要插画的镜头的美术载体（消费组件：scene-kit ArtLayer）。当前选材按 docs/2026-08-30-motion-grammar.md，导演与生图简报见 content-director；真实操作、截图和结构图使用适合的原生载体。
 
-**施工装载**：在研项目施工期间，将所需图复制进临时施工工程 `remotion-app/public/art/`，渲染时 `ArtLayer src="art/<文件名>"`（src 是 public/ 相对路径）；程序化 SVG 也可内联字符串直传 `svg` prop（零 IO，模板 demo 同款）。成片交付后临时工程清场，本目录资产长期保留。
+**施工装载**：在研项目施工期间，将所需图复制进临时施工工程 `remotion-app/public/art/`，渲染时 `ArtLayer src="art/<文件名>"`（src 是 public/ 相对路径）；程序化 SVG 也可内联字符串直传 `svg` prop（零 IO，模板 demo 同款）。本目录只收录有共用价值的资产；项目专用图及其来源先留在项目中，边界见[资产库说明](../README.md#项目专用与共用素材)。
 
 ## 登记表（每个资产一行，来源/许可/分辨率是硬字段）
 

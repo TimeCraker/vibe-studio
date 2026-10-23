@@ -32,6 +32,13 @@ products/**
 !products/**/*-cover*.png
 !products/**/deliverables/**/*.json
 !products/**/deliverables/**/*-contact-sheet.png
+# 后续发布/复盘数据独立于制作快照；只保留必要且脱敏的文本数据
+!products/**/operations/**/*.json
+!products/**/operations/**/*.csv
+products/**/operations/**/auth.json
+products/**/operations/**/cookie.json
+products/**/operations/**/cookies.json
+products/**/operations/**/storage-state.json
 products/**/media/
 products/**/recipe/**/node_modules/
 products/**/recipe/**/frames/

@@ -103,6 +103,8 @@ vibe-studio/
 
 ## 维护检查
 
+文档正本、按改动更新的对照表，以及“制作中项目 README → 归档后作品 README”的状态交接见[文档与作品状态维护](docs/documentation.md)。目录说明不维护“全部项目已完成”等动态结论；技术运行状态与人工接受分别记录。
+
 ```powershell
 npm test
 python scripts/check-docs.py

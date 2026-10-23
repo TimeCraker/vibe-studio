@@ -4,28 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 仓库定位
 
-自媒体内容工厂：业务 → 文案 → 画面 → 成片。不承载业务代码，只沉淀内容生产能力。**开工先问交付物，再打开 skill**，产品与工具的权威入口是 [`docs/product-map.md`](docs/product-map.md)，清单不在本文件复述；新介绍片禁止走存量对照 `DeckVideo`。结构、五区划分、skill 清单**以 README.md 为唯一事实源**（本文件不复述）；总装流程见 `workflows/explainer-video.md`，质量底线见 `docs/2026-08-30-motion-grammar.md`，历站记录见 `docs/workorder-log.md`。工单多由 Zcode 执行，可能并行施工，**提交时只 add 自己站点的文件**。
+自媒体内容工厂：业务 → 文案 → 画面 → 成片。不承载业务代码，只沉淀内容生产能力。**开工先确定交付物，再打开 skill**；已有明确目标时直接执行。产品与工具的权威入口是 [`docs/product-map.md`](docs/product-map.md)，清单不在本文件复述；新介绍片默认 DeckVideoV2。结构与 skill 清单以 README.md 为准；总装流程见 `workflows/explainer-video.md`，质量底线见 `docs/2026-08-30-motion-grammar.md`，历站记录见 `docs/workorder-log.md`。提交只包含本次任务文件，保留其他人的改动。
 
-## 单一事实源（改文档前先对表，只碰 owner）
+## 文档维护
 
-| 要改的事实 | 唯一 owner | 别处怎么做 |
-|---|---|---|
-| 仓库结构 / skill 清单 / 使用方式 | `README.md` | 链接，不复述 |
-| 产品与交付物入口 | `docs/product-map.md` | 链接，不复述 |
-| 视频工艺怎么做（含查 PAT、回流细节） | `skills/video-motion/SKILL.md` | workflow 只排步骤序 |
-| 步骤顺序与调度 | `workflows/explainer-video.md` | 链接各 skill |
-| 方案库 / 组件家底 | `assets/patterns.md` / `assets/component-catalog.md` | 被链接 |
-| 历史与教训 | `docs/workorder-log.md` | 只追加不回改 |
-| 本文件 | agent 行为规则、命令、坑 | — |
+信息正本、更新触发条件和作品状态统一见[文档维护约定](docs/documentation.md)，本文件不另维护一张 owner 表。收尾按本次 diff 同步受影响的入口、命令、skill 与进度，在同一提交完成；无需改说明时简述原因。
 
-改完跑 `python scripts/check-docs.py`（红=漂移，如 README 表与 skills/ 目录不一致、文档引用路径失效、PAT 条目缺字段）。改动 skill 或默认 composition 时同步对应 owner 文档——历史上漏过：ppt-deck 改名 ppt、收录 humanizer 都是事后补的 README。
+改完跑 `python scripts/check-docs.py`；检查通过不能代替文字承诺、当前状态与实际实现的人工核对。
 
 `docs/` 下的 spec 首行统一写一行 `> 状态：活跃` 或 `> 状态：已存档（被 X 吸收）`。被吸收的 spec 里那些「本就不该再生产」的产物路径，check-docs 对标记已存档的文档跳过检查；没有这个标记，那几条 WARN 永远消不掉，只会训练人忽略 WARN。
 
 ## 结构要点（只记 README 里没有的）
 
 - 技能发现链接由 `node scripts/setup-skills.mjs` 维护，正本与安装方式以 README 为准。
-- `projects/` 是临时施工流水线（Ephemeral Workspace）：开工复制模板到 `projects/<项目>/`，施工中在此调试渲染；**制作配方、原始输入与成品归档至 `products/<项目>/`，逐文件哈希校验并试恢复后再清场**。非作业期保持零工程残留。
+- `projects/` 是制作施工区，入口与保存边界见 [projects 说明](projects/README.md)。归档后允许保留有复用价值的现场，不为了目录整洁提前删除唯一输入。
 
 ## 常用命令
 

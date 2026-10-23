@@ -10,6 +10,8 @@ Checks:
   3.7 video-motion template package.json pins @remotion/* exact and uniform (SKILL.md rule)
   4. README setup entry and structure tree cover every local skill
   5. .claude/skills junctions exist per skill (local machine only, warn)
+  6. Source archive tracking and hashes
+  7. Maintained entrypoint and skill Markdown file links (not prose/anchor freshness)
 
 GBK console safe: ASCII-only output.
 """
@@ -22,7 +24,8 @@ import sys
 ROOT = os.path.realpath(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.chdir(ROOT)
 
-META_DOCS = ["README.md", "CLAUDE.md", "workflows/explainer-video.md",
+META_DOCS = ["README.md", "AGENTS.md", "CLAUDE.md", "workflows/explainer-video.md",
+             "projects/README.md", "products/README.md", "assets/art/README.md",
              "assets/patterns.md", "assets/component-catalog.md", "assets/README.md"]
 META_DOCS += sorted(glob.glob("docs/*.md")) + sorted(glob.glob("skills/*/SKILL.md"))
 # 项目与产品的 README 也带大量跨区引用（复跑命令、产物路径），过去完全不在检查范围
@@ -230,15 +233,24 @@ for manifest_file in sorted(pathlib.Path("products").glob("*/archive.json")):
         if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest() != entry["sha256"]:
             errors.append(f"archive source missing/hash mismatch: {name}")
 
-# Local links in maintained skill entries should resolve when selected.
-for doc in sorted(glob.glob("skills/*/SKILL.md")):
+# Local links in maintained entrypoints should resolve when selected.
+# Directory READMEs were previously absent from META_DOCS. Check their links too;
+# history/spec links may refer to local-only output and retain the existing policy.
+LINK_DOCS = ["README.md", "AGENTS.md", "CLAUDE.md", "workflows/explainer-video.md",
+             "docs/documentation.md", "docs/product-map.md", "projects/README.md",
+             "products/README.md", "assets/README.md", "assets/art/README.md"]
+for doc in sorted(set(LINK_DOCS + glob.glob("skills/*/SKILL.md"))):
+    if not os.path.isfile(doc):
+        errors.append(f"maintained entry missing: {doc}")
+        continue
     content = pathlib.Path(doc).read_text(encoding="utf-8")
+    content = re.sub(r"^```[^\n]*\n.*?^```[^\n]*$", "", content, flags=re.M | re.S)
     for link in re.findall(r"\]\(([^)]+)\)", content):
         if "://" in link or link.startswith("#"):
             continue
         path = link.split("#")[0]
         if path and not (pathlib.Path(doc).parent / path).exists():
-            errors.append(f"skill reference does not exist: {doc}: {path}")
+            errors.append(f"local reference does not exist: {doc}: {path}")
 
 for w in warns:
     print(f"WARN  {w}")

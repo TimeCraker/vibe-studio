@@ -92,7 +92,7 @@ PPT 逐页成片的升级线：画面主体从「PPT 页图」换成 Remotion �
 
 ### 验收流程（四级）
 
-L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositions 帧数对账）；L2 抽帧（每页 4 张：进场中间态/稳定全景/信息包特写/道具 200% 放大 + 字幕帧逐字核对 + 去重证据帧，judge 读图）；L2.5 静音测试（逐页盲答主旨）；L3 报告（含技术范围、关键帧证据、人工待审项与需要时的新旧对照）。**验收全绿后资产回流（铁律）**：改进/新造的 scene-kit 组件与 tokens 回写 skill 模板；新成页方案在 `assets/patterns.md` 登记 PAT 条目（模板见文末）；教训进 `docs/workorder-log.md`。渲染命令同 DeckVideo（composition 换成场景化组件，如 `DeckVideoV2`），封面用 `npx remotion still` 出图（still 帧号要容纳入场 spring 时长）。
+L1 程序（渲染退出码取完整日志，禁管道尾；ffprobe = compositions 帧数对账）；L2 抽帧（每页 4 张：进场中间态/稳定全景/信息包特写/道具 200% 放大 + 字幕帧逐字核对 + 去重证据帧，judge 读图）；L2.5 静音测试（逐页盲答主旨）；L3 报告（含技术范围、关键帧证据、人工待审项与需要时的新旧对照）。确认具有通用价值的组件、tokens 与版式再按[资产回流约定](../../assets/README.md#有复用价值时回流)回写模板/登记簿；项目专用内容保留在项目内，没有新经验不另造工单。渲染命令同 DeckVideo（composition 换成场景化组件，如 `DeckVideoV2`），封面用 `npx remotion still` 出图（still 帧号要容纳入场 spring 时长）。
 
 ## 封面出图（Cover，第四种产物）
 
