@@ -160,6 +160,7 @@ npm run docs:check
 python scripts/check-docs.py
 node tests/browser-capture.mjs
 npm run verify:workflow
+npm run verify:quality
 ```
 
 测试通过只代表对应技术范围。交付前按 [质量规范](docs/2026-08-30-motion-grammar.md) 看真实画面、听音频、检查手机尺寸。当前整理与验证范围见 [Agent 视频质量流程](docs/2026-10-23-agent-video-quality-spec.md)，前期修复保留在 [生产工作流修复](docs/2026-10-23-production-workflow-spec.md)。

@@ -19,6 +19,8 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Unit and media fixture tests
         run: npm test
+      - name: Audio and animatic integration
+        run: npm run verify:quality
       - name: Docs and source archive checks
         run: python scripts/check-docs.py
       - name: Generated facts and documentation links

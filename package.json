@@ -14,7 +14,8 @@
     "docs:sync": "node scripts/docs.mjs sync",
     "docs:check": "node scripts/docs.mjs check",
     "verify:capture": "node tests/browser-capture.mjs",
-    "verify:workflow": "node tests/workflow-smoke.mjs"
+    "verify:workflow": "node tests/workflow-smoke.mjs",
+    "verify:quality": "node tests/quality-workflow.mjs"
   },
   "devDependencies": {
     "@timecraker/workspace-docs": "file:tools/timecraker-workspace-docs-1.0.0.tgz"
