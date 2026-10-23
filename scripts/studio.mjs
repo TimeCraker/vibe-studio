@@ -20,6 +20,7 @@ import { validatePlan } from "../skills/content-director/scripts/validate-plan.m
 import { checkMedia } from "../skills/media-qc/scripts/check.mjs";
 import { derive } from "../skills/publish/scripts/derive.mjs";
 import { writeReview } from "../skills/publish/scripts/report.mjs";
+import { mixAudio } from "../skills/audio-post/scripts/mix.mjs";
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [cmd, ...argv] = process.argv.slice(2);
 const args = {};
@@ -252,6 +253,8 @@ try {
       from: args.from,
       dry: Boolean(args.dry),
     });
+  else if (cmd === "audio")
+    result = mixAudio(project, { configPath: args.config, out: args.out });
   else if (cmd === "qc")
     result = checkMedia(project, String(args.video ?? "render/video.mp4"), {
       srt: args.srt,

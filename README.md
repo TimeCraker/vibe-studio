@@ -23,6 +23,7 @@
 | 策划与文案 | [content-director](skills/content-director/) | 为产品介绍、科技讲解或内容视频做受众定位、事实取材、口播与镜头设计。适用于选题、写分镜、画面单薄或正式制作前的策划；已有定稿的采集和渲染交给对应制作 skill。 |
 | 策划与文案 | [humanizer](skills/humanizer/) | 中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。 去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。 基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检… |
 | 策划与文案 | [narration](skills/narration/) | 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 work… |
+| 内容制作 | [audio-post](skills/audio-post/) | 对真人录音或 TTS 已生成音轨做声音后期：剪取与编排、增益和基础滤波、音乐自动避让、音效混合、淡入淡出、两遍响度处理及测量。适用于配音完成后的混音，不生成配音、不代替人工审听。 |
 | 演示文稿 | [ppt](skills/ppt/) | 用 python-pptx 代码生成专业 PPT / 幻灯片 / 演示文稿（deck / slides / pptx）。用户说「做个 PPT / 幻灯片 / 演示文稿 / 项目介绍 deck / 把项目做成 slides」时使用；改现有 pptx 同样适用。用… |
 | 视频制作 | [auto-subtitle](skills/auto-subtitle/) | 转写工具，不是成片入口。faster-whisper 把 mp4/wav/flac 转成 cues.json + srt，字段与 video-motion SubtitleCue 对齐。用户说「自动字幕 / 语音转字幕 / 转写 / 出字幕文件 / faste… |
 | 视频制作 | [video-motion](skills/video-motion/) | 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。 |
@@ -83,6 +84,7 @@ B/录像线 `init --line b|footage` 复制 Remotion 模板并配置依赖安装�
 | `validate --project DIR [--require-reviewed]` | 校验任务、分镜与已有审阅记录 |
 | `run --project DIR [--step ID \| --from ID] [--dry]` | 运行、预检或续跑声明步骤 |
 | `status --project DIR` | 查看技术步骤状态 |
+| `audio --project DIR [--config FILE] [--out FILE]` | 编排音轨、音乐避让、混音与两遍响度处理 |
 | `qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]` | 检查实际媒体与字幕 |
 | `derive --project DIR` | 按配置派生平台物料 |
 | `review --project DIR` | 根据真实统计生成复盘 |
@@ -124,6 +126,7 @@ vibe-studio/
 ├── projects/
 ├── scripts/
 ├── skills/
+│   ├── audio-post/
 │   ├── auto-subtitle/
 │   ├── content-director/
 │   ├── humanizer/
