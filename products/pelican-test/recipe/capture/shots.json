@@ -6,8 +6,8 @@
   "height": 1080,
   "chunkCount": 3,
   "concurrency": 6,
-  "htmlA": "C:/Users/TimeCraker/.gemini/antigravity/scratch/pelican-bike/index.html",
-  "htmlB": "C:/Users/TimeCraker/.gemini/antigravity/scratch/pelican-cycling/index.html",
+  "htmlA": "capture/src/recovered-htmlA.html",
+  "htmlB": "capture/src/recovered-htmlB.html",
   "shots": [
     {
       "id": "a-day",

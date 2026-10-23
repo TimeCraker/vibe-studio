@@ -1,0 +1,2 @@
+# Recipe hashes describe exact bytes, including historical line endings.
+products/**/recipe/** -text

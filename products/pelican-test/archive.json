@@ -10,7 +10,8 @@
   "missingExternalInputs": [],
   "notes": [
     "Source hashes verified. Historical timing and capture semantics are preserved as evidence; restore into projects before adapting to the current engine.",
-    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated."
+    "Large original inputs require a separate media backup. Do not claim a full rerender until original inputs and the legacy recipe are validated.",
+    "External source HTML was snapshotted from existing local inputs on 2026-10-23; shots.json now uses portable project-relative paths."
   ],
   "files": [
     {
@@ -87,8 +88,8 @@
       "path": "capture/shots.json",
       "stored": "recipe/capture/shots.json",
       "kind": "source",
-      "bytes": 2369,
-      "sha256": "998a985c4613ff98d6d1f8c89f15937774688540bd4c2bbd6b2fe0d9491e5df4"
+      "bytes": 2288,
+      "sha256": "a6b938b5676fbd56b93fb593ffa4527d8c3c45f132fab0ea5f9270e88473c183"
     },
     {
       "path": "douyin-form.json",
@@ -208,6 +209,24 @@
       "kind": "source",
       "bytes": 783,
       "sha256": "ec53f2d21ad9fdc41c69041bf0904335725ed9d162582ffbcd12bb788e9c4c4b"
+    },
+    {
+      "path": "capture/src/recovered-htmlA.html",
+      "stored": "recipe/capture/src/recovered-htmlA.html",
+      "kind": "source",
+      "bytes": 71110,
+      "sha256": "e530bfd64d5d6aa9a89de6e5f1739ebe66e852a8e3cf5b32266a3bd5a064108e",
+      "origin": "local-input-snapshot",
+      "originalPath": "C:/Users/TimeCraker/.gemini/antigravity/scratch/pelican-bike/index.html"
+    },
+    {
+      "path": "capture/src/recovered-htmlB.html",
+      "stored": "recipe/capture/src/recovered-htmlB.html",
+      "kind": "source",
+      "bytes": 62013,
+      "sha256": "3bf9c46bc64d13b5fabe03462b2ee7d16c6655a7564e051fe88ffcda68cc25ca",
+      "origin": "local-input-snapshot",
+      "originalPath": "C:/Users/TimeCraker/.gemini/antigravity/scratch/pelican-cycling/index.html"
     }
   ]
 }
