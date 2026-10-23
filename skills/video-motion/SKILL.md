@@ -2,7 +2,7 @@
 name: video-motion
 description: 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。
 metadata:
-  category: 3. 视频制作
+  category: 2. 内容制作
 ---
 
 # video-motion — 视频底材叠动效（Remotion）
@@ -11,7 +11,7 @@ metadata:
 
 ## Step 1 · 剧本设计（看素材，不猜画面）
 
-1. **抽帧看素材**：`npx remotion still remotion/index.ts FootageOverlay <输出>/f-<n>.png --frame=<n>`，帧号铺开抽 6-8 张；PNG 先复制到 `C:\pc\` 类短路径再读图（反斜杠路径解析坑）
+1. **抽帧看素材**：`npx remotion still remotion/index.ts FootageOverlay <输出>/f-<n>.png --frame=<n>`，按镜头和关键变化选帧；使用实际生成图的绝对路径读图
 2. **写 `src/cues.ts` 动效剧本**：
    - **字幕讲画面**：说观众此刻看到的事，按语义与阅读速度分段
    - **圈注指实物**：circle / arrow / box 指向画面中真实存在且值得注意的元素，坐标先用抽帧核实落点
@@ -38,11 +38,11 @@ npx remotion render remotion/index.ts FootageOverlay <仓库>/products/<项目�
 
 ## Step 4 · 三级核查（必做，不可跳）
 
-**① 程序**：渲染退出码 0；`npx remotion compositions remotion/index.ts` 输出的 durationInFrames / 宽 / 高 / fps 与素材元数据一致；`npx remotion still` 按 cue 公式抽帧 ≥8 张——每条字幕 start+0.3s / end-0.3s、数据柱 t-0.3s / t+1.5s、圈注 t+0.5s / t+ttl+0.3s（素材 60fps 时帧号 = 秒 × 60，以 compositions 输出的 fps 为准）。
+**① 程序**：渲染退出码 0；`npx remotion compositions remotion/index.ts` 输出的 durationInFrames / 宽 / 高 / fps 与素材元数据一致；`npx remotion still` 按关键字幕、数据变化和转场选取代表帧——每条字幕 start+0.3s / end-0.3s、数据柱 t-0.3s / t+1.5s、圈注 t+0.5s / t+ttl+0.3s（以 compositions 输出的实际 fps 换算帧号）。
 
-**② 读图**：PNG 复制 `C:\pc\` 短路径逐帧核对：出现 / 消失时刻与文本、柱高比例与数值标签、圈注类型与落点、底材无花屏无拉伸、全帧无乱码（中文走 Microsoft YaHei 回退）。有红项改 cues 重渲染重查，连续 2 轮仍有红 → 停下报告。
+**② 读图**：读取实际 PNG 逐帧核对：出现 / 消失时刻与文本、柱高比例与数值标签、圈注类型与落点、底材无花屏无拉伸、全帧无乱码（中文走 Microsoft YaHei 回退）。问题回写对应源文件，重渲染后检查原问题与相邻衔接；遇到无法判断或无法修复的阻塞再明确报告。
 
-**③ 用户看片**：前两级清零机械问题后，用户终审成片。
+**③ 连续播放与审听**：抽帧不能证明节奏和同步，按 media-qc 的视听方法检查实际片段和音轨，记录检查范围；用户终审成片。
 
 ## Step 5 · 交付
 

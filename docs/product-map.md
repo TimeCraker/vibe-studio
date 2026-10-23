@@ -18,4 +18,6 @@
 
 工具职责与安装以 README.md 为准。流程以 workflows/explainer-video.md 为准。历史 DeckVideo 用于旧片对照，新介绍片默认 DeckVideoV2；保留旧代码不代表推荐旧工艺。
 
+高质量视频先用 content-director 确定参考方法与视觉方向，按需生成可播放动态分镜；正式画面与实际配音稳定后由 audio-post 做声音处理，media-qc 核查实际成片并记录视听观察。平台适配、投稿与发布后复盘统一归 publish，三个阶段可独立使用。
+
 作品状态与历史证据的解释见[文档维护约定](documentation.md#作品状态记录)。

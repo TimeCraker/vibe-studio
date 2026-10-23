@@ -2,6 +2,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { resolve, dirname, join, basename } from "node:path";
 import { pathToFileURL } from "node:url";
+import { hashFile } from "../../../scripts/lib/files.mjs";
 export function checkSubtitles(
   text,
   duration,
@@ -220,6 +221,7 @@ export function checkMedia(
     status: errors.length ? "failed" : "technical-pass-needs-human-review",
     ok: errors.length === 0,
     video,
+    videoSha256: hashFile(video),
     width: stream.width,
     height: stream.height,
     fps,

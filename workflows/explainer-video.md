@@ -7,12 +7,14 @@
 ## 1. 怎么使用：默认路径，按任务裁剪
 
 ```text
-明确交付 → 选制作线 → 准备稿件与素材 → 代表画面/短样片
-        → 正式制作 → 平台版本与验收 → 投稿 → 归档与后续复盘
+明确交付 → 参考分析与视觉方向 → 选制作线与准备材料
+        → 动态分镜/关键样片 → 正式画面与声音后期
+        → 视听审稿与局部返修 → 平台适配/投稿 → 归档与后续复盘
 ```
 
 - 已有定稿、素材或审阅结论，直接复用并注明来源；小改动只回到受影响的阶段，不从头重做。
 - 简单片可用代表帧、关键片段验证；新风格、复杂镜头、长片优先做短样片。没有固定样片时长或审核轮数。
+- 需要验证全片信息结构时，先用低成本分镜图和临时音轨做动态分镜，再精修镜头。参考分析、事实核查与制作中审稿的方法见 content-director，已有成熟系列可复用原方案。
 - A/B/C 可组合：例如 C 线采集真实页面，B 线制作片头，最后在剪映配音剪辑。选择主要制作线，在项目说明中记下组合方式即可。
 - 同平台无需改编时复用已验收版本，不为凑齐三平台而强行制作；未公开发布的交付也可以归档。
 - 沿用已有授权推进工作，不为同一范围反复确认。无人审阅时可以继续制作待审稿，但不能记录成人工接受或正式发布。
@@ -44,6 +46,7 @@ node scripts/studio.mjs init --id demo-video --line c
 
 | 阶段 | 输入与执行者 | 应留下什么 | 交接依据 |
 |---|---|---|---|
+| 参考与视觉方向 | 相关参考片/图、品牌材料；content-director 分析 | 在已有 brief.md 中记录有效方法、适用理由与代表画面 | 实际看过的范围清楚，本片的信息层级和视觉方向可执行 |
 | 定目标与事实 | 用户目标、项目材料；content-director 辅助 | brief.md、storyboard.json 中的事实与来源 | 受众、核心承诺、片长、画幅、交付范围清楚 |
 | 口播与镜头 | 已有稿或 narration 起稿，humanizer 润色 | 口播稿、逐镜说明、实际音轨（有配音时） | 事实不变；旁白、画面和时长相容 |
 | 素材准备 | 截图、录像、SVG、插画、音频 | 项目内原始输入、来源与用途记录 | 必要素材可读取，缺项明确，临时占位已标注 |
@@ -62,6 +65,17 @@ node scripts/studio.mjs validate --project $workProject --require-reviewed
 ```
 
 `--require-reviewed` 读取 storyboard.json 的 review.status，不会请求或生成批准，也不代表成片已经审阅。人工结论与证据的记录位置见[状态约定](../docs/documentation.md#作品状态记录)。
+
+### 先检查可播放的时间结构
+
+按 [动态分镜说明](../skills/content-director/references/animatic.md)在 animatic.json 指定 scene id 对应参考图和临时音轨，再执行：
+
+```powershell
+node scripts/studio.mjs animatic --project $workProject
+node scripts/studio.mjs qc --project $workProject --video preview/animatic.mp4 --allow-preview --out qa/animatic-qc.json
+```
+
+新初始化配置允许占位，报告会逐镜注明；有实际参考图后关闭 allowPlaceholders 核对缺图。动态分镜读取 storyboard 时间，画面保留预览标记，输出同名字幕与来源报告。完整播放后判断信息顺序与口播节奏，再局部修改；没有音轨时不声称完成声音或口播节奏审查。成熟方案或简单小改可直接用代表片段验证。
 
 ## 4. 按制作线完成样片与全片
 
@@ -105,6 +119,18 @@ A 线初始化没有自动控制剪映或导出成片的任务。可把已确认
 
 C 线默认通过状态重放保证支持范围内的采集一致性；显式 seek、CSS/媒体/Worker 等限制见 skill。失败时看项目 `.studio/logs/`，按输入依赖重跑受影响步骤；缓存命中不能代替审阅。
 
+### 各线共用：声音后期
+
+正式配音、音乐和音效准备好后，按 [audio-post](../skills/audio-post/SKILL.md)编写 audio.json，声明实际音轨、源截取、时间轴位置和处理目标：
+
+```powershell
+node scripts/studio.mjs audio --project $workProject
+# C 线示例：显式将处理后的混音合入视频
+node skills/web-capture/templates/render-director.mjs --project $workProject --audio audio/mix.wav --out render/video.mp4
+```
+
+混音报告保存输入/输出哈希与实际测量。上述命令不会生成配音，也不替代审听；先核对人声清晰、音乐避让和衔接，再以实际音轨校准字幕。A 线导入混音，B 线由对应音轨组件使用，C 线显式传 --audio。加入 job.json 时把配置、源音轨、混音和报告的输入输出都声明清楚，不能只改一个命令而漏掉缓存依赖。声音不需要处理时可复用现有音轨，不强行增加步骤。
+
 ## 5. 平台版本与成片验收
 
 先确认需要投哪些平台、是否需要不同镜头/画幅。使用 [发布前准备](../skills/publish/references/preparation.md) 时，按真实内容修改 variants.json 后再派生；它可能覆盖生成的投稿计划，手动改动应先回到上游配置。
@@ -120,6 +146,8 @@ node scripts/studio.mjs qc --project $workProject --video render/douyin.mp4 --co
 
 人工结论记录检查对象/版本与证据，改动画面或音轨后重新检查受影响内容。机器报告通过、人工待审、人工接受分别保留；待审稿可以交付预览，不能描述为已接受的成片。
 
+视听审稿按 [media-qc 的记录方法](../skills/media-qc/references/editorial-review.md)执行。实际播放/审听后在 qa/inspection-input.json 填写已查看范围、时间码、观察与源文件修复建议，再用 `node scripts/studio.mjs inspect --project $workProject` 记录。工具不自动生成观察；没有播放/听音能力就标未审。旧报告通过 `inspect --verify qa/editorial-review.json` 比较媒体版本，变化后重审受影响内容。局部返修检查原问题与相邻衔接，顺序/音轨或时长变化时再检查完整结构。
+
 ## 6. 投稿与发布记录
 
 按 [publish](../skills/publish/SKILL.md) 准备真实视频、封面与平台文案，先执行离线预检：
@@ -131,6 +159,8 @@ node skills/publish/templates/run.mjs --project $workProject --dry
 真实填表依照已有投稿授权执行，用户自行登录；脚本完成上传/填表后仍需用户核对视频、封面、分区、话题和声明，并亲自点击发布。`filled-needs-human-check` 只表示填表阶段；封面等 manualPending 项需实际处理，不能写成已应用。
 
 发布后把平台链接、实际时间与可核实状态记入作品 README。没有点击发布或没有结果证据，就保留待发布/未知；不要求每个交付作品都公开发布。
+
+平台准备、投稿和后续复盘统一由 publish 按阶段处理，允许只执行其中一个环节；是否公开发布不影响成片审查与归档。
 
 ## 7. 归档、清场与后续复盘
 

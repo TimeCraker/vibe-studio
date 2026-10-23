@@ -2,7 +2,7 @@
 
 | 入口 | 用途 |
 |---|---|
-| `studio.mjs` | 初始化、环境诊断、契约校验、步骤执行/续跑、QC、平台派生、复盘、归档与恢复 |
+| `studio.mjs` | 制作编排、动态分镜、声音后期、技术与视听审查、发布物料及复盘、归档与恢复；具体命令由根 README 自动生成 |
 | `docs.mjs` | 自动生成清单、定位 Git 变更影响、暂存区检查、提交钩子与 workspace 本地文档检索；用法见 docs/documentation.md |
 | `setup-skills.mjs` | 动态扫描技能并建立项目本地发现链接；--dry 只列计划 |
 | `install-upstream-skills.py` | 固定提交的 Remotion 官方参考安装与缓存完整性检查 |

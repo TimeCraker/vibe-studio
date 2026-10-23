@@ -22,6 +22,7 @@ import { derive } from "../skills/publish/scripts/derive.mjs";
 import { writeReview } from "../skills/publish/scripts/report.mjs";
 import { mixAudio } from "../skills/audio-post/scripts/mix.mjs";
 import { renderAnimatic } from "../skills/content-director/scripts/animatic.mjs";
+import { recordInspection, verifyInspection } from "../skills/media-qc/scripts/inspect.mjs";
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [cmd, ...argv] = process.argv.slice(2);
 const args = {};
@@ -262,6 +263,8 @@ try {
     result = mixAudio(project, { configPath: args.config, out: args.out });
   else if (cmd === "animatic")
     result = renderAnimatic(project, { configPath: args.config, out: args.out });
+  else if (cmd === "inspect")
+    result = args.verify ? verifyInspection(project, args.verify) : recordInspection(project, { input: args.input, out: args.out });
   else if (cmd === "qc")
     result = checkMedia(project, String(args.video ?? "render/video.mp4"), {
       srt: args.srt,

@@ -1,11 +1,11 @@
 ---
 name: media-qc
-description: 对完成的视频或短样片做技术质检、字幕时间检查、响度测量和抽帧取证。适用于渲染后核查与交付前验收；技术检查不代替人工看片、听音或品牌视觉终审。
+description: 对粗样片或成片做媒体技术检查，并记录绑定实际视频版本、带时间码的视听审稿观察与局部返修建议。适用于制作中和交付前审查；工具不自动看片听音，技术通过不代替人工接受。
 metadata:
-  category: 4. 交付与运营
+  category: 3. 成片审查
 ---
 
-# 媒体质检
+# 成片审查
 
 运行 `node skills/media-qc/scripts/check.mjs --project <项目> --video render/video.mp4`。依赖 FFmpeg/ffprobe，不需要 npm 包；可选 `--srt captions.srt`、`--require-audio`、`--allow-preview`。输出项目 `qa/media-report.json` 和抽帧图。
 
@@ -16,3 +16,5 @@ metadata:
 机器报告为 technical-pass-needs-human-review 或 failed。人工必须看：手机尺寸可读性、画面主体与事实一致、进出镜节奏、旁白同步、音乐是否盖人声、封面及平台控件遮挡。记录看片者和结论；没有人工记录就保留 pending。
 
 只对已知制作输入做修复；字幕识别问题交 auto-subtitle，画面设计交 content-director，来源问题回事实材料核查。不要为了绿色报告放宽目标或自动填入人工通过。
+
+实际看片/听音后按[视听审稿与返修](references/editorial-review.md)记录观察：`node scripts/studio.mjs inspect --project <项目>`。技术报告附 videoSha256，审稿需绑定实际已查看版本；只记录已查看的区间，未听音就标未审听。再次使用结果用 inspect --verify 校验媒体版本，改片后受影响部分需重审。这个工具负责记录和一致性检查，不生成审美判断或人类批准。
