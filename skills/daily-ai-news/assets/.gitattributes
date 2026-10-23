@@ -1,0 +1,2 @@
+# Preserve the official source bytes recorded in sources.json across checkouts.
+official-openai-light.svg -text
