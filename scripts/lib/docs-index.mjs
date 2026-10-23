@@ -6,7 +6,7 @@ import { Snapshot, changedPaths, digest, git, historical, normalize, redact } fr
 import { references } from "./docs-analyze.mjs";
 
 const TOOL_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
-const INDEX_VERSION = 2; // Bump when tokenization, reference or history rules change.
+const INDEX_VERSION = 3; // Bump when tokenization, reference or history rules change.
 const SKIP = new Set(["archive", "node_modules", "vendor", "dist", "build", "out", "target"]);
 
 export function discoverRepos(workspace, { depth = 3 } = {}) {

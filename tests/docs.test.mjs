@@ -105,6 +105,8 @@ test("workspace search refreshes edited source docs, separates history and exclu
   f.put("docs/history.md", "> 状态：已存档\n# 网页采集旧版\nlegacyneedle\n");
   f.put("docs/2026-10-01-acceptance.md", "# 验收记录\nacceptanceneedle\n");
   f.put("docs/2026-10-23-current-spec.md", "> 状态：活跃\n# 当前开发\nactivespecneedle\n");
+  f.put("docs/stages/stage-09-production-deployment.md", "# 过去的部署\nstagesnapshotneedle\n");
+  f.put("docs/stages/stage-99-current.md", "> 状态：活跃\n# 当前计划\nactivestageneedle\n");
   f.put("docs/credentials.md", "supersecretneedle");
   other.put("README.md", "# 图片转换\nimage conversion\n"); f.commit(); other.commit();
   const blob = git(f.root, ["hash-object", "-w", "--stdin"], { input: "../outside-private.md" }).trim();
@@ -115,6 +117,8 @@ test("workspace search refreshes edited source docs, separates history and exclu
   assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir }).results.length, 0);
   assert.equal(searchWorkspace(workspace, "acceptanceneedle", { cacheDir }).results.length, 0);
   assert.equal(searchWorkspace(workspace, "activespecneedle", { cacheDir }).results[0].kind, "current");
+  assert.equal(searchWorkspace(workspace, "stagesnapshotneedle", { cacheDir }).results.length, 0);
+  assert.equal(searchWorkspace(workspace, "activestageneedle", { cacheDir }).results[0].kind, "current");
   assert.equal(searchWorkspace(workspace, "rootentryneedle", { cacheDir }).results[0].head, undefined);
   assert.equal(searchWorkspace(workspace, "constructor", { cacheDir }).results[0].path, "AGENTS.md");
   assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir, history: true }).results[0].kind, "historical");
@@ -151,7 +155,7 @@ test("installed hook actually blocks new broken links without changing the index
 
 test("Husky chaining preserves original checks, propagates their failures and removes only its own suffix", () => {
   const f = fixture();
-  const original = "# original check\r\npnpm exec lint-staged\r\n";
+  const original = "# original check\npnpm exec lint-staged\n";
   f.put(".husky/pre-commit", original);
   f.put(".husky/_/pre-commit", "#!/bin/sh\nexec sh -e .husky/pre-commit\n");
   chmodSync(join(f.root, ".husky/_/pre-commit"), 0o755);

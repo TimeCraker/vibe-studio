@@ -36,6 +36,8 @@ export function historical(path, text) {
   if (/(?:^|\/)(?:_?archive|archived|completed|recipe|reports?|handoffs?)(?:\/|$)/i.test(path) ||
     /状态[:：]\s*已存档|status:\s*archived/i.test(header)) return true;
   if (/状态[:：]\s*活跃|status:\s*active/i.test(header)) return false;
+  if (/(?:^|\/)docs\/stages\/[^/]+\.md$/i.test(path) && !/\/README\.md$/i.test(path)) return true;
+  if (/(?:^|\/)stage[-_]?\d+[-_][^/]+\.md$/i.test(path)) return true;
   return /(?:^|\/)(?:\d{4}-\d{2}-\d{2}[-_].*|stage[-_]?\d+[-_].*)(?:acceptance|verification|report|handoff)\.md$/i.test(path);
 }
 
