@@ -1,0 +1,13 @@
+{
+  "video": "render/daily-ai-news-2026-10-23.mp4",
+  "cover": "render/cover.png",
+  "platforms": {
+    "bili": {
+      "spec": "form.json",
+      "video": "render/daily-ai-news-2026-10-23.mp4",
+      "cover": "render/cover.png",
+      "declare": "含AI生成内容",
+      "category": "人工智能"
+    }
+  }
+}

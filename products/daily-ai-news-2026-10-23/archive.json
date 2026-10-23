@@ -1,0 +1,1326 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23T16:39:27.131Z",
+  "id": "daily-ai-news-2026-10-23",
+  "line": "b",
+  "scope": "source-inputs-and-deliverables",
+  "reproducibility": "inputs-archived-rerender-not-certified",
+  "files": [
+    {
+      "path": "animatic.json",
+      "stored": "recipe/animatic.json",
+      "kind": "source",
+      "bytes": 116,
+      "sha256": "529593695ef41023860d81e927cf85cddda4ca1fd49744761ed909938604bb43"
+    },
+    {
+      "path": "assets/brands/minimax.png",
+      "stored": "media/assets/brands/minimax.png",
+      "kind": "media",
+      "bytes": 18199,
+      "sha256": "d095a4fff8770ace5d8b537a9f642e3c4f1230a56a36177a16537d36d84b2e33"
+    },
+    {
+      "path": "assets/brands/recursive-mark.png",
+      "stored": "media/assets/brands/recursive-mark.png",
+      "kind": "media",
+      "bytes": 855,
+      "sha256": "67c1de28a235a00482cfc7bb3a5e7161f107c5b156888b20c457e0cb2042e55e"
+    },
+    {
+      "path": "assets/brands/sources.json",
+      "stored": "recipe/assets/brands/sources.json",
+      "kind": "source",
+      "bytes": 1557,
+      "sha256": "38d049951bb21356314205e62d017f60418238d59e172429e70dacbe74c3e01f"
+    },
+    {
+      "path": "assets/brands/typescript-favicon-32.png",
+      "stored": "media/assets/brands/typescript-favicon-32.png",
+      "kind": "media",
+      "bytes": 1053,
+      "sha256": "a5b6010ffce7ff3b2e601dd2c4f87e3bde8c563b42c8f99a6e0892aa1d8313d9"
+    },
+    {
+      "path": "assets/brands/typescript.svg",
+      "stored": "recipe/assets/brands/typescript.svg",
+      "kind": "source",
+      "bytes": 1729,
+      "sha256": "139ae451b37a00251fe24358191699efa665f63f1c8369cb9dad833159e159e2"
+    },
+    {
+      "path": "brief.md",
+      "stored": "recipe/brief.md",
+      "kind": "source",
+      "bytes": 678,
+      "sha256": "5f8a533a097a78f9e088d74e3bbf72aedc267ccd52bfa088cfee608bae12b4ce"
+    },
+    {
+      "path": "captions.srt",
+      "stored": "recipe/captions.srt",
+      "kind": "source",
+      "bytes": 5664,
+      "sha256": "14e1c708dee519c68f41b2e603fecbb3c8d4fba1458bd0c573a9d6969187c87e"
+    },
+    {
+      "path": "deliverables.json",
+      "stored": "recipe/deliverables.json",
+      "kind": "source",
+      "bytes": 220,
+      "sha256": "2365860ccf78c22987bc6c35d2d611a69459324fd97652b253da1b25ec4c583c"
+    },
+    {
+      "path": "form.json",
+      "stored": "recipe/form.json",
+      "kind": "source",
+      "bytes": 1363,
+      "sha256": "09669952309bde798194e135e97051887dbeaf93cc90e6e0d0026a2d43f9a4cc"
+    },
+    {
+      "path": "job.json",
+      "stored": "recipe/job.json",
+      "kind": "source",
+      "bytes": 3933,
+      "sha256": "dfb251a1d6cdd068c7aeec58882421d23d26a26b21a34c185897005c527df773"
+    },
+    {
+      "path": "metrics.json",
+      "stored": "recipe/metrics.json",
+      "kind": "source",
+      "bytes": 529,
+      "sha256": "0cb8678c8d7e6d06a935a583b14f03f9f9c89a9d8a659b265d508fc16a0a7b07"
+    },
+    {
+      "path": "project.json",
+      "stored": "recipe/project.json",
+      "kind": "source",
+      "bytes": 171,
+      "sha256": "ccbf5785811174e65594f6964748a61cb5c69b4226748da6431b553eecfee83d"
+    },
+    {
+      "path": "publish-plan.json",
+      "stored": "recipe/publish-plan.json",
+      "kind": "source",
+      "bytes": 326,
+      "sha256": "a036b6165d4f1f497ef3d9f1579e37019806de3eabc2f07e50b2443d6b1a6b01"
+    },
+    {
+      "path": "qc.json",
+      "stored": "recipe/qc.json",
+      "kind": "source",
+      "bytes": 74,
+      "sha256": "19a046366774491fe8ad4783f53819011b5971ae2bddb43df0248e2c83cca1d3"
+    },
+    {
+      "path": "ranking.json",
+      "stored": "recipe/ranking.json",
+      "kind": "source",
+      "bytes": 2635,
+      "sha256": "5592e0cd2ce2341902b3a6fcebb02b316129d8a7034df73e01604976f2eb409c"
+    },
+    {
+      "path": "README.md",
+      "stored": "recipe/README.md",
+      "kind": "source",
+      "bytes": 1999,
+      "sha256": "4514059f99549b49f04a309d9d4d90e0f13e20b52744598cb2b41c262ae4427c"
+    },
+    {
+      "path": "remotion-app/.npmrc",
+      "stored": "recipe/remotion-app/.npmrc",
+      "kind": "source",
+      "bytes": 40,
+      "sha256": "3fc62c79e2d5c41dd6446a8b328705ea8384bd99c9a6b3ec2f6e9de1dbe612bc"
+    },
+    {
+      "path": "remotion-app/package-lock.json",
+      "stored": "recipe/remotion-app/package-lock.json",
+      "kind": "source",
+      "bytes": 158342,
+      "sha256": "1b73a83f83e4507b4de20b00d5989b9e4b81b6370a381394b2ffc9343f4cc31c"
+    },
+    {
+      "path": "remotion-app/package.json",
+      "stored": "recipe/remotion-app/package.json",
+      "kind": "source",
+      "bytes": 1314,
+      "sha256": "945563a81d0d43d72fffea53075e93f1d161ecfdc78bf7c487d16faaff5f6d16"
+    },
+    {
+      "path": "remotion-app/public/brands/minimax.png",
+      "stored": "media/remotion-app/public/brands/minimax.png",
+      "kind": "media",
+      "bytes": 18199,
+      "sha256": "d095a4fff8770ace5d8b537a9f642e3c4f1230a56a36177a16537d36d84b2e33"
+    },
+    {
+      "path": "remotion-app/public/brands/recursive-mark.png",
+      "stored": "media/remotion-app/public/brands/recursive-mark.png",
+      "kind": "media",
+      "bytes": 855,
+      "sha256": "67c1de28a235a00482cfc7bb3a5e7161f107c5b156888b20c457e0cb2042e55e"
+    },
+    {
+      "path": "remotion-app/public/brands/typescript.svg",
+      "stored": "recipe/remotion-app/public/brands/typescript.svg",
+      "kind": "source",
+      "bytes": 1729,
+      "sha256": "139ae451b37a00251fe24358191699efa665f63f1c8369cb9dad833159e159e2"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/page-1.wav",
+      "stored": "media/remotion-app/public/deck/audio/page-1.wav",
+      "kind": "media",
+      "bytes": 2561186,
+      "sha256": "cdcfdb447d168e596b0041aed215fb9e6f24935736226d30cec09b3d76241920"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/page-2.wav",
+      "stored": "media/remotion-app/public/deck/audio/page-2.wav",
+      "kind": "media",
+      "bytes": 3526916,
+      "sha256": "02ab11b878804654edac79224fa0c46fb508925fdafc85d26bea87cf325f064e"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/page-3.wav",
+      "stored": "media/remotion-app/public/deck/audio/page-3.wav",
+      "kind": "media",
+      "bytes": 3773262,
+      "sha256": "5dc02ae3bf1b073e1fa74e1264016c20f02a2897902c745ef55d0643fdaf2bc5"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/page-4.wav",
+      "stored": "media/remotion-app/public/deck/audio/page-4.wav",
+      "kind": "media",
+      "bytes": 2422126,
+      "sha256": "fa50eea1c65c50b68e1b92678048e5f92affc01f7e274cee60085964684dcff4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/page-5.wav",
+      "stored": "media/remotion-app/public/deck/audio/page-5.wav",
+      "kind": "media",
+      "bytes": 589028,
+      "sha256": "d8e764ed793cd21f610b2477fa705464b94efa60335cfc2bf6cca6824c5ff6d4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-1.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-1.wav",
+      "kind": "media",
+      "bytes": 128322,
+      "sha256": "358b91eccd6014152dcedb375b8e33bd593ba23efc525c15e7643b2bdcd44789"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-10.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-10.wav",
+      "kind": "media",
+      "bytes": 183626,
+      "sha256": "1a4b0bcb7437a02cca8396a67b5beb17442756b7a4f524cd296b80c33b3b87a1"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-11.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-11.wav",
+      "kind": "media",
+      "bytes": 158956,
+      "sha256": "5c57f3e23bc355851a2665681aa6710b1281f1c771ab25daeea1c84a13fe01f4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-12.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-12.wav",
+      "kind": "media",
+      "bytes": 136908,
+      "sha256": "3f929d4f676e07aba3f78d4294b375bac090014d4890187dee37a8ad3a847a4f"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-13.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-13.wav",
+      "kind": "media",
+      "bytes": 130292,
+      "sha256": "9ecf39b6f64663e82bb0af7c56e0fdc84d788b3a4c76a2f0dba354b5608b9614"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-14.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-14.wav",
+      "kind": "media",
+      "bytes": 151900,
+      "sha256": "7a0e57a1b619a742cf6ee2f3892b47074df81b83b92ca22769fd1774c1ab2fe1"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-15.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-15.wav",
+      "kind": "media",
+      "bytes": 162692,
+      "sha256": "655b87f2d14297dbc0d8d5cd7d38aabe39939068c78ed7507f6e7280cdb820d8"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-16.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-16.wav",
+      "kind": "media",
+      "bytes": 162488,
+      "sha256": "013650f527e3e78fa31ad5e388640824d0fba4353720f6085b79ec284b7aa3c4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-17.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-17.wav",
+      "kind": "media",
+      "bytes": 203036,
+      "sha256": "ae344ec3b1233afe2ecbe55cc6646cbcefa29de7673e70885d586e48b227e310"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-18.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-18.wav",
+      "kind": "media",
+      "bytes": 167334,
+      "sha256": "2de5d1b7314c248022890b8200942b53918eed6484d5bf55631eabe560692287"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-19.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-19.wav",
+      "kind": "media",
+      "bytes": 125448,
+      "sha256": "2e50449a7931e1f50edcdbe46e6e8752b7571795f70bbed9b442d2704f41ff4a"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-2.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-2.wav",
+      "kind": "media",
+      "bytes": 142860,
+      "sha256": "c5a629d5ad5db503335f3124ad152737088e4e09fe84c28af305cd53bde139b6"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-20.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-20.wav",
+      "kind": "media",
+      "bytes": 147484,
+      "sha256": "1f1a086e22b2031c5634f77261368efb096563766ccd746a982fc756943aab3f"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-21.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-21.wav",
+      "kind": "media",
+      "bytes": 147048,
+      "sha256": "cc5936b7e333283fa8cd2afae03fcd18b9f34163667fd9c93b856f0c46946beb"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-22.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-22.wav",
+      "kind": "media",
+      "bytes": 172190,
+      "sha256": "31d0cd4f1f18048135b07da93e3932505233fc5fe3c7faee42b2e02f5e8d6e0a"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-23.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-23.wav",
+      "kind": "media",
+      "bytes": 145292,
+      "sha256": "2cfa824f78287c81efcba037f778ea7d5026ac58e79f591ca5e4e1b42821acb4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-24.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-24.wav",
+      "kind": "media",
+      "bytes": 160940,
+      "sha256": "32fef61033476034b0a1b44b9ab212a7201ee223691d0f7b5205e74ed01fc203"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-25.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-25.wav",
+      "kind": "media",
+      "bytes": 154318,
+      "sha256": "a3a885a2e9e5363d0d61ef5a356b464d8f4a9978396b7959dd07aa1fd695164f"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-26.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-26.wav",
+      "kind": "media",
+      "bytes": 133150,
+      "sha256": "04e90bd1a880c664b465bb31a356af58563dfa47ddc0217a25804bc0d6c3f2c7"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-27.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-27.wav",
+      "kind": "media",
+      "bytes": 130296,
+      "sha256": "0e838a1ab5cd30110cd9c6f07c2605347a9bd9e2746923d20c6533bc896d293f"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-28.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-28.wav",
+      "kind": "media",
+      "bytes": 135810,
+      "sha256": "3368a404267bb88a49976b253a836049bfb29be8e271b382787f21a3b1bc82e5"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-29.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-29.wav",
+      "kind": "media",
+      "bytes": 140876,
+      "sha256": "f97a329a0da691c8deeb045d365f79bf0b9ed0bf8be559444a0a9bd26fb2536c"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-3.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-3.wav",
+      "kind": "media",
+      "bytes": 117958,
+      "sha256": "aa5acd952c25648fea6540965ef3c37bb1411ce8c28e08236b3be2c7cc9f5af8"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-30.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-30.wav",
+      "kind": "media",
+      "bytes": 175256,
+      "sha256": "1fc88109ae85efee727b05351018e8d68e67fc7268be51aa07be576848c4d3e7"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-31.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-31.wav",
+      "kind": "media",
+      "bytes": 114426,
+      "sha256": "58c09bd4fb3138b3bf87e7fcccd3def528f60d0dcd8b1f81352bd3d362fe26d1"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-32.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-32.wav",
+      "kind": "media",
+      "bytes": 110250,
+      "sha256": "2e91915414d62057bd7c1d20afa6a3592d9c8f2b4502a94dd3ca3d74516ef438"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-33.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-33.wav",
+      "kind": "media",
+      "bytes": 103184,
+      "sha256": "961eb76b738a6f020aee4866a0cd4eb42197e38f547b552e5516280a16628e67"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-34.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-34.wav",
+      "kind": "media",
+      "bytes": 107160,
+      "sha256": "9eb17998d7448b3317a7eb325dc6959c73128b68b8cab7d5aa9301bd42ca8aa4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-35.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-35.wav",
+      "kind": "media",
+      "bytes": 120160,
+      "sha256": "8d9dcd7e6d6f845ce35ef46582bd9e2a0496cd34af0b2d37719d6628aff0e485"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-36.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-36.wav",
+      "kind": "media",
+      "bytes": 123242,
+      "sha256": "29eb806318885e83b9b836945079c8188eaeb4c67f0d475223cfb773879a5195"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-37.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-37.wav",
+      "kind": "media",
+      "bytes": 130068,
+      "sha256": "03076f6e355b91e706a5ebb6478d67bb1730074db42fa6f729601b4270f30496"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-38.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-38.wav",
+      "kind": "media",
+      "bytes": 124344,
+      "sha256": "d858571890ec2d15e76165f8336e71ec757fb494175ac2b3e8ea54c94f57821d"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-39.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-39.wav",
+      "kind": "media",
+      "bytes": 169538,
+      "sha256": "6068eaa6aeb10fe15f5c296690e42527fb1d02b9f90c1bcf95a070b473d6e071"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-4.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-4.wav",
+      "kind": "media",
+      "bytes": 140000,
+      "sha256": "3af3458f5ff575ba795790063056e40b65ba87c97f9d7fcc8d227a6df6b9cc7b"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-40.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-40.wav",
+      "kind": "media",
+      "bytes": 146388,
+      "sha256": "42b5f873309e712f8839f4a9ce6e9e4b5b454ff8a36a15b0034ca8907950ca40"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-41.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-41.wav",
+      "kind": "media",
+      "bytes": 204796,
+      "sha256": "c3d8f5dbe7dfb4172cace5ac45d7cfbb9c0477dbc2f6d2cfc3521f639c17e613"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-42.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-42.wav",
+      "kind": "media",
+      "bytes": 138446,
+      "sha256": "a8633c3d2e9df2ed45248db3bc20a873cddf37b1d06d74569520a330e70008f3"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-43.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-43.wav",
+      "kind": "media",
+      "bytes": 129858,
+      "sha256": "d5559570e002c9c43f4f150525558f4e438ff1f15fee590635bfd7519bf686ce"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-44.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-44.wav",
+      "kind": "media",
+      "bytes": 153438,
+      "sha256": "5d870fbec09e5ec49d78457a1f6561b84bf00a7e67beeac7820b2aa97b22c036"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-45.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-45.wav",
+      "kind": "media",
+      "bytes": 145054,
+      "sha256": "e14fc41a9e3a390ad8317b52ca3b808c87f5c58bd30b978b8f81a0354f154450"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-46.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-46.wav",
+      "kind": "media",
+      "bytes": 152984,
+      "sha256": "3f602f8cef40f288f0518d5be353b811d189da8378e06c24a156cf4096ef7683"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-47.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-47.wav",
+      "kind": "media",
+      "bytes": 139116,
+      "sha256": "48d0d5566cde7cc34a44bacf7d88e1bf280d3369ba850840f9455c24f38f365e"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-48.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-48.wav",
+      "kind": "media",
+      "bytes": 180776,
+      "sha256": "44383a8bcece9d530763c772567fbea1ff951bf62c061afdd4d885cf6760ba18"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-49.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-49.wav",
+      "kind": "media",
+      "bytes": 151890,
+      "sha256": "0642191a3858699a41102cb277ecc7baeb6de8cb2349c9b96e80b0f56708e2a9"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-5.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-5.wav",
+      "kind": "media",
+      "bytes": 180766,
+      "sha256": "b66a888121f6437d90cd2eb990edbe71c0b07619eb88a300b6d2a80a5e9c0048"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-50.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-50.wav",
+      "kind": "media",
+      "bytes": 202578,
+      "sha256": "339a10b1acbc73d571240eecf78322ddf68f74ac2ca01d5e9b3894454dbaa14a"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-51.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-51.wav",
+      "kind": "media",
+      "bytes": 149912,
+      "sha256": "6bd224f00fb04c9c38ab352ffcf32895dd00a5e690763913c4a162a0e8d261fd"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-52.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-52.wav",
+      "kind": "media",
+      "bytes": 155850,
+      "sha256": "d7ac0046333c72f4beede6fc801a526d1a255fbe42711b5966aec6438fbf6458"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-53.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-53.wav",
+      "kind": "media",
+      "bytes": 132506,
+      "sha256": "11caf7e31214d030a5fc9eaca14795c70b42cae337afd86e34ad13882eac9ad4"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-54.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-54.wav",
+      "kind": "media",
+      "bytes": 146168,
+      "sha256": "d335bc3648cbef47986e986146e87d6c05ffc42b727029827a31ab9cc92e6969"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-55.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-55.wav",
+      "kind": "media",
+      "bytes": 143966,
+      "sha256": "f9a1977538fca648d323037d76ce35fd67831b0eb587db2f1bf483705e2085b9"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-56.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-56.wav",
+      "kind": "media",
+      "bytes": 155422,
+      "sha256": "282f65345845bc613417c0f52fe67505fa902508de7d1fb0d3bd465018d70199"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-57.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-57.wav",
+      "kind": "media",
+      "bytes": 126994,
+      "sha256": "bac45ef561fb9234286feed577fc9b50b9ed358a1454d68d02ece92e935576bf"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-58.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-58.wav",
+      "kind": "media",
+      "bytes": 150352,
+      "sha256": "d47a52e43f0a691588a34e1c633f7ac04b8fec277d913a1c844fa71b7bfdc151"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-59.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-59.wav",
+      "kind": "media",
+      "bytes": 158740,
+      "sha256": "88c646b17d7c697b733b8f109bd35173fa57128488b5901d7bff93583ca0e82a"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-6.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-6.wav",
+      "kind": "media",
+      "bytes": 152998,
+      "sha256": "26a25b5425d4f617eaaeb1425575b68c3bb22473cb70c2366e354c1bb7d9b838"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-60.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-60.wav",
+      "kind": "media",
+      "bytes": 144174,
+      "sha256": "48f35743f73fa86202bf480ea56b3150965a9b46a5bf2e836bc1dfcecaa5fb3f"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-61.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-61.wav",
+      "kind": "media",
+      "bytes": 187378,
+      "sha256": "c235b1460bccb8bdb21c9c1ddc01edd2f410f77fa90984be5a623689396e6277"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-62.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-62.wav",
+      "kind": "media",
+      "bytes": 111792,
+      "sha256": "abfcc348de2649fda4ff96778d36bb09ede12ad1cdd34f0e251d1cd39833b5ca"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-63.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-63.wav",
+      "kind": "media",
+      "bytes": 210522,
+      "sha256": "d3a3ff9c766d1f0a9c8c30e22fc8ebd680dbe7c52dad9277ce3c179e8975446b"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-64.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-64.wav",
+      "kind": "media",
+      "bytes": 139108,
+      "sha256": "a36d14f3a0b2f8cea1c6fc29d15fe11efb8d13611e950415453d74d19b42fa26"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-65.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-65.wav",
+      "kind": "media",
+      "bytes": 140438,
+      "sha256": "6f2098b664b9607eb7a9e2b3737cabe534fb0fc5c372b179b23d06af71e25b9b"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-66.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-66.wav",
+      "kind": "media",
+      "bytes": 106932,
+      "sha256": "55ea85689056ee32e77c2cf8e07b35bbfcfcf878d60d8dee27d6efb91f53539b"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-67.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-67.wav",
+      "kind": "media",
+      "bytes": 157842,
+      "sha256": "811f7de4592adbab82d4349576a5021bc9315fe07d08b8da19b8424035e6978d"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-68.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-68.wav",
+      "kind": "media",
+      "bytes": 149464,
+      "sha256": "561ea4a9efb187a7229d419effcfc5c103bbcbcc7bd1ca12ad82850a062e04ce"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-69.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-69.wav",
+      "kind": "media",
+      "bytes": 165780,
+      "sha256": "98f4711666296adb5769860adf1ad733c5aa9efdb5aa8c3ca0d4cfad3e3fa756"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-7.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-7.wav",
+      "kind": "media",
+      "bytes": 136472,
+      "sha256": "6ce240bcdfb916feb77ed936eacbb5dc947ca757e015cca0551b5245c685a88d"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-70.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-70.wav",
+      "kind": "media",
+      "bytes": 160054,
+      "sha256": "df2c11602049f80a1ccca65882c48c807a02e5c9e8f14c52e092edf23c378028"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-71.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-71.wav",
+      "kind": "media",
+      "bytes": 142640,
+      "sha256": "f61c4babf656e25aed281082007981ce69bd216da4500b939b1952b24b6cb821"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-72.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-72.wav",
+      "kind": "media",
+      "bytes": 179894,
+      "sha256": "3d0c1f0ee1920cc8c421a6a1d7eb01f22eede6436558e90c4dfcbcd70d496922"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-73.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-73.wav",
+      "kind": "media",
+      "bytes": 149926,
+      "sha256": "bd31aaaf1432f4f5b1999b39359521b467e0ece8b1dd320b556425df4f13171c"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-74.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-74.wav",
+      "kind": "media",
+      "bytes": 130952,
+      "sha256": "9ce2b9f5fcc3b80f7f8333279011e6e7910cd26cb89dbb45a14e073e9c25c92d"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-75.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-75.wav",
+      "kind": "media",
+      "bytes": 162920,
+      "sha256": "b59ffa1753579037c6fdc06dcd3a332b4518e6b496415507a381668663091186"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-76.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-76.wav",
+      "kind": "media",
+      "bytes": 164252,
+      "sha256": "2389fdbdd663ba437a3e26a4ba5ada2a384305a7586bb0e4492ff15d98d4ed54"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-77.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-77.wav",
+      "kind": "media",
+      "bytes": 183642,
+      "sha256": "ea129bebeb8e8bfbf9bc7d2a3e9652b8e6c14f5176df676611673b3ad25512b8"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-78.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-78.wav",
+      "kind": "media",
+      "bytes": 142418,
+      "sha256": "81de909fa0772b56442c2898eaf3c5501331e63b53e74100516aa57db027a5fe"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-79.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-79.wav",
+      "kind": "media",
+      "bytes": 128098,
+      "sha256": "1e4cbb9515185978f6eb8efe7a60ad5cd7e8c0cde1279e79c0e0f6d52dc1eaf5"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-8.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-8.wav",
+      "kind": "media",
+      "bytes": 135802,
+      "sha256": "27bde58721e3843d5c1bff6c599ccbdc25a58c28cf5ee8cd84f0ba141d38133c"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-80.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-80.wav",
+      "kind": "media",
+      "bytes": 109142,
+      "sha256": "5d324498e2df1a75fc2dc89137c0f63d619e055d525605dd37137659b6501e48"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-81.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-81.wav",
+      "kind": "media",
+      "bytes": 146604,
+      "sha256": "549c8eac078f7a828c40a6e8b1eade43c3acce643163bf1a9996359ec382b3bf"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-82.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-82.wav",
+      "kind": "media",
+      "bytes": 137348,
+      "sha256": "b73e93ae40dfebbd95f8b4fb1d4161f37063c5694be35ee26d2372c06ac8df04"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-83.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-83.wav",
+      "kind": "media",
+      "bytes": 169322,
+      "sha256": "d7662c41ed80b97efc51169d4154aefac0da564f7624cbb24ab71bcbcbcca7f2"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-84.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-84.wav",
+      "kind": "media",
+      "bytes": 112888,
+      "sha256": "8f1b93567aae9771b42f96ded4c5aa371b95fb3e62bb261439f4cfcbcb49fec6"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-85.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-85.wav",
+      "kind": "media",
+      "bytes": 202824,
+      "sha256": "409ae26dc8b7fd3253aa2e788dac4108b9165194a1ad574f8495713eed15986a"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-86.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-86.wav",
+      "kind": "media",
+      "bytes": 135148,
+      "sha256": "496e9d59baaf01a0b0c123f1cf3606f347ca4b1b93c2e2d711bdb4dccf9d3467"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-87.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-87.wav",
+      "kind": "media",
+      "bytes": 138234,
+      "sha256": "b4ae91966435778b913ed2086c761710c685907148d201ac1aac10e944c70a9a"
+    },
+    {
+      "path": "remotion-app/public/deck/audio/seg-9.wav",
+      "stored": "media/remotion-app/public/deck/audio/seg-9.wav",
+      "kind": "media",
+      "bytes": 136462,
+      "sha256": "5b496ffc711a88f31e3afa12c6cdf97d9b6739141f8e7769ba4ab0906a00a131"
+    },
+    {
+      "path": "remotion-app/public/README.md",
+      "stored": "recipe/remotion-app/public/README.md",
+      "kind": "source",
+      "bytes": 513,
+      "sha256": "a13de9eee584a4a9c0c5d7ffd22ce06acf614d349bcf8b21a8e6bae24cf63559"
+    },
+    {
+      "path": "remotion-app/remotion/index.ts",
+      "stored": "recipe/remotion-app/remotion/index.ts",
+      "kind": "source",
+      "bytes": 114,
+      "sha256": "769e484ef1a96bbc65d14b1a83a5a87d5c79a3e0e3bb44b560049f0963ae61b6"
+    },
+    {
+      "path": "remotion-app/remotion/mg-index.ts",
+      "stored": "recipe/remotion-app/remotion/mg-index.ts",
+      "kind": "source",
+      "bytes": 308,
+      "sha256": "1c468cce64f39bfb08a315d917ad443f902b36b60c62d9db63abd0cd32accfe1"
+    },
+    {
+      "path": "remotion-app/scripts/build-deck-params.mjs",
+      "stored": "recipe/remotion-app/scripts/build-deck-params.mjs",
+      "kind": "source",
+      "bytes": 5053,
+      "sha256": "e483bf35867bdd41d2925e04f01cecbfa8daa5ad4037234df6f8119466081d8e"
+    },
+    {
+      "path": "remotion-app/scripts/extract_pages.py",
+      "stored": "recipe/remotion-app/scripts/extract_pages.py",
+      "kind": "source",
+      "bytes": 2047,
+      "sha256": "555c544f9b03f61ea277762dccc0bc24339d3f5a3e9aeb74b3e1f03b0b093080"
+    },
+    {
+      "path": "remotion-app/scripts/make_deck_audio.ps1",
+      "stored": "recipe/remotion-app/scripts/make_deck_audio.ps1",
+      "kind": "source",
+      "bytes": 2314,
+      "sha256": "fab7339dac0ed3dbf2ec834079427a0b442bc1f0630b60668179bf5fd3e45c2c"
+    },
+    {
+      "path": "remotion-app/scripts/measure_segments.ps1",
+      "stored": "recipe/remotion-app/scripts/measure_segments.ps1",
+      "kind": "source",
+      "bytes": 1340,
+      "sha256": "a257cf43846faf9e25da06a8cd16d37fe2f895bb468055254eed36ef2d8a7ced"
+    },
+    {
+      "path": "remotion-app/scripts/probe-footage.mjs",
+      "stored": "recipe/remotion-app/scripts/probe-footage.mjs",
+      "kind": "source",
+      "bytes": 1988,
+      "sha256": "9aa8b901ca3f8ce81a5530ac6d55cd9c64d67a96345de2fc23f6e18b9bdbc605"
+    },
+    {
+      "path": "remotion-app/scripts/verify-cues.mjs",
+      "stored": "recipe/remotion-app/scripts/verify-cues.mjs",
+      "kind": "source",
+      "bytes": 13327,
+      "sha256": "6118bedef7038f82f9e7ad94b906ed2a0ec69b33434316c509936fa1c058f93c"
+    },
+    {
+      "path": "remotion-app/src/Cover.tsx",
+      "stored": "recipe/remotion-app/src/Cover.tsx",
+      "kind": "source",
+      "bytes": 3995,
+      "sha256": "14b4159506c007d0e0b4555a2c3d1b2911f87d17a1f45b51c9df10e34f47f40c"
+    },
+    {
+      "path": "remotion-app/src/cover3-index.ts",
+      "stored": "recipe/remotion-app/src/cover3-index.ts",
+      "kind": "source",
+      "bytes": 1017,
+      "sha256": "f6ae25aae6b567138b7dbfd6b088a55e12d3dbf09f6204bace5e29f57377f267"
+    },
+    {
+      "path": "remotion-app/src/CoverV3.tsx",
+      "stored": "recipe/remotion-app/src/CoverV3.tsx",
+      "kind": "source",
+      "bytes": 6541,
+      "sha256": "4f7f3065acabb19a19be95acafd9217a5ab883096b34e487087c5aebe5aea991"
+    },
+    {
+      "path": "remotion-app/src/cues.ts",
+      "stored": "recipe/remotion-app/src/cues.ts",
+      "kind": "source",
+      "bytes": 2551,
+      "sha256": "03df7add8978c9180ba036eaa61e325d708cc6be6ce95fd7217f4b1272fbabef"
+    },
+    {
+      "path": "remotion-app/src/DailyEdition.tsx",
+      "stored": "recipe/remotion-app/src/DailyEdition.tsx",
+      "kind": "source",
+      "bytes": 18302,
+      "sha256": "36d1ae8774c10eaaa6f0ee9793b320b531e3d0978ebd1f0379fc29631aad60bd"
+    },
+    {
+      "path": "remotion-app/src/deck-cues.ts",
+      "stored": "recipe/remotion-app/src/deck-cues.ts",
+      "kind": "source",
+      "bytes": 6675,
+      "sha256": "97f137695090565d586f33233802c77060ddcf7ee647c5ad2837b418fc8cd640"
+    },
+    {
+      "path": "remotion-app/src/deck-params.ts",
+      "stored": "recipe/remotion-app/src/deck-params.ts",
+      "kind": "source",
+      "bytes": 609,
+      "sha256": "eaae1c9767cf9cfa486e06c4b52626956fd384b456e1e4253f06eb5107698d4b"
+    },
+    {
+      "path": "remotion-app/src/deck-scenes.tsx",
+      "stored": "recipe/remotion-app/src/deck-scenes.tsx",
+      "kind": "source",
+      "bytes": 2210,
+      "sha256": "aa651274078ecca4317867c370c97833503d8c8806068e7a6c0c24bde454d635"
+    },
+    {
+      "path": "remotion-app/src/DeckVideo.tsx",
+      "stored": "recipe/remotion-app/src/DeckVideo.tsx",
+      "kind": "source",
+      "bytes": 2059,
+      "sha256": "10306c827c16edb1a05e017c2e78a50be1a0f9863dd47050d9652f7896b72768"
+    },
+    {
+      "path": "remotion-app/src/DeckVideoV2.tsx",
+      "stored": "recipe/remotion-app/src/DeckVideoV2.tsx",
+      "kind": "source",
+      "bytes": 3687,
+      "sha256": "c53d3139f201b62903b4de7ba70b2e87e27ba4eb22e295fa7d06419e67d2dbfc"
+    },
+    {
+      "path": "remotion-app/src/Demos.tsx",
+      "stored": "recipe/remotion-app/src/Demos.tsx",
+      "kind": "source",
+      "bytes": 3994,
+      "sha256": "fdb2317581fda9288bd5e07284fb2217a8294c830dd2e1950578ea7472062b17"
+    },
+    {
+      "path": "remotion-app/src/fixtures.ts",
+      "stored": "recipe/remotion-app/src/fixtures.ts",
+      "kind": "source",
+      "bytes": 3443,
+      "sha256": "3010c0f24a43c1bde45efc81f4c59185f05ee2fd30b630ba5c6710c87518432b"
+    },
+    {
+      "path": "remotion-app/src/fonts.ts",
+      "stored": "recipe/remotion-app/src/fonts.ts",
+      "kind": "source",
+      "bytes": 1456,
+      "sha256": "d38a2881acbd54d2b931add319951d6232706bdd55580b71d16af8193fead85b"
+    },
+    {
+      "path": "remotion-app/src/footage-params.ts",
+      "stored": "recipe/remotion-app/src/footage-params.ts",
+      "kind": "source",
+      "bytes": 193,
+      "sha256": "7a91d3da133378daa3fea8fc1dd9e6de5d2bbabd1476bc57ee137c12ac2efe15"
+    },
+    {
+      "path": "remotion-app/src/FootageOverlay.tsx",
+      "stored": "recipe/remotion-app/src/FootageOverlay.tsx",
+      "kind": "source",
+      "bytes": 1222,
+      "sha256": "6f10fe252960d5c2833e548984111c6d0934beda09c07831ec49fda05792c5a5"
+    },
+    {
+      "path": "remotion-app/src/fx/DataBars.tsx",
+      "stored": "recipe/remotion-app/src/fx/DataBars.tsx",
+      "kind": "source",
+      "bytes": 4408,
+      "sha256": "1a95f797cdee2209eed62e2b273a368a5dcdbb9452f91c94b2e293add1839f17"
+    },
+    {
+      "path": "remotion-app/src/fx/Spotlight.tsx",
+      "stored": "recipe/remotion-app/src/fx/Spotlight.tsx",
+      "kind": "source",
+      "bytes": 4316,
+      "sha256": "5d6290208de7089ec0c1713653c4a420124b12d20295848b493a2893049e9532"
+    },
+    {
+      "path": "remotion-app/src/fx/srt-adapter.ts",
+      "stored": "recipe/remotion-app/src/fx/srt-adapter.ts",
+      "kind": "source",
+      "bytes": 565,
+      "sha256": "1ce26b6ace13aac3d1582edd9bf1d973a78666384f5b81fac1083686ae2bfb35"
+    },
+    {
+      "path": "remotion-app/src/fx/SubtitleTrack.tsx",
+      "stored": "recipe/remotion-app/src/fx/SubtitleTrack.tsx",
+      "kind": "source",
+      "bytes": 6335,
+      "sha256": "6c2a81f13d5ecf13d1c8b8a1bd2c1ec4e38eb73b0d9ad8e1697b2daeba9f9658"
+    },
+    {
+      "path": "remotion-app/src/mg-demos.tsx",
+      "stored": "recipe/remotion-app/src/mg-demos.tsx",
+      "kind": "source",
+      "bytes": 21385,
+      "sha256": "9a7bd42bd787fe8521b39cee58202d43cac85ad31bc34a9ed0ec61a7d1b3e381"
+    },
+    {
+      "path": "remotion-app/src/Root.tsx",
+      "stored": "recipe/remotion-app/src/Root.tsx",
+      "kind": "source",
+      "bytes": 4424,
+      "sha256": "e91e631c05cccb18ea76c1730751786ee8d0da5bedeafa1d0d1389ef86f2d266"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ArtLayer.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ArtLayer.tsx",
+      "kind": "source",
+      "bytes": 3613,
+      "sha256": "de3ca7ca520e6f91c590a70a6cd800b1f13f074992fc382ce6300c2be6c62132"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/BlurTrail.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/BlurTrail.tsx",
+      "kind": "source",
+      "bytes": 2645,
+      "sha256": "a2eeb58c5c01c3afec7397a14c324abadb894ba53ff6fd0d532fff506937a1f0"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ChartGrow.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ChartGrow.tsx",
+      "kind": "source",
+      "bytes": 8513,
+      "sha256": "ae190dc23f5cc195b9dd52e9bb4fc7c1bc1490f392db04d7550a47bc84c8c2f4"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ChatReplay.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ChatReplay.tsx",
+      "kind": "source",
+      "bytes": 11714,
+      "sha256": "8d558cfdf507e8a71ea9d7a535fa6c8bc7eb3490c00524da13cf58dd9ca6bf9f"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/CountUp.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/CountUp.tsx",
+      "kind": "source",
+      "bytes": 1584,
+      "sha256": "48579f4a6b40ceb027a2e39bc7eca4b8552910f5d10675ed54bf73900e4dbe22"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/DeviceFrame.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/DeviceFrame.tsx",
+      "kind": "source",
+      "bytes": 10324,
+      "sha256": "570f40d7b6e00cdc3d1d47adcb572c8aab5dbb777cb3eee1d65da5362be3f873"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/DrawPath.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/DrawPath.tsx",
+      "kind": "source",
+      "bytes": 3208,
+      "sha256": "9c49b8f889b616475a9977cce50262cd6e0e590fabc7cc853882c3bdba1b6191"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/DropCard.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/DropCard.tsx",
+      "kind": "source",
+      "bytes": 2587,
+      "sha256": "b34ae1e0a226196b08230d688a141fe28d09eb5c64e7a4ca986e3e34483aaf22"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/entrance-kit.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/entrance-kit.tsx",
+      "kind": "source",
+      "bytes": 7078,
+      "sha256": "9151765c4b74943d3961e141e147924330648f571ae4ab094b11ba3c3ff79a71"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/FitText.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/FitText.tsx",
+      "kind": "source",
+      "bytes": 3191,
+      "sha256": "68d2da7aac96c44dd7166b9ebd98a5a4b2632cbab3b80851c9ca4cb6b64112b1"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/FloatWrap.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/FloatWrap.tsx",
+      "kind": "source",
+      "bytes": 780,
+      "sha256": "87ac64288b5a73373072e4e2cf0100961a22684536c40b1b2d7ea10646801c18"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/GifLayer.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/GifLayer.tsx",
+      "kind": "source",
+      "bytes": 722,
+      "sha256": "32392f455438f38586c3098ded27d6b0cc4b33d90b693cfa6ed674830f1f758f"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/GlowPulse.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/GlowPulse.tsx",
+      "kind": "source",
+      "bytes": 1160,
+      "sha256": "b85c9892dc1c1ce15e46ccf110670aee3492e63bea9909182272790e81a3fbdc"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/LottieLayer.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/LottieLayer.tsx",
+      "kind": "source",
+      "bytes": 3540,
+      "sha256": "c8ba036b0f67081f5c3c2ea0574519c2fb2f0ec02173cfaaea7ba9b75617738e"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/NoiseField.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/NoiseField.tsx",
+      "kind": "source",
+      "bytes": 2585,
+      "sha256": "a386ac9fd810783d143556bade6a6c5a00e8081d7d6eb893657642a4dd064650"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/SceneBg.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/SceneBg.tsx",
+      "kind": "source",
+      "bytes": 3178,
+      "sha256": "b4863383255652f13023cad41e5c6fedc2ce41e946de3b04a8d82cadacfa3ff7"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/SceneShell.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/SceneShell.tsx",
+      "kind": "source",
+      "bytes": 3707,
+      "sha256": "355c156b673d51b9cf4e0b4c1558260e906fa109d4ab4aa8e27ec5a3f4242bb6"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ShapeMorph.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ShapeMorph.tsx",
+      "kind": "source",
+      "bytes": 2440,
+      "sha256": "a2a46d754243eeca1b726d7ebc4deb45d0ae3260029a141b534df2d75b6e62ad"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ShutterBlur.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ShutterBlur.tsx",
+      "kind": "source",
+      "bytes": 788,
+      "sha256": "d50c406ff29947c6b19e7cec87dd77ae2abae20840b2e216eaa9453a3d9e3488"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/StaggerList.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/StaggerList.tsx",
+      "kind": "source",
+      "bytes": 1518,
+      "sha256": "7d926537f4be2336396f189241928d6909ca8aeb226e3798425df59d5c63e0c0"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/TextReveal.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/TextReveal.tsx",
+      "kind": "source",
+      "bytes": 3146,
+      "sha256": "d60c098e860e89e230033a0270e65f4328eb51075343047900f89b4511587864"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/ThreeStage.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/ThreeStage.tsx",
+      "kind": "source",
+      "bytes": 1427,
+      "sha256": "c0e3aa53186bcccf66c8e2621f09ace115768d8e1bd9af5ed3d021b0a586da2f"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/tokens.ts",
+      "stored": "recipe/remotion-app/src/scene-kit/tokens.ts",
+      "kind": "source",
+      "bytes": 1567,
+      "sha256": "ff52cc13f36353814334b9c250dfc16f2c42e9c3d5737135a49c88cd2cbe0c68"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/TopProgress.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/TopProgress.tsx",
+      "kind": "source",
+      "bytes": 1426,
+      "sha256": "6830363f19518417cdccc71ddd06b2ef51d9e12bbc6c9b2b4b4d00a03edf2d41"
+    },
+    {
+      "path": "remotion-app/src/scene-kit/TypingTerminal.tsx",
+      "stored": "recipe/remotion-app/src/scene-kit/TypingTerminal.tsx",
+      "kind": "source",
+      "bytes": 3469,
+      "sha256": "b2c2080b67286f74dcdcf3ed3e283c5997d8f58d5c23fd538ff1515745a175b1"
+    },
+    {
+      "path": "remotion-app/src/transitions.tsx",
+      "stored": "recipe/remotion-app/src/transitions.tsx",
+      "kind": "source",
+      "bytes": 1951,
+      "sha256": "88e24929287b2b543b8bc317be3452b8b71257edf70f17303b1e6eae08dbac57"
+    },
+    {
+      "path": "remotion-app/src/vendor/onda/depth-push.tsx",
+      "stored": "recipe/remotion-app/src/vendor/onda/depth-push.tsx",
+      "kind": "source",
+      "bytes": 2826,
+      "sha256": "c6ab3e8200e1c57a1bfb19463503bf070c8661627fca3d42cb9ded8f32e24731"
+    },
+    {
+      "path": "remotion-app/src/vendor/README.md",
+      "stored": "recipe/remotion-app/src/vendor/README.md",
+      "kind": "source",
+      "bytes": 2565,
+      "sha256": "c38664a928d28c00eb5c0b4db4545c333ba96637744e99f3c18e5f7192d292bd"
+    },
+    {
+      "path": "remotion-app/src/vendor/snapcn/cursor-track.tsx",
+      "stored": "recipe/remotion-app/src/vendor/snapcn/cursor-track.tsx",
+      "kind": "source",
+      "bytes": 14879,
+      "sha256": "20e471ab77a16eabfd60fc424c65e62beb15d4acfd4c6decef8413215442c716"
+    },
+    {
+      "path": "remotion-app/tsconfig.json",
+      "stored": "recipe/remotion-app/tsconfig.json",
+      "kind": "source",
+      "bytes": 418,
+      "sha256": "cb6d04ded64d24fdb00ecdb9939ad42ff647e2c53e1be06497e6ef47cbf84355"
+    },
+    {
+      "path": "script.json",
+      "stored": "recipe/script.json",
+      "kind": "source",
+      "bytes": 9395,
+      "sha256": "1939e2f16e1f2aa5242c4e6e243182ac08e004a258dafe6dd0f325d4a921414c"
+    },
+    {
+      "path": "scripts/copy-brands.mjs",
+      "stored": "recipe/scripts/copy-brands.mjs",
+      "kind": "source",
+      "bytes": 509,
+      "sha256": "4e88bb3ab1a7f2eb95a8d1d88f0b07ae467ea43acb6b48262bb3b3212362401d"
+    },
+    {
+      "path": "scripts/mix-narration.mjs",
+      "stored": "recipe/scripts/mix-narration.mjs",
+      "kind": "source",
+      "bytes": 1800,
+      "sha256": "a3960802ff51824bbf52d478f4dc2140aa9a3ba301a9ab5abda33b3d99eef76a"
+    },
+    {
+      "path": "scripts/render-episode.mjs",
+      "stored": "recipe/scripts/render-episode.mjs",
+      "kind": "source",
+      "bytes": 1038,
+      "sha256": "831a4ce3b714c9ca022976b8e79218d1673d5d7af78180474e23e83b62b4c3fc"
+    },
+    {
+      "path": "selection.md",
+      "stored": "recipe/selection.md",
+      "kind": "source",
+      "bytes": 1699,
+      "sha256": "cb49938f7ebf98f8583e571bd845b81b121ded744fa1df885cf060be009edf39"
+    },
+    {
+      "path": "storyboard.json",
+      "stored": "recipe/storyboard.json",
+      "kind": "source",
+      "bytes": 6508,
+      "sha256": "c7743aaa6192f51b620b5f090ca3b474f7b3e574c43061600f717fbab5b1e143"
+    },
+    {
+      "path": "variants.json",
+      "stored": "recipe/variants.json",
+      "kind": "source",
+      "bytes": 1657,
+      "sha256": "dca528ec33e4df11e0b3a95b1b375075e1b086075faa76154e6f2e6af270bb47"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-23.mp4",
+      "stored": "deliverables/render/daily-ai-news-2026-10-23.mp4",
+      "kind": "deliverable",
+      "bytes": 23849425,
+      "sha256": "fab47ecd0193dae639188f5917f643fcc9d0638bda5a1abe9b5b9d27cd6ce899"
+    },
+    {
+      "path": "render/cover.png",
+      "stored": "deliverables/render/cover.png",
+      "kind": "deliverable",
+      "bytes": 169557,
+      "sha256": "be5a9001a0121e7c410e81d15b467925d267514b912caf85dd6f44fa2eb45f80"
+    },
+    {
+      "path": "qa/media-report.json",
+      "stored": "deliverables/qa/media-report.json",
+      "kind": "deliverable",
+      "bytes": 1293,
+      "sha256": "ae39a40728f9c43f091d6a4e7e717b012137bef32c4477f53cfa846a503e73d0"
+    },
+    {
+      "path": "qa/media-report-contact-sheet.png",
+      "stored": "deliverables/qa/media-report-contact-sheet.png",
+      "kind": "deliverable",
+      "bytes": 225669,
+      "sha256": "e79cb5463c8bf8a35d169ffc4c93b31ab559755feba78713fc16cb33b120c50c"
+    },
+    {
+      "path": "qa/inspection-input.json",
+      "stored": "deliverables/qa/inspection-input.json",
+      "kind": "deliverable",
+      "bytes": 1490,
+      "sha256": "46706a980220b9e7d9811a119ce0a96d1cc0db9bde014d68255db2ea5d059d25"
+    },
+    {
+      "path": "qa/editorial-review.json",
+      "stored": "deliverables/qa/editorial-review.json",
+      "kind": "deliverable",
+      "bytes": 1939,
+      "sha256": "1452d634875b323010e5a29d6d644f3aec9e607d0dde70e4cd990619e4667a31"
+    }
+  ]
+}

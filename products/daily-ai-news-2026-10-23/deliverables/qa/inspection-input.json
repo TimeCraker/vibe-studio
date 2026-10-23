@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "video": "render/daily-ai-news-2026-10-23.mp4",
+  "videoSha256": "fab47ecd0193dae639188f5917f643fcc9d0638bda5a1abe9b5b9d27cd6ce899",
+  "reviewer": "Cursor Agent，未审听",
+  "inspection": {
+    "visual": [
+      { "start": 2.5, "end": 2.6 },
+      { "start": 0, "end": 0.4 }
+    ],
+    "audio": []
+  },
+  "checks": [
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 2.5,
+      "end": 2.6,
+      "note": "成片 2.5 秒抽帧：15 条 ECI 都在，前三名分数为 168.83、168.81、168.37，中文和官标没有乱码。另看了质检接触表上的后续页面，以及 390px 宽的榜单缩小图，右侧名单偏紧但仍能读出名字和分数。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 0.333,
+      "end": 0.367,
+      "note": "成片第 20 与第 21 帧哈希不同，标题下划线在按帧增长，不是把 30fps 复制成 60fps。阅读停留段允许静止，质检已标出静止区间。"
+    },
+    {
+      "kind": "audio",
+      "status": "unreviewed",
+      "note": "这次没有播放审听。ffprobe 确认有 AAC 音轨，技术报告给出综合响度 -22.81 LUFS。测试音色是否顺耳留给人工。"
+    },
+    {
+      "kind": "sync",
+      "status": "unreviewed",
+      "note": "没有连续播放，也没有审听，不能把 2.5 秒的字幕抽帧当成全片同步通过。字幕文件本身是句级粗对齐。"
+    }
+  ]
+}

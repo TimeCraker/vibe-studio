@@ -1,0 +1,30 @@
+{
+  "note": "官标使用下载到的原文件。品牌手册 PDF 因 TLS 握手失败没有取到，没有把概念图或记忆稿描成标志。",
+  "files": [
+    {
+      "file": "minimax.png",
+      "sha256": "d095a4fff8770ace5d8b537a9f642e3c4f1230a56a36177a16537d36d84b2e33",
+      "bytes": 18199,
+      "pixelSize": "460x460",
+      "sourceUrl": "https://github.com/MiniMax-AI.png",
+      "usedFor": "封面与 MiniMax 新闻页",
+      "whyOfficial": "github.com/MiniMax-AI 组织简介为 Intelligence with Everyone，与官网品牌口号一致，头像是该组织上传的心跳标志。"
+    },
+    {
+      "file": "recursive-mark.png",
+      "sha256": "67c1de28a235a00482cfc7bb3a5e7161f107c5b156888b20c457e0cb2042e55e",
+      "bytes": 855,
+      "pixelSize": "99x99",
+      "sourceUrl": "https://framerusercontent.com/images/bYF8NqVlBBdIoQc0PwLZFokYcmc.png",
+      "usedFor": "Flint 新闻页。浅色方案站点图标，三角标志。白字黑底横锁在纸白底上会变成黑块，没有使用。",
+      "page": "https://recursive.com/"
+    },
+    {
+      "file": "typescript.svg",
+      "sha256": "139ae451b37a00251fe24358191699efa665f63f1c8369cb9dad833159e159e2",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+      "usedFor": "TypeScript 新闻页。矢量文件，避免把官网 32px favicon 拉大。",
+      "crosscheck": "typescript-favicon-32.png 来自 https://www.typescriptlang.org/favicon-32x32.png，同一蓝底 TS 标志。"
+    }
+  ]
+}

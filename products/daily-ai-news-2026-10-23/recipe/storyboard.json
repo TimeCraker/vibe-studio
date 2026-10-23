@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "audience": "关注模型发布和 AI 编程的开发者",
+  "goal": "用 2026-10-23 的榜单和三条核实过的变化，讲清能用什么、数字从哪来、限制是什么",
+  "profile": "data",
+  "claims": [
+    {
+      "id": "rank-top3",
+      "text": "开源 models.json 生成于 2026-10-23T13:46:38.821Z。ECI 前三是 Claude Opus 5.5 168.83、GPT-6 Astra 168.81、GPT-6.1 Sol 168.37。没有昨日快照，不标升降。",
+      "status": "verified",
+      "source": {
+        "url": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+        "locator": "generatedAt 与 benchmarks.eci 降序前三；项目 ranking.json 记录同一哈希",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "rank-muse",
+      "text": "meta/muse-wonder 与 meta/muse-wonder-1.0 展示名都是 Muse Wonder，ECI 都是 161.85，原数据没有合并。",
+      "status": "verified",
+      "source": {
+        "path": "ranking.json",
+        "locator": "top15 rank 12 与 rank 13",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "minimax-card",
+      "text": "MiniMax-M3.1-Flash 模型卡写总参约 428B、每 token 激活约 23B、上下文最长 100 万 token，输入为文字、图像和视频。相对 M3 的三处结构变化是全模型稀疏注意力、量化感知训练和 DSpark。",
+      "status": "verified",
+      "source": {
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+        "locator": "Model at a Glance 与 What's New in M3.1-Flash",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "minimax-license",
+      "text": "许可为 MiniMax Community License：非商业免费；商用需标注 Built with MiniMax M3.1-Flash；年收入超过 2000 万美元需事先书面授权，否则发一次通知。",
+      "status": "verified",
+      "source": {
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/blob/main/LICENSE",
+        "locator": "MINIMAX COMMUNITY LICENSE 第 2 条",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "minimax-report",
+      "text": "IT之家 2026-10-23 报道 MiniMax 宣布开放权重，并称 API 于 10 月 19 日上线、72 小时处理超过 100 万亿 token，同时宣布与昇腾、平头哥、昆仑芯等推进接入。用量和接入不是独立复测。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.ithome.com/1/016/800.htm",
+        "locator": "2026/10/23 9:08 正文",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "flint-card",
+      "text": "Flint 模型卡写 39.8B 总参、每 token 约 2.5B 激活、256 个路由专家选 6 个另加共享专家、上下文配置 262144、Apache 2.0。官方自测为 SWE-bench Verified 74.2%、SWE-bench Pro v2 89.7%、Terminal-Bench 2.1 54.9%。",
+      "status": "verified",
+      "source": {
+        "url": "https://huggingface.co/RecursiveSI/flint",
+        "locator": "Model specifications 与 Evaluation",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "flint-speed",
+      "text": "Recursive 介绍页写上下文最长 512k、编码建议留在 256k 内；M4 Pro 短上下文超过 125 token/s，64GB RTX Spark 超过 150 token/s。主权重是 BF16，量化版另外提供，笔记本速度不能直接套主文件。",
+      "status": "verified",
+      "source": {
+        "url": "https://recursive.com/updates/introducing-recursive-flint",
+        "locator": "context window 与 Fast inference on your local AI device",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "ts-71",
+      "text": "TypeScript 7.1 beta 发布于 2026-10-20。微软用 4 个类型检查线程和 noEmit，对照 7.0：mui-docs 1.9 倍，VS Code 1.2 倍。",
+      "status": "verified",
+      "source": {
+        "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
+        "locator": "October 20th, 2026；Optimizations 性能表",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "ts-tsrs",
+      "text": "Cloudflare 2026-10-20 介绍 tsrs。官方称在相同 worker 数下相对 TypeScript 7.0 最快约 8 倍、内存大约少 70%，包仍是实验版。8 倍不是相对 7.1 beta。",
+      "status": "verified",
+      "source": {
+        "url": "https://blog.cloudflare.com/typescript-rust-port/",
+        "locator": "October 20, 2026；Performance and memory improvements",
+        "checkedAt": "2026-10-23"
+      }
+    },
+    {
+      "id": "ts-retest",
+      "text": "ImportStatic 于 2026-10-21 用 TypeScript 自身源码复测，tsrs 相对 7.1 beta 大约快 2.3 到 2.9 倍。这是第三方测量，不是 Cloudflare 的 8 倍口径。",
+      "status": "verified",
+      "source": {
+        "url": "https://importstatic.com/rust/tsrs-vs-tsgo-typescript-7-1",
+        "locator": "Results，Published Oct 21, 2026",
+        "checkedAt": "2026-10-23"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ranking",
+      "start": 0,
+      "end": 62.026,
+      "title": "综合智力 TOP 15",
+      "purpose": "先给出完整榜单和口径，只解读前三名与同名两条",
+      "subject": "ECI 前 15",
+      "claimIds": ["rank-top3", "rank-muse"]
+    },
+    {
+      "id": "minimax",
+      "start": 62.026,
+      "end": 142.45,
+      "title": "M3.1 Flash 开放权重",
+      "purpose": "讲今天的权重、结构和许可限制",
+      "subject": "MiniMax M3.1 Flash",
+      "claimIds": ["minimax-card", "minimax-license", "minimax-report"]
+    },
+    {
+      "id": "flint",
+      "start": 142.45,
+      "end": 228.46,
+      "title": "Flint 本地编码模型",
+      "purpose": "把官方自测、上下文口径和笔记本速度的适用范围分开",
+      "subject": "Recursive Flint",
+      "claimIds": ["flint-card", "flint-speed"]
+    },
+    {
+      "id": "typescript",
+      "start": 228.46,
+      "end": 283.832,
+      "title": "TypeScript 7.1 与 tsrs",
+      "purpose": "标明 10 月 20 日的工具链变化，以及 8 倍所对照的版本",
+      "subject": "TypeScript 7.1 beta / tsrs",
+      "claimIds": ["ts-71", "ts-tsrs", "ts-retest"]
+    },
+    {
+      "id": "close",
+      "start": 283.832,
+      "end": 297.638,
+      "title": "本期收束",
+      "purpose": "收回三件已核实的事，不另加事实",
+      "subject": "本期四段",
+      "claimIds": ["rank-top3", "minimax-card", "flint-card", "ts-71"]
+    }
+  ],
+  "review": { "status": "pending" }
+}

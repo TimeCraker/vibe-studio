@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "steps": [
+    {
+      "id": "plan",
+      "command": [
+        "node",
+        "{repo}/skills/content-director/scripts/validate-plan.mjs",
+        "{project}"
+      ],
+      "inputs": ["storyboard.json"],
+      "outputs": []
+    },
+    {
+      "id": "deps",
+      "cwd": "remotion-app",
+      "command": ["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"],
+      "inputs": ["remotion-app/package.json", "remotion-app/package-lock.json"],
+      "outputs": [
+        "remotion-app/node_modules/typescript/bin/tsc",
+        "remotion-app/node_modules/remotion/package.json"
+      ],
+      "timeoutSeconds": 900
+    },
+    {
+      "id": "brands",
+      "command": ["node", "scripts/copy-brands.mjs"],
+      "inputs": ["assets/brands", "scripts/copy-brands.mjs"],
+      "outputs": [
+        "remotion-app/public/brands/minimax.png",
+        "remotion-app/public/brands/recursive-mark.png",
+        "remotion-app/public/brands/typescript.svg"
+      ]
+    },
+    {
+      "id": "audio",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "remotion-app/scripts/make_deck_audio.ps1",
+        "script.json",
+        "remotion-app/public/deck/audio"
+      ],
+      "inputs": ["script.json", "remotion-app/scripts/make_deck_audio.ps1"],
+      "outputs": [
+        "remotion-app/public/deck/audio/page-1.wav",
+        "remotion-app/public/deck/audio/page-5.wav"
+      ],
+      "timeoutSeconds": 600
+    },
+    {
+      "id": "segments",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "remotion-app/scripts/measure_segments.ps1",
+        "script.json",
+        "remotion-app/public/deck/audio"
+      ],
+      "inputs": ["script.json", "remotion-app/scripts/measure_segments.ps1"],
+      "outputs": [
+        "remotion-app/public/deck/audio/seg-1.wav",
+        "remotion-app/public/deck/audio/seg-87.wav"
+      ],
+      "timeoutSeconds": 600
+    },
+    {
+      "id": "params",
+      "command": [
+        "node",
+        "remotion-app/scripts/build-deck-params.mjs",
+        "script.json",
+        "remotion-app/public/deck"
+      ],
+      "inputs": [
+        "script.json",
+        "remotion-app/public/deck/audio",
+        "remotion-app/scripts/build-deck-params.mjs"
+      ],
+      "outputs": [
+        "remotion-app/src/deck-params.ts",
+        "remotion-app/src/deck-cues.ts",
+        "captions.srt"
+      ]
+    },
+    {
+      "id": "typecheck",
+      "cwd": "remotion-app",
+      "command": ["node", "node_modules/typescript/bin/tsc", "--noEmit"],
+      "inputs": ["remotion-app/src", "remotion-app/remotion", "remotion-app/tsconfig.json"],
+      "outputs": []
+    },
+    {
+      "id": "render",
+      "command": ["node", "scripts/render-episode.mjs"],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/public/deck/audio",
+        "remotion-app/public/brands",
+        "ranking.json"
+      ],
+      "outputs": ["render/daily-ai-news-2026-10-23.mp4"],
+      "timeoutSeconds": 5400
+    },
+    {
+      "id": "cover",
+      "cwd": "remotion-app",
+      "command": [
+        "node",
+        "node_modules/@remotion/cli/remotion-cli.js",
+        "still",
+        "remotion/index.ts",
+        "DailyCover",
+        "../render/cover.png",
+        "--frame=0"
+      ],
+      "inputs": ["remotion-app/src", "remotion-app/public/brands"],
+      "outputs": ["render/cover.png"],
+      "timeoutSeconds": 600
+    },
+    {
+      "id": "qc",
+      "command": [
+        "node",
+        "{repo}/skills/media-qc/scripts/check.mjs",
+        "--project",
+        "{project}",
+        "--video",
+        "render/daily-ai-news-2026-10-23.mp4",
+        "--srt",
+        "captions.srt",
+        "--require-audio",
+        "--out",
+        "qa/media-report.json"
+      ],
+      "inputs": ["render/daily-ai-news-2026-10-23.mp4", "captions.srt", "qc.json"],
+      "outputs": ["qa/media-report.json"],
+      "timeoutSeconds": 900
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "platforms": {
+    "bili": {
+      "title": "MiniMax M3.1 Flash 今天开放权重",
+      "description": [
+        "2026-10-23。先看综合智力 ECI 前 15 名，再讲三件事。",
+        "MiniMax M3.1 Flash 开放权重：模型卡写总参约 428B、每 token 激活约 23B、上下文最长 100 万 token。非商业免费；商用要署名，年收入超过 2000 万美元需要事先书面授权。",
+        "Recursive Flint 是 10 月 21 日放出的本地编码模型。39.8B 总参、约 2.5B 激活，Apache 2.0。Verified 74.2% 等分数是官方自测。笔记本速度来自优化引擎，不要直接套 BF16 主文件。",
+        "TypeScript 7.1 beta 和 Cloudflare tsrs 都是 10 月 20 日。7.1 对照的是 7.0；tsrs 官方说的最多 8 倍也是对照 7.0，不是 7.1。",
+        "榜单来自大模型世界开源数据 models.json，生成于 2026-10-23 21:46（北京时间），口径是 Epoch ECI。没有昨日快照，所以不标升降。",
+        "声音是本地测试音色，不是正式配音。来源：Hugging Face 模型卡、MiniMax 许可、IT之家 10 月 23 日报道、recursive.com、微软 TypeScript 博客、Cloudflare 博客。"
+      ],
+      "tags": ["人工智能", "MiniMax", "大模型", "TypeScript", "开源"],
+      "sceneIds": ["ranking", "minimax", "flint", "typescript", "close"],
+      "format": { "width": 1920, "height": 1080, "fps": 60 },
+      "video": "render/daily-ai-news-2026-10-23.mp4",
+      "cover": "render/cover.png",
+      "safeArea": { "top": 0.06, "bottom": 0.12, "left": 0.04, "right": 0.04 },
+      "declare": "含AI生成内容"
+    }
+  }
+}

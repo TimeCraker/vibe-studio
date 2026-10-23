@@ -14,7 +14,7 @@
 
 边界与决策见 [产品图](docs/product-map.md)。登录、配音、分镜/成片终审、点击发布保留人工节点；机器检查和人工接受分别记录。
 
-每日 AI 资讯已有[技能流程草案](skills/daily-ai-news/SKILL.md)、[本地视觉参考](skills/daily-ai-news/references/visual-style.md)与 [Cursor 首期任务](docs/2026-10-23-daily-ai-news-cursor-prompt.md)。风格已确认，不依赖生图；条数与时长随内容，无合适资讯可以不出片，首期也按此判断后试制。采集适配、栏目模板、正式自动语音与日更验证仍待实现，进度见[栏目规划](docs/2026-10-23-daily-ai-news-spec.md)。
+每日 AI 资讯已有[技能流程草案](skills/daily-ai-news/SKILL.md)、[本地视觉参考](skills/daily-ai-news/references/visual-style.md)与 [Cursor 首期任务](docs/2026-10-23-daily-ai-news-cursor-prompt.md)。风格已确认，不依赖生图；条数与时长随内容，无合适资讯可以不出片。2026-10-23 首期已有一版待审横版，见 `projects/daily-ai-news-2026-10-23/`。采集适配、正式自动语音和下一期续跑还没验证，进度见[栏目规划](docs/2026-10-23-daily-ai-news-spec.md)。
 
 视频质量流程：先分析参考并确定视觉方向，按需用分镜图和临时配音做可播放粗样片；调整结构后制作正式画面与混音，再依据实际视频的时间码返修。方法与裁剪方式统一见[制作流程](workflows/explainer-video.md)，不要求所有任务遍历全部步骤。
 

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "status": "technical-pass-needs-human-review",
+  "ok": true,
+  "video": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-23\\render\\daily-ai-news-2026-10-23.mp4",
+  "videoSha256": "fab47ecd0193dae639188f5917f643fcc9d0638bda5a1abe9b5b9d27cd6ce899",
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "duration": 297.633333,
+  "videoCodec": "h264",
+  "audio": true,
+  "loudness": {
+    "integratedLufs": "-22.81",
+    "truePeakDbtp": "-3.14",
+    "rangeLu": "6.10"
+  },
+  "black": [],
+  "freezes": [
+    0.833333,
+    2.916667,
+    46.1,
+    62.933333,
+    65.833333,
+    134.65,
+    143.35,
+    148.883333,
+    229.683333,
+    286.4
+  ],
+  "subtitles": {
+    "errors": [],
+    "warnings": [],
+    "count": 87
+  },
+  "errors": [],
+  "warnings": [
+    "static intervals need editorial review"
+  ],
+  "evidence": {
+    "contactSheet": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-23\\qa\\media-report-contact-sheet.png",
+    "renderReport": null
+  },
+  "humanReview": {
+    "status": "pending",
+    "checks": [
+      "phone-size readability",
+      "subject and factual accuracy",
+      "narration timing",
+      "music vs voice",
+      "cover and platform safe areas"
+    ]
+  }
+}
