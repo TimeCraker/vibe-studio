@@ -7,12 +7,15 @@
 | 交付物 | 默认入口 | 配套工具 |
 |---|---|---|
 | PPT | ppt | content-director 定受众与材料，humanizer 过文案 |
+| 每日 AI 资讯（试制） | [daily-ai-news](../skills/daily-ai-news/SKILL.md) | 薄的栏目编排草案，新闻/ECI TOP15 + B 线代码渲染，复用现有声音、检查与发布工具 |
 | 录像讲解 | video-motion / FootageOverlay | auto-subtitle、media-qc |
 | 产品介绍片 | workflows/explainer-video.md | content-director、narration、video-motion、media-qc |
 | 网页/代码动画成片 | web-capture | 导演页、配乐、media-qc |
 | 独立通用封面 | video-motion / Cover | 三种预设；介绍片封面使用 CoverV3 |
 
 先判断画面来源：已有网页走 C 线采集；现成素材可走 A 线剪映；需要组件直绘走 B 线 Remotion。已有录像只需叠标注时直接用 FootageOverlay。
+
+每日栏目先按[首期接手任务](2026-10-23-daily-ai-news-cursor-prompt.md)生成本地待审版本；草案和参考图已具备，不代表正式采集、自动语音或日更成片已验收。栏目事实、选择和进度归[现有 Stage Spec](2026-10-23-daily-ai-news-spec.md)。
 
 三条线可混用，默认阶段与裁剪方式见[视频制作流程](../workflows/explainer-video.md)。各技能职责见 [README](../README.md#工具与职责)，不在此复述完整制作与投稿规则。
 

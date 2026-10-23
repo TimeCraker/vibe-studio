@@ -1,0 +1,4 @@
+interface:
+  display_name: "每日 AI 资讯"
+  short_description: "从每日新闻筛选、模型榜单到代码成片和发布物料的栏目试制流程"
+  default_prompt: "使用 $daily-ai-news 制作今天的 AI 资讯待审视频，沿用已确认风格并交付封面、字幕和来源。"

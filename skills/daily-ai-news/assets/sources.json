@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-23",
+  "notes": [
+    "Images are existing concept references, not render inputs or current news data.",
+    "User accepted the revised cover/news visual direction; code and motion acceptance remain pending."
+  ],
+  "files": [
+    {
+      "path": "style-reference/cover-preview.png",
+      "role": "cover, approximately 16:9",
+      "sha256": "97e416987aa1de6dfd9ac53644f715fd0add0a9cd9f2bf9785e63156a5544056",
+      "source": "Existing imagegen output exec-e6aa4515-7470-4d0e-b652-5cd55a67e079",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "style-reference/news-preview.png",
+      "role": "news page, approximately 16:9",
+      "sha256": "8f01ed5ece8f05da0444c1f68bb8779e9ed51e2bb159df5e5536e4482da6bffe",
+      "source": "Existing imagegen output exec-af4b9bb2-e92e-4a51-8d46-bfba1936f6fa",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "path": "style-reference/ranking-preview.png",
+      "role": "ranking layout, 4:3",
+      "sha256": "c8b68ee961d0bb9aebcc9823cdff61eb75e5277a99c1958f8d9f1cac3592dc05",
+      "source": "Existing imagegen output exec-eaca04e0-97a4-4cdf-bec8-b589a0527306",
+      "dimensions": [
+        1448,
+        1086
+      ]
+    },
+    {
+      "path": "official-openai-light.svg",
+      "role": "official brand reference",
+      "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+      "sourceUrl": "https://github.com/openai/openai-agents-js/blob/main/docs/public/favicon.svg",
+      "note": "Unmodified SVG; contains a white circular backing."
+    }
+  ]
+}

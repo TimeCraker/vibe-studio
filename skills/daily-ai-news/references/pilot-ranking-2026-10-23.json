@@ -1,0 +1,120 @@
+{
+  "sourceUrl": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+  "generatedAt": "2026-10-23T13:46:38.821Z",
+  "epoch": {
+    "fetchedAt": "2026-10-23T13:46:38.821Z",
+    "note": "ZIP 92 个条目；取到 7/7 个指标；编程赛制 9 个；全榜单 81 个；训练算力 329 行；去重后 418 个模型实体；合规拦截 1 个文件",
+    "ok": true
+  },
+  "top15": [
+    {
+      "rank": 1,
+      "id": "anthropic/claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "eci": 168.83,
+      "retiredAt": null
+    },
+    {
+      "rank": 2,
+      "id": "openai/gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "eci": 168.81,
+      "retiredAt": null
+    },
+    {
+      "rank": 3,
+      "id": "openai/gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "eci": 168.37,
+      "retiredAt": null
+    },
+    {
+      "rank": 4,
+      "id": "anthropic/claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "eci": 166.49,
+      "retiredAt": null
+    },
+    {
+      "rank": 5,
+      "id": "google/gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "eci": 166.45,
+      "retiredAt": null
+    },
+    {
+      "rank": 6,
+      "id": "anthropic/claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "eci": 166.18,
+      "retiredAt": null
+    },
+    {
+      "rank": 7,
+      "id": "anthropic/claude-opus-5",
+      "name": "Claude Opus 5",
+      "eci": 163.94,
+      "retiredAt": null
+    },
+    {
+      "rank": 8,
+      "id": "openai/gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "eci": 163.73,
+      "retiredAt": null
+    },
+    {
+      "rank": 9,
+      "id": "anthropic/claude-fable-5",
+      "name": "Claude Fable 5",
+      "eci": 163.42,
+      "retiredAt": null
+    },
+    {
+      "rank": 10,
+      "id": "openai/gpt-5.5-pro",
+      "name": "GPT-5.5 Pro",
+      "eci": 162.91,
+      "retiredAt": null
+    },
+    {
+      "rank": 11,
+      "id": "openai/gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "eci": 162.79,
+      "retiredAt": null
+    },
+    {
+      "rank": 12,
+      "id": "meta/muse-wonder",
+      "name": "Muse Wonder",
+      "eci": 161.85,
+      "retiredAt": null
+    },
+    {
+      "rank": 13,
+      "id": "meta/muse-wonder-1.0",
+      "name": "Muse Wonder",
+      "eci": 161.85,
+      "retiredAt": null
+    },
+    {
+      "rank": 14,
+      "id": "openai/gpt-5.6-terra",
+      "name": "GPT-5.6 Terra",
+      "eci": 160.09,
+      "retiredAt": null
+    },
+    {
+      "rank": 15,
+      "id": "openai/gpt-5.5",
+      "name": "GPT-5.5",
+      "eci": 159.68,
+      "retiredAt": null
+    }
+  ],
+  "snapshotRole": "pilot-reference-only",
+  "allowedEpisodeDate": "2026-10-23",
+  "retrievalNote": "Retrieved from the project public source snapshot for the first pilot. Not a live website capture. Never reuse as a later date ranking.",
+  "sourceSnapshotSha256": "39d871b511f81c1f3ebfb9aae7772389e89b6d1a82a3b22d1f0206dd1335574b"
+}
