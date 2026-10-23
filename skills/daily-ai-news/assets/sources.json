@@ -2,8 +2,10 @@
   "schemaVersion": 1,
   "recordedDate": "2026-10-23",
   "notes": [
-    "Images are existing concept references, not render inputs or current news data.",
-    "User accepted the revised cover/news visual direction; code and motion acceptance remain pending."
+    "Images are visual references, not render inputs or current news data.",
+    "Ranking prioritizes the latest user-provided ranking-preferred.png screenshot; previous concept images remain supplementary.",
+    "Paper-white/coral Swiss editorial style remains selected. Black logo squares and black workflow panels remain rejected.",
+    "User requires native 60fps rendering for the pilot and daily series; image references do not set output dimensions or timing."
   ],
   "files": [
     {
@@ -42,6 +44,28 @@
       "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
       "sourceUrl": "https://github.com/openai/openai-agents-js/blob/main/docs/public/favicon.svg",
       "note": "Unmodified SVG; contains a white circular backing."
+    },
+    {
+      "path": "style-reference/ranking-preferred.png",
+      "role": "Primary ranking style: user preferred Swiss editorial screenshot, TOP3 left / ranks 4-15 right",
+      "priority": 1,
+      "sha256": "99dd6ef76eaa0a5e547a31e4d80d6ae4737c11294cbd51678183c8394793ed55",
+      "source": "User-provided attachment codex-clipboard-82570cc9-4e20-41a7-a110-1564cb6b635a.png",
+      "dimensions": [
+        936,
+        522
+      ]
+    },
+    {
+      "path": "style-reference/layout-contact-sheet.png",
+      "role": "Supplementary layout/font/grid reference; earlier rejection of black logo/flowchart panels still applies",
+      "priority": 2,
+      "sha256": "364b4d7f9de7252385acc8ab5349c103bde2cae9dce2b9d8dd50757f26095c59",
+      "source": "User-provided attachment codex-clipboard-c2552679-04b6-4a0e-a8cf-1431de696ea5.png",
+      "dimensions": [
+        501,
+        607
+      ]
     }
   ]
 }
