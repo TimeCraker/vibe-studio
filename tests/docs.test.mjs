@@ -5,6 +5,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { git, Snapshot } from "../scripts/lib/docs-source.mjs";
 import { generatedPlan, syncGenerated } from "../scripts/lib/docs-generate.mjs";
+import { checkDocs, impact } from "../scripts/lib/docs-analyze.mjs";
 
 function fixture() {
   const root = mkdtempSync(join(tmpdir(), "vibe-docs-"));
@@ -51,3 +52,32 @@ test("generation checks the staged snapshot and never masks a partially staged s
 });
 
 export { fixture };
+
+test("impact locates command and directory consumers after deletes and renames", () => {
+  const f = fixture();
+  f.put("scripts/old.mjs", "old");
+  f.put("docs/guide.md", "Run `node scripts/old.mjs`\nSource: `src/feature/`\n");
+  f.put("src/feature/a.ts", "a"); f.commit();
+  git(f.root, ["mv", "scripts/old.mjs", "scripts/new.mjs"]);
+  f.put("src/feature/a.ts", "changed");
+  const report = impact(new Snapshot(f.root));
+  const guide = report.candidates.find((r) => r.doc === "docs/guide.md");
+  assert.ok(guide.reasons.some((r) => r.changedSources.includes("scripts/old.mjs")));
+  assert.ok(guide.reasons.some((r) => r.changedSources.includes("src/feature/a.ts")));
+  assert.ok(report.unmapped.includes("scripts/new.mjs"));
+});
+
+test("guard catches newly broken links and removed targets, preserves staged boundaries and tolerates old debt", () => {
+  const f = fixture();
+  f.put("README.md", "[old](docs/missing.md)\n[good](docs/good.md)\n");
+  f.put("docs/good.md", "good"); f.commit();
+  assert.equal(checkDocs(new Snapshot(f.root), { newOnly: true }).ok, true);
+  f.put("README.md", "[old](docs/missing.md)\n[good](docs/good.md)\n[new](docs/unstaged.md)\n");
+  git(f.root, ["add", "README.md"]);
+  f.put("docs/unstaged.md", "exists only in worktree");
+  assert.equal(checkDocs(new Snapshot(f.root), { newOnly: true }).ok, true);
+  const staged = checkDocs(new Snapshot(f.root, { staged: true }), { newOnly: true });
+  assert.deepEqual(staged.brokenLinks.map((r) => r.path), ["docs/unstaged.md"]);
+  git(f.root, ["rm", "docs/good.md"]);
+  assert.ok(checkDocs(new Snapshot(f.root, { staged: true }), { newOnly: true }).brokenLinks.some((r) => r.path === "docs/good.md"));
+});

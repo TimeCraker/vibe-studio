@@ -50,6 +50,29 @@ export class Snapshot {
     this.files = [...new Set(git(this.root, args).split("\0").filter(Boolean))].sort();
     this.fileSet = new Set(this.files);
     this.cache = new Map();
+    if (staged) this.preloadDocuments();
+  }
+  preloadDocuments() {
+    const names = this.files.filter(documentPath).filter((p) => this.safe(p));
+    if (!names.length) return;
+    // One batch avoids a Git process for every Markdown file in large repos.
+    const sizes = git(this.root, ["cat-file", "--batch-check=%(objectname) %(objecttype) %(objectsize)"],
+      { input: names.map((p) => `:${p}\n`).join("") }).trimEnd().split("\n");
+    const readable = names.filter((_p, i) => / blob \d+$/.test(sizes[i]) && Number(sizes[i].split(" ").at(-1)) <= 2 * 1024 * 1024);
+    for (const name of names) this.cache.set(name, null);
+    if (!readable.length) return;
+    const result = spawnSync("git", ["-C", this.root, "cat-file", "--batch"], {
+      input: readable.map((p) => `:${p}\n`).join(""), maxBuffer: 128 * 1024 * 1024, windowsHide: true,
+    });
+    if (result.error || result.status !== 0) throw new Error("Cannot read staged document batch");
+    let offset = 0;
+    for (const name of readable) {
+      const end = result.stdout.indexOf(10, offset);
+      const size = Number(result.stdout.subarray(offset, end).toString("utf8").split(" ").at(-1));
+      if (end < 0 || !Number.isSafeInteger(size)) throw new Error("Invalid Git document batch");
+      this.cache.set(name, result.stdout.subarray(end + 1, end + 1 + size).toString("utf8"));
+      offset = end + size + 2;
+    }
   }
   safe(path) {
     if (!path || path.includes("\\") || isAbsolute(path) || path.split("/").some((p) => p === ".." || p === ".")) return false;
