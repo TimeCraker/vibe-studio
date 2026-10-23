@@ -32,7 +32,7 @@ export function documentPath(path) {
   );
 }
 export function historical(path, text) {
-  return /(?:^|\/)(?:archive|archived|completed|recipe)(?:\/|$)/i.test(path) ||
+  return /(?:^|\/)(?:_?archive|archived|completed|recipe)(?:\/|$)/i.test(path) ||
     /状态[:：]\s*已存档/.test(text.split("\n").slice(0, 12).join("\n"));
 }
 

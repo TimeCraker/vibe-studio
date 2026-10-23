@@ -14,7 +14,7 @@ export function discoverRepos(workspace, { depth = 3 } = {}) {
     if (existsSync(join(path, ".git"))) { repos.push(realpathSync(path)); return; }
     if (level >= depth) return;
     for (const entry of readdirSync(path, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
-      if (entry.name.startsWith(".") || SKIP.has(entry.name) || entry.isSymbolicLink() || !entry.isDirectory()) continue;
+      if (entry.name.startsWith(".") || /^_?archiv(?:e|ed)$/i.test(entry.name) || SKIP.has(entry.name) || entry.isSymbolicLink() || !entry.isDirectory()) continue;
       visit(join(path, entry.name), level + 1);
     }
   }
@@ -70,6 +70,19 @@ export function indexWorkspace(workspace, { cacheDir } = {}) {
       }
     } catch (error) { errors.push({ repo: root, error: error.message }); }
   }
+  // The workspace itself may not be a Git repository. Its short entrypoints
+  // still belong in search, without inventing a Git version or scanning loose files.
+  if (!repos.some((r) => r.root === workspace)) for (const doc of ["README.md", "AGENTS.md", "CLAUDE.md"]) {
+    const file = join(workspace, doc);
+    if (!existsSync(file) || lstatSync(file).isSymbolicLink() || !lstatSync(file).isFile() || lstatSync(file).size > 2 * 1024 * 1024) continue;
+    const text = normalize(readFileSync(file, "utf8")), hash = digest(text);
+    const cached = old.get(`${workspace}\0${doc}`);
+    if (cached?.hash === hash) { entries.push(cached); continue; }
+    refreshed++;
+    const title = text.match(/^#\s+(.+)$/m)?.[1] || doc;
+    entries.push({ repo: workspace, path: doc, hash, title: redact(title), workspaceOnly: true,
+      historical: false, terms: frequencies(text), titleTerms: frequencies(title + " " + doc), references: [] });
+  }
   const data = { schemaVersion: 1, workspace, indexedAt: new Date().toISOString(), repos, entries, errors };
   mkdirSync(dirname(path), { recursive: true });
   const temp = `${path}.${randomUUID()}.tmp`;
@@ -113,14 +126,17 @@ export function searchWorkspace(workspace, query, { limit = 5, history = false, 
   }).filter((r) => r.score > 0).sort((a, b) => b.score - a.score || a.entry.path.localeCompare(b.entry.path)).slice(0, Math.max(1, Math.min(50, limit)));
   const snapshots = new Map();
   const results = matches.map(({ entry, score }) => {
-    if (!snapshots.has(entry.repo)) snapshots.set(entry.repo, new Snapshot(entry.repo));
-    const snapshot = snapshots.get(entry.repo), current = snapshot.read(entry.path);
+    if (!entry.workspaceOnly && !snapshots.has(entry.repo)) snapshots.set(entry.repo, new Snapshot(entry.repo));
+    const snapshot = snapshots.get(entry.repo), current = entry.workspaceOnly
+      ? readFileSync(resolve(entry.repo, entry.path), "utf8") : snapshot.read(entry.path);
     const lines = normalize(current || "").split("\n");
     const snippets = lines.map((text, i) => ({ line: i + 1, text: redact(text), score: queryTerms.filter((q) => terms(text).includes(q)).length }))
       .filter((r) => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 2).map(({ line, text }) => ({ line, text: [...text].slice(0, 240).join("") }));
     return { repo: entry.repo, path: entry.path, absolutePath: resolve(entry.repo, entry.path), title: entry.title,
       score: Number(score.toFixed(2)), kind: entry.historical ? "historical" : "current", head: indexed.data.repos.find((r) => r.root === entry.repo)?.head,
-      contentHash: entry.hash, sourceState: sourceState(entry, snapshot), snippets };
+      contentHash: digest(current || ""), sourceState: entry.workspaceOnly
+        ? { status: "unverified", reasons: [], meaning: "Workspace entrypoint has no Git version; source text was read at query time." }
+        : sourceState(entry, snapshot), snippets };
   });
   return { query, repositories: indexed.data.repos.length, documents: indexed.data.entries.length,
     refreshed: indexed.refreshed, cache: indexed.cache, errors: indexed.data.errors, results };

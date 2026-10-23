@@ -1,12 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { chmodSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { dirname, join, resolve } from "node:path";
+import { delimiter, dirname, join, resolve } from "node:path";
 import { git, Snapshot } from "../scripts/lib/docs-source.mjs";
 import { generatedPlan, syncGenerated } from "../scripts/lib/docs-generate.mjs";
 import { checkDocs, impact } from "../scripts/lib/docs-analyze.mjs";
 import { discoverRepos, indexWorkspace, searchWorkspace } from "../scripts/lib/docs-index.mjs";
+import { installHook } from "../scripts/lib/docs-hooks.mjs";
 
 function fixture(parent = tmpdir()) {
   const root = mkdtempSync(join(parent, "vibe-docs-"));
@@ -86,6 +87,7 @@ test("guard catches newly broken links and removed targets, preserves staged bou
 test("workspace search refreshes edited source docs, separates history and excludes secrets and index symlinks", () => {
   const workspace = mkdtempSync(join(tmpdir(), "vibe-workspace-"));
   const cacheDir = join(workspace, ".cache");
+  writeFileSync(join(workspace, "AGENTS.md"), "# Workspace\nrootentryneedle constructor\n");
   const f = fixture(workspace), other = fixture(workspace);
   f.put("README.md", "# 网页采集\nUse `node scripts/capture.mjs`.\n");
   f.put("scripts/capture.mjs", "original");
@@ -98,6 +100,8 @@ test("workspace search refreshes edited source docs, separates history and exclu
   assert.equal(discoverRepos(workspace).length, 2);
   assert.equal(searchWorkspace(workspace, "网页采集", { cacheDir }).results[0].path, "README.md");
   assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir }).results.length, 0);
+  assert.equal(searchWorkspace(workspace, "rootentryneedle", { cacheDir }).results[0].head, undefined);
+  assert.equal(searchWorkspace(workspace, "constructor", { cacheDir }).results[0].path, "AGENTS.md");
   assert.equal(searchWorkspace(workspace, "legacyneedle", { cacheDir, history: true }).results[0].kind, "historical");
   f.put("docs/new.md", "# 新知识\nuniquerefreshneedle\n");
   assert.equal(searchWorkspace(workspace, "uniquerefreshneedle", { cacheDir }).results[0].path, "docs/new.md");
@@ -107,4 +111,52 @@ test("workspace search refreshes edited source docs, separates history and exclu
   const cache = readFileSync(indexed.cache, "utf8");
   assert.doesNotMatch(cache, /supersecretneedle|outside-private/);
   assert.ok(!indexed.data.entries.some((e) => e.path.endsWith("credentials.md")));
+});
+
+test("installed hook actually blocks new broken links without changing the index and uninstalls only owned hooks", () => {
+  const f = fixture();
+  f.put("README.md", "# Fixture\n"); f.commit();
+  const tool = resolve("scripts/docs.mjs");
+  assert.equal(installHook(f.root, tool).status, "installed");
+  assert.equal(installHook(f.root, tool).status, "unchanged");
+  f.put("docs/new.md", "[bad](missing.md)\n"); git(f.root, ["add", "."]);
+  const before = git(f.root, ["write-tree"]);
+  assert.equal(git(f.root, ["commit", "-qm", "must fail"], { optional: true }), null);
+  assert.equal(git(f.root, ["write-tree"]), before);
+  f.put("docs/new.md", "No broken link\n");
+  git(f.root, ["add", "."]); git(f.root, ["commit", "-qm", "works"]);
+  assert.equal(installHook(f.root, tool, { remove: true }).status, "removed");
+  f.put(".git/hooks/pre-commit", "#!/bin/sh\n# user-owned\nexit 0\n");
+  assert.equal(installHook(f.root, tool).status, "skipped-existing-hook");
+  assert.equal(installHook(f.root, tool, { remove: true }).status, "skipped-unowned-or-modified-hook");
+  assert.match(readFileSync(join(f.root, ".git/hooks/pre-commit"), "utf8"), /user-owned/);
+  git(f.root, ["config", "core.hooksPath", ".custom-hooks"]);
+  assert.equal(installHook(f.root, tool).status, "skipped-existing-hooksPath");
+});
+
+test("Husky chaining preserves original checks, propagates their failures and removes only its own suffix", () => {
+  const f = fixture();
+  const original = "# original check\r\npnpm exec lint-staged\r\n";
+  f.put(".husky/pre-commit", original);
+  f.put(".husky/_/pre-commit", "#!/bin/sh\nexec sh -e .husky/pre-commit\n");
+  chmodSync(join(f.root, ".husky/_/pre-commit"), 0o755);
+  f.commit();
+  git(f.root, ["config", "core.hooksPath", ".husky/_"]);
+  const tool = resolve("scripts/docs.mjs");
+  assert.equal(installHook(f.root, tool, { chainExisting: true }).status, "chained-existing-husky");
+  assert.ok(readFileSync(join(f.root, ".husky/pre-commit"), "utf8").startsWith(original));
+  assert.equal(installHook(f.root, tool, { chainExisting: true }).status, "unchanged-existing-husky");
+  const oldPath = process.env.PATH;
+  try {
+    f.put("fake-bin/pnpm", "#!/bin/sh\nexit 0\n"); chmodSync(join(f.root, "fake-bin/pnpm"), 0o755);
+    process.env.PATH = `${join(f.root, "fake-bin")}${delimiter}${oldPath}`;
+    f.put("docs/new.md", "[bad](missing.md)\n"); git(f.root, ["add", "."]);
+    assert.equal(git(f.root, ["commit", "-qm", "must fail docs"], { optional: true }), null);
+    f.put("docs/new.md", "Good\n"); git(f.root, ["add", "."]);
+    git(f.root, ["commit", "-qm", "passes original and docs"]);
+    f.put("fake-bin/pnpm", "#!/bin/sh\nexit 7\n"); git(f.root, ["add", "."]);
+    assert.equal(git(f.root, ["commit", "-qm", "must fail original"], { optional: true }), null);
+  } finally { process.env.PATH = oldPath; }
+  assert.equal(installHook(f.root, tool, { chainExisting: true, remove: true }).status, "removed-existing-husky");
+  assert.equal(readFileSync(join(f.root, ".husky/pre-commit"), "utf8"), original);
 });
