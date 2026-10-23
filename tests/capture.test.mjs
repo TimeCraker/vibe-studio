@@ -2,7 +2,16 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
-import { Cdp } from "../skills/web-capture/templates/cdp.mjs";
+import { Cdp, launchChrome } from "../skills/web-capture/templates/cdp.mjs";
+import { createServer } from "node:net";
+
+test("browser launch refuses an occupied debug port without borrowing its endpoint", async () => {
+  const server = createServer((socket) => socket.end());
+  await new Promise((ok) => server.listen(0, "127.0.0.1", ok));
+  try {
+    await assert.rejects(launchChrome({ chromePath: process.execPath, port: server.address().port }), /already in use/);
+  } finally { await new Promise((ok) => server.close(ok)); }
+});
 const clock = readFileSync(
   new URL("../skills/web-capture/templates/vclock.js", import.meta.url),
   "utf8",

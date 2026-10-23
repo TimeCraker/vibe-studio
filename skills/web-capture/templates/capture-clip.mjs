@@ -22,7 +22,7 @@ const actions = args.actions ? JSON.parse(readFileSync(abs(args.actions), 'utf8'
 if (!actions.every((a) => Number.isFinite(a.sec) && a.sec >= 0 && typeof a.code === 'string')) throw new Error('Invalid actions');
 if (mode === 'seek' && actions.length) throw new Error('Seek mode cannot replay UI actions; use replay mode');
 const outDir = abs(args.out); mkdirSync(outDir, { recursive: true });
-const browser = await launchChrome({ port: Number(args.port ?? 9333) });
+const browser = await launchChrome({ port: Number(args.port ?? 0) });
 const stop = () => { browser.kill(); process.exit(130); };
 process.once('SIGINT', stop); process.once('SIGTERM', stop);
 let written = 0, bytes = 0, actionCursor = 0;

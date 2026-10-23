@@ -4,6 +4,7 @@ import { spawn } from 'node:child_process';
 import { existsSync, mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { createConnection } from 'node:net';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -87,7 +88,7 @@ export class Cdp {
 }
 
 export async function launchChrome({
-  port = 9333,
+  port = 0,
   chromePath = process.env.CHROME_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
   userDataDir,
   extraArgs = [],
@@ -95,6 +96,13 @@ export async function launchChrome({
   onStderr,
 } = {}) {
   if (!existsSync(chromePath)) throw new Error(`Chrome not found: ${chromePath}; set CHROME_PATH`);
+  if (!Number.isInteger(port) || port < 0 || port > 65535) throw new Error('Invalid Chrome debug port');
+  if (port) await new Promise((ok, fail) => {
+    const socket = createConnection({ host: '127.0.0.1', port });
+    const timer = setTimeout(() => { socket.destroy(); fail(new Error('Port availability check timed out')); }, 2000);
+    socket.once('connect', () => { clearTimeout(timer); socket.destroy(); fail(new Error(`Chrome debug port ${port} is already in use; choose another port or use 0`)); });
+    socket.once('error', (error) => { clearTimeout(timer); socket.destroy(); error.code === 'ECONNREFUSED' ? ok() : fail(error); });
+  });
   const dir = userDataDir ?? mkdtempSync(join(tmpdir(), 'cdp-profile-'));
   const args = [
     '--headless=new',
@@ -119,17 +127,29 @@ export async function launchChrome({
     ...extraArgs,
     'about:blank',
   ];
-  const proc = spawn(chromePath, args, { stdio: ['ignore', 'ignore', onStderr ? 'pipe' : 'ignore'] });
+  const proc = spawn(chromePath, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true });
   let launchError = null;
   proc.on('error', (error) => { launchError = error; });
-  if (onStderr) proc.stderr.on('data', (d) => onStderr(String(d)));
+  let stderrTail = '', ownedEndpoint = null;
+  proc.stderr.on('data', (data) => {
+    const text = String(data); stderrTail = (stderrTail + text).slice(-8192);
+    ownedEndpoint = stderrTail.match(/DevTools listening on (ws:\/\/[^\s]+)/)?.[1] ?? ownedEndpoint;
+    onStderr?.(text);
+  });
 
   let version = null;
   for (let i = 0; i < 200; i++) {
     if (launchError || proc.exitCode !== null) throw launchError ?? new Error(`Chrome exited: ${proc.exitCode}`);
+    if (!ownedEndpoint) { await sleep(100); continue; }
     try {
+      const actualPort = Number(new URL(ownedEndpoint).port);
+      if (port && actualPort !== port) throw new Error('Chrome exposed an unexpected debug port');
+      port = actualPort;
       const res = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(1000) });
-      if (res.ok) { version = await res.json(); break; }
+      if (res.ok) {
+        const candidate = await res.json();
+        if (candidate.webSocketDebuggerUrl === ownedEndpoint) { version = candidate; break; }
+      }
     } catch { /* not up yet */ }
     await sleep(100);
   }

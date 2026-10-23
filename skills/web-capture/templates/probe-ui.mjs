@@ -2,7 +2,7 @@
 // so capture actions can drive the app the same way a user would.
 //
 //   node <skill>/templates/probe-ui.mjs --html <path> [--project <dir>]
-//        [--width 1920] [--height 1080] [--port 9333] [--shot <out.png>]
+//        [--width 1920] [--height 1080] [--port 0] [--shot <out.png>]
 import { readFileSync } from 'node:fs';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
@@ -14,7 +14,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const args = parseArgs(process.argv.slice(2));
 const ROOT = projectRoot(args);
 const abs = (p) => (!p ? p : /^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT, p));
-const browser = await launchChrome({ port: Number(args.port ?? 9333) });
+const browser = await launchChrome({ port: Number(args.port ?? 0) });
 try {
   await openPage(browser.cdp, { width: Number(args.width ?? 1920), height: Number(args.height ?? 1080), deviceScaleFactor: 1 });
   await addInitScript(browser.cdp, readFileSync(join(HERE, 'vclock.js'), 'utf8'));

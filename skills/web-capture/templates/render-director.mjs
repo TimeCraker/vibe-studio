@@ -28,7 +28,7 @@ const server=createServer((req,res)=>{
 await new Promise((ok,fail)=>{server.once('error',fail);server.listen(Number(args.port??0),'127.0.0.1',ok);});
 let browser,ff,ffDone;
 try{
-  browser=await launchChrome({port:Number(args.chromePort??9333)});
+  browser=await launchChrome({port:Number(args.chromePort??0)});
   async function boot(options){
     await openPage(browser.cdp,{width:options.width,height:options.height,deviceScaleFactor:dsf});
     await addInitScript(browser.cdp,`window.__CAPTURE_CONFIG=${JSON.stringify(options)};window.__DSF=${Number(args.dsf??1)};`);

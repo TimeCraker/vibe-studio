@@ -5,6 +5,7 @@ import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { createHash } from "node:crypto";
+import { launchChrome, openPage, capturePng } from "../skills/web-capture/templates/cdp.mjs";
 const dir = mkdtempSync(join(tmpdir(), "vibe-browser-capture-"));
 writeFileSync(
   join(dir, "page.html"),
@@ -59,11 +60,26 @@ for (let i = 0; i < 12; i++) {
     `frame ${i}`,
   );
 }
+// Default launches must own distinct endpoints, even with another debug browser running.
+const browsers = [];
+try {
+  browsers.push(await launchChrome()); browsers.push(await launchChrome());
+  assert.notEqual(browsers[0].port, browsers[1].port);
+  assert.notEqual(browsers[0].version.webSocketDebuggerUrl, browsers[1].version.webSocketDebuggerUrl);
+  for (const [i, browser] of browsers.entries()) {
+    await openPage(browser.cdp, { width: 320, height: 180 });
+    await browser.cdp.eval(`window.fixtureMarker=${i}`);
+    assert.ok((await capturePng(browser.cdp)).length > 100);
+  }
+  assert.equal(await browsers[0].cdp.eval("window.fixtureMarker"), 0);
+  assert.equal(await browsers[1].cdp.eval("window.fixtureMarker"), 1);
+} finally { for (const browser of browsers) browser.kill(); }
 console.log(
   JSON.stringify({
     ok: true,
     framesCompared: 12,
     mode: "stateful-replay-with-random-and-actions",
     evidence: dir,
+    isolatedBrowserEndpoints: true,
   }),
 );

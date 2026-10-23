@@ -33,10 +33,9 @@ const TARGETS = Object.fromEntries(
 const abs = (p) => (/^[A-Za-z]:[\\/]|^[\\/]/.test(p) ? resolve(p) : resolve(ROOT, p));
 
 const out = {};
-let port = 9560;
 for (const [name, cfg] of Object.entries(TARGETS)) {
   const vp = resolveShotViewport({ ...cfg, id: name }, {}, {});
-  const browser = await launchChrome({ port: port++ });
+  const browser = await launchChrome();
   try {
     await openPage(browser.cdp, { width: vp.width, height: vp.height, deviceScaleFactor: 1 });
     await addInitScript(browser.cdp, readFileSync(join(HERE, 'vclock.js'), 'utf8'));

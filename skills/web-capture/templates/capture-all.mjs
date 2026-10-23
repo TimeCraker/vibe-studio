@@ -26,13 +26,13 @@ for (const shot of cfg.shots) {
 if (wanted?.some((id) => !ids.has(id))) throw new Error('Unknown shot in --only');
 const shots = cfg.shots.filter((s) => !wanted || wanted.includes(s.id));
 const jobs = [], viewports = new Map();
-let nextPort = Number(args.port ?? 9400);
+let nextPort = Number(args.port ?? 0);
 for (const shot of shots) {
   viewports.set(shot.id, resolveShotViewport(shot, args, cfg));
   const n = Number(shot.chunkCount ?? chunkCount), seconds = shot.seconds * secondsScale;
   const mode = shot.mode ?? cfg.mode ?? 'replay';
   if (!Number.isInteger(n) || n < 1 || n > Math.round(seconds * fps) || !['replay', 'seek'].includes(mode)) throw new Error(`Invalid shot chunks/mode: ${shot.id}`);
-  for (let c = 0; c < n; c++) jobs.push({ shot, n, c, seconds, mode, port: nextPort++ });
+  for (let c = 0; c < n; c++) jobs.push({ shot, n, c, seconds, mode, port: nextPort === 0 ? 0 : nextPort++ });
 }
 if (args.dry) {
   console.log(JSON.stringify({ fps, dsf, ...globalViewport, concurrency, outRoot, jobs: jobs.length, shots: shots.map((s) => ({ id: s.id, mode: s.mode ?? cfg.mode ?? 'replay', ...viewports.get(s.id) })) }, null, 2));
