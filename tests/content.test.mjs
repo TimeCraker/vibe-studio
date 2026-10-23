@@ -5,8 +5,8 @@ import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
 import { validatePlan } from "../skills/content-director/scripts/validate-plan.mjs";
-import { derive } from "../skills/content-repurpose/scripts/derive.mjs";
-import { reviewMetrics } from "../skills/content-review/scripts/report.mjs";
+import { derive } from "../skills/publish/scripts/derive.mjs";
+import { reviewMetrics } from "../skills/publish/scripts/report.mjs";
 import {
   checkSubtitles,
   checkMedia,

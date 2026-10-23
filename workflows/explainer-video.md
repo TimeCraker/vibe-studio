@@ -107,7 +107,7 @@ C 线默认通过状态重放保证支持范围内的采集一致性；显式 se
 
 ## 5. 平台版本与成片验收
 
-先确认需要投哪些平台、是否需要不同镜头/画幅。使用 [content-repurpose](../skills/content-repurpose/SKILL.md) 时，按真实内容修改 variants.json 后再派生；它可能覆盖生成的投稿计划，手动改动应先回到上游配置。
+先确认需要投哪些平台、是否需要不同镜头/画幅。使用 [发布前准备](../skills/publish/references/preparation.md) 时，按真实内容修改 variants.json 后再派生；它可能覆盖生成的投稿计划，手动改动应先回到上游配置。
 
 ```powershell
 node scripts/studio.mjs derive --project $workProject
@@ -146,4 +146,4 @@ node scripts/studio.mjs restore --archive products/demo-video/archive.json --pro
 
 制作配方与清单是固定快照；归档后可持续维护作品根 README 与 `operations/` 下的发布/复盘数据，位置和保存边界见[状态约定](../docs/documentation.md#作品状态记录)。不要直接改 recipe、已归档成品或清单内文件。
 
-[content-review](../skills/content-review/SKILL.md) 读取真实 metrics.json 与原始统计来源；没有数据就保持空表，不生成效果结论。复盘可以晚于归档，制作区无需为等统计长期保留。确认可复用的素材/组件再回流资产库；只有产生可复用经验或实际缺陷时才追加工单台账。
+[发布后复盘](../skills/publish/references/analytics.md) 读取真实 metrics.json 与原始统计来源；没有数据就保持空表，不生成效果结论。复盘可以晚于归档，制作区无需为等统计长期保留。确认可复用的素材/组件再回流资产库；只有产生可复用经验或实际缺陷时才追加工单台账。

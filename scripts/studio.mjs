@@ -18,8 +18,8 @@ import { runJob, validateJob } from "./lib/runner.mjs";
 import { doctor } from "./lib/doctor.mjs";
 import { validatePlan } from "../skills/content-director/scripts/validate-plan.mjs";
 import { checkMedia } from "../skills/media-qc/scripts/check.mjs";
-import { derive } from "../skills/content-repurpose/scripts/derive.mjs";
-import { writeReview } from "../skills/content-review/scripts/report.mjs";
+import { derive } from "../skills/publish/scripts/derive.mjs";
+import { writeReview } from "../skills/publish/scripts/report.mjs";
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [cmd, ...argv] = process.argv.slice(2);
 const args = {};
@@ -91,11 +91,11 @@ function init() {
     "# 制作简报\n\n填写受众、核心承诺、片长、画幅、目标行为与事实来源。先看短样片，再制作全片。\n",
   );
   cpSync(
-    join(REPO, "skills/content-repurpose/templates/variants.example.json"),
+    join(REPO, "skills/publish/templates/variants.example.json"),
     join(root, "variants.json"),
   );
   cpSync(
-    join(REPO, "skills/content-review/templates/metrics.example.json"),
+    join(REPO, "skills/publish/templates/metrics.example.json"),
     join(root, "metrics.json"),
   );
   writeJson(join(root, "qc.json"), {});

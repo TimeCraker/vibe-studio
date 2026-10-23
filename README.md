@@ -27,10 +27,8 @@
 | 视频制作 | [auto-subtitle](skills/auto-subtitle/) | 转写工具，不是成片入口。faster-whisper 把 mp4/wav/flac 转成 cues.json + srt，字段与 video-motion SubtitleCue 对齐。用户说「自动字幕 / 语音转字幕 / 转写 / 出字幕文件 / faste… |
 | 视频制作 | [video-motion](skills/video-motion/) | 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。 |
 | 视频制作 | [web-capture](skills/web-capture/) | 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动… |
-| 交付与运营 | [content-repurpose](skills/content-repurpose/) | 把同一份已核实视频策划派生成不同画幅、镜头长度、封面与平台文案。适用于横竖版、短切片、三平台物料适配；不负责账号登录或点击发布。 |
-| 交付与运营 | [content-review](skills/content-review/) | 用真实发布数据和制作成本复盘内容表现，支持同平台同观察窗口的系列对照。适用于内容复盘、完播/点击/转粉与制作效率分析；不抓取账号凭证、不代发内容、不编造缺失数据。 |
+| 发布与运营 | [publish](skills/publish/) | 视频的发布与运营：按需准备平台画幅、切片、标题封面和投稿物料，辅助 B 站/抖音/小红书上传填表，或用真实数据做发布后复盘。可只执行其中一阶段；视频制作走对应制作技能，用户登录并亲自点击发布。 |
 | 交付与运营 | [media-qc](skills/media-qc/) | 对完成的视频或短样片做技术质检、字幕时间检查、响度测量和抽帧取证。适用于渲染后核查与交付前验收；技术检查不代替人工看片、听音或品牌视觉终审。 |
-| 交付与运营 | [publish](skills/publish/) | 发布辅助工具，不是成片入口。把已经做好的成片按平台要求填进投稿表单（B 站 / 抖音 / 小红书三端），人机分工是硬约束：你登录、你点发布，脚本只填表。用户说「发 B 站 / 发抖音 / 发小红书 / 投稿 / 帮我填投稿信息 / 自动发布」时使用。片子还没做… |
 <!-- /docs:auto -->
 
 美术需要位图时，content-director 按当前环境可用的 imagegen 工具生成素材，先放项目内，确认可复用后再登记到共用资产库；真实界面和结构图仍使用截图或 SVG。没有工具时保留简报，不声称已生图。
@@ -69,7 +67,7 @@ node scripts/studio.mjs run --project projects/first-video
 
 技能正本在 skills/；`.claude/skills/` 与 `.agents/skills/` 是本机链接，不入 Git。新增技能由后续会话发现；安装脚本不会改全局技能或覆盖其他链接。Codex 入口依据 [OpenAI 的仓库技能说明](https://developers.openai.com/blog/skills-agents-sdk)。
 
-最近新增的内容技能是 content-director、media-qc、content-repurpose、content-review。职责边界：导演定目标和镜头，narration 写结构化口播，humanizer 润色；media-qc 检查交付文件，content-review 分析真实发布表现；content-repurpose 生成平台物料，publish 辅助填表。已有素材或定稿可直接进入对应制作环节。
+平台适配、投稿填表和发布后复盘统一由 publish 按阶段处理；成片质检独立于是否发布。导演定目标和镜头，narration 写结构化口播，humanizer 润色，已有素材或定稿可直接进入对应制作环节。
 
 B/录像线 `init --line b|footage` 复制 Remotion 模板并配置依赖安装和类型检查。具体场景、配音与渲染命令按对应 skill 施工后加入 job.json；A/PPT 线先生成策划契约，再由对应工具生成内容。CLI 不把人工制作环节伪装成已自动完成。
 
@@ -128,8 +126,6 @@ vibe-studio/
 ├── skills/
 │   ├── auto-subtitle/
 │   ├── content-director/
-│   ├── content-repurpose/
-│   ├── content-review/
 │   ├── humanizer/
 │   ├── media-qc/
 │   ├── narration/
