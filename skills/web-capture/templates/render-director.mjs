@@ -1,146 +1,80 @@
-// Render the director to a video (or to sample stills for review).
-//
-//   node <skill>/templates/render-director.mjs [--project <dir>] --out render/video.mp4
-//   node <skill>/templates/render-director.mjs [--project <dir>] --sample 0,60,300
-//   node <skill>/templates/render-director.mjs [--project <dir>] --cover
-//
-// --project defaults to the current directory. The project must expose
-// edit/director.html implementing window.__boot() / __frame(i) / __debug()
-// (and __cover(opts) for --cover); the contract is in SKILL.md.
-//
-// Serves the project over loopback (so the page can fetch frames/*.png and
-// sections.json), drives window.__frame(i) for every frame, and streams each
-// screenshot straight into ffmpeg — no 4 GB of intermediate PNGs on disk.
+// Await every director frame, use project/CLI dimensions, and encode at declared fps.
 import { createServer } from 'node:http';
-import { readFileSync, mkdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
-import { join, resolve, extname, normalize, dirname } from 'node:path';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
+import { resolve, relative, isAbsolute, join, dirname, extname } from 'node:path';
 import { spawn } from 'node:child_process';
-import { launchChrome, openPage, addInitScript, navigate, capturePng, sleep } from './cdp.mjs';
+import { launchChrome, openPage, addInitScript, navigate, capturePng } from './cdp.mjs';
 import { parseArgs, projectRoot } from './paths.mjs';
-
-const args = parseArgs(process.argv.slice(2));
-const ROOT = projectRoot(args);
-const dsf = Math.max(1, Math.min(4, Number(args.dsf ?? 1)));
-const crf = Number(args.crf ?? 15);
-// preset only trades encode time against file size at a fixed CRF — never quality.
-// medium is the default because the paper texture defeats x264's block skipping and
-// slow was the bottleneck for the whole pipeline (2.5fps vs 4.8fps).
-const preset = String(args.preset ?? 'medium');
-const port = Number(args.port ?? 9520);
-const outPath = resolve(args.out ?? join(ROOT, 'render', 'video.mp4'));
-const sampleList = args.sample && args.sample !== true ? String(args.sample).split(',').map(Number) : null;
-const isSample = Array.isArray(sampleList);
-const startFrame = Number(args.start ?? 0);
-
-// --------------------------------------------------------------------------- //
-// static file server
-// --------------------------------------------------------------------------- //
-const MIME = {
-  '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8', '.css': 'text/css; charset=utf-8',
-  '.png': 'image/png', '.wav': 'audio/wav', '.mp4': 'video/mp4', '.svg': 'image/svg+xml',
-};
-const server = createServer((req, res) => {
-  const rel = decodeURIComponent((req.url || '/').split('?')[0]).replace(/^\/+/, '');
-  const file = join(ROOT, normalize(rel));
-  if (!file.startsWith(ROOT) || !existsSync(file) || !statSync(file).isFile()) {
-    res.writeHead(404); res.end('not found'); return;
-  }
-  res.writeHead(200, { 'content-type': MIME[extname(file)] ?? 'application/octet-stream', 'cache-control': 'no-store' });
-  res.end(readFileSync(file));
+const args=parseArgs(process.argv.slice(2)), ROOT=projectRoot(args);
+const videoPath=join(ROOT,'edit','video.json');
+const base=existsSync(videoPath)?JSON.parse(readFileSync(videoPath,'utf8')):{};
+const config={...base,width:Number(args.width??base.width??1920),height:Number(args.height??base.height??1080),fps:Number(args.fps??base.fps??60)};
+if(![config.width,config.height].every(n=>Number.isInteger(n)&&n>0&&n%2===0)||!Number.isFinite(config.fps)||config.fps<=0)throw new Error('Invalid video dimensions/fps');
+const out=resolve(ROOT,args.out??'render/video.mp4');
+const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.css':'text/css'};
+const server=createServer((req,res)=>{
+  try{
+    const path=resolve(ROOT,'.'+decodeURIComponent((req.url??'/').split('?')[0]));
+    const rel=relative(ROOT,path);
+    if(rel.startsWith('..')||isAbsolute(rel)||!existsSync(path)||!statSync(path).isFile()){res.writeHead(404);res.end();return;}
+    res.writeHead(200,{'content-type':mime[extname(path)]??'application/octet-stream','cache-control':'no-store'});res.end(readFileSync(path));
+  }catch{res.writeHead(400);res.end();}
 });
-await new Promise((r) => server.listen(port, '127.0.0.1', r));
-
-// --------------------------------------------------------------------------- //
-// ffmpeg sink (full renders only)
-// --------------------------------------------------------------------------- //
-let ff = null;
-let ffDone = null;
-if (!isSample && !args.cover) {
-  mkdirSync(dirname(outPath), { recursive: true });
-  ff = spawn('ffmpeg', [
-    '-hide_banner', '-loglevel', 'error', '-stats',
-    '-f', 'image2pipe', '-framerate', '60', '-i', '-',
-    '-an',
-    '-c:v', 'libx264', '-preset', preset, '-crf', String(crf),
-    '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-level', '4.2',
-    '-movflags', '+faststart',
-    '-y', outPath,
-  ], { stdio: ['pipe', 'inherit', 'inherit'] });
-  ffDone = new Promise((res) => ff.on('close', (code) => res(code)));
-}
-
-// --------------------------------------------------------------------------- //
-// drive the page
-// --------------------------------------------------------------------------- //
-const browser = await launchChrome({ port: 9333 });
-let code = 0;
-try {
-  await openPage(browser.cdp, { width: 1920, height: 1080, deviceScaleFactor: dsf });
-  await addInitScript(browser.cdp, `window.__DSF = ${dsf};`);
-  await navigate(browser.cdp, `http://127.0.0.1:${port}/edit/director.html`);
-  const boot = await browser.cdp.eval('window.__boot()', { awaitPromise: true });
-  console.log('boot:', JSON.stringify(boot));
-
-  if (isSample) {
-    const dir = resolve(args.out ?? join(ROOT, 'render', 'samples'));
-    mkdirSync(dir, { recursive: true });
-    const profile = [];
-    for (const i of sampleList) {
-      const t0 = Date.now();
-      await browser.cdp.eval(`window.__frame(${i})`, { awaitPromise: true });
-      const t1 = Date.now();
-      const png = await capturePng(browser.cdp);
-      const t2 = Date.now();
-      const p = join(dir, `f${String(i).padStart(5, '0')}.png`);
-      writeFileSync(p, png);
-      profile.push({ i, renderMs: t1 - t0, shotMs: t2 - t1, kb: Math.round(png.length / 1024) });
-      console.log(`  ${p}  ${(png.length / 1024).toFixed(0)} KB   render=${t1 - t0}ms shot=${t2 - t1}ms`);
-    }
-    const avgR = profile.reduce((a, b) => a + b.renderMs, 0) / profile.length;
-    const avgS = profile.reduce((a, b) => a + b.shotMs, 0) / profile.length;
-    console.log(`  avg render=${avgR.toFixed(0)}ms  avg screenshot=${avgS.toFixed(0)}ms  -> ${(avgR + avgS).toFixed(0)}ms/frame`);
-    const dbg = await browser.cdp.eval('window.__debug()');
-    if (dbg.missingCount) console.log('missing frames:', JSON.stringify(dbg, null, 1));
-  } else if (args.cover) {
-    // Cover variants are project data ("which frame looks good" is a judgement about
-    // this project's footage), so they live in the project rather than in the harness.
-    const coversPath = join(ROOT, 'edit', 'covers.json');
-    if (!existsSync(coversPath)) throw new Error(`--cover needs ${coversPath}`);
-    const { variants } = JSON.parse(readFileSync(coversPath, 'utf8'));
-    const dir = join(ROOT, 'render', 'covers');
-    mkdirSync(dir, { recursive: true });
-    for (const v of variants.filter((x) => x && x.name && x.shot)) {
-      await browser.cdp.eval(`window.__cover(${JSON.stringify(v)})`, { awaitPromise: true });
-      const png = await capturePng(browser.cdp);
-      const p = join(dir, `${v.name}.png`);
-      writeFileSync(p, png);
-      console.log(`  ${p}  ${(png.length / 1024).toFixed(0)} KB`);
-    }
-  } else {
-    const total = Math.round((boot.frames ?? 0));
-    const t0 = Date.now();
-    for (let i = startFrame; i < total; i++) {
-      // awaitPromise matters: __frame loads source frames asynchronously, and a
-      // screenshot taken before it settles would capture the wrong picture
-      await browser.cdp.eval(`window.__frame(${i})`, { awaitPromise: true });
-      const png = await capturePng(browser.cdp, { optimizeForSpeed: true });
-      if (!ff.stdin.write(png)) await new Promise((r) => ff.stdin.once('drain', r));
-      if (i % 120 === 0 || i === total - 1) {
-        const done = i - startFrame + 1;
-        const rate = (Date.now() - t0) / done;
-        process.stderr.write(`  frame ${i + 1}/${total}  ${rate.toFixed(0)} ms/frame  eta ${(((total - i - 1) * rate) / 1000 / 60).toFixed(1)} min\n`);
-      }
-    }
-    ff.stdin.end();
-    code = await ffDone;
-    const dbg = await browser.cdp.eval('window.__debug()');
-    if (dbg.missingCount) console.log('missing frames:', JSON.stringify(dbg, null, 1));
-    console.log(`ffmpeg exit ${code}; wrote ${outPath}`);
+await new Promise((ok,fail)=>{server.once('error',fail);server.listen(Number(args.port??0),'127.0.0.1',ok);});
+let browser,ff,ffDone;
+try{
+  browser=await launchChrome({port:Number(args.chromePort??9333)});
+  async function boot(options){
+    await openPage(browser.cdp,{width:options.width,height:options.height,deviceScaleFactor:Number(args.dsf??1)});
+    await addInitScript(browser.cdp,`window.__CAPTURE_CONFIG=${JSON.stringify(options)};window.__DSF=${Number(args.dsf??1)};`);
+    await navigate(browser.cdp,`http://127.0.0.1:${server.address().port}/edit/director.html`);
+    const info=await browser.cdp.eval(`window.__boot(${JSON.stringify(options)})`,{awaitPromise:true});
+    if(!Number.isInteger(info.frames)||info.frames<=0)throw new Error('Director returned invalid frames');
+    return info;
   }
-} finally {
-  browser.kill();
-  server.close();
-  await sleep(150);
+  if(args.cover){
+    const data=JSON.parse(readFileSync(join(ROOT,'edit','covers.json'),'utf8'));
+    const dir=resolve(ROOT,args.out??'render/covers');mkdirSync(dir,{recursive:true});
+    for(const variant of data.variants??[]){
+      if(!/^[a-zA-Z0-9_-]+$/.test(variant.name))throw new Error('Invalid cover name');
+      const options={...config,width:variant.width??config.width,height:variant.height??config.height};
+      await boot(options);await browser.cdp.eval(`window.__cover(${JSON.stringify(variant)})`,{awaitPromise:true});
+      writeFileSync(join(dir,`${variant.name}.png`),await capturePng(browser.cdp));
+    }
+    console.log(JSON.stringify({ok:true,covers:data.variants.length,out:dir}));
+  }else{
+    const info=await boot(config);
+    if(args.sample){
+      mkdirSync(out,{recursive:true});
+      const frames=String(args.sample).split(',').map(Number);
+      for(const i of frames){
+        if(!Number.isInteger(i)||i<0||i>=info.frames)throw new Error('Sample frame out of range');
+        await browser.cdp.eval(`window.__frame(${i})`,{awaitPromise:true});writeFileSync(join(out,`f${String(i).padStart(5,'0')}.png`),await capturePng(browser.cdp));
+      }
+      const debug=await browser.cdp.eval('window.__debug()');
+      if(debug.missingCount||(debug.missing?.length))throw new Error('Director has missing source frames');
+      writeFileSync(join(out,'samples.json'),JSON.stringify({config,frames,debug},null,2));
+    }else{
+      const start=Number(args.start??0),end=args.seconds?Math.min(info.frames,start+Math.round(Number(args.seconds)*config.fps)):info.frames;
+      if(!Number.isInteger(start)||start<0||start>=end)throw new Error('Invalid render range');
+      const codecArgs=['-hide_banner','-loglevel','error','-f','image2pipe','-framerate',String(config.fps),'-i','-'];
+      if(args.audio)codecArgs.push('-ss',String(start/config.fps),'-i',resolve(ROOT,args.audio),'-map','0:v','-map','1:a','-af','apad','-shortest','-c:a','aac','-b:a','192k');else codecArgs.push('-an');
+      mkdirSync(dirname(out),{recursive:true});
+      ff=spawn('ffmpeg',[...codecArgs,'-c:v','libx264','-preset',String(args.preset??'medium'),'-crf',String(args.crf??16),'-pix_fmt','yuv420p','-movflags','+faststart','-y',out],{stdio:['pipe','ignore','inherit']});
+      ff.stdin.on('error',()=>{});
+      ffDone=new Promise((ok)=>{ff.once('error',()=>ok(1));ff.once('close',ok);});
+      for(let i=start;i<end;i++){
+        await browser.cdp.eval(`window.__frame(${i})`,{awaitPromise:true});
+        const png=await capturePng(browser.cdp,{optimizeForSpeed:true});
+        await new Promise((ok,fail)=>ff.stdin.write(png,e=>e?fail(e):ok()));
+      }
+      ff.stdin.end();if(await ffDone!==0)throw new Error('FFmpeg render failed');
+      const debug=await browser.cdp.eval('window.__debug()');
+      if(debug.missingCount||debug.missing?.length)throw new Error('Director has missing source frames');
+      const report={ok:true,out,...config,frames:end-start,startFrame:start,fullRender:start===0&&end===info.frames,audio:args.audio??null,debug};
+      writeFileSync(`${out}.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+    }
+  }
+}finally{
+  if(ff&&ff.exitCode===null)ff.kill();browser?.kill();await new Promise(r=>server.close(r));
 }
-process.exit(code);

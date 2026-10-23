@@ -1,0 +1,6 @@
+{
+  "fps": 30, "dsf": 1, "width": 1280, "height": 720,
+  "chunkCount": 2, "concurrency": 2, "mode": "seek",
+  "sources": { "demo": "capture/src/demo.html" },
+  "shots": [{ "id": "demo", "src": "demo", "seconds": 6 }]
+}

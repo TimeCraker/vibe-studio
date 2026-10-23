@@ -63,6 +63,10 @@ shot > `--width/--height`（含 shots.json 顶层 `width`/`height`）> 默认 19
 
 历史参考制作配方在 `products/pelican-test/recipe/` 与 `products/pelican-ride/recipe/`。先恢复到施工区再修改，不在归档中施工。版式与文案属于项目；新任务优先用本 skill 的通用 project 模板。
 
+`templates/project/` 自带源页面、镜头表、导演页、时间轴、视频规格、音频段落网格和两种封面。复制到新施工目录后直接采集与渲染即可验证管线，再替换内容。示例是采集测试素材，不是已经通过终审的品牌成片。
+
+导演页读取 `edit/video.json` 的 width/height/fps，工具也接受同名 CLI 覆盖。横竖版分别设计主体取景和文字位置；先 `--sample` 审图。`render-director --audio audio/music.wav` 可把现有配乐混入成片；短音频会补静音，不截短视频。`--seconds N` 生成短样片；渲染报告标明是否全片。
+
 ## 命令
 
 全部在项目目录里跑，或从任意位置加 `--project <dir>`：
