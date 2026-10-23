@@ -2,6 +2,8 @@
   "_comment": "多平台投稿清单。复制到 projects/<项目名>/publish-plan.json 后修改。",
   "video": "../../products/<项目名>/成片.mp4",
   "cover": "../../products/<项目名>/封面.png",
+  "driver": "pw",
+  "timeoutSeconds": 900,
   "platforms": {
     "bili": {
       "declare": "含AI生成内容",

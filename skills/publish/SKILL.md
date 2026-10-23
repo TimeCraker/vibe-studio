@@ -22,7 +22,7 @@ user-invocable: true
 
 ## 依赖
 
-本机 Chrome + Node 18 以上（内置 `fetch` / `WebSocket`）。
+本机 Chrome + Node 22 以上（内置 `fetch` / `WebSocket`）。
 基础层（`bili.mjs` / `douyin.mjs` / `xhs.mjs` / `run.mjs`）**不装任何 npm 包**：
 自带极简 CDP 客户端，直接驱动一个**可见的** Chrome 窗口。
 Playwright 填表层（`pw/` 脚本族，见「坑」2026-10-03 条）依赖由 `templates/package.json`
@@ -51,6 +51,8 @@ node skills/publish/templates/run.mjs --project projects/<项目名>
 
 清单写在 `projects/<项目名>/publish-plan.json`：`video` / `cover` / `platforms`，
 每个平台一块（spec 路径、声明、分区、话题等）。结构见 `skills/publish/templates/publish-plan.example.json` 或 `run.mjs` 开头注释。
+
+总调度默认 `driver: "pw"`；需要基础 CDP 层时指定 `--driver basic` 或在清单逐平台设 driver。各平台可覆盖 video/cover/spec，分别选择横竖版。`--dry` 只核对本地输入和参数，不连接浏览器、不上传；缺文件、空正文、未知平台或超时返回非零。真实运行报告为 `filled-needs-human-check`，不代表已经发布或所有表单字段通过人工核对。
 
 **单平台手动跑**（调试或只发一家）：
 
@@ -95,7 +97,9 @@ node skills/publish/templates/pw/bili-fill.js --project projects/<项目名> --v
 `bili-discard / restore / replace / fix3` 与 `douyin-declare-fix` 是实测沉淀的定点修复工具
 （旧草稿处置、「声明弹窗吞点击」重跑）；`util.js` 公共件（filechooser 上传、dumpForm 探针、
 逐段输入、race 超时保护）。选择器会随平台改版失效：先跑 `--dry`（只转储表单 DOM 不写），
-看着真实结构再改脚本，不凭记忆改。截图归档到 `<项目>/qa/`。
+看着真实结构再改脚本，不凭记忆改。现场只读探针改用 `pw/*-fill.js --probe --project <项目>`；它只读取已打开页面的结构，不上传或填表。截图归档到 `<项目>/qa/`。
+
+`pw/*-fill.js --dry` 同样是离线预检，在加载 Playwright 前退出。正文写入前清空，写完读回标题；发现旧草稿时先停止核对，不自动丢弃他人的草稿。封面、视频身份、分区、话题与声明仍列入人工终审；未确认项不能报成已通过。
 
 ## 为什么能并行
 

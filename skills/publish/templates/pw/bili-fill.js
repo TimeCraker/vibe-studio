@@ -6,9 +6,12 @@
 const { arg, hasFlag, loadPlaywright, loadSpec, qaPath, setFiles, dumpForm, typeParagraphs, selfCheck, race } = require('./util');
 
 const DRY = hasFlag('dry');
-const spec = loadSpec('form.json');
+const DECLARE = arg('declare', '');
+const spec = hasFlag('probe') ? {title:'',description:[]} : loadSpec('form.json');
 const VIDEO = arg('video', '');
 const COVER = arg('cover', '');
+
+if (DRY) { console.log(JSON.stringify({dry:true, platform:'bili', title:spec.title, video:VIDEO, action:'validate-only; no browser connection'})); process.exit(0); }
 
 (async () => {
   const { chromium } = loadPlaywright();
@@ -18,6 +21,7 @@ const COVER = arg('cover', '');
     ?? ctx.pages().find((p) => p.url().includes('bilibili.com'))
     ?? await ctx.newPage();
   page.setDefaultTimeout(20000);
+  if (hasFlag('probe')) { await dumpForm(page, 'bili'); process.exit(0); }
   await page.bringToFront();
   if (!/member\.bilibili\.com\/platform\/upload/.test(page.url())) {
     await page.goto('https://member.bilibili.com/platform/upload/video/frame', { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -25,12 +29,7 @@ const COVER = arg('cover', '');
   }
 
   if (VIDEO) {
-    // 上一轮失败可能留下「本地未提交的视频」草稿条：丢弃，走干净上传
-    try {
-      await page.locator('text=不用了').first().click({ timeout: 4000 });
-      console.log('已丢弃本地未提交草稿');
-      await page.waitForTimeout(800);
-    } catch { /* 没有草稿条 */ }
+    if (await page.locator('text=不用了').first().isVisible().catch(() => false)) throw new Error('Existing draft detected; select the intended draft manually before uploading');
 
     await page.screenshot({ path: qaPath('pw-bili-0-before-upload.png'), fullPage: false });
 
@@ -48,7 +47,6 @@ const COVER = arg('cover', '');
     await page.waitForTimeout(2000);
   }
 
-  if (DRY) { await dumpForm(page, 'bili'); return; }
 
   const shot = (n) => page.screenshot({ path: qaPath(`pw-bili-${n}.png`), fullPage: false });
 
@@ -104,6 +102,7 @@ const COVER = arg('cover', '');
     console.log('分区自动选择失败（人工兜底）：', e.message.slice(0, 80));
   }
 
+  if (DECLARE) {
   // 5) 创作声明：含AI生成内容
   await page.click('.bcc-select, [class*="declare"] .bcc-select');
   await page.waitForTimeout(700);
@@ -112,8 +111,10 @@ const COVER = arg('cover', '');
   await page.waitForTimeout(700);
   console.log('声明 = 含AI生成内容');
 
+  }
+
   await selfCheck(page, 'bili');
-})().catch(async (e) => {
+})().then(() => process.exit(0)).catch(async (e) => {
   console.error('ERR', e.message);
   process.exit(1);
 });

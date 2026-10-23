@@ -7,7 +7,7 @@
  * 小红书对自动化/风控在小红书系里属于最敏感的一档 —— 中途弹验证码或异常提示就停，不硬闯；
  * 「发布」这一步永远由人点。
  *
- * 依赖：本机 Chrome + Node 18+，不装任何 npm 包，也不用 Playwright。
+ * 依赖：本机 Chrome + Node 22+，不装任何 npm 包，也不用 Playwright。
  * 独立 profile 与端口（~/.xhs-upload-profile，9224），和 B 站/抖音的窗口互不干扰。
  *
  * ── 已实现（平台无关的驾驶层 + 逃生口） ─────────────────────────────
@@ -22,6 +22,7 @@
  *   TODO: upload / fill / topics / cover / setup
  */
 import { spawn } from 'node:child_process';
+import { Cdp } from './cdp.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { homedir } from 'node:os';
@@ -45,43 +46,6 @@ const PROJECT = resolve(arg('project', arg('work', process.cwd())));
 // --------------------------------------------------------------------------- //
 // 极简 CDP 客户端
 // --------------------------------------------------------------------------- //
-class Cdp {
-  constructor(ws) {
-    this.ws = ws; this.seq = 0; this.pending = new Map(); this.handlers = new Map(); this.sessionId = null;
-    ws.addEventListener('message', (ev) => {
-      const m = JSON.parse(ev.data);
-      if (m.id !== undefined && this.pending.has(m.id)) {
-        const { resolve: res, reject } = this.pending.get(m.id);
-        this.pending.delete(m.id);
-        if (m.error) reject(new Error(`${m.error.message} ${JSON.stringify(m.error.data ?? '')}`));
-        else res(m.result);
-        return;
-      }
-      if (m.method) this.handlers.get(m.method)?.(m.params, m.sessionId);
-    });
-  }
-  static async connect(url) {
-    const ws = new WebSocket(url);
-    await new Promise((res, rej) => {
-      ws.addEventListener('open', () => res(), { once: true });
-      ws.addEventListener('error', () => rej(new Error('无法连接调试端口')), { once: true });
-    });
-    return new Cdp(ws);
-  }
-  send(method, params = {}, sessionId = this.sessionId) {
-    const id = ++this.seq;
-    const p = { id, method, params };
-    if (sessionId) p.sessionId = sessionId;
-    return new Promise((res, rej) => { this.pending.set(id, { resolve: res, reject: rej }); this.ws.send(JSON.stringify(p)); });
-  }
-  on(method, fn) { this.handlers.set(method, fn); }
-  async eval(expression, awaitPromise = false) {
-    const r = await this.send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise });
-    if (r.exceptionDetails) throw new Error(`页面异常: ${r.exceptionDetails.exception?.description ?? r.exceptionDetails.text}`);
-    return r.result.value;
-  }
-  close() { try { this.ws.close(); } catch { /* ignore */ } }
-}
 
 async function endpoint() {
   try { const r = await fetch(`http://127.0.0.1:${PORT}/json/version`); if (r.ok) return await r.json(); } catch { /* down */ }

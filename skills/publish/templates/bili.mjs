@@ -7,7 +7,7 @@
  *   · 发布按钮永远由你点 —— 那是不可逆的公开动作，而且自动化操作投稿页可能触发风控，
  *     这个风险要由人来担，不该由脚本替你担。
  *
- * 依赖：只依赖本机 Chrome 与 Node 18+（内置 fetch/WebSocket），不装任何 npm 包。
+ * 依赖：只依赖本机 Chrome 与 Node 22+（内置 fetch/WebSocket），不装任何 npm 包。
  *
  * ── 高层命令（日常用这几个） ──────────────────────────────────────────
  *   node bili.mjs launch                     打开常驻可见窗口，等你扫码
@@ -32,6 +32,7 @@
  * 登录 profile 默认落在 ~/.bili-upload-profile（刻意放在仓库外，避免会话进版本库）。
  */
 import { spawn } from 'node:child_process';
+import { Cdp } from './cdp.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { homedir } from 'node:os';
@@ -54,43 +55,6 @@ const WORK = resolve(arg('work', process.cwd()));
 // --------------------------------------------------------------------------- //
 // 极简 CDP 客户端（Node 内置 WebSocket，不需要 npm 包）
 // --------------------------------------------------------------------------- //
-class Cdp {
-  constructor(ws) {
-    this.ws = ws; this.seq = 0; this.pending = new Map(); this.handlers = new Map(); this.sessionId = null;
-    ws.addEventListener('message', (ev) => {
-      const m = JSON.parse(ev.data);
-      if (m.id !== undefined && this.pending.has(m.id)) {
-        const { resolve: res, reject } = this.pending.get(m.id);
-        this.pending.delete(m.id);
-        if (m.error) reject(new Error(`${m.error.message} ${JSON.stringify(m.error.data ?? '')}`));
-        else res(m.result);
-        return;
-      }
-      if (m.method) this.handlers.get(m.method)?.(m.params, m.sessionId);
-    });
-  }
-  static async connect(url) {
-    const ws = new WebSocket(url);
-    await new Promise((res, rej) => {
-      ws.addEventListener('open', () => res(), { once: true });
-      ws.addEventListener('error', () => rej(new Error('无法连接调试端口')), { once: true });
-    });
-    return new Cdp(ws);
-  }
-  send(method, params = {}, sessionId = this.sessionId) {
-    const id = ++this.seq;
-    const p = { id, method, params };
-    if (sessionId) p.sessionId = sessionId;
-    return new Promise((res, rej) => { this.pending.set(id, { resolve: res, reject: rej }); this.ws.send(JSON.stringify(p)); });
-  }
-  on(method, fn) { this.handlers.set(method, fn); }
-  async eval(expression, awaitPromise = false) {
-    const r = await this.send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise });
-    if (r.exceptionDetails) throw new Error(`页面异常: ${r.exceptionDetails.exception?.description ?? r.exceptionDetails.text}`);
-    return r.result.value;
-  }
-  close() { try { this.ws.close(); } catch { /* ignore */ } }
-}
 
 async function endpoint() {
   try { const r = await fetch(`http://127.0.0.1:${PORT}/json/version`); if (r.ok) return await r.json(); } catch { /* down */ }

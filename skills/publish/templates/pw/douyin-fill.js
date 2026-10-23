@@ -6,9 +6,12 @@
 const { arg, hasFlag, loadPlaywright, loadSpec, setFiles, dumpForm, typeParagraphs, selfCheck } = require('./util');
 
 const DRY = hasFlag('dry');
-const spec = loadSpec('douyin-form.json');
+const DECLARE = arg('declare', '');
+const spec = hasFlag('probe') ? {title:'',description:[]} : loadSpec('douyin-form.json');
 const VIDEO = arg('video', '');
-const NAMES = (arg('names', 'AI,GPT,Codex,人工智能,程序员')).split(',').map((s) => s.trim()).filter(Boolean);
+const NAMES = (arg('names', '')).split(',').map((s) => s.trim()).filter(Boolean);
+
+if (DRY) { console.log(JSON.stringify({dry:true, platform:'douyin', title:spec.title, video:VIDEO, action:'validate-only; no browser connection'})); process.exit(0); }
 
 (async () => {
   const { chromium } = loadPlaywright();
@@ -16,6 +19,7 @@ const NAMES = (arg('names', 'AI,GPT,Codex,人工智能,程序员')).split(',').m
   const ctx = browser.contexts()[0];
   let page = ctx.pages().find((p) => p.url().includes('creator.douyin.com'));
   if (!page) throw new Error('没找到抖音窗口（先跑 node skills/publish/templates/douyin.mjs launch 扫码）');
+  if (hasFlag('probe')) { await dumpForm(page, 'douyin'); process.exit(0); }
   await page.bringToFront();
   if (!page.url().includes('content/upload')) {
     await page.goto('https://creator.douyin.com/creator-micro/content/upload', { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -29,7 +33,6 @@ const NAMES = (arg('names', 'AI,GPT,Codex,人工智能,程序员')).split(',').m
   }
   if (!page.url().includes('/content/post/video')) console.log('提示：当前不在发布表单页（' + page.url().slice(0, 90) + '），继续尝试');
 
-  if (DRY) { await dumpForm(page, 'douyin'); return; }
 
   // 1) 标题
   const title = page.locator('input[placeholder*="标题"]').first();
@@ -78,6 +81,7 @@ const NAMES = (arg('names', 'AI,GPT,Codex,人工智能,程序员')).split(',').m
     }
   }
 
+  if (DECLARE) {
   // 4) 自主声明：内容由AI生成
   const declareOut = await page.evaluate(() => {
     const row = [...document.querySelectorAll('*')].find((e) => {
@@ -111,8 +115,10 @@ const NAMES = (arg('names', 'AI,GPT,Codex,人工智能,程序员')).split(',').m
     console.log('声明:', declareOut, '（跳过）');
   }
 
+  }
+
   await selfCheck(page, 'douyin');
-})().catch((e) => {
+})().then(() => process.exit(0)).catch((e) => {
   console.error('ERR', e.message);
   process.exit(1);
 });

@@ -6,9 +6,12 @@
 const { arg, hasFlag, loadPlaywright, loadSpec, setFiles, dumpForm, typeParagraphs, selfCheck } = require('./util');
 
 const DRY = hasFlag('dry');
-const spec = loadSpec('xhs-form.json');
+const DECLARE = arg('declare', '');
+const spec = hasFlag('probe') ? {title:'',description:[]} : loadSpec('xhs-form.json');
 const VIDEO = arg('video', '');
-const TOPICS = (arg('topics', '鹈鹕,AI绘画,Codex,GPT')).split(',').map((s) => s.trim()).filter(Boolean);
+const TOPICS = (arg('topics', '')).split(',').map((s) => s.trim()).filter(Boolean);
+
+if (DRY) { console.log(JSON.stringify({dry:true, platform:'xhs', title:spec.title, video:VIDEO, action:'validate-only; no browser connection'})); process.exit(0); }
 
 (async () => {
   const { chromium } = loadPlaywright();
@@ -16,6 +19,7 @@ const TOPICS = (arg('topics', '鹈鹕,AI绘画,Codex,GPT')).split(',').map((s) =
   const ctx = browser.contexts()[0];
   let page = ctx.pages().find((p) => p.url().includes('creator.xiaohongshu'));
   if (!page) throw new Error('没找到小红书窗口（先跑 node skills/publish/templates/xhs.mjs launch 扫码）');
+  if (hasFlag('probe')) { await dumpForm(page, 'xhs'); process.exit(0); }
   await page.bringToFront();
   if (!page.url().includes('/publish/publish')) {
     await page.goto('https://creator.xiaohongshu.com/publish/publish?source=official', { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -27,7 +31,6 @@ const TOPICS = (arg('topics', '鹈鹕,AI绘画,Codex,GPT')).split(',').map((s) =
     await page.waitForTimeout(6000); // 等推荐封面条出现（别急着编辑正文，会弄没 AI 推荐话题条）
   }
 
-  if (DRY) { await dumpForm(page, 'xhs'); return; }
 
   // 1) 标题
   const title = page.locator('input[placeholder*="标题"], input[placeholder*="标题"]').first();
@@ -64,8 +67,10 @@ const TOPICS = (arg('topics', '鹈鹕,AI绘画,Codex,GPT')).split(',').map((s) =
     }
   }
 
+  if (DECLARE) {
   // 4) 原创声明（开关 → 二段确认）+ 「添加内容类型声明」→ 笔记含AI合成内容
   try {
+    if (hasFlag('original')) {
     await page.locator('[class*="original"], div', { hasText: '声明原创' }).first().click({ timeout: 4000 });
     await page.waitForTimeout(800);
     const agree = page.locator('input[type=checkbox], .checkbox', { hasText: '' }).first();
@@ -74,6 +79,7 @@ const TOPICS = (arg('topics', '鹈鹕,AI绘画,Codex,GPT')).split(',').map((s) =
     await page.waitForTimeout(500);
     await page.locator('button', { hasText: '声明原创' }).first().click({ timeout: 4000 });
     await page.waitForTimeout(800);
+    }
     await page.locator('select, [class*="select"]').first().click({ timeout: 4000 }).catch(() => {});
     await page.locator('li, option, [class*="option"]', { hasText: '笔记含AI合成内容' }).first().click({ timeout: 5000 });
     console.log('声明 = 笔记含AI合成内容');
@@ -82,8 +88,10 @@ const TOPICS = (arg('topics', '鹈鹕,AI绘画,Codex,GPT')).split(',').map((s) =
     await dumpForm(page, 'xhs-declare');
   }
 
+  }
+
   await selfCheck(page, 'xhs');
-})().catch((e) => {
+})().then(() => process.exit(0)).catch((e) => {
   console.error('ERR', e.message);
   process.exit(1);
 });

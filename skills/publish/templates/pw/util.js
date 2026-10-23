@@ -20,7 +20,7 @@ const hasFlag = (k) => process.argv.includes('--' + k);
 
 // 项目目录：--project 传入（相对 cwd 解析），默认 cwd —— 与 bili.mjs/xhs.mjs 的 --project 同构
 const ROOT = path.resolve(arg('project', process.cwd()));
-const loadSpec = (name) => JSON.parse(FS.readFileSync(path.join(ROOT, name), 'utf8'));
+const loadSpec = (name) => JSON.parse(FS.readFileSync(path.resolve(ROOT, arg('spec', name)), 'utf8'));
 
 /** 截图归档到 <项目>/qa/（目录自动建），不落在 skill 里 */
 const qaPath = (name) => {
@@ -30,10 +30,10 @@ const qaPath = (name) => {
 };
 
 /** evaluate 没有默认超时，页面主线程忙时会永久挂起 —— 全部套一层 race */
-const race = (p, ms, tag) => Promise.race([
-  p,
-  new Promise((_, rej) => setTimeout(() => rej(new Error(tag + ' 超时 ' + ms + 'ms（页面主线程可能忙死）')), ms)),
-]);
+const race = (p, ms, tag) => new Promise((resolve, reject) => {
+  const timer = setTimeout(() => reject(new Error(tag + ' timeout ' + ms + 'ms')), ms);
+  Promise.resolve(p).then(value => { clearTimeout(timer); resolve(value); }, error => { clearTimeout(timer); reject(error); });
+});
 const evalSafe = (page, fn, arg, tag = 'evaluate', ms = 15000) => race(page.evaluate(fn, arg), ms, tag);
 
 /** 把视频/封面塞进页面 file input（CDP 直设，绕开传输限制）。
@@ -78,6 +78,8 @@ async function dumpForm(page, tag) {
 /** 逐段输入富文本（editor-kit / TipTap / Quill 通吃：只聚焦，不碰选区）。 */
 async function typeParagraphs(page, editor, paragraphs) {
   await editor.click();
+  await page.keyboard.press('ControlOrMeta+A');
+  await page.keyboard.press('Backspace');
   for (let i = 0; i < paragraphs.length; i++) {
     if (i > 0) await page.keyboard.press('Enter');
     await page.keyboard.insertText(paragraphs[i]);
@@ -87,10 +89,14 @@ async function typeParagraphs(page, editor, paragraphs) {
 
 /** 全页自查截图（<项目>/qa/pw-<tag>.png），人看完自己点发布。 */
 async function selfCheck(page, tag) {
+  const expected = loadSpec({ bili: 'form.json', douyin: 'douyin-form.json', xhs: 'xhs-form.json' }[tag]);
+  const title = await page.locator('input[placeholder*="标题"], #title-input input, input.bili-input').first().inputValue();
+  if (title !== expected.title) throw new Error('Title readback mismatch; human inspection required');
   const out = qaPath(`pw-${tag}.png`);
   await page.screenshot({ path: out, fullPage: true });
   console.log(`自查截图: ${out}`);
-  console.log('READY — 看图确认后，发布按钮请自己点（脚本永远不点）。');
+  FS.writeFileSync(path.join(ROOT, 'qa', `publish-${tag}.json`), JSON.stringify({ status: 'filled-needs-human-check', titleReadback: true, video: arg('video', ''), screenshot: out, manualChecks: ['video identity', 'category', 'cover', 'topics', 'AI declaration'] }, null, 2));
+  console.log('FILLED: review the screenshot and original video; publish remains a human action.');
 }
 
 module.exports = { loadPlaywright, arg, hasFlag, ROOT, loadSpec, qaPath, setFiles, dumpForm, typeParagraphs, selfCheck, race, evalSafe };

@@ -7,7 +7,7 @@
  * 抖音/微信系对自动化比 B 站敏感，账号风控风险更高 —— 这条风险要由人知情后承担，
  * 所以「发布」这一步永远留给人。
  *
- * 依赖：本机 Chrome + Node 18+，不装任何 npm 包，也不用 Playwright。
+ * 依赖：本机 Chrome + Node 22+，不装任何 npm 包，也不用 Playwright。
  *
  * 使用独立 profile 与端口（~/.douyin-upload-profile，9223），与 B 站那个窗口互不干扰。
  *
@@ -23,6 +23,7 @@
  *   TODO: video / fill / cover / check —— 写之前先跑 inspect 看真实字段与字数上限
  */
 import { spawn } from 'node:child_process';
+import { Cdp } from './cdp.mjs';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { homedir } from 'node:os';
@@ -48,43 +49,6 @@ const WORK = PROJECT;
 // --------------------------------------------------------------------------- //
 // 极简 CDP 客户端
 // --------------------------------------------------------------------------- //
-class Cdp {
-  constructor(ws) {
-    this.ws = ws; this.seq = 0; this.pending = new Map(); this.handlers = new Map(); this.sessionId = null;
-    ws.addEventListener('message', (ev) => {
-      const m = JSON.parse(ev.data);
-      if (m.id !== undefined && this.pending.has(m.id)) {
-        const { resolve: res, reject } = this.pending.get(m.id);
-        this.pending.delete(m.id);
-        if (m.error) reject(new Error(`${m.error.message} ${JSON.stringify(m.error.data ?? '')}`));
-        else res(m.result);
-        return;
-      }
-      if (m.method) this.handlers.get(m.method)?.(m.params, m.sessionId);
-    });
-  }
-  static async connect(url) {
-    const ws = new WebSocket(url);
-    await new Promise((res, rej) => {
-      ws.addEventListener('open', () => res(), { once: true });
-      ws.addEventListener('error', () => rej(new Error('无法连接调试端口')), { once: true });
-    });
-    return new Cdp(ws);
-  }
-  send(method, params = {}, sessionId = this.sessionId) {
-    const id = ++this.seq;
-    const p = { id, method, params };
-    if (sessionId) p.sessionId = sessionId;
-    return new Promise((res, rej) => { this.pending.set(id, { resolve: res, reject: rej }); this.ws.send(JSON.stringify(p)); });
-  }
-  on(method, fn) { this.handlers.set(method, fn); }
-  async eval(expression, awaitPromise = false) {
-    const r = await this.send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise });
-    if (r.exceptionDetails) throw new Error(`页面异常: ${r.exceptionDetails.exception?.description ?? r.exceptionDetails.text}`);
-    return r.result.value;
-  }
-  close() { try { this.ws.close(); } catch { /* ignore */ } }
-}
 
 async function endpoint() {
   try { const r = await fetch(`http://127.0.0.1:${PORT}/json/version`); if (r.ok) return await r.json(); } catch { /* down */ }
