@@ -8,7 +8,7 @@ Checks:
   3.5 component-catalog scene-kit heading count == table rows == SKILL.md claim
   3.6 Backticked PascalCase symbols in README / product-map resolve to a real export
   3.7 video-motion template package.json pins @remotion/* exact and uniform (SKILL.md rule)
-  4. README install loop / structure tree / prose count all cover every skill
+  4. README setup entry and structure tree cover every local skill
   5. .claude/skills junctions exist per skill (local machine only, warn)
 
 GBK console safe: ASCII-only output.
@@ -170,15 +170,12 @@ if os.path.isfile(TPL_PKG):
 # 第 1 项只认 markdown 链接，围栏代码块与散文不在它的检查范围，所以单列这一项。
 CN_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
 
-m_install = re.search(r"foreach \(\$s in ([^)]*)\)", readme)
-if not m_install:
-    errors.append("README: junction install loop (foreach ...) not found")
-else:
-    listed = set(re.findall(r"'([a-z][a-z\-]*)'", m_install.group(1)))
-    for s in sorted(disk_skills - listed):
-        errors.append(f"README install loop missing skill: {s}")
-    for s in sorted(listed - disk_skills):
-        errors.append(f"README install loop lists nonexistent skill: {s}")
+if not os.path.isfile("scripts/setup-skills.mjs") or "scripts/setup-skills.mjs" not in readme:
+    errors.append("README must point to the dynamic skill setup script")
+for skill in sorted(disk_skills):
+    entry = os.path.join("skills", skill, "SKILL.md")
+    if not os.path.isfile(entry):
+        errors.append(f"skill entry missing: {entry}")
 
 m_tree = re.search(r"```\n(vibe-studio/.*?)```", readme, re.S)
 if not m_tree:
@@ -203,10 +200,45 @@ for m in re.finditer(r"([一二三四五六七八九十]+)个 skill", readme):
     if n is not None and n != len(disk_skills):
         errors.append(f"README prose says {n} skills but skills/ has {len(disk_skills)}")
 
-# --- 5. junctions (local only) ---
-for s in sorted(disk_skills):
-    if not os.path.isdir(os.path.join(".claude", "skills", s)):
-        warns.append(f"junction missing (run README setup): .claude/skills/{s}")
+# --- 5. Project-local discovery links (fresh clones may not be bootstrapped) ---
+for client in (".claude", ".agents"):
+    for skill in sorted(disk_skills):
+        target = os.path.join(client, "skills", skill)
+        if not os.path.isdir(target):
+            warns.append(f"skill link missing (run setup-skills): {target}")
+        elif os.path.realpath(target).lower() != os.path.realpath(os.path.join("skills", skill)).lower():
+            errors.append(f"skill link points at another source: {target}")
+
+# --- 6. Source archives must survive Git transport, not merely exist locally ---
+import hashlib
+import pathlib
+import subprocess
+tracked = set(subprocess.check_output(["git", "ls-files", "-z"]).decode("utf-8").split("\0"))
+for manifest_file in sorted(pathlib.Path("products").glob("*/archive.json")):
+    manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+    base = manifest_file.parent.resolve()
+    for entry in manifest.get("files", []):
+        if entry.get("kind") != "source":
+            continue
+        source = base / entry["stored"]
+        if not source.resolve().is_relative_to(base):
+            errors.append(f"archive path escapes product: {manifest_file}")
+            continue
+        name = source.relative_to(pathlib.Path(ROOT)).as_posix()
+        if name not in tracked:
+            errors.append(f"archive source is not tracked by Git: {name}")
+        if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest() != entry["sha256"]:
+            errors.append(f"archive source missing/hash mismatch: {name}")
+
+# Local links in maintained skill entries should resolve when selected.
+for doc in sorted(glob.glob("skills/*/SKILL.md")):
+    content = pathlib.Path(doc).read_text(encoding="utf-8")
+    for link in re.findall(r"\]\(([^)]+)\)", content):
+        if "://" in link or link.startswith("#"):
+            continue
+        path = link.split("#")[0]
+        if path and not (pathlib.Path(doc).parent / path).exists():
+            errors.append(f"skill reference does not exist: {doc}: {path}")
 
 for w in warns:
     print(f"WARN  {w}")

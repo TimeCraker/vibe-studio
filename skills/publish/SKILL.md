@@ -1,7 +1,6 @@
 ---
 name: publish
 description: 发布辅助工具，不是成片入口。把已经做好的成片按平台要求填进投稿表单（B 站 / 抖音 / 小红书三端），人机分工是硬约束：你登录、你点发布，脚本只填表。用户说「发 B 站 / 发抖音 / 发小红书 / 投稿 / 帮我填投稿信息 / 自动发布」时使用。片子还没做走 workflows/explainer-video.md。
-user-invocable: true
 ---
 
 # publish — 投稿表单填写助手
@@ -96,7 +95,7 @@ node skills/publish/templates/pw/bili-fill.js --project projects/<项目名> --v
 `pw/` 共 9 件（2026-10-03 pelican-ride 三端 live 实测版）：三个 `*-fill.js` 主脚本；
 `bili-discard / restore / replace / fix3` 与 `douyin-declare-fix` 是实测沉淀的定点修复工具
 （旧草稿处置、「声明弹窗吞点击」重跑）；`util.js` 公共件（filechooser 上传、dumpForm 探针、
-逐段输入、race 超时保护）。选择器会随平台改版失效：先跑 `--dry`（只转储表单 DOM 不写），
+逐段输入、race 超时保护）。选择器会随平台改版失效：先跑 `--probe`（只读已打开页面的 DOM），
 看着真实结构再改脚本，不凭记忆改。现场只读探针改用 `pw/*-fill.js --probe --project <项目>`；它只读取已打开页面的结构，不上传或填表。截图归档到 `<项目>/qa/`。
 
 `pw/*-fill.js --dry` 同样是离线预检，在加载 Playwright 前退出。正文写入前清空，写完读回标题；发现旧草稿时先停止核对，不自动丢弃他人的草稿。封面、视频身份、分区、话题与声明仍列入人工终审；未确认项不能报成已通过。
@@ -250,3 +249,7 @@ node skills/publish/templates/xhs.mjs topics  --project projects/<项目名> --n
   **不要**在同一个文件里塞两个平台的分支。
 - 不做封面设计（那是成片线的产物），只负责把已做好的封面传上去。
 - 不做定时发布、合集、商业推广这些可选项；需要时用逃生口命令临时补，别写进默认流程。
+
+## 交付接线
+
+content-repurpose 生成的 publish-plan.json 指向每个平台自己的视频、封面与表单；调用前先做对应版本 media-qc。填表结果和真实发布分别记录；发布后将真实平台链接与数据交 content-review。表单配置与发稿文案随 recipe 保留，登录 profile 与账号页面截图不入归档。

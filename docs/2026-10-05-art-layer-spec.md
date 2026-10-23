@@ -1,6 +1,6 @@
 # 美术层 Stage Spec — 画面主体升级为 SVG/AI 图一等公民
 
-> 状态：活跃
+> 状态：已存档（实现已完成；当前规则被 2026-10-23-production-workflow-spec.md 与 motion-grammar 吸收）
 > 2026-10-05 立项。兑现 S6 复盘指定的「下一方向」；用户拍板开工并定调技术路线：**CSS 画图不如 SVG 画图**——真矢量、程序可生成、无限缩放、可接 @remotion/paths 动画管线。
 
 ## 背景与根因

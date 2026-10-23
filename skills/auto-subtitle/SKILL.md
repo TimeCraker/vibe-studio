@@ -1,7 +1,6 @@
 ---
 name: auto-subtitle
 description: 转写工具，不是成片入口。faster-whisper 把 mp4/wav/flac 转成 cues.json + srt，字段与 video-motion SubtitleCue 对齐。用户说「自动字幕 / 语音转字幕 / 转写 / 出字幕文件 / faster-whisper」时使用。用户说做介绍视频走 workflows/explainer-video.md；说给录像加讲解走 video-motion FootageOverlay，需要转写时再调本 skill。
-user-invocable: true
 ---
 
 # auto-subtitle — 音视频自动转写出 SubtitleCue
@@ -21,7 +20,7 @@ user-invocable: true
 
 ```powershell
 python -m venv "$env:USERPROFILE\.cache\vibe-studio\asr-venv"
-& "$env:USERPROFILE\.cache\vibe-studio\asr-venv\Scripts\python.exe" -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+& "$env:USERPROFILE\.cache\vibe-studio\asr-venv\Scripts\python.exe" -m pip install -r skills/auto-subtitle/templates/asr/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ```powershell
@@ -60,3 +59,7 @@ cd skills/auto-subtitle/templates/asr
 - 词级时间戳是字幕窗口的唯一正确来源——段级时间戳会吞句间静音导致字幕提前约一个静音段（已修，勿回退 `word_timestamps=False`）
 - CPU int8 推理：28s 音频 ≈1 分钟内出结果，长音频按比例估时；large-v3-turbo 首跑含下载，留足超时
 - 中文识别里数字常转阿拉伯（「两百毫秒」→「200毫秒」），L2 比对时的正常差异，不算识别错误
+
+## 交付接线
+
+最终 SRT/cues 与原始音轨来源、模型版本一起归档；不要只留烧录字幕的 mp4。交付视频时用 media-qc 检查字幕窗口与实际时长，准确性仍按已知稿或抽听核对。默认模型下载和本地推理不替代人工配音。

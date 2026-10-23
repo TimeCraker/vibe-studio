@@ -1,4 +1,4 @@
-import {spawnSync}from'node:child_process';import{existsSync}from'node:fs';import{join}from'node:path';
+import {spawnSync}from'node:child_process';import{existsSync}from'node:fs';import{join}from'node:path';import{homedir}from'node:os';
 export function doctor(repo,{line='all',project}={}){
  const checks=[];const check=(name,ok,required,hint='')=>checks.push({name,ok,required,hint:ok?'':hint});
  check('node>=22 / fetch / WebSocket',Number(process.versions.node.split('.')[0])>=22&&typeof fetch==='function'&&typeof WebSocket==='function',true,'Install Node >=22');
@@ -12,6 +12,8 @@ export function doctor(repo,{line='all',project}={}){
  }
  if(project&&['b','footage'].includes(line))check('project npm dependencies',existsSync(join(project,'remotion-app/node_modules/typescript/bin/tsc')),true,'Run studio run --step deps');
  for(const client of ['.claude','.agents'])check(`${client}/skills mounts`,existsSync(join(repo,client,'skills','web-capture')),false,'Run node scripts/setup-skills.mjs');
+ const asrPython=join(homedir(),'.cache/vibe-studio/asr-venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
+ check('shared ASR environment',existsSync(asrPython)&&spawnSync(asrPython,['-c','import faster_whisper'],{stdio:'ignore',timeout:30000}).status===0,false,'Optional: initialize the shared ASR environment from auto-subtitle SKILL.md');
  check('official Remotion references',existsSync(join(repo,'.cache/upstream-skills/remotion-best-practices/SKILL.md')),false,'Run python scripts/install-upstream-skills.py');
  return{ok:checks.every(c=>c.ok||!c.required),checks};
 }

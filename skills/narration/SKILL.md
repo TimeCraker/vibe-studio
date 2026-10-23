@@ -1,17 +1,16 @@
 ---
 name: narration
 description: 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 workflows/explainer-video.md。
-user-invocable: true
 ---
 
 # narration — 结构化口播稿工坊
 
-**口播稿是带时间结构的数据，不是文章**：分段声明、程序校验、人只管语感终审。视频口播稿特有的三件事由契约 + 校验器管住——时长工程（中文 ≈4.5 字/秒，字数即秒数）、视频叙事（钩子开头 / 讲画面 / 留白）、文画对齐（`ref` 声明哪句话配哪段画面）。**本 skill 不做语音合成**：配音用剪映人工完成。
+**口播稿是带时间结构的数据，不是文章**：分段声明、程序校验、人只管语感终审。视频口播稿特有的三件事由契约 + 校验器管住——时长工程（中文 ≈4.5 字/秒，字数估时只用于预算）、视频叙事（钩子开头 / 讲画面 / 留白）、文画对齐（`ref` 声明哪句话配哪段画面）。**本 skill 不做语音合成**：配音用剪映人工完成。
 
 ## 契约与工具
 
 - 分段稿 JSON：`meta`（title / lang / budgetSeconds / charsPerSecond / bannedWords）+ `segments[]`（id / kind / text / ref）。`kind=subtitle`（≤20 字，直接当字幕）或 `voiceover`（长口播段，只计时长不查段长），缺省 subtitle；`ref` 写画面引用（素材时间段如 `footage 0:00-0:04`，或 PPT 页码）。字段不许改，样例见 `templates/script.example.json`。
-- **字数与秒数是派生值，作者不写、校验器算**——声明意图，数字交给程序。
+- **字数与估计秒数由校验器算，实际时间以配音为准**——声明意图，数字交给程序。
 - 校验器：`python skills/narration/templates/verify_narration.py <script.json> [--cps 4.5] [--budget-seconds 22]`。查结构、字幕段长（≤20 字）、时长对账（只罚超预算 10%，低于预算是留白）、破折号禁令（`——` `—` `–`）、AI 腔词表与 meta.bannedWords（WARN）、修饰密度（WARN）；FAIL 退出 1，全绿退出 0。
 
 ## Step 1 · 受众与预算
@@ -52,3 +51,7 @@ humanizer 深度过稿；然后**出声读一遍**——喘不上气的段拆两
 - 破折号中英双禁，原文含 `——` `—` `–` 任一直接红
 - 控制台 print 全英文（GBK），分段稿文件显式 utf-8
 - 校验器词表 / 阈值是底线不是绊脚石：红了改稿，但也不许为过稿放水改规则
+
+## 当前工作流
+
+受众、事实引用和镜头目的来自 content-director 的 storyboard.json，ref 保留与场景的对应关系。配音完成后按实际音轨派生字幕；长停顿或语速变化用 auto-subtitle 校准，不用平均字速假装词级准确。把稿、音轨来源、SRT 与发布文案随 recipe/归档清单保留。

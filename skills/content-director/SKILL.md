@@ -1,7 +1,6 @@
 ---
 name: content-director
 description: 为产品介绍、科技讲解或内容视频做受众定位、事实取材、口播与镜头设计。适用于选题、写分镜、画面单薄或正式制作前的策划；已有定稿的采集和渲染交给对应制作 skill。
-user-invocable: true
 ---
 
 # 内容导演

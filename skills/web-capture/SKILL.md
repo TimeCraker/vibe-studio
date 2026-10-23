@@ -1,7 +1,6 @@
 ---
 name: web-capture
 description: 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动效走 video-motion。
-user-invocable: true
 ---
 
 # web-capture — 网页/代码动画 → 成片

@@ -1,0 +1,23 @@
+name: Workflow checks
+on: [push, pull_request]
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install media inspection runtime
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Link repository skills
+        run: node scripts/setup-skills.mjs
+      - name: Unit and media fixture tests
+        run: npm test
+      - name: Docs and source archive checks
+        run: python scripts/check-docs.py
+      - name: Whitespace checks
+        run: git diff --check

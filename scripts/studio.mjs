@@ -27,7 +27,7 @@ function init(){
  cpSync(join(REPO,'skills/content-repurpose/templates/variants.example.json'),join(root,'variants.json'));
  cpSync(join(REPO,'skills/content-review/templates/metrics.example.json'),join(root,'metrics.json'));
  writeJson(join(root,'qc.json'),{});
- writeJson(join(root,'deliverables.json'),{files:line==='c'?['render/video.mp4','render/covers/cover-landscape.png','render/covers/cover-portrait.png']:[]});
+ writeJson(join(root,'deliverables.json'),{files:line==='c'?['render/video.mp4','render/video.mp4.json','render/covers/cover-landscape.png','render/covers/cover-portrait.png','qa/media-report.json','qa/media-report-contact-sheet.png']:[]});
  const steps=[{id:'plan',command:['node','{repo}/skills/content-director/scripts/validate-plan.mjs','{project}'],inputs:['storyboard.json'],outputs:[]}];
  if(line==='c')steps.push(
   {id:'capture',command:['node','{repo}/skills/web-capture/templates/capture-all.mjs','--project','{project}'],inputs:['capture'],outputs:['frames'],timeoutSeconds:1800},
@@ -62,6 +62,6 @@ try{
  }else if(cmd==='verify-archive')result=verifyArchive(resolve(String(args.archive)),{sourceOnly:Boolean(args['source-only'])});
  else if(cmd==='restore'){if(!args.archive||!args.project)throw new Error('restore needs --archive and --project');result=restoreArchive(resolve(String(args.archive)),project,{sourceOnly:Boolean(args['source-only'])});}
  else if(cmd==='status')result=existsSync(join(project,'.studio/state.json'))?readJson(join(project,'.studio/state.json')):{steps:{}};
- else{console.log('studio init --id NAME --line a|b|c|ppt|footage [--project DIR]\nstudio doctor [--line LINE] [--project DIR]\nstudio validate --project DIR [--require-reviewed]\nstudio run --project DIR [--step ID | --from ID] [--dry]\nstudio status --project DIR\nstudio archive --project DIR [--id NEW-REVISION]\nstudio verify-archive --archive FILE [--source-only]\nstudio restore --archive FILE --project DIR [--source-only]');process.exitCode=cmd?1:0;}
+ else{console.log('studio init --id NAME --line a|b|c|ppt|footage [--project DIR]\nstudio doctor [--line LINE] [--project DIR]\nstudio validate --project DIR [--require-reviewed]\nstudio run --project DIR [--step ID | --from ID] [--dry]\nstudio status --project DIR\nstudio qc --project DIR --video FILE [--srt FILE] [--config FILE]\nstudio derive --project DIR\nstudio review --project DIR\nstudio archive --project DIR [--id NEW-REVISION] [--source-only]\nstudio verify-archive --archive FILE [--source-only]\nstudio restore --archive FILE --project DIR [--source-only]');process.exitCode=cmd?1:0;}
  if(result){console.log(JSON.stringify(result,null,2));if(result.ok===false)process.exitCode=1;}
 }catch(error){console.error(`ERROR ${error.message}`);process.exitCode=1;}

@@ -1,0 +1,12 @@
+{
+  "repo":"remotion-dev/skills",
+  "ref":"6c67adcd9cdbe6eb84d76342da89b225f9161cb2",
+  "path":"skills/remotion-best-practices",
+  "name":"remotion-best-practices",
+  "referenceVersion":"4.0.538",
+  "renderVersion":"4.0.533",
+  "checkedAt":"2026-10-23",
+  "source":"https://github.com/remotion-dev/skills",
+  "docs":"https://www.remotion.dev/docs/ai/skills",
+  "compatibility":"Technical reference only. Verify APIs against the pinned render version; do not run upgrade/create flows that replace this repository's project templates or manual publication boundary."
+}

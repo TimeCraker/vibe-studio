@@ -1,7 +1,6 @@
 ---
 name: ppt
 description: 用 python-pptx 代码生成专业 PPT / 幻灯片 / 演示文稿（deck / slides / pptx）。用户说「做个 PPT / 幻灯片 / 演示文稿 / 项目介绍 deck / 把项目做成 slides」时使用；改现有 pptx 同样适用。用户说做介绍视频时不要只开本 skill，走 workflows/explainer-video.md，本 skill 只负责其中的 deck 取材。
-user-invocable: true
 ---
 
 # ppt — 代码生成专业 PPT
@@ -109,3 +108,7 @@ P.growth_donut(prs, 10, 'Mix', '标题', cats, vals)                  # 占比�
 - 中文缺字形 → run 级设雅黑（primitives 已处理）
 - shape_id 每页独立编号不唯一，animate.py 已按 XML 树定位，二次开发勿全局搜 id；pywin32：`pip install pywin32 -i https://pypi.tuna.tsinghua.edu.cn/simple`
 - docx / xlsx 可复用 primitives 思路，但页面范式表仅适用 pptx
+
+## 当前工作流与归档
+
+content-director 负责受众、材料出处和叙事草案，PPT 保留可编辑幻灯片的交付目标。设计确认后再生成；视频静帧规则不套到 PPT。生成脚本、输入数据、必要素材及其哈希随 recipe 保留，交付清单声明 PPT/PDF/封面；归档恢复校验前不清场。视觉核查与用户终审分别报告。

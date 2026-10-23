@@ -30,6 +30,8 @@ products/**
 !products/**/primitives.py
 !products/**/cover*.png
 !products/**/*-cover*.png
+!products/**/deliverables/**/*.json
+!products/**/deliverables/**/*-contact-sheet.png
 products/**/media/
 products/**/recipe/**/node_modules/
 products/**/recipe/**/frames/

@@ -1,107 +1,112 @@
-<div align="center">
-
-<img src="assets/pipeline.svg" alt="vibe-studio" width="880"/>
-
 # vibe-studio
 
-**自媒体内容工厂**：先选交付物，再开工。
-
-</div>
-
----
-
-## 定位
-
-TimeCraker 的内容工作台。不承载业务代码。产品按**交出去的东西**分三格，技能是干活的手，不跟产品一一对应。
-
-完整决策树：[产品图](docs/product-map.md)。
+自媒体内容工作台：从事实材料和镜头设计，到 PPT、讲解视频、产品介绍片与网页动画成片。
 
 ## 先选交付物
 
-| 你要交什么 | 走哪 | 不要走哪 |
+| 交付物 | 入口 | 制作方式 |
 |---|---|---|
-| **PPT / 幻灯片** | [`ppt`](skills/ppt/) | 不要打开视频 skill |
-| **讲解成片**（已有录像、屏录、游戏录像） | [`video-motion`](skills/video-motion/) · `FootageOverlay` | 不要走介绍成片 |
-| **介绍成片**（从项目说明出一条可发布视频） | [`explainer-video`](workflows/explainer-video.md) · 成片 `DeckVideoV2` · 封面 `CoverV3` | 不要用 `DeckVideo` 翻页 PPT；不要把七个 skill 摊开挑 |
-| **程序化动画成片**（画面已是能跑的网页 / HTML / SVG 代码动画） | [`web-capture`](skills/web-capture/) · C 线 | 不要用 B 线重绘画面 |
+| PPT | [ppt](skills/ppt/) | Python 生成、动画、PDF/图片核查 |
+| 已有录像做讲解 | [video-motion](skills/video-motion/) | FootageOverlay 叠字幕、数据与标注 |
+| 从项目材料做介绍片 | [总装工作流](workflows/explainer-video.md) | 快速单片走剪映，品牌场景走 DeckVideoV2，封面 CoverV3 |
+| 已有网页或代码动画转视频 | [web-capture](skills/web-capture/) | 状态重放或显式 seek 采集，导演页剪辑 |
 
-只要一张标题封面、没有介绍成片任务：走 `Cover` json 三预设。介绍成片的封面跟成片走 `CoverV3`（模板自带，改 props 即可，不要拿 v1 的 `Cover` 顶）。
+边界与决策见 [产品图](docs/product-map.md)。登录、配音、分镜/成片终审、点击发布保留人工节点；机器检查和人工接受分别记录。
 
-## 产品
+## 工具与职责
 
-| 产品 | 做什么 |
+| 技能 | 用途 |
 |---|---|
-| **PPT** | 代码画幻灯片：15 种页面范式、3 套主题、动画 auto 编排、三级渲染核查。文案过 humanizer。 |
-| **讲解成片** | 真实底材叠字幕 / 数据柱 / 圈注。素材 + `cues.ts`，一条命令出片。 |
-| **介绍成片** | scene-kit 直绘动效场景（不是 PPT 录屏）。工作流里取材用 ppt、出稿用 narration、配音用剪映、渲染用 `DeckVideoV2`。 |
-| **程序化动画成片** | 已有网页 / 代码动画逐帧采集（虚拟时钟保可复现），导演页剪成片，配乐程序化生成，一条命令出片。 |
+| [content-director](skills/content-director/) | 受众、事实来源、分镜、美术简报与短样片 |
+| [humanizer](skills/humanizer/) | 保持事实不变，改口语与文风 |
+| [narration](skills/narration/) | 分段口播、字幕与时长预算 |
+| [auto-subtitle](skills/auto-subtitle/) | 词级时间戳转写、字幕对齐 |
+| [media-qc](skills/media-qc/) | 解码、规格、字幕、响度、抽帧证据与待人工清单 |
+| [content-repurpose](skills/content-repurpose/) | 选镜头、重排时间轴、画幅、安全区与平台文案 |
+| [publish](skills/publish/) | B 站/抖音/小红书填表，按平台选视频与封面 |
+| [content-review](skills/content-review/) | 真实发布数据、制作成本与系列复盘 |
 
-## 工具（被产品调用）
+美术需要位图时，content-director 按当前环境可用的 imagegen 工具生成素材，再走 assets/art 登记与消费；真实界面和结构图仍使用截图或 SVG。没有工具时保留简报，不声称已生图。
 
-| 工具 | 家族 | 干什么 |
-|---|---|---|
-| [`humanizer`](skills/humanizer/) | 文案 | 去 AI 腔。PPT 和口播稿默认过一遍。 |
-| [`narration`](skills/narration/) | 文案 | 分段口播稿 + 程序校验。不做语音合成。 |
-| [`auto-subtitle`](skills/auto-subtitle/) | 视频 | 已有音轨转写成 `SubtitleCue`，与 video-motion 字幕轨同构。 |
-| [`web-capture`](skills/web-capture/) | 视频 | 把已有网页 / HTML / SVG 代码动画逐帧采集，再用导演页剪成成片（C 线）。 |
-| [`publish`](skills/publish/) | 发布 | 把成片填进投稿表单（B 站 / 抖音 / 小红书）。**人登录、人点发布**，脚本只填表。 |
+另接入 [Remotion 官方技能](https://www.remotion.dev/docs/ai/skills) 作为技术参考，来源固定在 `skills/video-motion/references/upstream.json`。参考包版本与渲染包版本分别管理；本仓 Remotion 继续锁定 4.0.533，新增 API 先做类型检查和实际渲染，不自动升级依赖。许可见 [Remotion 官方条款](https://www.remotion.dev/license)。
 
-施工记录和旧版对照在 [`docs/`](docs/)，新任务以产品图为准。
+## 开始使用
 
-> 为什么代码画 PPT：网格、字号、色板全部写在脚本里，可复跑、可 diff、可版本化；渲染核查保证所见即所写。
-
-> 依赖口径：video-motion 基于 Remotion（source-available，非开源）——个人与 ≤3 人团队免费，4 人及以上公司的商业用途需购买 license；以 remotion.dev/license 页为准（2026-10 查证）。
-
-## 使用
-
-Claude Code 只从 `.claude/skills/` 发现 skill。本仓库真身在 `skills/`，`.claude/skills/` 下是指过去的 junction（Windows 免管理员）。克隆后跑一次：
+环境：Node 22+、Python 3.10+、Chrome、FFmpeg/ffprobe。PPT 的渲染核查还需要 MS Office 或 LibreOffice；各线的额外依赖由 doctor 报告。
 
 ```powershell
-git clone https://github.com/TimeCraker/vibe-studio
-cd vibe-studio
-New-Item -ItemType Directory -Force .claude/skills | Out-Null
-foreach ($s in 'ppt', 'humanizer', 'video-motion', 'narration', 'auto-subtitle', 'publish', 'web-capture') {
-    New-Item -ItemType Junction -Path "$PWD\.claude\skills\$s" -Target "$PWD\skills\$s" | Out-Null
-}
+# 创建项目本地的 Claude Code / Codex 技能发现链接
+node scripts/setup-skills.mjs
+# 可选官方技术参考：固定提交，验证已有缓存，不覆盖本地修改
+python scripts/install-upstream-skills.py
+node scripts/setup-skills.mjs
+# 检查当前制作线的依赖
+node scripts/studio.mjs doctor --line c
+# C 线完整测试样例，可在替换真实内容前验证管线
+node scripts/studio.mjs init --id first-video --line c
+node scripts/studio.mjs validate --project projects/first-video
+node scripts/studio.mjs run --project projects/first-video --dry
+node scripts/studio.mjs run --project projects/first-video
 ```
 
-之后进 vibe-studio 会话，skill 自动生效（新会话生效，已在开的会话不含）。在其他项目用某 skill，同法复制或链接对应目录到该项目 `.claude/skills/`：
+技能正本在 skills/；`.claude/skills/` 与 `.agents/skills/` 是本机链接，不入 Git。新增技能由后续会话发现；安装脚本不会改全局技能或覆盖其他链接。Codex 入口依据 [OpenAI 的仓库技能说明](https://developers.openai.com/blog/skills-agents-sdk)。
 
-```bash
-ln -s ~/Desktop/my_workspace/vibe-studio/skills/ppt <project>/.claude/skills/ppt
+B/录像线 `init --line b|footage` 复制 Remotion 模板并配置依赖安装和类型检查。具体场景、配音与渲染命令按对应 skill 施工后加入 job.json；A/PPT 线先生成策划契约，再由对应工具生成内容。CLI 不把人工制作环节伪装成已自动完成。
+
+## 编排、派生与归档
+
+job.json 为命令数组声明输入、输出、工作目录和超时；命令不经 shell 拼接。状态与日志在项目 .studio，输入、工具或输出变化会使缓存失效。
+
+```powershell
+node scripts/studio.mjs run --project projects/first-video --from render
+node scripts/studio.mjs status --project projects/first-video
+# 按真实内容修改 variants.json，再生成各平台物料
+node scripts/studio.mjs derive --project projects/first-video
+node skills/web-capture/templates/render-director.mjs --project projects/first-video --variant douyin --out render/douyin.mp4
+node scripts/studio.mjs qc --project projects/first-video --video render/douyin.mp4 --config exports/douyin/qc.json --out qa/douyin-report.json
+# --dry 仅本地预检，不连接浏览器或上传
+node skills/publish/templates/run.mjs --project projects/first-video --dry
+# 发布后录入真实 metrics.json；空表只生成待采集说明
+node scripts/studio.mjs review --project projects/first-video
+# 交付清单列出所有最终文件，包括后来增加的竖版
+node scripts/studio.mjs archive --project projects/first-video
+node scripts/studio.mjs verify-archive --archive products/first-video/archive.json
+node scripts/studio.mjs restore --archive products/first-video/archive.json --project projects/first-video-restored
 ```
+
+归档保存 recipe 制作配方、原始媒体与 deliverables.json 指定的成品，并逐文件记录 SHA-256。恢复校验通过、媒体备份完成后才清场；没有成品时 `archive --source-only` 只做草稿备份，不代表交付。大媒体与成片不入 Git，克隆后只校验源文件可用 `verify-archive --source-only`，它不会把缺失媒体说成完整恢复。
 
 ## 结构
 
 ```
 vibe-studio/
-├── skills/            # 纯工具：七个 skill（SKILL.md + 模板代码，零素材零产物）
-│   ├── ppt/           #   python-pptx 代码画 PPT（primitives / animate / verify）
-│   ├── humanizer/     #   中英文去 AI 腔改写
-│   ├── video-motion/  #   Remotion 引擎（fx 叠动效 + scene-kit 质感组件 + deck 引擎模板）
-│   ├── narration/     #   口播稿工坊（verify_narration.py）
-│   ├── auto-subtitle/ #   faster-whisper 自动字幕
-│   ├── publish/       #   投稿表单填写（B 站/抖音/小红书；人登录人发布，脚本只填表）
-│   └── web-capture/   #   网页/代码动画逐帧采集 + 导演页渲染（C 线：CDP + 虚拟时钟）
-├── workflows/         # 蓝图：explainer-video.md（A 线剪映 / B 线 Remotion / C 线代码化采集）
-├── assets/            # 资产库：patterns.md 成页方案库 + component-catalog.md 组件登记簿 + art 美术资产 + lottie 动效 + 品牌与测试素材
-├── projects/          # 施工流水线：临时作业空间（Ephemeral Workspace，交付后即刻清场）
-│   └── README.md      #   施工规范、开工模板与清场闭环 SOP（非作业期保持零残留）
-├── products/          # 成品档案库：按项目分目录带 README 标注（交付即沉淀，不可变资产）
-├── docs/              # 决策与规范：product-map 产品图 + motion-grammar 质量底线 + workorder-log 工单台账 + 活跃 spec
-└── scripts/           # 系统级工作台独立小工具（索引见 scripts/README.md，入库可复跑）
+├── skills/            # 技能正本、脚本与模板
+│   ├── ppt/
+│   ├── humanizer/
+│   ├── narration/
+│   ├── video-motion/
+│   ├── auto-subtitle/
+│   ├── web-capture/
+│   ├── publish/
+│   ├── content-director/
+│   ├── media-qc/
+│   ├── content-repurpose/
+│   └── content-review/
+├── workflows/         # 制作总装流程
+├── assets/            # 版式、组件登记、美术、品牌素材
+├── projects/          # 在研施工区，临时帧与依赖可清理
+├── products/          # 配方、成品清单、字幕、封面、来源与验收记录
+├── scripts/           # CLI、归档、环境诊断、配乐等通用工具
+├── tests/             # 数据、故障、归档与浏览器回归
+└── docs/              # 产品边界、质量规范、Stage Spec 与工单台账
 ```
 
-## 约定
+## 维护检查
 
-- 每个 skill 必须可独立运行（自带模板，不依赖本仓库外文件）
-- **skill 是纯工具**：只放流程（SKILL.md）、脚本与模板；素材、产物、中间文件一律不进 skill
-- **仓库五区**：`skills/` 纯工具（零素材零产物）· `workflows/` 蓝图 · `assets/` 可复用资产 · `projects/` 施工流水线（临时作业空间，交付即清场）· `products/` 产出成品库（按项目标注，README 与元数据入库、大文件二进制不入）。素材归属三规则：项目施工素材局限在临时项目内、可复用测试素材进 `assets/`、交付成果沉淀进 `products/`
-- 决策记录进 `docs/`——选了什么、放弃了什么、为什么，避免后人重新踩。**入口以 [产品图](docs/product-map.md) 为准，不以 skill 文件名为准**
-- 提交：Conventional Commits + 中英文对照
+```powershell
+npm test
+python scripts/check-docs.py
+node tests/browser-capture.mjs
+```
 
----
-
-<div align="center">
-<sub>© 2026 TimeCraker · <a href="https://asterforge.top">asterforge.top</a></sub>
-</div>
+测试通过只代表对应技术范围。交付前按 [质量规范](docs/2026-08-30-motion-grammar.md) 看真实画面、听音频、检查手机尺寸。Stage 进度与本轮证据见 [生产工作流修复](docs/2026-10-23-production-workflow-spec.md)。

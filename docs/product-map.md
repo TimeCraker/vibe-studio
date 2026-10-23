@@ -1,98 +1,21 @@
-# 产品图：先选交付物，再开工
-
 > 状态：活跃
-> 2026-08-31 定案。解决「技能表把产品和零件并列，开工先选版本」的入口杂。
-> 2026-10-02 增补第四格：程序化动画成片（画面来自已有网页/代码动画，不走剪映也不走 Remotion 直绘）。
 
-## 只问一句
+# 产品图
 
-**这次要交出去的是什么？** 答完只走一格，不要同时打开七个 skill 挑。
+开工先选交付物，工具按需要调用。
 
-| 交付物 | 何时选 | 默认入口 | 调用的工具 |
-|---|---|---|---|
-| **PPT** | 要能讲、能发、能改的幻灯片 | [`ppt`](../skills/ppt/) | humanizer 过文案 |
-| **讲解成片** | 已有录像 / 屏录 / 游戏录像，要加字幕、圈注、数据柱 | [`video-motion`](../skills/video-motion/) · `FootageOverlay` | 没字幕稿时 auto-subtitle；先写口播时 narration |
-| **介绍成片** | 从项目说明出一条可发布介绍视频（含配套封面） | 工作流 [`explainer-video`](../workflows/explainer-video.md) · 成片 `DeckVideoV2` · 封面 `CoverV3` | ppt 取材 · narration 出稿 · humanizer 过稿 · 剪映配音 |
-| **程序化动画成片** | 画面已经是一个能跑的网页 / HTML / SVG 代码动画，要把它变成视频 | [`web-capture`](../skills/web-capture/) · C 线 | web-capture 采集与渲染 · scripts 里的配乐与核查小工具 · publish 投稿 |
-
-第四格只在没有成片任务时出现：
-
-| 交付物 | 何时选 | 默认入口 |
+| 交付物 | 默认入口 | 配套工具 |
 |---|---|---|
-| **通用封面** | 只要一张标题封面，不跟某条介绍成片 | `video-motion` · `Cover`（json 三预设） |
+| PPT | ppt | content-director 定受众与材料，humanizer 过文案 |
+| 录像讲解 | video-motion / FootageOverlay | auto-subtitle、media-qc |
+| 产品介绍片 | workflows/explainer-video.md | content-director、narration、video-motion、media-qc |
+| 网页/代码动画成片 | web-capture | 导演页、配乐、media-qc |
+| 独立通用封面 | video-motion / Cover | 三种预设；介绍片封面使用 CoverV3 |
 
-介绍成片的封面**不要**走通用封面。`CoverV3` 与 scene-kit 成片同一套视觉语言，按项目改组件，不是填 json。
+先判断画面来源：已有网页走 C 线采集；现成素材可走 A 线剪映；需要组件直绘走 B 线 Remotion。已有录像只需叠标注时直接用 FootageOverlay。
 
-## 怎么走（决策树）
+三条线共用受众与事实取材、分镜、美术方向、短样片和最终人工审阅。平台适配由 content-repurpose 选择镜头并重排时间轴，不能只改标题或事后裁剪。publish 只填表，不登录或点发布；content-review 读取真实效果数据。
 
-```
-要交什么？
-├── 幻灯片 / PPT / deck
-│     └── ppt
-├── 已有录像，做成讲解
-│     └── FootageOverlay
-│           └── 没有字幕稿 → auto-subtitle
-├── 已有网页 / HTML / SVG 代码动画
-│     └── web-capture（C 线）
-│           probe-ui 探控件 → probe-anchors 探坐标
-│           → capture-all 逐帧采集 → 导演页剪成片
-│           → scripts/make_music.py 程序化配乐
-│           → scripts/audio_report.py + contact_sheet.py 核查
-│           → publish 填投稿表单（人点发布）
-└── 从项目说明出介绍视频
-      ├── 发一次、要快、不复跑  → 工作流 A（稿 + 剪映全包）
-      └── 要可复跑的品牌成片    → 工作流 B
-            ppt 取材（不当画面）
-            → narration 出稿
-            → 剪映配音
-            → DeckVideoV2 成片
-            → CoverV3 封面
-            → publish 投稿与清场
-```
+工具职责与安装以 README.md 为准。流程以 workflows/explainer-video.md 为准。历史 DeckVideo 用于旧片对照，新介绍片默认 DeckVideoV2；保留旧代码不代表推荐旧工艺。
 
-**C 线与 A/B 的判据是「画面从哪来」，不是快慢**：A 剪现成素材、B 用 Remotion 组件直绘、
-C 采集一个已经存在的网页。判据写成来源，是因为前两条线都做不出 C 的画面
-（那画面是别人的程序生成的），而 C 也做不出 B 的组件级控制。
-
-## 工具（不出现在「要交什么」里）
-
-被产品调用，不单独当入口：
-
-| 工具 | 干什么 | 不要拿它当 |
-|---|---|---|
-| `humanizer` | 去 AI 腔。PPT 文案和口播稿默认过一遍 | 成片入口 |
-| `narration` | 分段口播稿 + 程序校验。配音仍去剪映 | 成片入口、PPT 入口 |
-| `auto-subtitle` | 已有音轨转写出 `SubtitleCue` | 介绍视频入口 |
-| `publish` | 把做好的成片填进投稿表单（B 站 / 抖音 / 小红书三端）。**人登录、人点发布**，脚本只填表 | 内容生产入口 |
-| `web-capture` | 逐帧采集网页/代码动画并按导演页契约渲成视频 | 内容生产入口 |
-
-## 成片之后：发布不是终点线的一部分
-
-成片落 `products/` 之后，投稿表单的填写走 `publish`。它的分工是刻意的：
-脚本只做「抄一份已经写好的文档」这件事，**登录与发布两个动作留给人**：
-发布不可逆，且自动化操作投稿页可能触发平台风控，这个风险要由人知情后承担。
-所以 `publish` 里没有发布命令，这是设计不是没做完。
-
-用户说「做个介绍视频」→ 工作流，不先打开 video-motion 四种产物。用户说「做个 PPT」→ 只打开 ppt。
-
-## 明确不做的入口
-
-新任务禁止当作可选项：
-
-| 名字 | 为什么留下 | 新任务 |
-|---|---|---|
-| `DeckVideo`（PPT 整页位图 + 溶解） | 对照旧片；[动效语法](2026-08-30-motion-grammar.md) 的反面教材 | 禁止。介绍成片只走 `DeckVideoV2` |
-| `Cover` 当介绍片封面 | json 三预设仍服务「只要一张通用封面」 | 介绍成片封面走 `CoverV3` |
-| `Stage0Test` / fx Demo / kit-demos | 零件自测 | 不对用户报价 |
-
-代码不删，降低权重：SKILL.md 文末「存量对照」，`Root.tsx` 仍注册，开工清单里不出现。
-
-## 选了什么 / 放弃了什么
-
-- **选**：产品按交付物分格（PPT / 讲解成片 / 介绍成片 / 程序化动画成片），工具藏在调用链里。
-- **选**：介绍成片默认 scene-kit（`DeckVideoV2`），因为 v1 已被判「太素」。
-- **选**：程序化动画成片按**画面来源**立格而不是按速度立格，这样三条成片线的判据互斥且可判定。
-- **放弃**：README 技能表把五个 skill 当五个产品。
-- **放弃**：video-motion「一套引擎四种产物」并列入口。
-- **放弃**：把 v1 翻页成片和 v3 场景化成片同时推荐。
-- **不删**：对照代码和旧 spec 仍在 `docs/`，新任务不引用为默认命令。
+归档保留制作配方与素材/成品哈希。历史记录中的通过不代替当前版本验收；缺原始素材的历史作品在 archive.json 明确记录。

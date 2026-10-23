@@ -110,7 +110,7 @@ export const ArtLayerDemo: React.FC = () => (
       }}
     >
       <div style={{ fontSize: 30, letterSpacing: 6, opacity: 0.55 }}>ART LAYER / SCENE-KIT</div>
-      <div style={{ fontSize: 62, fontWeight: 700, marginTop: 10 }}>画面主体是真图，CSS 只排版</div>
+      <div style={{ fontSize: 62, fontWeight: 700, marginTop: 10 }}>SVG 图像层，支持全幅与卡片</div>
     </div>
   </AbsoluteFill>
 );

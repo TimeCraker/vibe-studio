@@ -279,3 +279,7 @@ Apply to English text. Watch-lists condensed from blader/humanizer §1-35.
 ---
 
 版本：v5.0.0（2026-08-24，blader v2.11.2 × unclecheng v4.1 融合；破折号裁决升级为中英双禁，TimeCraker 拍板）
+
+## 内容工厂接线
+
+接收已经留有出处的口播、平台文案和 PPT 文案。改写后保留 claim/ref 对应关系；信息缺失交回 content-director，不补造事实。不同平台可调整句式与长度，数字、限定词和证据范围保持一致。改稿、原始版本与采用结果随制作配方保留。
