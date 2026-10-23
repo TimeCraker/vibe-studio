@@ -20,10 +20,14 @@
 
 生图选定产物、技术图解的 SVG/数据、Lottie JSON 及其依赖、3D 模型/贴图和地图来源均保留实际使用版本与来源记录。优先留在项目；没有可复用且已核查的资产时，不为新增能力建立空的公共分区。调用与制作方法统一见[视觉选路](../skills/content-director/references/visual-routing.md)。
 
+缺素材的搜集与筛选交 [asset-scout](../skills/asset-scout/SKILL.md)，来源与使用条件记录方法由该技能维护。本库有素材不代表每项素材都自动适用同一许可；使用时核对实际文件及其来源记录。
+
 ## 有复用价值时回流
 
 1. **组件回流**：验证过的通用 scene-kit 组件与 tokens，回写 `skills/video-motion/templates/remotion-app/src/scene-kit/`，同步登记簿；项目专用实现保留在项目里。
 2. **方案登记**：有复用价值的新成页方案，在 `patterns.md` 登记 PAT，或给已有 PAT 补复用记录；没有新方案就无需新增条目。
 3. **教训入账**：有实际缺陷或可复用经验时追加 `docs/workorder-log.md`，普通制作不另写一套流水账。
+
+栏目方案按[系列一致性](../skills/content-director/references/series-continuity.md)在形成可复用实现后回流，保留实际模板/参考和版本。各期复制实际输入并记录差异，不同步改写历史作品，也不为尚未制作的栏目预建空分区。
 
 复用闭环 = 开工复制模板（带出）→ 查 PAT 套方案（复用）→ 验收回流（增值）。

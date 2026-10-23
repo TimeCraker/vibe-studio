@@ -1,6 +1,6 @@
 ---
 name: video-motion
-description: 用 Remotion 制作录像标注、技术可视化、介绍片场景与封面，并按需接入 Lottie、3D 和官方专项指导。适用于视频图形与动效制作；介绍片由总装工作流调度，已有网页动画走 web-capture。
+description: 用 Remotion 制作录像标注、技术可视化、介绍片场景与封面，落实系列视觉模板，并按需接入 Lottie、3D 和官方专项指导。适用于视频图形与动效制作；介绍片由总装工作流调度，已有网页动画走 web-capture。
 metadata:
   category: 2. 内容制作
 ---
@@ -10,6 +10,8 @@ metadata:
 **设计即代码**：坐标 / 时刻 / 文本全部声明在 `src/cues.ts`（数据契约，字段不许改），fx 组件零硬编码；改 cues 重跑一条命令即复跑成片。三层动效：字幕 `SubtitleTrack` / 数据柱 `DataBars` / 圈注 `Spotlight`（circle / arrow / box）。
 
 技术图解、流程/数据画面、Lottie、3D、地图或 Studio 参数编辑按[专项视觉制作](references/visual-production.md)读取相关分支。导演给出内容与视觉方向，制作模块交付实际项目素材/代码和渲染证据；当前组件、类型与锁定引擎接口优先。
+
+系列视频按[系列一致性](../content-director/references/series-continuity.md)将栏目约定落实到项目的 tokens、字体、场景、字幕、封面与实际音轨。复用实际输入版本并用本期内容渲染对照，不把改一个主题值当成全片已统一。产品演示用实际录制/采集素材叠标注，后期鼠标或圈注必须对应真实动作与结果。
 
 ## Step 1 · 剧本设计（看素材，不猜画面）
 

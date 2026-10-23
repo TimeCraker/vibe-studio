@@ -22,4 +22,6 @@
 
 各类画面素材与专项能力的职责统一见[视觉选路](../skills/content-director/references/visual-routing.md)：通用设计与位图生图按环境调用，技术图解/Lottie/3D 由 video-motion 的相关分支实现，不另复制一套工具清单。
 
+缺现成素材进入 [asset-scout](../skills/asset-scout/SKILL.md)，由其交接实际输入和来源；产品实操由 content-director 的[演示方法](../skills/content-director/references/product-demo.md)安排，连续栏目按[系列一致性](../skills/content-director/references/series-continuity.md)实施。本地可重放页面交 C 线；线上产品使用实际可用工具取得录像，再交 A/B 线，不把线上录屏视为现有逐帧采集器的能力。
+
 作品状态与历史证据的解释见[文档维护约定](documentation.md#作品状态记录)。

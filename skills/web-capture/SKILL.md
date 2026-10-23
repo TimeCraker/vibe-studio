@@ -1,6 +1,6 @@
 ---
 name: web-capture
-description: 把已有网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频。适用于网页动画导出视频、逐帧采集和 web capture；有状态页面预跑重放，纯 seek 页面可直接定位。介绍成片走 workflows/explainer-video.md，已有录像叠动效走 video-motion。
+description: 把已有本地网页、HTML 或 SVG 动画逐帧采集并通过导演页剪成视频，按既定演示方案执行可重放操作。适用于网页动画导出、逐帧采集和 web capture；线上产品录屏需另用实际可用的录制工具，已有录像叠动效走 video-motion。
 metadata:
   category: 2. 内容制作
 ---
@@ -18,6 +18,16 @@ metadata:
 | **C 线（本 skill）** | **已有网页 / HTML / SVG / 代码动画，逐帧采集** |
 
 所以本 skill 不生产画面，只负责「把浏览器里跑的东西，一帧不差地搬进视频」。
+
+## 产品演示采集
+
+操作与结果如何安排由 content-director 的[产品演示导演](../content-director/references/product-demo.md)决定。本工具负责本地页面采集；probe-ui 和 capture-clip 的 --html 以及 shots.json 的 sources 都解析成本地文件，不直接接受线上应用 URL、现有登录会话或直播录屏。
+
+先按实际页面探测控件，再将操作写在对应 shot.actions：条目为 `{ "sec": 1, "code": "document.querySelector('#actual-control').click()" }`，actual-control 必须换成当次核实的真实目标。状态页使用 replay，每个分块从零重放；seek 模式要求 __captureSeek(ms) 直接还原状态，不接受额外 actions。以实际结果状态确认动作有效，脚本执行无报错不代表完成了任务。
+
+网络请求、真实后端响应与媒体播放不受虚拟时钟控制；含这些依赖的页面先验证可重放性，无法适配就换实际录制路径。可用测试 fixture 演示交互，但要标明示意/演示数据，不拿来证明线上服务真实成功或耗时。
+
+DOM click 不会自动生成可见鼠标轨迹，鼠标与点击反馈按真实动作时刻在项目页面/后期显式绘制；不能把装饰鼠标当交互已发生的证据。放大和字幕由 timeline.js 取景安排，量锚视口与采集一致；查看动作前后、关键结果和停留片段后再扩展全片。线上产品取得的实际录像可交 video-motion / 剪映，不强塞进逐帧采集契约。
 
 ## 核心机制：虚拟时钟
 
