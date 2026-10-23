@@ -1,36 +1,14 @@
 # 文档与作品状态维护
 
-日常由当前编程 Agent 运行一个命令，工具生成确定事实并定位候选说明，Agent 直接改相关段落。默认复用已有文件，不另建日报、逐次维护报告或中央知识副本。
-
 ## 日常入口
 
-```powershell
-# 在 vibe-studio 根目录：生成清单、定位影响、检查新增问题
-npm run docs:maintain
-# 确定检查与只读影响分析
-npm run docs:check
-node scripts/docs.mjs impact --staged
-# 搜索整个 workspace，默认排除历史文档；需要时加 --history
-node scripts/docs.mjs search --workspace .. --query "网页采集"
-```
+先运行 `npm ci --ignore-scripts --no-audit --no-fund` 安装固定版本的文档工具依赖；之后 `npm run docs:maintain` 生成清单、定位影响并检查新增问题，`npm run docs:check` 做只读检查。当前 Agent 根据实际 diff 修订相关段落，不另建逐次台账。
 
-maintain 自动修改 README 的受管生成区；普通文字由当前 Agent 依据影响清单和实际实现修订。无语义变化就简述无需更新，不为完成检查新增文档。这个命令不调用模型或网络，不会替人编造接受/发布记录。
+通用工具与 doc-maintainer 技能的源码归 workspace 的 `config/workspace-tools/` 管理；本项目不再维护该技能。`scripts/docs.mjs` 只调用 tools/ 中锁定的 npm 发布包，单独 clone 或 CI 均可离线安装。要全量使用共享命令，运行 `node scripts/docs.mjs --help`。工具不调用模型、不自动暂存、不编造人工接受记录。
 
-### 自动生成与提交检查
+README 中 skills、tree、commands、versions 为生成区，块外说明人工维护；命令事实来自 scripts/studio-commands.json。技能板块来自各 SKILL.md 的 metadata.category，不另建第二份分类清单。
 
-根 README 内 skills、tree、commands、versions 四类 docs:auto 块自动生成；后两类可通过 source 属性指定命令声明或依赖配置，块外内容保持原样。命令 JSON 同时提供 CLI 帮助与命令表。工具默认检查工作区，--staged 严格读取暂存区；sync 只写工作区，不自动暂存或拼接部分提交。
-
-本仓库安装钩子用 `node scripts/docs.mjs hooks`。workspace 批量接入用 `node scripts/docs.mjs setup --workspace .. --chain-existing`：默认钩子保存在 Git 本地目录；兼容的干净 Husky lint-staged 脚本只追加有标记的检查段，需随该仓库提交；其他自定义/修改中的钩子保留并明确报告。加 --remove 只移除本工具拥有且未被修改的部分。
-
-钩子快速检查生成漂移和本次新增坏链接；旧断链和语义候选分别处理。它不改写或暂存文件，也不自动发起 AI 任务。检出后初始化时安装一次；本地钩子和绝对工具路径不会随普通 clone 自动安装。CI 的 docs:check 负责确定检查，语义修订由当前 Agent 完成。
-
-### 跨项目与索引
-
-从其他仓库调用本工具的绝对路径，--repo 指向目标；不必为每个项目复制脚本或建配置表。setup 前核对目标项目规则，工具保留已有改动；Husky 追加段使用 workspace 相对路径，离开该布局且共享工具不存在时保留原检查，重新接入后恢复文档检查。
-
-索引缓存放在本工具 .cache/docs，仅保存词项、路径、标题、哈希与来源引用，源正文留在原仓库。每次检索重新核对文档内容哈希，结果正文从源文件读取；中文/英文关键词检索可换词重查，不是向量问答。扫描深度为 3，排除依赖、缓存、归档仓库、链接与凭证命名文件；非 Git workspace 的根 README/AGENTS/CLAUDE 也可检索。
-
-结果标注 current/historical、Git 版本和源内容哈希。归档/报告目录、阶段快照、带日期的验收/报告默认归历史，明确标记活跃的阶段文件保留在默认结果中；current 只表示未按这些规则归历史，不证明内容符合当前实现。needs-review 表示引用来源有变化的线索，unverified 表示没有自动确认语义；二者都不代表人工已经核对。默认不显示历史文档，--history 可纳入。无法从检索结果推断上线、业务完成或人工接受。
+通用文档维护默认通过 workspace 上层技能入口调用；项目内只发现本项目的内容技能。
 
 ## 信息正本
 

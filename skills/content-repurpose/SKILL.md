@@ -1,6 +1,8 @@
 ---
 name: content-repurpose
 description: 把同一份已核实视频策划派生成不同画幅、镜头长度、封面与平台文案。适用于横竖版、短切片、三平台物料适配；不负责账号登录或点击发布。
+metadata:
+  category: 4. 交付与运营
 ---
 
 # 平台版本派生

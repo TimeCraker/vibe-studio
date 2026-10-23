@@ -6,6 +6,7 @@ description: |
   基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检）融合。
 license: MIT
 metadata:
+  category: 1. 策划与文案
   version: "5.0.0"
 ---
 

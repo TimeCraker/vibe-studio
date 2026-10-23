@@ -1,6 +1,8 @@
 ---
 name: video-motion
 description: 用 Remotion 给真实录像叠加字幕、数据和圈注，或直绘介绍片场景与封面。适用于视频动效、屏录标注和产品介绍片制作；介绍片由总装工作流调度，已有网页动画走 web-capture。
+metadata:
+  category: 3. 视频制作
 ---
 
 # video-motion — 视频底材叠动效（Remotion）

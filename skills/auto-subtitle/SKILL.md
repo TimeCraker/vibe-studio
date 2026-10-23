@@ -1,6 +1,8 @@
 ---
 name: auto-subtitle
 description: 转写工具，不是成片入口。faster-whisper 把 mp4/wav/flac 转成 cues.json + srt，字段与 video-motion SubtitleCue 对齐。用户说「自动字幕 / 语音转字幕 / 转写 / 出字幕文件 / faster-whisper」时使用。用户说做介绍视频走 workflows/explainer-video.md；说给录像加讲解走 video-motion FootageOverlay，需要转写时再调本 skill。
+metadata:
+  category: 3. 视频制作
 ---
 
 # auto-subtitle — 音视频自动转写出 SubtitleCue

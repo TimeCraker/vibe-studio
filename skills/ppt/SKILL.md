@@ -1,6 +1,8 @@
 ---
 name: ppt
 description: 用 python-pptx 代码生成专业 PPT / 幻灯片 / 演示文稿（deck / slides / pptx）。用户说「做个 PPT / 幻灯片 / 演示文稿 / 项目介绍 deck / 把项目做成 slides」时使用；改现有 pptx 同样适用。用户说做介绍视频时不要只开本 skill，走 workflows/explainer-video.md，本 skill 只负责其中的 deck 取材。
+metadata:
+  category: 2. 演示文稿
 ---
 
 # ppt — 代码生成专业 PPT

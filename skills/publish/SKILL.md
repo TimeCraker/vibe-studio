@@ -1,6 +1,8 @@
 ---
 name: publish
 description: 发布辅助工具，不是成片入口。把已经做好的成片按平台要求填进投稿表单（B 站 / 抖音 / 小红书三端），人机分工是硬约束：你登录、你点发布，脚本只填表。用户说「发 B 站 / 发抖音 / 发小红书 / 投稿 / 帮我填投稿信息 / 自动发布」时使用。片子还没做走 workflows/explainer-video.md。
+metadata:
+  category: 4. 交付与运营
 ---
 
 # publish — 投稿表单填写助手

@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 文档维护
 
-收尾运行 `node scripts/docs.mjs maintain`，按影响清单与实际 diff 修订现有说明；生成区交给工具，不新增逐次同步报告。跨仓库与检索用法见 [doc-maintainer](skills/doc-maintainer/SKILL.md)，信息正本和状态见[维护说明](docs/documentation.md)。
+收尾运行 `npm run docs:maintain`，按影响清单与实际 diff 修订现有说明；生成区交给工具，不新增逐次同步报告。先用 npm ci 安装离线工具依赖。doc-maintainer 和跨仓库工具由 workspace 管理，信息正本和作品状态见[维护说明](docs/documentation.md)。
 
 改完跑 `python scripts/check-docs.py`；检查通过不能代替文字承诺、当前状态与实际实现的人工核对。
 

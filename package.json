@@ -1,6 +1,10 @@
 {
-  "name": "vibe-studio", "version": "1.0.0", "private": true,
-  "engines": { "node": ">=22" },
+  "name": "vibe-studio",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "check": "python scripts/check-docs.py",
@@ -11,5 +15,8 @@
     "docs:check": "node scripts/docs.mjs check",
     "verify:capture": "node tests/browser-capture.mjs",
     "verify:workflow": "node tests/workflow-smoke.mjs"
+  },
+  "devDependencies": {
+    "@timecraker/workspace-docs": "file:tools/timecraker-workspace-docs-1.0.0.tgz"
   }
 }
