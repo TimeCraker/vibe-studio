@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "duration": 124,
+  "normalize": false,
+  "ducking": false,
+  "tracks": [
+    {
+      "file": "assets/carefree.mp3",
+      "role": "music",
+      "duration": 16.5,
+      "gainDb": -2,
+      "fadeIn": 1,
+      "fadeOut": 1
+    },
+    {
+      "file": "assets/carefree.mp3",
+      "role": "music",
+      "start": 15.5,
+      "in": 15.5,
+      "duration": 108.5,
+      "gainDb": -7,
+      "fadeIn": 1,
+      "fadeOut": 2
+    }
+  ]
+}

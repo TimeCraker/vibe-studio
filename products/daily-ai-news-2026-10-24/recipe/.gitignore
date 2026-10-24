@@ -1,0 +1,6 @@
+evidence/
+assets/*.mp3
+assets/*.wav
+audio/*.wav
+audio/*.mp3
+remotion-app/.baseline/

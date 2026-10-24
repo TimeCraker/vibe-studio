@@ -1,0 +1,447 @@
+{
+  "date": "2026-10-24",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "durationInFrames": 7440,
+  "seconds": 124,
+  "voice": "human-pending",
+  "timingMode": "reading-estimate-pending-human-voice",
+  "scenes": [
+    {
+      "id": "global",
+      "start": 0,
+      "end": 8,
+      "title": "全球综合智力 TOP15",
+      "purpose": "完整榜单，前三突出，所有行显示官方厂商图标",
+      "subject": "当期 ECI 全球排名",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "start": 8,
+      "end": 16,
+      "title": "国产综合智力 TOP15",
+      "purpose": "与全球榜平齐排版，不合并不同模型版本",
+      "subject": "同源 ECI 国内排名",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "start": 16,
+      "end": 26,
+      "title": "今日资讯总览",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "今日资讯总览",
+      "claimIds": [
+        "kimi-launch",
+        "harness-method",
+        "voice-features"
+      ]
+    },
+    {
+      "id": "kimi-title",
+      "start": 26,
+      "end": 37,
+      "title": "Kimi K3.1 Pro",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "Kimi K3.1 Pro",
+      "claimIds": [
+        "kimi-launch"
+      ]
+    },
+    {
+      "id": "kimi-bench",
+      "start": 37,
+      "end": 51,
+      "title": "编程表现怎么看",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "编程表现怎么看",
+      "claimIds": [
+        "kimi-terminal"
+      ]
+    },
+    {
+      "id": "kimi-creative",
+      "start": 51,
+      "end": 63,
+      "title": "代码之外，还能做什么",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "代码之外，还能做什么",
+      "claimIds": [
+        "kimi-creative"
+      ]
+    },
+    {
+      "id": "kimi-access",
+      "start": 63,
+      "end": 75,
+      "title": "现在能用，权重还要等",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "现在能用，权重还要等",
+      "claimIds": [
+        "kimi-access"
+      ]
+    },
+    {
+      "id": "harness",
+      "start": 75,
+      "end": 89,
+      "title": "让智能体改进工作方法",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "让智能体改进工作方法",
+      "claimIds": [
+        "harness-method"
+      ]
+    },
+    {
+      "id": "harness-use",
+      "start": 89,
+      "end": 99,
+      "title": "对做 Agent 的人有什么用",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "对做 Agent 的人有什么用",
+      "claimIds": [
+        "harness-components"
+      ]
+    },
+    {
+      "id": "voice",
+      "start": 99,
+      "end": 114,
+      "title": "本地语音工作台",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "本地语音工作台",
+      "claimIds": [
+        "voice-features"
+      ]
+    },
+    {
+      "id": "close",
+      "start": 114,
+      "end": 124,
+      "title": "今天值得记住",
+      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "subject": "今天值得记住",
+      "claimIds": [
+        "kimi-access",
+        "harness-method",
+        "voice-features"
+      ]
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "scene": "overview",
+      "text": "大家好，欢迎收看今日AI资讯。",
+      "from": 978,
+      "to": 1114
+    },
+    {
+      "id": 2,
+      "scene": "overview",
+      "text": "今天先看Kimi的新模型。",
+      "from": 1120,
+      "to": 1246
+    },
+    {
+      "id": 3,
+      "scene": "overview",
+      "text": "再聊让智能体改进工作方法的工具，",
+      "from": 1252,
+      "to": 1410
+    },
+    {
+      "id": 4,
+      "scene": "overview",
+      "text": "还有一个本地语音工作台。",
+      "from": 1416,
+      "to": 1530
+    },
+    {
+      "id": 5,
+      "scene": "kimi-title",
+      "text": "月之暗面发布了K3.1 Pro。",
+      "from": 1578,
+      "to": 1721
+    },
+    {
+      "id": 6,
+      "scene": "kimi-title",
+      "text": "官方给出的规格是三万亿级参数，",
+      "from": 1727,
+      "to": 1881
+    },
+    {
+      "id": 7,
+      "scene": "kimi-title",
+      "text": "以及一百万token的上下文。",
+      "from": 1887,
+      "to": 2041
+    },
+    {
+      "id": 8,
+      "scene": "kimi-title",
+      "text": "这次重点是编程和长任务能力。",
+      "from": 2047,
+      "to": 2190
+    },
+    {
+      "id": 9,
+      "scene": "kimi-bench",
+      "text": "先看官方公布的终端任务评测。",
+      "from": 2238,
+      "to": 2375
+    },
+    {
+      "id": 10,
+      "scene": "kimi-bench",
+      "text": "Kimi的成绩是百分之65.7，",
+      "from": 2381,
+      "to": 2529
+    },
+    {
+      "id": 11,
+      "scene": "kimi-bench",
+      "text": "高于GPT的58.2，",
+      "from": 2535,
+      "to": 2634
+    },
+    {
+      "id": 12,
+      "scene": "kimi-bench",
+      "text": "略低于Claude的66.4。",
+      "from": 2640,
+      "to": 2777
+    },
+    {
+      "id": 13,
+      "scene": "kimi-bench",
+      "text": "这是发布方整理的比较，",
+      "from": 2783,
+      "to": 2887
+    },
+    {
+      "id": 14,
+      "scene": "kimi-bench",
+      "text": "不能直接当成所有任务的胜负。",
+      "from": 2893,
+      "to": 3030
+    },
+    {
+      "id": 15,
+      "scene": "kimi-creative",
+      "text": "做游戏和三维内容的人可以关注。",
+      "from": 3078,
+      "to": 3224
+    },
+    {
+      "id": 16,
+      "scene": "kimi-creative",
+      "text": "官方展示了Godot游戏作品，",
+      "from": 3230,
+      "to": 3375
+    },
+    {
+      "id": 17,
+      "scene": "kimi-creative",
+      "text": "也展示了三维模型制作入口。",
+      "from": 3381,
+      "to": 3505
+    },
+    {
+      "id": 18,
+      "scene": "kimi-creative",
+      "text": "这些是官方案例，",
+      "from": 3511,
+      "to": 3609
+    },
+    {
+      "id": 19,
+      "scene": "kimi-creative",
+      "text": "实际交付质量还需要自己测试。",
+      "from": 3615,
+      "to": 3750
+    },
+    {
+      "id": 20,
+      "scene": "kimi-access",
+      "text": "使用时间也要分开看。",
+      "from": 3798,
+      "to": 3896
+    },
+    {
+      "id": 21,
+      "scene": "kimi-access",
+      "text": "网页、编程工具和API已经上线。",
+      "from": 3902,
+      "to": 4047
+    },
+    {
+      "id": 22,
+      "scene": "kimi-access",
+      "text": "完整权重承诺在十一月四日前开放。",
+      "from": 4053,
+      "to": 4210
+    },
+    {
+      "id": 23,
+      "scene": "kimi-access",
+      "text": "所以现在可以体验和接入，",
+      "from": 4216,
+      "to": 4329
+    },
+    {
+      "id": 24,
+      "scene": "kimi-access",
+      "text": "本地部署要等权重与许可落地。",
+      "from": 4335,
+      "to": 4470
+    },
+    {
+      "id": 25,
+      "scene": "harness",
+      "text": "第二个是近期工具观察。",
+      "from": 4518,
+      "to": 4616
+    },
+    {
+      "id": 26,
+      "scene": "harness",
+      "text": "谷歌研究仓库里的Harness平方，",
+      "from": 4622,
+      "to": 4793
+    },
+    {
+      "id": 27,
+      "scene": "harness",
+      "text": "保持模型权重不变，",
+      "from": 4799,
+      "to": 4893
+    },
+    {
+      "id": 28,
+      "scene": "harness",
+      "text": "让智能体尝试修改提示词和工具配置。",
+      "from": 4899,
+      "to": 5060
+    },
+    {
+      "id": 29,
+      "scene": "harness",
+      "text": "在同一个任务上试跑，再比较结果。",
+      "from": 5066,
+      "to": 5206
+    },
+    {
+      "id": 30,
+      "scene": "harness",
+      "text": "再把有效修改组合起来。",
+      "from": 5212,
+      "to": 5310
+    },
+    {
+      "id": 31,
+      "scene": "harness-use",
+      "text": "它能改的还有记忆、技能和脚本。",
+      "from": 5358,
+      "to": 5501
+    },
+    {
+      "id": 32,
+      "scene": "harness-use",
+      "text": "做智能体产品时，",
+      "from": 5507,
+      "to": 5611
+    },
+    {
+      "id": 33,
+      "scene": "harness-use",
+      "text": "可以把工作流程本身拿来比较。",
+      "from": 5617,
+      "to": 5761
+    },
+    {
+      "id": 34,
+      "scene": "harness-use",
+      "text": "效果仍要在自己的任务上验证。",
+      "from": 5767,
+      "to": 5910
+    },
+    {
+      "id": 35,
+      "scene": "voice",
+      "text": "另一个是开源工具VoiceStudio。",
+      "from": 5958,
+      "to": 6159
+    },
+    {
+      "id": 36,
+      "scene": "voice",
+      "text": "它把语音设计、转写和视频配音，",
+      "from": 6165,
+      "to": 6301
+    },
+    {
+      "id": 37,
+      "scene": "voice",
+      "text": "放进同一个本地工作台。",
+      "from": 6307,
+      "to": 6411
+    },
+    {
+      "id": 38,
+      "scene": "voice",
+      "text": "也提供供智能体调用的本地接口。",
+      "from": 6417,
+      "to": 6564
+    },
+    {
+      "id": 39,
+      "scene": "voice",
+      "text": "做长旁白时可以关注，",
+      "from": 6570,
+      "to": 6668
+    },
+    {
+      "id": 40,
+      "scene": "voice",
+      "text": "先确认硬件和所选引擎的要求。",
+      "from": 6674,
+      "to": 6810
+    },
+    {
+      "id": 41,
+      "scene": "close",
+      "text": "今天的重点是Kimi的新模型，",
+      "from": 6858,
+      "to": 7013
+    },
+    {
+      "id": 42,
+      "scene": "close",
+      "text": "以及两种改进制作流程的工具。",
+      "from": 7019,
+      "to": 7162
+    },
+    {
+      "id": 43,
+      "scene": "close",
+      "text": "来源和使用入口放在简介里。",
+      "from": 7168,
+      "to": 7300
+    },
+    {
+      "id": 44,
+      "scene": "close",
+      "text": "我们下期见。",
+      "from": 7306,
+      "to": 7410
+    }
+  ]
+}

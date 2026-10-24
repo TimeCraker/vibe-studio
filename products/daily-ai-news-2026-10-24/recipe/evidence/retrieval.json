@@ -1,0 +1,51 @@
+[
+  {
+    "file": "bilibili-entry.html",
+    "url": "https://www.bilibili.com/toy/ai-model-world",
+    "fetchedAt": "2026-10-24T08:38:12.214524+00:00",
+    "sha256": "ed703a4801e96d05657a3263c8606e03da92fab78bdc70c769de0f55b8245eec",
+    "bytes": 3801
+  },
+  {
+    "file": "models.json",
+    "url": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+    "fetchedAt": "2026-10-24T08:38:13.948210+00:00",
+    "sha256": "3ce48ad72d83d0abdb3720755a1b1bd6f6ab9f2eca15d67512dfc8f22f5e12f6",
+    "bytes": 3045093
+  },
+  {
+    "file": "kimi-blog.html",
+    "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+    "fetchedAt": "2026-10-24T08:38:15.023540+00:00",
+    "sha256": "40b9934ea4e4b595116c0b1d4956e1275dc8bdd47dc7fc4a381e51b2b5996c14",
+    "bytes": 332669
+  },
+  {
+    "file": "kimi-brand.html",
+    "url": "https://www.kimi.com/resources/kimi-brand",
+    "fetchedAt": "2026-10-24T08:38:15.445481+00:00",
+    "sha256": "c1de32b6582b01a06f98715d92321378a43851760a522c4c6342a6b3a1028034",
+    "bytes": 320992
+  },
+  {
+    "file": "harness2-readme.md",
+    "url": "https://raw.githubusercontent.com/google-research/harness2/main/README.md",
+    "fetchedAt": "2026-10-24T08:38:16.218106+00:00",
+    "sha256": "17639ac4194bb5c042cbf645430a772ae9be81baee95ab41eaea73cafa138f23",
+    "bytes": 9374
+  },
+  {
+    "file": "harness2-meta.json",
+    "url": "https://api.github.com/repos/google-research/harness2",
+    "fetchedAt": "2026-10-24T08:38:16.844640+00:00",
+    "sha256": "1b6a7a87c28ed144b1a77dda4145f582571ce11c497205c5dcf862b775d9c36f",
+    "bytes": 6808
+  },
+  {
+    "file": "voicestudio-readme.md",
+    "url": "https://raw.githubusercontent.com/debpalash/VoiceStudio/main/README.md",
+    "fetchedAt": "2026-10-24T08:38:17.783679+00:00",
+    "sha256": "4660e2345d0954d12a8aeb5420269f301d8ed238cf4d064b399daac8029c6865",
+    "bytes": 8723
+  }
+]

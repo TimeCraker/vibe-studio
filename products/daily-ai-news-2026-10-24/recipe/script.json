@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "title": "2026年10月24日每日AI资讯",
+    "lang": "zh-CN",
+    "budgetSeconds": 108,
+    "charsPerSecond": 5.8,
+    "bannedWords": []
+  },
+  "segments": [
+    {
+      "id": 1,
+      "kind": "subtitle",
+      "text": "大家好，欢迎收看今日AI资讯。",
+      "ref": "page 1"
+    },
+    {
+      "id": 2,
+      "kind": "subtitle",
+      "text": "今天先看Kimi的新模型。",
+      "ref": "page 1"
+    },
+    {
+      "id": 3,
+      "kind": "subtitle",
+      "text": "再聊让智能体改进工作方法的工具，",
+      "ref": "page 1"
+    },
+    {
+      "id": 4,
+      "kind": "subtitle",
+      "text": "还有一个本地语音工作台。",
+      "ref": "page 1"
+    },
+    {
+      "id": 5,
+      "kind": "subtitle",
+      "text": "月之暗面发布了K3.1 Pro。",
+      "ref": "page 2"
+    },
+    {
+      "id": 6,
+      "kind": "subtitle",
+      "text": "官方给出的规格是三万亿级参数，",
+      "ref": "page 2"
+    },
+    {
+      "id": 7,
+      "kind": "subtitle",
+      "text": "以及一百万token的上下文。",
+      "ref": "page 2"
+    },
+    {
+      "id": 8,
+      "kind": "subtitle",
+      "text": "这次重点是编程和长任务能力。",
+      "ref": "page 2"
+    },
+    {
+      "id": 9,
+      "kind": "subtitle",
+      "text": "先看官方公布的终端任务评测。",
+      "ref": "page 3"
+    },
+    {
+      "id": 10,
+      "kind": "subtitle",
+      "text": "Kimi的成绩是百分之65.7，",
+      "ref": "page 3"
+    },
+    {
+      "id": 11,
+      "kind": "subtitle",
+      "text": "高于GPT的58.2，",
+      "ref": "page 3"
+    },
+    {
+      "id": 12,
+      "kind": "subtitle",
+      "text": "略低于Claude的66.4。",
+      "ref": "page 3"
+    },
+    {
+      "id": 13,
+      "kind": "subtitle",
+      "text": "这是发布方整理的比较，",
+      "ref": "page 3"
+    },
+    {
+      "id": 14,
+      "kind": "subtitle",
+      "text": "不能直接当成所有任务的胜负。",
+      "ref": "page 3"
+    },
+    {
+      "id": 15,
+      "kind": "subtitle",
+      "text": "做游戏和三维内容的人可以关注。",
+      "ref": "page 4"
+    },
+    {
+      "id": 16,
+      "kind": "subtitle",
+      "text": "官方展示了Godot游戏作品，",
+      "ref": "page 4"
+    },
+    {
+      "id": 17,
+      "kind": "subtitle",
+      "text": "也展示了三维模型制作入口。",
+      "ref": "page 4"
+    },
+    {
+      "id": 18,
+      "kind": "subtitle",
+      "text": "这些是官方案例，",
+      "ref": "page 4"
+    },
+    {
+      "id": 19,
+      "kind": "subtitle",
+      "text": "实际交付质量还需要自己测试。",
+      "ref": "page 4"
+    },
+    {
+      "id": 20,
+      "kind": "subtitle",
+      "text": "使用时间也要分开看。",
+      "ref": "page 5"
+    },
+    {
+      "id": 21,
+      "kind": "subtitle",
+      "text": "网页、编程工具和API已经上线。",
+      "ref": "page 5"
+    },
+    {
+      "id": 22,
+      "kind": "subtitle",
+      "text": "完整权重承诺在十一月四日前开放。",
+      "ref": "page 5"
+    },
+    {
+      "id": 23,
+      "kind": "subtitle",
+      "text": "所以现在可以体验和接入，",
+      "ref": "page 5"
+    },
+    {
+      "id": 24,
+      "kind": "subtitle",
+      "text": "本地部署要等权重与许可落地。",
+      "ref": "page 5"
+    },
+    {
+      "id": 25,
+      "kind": "subtitle",
+      "text": "第二个是近期工具观察。",
+      "ref": "page 6"
+    },
+    {
+      "id": 26,
+      "kind": "subtitle",
+      "text": "谷歌研究仓库里的Harness平方，",
+      "ref": "page 6"
+    },
+    {
+      "id": 27,
+      "kind": "subtitle",
+      "text": "保持模型权重不变，",
+      "ref": "page 6"
+    },
+    {
+      "id": 28,
+      "kind": "subtitle",
+      "text": "让智能体尝试修改提示词和工具配置。",
+      "ref": "page 6"
+    },
+    {
+      "id": 29,
+      "kind": "subtitle",
+      "text": "在同一个任务上试跑，再比较结果。",
+      "ref": "page 6"
+    },
+    {
+      "id": 30,
+      "kind": "subtitle",
+      "text": "再把有效修改组合起来。",
+      "ref": "page 6"
+    },
+    {
+      "id": 31,
+      "kind": "subtitle",
+      "text": "它能改的还有记忆、技能和脚本。",
+      "ref": "page 7"
+    },
+    {
+      "id": 32,
+      "kind": "subtitle",
+      "text": "做智能体产品时，",
+      "ref": "page 7"
+    },
+    {
+      "id": 33,
+      "kind": "subtitle",
+      "text": "可以把工作流程本身拿来比较。",
+      "ref": "page 7"
+    },
+    {
+      "id": 34,
+      "kind": "subtitle",
+      "text": "效果仍要在自己的任务上验证。",
+      "ref": "page 7"
+    },
+    {
+      "id": 35,
+      "kind": "subtitle",
+      "text": "另一个是开源工具VoiceStudio。",
+      "ref": "page 8"
+    },
+    {
+      "id": 36,
+      "kind": "subtitle",
+      "text": "它把语音设计、转写和视频配音，",
+      "ref": "page 8"
+    },
+    {
+      "id": 37,
+      "kind": "subtitle",
+      "text": "放进同一个本地工作台。",
+      "ref": "page 8"
+    },
+    {
+      "id": 38,
+      "kind": "subtitle",
+      "text": "也提供供智能体调用的本地接口。",
+      "ref": "page 8"
+    },
+    {
+      "id": 39,
+      "kind": "subtitle",
+      "text": "做长旁白时可以关注，",
+      "ref": "page 8"
+    },
+    {
+      "id": 40,
+      "kind": "subtitle",
+      "text": "先确认硬件和所选引擎的要求。",
+      "ref": "page 8"
+    },
+    {
+      "id": 41,
+      "kind": "subtitle",
+      "text": "今天的重点是Kimi的新模型，",
+      "ref": "page 9"
+    },
+    {
+      "id": 42,
+      "kind": "subtitle",
+      "text": "以及两种改进制作流程的工具。",
+      "ref": "page 9"
+    },
+    {
+      "id": 43,
+      "kind": "subtitle",
+      "text": "来源和使用入口放在简介里。",
+      "ref": "page 9"
+    },
+    {
+      "id": 44,
+      "kind": "subtitle",
+      "text": "我们下期见。",
+      "ref": "page 9"
+    }
+  ]
+}

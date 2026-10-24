@@ -1,0 +1,284 @@
+{
+  "date": "2026-10-24",
+  "metric": "Epoch Capabilities Index / ECI",
+  "generatedAt": "2026-10-24T01:52:45.328Z",
+  "generatedAtShanghai": "2026-10-24 09:52:45",
+  "sourceUrl": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+  "entryUrl": "https://www.bilibili.com/toy/ai-model-world",
+  "sha256": "3ce48ad72d83d0abdb3720755a1b1bd6f6ab9f2eca15d67512dfc8f22f5e12f6",
+  "scope": "Live Bilibili global and 国内 top15 observed; raw upstream values used for two decimal places. Stable score-desc/id order, no retirement, no missing-score imputation.",
+  "global": [
+    {
+      "rank": 1,
+      "id": "anthropic/claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "eci": 168.83,
+      "vendor": "anthropic",
+      "icon": "claude.png",
+      "country": "US"
+    },
+    {
+      "rank": 2,
+      "id": "openai/gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "eci": 168.81,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    },
+    {
+      "rank": 3,
+      "id": "openai/gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "eci": 168.37,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    },
+    {
+      "rank": 4,
+      "id": "anthropic/claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "eci": 166.49,
+      "vendor": "anthropic",
+      "icon": "claude.png",
+      "country": "US"
+    },
+    {
+      "rank": 5,
+      "id": "google/gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "eci": 166.45,
+      "vendor": "google",
+      "icon": "google.png",
+      "country": "US"
+    },
+    {
+      "rank": 6,
+      "id": "anthropic/claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "eci": 166.18,
+      "vendor": "anthropic",
+      "icon": "claude.png",
+      "country": "US"
+    },
+    {
+      "rank": 7,
+      "id": "anthropic/claude-opus-5",
+      "name": "Claude Opus 5",
+      "eci": 163.94,
+      "vendor": "anthropic",
+      "icon": "claude.png",
+      "country": "US"
+    },
+    {
+      "rank": 8,
+      "id": "openai/gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "eci": 163.73,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    },
+    {
+      "rank": 9,
+      "id": "anthropic/claude-fable-5",
+      "name": "Claude Fable 5",
+      "eci": 163.42,
+      "vendor": "anthropic",
+      "icon": "claude.png",
+      "country": "US"
+    },
+    {
+      "rank": 10,
+      "id": "openai/gpt-5.5-pro",
+      "name": "GPT-5.5 Pro",
+      "eci": 162.91,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    },
+    {
+      "rank": 11,
+      "id": "openai/gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "eci": 162.79,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    },
+    {
+      "rank": 12,
+      "id": "meta/muse-wonder",
+      "name": "Muse Wonder",
+      "eci": 161.85,
+      "vendor": "meta",
+      "icon": "meta.svg",
+      "country": "US"
+    },
+    {
+      "rank": 13,
+      "id": "meta/muse-wonder-1.0",
+      "name": "Muse Wonder",
+      "eci": 161.85,
+      "vendor": "meta",
+      "icon": "meta.svg",
+      "country": "US"
+    },
+    {
+      "rank": 14,
+      "id": "openai/gpt-5.6-terra",
+      "name": "GPT-5.6 Terra",
+      "eci": 160.09,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    },
+    {
+      "rank": 15,
+      "id": "openai/gpt-5.5",
+      "name": "GPT-5.5",
+      "eci": 159.68,
+      "vendor": "openai",
+      "icon": "openai.svg",
+      "country": "US"
+    }
+  ],
+  "domestic": [
+    {
+      "rank": 1,
+      "id": "moonshotai/kimi-k3",
+      "name": "Kimi K3",
+      "eci": 157.86,
+      "vendor": "moonshotai",
+      "icon": "kimi.png",
+      "country": "CN"
+    },
+    {
+      "rank": 2,
+      "id": "alibaba/qwen3.8-max",
+      "name": "Qwen3.8 Max",
+      "eci": 157.4,
+      "vendor": "alibaba",
+      "icon": "qwen.png",
+      "country": "CN"
+    },
+    {
+      "rank": 3,
+      "id": "alibaba/qwen3.8-max-preview",
+      "name": "Qwen3.8 Max Preview",
+      "eci": 157.4,
+      "vendor": "alibaba",
+      "icon": "qwen.png",
+      "country": "CN"
+    },
+    {
+      "rank": 4,
+      "id": "zhipuai/glm-5.3",
+      "name": "GLM-5.3",
+      "eci": 155.99,
+      "vendor": "zhipuai",
+      "icon": "glm.svg",
+      "country": "CN"
+    },
+    {
+      "rank": 5,
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "eci": 155.93,
+      "vendor": "deepseek",
+      "icon": "deepseek.ico",
+      "country": "CN"
+    },
+    {
+      "rank": 6,
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "eci": 155.93,
+      "vendor": "deepseek",
+      "icon": "deepseek.ico",
+      "country": "CN"
+    },
+    {
+      "rank": 7,
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek V4 Pro 0813",
+      "eci": 155.64,
+      "vendor": "deepseek",
+      "icon": "deepseek.ico",
+      "country": "CN"
+    },
+    {
+      "rank": 8,
+      "id": "alibaba/qwen3.8-max-0902",
+      "name": "Qwen3.8 Max 0902",
+      "eci": 155.08,
+      "vendor": "alibaba",
+      "icon": "qwen.png",
+      "country": "CN"
+    },
+    {
+      "rank": 9,
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "name": "DeepSeek V4 Flash 0731",
+      "eci": 154.76,
+      "vendor": "deepseek",
+      "icon": "deepseek.ico",
+      "country": "CN"
+    },
+    {
+      "rank": 10,
+      "id": "alibaba/qwen3.7-max",
+      "name": "Qwen3.7 Max",
+      "eci": 154.04,
+      "vendor": "alibaba",
+      "icon": "qwen.png",
+      "country": "CN"
+    },
+    {
+      "rank": 11,
+      "id": "zhipuai/glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "eci": 153.08,
+      "vendor": "zhipuai",
+      "icon": "glm.svg",
+      "country": "CN"
+    },
+    {
+      "rank": 12,
+      "id": "zhipuai/glm-5.2",
+      "name": "GLM-5.2",
+      "eci": 151.94,
+      "vendor": "zhipuai",
+      "icon": "glm.svg",
+      "country": "CN"
+    },
+    {
+      "rank": 13,
+      "id": "alibaba/qwen3.8-27b",
+      "name": "Qwen3.8 27B",
+      "eci": 151.69,
+      "vendor": "alibaba",
+      "icon": "qwen.png",
+      "country": "CN"
+    },
+    {
+      "rank": 14,
+      "id": "moonshotai/kimi-k2.6",
+      "name": "Kimi K2.6",
+      "eci": 150.94,
+      "vendor": "moonshotai",
+      "icon": "kimi.png",
+      "country": "CN"
+    },
+    {
+      "rank": 15,
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "eci": 150.11,
+      "vendor": "moonshotai",
+      "icon": "kimi.png",
+      "country": "CN"
+    }
+  ]
+}

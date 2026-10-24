@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "status": "processed-needs-listening",
+  "output": "audio/mix.wav",
+  "outputSha256": "1b84e92212b88c60759c747cc18176a0bcb5d103e8c9c9add2b5b81821884167",
+  "duration": 124,
+  "sampleRate": 48000,
+  "channels": 2,
+  "config": {
+    "path": "audio.json",
+    "sha256": "5552394fa294853b3dc20830752318c2d6a25d03c2fdd6099e1317af6535ce74"
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\assets\\carefree.mp3",
+      "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+      "role": "music",
+      "start": 0,
+      "in": 0,
+      "duration": 16.5
+    },
+    {
+      "path": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\assets\\carefree.mp3",
+      "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+      "role": "music",
+      "start": 15.5,
+      "in": 15.5,
+      "duration": 108.5
+    }
+  ],
+  "duckingApplied": false,
+  "normalized": false,
+  "target": {
+    "integrated": -16,
+    "truePeak": -1.5,
+    "range": 11
+  },
+  "before": {
+    "input_i": "-25.23",
+    "input_tp": "-7.93",
+    "input_lra": "7.40",
+    "input_thresh": "-35.27",
+    "output_i": "-18.00",
+    "output_tp": "-2.55",
+    "output_lra": "5.20",
+    "output_thresh": "-28.05",
+    "normalization_type": "dynamic",
+    "target_offset": "2.00"
+  },
+  "after": {
+    "input_i": "-25.23",
+    "input_tp": "-7.93",
+    "input_lra": "7.40",
+    "input_thresh": "-35.27",
+    "output_i": "-18.00",
+    "output_tp": "-2.55",
+    "output_lra": "5.20",
+    "output_thresh": "-28.05",
+    "normalization_type": "dynamic",
+    "target_offset": "2.00"
+  },
+  "errors": [],
+  "warnings": [
+    "Normalization disabled by project config"
+  ],
+  "humanReview": {
+    "status": "pending",
+    "checks": [
+      "intelligibility",
+      "music balance",
+      "cuts and fades",
+      "distortion",
+      "sync with picture"
+    ]
+  }
+}

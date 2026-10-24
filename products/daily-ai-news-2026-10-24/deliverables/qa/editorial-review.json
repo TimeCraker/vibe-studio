@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "status": "observations-recorded-needs-human-review",
+  "video": "render/daily-ai-news-2026-10-24-bgm-preview.mp4",
+  "videoSha256": "6b04c5e39ad9bcd5d677e6129e4fff46fa7306f3dcffe4d6f51c0f21939a4fd7",
+  "duration": 124,
+  "reviewer": "Codex actual final-file frame review",
+  "inspection": {
+    "visual": [
+      {
+        "start": 7,
+        "end": 7.016666666666667
+      },
+      {
+        "start": 15,
+        "end": 15.016666666666667
+      },
+      {
+        "start": 34,
+        "end": 34.016666666666666
+      },
+      {
+        "start": 97,
+        "end": 97.01666666666667
+      },
+      {
+        "start": 112,
+        "end": 112.01666666666667
+      }
+    ],
+    "audio": []
+  },
+  "coverage": {
+    "visualFullTimeline": false,
+    "audioFullTimeline": false
+  },
+  "checks": [
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 7,
+      "end": 7.016666666666667,
+      "note": "全球TOP15、官标、分数与来源显示完整；右侧细项适合横屏和暂停。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 15,
+      "end": 15.016666666666667,
+      "note": "国产TOP15与全球同一布局，保留版本，页脚注明K3.1 Pro暂无ECI。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 34,
+      "end": 34.016666666666666,
+      "note": "Kimi头条已有官方主视觉与型号、规格，字幕在安全区内。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 97,
+      "end": 97.01666666666667,
+      "note": "Harness官方结构图与来源可见；细字作为参考图而非要求逐字阅读。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 112,
+      "end": 112.01666666666667,
+      "note": "VoiceStudio已配真实官方配音工作区截图，主要中文功能与字幕没有互相覆盖。"
+    },
+    {
+      "kind": "audio",
+      "status": "unreviewed",
+      "note": "BGM已技术测量；未实际审听，不声称曲风、衔接和混音获得接受。"
+    },
+    {
+      "kind": "sync",
+      "status": "unreviewed",
+      "note": "用户真人录音尚未提供；字幕与镜头是偏快阅读估时，需录音后重排。"
+    },
+    {
+      "kind": "story",
+      "status": "unreviewed",
+      "note": "Studio和实际MP4已有播放抽查，未完整连续审阅所有时间段。"
+    },
+    {
+      "kind": "facts",
+      "status": "unreviewed",
+      "note": "选题与claims已有来源核查；本条不冒充全片所有字幕逐帧事实终审。"
+    }
+  ],
+  "unreviewedKinds": [
+    "audio",
+    "sync",
+    "story",
+    "facts"
+  ],
+  "humanReview": {
+    "status": "pending"
+  },
+  "meaning": "Declared observations and coverage, not independent proof of watching/listening, factual correctness or human acceptance"
+}

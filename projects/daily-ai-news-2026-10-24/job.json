@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "steps": [
+    {
+      "id": "deps",
+      "command": [
+        "node",
+        "scripts/deps.mjs"
+      ],
+      "inputs": [
+        "remotion-app/package.json",
+        "remotion-app/package-lock.json",
+        "scripts/deps.mjs"
+      ],
+      "outputs": [
+        ".studio/deps.json"
+      ],
+      "timeoutSeconds": 900
+    },
+    {
+      "id": "inputs",
+      "command": [
+        "node",
+        "scripts/build-inputs.mjs"
+      ],
+      "inputs": [
+        "edition.json",
+        "claims.json",
+        "evidence/models.json",
+        "assets/sources.json",
+        "assets",
+        "scripts/build-inputs.mjs"
+      ],
+      "outputs": [
+        "ranking.json",
+        "timeline.json",
+        "script.json",
+        "storyboard.json",
+        "audio.json",
+        "captions-preview.srt",
+        "narration.md",
+        "remotion-app/public/edition"
+      ],
+      "timeoutSeconds": 120
+    },
+    {
+      "id": "plan",
+      "command": [
+        "node",
+        "{repo}/skills/content-director/scripts/validate-plan.mjs",
+        "{project}"
+      ],
+      "inputs": [
+        "storyboard.json"
+      ],
+      "outputs": []
+    },
+    {
+      "id": "typecheck",
+      "cwd": "remotion-app",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "timeline.json",
+        "ranking.json",
+        "edition.json"
+      ],
+      "outputs": []
+    },
+    {
+      "id": "audio",
+      "command": [
+        "node",
+        "{repo}/scripts/studio.mjs",
+        "audio",
+        "--project",
+        "{project}"
+      ],
+      "inputs": [
+        "audio.json",
+        "assets/carefree.mp3"
+      ],
+      "outputs": [
+        "audio/mix.wav",
+        "audio/mix.wav.json"
+      ],
+      "timeoutSeconds": 180
+    },
+    {
+      "id": "stills",
+      "command": [
+        "node",
+        "scripts/render.mjs",
+        "stills"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "remotion-app/public/edition",
+        "timeline.json",
+        "ranking.json",
+        "edition.json",
+        "audio/mix.wav",
+        "scripts/render.mjs"
+      ],
+      "outputs": [
+        "render/cover.png",
+        "render/stills/global.png",
+        "render/stills/domestic.png",
+        "render/stills/voice.png"
+      ],
+      "timeoutSeconds": 900
+    },
+    {
+      "id": "sample",
+      "command": [
+        "node",
+        "scripts/render.mjs",
+        "sample"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "remotion-app/public/edition",
+        "timeline.json",
+        "ranking.json",
+        "edition.json",
+        "audio/mix.wav",
+        "scripts/render.mjs"
+      ],
+      "outputs": [
+        "render/daily-ai-news-2026-10-24-sample.mp4"
+      ],
+      "timeoutSeconds": 1200
+    },
+    {
+      "id": "render",
+      "command": [
+        "node",
+        "scripts/render.mjs",
+        "video"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "remotion-app/public/edition",
+        "timeline.json",
+        "ranking.json",
+        "edition.json",
+        "audio/mix.wav",
+        "scripts/render.mjs"
+      ],
+      "outputs": [
+        "render/daily-ai-news-2026-10-24-bgm-preview.mp4"
+      ],
+      "timeoutSeconds": 5400
+    },
+    {
+      "id": "qc",
+      "command": [
+        "node",
+        "{repo}/skills/media-qc/scripts/check.mjs",
+        "--project",
+        "{project}",
+        "--video",
+        "render/daily-ai-news-2026-10-24-bgm-preview.mp4",
+        "--srt",
+        "captions-preview.srt",
+        "--require-audio",
+        "--out",
+        "qa/media-report.json"
+      ],
+      "inputs": [
+        "render/daily-ai-news-2026-10-24-bgm-preview.mp4",
+        "captions-preview.srt",
+        "qc.json"
+      ],
+      "outputs": [
+        "qa/media-report.json"
+      ],
+      "timeoutSeconds": 600
+    },
+    {
+      "id": "materials",
+      "command": [
+        "node",
+        "scripts/prepare-publish.mjs"
+      ],
+      "inputs": [
+        "variants.json",
+        "storyboard.json",
+        "timeline.json",
+        "captions-preview.srt",
+        "scripts/prepare-publish.mjs"
+      ],
+      "outputs": [
+        "publish-plan.json",
+        "exports/bili/captions.srt",
+        "exports/bili/form.json"
+      ],
+      "timeoutSeconds": 60
+    }
+  ]
+}

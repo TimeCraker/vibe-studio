@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "allowPlaceholders": false,
+  "frames": {
+    "global": "render/stills/global.png",
+    "domestic": "render/stills/domestic.png",
+    "overview": "render/stills/overview.png",
+    "kimi-title": "render/stills/kimi-title.png",
+    "kimi-bench": "render/stills/kimi-bench.png",
+    "kimi-creative": "render/stills/kimi-creative.png",
+    "kimi-access": "render/stills/kimi-access.png",
+    "harness": "render/stills/harness.png",
+    "harness-use": "render/stills/harness-use.png",
+    "voice": "render/stills/voice.png",
+    "close": "render/stills/close.png"
+  },
+  "note": "This episode used representative Remotion renders/sample, not a separate animatic export."
+}

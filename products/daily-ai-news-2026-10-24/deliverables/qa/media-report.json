@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "status": "technical-pass-needs-human-review",
+  "ok": true,
+  "video": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\render\\daily-ai-news-2026-10-24-bgm-preview.mp4",
+  "videoSha256": "6b04c5e39ad9bcd5d677e6129e4fff46fa7306f3dcffe4d6f51c0f21939a4fd7",
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "duration": 124,
+  "videoCodec": "h264",
+  "audio": true,
+  "loudness": {
+    "integratedLufs": "-25.27",
+    "truePeakDbtp": "-7.96",
+    "rangeLu": "7.50"
+  },
+  "black": [],
+  "freezes": [
+    1.2,
+    8.733333,
+    12.5,
+    16.3,
+    20.883333,
+    23.983333,
+    26.366667,
+    30.633333,
+    34.166667,
+    37.3,
+    44.25,
+    46.283333,
+    51.65,
+    53.733333,
+    65.3,
+    67.85,
+    70.166667,
+    76.933333,
+    79.516667,
+    84.533333,
+    89.516667,
+    91.683333,
+    99.616667,
+    103.166667,
+    109.333333,
+    116.883333
+  ],
+  "subtitles": {
+    "errors": [],
+    "warnings": [],
+    "count": 44
+  },
+  "errors": [],
+  "warnings": [
+    "static intervals need editorial review",
+    "integrated loudness outside project range"
+  ],
+  "evidence": {
+    "contactSheet": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\qa\\media-report-contact-sheet.png",
+    "renderReport": null
+  },
+  "humanReview": {
+    "status": "pending",
+    "checks": [
+      "phone-size readability",
+      "subject and factual accuracy",
+      "narration timing",
+      "music vs voice",
+      "cover and platform safe areas"
+    ]
+  }
+}

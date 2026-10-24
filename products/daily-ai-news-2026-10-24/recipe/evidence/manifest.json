@@ -1,0 +1,120 @@
+{
+  "capturedFor": "2026-10-24 edition",
+  "files": [
+    {
+      "file": "bilibili-entry.html",
+      "bytes": 8700,
+      "sha256": "06c59bdf988eebf6c35125d96ef06dc23b2433f9fb5c7b91c3b72791fa6ff296"
+    },
+    {
+      "file": "claude-home.html",
+      "bytes": 432496,
+      "sha256": "9d76b3728e60d2fee41443205bc7b7960c7cd27320c8a74097ed629b91eb3b09"
+    },
+    {
+      "file": "deepseek-home.html",
+      "bytes": 115760,
+      "sha256": "0c9966ddb166946ad4ebfaa335b44b806c09d11c01a6fef20cd47c7200b2280d"
+    },
+    {
+      "file": "derive.ts",
+      "bytes": 22494,
+      "sha256": "59fbfedc94951e7417264d38107093febd4d12a0b2d8a58c47d4c17af879a749"
+    },
+    {
+      "file": "glm-gh.json",
+      "bytes": 8589,
+      "sha256": "a5d79f62931b6f21c8f39157e7ba4e6f2584cfb0b31e8641b251abcbc23f5d7a"
+    },
+    {
+      "file": "glm-home2.html",
+      "bytes": 15939,
+      "sha256": "c09f93c70ca222076db1ee8e8788e0ce23713be0bf2fc85c9a7037d8ac15d018"
+    },
+    {
+      "file": "google-home.html",
+      "bytes": 827614,
+      "sha256": "617a54a070fc0417591f46371c4b963dea50f85065886e9a96cf745eb2837050"
+    },
+    {
+      "file": "harness2-meta.json",
+      "bytes": 6808,
+      "sha256": "1b6a7a87c28ed144b1a77dda4145f582571ce11c497205c5dcf862b775d9c36f"
+    },
+    {
+      "file": "harness2-readme.md",
+      "bytes": 9374,
+      "sha256": "17639ac4194bb5c042cbf645430a772ae9be81baee95ab41eaea73cafa138f23"
+    },
+    {
+      "file": "kimi-blog.html",
+      "bytes": 332669,
+      "sha256": "40b9934ea4e4b595116c0b1d4956e1275dc8bdd47dc7fc4a381e51b2b5996c14"
+    },
+    {
+      "file": "kimi-brand.html",
+      "bytes": 320992,
+      "sha256": "c1de32b6582b01a06f98715d92321378a43851760a522c4c6342a6b3a1028034"
+    },
+    {
+      "file": "leaderboard.html",
+      "bytes": 219543,
+      "sha256": "09fb7fad8ba1b5946621ffdafd286d9c283d2df149fd3e9b6a8890be5e80e695"
+    },
+    {
+      "file": "meta-about.html",
+      "bytes": 116353,
+      "sha256": "9452a1c44b95f84cc8ccd1fb94ed4038aa217d873b9edc169336d884f1e03c6b"
+    },
+    {
+      "file": "models.json",
+      "bytes": 3045093,
+      "sha256": "3ce48ad72d83d0abdb3720755a1b1bd6f6ab9f2eca15d67512dfc8f22f5e12f6"
+    },
+    {
+      "file": "music-catalog.json",
+      "bytes": 881512,
+      "sha256": "54802ad340562624b9d1c9c97aa9f005e2b9bf79001f8a1a07ed857e68b2164a"
+    },
+    {
+      "file": "music-page.html",
+      "bytes": 26826,
+      "sha256": "0aaccc3d496fc4ae189e27e3fe2d4f5216266e3bcccf2e0ba77fb1b57a28fa94"
+    },
+    {
+      "file": "qwen-gh.json",
+      "bytes": 33602,
+      "sha256": "ec75999405935c5b2ef30bb527ca6bb3661dbca9fd056e604b5d30d677d35b14"
+    },
+    {
+      "file": "qwen-org.json",
+      "bytes": 1211,
+      "sha256": "76ac15f7c6d113665aa47bb5baa0e6799c8b45cb0c9a3c0d6b0170cf4580bbe6"
+    },
+    {
+      "file": "repo-tree.json",
+      "bytes": 58642,
+      "sha256": "86e2c10ceff2fe8cbe8a6c576394003edd6555a6da7d4bc83765acccdd033172"
+    },
+    {
+      "file": "retrieval.json",
+      "bytes": 1925,
+      "sha256": "714bb359f371369150b15431e1c5b64611143bb591b516c65a6216eae13f0d4d"
+    },
+    {
+      "file": "site.html",
+      "bytes": 948142,
+      "sha256": "8e31f7fba8ec5826783ad02dacf4c4f5b86a6fc9976333dfdb003a60bf13fc88"
+    },
+    {
+      "file": "types.ts",
+      "bytes": 10839,
+      "sha256": "2b54706252dd5508a7bad4044486e4db945af336befb86e9dfe10ab029940637"
+    },
+    {
+      "file": "voicestudio-readme.md",
+      "bytes": 8723,
+      "sha256": "4660e2345d0954d12a8aeb5420269f301d8ed238cf4d064b399daac8029c6865"
+    }
+  ]
+}

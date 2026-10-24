@@ -1,0 +1,12 @@
+{
+  "schemaVersion":1,
+  "records":[],
+  "recordFields": {
+    "contentId":"作品标识","series":"系列","platform":"bili|douyin|xhs",
+    "publishedAt":"ISO-8601 含时区","observedAt":"ISO-8601 含时区",
+    "videoSeconds":"实际秒数",
+    "metrics":{"views":null,"impressions":null,"clicks":null,"completions":null,"watchSeconds":null,"followers":null},
+    "production":{"minutes":null,"revisions":null},
+    "source":{"path":"原始导出/截图的项目相对路径","definition":"本平台的计数口径"}
+  }
+}
