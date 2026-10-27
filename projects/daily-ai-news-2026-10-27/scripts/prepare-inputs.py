@@ -70,7 +70,20 @@ if figure:
 
 records.append({"kind": "video-candidate", "url": "https://x.com/reatools/status/2112574822584918075", "discoveredAt": "https://rea.tools/showcase/", "status": "link-only-not-downloaded", "use": "Official RL-environment demo. Use only if the eventual narration discusses that feature; current REA narration focuses on software analysis, so do not insert unrelated RL footage.", "clipIn": None, "clipOut": None})
 records.append({"kind": "interactive-candidate", "url": "https://ml4-blog-widgets.netlify.app/document-search/?iframe", "discoveredAt": "https://mistral.ai/news/mistral-large-4/", "status": "not-captured", "use": "Official document-search demo candidate; not required for release-status narration."})
-write("assets/sources.json", records)
+manifest = ROOT / "assets/sources.json"
+previous = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else []
+owned_files = {r["file"] for r in records if "file" in r}
+owned_links = {(r.get("kind"), r.get("url")) for r in records if "file" not in r}
+# Preserve later scouting, screenshots, derived media and their review decisions.
+previous_by_file = {r["file"]: r for r in previous if "file" in r}
+for record in records:
+    prior = previous_by_file.get(record.get("file"), {})
+    if record.get("sha256") and record.get("sha256") == prior.get("sha256"):
+        for field in ["selection", "review", "sceneIds", "media"]:
+            if field in prior:
+                record[field] = prior[field]
+extras = [r for r in previous if r.get("file") not in owned_files and (r.get("kind"), r.get("url")) not in owned_links]
+write("assets/sources.json", records + extras)
 print("Ranking: 15 global + 15 domestic; source generated", snapshot["generatedAt"])
 for record in records:
     print(record.get("file", record.get("kind")), record["status"])

@@ -22,6 +22,9 @@
     "asrAlignment": "pending",
     "render": "not-started",
     "humanReview": "pending",
-    "publish": "not-started"
-  }
+    "publish": "not-started",
+    "assets": "ready-with-documented-video-fallbacks"
+  },
+  "mediaPlan": "media-plan.json",
+  "scriptSync": "pending-final-human-input"
 }

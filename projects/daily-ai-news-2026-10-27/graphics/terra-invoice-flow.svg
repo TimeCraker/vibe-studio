@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="500" viewBox="0 0 1440 500">
+<rect width="1440" height="500" fill="#f8f6f0"/>
+<g font-family="Microsoft YaHei, Noto Sans SC, sans-serif">
+<text x="64" y="67" font-size="20" fill="#ac4e35">每日 AI / 流程示意</text>
+<text x="64" y="135" font-size="42" font-weight="700" fill="#171714">从看懂发票，到录入财务软件</text>
+<line x1="64" y1="210" x2="414" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="64" y="249" font-size="21" fill="#ac4e35">01</text>
+<text x="64" y="313" font-size="31" font-weight="700" fill="#171714">读取发票</text>
+<path d="M429 280 h35 l-10 -9 m10 9 l-10 9" stroke="#ac4e35" fill="none" stroke-width="2"/>
+<line x1="484" y1="210" x2="834" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="484" y="249" font-size="21" fill="#ac4e35">02</text>
+<text x="484" y="313" font-size="31" font-weight="700" fill="#171714">理解所需字段</text>
+<path d="M849 280 h35 l-10 -9 m10 9 l-10 9" stroke="#ac4e35" fill="none" stroke-width="2"/>
+<line x1="904" y1="210" x2="1254" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="904" y="249" font-size="21" fill="#ac4e35">03</text>
+<text x="904" y="313" font-size="31" font-weight="700" fill="#171714">录入财务软件</text>
+<text x="64" y="438" font-size="21" fill="#75766b">据 OpenAI 官方应用场景绘制 · 流程示意，非本栏目实测</text>
+</g></svg>

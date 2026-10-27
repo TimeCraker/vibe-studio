@@ -6,3 +6,5 @@ assets/*
 audio/*
 !audio/*.md
 __pycache__/
+qa/*.png
+qa/*.jpg

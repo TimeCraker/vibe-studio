@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "editionDate": "2026-10-27",
+  "preparedAt": "2026-10-27T12:32:31+08:00",
+  "status": "ready-with-documented-video-fallbacks-awaiting-human-input",
+  "draftFileSha256": "d3d08222a40ec8d6bfccb468df1d8ef26615b3737ad9e029b5f6729e7727c210",
+  "timing": "No final scene times. Align the adopted text and source in/out to the user's actual recording.",
+  "shots": [
+    {
+      "sceneId": "global",
+      "inputs": [
+        "ranking.json"
+      ],
+      "note": "现有八家官标覆盖全球/国产 TOP15；沿用本期查询快照，只配 BGM。"
+    },
+    {
+      "sceneId": "domestic",
+      "inputs": [
+        "ranking.json"
+      ],
+      "note": "与全球榜平齐，不人为增加分数或升降。"
+    },
+    {
+      "sceneId": "overview",
+      "inputs": [
+        "script.json"
+      ],
+      "note": "今日 AI 资讯；收到录音后核对采用文稿再生成正文标题。"
+    },
+    {
+      "sceneId": "terra",
+      "inputs": [
+        "assets/terra-model-icon.png",
+        "assets/terra-model-page.png",
+        "graphics/terra-invoice-flow.svg",
+        "assets/terra-pricing-page.png"
+      ],
+      "anchorText": [
+        "先看 GPT-6.1 Terra",
+        "读取一张发票",
+        "价格方面"
+      ],
+      "note": "产品识别→发票流程示意→标准价格。以截图和原生动效完成，高清官方演示非必需输入。",
+      "optionalVideo": {
+        "file": "assets/terra-family-context-6s.mp4",
+        "in": 0,
+        "out": 6,
+        "selected": false,
+        "reason": "低分辨率家族宣传，仅备用，不是操作演示。"
+      }
+    },
+    {
+      "sceneId": "science",
+      "inputs": [
+        "assets/openai-eth-paper-title.png",
+        "assets/openai-eth-paper-page1.png",
+        "evidence/openai-eth-scope.md"
+      ],
+      "anchorText": [
+        "再看一条科研消息",
+        "指数时间假设",
+        "已公开部分证明材料"
+      ],
+      "note": "原文标题/归属→中文解释→外部核验状态；不让观众阅读整页公式。"
+    },
+    {
+      "sceneId": "phronix",
+      "inputs": [
+        "assets/phronix-paper-title.png",
+        "assets/phronix-figure1.png",
+        "graphics/phronix-reuse-flow.svg"
+      ],
+      "anchorText": [
+        "让 AI 积累工作经验",
+        "执行步骤和结果保存下来",
+        "三十道软件修复任务"
+      ],
+      "note": "论文标题→保留标签的原图局部→中文复用流程→样本边界。"
+    },
+    {
+      "sceneId": "mistral",
+      "inputs": [
+        "assets/mistral-large-4.svg",
+        "assets/mistral-release-status.png"
+      ],
+      "anchorText": [
+        "Mistral Large 4 的开放进度",
+        "预计日期是十月三十一日"
+      ],
+      "note": "官标＋真实待发布状态，突出日期，不采用无主体暗色背景。"
+    },
+    {
+      "sceneId": "oracle",
+      "inputs": [
+        "assets/oracle-platform.jpg",
+        "assets/oracle-starter-configuration.webp",
+        "assets/oracle-project-tracking.webp",
+        "graphics/oracle-agent-flow.svg"
+      ],
+      "anchorText": [
+        "甲骨文",
+        "需求分析、应用设计、配置和测试"
+      ],
+      "note": "产品识别→官方平台界面→中文分工图；界面只作平台参考，不冒充新增功能实测。"
+    },
+    {
+      "sceneId": "closing",
+      "inputs": [
+        "credits.md"
+      ],
+      "note": "按实际录音收尾，简介/片尾带素材署名。"
+    }
+  ],
+  "music": {
+    "file": "assets/carefree.mp3",
+    "opening": "全球/国产榜只配音乐",
+    "voice": "按实际人声自动避让，必要时循环并检查接缝",
+    "review": "mix-and-listening-pending"
+  },
+  "gaps": [
+    {
+      "item": "Terra 高清介绍/操作视频",
+      "status": "optional-unavailable",
+      "reason": "检索出现 30 秒 Vimeo 介绍说明，但当前官方英文页遇到 Cloudflare 真人验证，未取得可验证视频 URL；未自动完成验证。",
+      "fallback": "已准备官方模型页、价格截图和明确标注的发票流程图。"
+    },
+    {
+      "item": "Oracle 官方 1:26 平台介绍视频",
+      "sourcePage": "https://www.oracle.com/customer-success/navigator/",
+      "url": "https://www.youtube.com/watch?v=l6IH8pAbXWA",
+      "status": "optional-not-downloaded",
+      "reason": "官方页面嵌入入口已确认，公开下载要求登录/反机器人验证；未导出用户 cookies。",
+      "fallback": "采用官方平台配图和分工图。"
+    }
+  ],
+  "next": [
+    "接收用户最终口播稿/本期真人录音，保留原件并核对与本草稿的差异",
+    "ASR 核对名词、数字与实际增删句，再生成字幕与时间线",
+    "将本清单实际采用素材接入本期 Remotion 工程，原生 60fps",
+    "代表帧/短片、混音审听、全片检查与用户终审"
+  ]
+}

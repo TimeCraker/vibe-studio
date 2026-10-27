@@ -18,12 +18,25 @@
 
 旧工程和未提交改动均保留。本期不修改上一期视频，不自动上传或发布。
 
+## 录音前素材准备
+
+用户授权在等待录音时继续准备。验收以本地可读媒体、真实尺寸/时长、来源和镜头对应关系为准；视频片段先标原素材 in/out，最终剪辑长度由真人音轨决定。保留用户正在修改的 narration.md，不提前锁字幕或导出整片。
+
+- [x] M1：补查头条官方视频/动图并实际取得可访问素材；失败时记录替代画面。
+- [x] M2：整理本期各条配图、论文与发布状态截图，实际查看并给出裁切/采用判断。
+- [x] M3：准备已有许可的 BGM，记录文件与署名；混音和完整审听等待人声。
+- [x] M4：保存可续跑的镜头素材映射和缺项，核验文件完整性。
+
+素材准备进度：4/4（包含已记录的视频替代方案）。每条资讯已有本地主要输入，可在收到最终文稿/真人录音后接入制作。高清介绍片非必需依赖，实际成片、字幕、混音和人工终审仍待完成。
+
 ## 交接与续跑
 
-朗读正文见 [narration.md](narration.md)，选题理由见 [selection.md](selection.md)，导演意图见 [brief.md](brief.md)。本期无真人音频、ASR 字幕或成片；storyboard.json 的时间仅是估读预算，不得当作正式时间线。已取得配图、官标与候选视频链接见 assets/sources.json；配乐计划复用已有许可的 Carefree，尚未复制、混音或审听。
+朗读正文见 [narration.md](narration.md)，选题理由见 [selection.md](selection.md)，导演意图见 [brief.md](brief.md)。本期无真人音频、ASR 字幕或成片；storyboard.json 的时间仅是估读预算，不得当作正式时间线。已取得配图、官标和候选视频见 assets/sources.json；Carefree 原文件已复制并核对哈希、许可署名，混音和完整审听待人声。
+
+镜头素材对应见 [media-plan.json](media-plan.json)，可查看 [素材预检页](media-preview.html)；需要本地 HTTP 服务时运行 `python -m http.server 3481 --bind 127.0.0.1 --directory projects/daily-ai-news-2026-10-27`。预检页是素材工作台，不是最终视频版式。三张中文解释图的 SVG 正本在 graphics/，PDF 裁切、原始动图转码和来源登记可通过 `python projects/daily-ai-news-2026-10-27/scripts/prepare-media.py` 复现，不在渲染时联网抓素材。新素材检查及访问缺项保留在 qa/media-review.json 与 media-plan.json。
 
 稿件若需要修改，先编辑 narration.md，再运行 `python projects/daily-ai-news-2026-10-27/scripts/prepare-script.py`。它只读取朗读正文，不覆盖交付稿；段落数量改变时必须人工复核镜头映射。可用 `python skills/narration/templates/verify_narration.py projects/daily-ai-news-2026-10-27/script.json` 和 `node skills/content-director/scripts/validate-plan.mjs projects/daily-ai-news-2026-10-27` 检查输入。
 
-收到本期录音后先保留原件、核对实际措辞与事实，再进入转写、字幕校准和 Remotion 制作。当前尚未建立本期渲染工程或 job，不沿用旧期语音和固定时长。实际渲染、视听检查和归档后再完成 N4/N5。
+收到本期最终文稿/录音后先保留原件、核对实际措辞与事实，再进入转写、字幕校准和 Remotion 制作。用户正在修改 narration.md，本轮素材准备未覆盖或提交这份改动；旧 script.json/edition 的正文哈希在采用最终版本后再同步。当前尚未建立本期渲染工程或 job，不沿用旧期语音和固定时长。实际渲染、视听检查和归档后再完成 N4/N5。
 
-本阶段已检查：口播稿及分镜输入校验通过，14 份已取得图片/官标的哈希和文件结构通过，Python 语法与 JSON 可读；仓库测试 23/23、文档维护和 diff 空白检查通过。完整 check-docs 仍受既有 10 月 24 日归档未入 Git 的 135 项错误阻塞，与本期新增目录分开记录。以上不代表配图视觉、音画或人工审阅通过。
+本阶段已检查：首次口播稿及分镜输入校验通过；本轮核对 36 份来源/派生文件哈希、全部镜头输入路径，整段 MP4/MP3 解码通过，Python/SVG/JSON 可读。实际浏览器载入 11 张主图/解释图、备用短片和 BGM，查看三张 SVG 的中文与布局、PDF 裁切及主要来源配图并记录取舍；仓库测试 23/23、文档维护和 diff 空白检查通过。完整 check-docs 仍受既有 10 月 24 日归档未入 Git 的 135 项错误阻塞，与本期新增目录分开记录。素材预检不代表完整视频、混音或人工终审通过。
