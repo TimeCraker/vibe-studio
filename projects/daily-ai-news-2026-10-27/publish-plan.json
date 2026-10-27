@@ -1,0 +1,11 @@
+{
+  "driver": "pw",
+  "platforms": {
+    "bili": {
+      "video": "render/daily-ai-news-2026-10-27.mp4",
+      "cover": "render/cover.png",
+      "spec": "exports/bili/form.json",
+      "topics": "AI资讯,OpenAI,人工智能,大模型,Agent"
+    }
+  }
+}

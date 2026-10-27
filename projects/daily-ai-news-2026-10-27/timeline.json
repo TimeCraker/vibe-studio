@@ -1,0 +1,1135 @@
+{
+  "date": "2026-10-27",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "durationInFrames": 16365,
+  "seconds": 272.75,
+  "voice": "human-recorded",
+  "timingMode": "large-v3-turbo-word-windows-text-reviewed-listening-pending",
+  "recording": "audio/source/narration-original.mp3",
+  "recordingSha256": "58e0315ac1069d55156af9d0a9a4ff58ec3707dc3e0dea597d977d1c174c8fa1",
+  "decodedRecording": "audio/source/narration-decoded.wav",
+  "sourceIn": 1.15,
+  "sourceOut": 259.1,
+  "voiceStart": 14,
+  "scenes": [
+    {
+      "id": "global",
+      "title": "全球 AI 模型综合能力 TOP15",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期榜单与官标，只配 BGM",
+      "subject": "全球 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国产 AI 模型综合能力 TOP15",
+      "start": 7,
+      "end": 14,
+      "purpose": "相同网格、说明与数据查询时间",
+      "subject": "国内 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "start": 14,
+      "end": 33.36666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "今日 AI 资讯",
+      "claimIds": [
+        "terra-release",
+        "science-announcement",
+        "phronix-study",
+        "mistral-status",
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "terra-launch",
+      "title": "OpenAI 发布 GPT-6.1 Terra",
+      "start": 33.36666666666667,
+      "end": 46.666666666666664,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "OpenAI 发布 GPT-6.1 Terra",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-invoice",
+      "title": "看懂发票，再录入财务软件",
+      "start": 46.666666666666664,
+      "end": 60.6,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "看懂发票，再录入财务软件",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-price",
+      "title": "标准接口单价降至上一代的一半",
+      "start": 60.6,
+      "end": 68.95,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "标准接口单价降至上一代的一半",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-access",
+      "title": "ChatGPT Work、Codex 与 API 已可用",
+      "start": 68.95,
+      "end": 82.66666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "ChatGPT Work、Codex 与 API 已可用",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "science-news",
+      "title": "OpenAI 公布三个方向的科研结果",
+      "start": 82.66666666666667,
+      "end": 93.88333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "OpenAI 公布三个方向的科研结果",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-eth",
+      "title": "一项关于计算难度的研究主张",
+      "start": 93.88333333333334,
+      "end": 112.68333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "一项关于计算难度的研究主张",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-limit",
+      "title": "理论结果，怎样变成可用算法？",
+      "start": 112.68333333333334,
+      "end": 122.35,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "理论结果，怎样变成可用算法？",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-review",
+      "title": "公开研究材料，邀请外部学者核验",
+      "start": 122.35,
+      "end": 137.9,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "公开研究材料，邀请外部学者核验",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "phronix-question",
+      "title": "Phronix：让 AI 积累做事经验",
+      "start": 137.9,
+      "end": 149.56666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "Phronix：让 AI 积累做事经验",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-method",
+      "title": "把执行经验整理成可复用方法",
+      "start": 149.56666666666666,
+      "end": 170.86666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "把执行经验整理成可复用方法",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-test",
+      "title": "在重复任务中测试经验复用",
+      "start": 170.86666666666667,
+      "end": 185.26666666666668,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "在重复任务中测试经验复用",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-limit",
+      "title": "复用已有经验，不代表解决所有新问题",
+      "start": 185.26666666666668,
+      "end": 198.83333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "复用已有经验，不代表解决所有新问题",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "mistral-status",
+      "title": "Mistral Large 4 权重尚待发布",
+      "start": 198.83333333333334,
+      "end": 213.06666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "Mistral Large 4 权重尚待发布",
+      "claimIds": [
+        "mistral-status"
+      ]
+    },
+    {
+      "id": "mistral-date",
+      "title": "完整模型文件预计 10 月 31 日开放",
+      "start": 213.06666666666666,
+      "end": 225.91666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "完整模型文件预计 10 月 31 日开放",
+      "claimIds": [
+        "mistral-status"
+      ]
+    },
+    {
+      "id": "oracle-news",
+      "title": "甲骨文公布企业软件部署智能体平台",
+      "start": 225.91666666666666,
+      "end": 238.18333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "甲骨文公布企业软件部署智能体平台",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "oracle-method",
+      "title": "需求、设计、配置与测试分工",
+      "start": 238.18333333333334,
+      "end": 251.46666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "需求、设计、配置与测试分工",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "oracle-use",
+      "title": "面向部署 Fusion 云应用的团队",
+      "start": 251.46666666666667,
+      "end": 267.78333333333336,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "面向部署 Fusion 云应用的团队",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "我们下期再见",
+      "start": 267.78333333333336,
+      "end": 272.75,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "我们下期再见",
+      "claimIds": []
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "scene": "overview",
+      "text": "各位观众们大家好",
+      "from": 860,
+      "to": 944,
+      "sourceStart": 1.49,
+      "sourceEnd": 2.89
+    },
+    {
+      "id": 2,
+      "scene": "overview",
+      "text": "欢迎收看今日AI资讯",
+      "from": 958,
+      "to": 1052,
+      "sourceStart": 3.11,
+      "sourceEnd": 4.69
+    },
+    {
+      "id": 3,
+      "scene": "overview",
+      "text": "今天的头条是OpenAI发布",
+      "from": 1081,
+      "to": 1195,
+      "sourceStart": 5.17,
+      "sourceEnd": 7.07
+    },
+    {
+      "id": 4,
+      "scene": "overview",
+      "text": "GPT-6.1 Terra",
+      "from": 1195,
+      "to": 1284,
+      "sourceStart": 7.07,
+      "sourceEnd": 8.55
+    },
+    {
+      "id": 5,
+      "scene": "overview",
+      "text": "主打看图理解和操作电脑",
+      "from": 1308,
+      "to": 1477,
+      "sourceStart": 8.95,
+      "sourceEnd": 11.77
+    },
+    {
+      "id": 6,
+      "scene": "overview",
+      "text": "除此之外还有AI科研进展",
+      "from": 1488,
+      "to": 1603,
+      "sourceStart": 11.95,
+      "sourceEnd": 13.87
+    },
+    {
+      "id": 7,
+      "scene": "overview",
+      "text": "让智能体积累工作经验的新研究",
+      "from": 1625,
+      "to": 1764,
+      "sourceStart": 14.23,
+      "sourceEnd": 16.55
+    },
+    {
+      "id": 8,
+      "scene": "overview",
+      "text": "以及其他相关资讯",
+      "from": 1777,
+      "to": 1866,
+      "sourceStart": 16.77,
+      "sourceEnd": 18.25
+    },
+    {
+      "id": 9,
+      "scene": "overview",
+      "text": "下面我们来看详细内容",
+      "from": 1878,
+      "to": 1972,
+      "sourceStart": 18.45,
+      "sourceEnd": 20.01
+    },
+    {
+      "id": 10,
+      "scene": "terra-launch",
+      "text": "先看GPT-6.1 Terra",
+      "from": 2032,
+      "to": 2184,
+      "sourceStart": 21.01,
+      "sourceEnd": 23.55
+    },
+    {
+      "id": 11,
+      "scene": "terra-launch",
+      "text": "OpenAI在10月26日的官方更新中",
+      "from": 2210,
+      "to": 2394,
+      "sourceStart": 23.99,
+      "sourceEnd": 27.05
+    },
+    {
+      "id": 12,
+      "scene": "terra-launch",
+      "text": "公布了这款新模型",
+      "from": 2394,
+      "to": 2491,
+      "sourceStart": 27.05,
+      "sourceEnd": 28.67
+    },
+    {
+      "id": 13,
+      "scene": "terra-launch",
+      "text": "它主要面向看懂屏幕、操作电脑",
+      "from": 2513,
+      "to": 2672,
+      "sourceStart": 29.03,
+      "sourceEnd": 31.69
+    },
+    {
+      "id": 14,
+      "scene": "terra-launch",
+      "text": "以及日常写作这类任务",
+      "from": 2672,
+      "to": 2786,
+      "sourceStart": 31.69,
+      "sourceEnd": 33.59
+    },
+    {
+      "id": 15,
+      "scene": "terra-invoice",
+      "text": "比如，读取一张发票",
+      "from": 2813,
+      "to": 2911,
+      "sourceStart": 34.03,
+      "sourceEnd": 35.67
+    },
+    {
+      "id": 16,
+      "scene": "terra-invoice",
+      "text": "再把里面的信息填进财务软件",
+      "from": 2923,
+      "to": 3072,
+      "sourceStart": 35.87,
+      "sourceEnd": 38.35
+    },
+    {
+      "id": 17,
+      "scene": "terra-invoice",
+      "text": "这是官方给出的应用场景",
+      "from": 3095,
+      "to": 3206,
+      "sourceStart": 38.73,
+      "sourceEnd": 40.59
+    },
+    {
+      "id": 18,
+      "scene": "terra-invoice",
+      "text": "对于需要让AI在多个软件之间",
+      "from": 3242,
+      "to": 3403,
+      "sourceStart": 41.19,
+      "sourceEnd": 43.87
+    },
+    {
+      "id": 19,
+      "scene": "terra-invoice",
+      "text": "完成重复工作的开发者",
+      "from": 3403,
+      "to": 3509,
+      "sourceStart": 43.87,
+      "sourceEnd": 45.63
+    },
+    {
+      "id": 20,
+      "scene": "terra-invoice",
+      "text": "这次更新值得关注",
+      "from": 3521,
+      "to": 3617,
+      "sourceStart": 45.83,
+      "sourceEnd": 47.43
+    },
+    {
+      "id": 21,
+      "scene": "terra-price",
+      "text": "价格方面",
+      "from": 3655,
+      "to": 3702,
+      "sourceStart": 48.07,
+      "sourceEnd": 48.85
+    },
+    {
+      "id": 22,
+      "scene": "terra-price",
+      "text": "标准接口的输入输出的单价都是上一代",
+      "from": 3730,
+      "to": 3985,
+      "sourceStart": 49.31,
+      "sourceEnd": 53.57
+    },
+    {
+      "id": 23,
+      "scene": "terra-price",
+      "text": "GPT-5.6 Terra的一半",
+      "from": 3985,
+      "to": 4128,
+      "sourceStart": 53.57,
+      "sourceEnd": 55.95
+    },
+    {
+      "id": 24,
+      "scene": "terra-access",
+      "text": "模型已经向ChatGPT Work",
+      "from": 4146,
+      "to": 4306,
+      "sourceStart": 56.25,
+      "sourceEnd": 58.91
+    },
+    {
+      "id": 25,
+      "scene": "terra-access",
+      "text": "和Codex的相关付费用户开放",
+      "from": 4306,
+      "to": 4486,
+      "sourceStart": 58.91,
+      "sourceEnd": 61.91
+    },
+    {
+      "id": 26,
+      "scene": "terra-access",
+      "text": "开发者也可以通过接口调用",
+      "from": 4504,
+      "to": 4639,
+      "sourceStart": 62.21,
+      "sourceEnd": 64.47
+    },
+    {
+      "id": 27,
+      "scene": "terra-access",
+      "text": "具体在自己的任务上好不好用",
+      "from": 4692,
+      "to": 4841,
+      "sourceStart": 65.35,
+      "sourceEnd": 67.83
+    },
+    {
+      "id": 28,
+      "scene": "terra-access",
+      "text": "还需要实际测试",
+      "from": 4850,
+      "to": 4916,
+      "sourceStart": 67.99,
+      "sourceEnd": 69.09
+    },
+    {
+      "id": 29,
+      "scene": "science-news",
+      "text": "再看一条科研消息",
+      "from": 5003,
+      "to": 5104,
+      "sourceStart": 70.53,
+      "sourceEnd": 72.21
+    },
+    {
+      "id": 30,
+      "scene": "science-news",
+      "text": "OpenAI在10月26日发布",
+      "from": 5112,
+      "to": 5238,
+      "sourceStart": 72.35,
+      "sourceEnd": 74.45
+    },
+    {
+      "id": 31,
+      "scene": "science-news",
+      "text": "内部AI模型在数学、计算机科学",
+      "from": 5251,
+      "to": 5417,
+      "sourceStart": 74.67,
+      "sourceEnd": 77.43
+    },
+    {
+      "id": 32,
+      "scene": "science-news",
+      "text": "和物理三个方向",
+      "from": 5417,
+      "to": 5479,
+      "sourceStart": 77.43,
+      "sourceEnd": 78.47
+    },
+    {
+      "id": 33,
+      "scene": "science-news",
+      "text": "产出了新的研究成果",
+      "from": 5479,
+      "to": 5596,
+      "sourceStart": 78.47,
+      "sourceEnd": 80.41
+    },
+    {
+      "id": 34,
+      "scene": "science-eth",
+      "text": "其中，计算机科学的一项结果涉及指数时间假设",
+      "from": 5671,
+      "to": 5935,
+      "sourceStart": 81.67,
+      "sourceEnd": 86.07
+    },
+    {
+      "id": 35,
+      "scene": "science-eth",
+      "text": "简单说，它讨论一类复杂的计算问题",
+      "from": 5935,
+      "to": 6154,
+      "sourceStart": 86.07,
+      "sourceEnd": 89.71
+    },
+    {
+      "id": 36,
+      "scene": "science-eth",
+      "text": "到底有没有更快的算法",
+      "from": 6154,
+      "to": 6283,
+      "sourceStart": 89.71,
+      "sourceEnd": 91.87
+    },
+    {
+      "id": 37,
+      "scene": "science-eth",
+      "text": "OpenAI声称找到了推翻这个假设的证明",
+      "from": 6307,
+      "to": 6526,
+      "sourceStart": 92.27,
+      "sourceEnd": 95.91
+    },
+    {
+      "id": 38,
+      "scene": "science-eth",
+      "text": "如果结论成立",
+      "from": 6546,
+      "to": 6607,
+      "sourceStart": 96.25,
+      "sourceEnd": 97.27
+    },
+    {
+      "id": 39,
+      "scene": "science-eth",
+      "text": "会影响相关问题的算法研究",
+      "from": 6617,
+      "to": 6752,
+      "sourceStart": 97.43,
+      "sourceEnd": 99.69
+    },
+    {
+      "id": 40,
+      "scene": "science-limit",
+      "text": "但这不等于今天的软件马上就能跑得更快",
+      "from": 6769,
+      "to": 7018,
+      "sourceStart": 99.97,
+      "sourceEnd": 104.11
+    },
+    {
+      "id": 41,
+      "scene": "science-limit",
+      "text": "把理论转成可用算法",
+      "from": 7042,
+      "to": 7172,
+      "sourceStart": 104.51,
+      "sourceEnd": 106.69
+    },
+    {
+      "id": 42,
+      "scene": "science-limit",
+      "text": "还需要后续的工作",
+      "from": 7195,
+      "to": 7319,
+      "sourceStart": 107.07,
+      "sourceEnd": 109.13
+    },
+    {
+      "id": 43,
+      "scene": "science-review",
+      "text": "OpenAI已公开部分证明资料",
+      "from": 7363,
+      "to": 7496,
+      "sourceStart": 109.87,
+      "sourceEnd": 112.09
+    },
+    {
+      "id": 44,
+      "scene": "science-review",
+      "text": "并邀请外部学者继续核验和解释",
+      "from": 7506,
+      "to": 7660,
+      "sourceStart": 112.25,
+      "sourceEnd": 114.81
+    },
+    {
+      "id": 45,
+      "scene": "science-review",
+      "text": "现阶段，我们可以确认的是",
+      "from": 7670,
+      "to": 7792,
+      "sourceStart": 114.99,
+      "sourceEnd": 117.01
+    },
+    {
+      "id": 46,
+      "scene": "science-review",
+      "text": "这些研究材料和合作安排已经发布",
+      "from": 7792,
+      "to": 7962,
+      "sourceStart": 117.01,
+      "sourceEnd": 119.85
+    },
+    {
+      "id": 47,
+      "scene": "science-review",
+      "text": "具体结论的意义还要看后续学界的检验",
+      "from": 7985,
+      "to": 8212,
+      "sourceStart": 120.23,
+      "sourceEnd": 124.01
+    },
+    {
+      "id": 48,
+      "scene": "phronix-question",
+      "text": "接下来是一项让AI积累工作经验的研究",
+      "from": 8336,
+      "to": 8520,
+      "sourceStart": 126.09,
+      "sourceEnd": 129.15
+    },
+    {
+      "id": 49,
+      "scene": "phronix-question",
+      "text": "它想解决的问题是",
+      "from": 8610,
+      "to": 8714,
+      "sourceStart": 130.65,
+      "sourceEnd": 132.39
+    },
+    {
+      "id": 50,
+      "scene": "phronix-question",
+      "text": "AI做成了一件事",
+      "from": 8734,
+      "to": 8814,
+      "sourceStart": 132.71,
+      "sourceEnd": 134.05
+    },
+    {
+      "id": 51,
+      "scene": "phronix-question",
+      "text": "下次遇到类似任务",
+      "from": 8825,
+      "to": 8893,
+      "sourceStart": 134.23,
+      "sourceEnd": 135.37
+    },
+    {
+      "id": 52,
+      "scene": "phronix-question",
+      "text": "能不能少走一些弯路",
+      "from": 8899,
+      "to": 8974,
+      "sourceStart": 135.47,
+      "sourceEnd": 136.71
+    },
+    {
+      "id": 53,
+      "scene": "phronix-method",
+      "text": "研究人员让智能体把执行步骤和结果保存下来",
+      "from": 8974,
+      "to": 9222,
+      "sourceStart": 136.71,
+      "sourceEnd": 140.85
+    },
+    {
+      "id": 54,
+      "scene": "phronix-method",
+      "text": "经过检查之后",
+      "from": 9229,
+      "to": 9323,
+      "sourceStart": 140.97,
+      "sourceEnd": 142.53
+    },
+    {
+      "id": 55,
+      "scene": "phronix-method",
+      "text": "整理成可重复使用的工具和操作方法",
+      "from": 9332,
+      "to": 9510,
+      "sourceStart": 142.69,
+      "sourceEnd": 145.65
+    },
+    {
+      "id": 56,
+      "scene": "phronix-method",
+      "text": "之后再遇到类似问题",
+      "from": 9534,
+      "to": 9706,
+      "sourceStart": 146.05,
+      "sourceEnd": 148.91
+    },
+    {
+      "id": 57,
+      "scene": "phronix-method",
+      "text": "就先调用已有经验",
+      "from": 9733,
+      "to": 9823,
+      "sourceStart": 149.37,
+      "sourceEnd": 150.87
+    },
+    {
+      "id": 58,
+      "scene": "phronix-method",
+      "text": "执行出错",
+      "from": 9835,
+      "to": 9877,
+      "sourceStart": 151.07,
+      "sourceEnd": 151.77
+    },
+    {
+      "id": 59,
+      "scene": "phronix-method",
+      "text": "还会根据结果修正方法",
+      "from": 9912,
+      "to": 10061,
+      "sourceStart": 152.35,
+      "sourceEnd": 154.83
+    },
+    {
+      "id": 60,
+      "scene": "phronix-method",
+      "text": "感觉这个就有点像Skill啊",
+      "from": 10087,
+      "to": 10219,
+      "sourceStart": 155.27,
+      "sourceEnd": 157.47
+    },
+    {
+      "id": 61,
+      "scene": "phronix-test",
+      "text": "论文在30道软件修复任务",
+      "from": 10284,
+      "to": 10441,
+      "sourceStart": 158.55,
+      "sourceEnd": 161.17
+    },
+    {
+      "id": 62,
+      "scene": "phronix-test",
+      "text": "和一套科研计算流程上做了测试",
+      "from": 10441,
+      "to": 10654,
+      "sourceStart": 161.17,
+      "sourceEnd": 164.71
+    },
+    {
+      "id": 63,
+      "scene": "phronix-test",
+      "text": "作者报告",
+      "from": 10704,
+      "to": 10768,
+      "sourceStart": 165.55,
+      "sourceEnd": 166.61
+    },
+    {
+      "id": 64,
+      "scene": "phronix-test",
+      "text": "在已经累积经验的重复任务中",
+      "from": 10781,
+      "to": 10926,
+      "sourceStart": 166.83,
+      "sourceEnd": 169.25
+    },
+    {
+      "id": 65,
+      "scene": "phronix-test",
+      "text": "系统能减少反复尝试和处理成本",
+      "from": 10936,
+      "to": 11096,
+      "sourceStart": 169.41,
+      "sourceEnd": 172.09
+    },
+    {
+      "id": 66,
+      "scene": "phronix-limit",
+      "text": "这里需要分清",
+      "from": 11135,
+      "to": 11201,
+      "sourceStart": 172.73,
+      "sourceEnd": 173.83
+    },
+    {
+      "id": 67,
+      "scene": "phronix-limit",
+      "text": "这主要是在测试经验能不能复用",
+      "from": 11208,
+      "to": 11336,
+      "sourceStart": 173.95,
+      "sourceEnd": 176.09
+    },
+    {
+      "id": 68,
+      "scene": "phronix-limit",
+      "text": "还不能据此判断",
+      "from": 11345,
+      "to": 11423,
+      "sourceStart": 176.23,
+      "sourceEnd": 177.53
+    },
+    {
+      "id": 69,
+      "scene": "phronix-limit",
+      "text": "它面对全新问题也会有相同的表现",
+      "from": 11443,
+      "to": 11596,
+      "sourceStart": 177.87,
+      "sourceEnd": 180.41
+    },
+    {
+      "id": 70,
+      "scene": "phronix-limit",
+      "text": "这项研究改进的是AI保存和复用经验的方法",
+      "from": 11618,
+      "to": 11804,
+      "sourceStart": 180.79,
+      "sourceEnd": 183.89
+    },
+    {
+      "id": 71,
+      "scene": "phronix-limit",
+      "text": "值得持续关注",
+      "from": 11825,
+      "to": 11881,
+      "sourceStart": 184.23,
+      "sourceEnd": 185.17
+    },
+    {
+      "id": 72,
+      "scene": "mistral-status",
+      "text": "然后更新一下这款新模型的开放进度",
+      "from": 11978,
+      "to": 12151,
+      "sourceStart": 186.79,
+      "sourceEnd": 189.67
+    },
+    {
+      "id": 73,
+      "scene": "mistral-status",
+      "text": "这款模型已经提供了接口预览",
+      "from": 12163,
+      "to": 12300,
+      "sourceStart": 189.87,
+      "sourceEnd": 192.15
+    },
+    {
+      "id": 74,
+      "scene": "mistral-status",
+      "text": "但截至本期查询",
+      "from": 12314,
+      "to": 12407,
+      "sourceStart": 192.39,
+      "sourceEnd": 193.93
+    },
+    {
+      "id": 75,
+      "scene": "mistral-status",
+      "text": "官方模型页仍然显示等待发布",
+      "from": 12416,
+      "to": 12620,
+      "sourceStart": 194.09,
+      "sourceEnd": 197.49
+    },
+    {
+      "id": 76,
+      "scene": "mistral-status",
+      "text": "完整模型文件还没有开放下载",
+      "from": 12637,
+      "to": 12766,
+      "sourceStart": 197.77,
+      "sourceEnd": 199.91
+    },
+    {
+      "id": 77,
+      "scene": "mistral-date",
+      "text": "模型的公告说会在月底开放",
+      "from": 12802,
+      "to": 12946,
+      "sourceStart": 200.51,
+      "sourceEnd": 202.91
+    },
+    {
+      "id": 78,
+      "scene": "mistral-date",
+      "text": "Hugging Face上目前列出的",
+      "from": 12964,
+      "to": 13132,
+      "sourceStart": 203.21,
+      "sourceEnd": 206.01
+    },
+    {
+      "id": 79,
+      "scene": "mistral-date",
+      "text": "预计日期是10月31号",
+      "from": 13132,
+      "to": 13308,
+      "sourceStart": 206.01,
+      "sourceEnd": 208.95
+    },
+    {
+      "id": 80,
+      "scene": "mistral-date",
+      "text": "想自己部署朋友",
+      "from": 13321,
+      "to": 13397,
+      "sourceStart": 209.17,
+      "sourceEnd": 210.43
+    },
+    {
+      "id": 81,
+      "scene": "mistral-date",
+      "text": "还需要等正式文件和使用许可",
+      "from": 13414,
+      "to": 13542,
+      "sourceStart": 210.71,
+      "sourceEnd": 212.85
+    },
+    {
+      "id": 82,
+      "scene": "oracle-news",
+      "text": "最后是一条企业应用消息",
+      "from": 13568,
+      "to": 13690,
+      "sourceStart": 213.29,
+      "sourceEnd": 215.31
+    },
+    {
+      "id": 83,
+      "scene": "oracle-news",
+      "text": "甲骨文在当地时间10月26日公布了",
+      "from": 13697,
+      "to": 13927,
+      "sourceStart": 215.43,
+      "sourceEnd": 219.27
+    },
+    {
+      "id": 84,
+      "scene": "oracle-news",
+      "text": "帮助企业部署Fusion",
+      "from": 13927,
+      "to": 14029,
+      "sourceStart": 219.27,
+      "sourceEnd": 220.97
+    },
+    {
+      "id": 85,
+      "scene": "oracle-news",
+      "text": "云应用和AI智能体平台",
+      "from": 14050,
+      "to": 14278,
+      "sourceStart": 221.31,
+      "sourceEnd": 225.11
+    },
+    {
+      "id": 86,
+      "scene": "oracle-method",
+      "text": "这些智能体分工处理需求分析",
+      "from": 14305,
+      "to": 14473,
+      "sourceStart": 225.57,
+      "sourceEnd": 228.37
+    },
+    {
+      "id": 87,
+      "scene": "oracle-method",
+      "text": "应用设计",
+      "from": 14485,
+      "to": 14536,
+      "sourceStart": 228.57,
+      "sourceEnd": 229.41
+    },
+    {
+      "id": 88,
+      "scene": "oracle-method",
+      "text": "配置和测试",
+      "from": 14555,
+      "to": 14622,
+      "sourceStart": 229.73,
+      "sourceEnd": 230.85
+    },
+    {
+      "id": 89,
+      "scene": "oracle-method",
+      "text": "比如先把业务需求整理成设计文档",
+      "from": 14634,
+      "to": 14802,
+      "sourceStart": 231.05,
+      "sourceEnd": 233.85
+    },
+    {
+      "id": 90,
+      "scene": "oracle-method",
+      "text": "再生成配置原型并准备对应的测试用例",
+      "from": 14821,
+      "to": 15088,
+      "sourceStart": 234.17,
+      "sourceEnd": 238.61
+    },
+    {
+      "id": 91,
+      "scene": "oracle-use",
+      "text": "它主要服务正在部署甲骨文的企业软件的团队",
+      "from": 15088,
+      "to": 15319,
+      "sourceStart": 238.61,
+      "sourceEnd": 242.47
+    },
+    {
+      "id": 92,
+      "scene": "oracle-use",
+      "text": "对于其他开发者可以关注的是",
+      "from": 15325,
+      "to": 15456,
+      "sourceStart": 242.57,
+      "sourceEnd": 244.75
+    },
+    {
+      "id": 93,
+      "scene": "oracle-use",
+      "text": "它怎样把配置规则和产品经验",
+      "from": 15480,
+      "to": 15660,
+      "sourceStart": 245.15,
+      "sourceEnd": 248.15
+    },
+    {
+      "id": 94,
+      "scene": "oracle-use",
+      "text": "整理成AI能调用的技能",
+      "from": 15660,
+      "to": 15804,
+      "sourceStart": 248.15,
+      "sourceEnd": 250.55
+    },
+    {
+      "id": 95,
+      "scene": "oracle-use",
+      "text": "实际能节省多长时间",
+      "from": 15824,
+      "to": 15901,
+      "sourceStart": 250.89,
+      "sourceEnd": 252.17
+    },
+    {
+      "id": 96,
+      "scene": "oracle-use",
+      "text": "还要看具体项目效果",
+      "from": 15916,
+      "to": 16028,
+      "sourceStart": 252.41,
+      "sourceEnd": 254.29
+    },
+    {
+      "id": 97,
+      "scene": "closing",
+      "text": "以上是本期精选资讯",
+      "from": 16106,
+      "to": 16238,
+      "sourceStart": 255.59,
+      "sourceEnd": 257.79
+    },
+    {
+      "id": 98,
+      "scene": "closing",
+      "text": "我们下期再见",
+      "from": 16250,
+      "to": 16292,
+      "sourceStart": 257.99,
+      "sourceEnd": 258.69
+    }
+  ]
+}

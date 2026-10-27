@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "duration": 257.95000000000005,
+  "target": {
+    "integrated": -18,
+    "truePeak": -2,
+    "range": 9
+  },
+  "ducking": false,
+  "tracks": [
+    {
+      "file": "audio/source/narration-decoded.wav",
+      "role": "voice",
+      "in": 1.15,
+      "duration": 257.95000000000005,
+      "fadeIn": 0.03,
+      "fadeOut": 0.08,
+      "highpassHz": 65
+    }
+  ]
+}

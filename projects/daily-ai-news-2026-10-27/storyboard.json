@@ -1,10 +1,8 @@
 {
   "schemaVersion": 1,
-  "audience": "关注 AI 模型和实用工具的普通观众与独立开发者，无需认识所有英文项目和学术术语",
-  "goal": "说清新模型的实际用途与使用入口，区分官方科研主张和核验状态，解释经验复用研究与两条简讯",
+  "audience": "关注 AI 模型和实际用途的普通观众与独立开发者",
+  "goal": "说清本期模型发布、科研主张、经验复用研究与两条简讯",
   "profile": "data",
-  "timingStatus": "draft-budget-only-awaiting-human-recording",
-  "timingNote": "start/end only allocate a rough editorial budget, not subtitle or render timing. Replace with actual recorded speech and pauses before any final render.",
   "claims": [
     {
       "id": "ranking",
@@ -70,32 +68,32 @@
   "scenes": [
     {
       "id": "global",
-      "start": 0.0,
-      "end": 7.0,
       "title": "全球 AI 模型综合能力 TOP15",
-      "purpose": "左前三右十二，所有行有官标，仅配 BGM；时长待实际阅读测试",
-      "subject": "当次 ECI 全球排名",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期榜单与官标，只配 BGM",
+      "subject": "全球 ECI TOP15",
       "claimIds": [
         "ranking"
       ]
     },
     {
       "id": "domestic",
-      "start": 7.0,
-      "end": 14.0,
       "title": "国产 AI 模型综合能力 TOP15",
-      "purpose": "与全球榜对齐，同一固定解释与实际查询时间",
-      "subject": "当次 ECI 国内排名",
+      "start": 7,
+      "end": 14,
+      "purpose": "相同网格、说明与数据查询时间",
+      "subject": "国内 ECI TOP15",
       "claimIds": [
         "ranking"
       ]
     },
     {
       "id": "overview",
-      "start": 14.0,
-      "end": 36.292,
       "title": "今日 AI 资讯",
-      "purpose": "问候开始，主标题 Terra，四条次标题按主次排版，不逐个念英文清单",
+      "start": 14,
+      "end": 33.36666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
       "subject": "今日 AI 资讯",
       "claimIds": [
         "terra-release",
@@ -106,72 +104,204 @@
       ]
     },
     {
-      "id": "terra",
-      "start": 36.292,
-      "end": 87.542,
-      "title": "OpenAI 发布 GPT-6.1 Terra，主打视觉理解与电脑操作",
-      "purpose": "官标与官方页面摘录；以发票填表的具体应用示意配合口播，再切标准价格对照。示意明确标示，不冒充实际运行",
-      "subject": "OpenAI 发布 GPT-6.1 Terra，主打视觉理解与电脑操作",
+      "id": "terra-launch",
+      "title": "OpenAI 发布 GPT-6.1 Terra",
+      "start": 33.36666666666667,
+      "end": 46.666666666666664,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "OpenAI 发布 GPT-6.1 Terra",
       "claimIds": [
         "terra-release"
       ]
     },
     {
-      "id": "science",
-      "start": 87.542,
-      "end": 143.167,
-      "title": "OpenAI 公布 AI 科研结果，邀请外部学者核验",
-      "purpose": "展示官方公告与仓库材料，数学/计算机/物理分层揭示；放大外部核验状态，避免用公式堆砌普通观众看不懂的页面",
-      "subject": "OpenAI 公布 AI 科研结果，邀请外部学者核验",
+      "id": "terra-invoice",
+      "title": "看懂发票，再录入财务软件",
+      "start": 46.666666666666664,
+      "end": 60.6,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "看懂发票，再录入财务软件",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-price",
+      "title": "标准接口单价降至上一代的一半",
+      "start": 60.6,
+      "end": 68.95,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "标准接口单价降至上一代的一半",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-access",
+      "title": "ChatGPT Work、Codex 与 API 已可用",
+      "start": 68.95,
+      "end": 82.66666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "ChatGPT Work、Codex 与 API 已可用",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "science-news",
+      "title": "OpenAI 公布三个方向的科研结果",
+      "start": 82.66666666666667,
+      "end": 93.88333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "OpenAI 公布三个方向的科研结果",
       "claimIds": [
         "science-announcement"
       ]
     },
     {
-      "id": "phronix",
-      "start": 143.167,
-      "end": 201.709,
-      "title": "Phronix：让 AI 保存并复用做事经验",
-      "purpose": "论文原图局部加可读中文标注，随后切 30 题样本与已有经验的适用边界；字幕随录音，不以 91% 当封面",
-      "subject": "Phronix：让 AI 保存并复用做事经验",
+      "id": "science-eth",
+      "title": "一项关于计算难度的研究主张",
+      "start": 93.88333333333334,
+      "end": 112.68333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "一项关于计算难度的研究主张",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-limit",
+      "title": "理论结果，怎样变成可用算法？",
+      "start": 112.68333333333334,
+      "end": 122.35,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "理论结果，怎样变成可用算法？",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-review",
+      "title": "公开研究材料，邀请外部学者核验",
+      "start": 122.35,
+      "end": 137.9,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "公开研究材料，邀请外部学者核验",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "phronix-question",
+      "title": "Phronix：让 AI 积累做事经验",
+      "start": 137.9,
+      "end": 149.56666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "Phronix：让 AI 积累做事经验",
       "claimIds": [
         "phronix-study"
       ]
     },
     {
-      "id": "mistral",
-      "start": 201.709,
-      "end": 231.709,
-      "title": "Mistral Large 4 权重仍待发布",
-      "purpose": "模型官标、官方状态截图、预计日期分开展示；不使用原日报的已开放文案",
-      "subject": "Mistral Large 4 权重仍待发布",
+      "id": "phronix-method",
+      "title": "把执行经验整理成可复用方法",
+      "start": 149.56666666666666,
+      "end": 170.86666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "把执行经验整理成可复用方法",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-test",
+      "title": "在重复任务中测试经验复用",
+      "start": 170.86666666666667,
+      "end": 185.26666666666668,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "在重复任务中测试经验复用",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-limit",
+      "title": "复用已有经验，不代表解决所有新问题",
+      "start": 185.26666666666668,
+      "end": 198.83333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "复用已有经验，不代表解决所有新问题",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "mistral-status",
+      "title": "Mistral Large 4 权重尚待发布",
+      "start": 198.83333333333334,
+      "end": 213.06666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "Mistral Large 4 权重尚待发布",
       "claimIds": [
         "mistral-status"
       ]
     },
     {
-      "id": "oracle",
-      "start": 231.709,
-      "end": 272.334,
-      "title": "甲骨文公布面向企业软件部署的 AI 智能体平台",
-      "purpose": "官方图作配图候选，需求、设计、配置、测试沿口播逐项强调；画面注明官方公布，不画无依据效果数字",
-      "subject": "甲骨文公布面向企业软件部署的 AI 智能体平台",
+      "id": "mistral-date",
+      "title": "完整模型文件预计 10 月 31 日开放",
+      "start": 213.06666666666666,
+      "end": 225.91666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "完整模型文件预计 10 月 31 日开放",
+      "claimIds": [
+        "mistral-status"
+      ]
+    },
+    {
+      "id": "oracle-news",
+      "title": "甲骨文公布企业软件部署智能体平台",
+      "start": 225.91666666666666,
+      "end": 238.18333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "甲骨文公布企业软件部署智能体平台",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "oracle-method",
+      "title": "需求、设计、配置与测试分工",
+      "start": 238.18333333333334,
+      "end": 251.46666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "需求、设计、配置与测试分工",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "oracle-use",
+      "title": "面向部署 Fusion 云应用的团队",
+      "start": 251.46666666666667,
+      "end": 267.78333333333336,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "面向部署 Fusion 云应用的团队",
       "claimIds": [
         "oracle-platform"
       ]
     },
     {
       "id": "closing",
-      "start": 272.334,
-      "end": 276.334,
-      "title": "下期再见",
-      "purpose": "简短结束，保留来源入口及必要署名，最终随配音自然收尾",
-      "subject": "下期再见",
+      "title": "我们下期再见",
+      "start": 267.78333333333336,
+      "end": 272.75,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "我们下期再见",
       "claimIds": []
     }
   ],
   "review": {
     "status": "pending",
-    "notes": "延续已确认栏目风格；本期稿件和分镜尚待用户审阅。无真人录音、无本期渲染，不代表成片通过。"
+    "notes": "根据本期真人录音生成，程序与 ASR 核对不代表人工视听接受。"
   }
 }

@@ -5,6 +5,9 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+edition_file = ROOT / "edition.json"
+if edition_file.exists() and str(json.loads(edition_file.read_text(encoding="utf-8")).get("production", {}).get("humanRecording", "")).startswith("received"):
+    raise SystemExit("Human recording already adopted: use review-recording.py and build-narrated-inputs.py; preserve the actual speech timeline.")
 def write(name, value):
     (ROOT / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

@@ -1,94 +1,598 @@
 {
   "meta": {
-    "title": "今日 AI 资讯 · GPT-6.1 Terra 发布",
+    "title": "今日 AI 资讯 · 真人录音采用稿",
     "lang": "zh",
-    "budgetSeconds": 420,
-    "charsPerSecond": 4.8,
+    "budgetSeconds": 257.95000000000005,
+    "charsPerSecond": 5.8,
     "bannedWords": []
   },
   "segments": [
     {
       "id": 1,
-      "kind": "voiceover",
-      "text": "各位观众们，大家好，欢迎收看今日 AI 资讯。今天的头条是 OpenAI 发布 GPT-6.1 Terra，主打看图理解和操作电脑。除此之外，还有 AI 科研进展、让智能体积累工作经验的新研究，以及其他相关资讯。下面来看详细内容。",
+      "kind": "subtitle",
+      "text": "各位观众们大家好",
       "ref": "scene overview"
     },
     {
       "id": 2,
-      "kind": "voiceover",
-      "text": "先看 GPT-6.1 Terra。OpenAI 在十月二十六日的官方更新中，公布了这款新模型。它主要面向看懂屏幕、操作电脑，以及日常写作这类任务。",
-      "ref": "scene terra"
+      "kind": "subtitle",
+      "text": "欢迎收看今日AI资讯",
+      "ref": "scene overview"
     },
     {
       "id": 3,
-      "kind": "voiceover",
-      "text": "比如，读取一张发票，再把里面的信息填进财务软件，这是官方给出的应用场景。对于需要让 AI 在多个软件之间完成重复工作的开发者，这次更新值得关注。",
-      "ref": "scene terra"
+      "kind": "subtitle",
+      "text": "今天的头条是OpenAI发布",
+      "ref": "scene overview"
     },
     {
       "id": 4,
-      "kind": "voiceover",
-      "text": "价格方面，标准接口的输入和输出单价，都是上一代 GPT-5.6 Terra 的一半。模型已经向 ChatGPT Work 和 Codex 的相关付费用户开放，开发者也可以通过接口调用。具体在自己的任务上好不好用，还需要实际测试。",
-      "ref": "scene terra"
+      "kind": "subtitle",
+      "text": "GPT-6.1 Terra",
+      "ref": "scene overview"
     },
     {
       "id": 5,
-      "kind": "voiceover",
-      "text": "再看一条科研消息。OpenAI 在十月二十六日公布，内部 AI 模型在数学、计算机科学和物理三个方向，产出了新的研究结果。",
-      "ref": "scene science"
+      "kind": "subtitle",
+      "text": "主打看图理解和操作电脑",
+      "ref": "scene overview"
     },
     {
       "id": 6,
-      "kind": "voiceover",
-      "text": "其中，计算机科学的一项结果，涉及“指数时间假设”。简单说，它讨论一类复杂的计算问题，到底有没有更快的算法。OpenAI 声称找到了推翻这个假设的证明。如果结论成立，会影响相关问题的算法研究。但这不等于今天的软件马上就能跑得更快，把理论转成可用算法，还需要后续工作。",
-      "ref": "scene science"
+      "kind": "subtitle",
+      "text": "除此之外还有AI科研进展",
+      "ref": "scene overview"
     },
     {
       "id": 7,
-      "kind": "voiceover",
-      "text": "OpenAI 已公开部分证明材料，并邀请外部学者继续核验和解释。现阶段，我们可以确认的是这些研究材料和合作安排已经公布，具体结论的意义，还要看学界后续的检验。",
-      "ref": "scene science"
+      "kind": "subtitle",
+      "text": "让智能体积累工作经验的新研究",
+      "ref": "scene overview"
     },
     {
       "id": 8,
-      "kind": "voiceover",
-      "text": "接下来是一项让 AI 积累工作经验的研究，叫 Phronix。它想解决的问题是：AI 做成了一件事，下次遇到类似任务，能不能少走一些弯路？",
-      "ref": "scene phronix"
+      "kind": "subtitle",
+      "text": "以及其他相关资讯",
+      "ref": "scene overview"
     },
     {
       "id": 9,
-      "kind": "voiceover",
-      "text": "研究人员让智能体把执行步骤和结果保存下来，经过检查之后，整理成可以重复使用的工具和操作方法。之后再碰到类似问题，就先调用已有经验；执行出错，还会根据结果修正方法。",
-      "ref": "scene phronix"
+      "kind": "subtitle",
+      "text": "下面我们来看详细内容",
+      "ref": "scene overview"
     },
     {
       "id": 10,
-      "kind": "voiceover",
-      "text": "论文在三十道软件修复任务和一套科研计算流程上做了测试。作者报告，在已经积累经验的重复任务中，系统能减少反复尝试和处理成本。这里需要分清，这主要是在测试经验能不能复用，还不能据此判断，它面对全新问题也会有相同的表现。这项研究改进的是 AI 保存和复用经验的方法，值得持续关注。",
-      "ref": "scene phronix"
+      "kind": "subtitle",
+      "text": "先看GPT-6.1 Terra",
+      "ref": "scene terra-launch"
     },
     {
       "id": 11,
-      "kind": "voiceover",
-      "text": "然后更新一下 Mistral Large 4 的开放进度。这款模型已经提供了接口预览，但截至本期查询，官方模型页仍然显示等待发布，完整模型文件还没有开放下载。Mistral 的公告说会在月底开放，Hugging Face 上目前列出的预计日期是十月三十一日。想自己部署的朋友，还要等正式文件和使用许可。",
-      "ref": "scene mistral"
+      "kind": "subtitle",
+      "text": "OpenAI在10月26日的官方更新中",
+      "ref": "scene terra-launch"
     },
     {
       "id": 12,
-      "kind": "voiceover",
-      "text": "最后是一条企业应用消息。甲骨文在当地时间十月二十六日，公布了帮助企业部署 Fusion 云应用的 AI 智能体平台。",
-      "ref": "scene oracle"
+      "kind": "subtitle",
+      "text": "公布了这款新模型",
+      "ref": "scene terra-launch"
     },
     {
       "id": 13,
-      "kind": "voiceover",
-      "text": "这些智能体分工处理需求分析、应用设计、配置和测试。比如，先把业务需求整理成设计方案，再生成配置原型，并准备对应的测试用例。它主要服务正在部署甲骨文企业软件的团队。对于其他开发者，可以关注的是，它怎样把配置规则和产品经验整理成 AI 能调用的技能。实际能节省多少时间，还要看具体项目效果。",
-      "ref": "scene oracle"
+      "kind": "subtitle",
+      "text": "它主要面向看懂屏幕、操作电脑",
+      "ref": "scene terra-launch"
     },
     {
       "id": 14,
-      "kind": "voiceover",
-      "text": "以上就是本期精选资讯，我们下期再见。",
+      "kind": "subtitle",
+      "text": "以及日常写作这类任务",
+      "ref": "scene terra-launch"
+    },
+    {
+      "id": 15,
+      "kind": "subtitle",
+      "text": "比如，读取一张发票",
+      "ref": "scene terra-invoice"
+    },
+    {
+      "id": 16,
+      "kind": "subtitle",
+      "text": "再把里面的信息填进财务软件",
+      "ref": "scene terra-invoice"
+    },
+    {
+      "id": 17,
+      "kind": "subtitle",
+      "text": "这是官方给出的应用场景",
+      "ref": "scene terra-invoice"
+    },
+    {
+      "id": 18,
+      "kind": "subtitle",
+      "text": "对于需要让AI在多个软件之间",
+      "ref": "scene terra-invoice"
+    },
+    {
+      "id": 19,
+      "kind": "subtitle",
+      "text": "完成重复工作的开发者",
+      "ref": "scene terra-invoice"
+    },
+    {
+      "id": 20,
+      "kind": "subtitle",
+      "text": "这次更新值得关注",
+      "ref": "scene terra-invoice"
+    },
+    {
+      "id": 21,
+      "kind": "subtitle",
+      "text": "价格方面",
+      "ref": "scene terra-price"
+    },
+    {
+      "id": 22,
+      "kind": "subtitle",
+      "text": "标准接口的输入输出的单价都是上一代",
+      "ref": "scene terra-price"
+    },
+    {
+      "id": 23,
+      "kind": "subtitle",
+      "text": "GPT-5.6 Terra的一半",
+      "ref": "scene terra-price"
+    },
+    {
+      "id": 24,
+      "kind": "subtitle",
+      "text": "模型已经向ChatGPT Work",
+      "ref": "scene terra-access"
+    },
+    {
+      "id": 25,
+      "kind": "subtitle",
+      "text": "和Codex的相关付费用户开放",
+      "ref": "scene terra-access"
+    },
+    {
+      "id": 26,
+      "kind": "subtitle",
+      "text": "开发者也可以通过接口调用",
+      "ref": "scene terra-access"
+    },
+    {
+      "id": 27,
+      "kind": "subtitle",
+      "text": "具体在自己的任务上好不好用",
+      "ref": "scene terra-access"
+    },
+    {
+      "id": 28,
+      "kind": "subtitle",
+      "text": "还需要实际测试",
+      "ref": "scene terra-access"
+    },
+    {
+      "id": 29,
+      "kind": "subtitle",
+      "text": "再看一条科研消息",
+      "ref": "scene science-news"
+    },
+    {
+      "id": 30,
+      "kind": "subtitle",
+      "text": "OpenAI在10月26日发布",
+      "ref": "scene science-news"
+    },
+    {
+      "id": 31,
+      "kind": "subtitle",
+      "text": "内部AI模型在数学、计算机科学",
+      "ref": "scene science-news"
+    },
+    {
+      "id": 32,
+      "kind": "subtitle",
+      "text": "和物理三个方向",
+      "ref": "scene science-news"
+    },
+    {
+      "id": 33,
+      "kind": "subtitle",
+      "text": "产出了新的研究成果",
+      "ref": "scene science-news"
+    },
+    {
+      "id": 34,
+      "kind": "subtitle",
+      "text": "其中，计算机科学的一项结果涉及指数时间假设",
+      "ref": "scene science-eth"
+    },
+    {
+      "id": 35,
+      "kind": "subtitle",
+      "text": "简单说，它讨论一类复杂的计算问题",
+      "ref": "scene science-eth"
+    },
+    {
+      "id": 36,
+      "kind": "subtitle",
+      "text": "到底有没有更快的算法",
+      "ref": "scene science-eth"
+    },
+    {
+      "id": 37,
+      "kind": "subtitle",
+      "text": "OpenAI声称找到了推翻这个假设的证明",
+      "ref": "scene science-eth"
+    },
+    {
+      "id": 38,
+      "kind": "subtitle",
+      "text": "如果结论成立",
+      "ref": "scene science-eth"
+    },
+    {
+      "id": 39,
+      "kind": "subtitle",
+      "text": "会影响相关问题的算法研究",
+      "ref": "scene science-eth"
+    },
+    {
+      "id": 40,
+      "kind": "subtitle",
+      "text": "但这不等于今天的软件马上就能跑得更快",
+      "ref": "scene science-limit"
+    },
+    {
+      "id": 41,
+      "kind": "subtitle",
+      "text": "把理论转成可用算法",
+      "ref": "scene science-limit"
+    },
+    {
+      "id": 42,
+      "kind": "subtitle",
+      "text": "还需要后续的工作",
+      "ref": "scene science-limit"
+    },
+    {
+      "id": 43,
+      "kind": "subtitle",
+      "text": "OpenAI已公开部分证明资料",
+      "ref": "scene science-review"
+    },
+    {
+      "id": 44,
+      "kind": "subtitle",
+      "text": "并邀请外部学者继续核验和解释",
+      "ref": "scene science-review"
+    },
+    {
+      "id": 45,
+      "kind": "subtitle",
+      "text": "现阶段，我们可以确认的是",
+      "ref": "scene science-review"
+    },
+    {
+      "id": 46,
+      "kind": "subtitle",
+      "text": "这些研究材料和合作安排已经发布",
+      "ref": "scene science-review"
+    },
+    {
+      "id": 47,
+      "kind": "subtitle",
+      "text": "具体结论的意义还要看后续学界的检验",
+      "ref": "scene science-review"
+    },
+    {
+      "id": 48,
+      "kind": "subtitle",
+      "text": "接下来是一项让AI积累工作经验的研究",
+      "ref": "scene phronix-question"
+    },
+    {
+      "id": 49,
+      "kind": "subtitle",
+      "text": "它想解决的问题是",
+      "ref": "scene phronix-question"
+    },
+    {
+      "id": 50,
+      "kind": "subtitle",
+      "text": "AI做成了一件事",
+      "ref": "scene phronix-question"
+    },
+    {
+      "id": 51,
+      "kind": "subtitle",
+      "text": "下次遇到类似任务",
+      "ref": "scene phronix-question"
+    },
+    {
+      "id": 52,
+      "kind": "subtitle",
+      "text": "能不能少走一些弯路",
+      "ref": "scene phronix-question"
+    },
+    {
+      "id": 53,
+      "kind": "subtitle",
+      "text": "研究人员让智能体把执行步骤和结果保存下来",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 54,
+      "kind": "subtitle",
+      "text": "经过检查之后",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 55,
+      "kind": "subtitle",
+      "text": "整理成可重复使用的工具和操作方法",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 56,
+      "kind": "subtitle",
+      "text": "之后再遇到类似问题",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 57,
+      "kind": "subtitle",
+      "text": "就先调用已有经验",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 58,
+      "kind": "subtitle",
+      "text": "执行出错",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 59,
+      "kind": "subtitle",
+      "text": "还会根据结果修正方法",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 60,
+      "kind": "subtitle",
+      "text": "感觉这个就有点像Skill啊",
+      "ref": "scene phronix-method"
+    },
+    {
+      "id": 61,
+      "kind": "subtitle",
+      "text": "论文在30道软件修复任务",
+      "ref": "scene phronix-test"
+    },
+    {
+      "id": 62,
+      "kind": "subtitle",
+      "text": "和一套科研计算流程上做了测试",
+      "ref": "scene phronix-test"
+    },
+    {
+      "id": 63,
+      "kind": "subtitle",
+      "text": "作者报告",
+      "ref": "scene phronix-test"
+    },
+    {
+      "id": 64,
+      "kind": "subtitle",
+      "text": "在已经累积经验的重复任务中",
+      "ref": "scene phronix-test"
+    },
+    {
+      "id": 65,
+      "kind": "subtitle",
+      "text": "系统能减少反复尝试和处理成本",
+      "ref": "scene phronix-test"
+    },
+    {
+      "id": 66,
+      "kind": "subtitle",
+      "text": "这里需要分清",
+      "ref": "scene phronix-limit"
+    },
+    {
+      "id": 67,
+      "kind": "subtitle",
+      "text": "这主要是在测试经验能不能复用",
+      "ref": "scene phronix-limit"
+    },
+    {
+      "id": 68,
+      "kind": "subtitle",
+      "text": "还不能据此判断",
+      "ref": "scene phronix-limit"
+    },
+    {
+      "id": 69,
+      "kind": "subtitle",
+      "text": "它面对全新问题也会有相同的表现",
+      "ref": "scene phronix-limit"
+    },
+    {
+      "id": 70,
+      "kind": "subtitle",
+      "text": "这项研究改进的是AI保存和复用经验的方法",
+      "ref": "scene phronix-limit"
+    },
+    {
+      "id": 71,
+      "kind": "subtitle",
+      "text": "值得持续关注",
+      "ref": "scene phronix-limit"
+    },
+    {
+      "id": 72,
+      "kind": "subtitle",
+      "text": "然后更新一下这款新模型的开放进度",
+      "ref": "scene mistral-status"
+    },
+    {
+      "id": 73,
+      "kind": "subtitle",
+      "text": "这款模型已经提供了接口预览",
+      "ref": "scene mistral-status"
+    },
+    {
+      "id": 74,
+      "kind": "subtitle",
+      "text": "但截至本期查询",
+      "ref": "scene mistral-status"
+    },
+    {
+      "id": 75,
+      "kind": "subtitle",
+      "text": "官方模型页仍然显示等待发布",
+      "ref": "scene mistral-status"
+    },
+    {
+      "id": 76,
+      "kind": "subtitle",
+      "text": "完整模型文件还没有开放下载",
+      "ref": "scene mistral-status"
+    },
+    {
+      "id": 77,
+      "kind": "subtitle",
+      "text": "模型的公告说会在月底开放",
+      "ref": "scene mistral-date"
+    },
+    {
+      "id": 78,
+      "kind": "subtitle",
+      "text": "Hugging Face上目前列出的",
+      "ref": "scene mistral-date"
+    },
+    {
+      "id": 79,
+      "kind": "subtitle",
+      "text": "预计日期是10月31号",
+      "ref": "scene mistral-date"
+    },
+    {
+      "id": 80,
+      "kind": "subtitle",
+      "text": "想自己部署朋友",
+      "ref": "scene mistral-date"
+    },
+    {
+      "id": 81,
+      "kind": "subtitle",
+      "text": "还需要等正式文件和使用许可",
+      "ref": "scene mistral-date"
+    },
+    {
+      "id": 82,
+      "kind": "subtitle",
+      "text": "最后是一条企业应用消息",
+      "ref": "scene oracle-news"
+    },
+    {
+      "id": 83,
+      "kind": "subtitle",
+      "text": "甲骨文在当地时间10月26日公布了",
+      "ref": "scene oracle-news"
+    },
+    {
+      "id": 84,
+      "kind": "subtitle",
+      "text": "帮助企业部署Fusion",
+      "ref": "scene oracle-news"
+    },
+    {
+      "id": 85,
+      "kind": "subtitle",
+      "text": "云应用和AI智能体平台",
+      "ref": "scene oracle-news"
+    },
+    {
+      "id": 86,
+      "kind": "subtitle",
+      "text": "这些智能体分工处理需求分析",
+      "ref": "scene oracle-method"
+    },
+    {
+      "id": 87,
+      "kind": "subtitle",
+      "text": "应用设计",
+      "ref": "scene oracle-method"
+    },
+    {
+      "id": 88,
+      "kind": "subtitle",
+      "text": "配置和测试",
+      "ref": "scene oracle-method"
+    },
+    {
+      "id": 89,
+      "kind": "subtitle",
+      "text": "比如先把业务需求整理成设计文档",
+      "ref": "scene oracle-method"
+    },
+    {
+      "id": 90,
+      "kind": "subtitle",
+      "text": "再生成配置原型并准备对应的测试用例",
+      "ref": "scene oracle-method"
+    },
+    {
+      "id": 91,
+      "kind": "subtitle",
+      "text": "它主要服务正在部署甲骨文的企业软件的团队",
+      "ref": "scene oracle-use"
+    },
+    {
+      "id": 92,
+      "kind": "subtitle",
+      "text": "对于其他开发者可以关注的是",
+      "ref": "scene oracle-use"
+    },
+    {
+      "id": 93,
+      "kind": "subtitle",
+      "text": "它怎样把配置规则和产品经验",
+      "ref": "scene oracle-use"
+    },
+    {
+      "id": 94,
+      "kind": "subtitle",
+      "text": "整理成AI能调用的技能",
+      "ref": "scene oracle-use"
+    },
+    {
+      "id": 95,
+      "kind": "subtitle",
+      "text": "实际能节省多长时间",
+      "ref": "scene oracle-use"
+    },
+    {
+      "id": 96,
+      "kind": "subtitle",
+      "text": "还要看具体项目效果",
+      "ref": "scene oracle-use"
+    },
+    {
+      "id": 97,
+      "kind": "subtitle",
+      "text": "以上是本期精选资讯",
+      "ref": "scene closing"
+    },
+    {
+      "id": 98,
+      "kind": "subtitle",
+      "text": "我们下期再见",
       "ref": "scene closing"
     }
   ]

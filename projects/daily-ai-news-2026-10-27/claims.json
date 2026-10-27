@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ranking",
+    "text": "当次读取指定入口的全球及国内 ECI TOP15，精确值来自此次上游快照；无分不补分。",
+    "status": "verified",
+    "source": {
+      "path": "ranking.json",
+      "locator": "global, domestic, queriedAt, sourceGeneratedAt; browser observations in evidence/browser-observations.md",
+      "checkedAt": "2026-10-27"
+    }
+  },
+  {
+    "id": "terra-release",
+    "text": "OpenAI 官方 10/26 更新日志公布 GPT-6.1 Terra，发布页说明其视觉理解、电脑操作、标准 API 价格和可用性；减半比较限相较 GPT-5.6 Terra 的标准输入/输出单价。",
+    "status": "verified",
+    "source": {
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "locator": "From visual understanding to action; Pricing and availability. Release date cross-check: developers.openai.com/api/docs/changelog Oct 26.",
+      "checkedAt": "2026-10-27"
+    }
+  },
+  {
+    "id": "science-announcement",
+    "text": "OpenAI 10/26 公布内部模型的数学/计算机科学/物理研究主张及外部学者合作安排，部分材料公开。仅核实公告与材料存在，未独立验证证明。",
+    "status": "verified",
+    "source": {
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "locator": "Opening, release strategies, The Exponential Time Hypothesis is false; official openai/math/lean/docs/378.md scope.",
+      "checkedAt": "2026-10-27"
+    }
+  },
+  {
+    "id": "phronix-study",
+    "text": "Phronix 预印本报告从执行中保存、验证与复用能力；测试含 30 道 SWE-bench Lite 任务及科研流程，区分冷/暖启动。表述限作者研究报告，不声称普遍推广或独立复现。",
+    "status": "verified",
+    "source": {
+      "url": "https://arxiv.org/html/2610.31789v1",
+      "locator": "IV; V-A3 Workloads; V-A4 Run Protocol; V-A5 Metrics; V-B and V-D. Submitted 22 Oct 2026.",
+      "checkedAt": "2026-10-27"
+    }
+  },
+  {
+    "id": "mistral-status",
+    "text": "查询时官方 HF 模型页仍为 Upcoming release，Current ETA October 31；公开 API 预览已在 10/6 公告。",
+    "status": "verified",
+    "source": {
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "locator": "Upcoming release; Expected release; cross-check mistral.ai/news/mistral-large-4 Try it today.",
+      "checkedAt": "2026-10-27"
+    }
+  },
+  {
+    "id": "oracle-platform",
+    "text": "Oracle 当地 10/26 公布面向 Fusion Cloud 实施的智能体平台，包含需求、设计、配置、测试等分工；不保证每个客户的实际效果。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+      "locator": "An agentic platform for faster implementation, specialized agents list.",
+      "checkedAt": "2026-10-27"
+    }
+  }
+]

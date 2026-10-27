@@ -612,6 +612,57 @@
     "preparedAt": "2026-10-27T12:32:32+08:00"
   },
   {
+    "file": "assets/terra-model-detail.png",
+    "derivedFrom": "assets/terra-model-page.png",
+    "parentSha256": "61b573eada3792b5892afbb1dabeea5deb6134c21dce7fb9e825c94ccb3705ed",
+    "sha256": "30e402a9d55cef3127b0cffa6938c846e1e869cc89851abba0e40cb18602fe73",
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "adaptation": "原始截图主体区域裁切；未改原页面文字",
+    "crop": [
+      245,
+      140,
+      1250,
+      650
+    ],
+    "status": "local-verified",
+    "selection": "selected",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。"
+  },
+  {
+    "file": "assets/terra-pricing-detail.png",
+    "derivedFrom": "assets/terra-pricing-page.png",
+    "parentSha256": "569dc849d3636481ee36bbc35d783ac4d9d52ea45bacba625c76276b0ce89457",
+    "sha256": "cac8a06e33516889e5d96870e2579f7b76357e588a30bad5ef8f18a052826a78",
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "adaptation": "原始截图主体区域裁切；未改原页面文字",
+    "crop": [
+      460,
+      210,
+      1250,
+      365
+    ],
+    "status": "local-verified",
+    "selection": "selected",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。"
+  },
+  {
+    "file": "assets/mistral-status-detail.png",
+    "derivedFrom": "assets/mistral-release-status.png",
+    "parentSha256": "7463f209600fdb3679d71ea08044d59e479d9eb3ca5f032ca8154f0277b20c81",
+    "sha256": "3776f17b55825ec43f7acfc75189b7f9deb50e4c3194e8e846300c2eb90ec14a",
+    "sourcePage": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+    "adaptation": "原始截图主体区域裁切；未改原页面文字",
+    "crop": [
+      330,
+      145,
+      1000,
+      350
+    ],
+    "status": "local-verified",
+    "selection": "selected",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。"
+  },
+  {
     "kind": "video-candidate",
     "url": "https://x.com/reatools/status/2112574822584918075",
     "discoveredAt": "https://rea.tools/showcase/",
