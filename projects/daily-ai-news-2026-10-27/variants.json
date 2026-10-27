@@ -59,6 +59,108 @@
         "right": 0.04
       },
       "declare": "含AI生成内容"
+    },
+    "douyin": {
+      "title": "GPT-6.1 Terra发布：看图操作电脑",
+      "description": [
+        "OpenAI 发布 GPT-6.1 Terra，重点提升视觉理解与电脑操作。标准 API 输入、输出单价均为上一代的一半；官方演示展示了从照片到 Blender 模型的过程，具体表现还要看实际任务。",
+        "本期还包括 AI 科研进展、Phronix 智能体经验复用研究、Mistral Large 4 权重开放进度和 Oracle 企业应用消息。Mistral 的 10 月 31 日是本期查询时的预计日期。",
+        "资料：OpenAI https://openai.com/index/introducing-gpt-6-1-terra/；官方演示 https://x.com/OpenAI/status/2114780711664398349；Phronix（Devarajan 等）https://arxiv.org/abs/2610.31789（Figure 1，CC BY 4.0）；Mistral https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B；Oracle https://www.oracle.com/customer-success/navigator/。",
+        "榜单：Epoch AI ECI（CC BY 4.0），https://epoch.ai/eci；数据入口 https://www.bilibili.com/toy/ai-model-world，查询于 2026-10-27 10:49 北京时间。",
+        "音乐：Carefree — Kevin MacLeod (incompetech.com)，CC BY 4.0：https://creativecommons.org/licenses/by/4.0/ 。已裁切、调整音量和淡入淡出。"
+      ],
+      "tags": [],
+      "sceneIds": [
+        "global",
+        "domestic",
+        "overview",
+        "terra-launch",
+        "terra-invoice",
+        "terra-price",
+        "terra-access",
+        "science-news",
+        "science-eth",
+        "science-limit",
+        "science-review",
+        "phronix-question",
+        "phronix-method",
+        "phronix-test",
+        "phronix-limit",
+        "mistral-status",
+        "mistral-date",
+        "oracle-news",
+        "oracle-method",
+        "oracle-use",
+        "closing"
+      ],
+      "format": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 60
+      },
+      "video": "render/daily-ai-news-2026-10-27-r2.mp4",
+      "cover": "render/cover-bili-safe.png",
+      "safeArea": {
+        "top": 0.04,
+        "bottom": 0.1,
+        "left": 0.04,
+        "right": 0.04
+      },
+      "declare": "内容由AI生成",
+      "limits": {
+        "titleChars": 30
+      }
+    },
+    "xhs": {
+      "title": "GPT-6.1 Terra新模型发布",
+      "description": [
+        "OpenAI 发布 GPT-6.1 Terra，重点提升视觉理解与电脑操作。标准 API 输入、输出单价均为上一代的一半；官方演示展示了从照片到 Blender 模型的过程，具体表现还要看实际任务。",
+        "本期还包括 AI 科研进展、Phronix 智能体经验复用研究、Mistral Large 4 权重开放进度和 Oracle 企业应用消息。Mistral 的 10 月 31 日是本期查询时的预计日期。",
+        "资料：OpenAI https://openai.com/index/introducing-gpt-6-1-terra/；官方演示 https://x.com/OpenAI/status/2114780711664398349；Phronix（Devarajan 等）https://arxiv.org/abs/2610.31789（Figure 1，CC BY 4.0）；Mistral https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B；Oracle https://www.oracle.com/customer-success/navigator/。",
+        "榜单：Epoch AI ECI（CC BY 4.0），https://epoch.ai/eci；数据入口 https://www.bilibili.com/toy/ai-model-world，查询于 2026-10-27 10:49 北京时间。",
+        "音乐：Carefree — Kevin MacLeod (incompetech.com)，CC BY 4.0：https://creativecommons.org/licenses/by/4.0/ 。已裁切、调整音量和淡入淡出。"
+      ],
+      "tags": [],
+      "sceneIds": [
+        "global",
+        "domestic",
+        "overview",
+        "terra-launch",
+        "terra-invoice",
+        "terra-price",
+        "terra-access",
+        "science-news",
+        "science-eth",
+        "science-limit",
+        "science-review",
+        "phronix-question",
+        "phronix-method",
+        "phronix-test",
+        "phronix-limit",
+        "mistral-status",
+        "mistral-date",
+        "oracle-news",
+        "oracle-method",
+        "oracle-use",
+        "closing"
+      ],
+      "format": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 60
+      },
+      "video": "render/daily-ai-news-2026-10-27-r2.mp4",
+      "cover": "render/cover-vertical-34.png",
+      "safeArea": {
+        "top": 0.04,
+        "bottom": 0.1,
+        "left": 0.04,
+        "right": 0.04
+      },
+      "declare": "笔记含AI合成内容",
+      "limits": {
+        "titleChars": 20
+      }
     }
   }
 }
