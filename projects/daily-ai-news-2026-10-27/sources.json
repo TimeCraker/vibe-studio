@@ -1,0 +1,123 @@
+{
+  "editionDate": "2026-10-27",
+  "sources": [
+    {
+      "file": "evidence/mistral-announcement.html",
+      "url": "https://mistral.ai/news/mistral-large-4/",
+      "finalUrl": "https://mistral.ai/news/mistral-large-4/",
+      "queriedAt": "2026-10-27T10:49:09+08:00",
+      "bytes": 292895,
+      "sha256": "c6a4d0a4d40cb7143a0a7cf66c4ba715315f8449aae376166d82e404a7fdec9e",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/mistral-docs.html",
+      "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "finalUrl": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "queriedAt": "2026-10-27T10:49:09+08:00",
+      "bytes": 1293265,
+      "sha256": "e183cc043091bc4d28400c16e045e18784924dc5a5f9e147d4e939fd8f542ac0",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/mistral-release-status.html",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "finalUrl": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "queriedAt": "2026-10-27T10:49:09+08:00",
+      "bytes": 79746,
+      "sha256": "f54bef15fd5dea6dcd9efef0e255bed15552d014a15e9814ee9b5258de9d8424",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/phronix-abstract.html",
+      "url": "https://arxiv.org/abs/2610.31789",
+      "finalUrl": "https://arxiv.org/abs/2610.31789",
+      "queriedAt": "2026-10-27T10:49:09+08:00",
+      "bytes": 43152,
+      "sha256": "e81adacb74b237a327b6ef85f0cb8ac106d5cf500df1e65b1597371e2db3e4aa",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/phronix-paper.html",
+      "url": "https://arxiv.org/html/2610.31789v1",
+      "finalUrl": "https://arxiv.org/html/2610.31789v1",
+      "queriedAt": "2026-10-27T10:49:09+08:00",
+      "bytes": 285491,
+      "sha256": "dc653978304997e7d533e33816cd68167297f18c44021643805577edeb557280",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/rea-readme.md",
+      "url": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+      "finalUrl": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+      "queriedAt": "2026-10-27T10:49:09+08:00",
+      "bytes": 29405,
+      "sha256": "ff4c7366008e14251faee8aa9f516f4d4686e92e40c1800ae5ea7e4230d6d2ab",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/rea-repo.json",
+      "url": "https://api.github.com/repos/morluto/rea",
+      "queriedAt": "2026-10-27T10:49:11+08:00",
+      "status": "failed",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "file": "evidence/oracle-announcement.html",
+      "url": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+      "finalUrl": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+      "queriedAt": "2026-10-27T10:49:13+08:00",
+      "bytes": 51429,
+      "sha256": "ab420a61d8cd49ffbc324c2ed83cf4c458ad3d4b6e7d91b94326e6259aba1465",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/models-upstream.json",
+      "url": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+      "finalUrl": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+      "queriedAt": "2026-10-27T10:49:13+08:00",
+      "bytes": 3058780,
+      "sha256": "1b8fa6074a34854f8f84de7f30461059bf77ffa4025088b011b046810fe0fea7",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/ranking-page.html",
+      "url": "https://bilibilitoy.com/toy/ai-model-world/34090174887936-v32787/leaderboard/index.html",
+      "queriedAt": "2026-10-27T10:49:15+08:00",
+      "status": "failed",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>"
+    },
+    {
+      "file": "evidence/terra-announcement.html",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "queriedAt": "2026-10-27T10:58:39+08:00",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "evidence/terra-model.html",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "finalUrl": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "queriedAt": "2026-10-27T10:58:39+08:00",
+      "bytes": 459063,
+      "sha256": "96092f83a0d7b475a18261b9f01178b671903093f95e98e4edb0139fb4d84a09",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/openai-changelog.html",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "finalUrl": "https://developers.openai.com/api/docs/changelog",
+      "queriedAt": "2026-10-27T10:58:39+08:00",
+      "bytes": 554445,
+      "sha256": "f6cb7fb6d52bf23f2f19a4123d8d6a52bceccaa072a5e85cf00857d91903b1a2",
+      "status": "retrieved"
+    },
+    {
+      "file": "evidence/openai-science.html",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "queriedAt": "2026-10-27T10:58:39+08:00",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

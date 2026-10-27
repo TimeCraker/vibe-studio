@@ -1,0 +1,166 @@
+[
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "bytes": 1198,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/claude.png"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "bytes": 209762,
+    "fetchedAt": "2026-10-24T08:41:20.962405+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/deepseek.ico"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "bytes": 11037,
+    "fetchedAt": "2026-10-24T08:41:20.833370+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/glm.svg"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "bytes": 61823,
+    "fetchedAt": "2026-10-24T08:41:21.298240+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/google.png"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "bytes": 7454,
+    "fetchedAt": "2026-10-24T08:41:20.127217+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/kimi.png"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "bytes": 8912,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/meta.svg"
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "bytes": 3273,
+    "fetchedAt": "2026-10-24T08:41:20.736187+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/openai.svg"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "bytes": 15465,
+    "fetchedAt": "2026-10-24T08:41:21.136261+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/qwen.png"
+  },
+  {
+    "file": "assets/mistral-large-4.svg",
+    "url": "https://docs.mistral.ai/assets/models/ML4-Lechonk.svg",
+    "rights": "Mistral 官方模型图标；用于封面识别，商标不声明再许可",
+    "attribution": "Mistral AI; https://docs.mistral.ai/models/mistral-large-4-0",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 11933,
+    "sha256": "2aa0cb250f7a5b6006839b753eeb6c652d633c1a4ee451ad7daf260e06a5ba79"
+  },
+  {
+    "file": "assets/mistral-hero.jpg",
+    "url": "https://mistral.ai/images/heros/hero-ml4@2x.jpg",
+    "rights": "官方发布图候选；仅作相关报道，发布前核对实际采用范围与品牌条款",
+    "attribution": "Mistral AI; https://mistral.ai/news/mistral-large-4/",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 398259,
+    "sha256": "157b2f82b51cec3d9e82024fef70c6a8ff0e4ed6d62604eda88c841ae4545e9a"
+  },
+  {
+    "file": "assets/rea-hopper.png",
+    "url": "https://raw.githubusercontent.com/morluto/rea/main/docs/assets/rea-hopper-analysis.png",
+    "rights": "项目作者提供的 Hopper 分析示意；保留项目署名及第三方界面权利，标官方演示，非本栏目实测",
+    "attribution": "morluto/rea; https://github.com/morluto/rea",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 1355107,
+    "sha256": "144e207c9ca57f61a311210a0d679c55d36f6614cbf4d15b7b280a268389aa1d"
+  },
+  {
+    "file": "assets/rea-investigation.svg",
+    "url": "https://raw.githubusercontent.com/morluto/rea/main/website/public/assets/figures/rea-investigation-flow.svg",
+    "rights": "REA 作者图解，项目 MIT；保留作者署名及许可",
+    "attribution": "morluto/rea; https://github.com/morluto/rea/blob/main/LICENSE",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 3552,
+    "sha256": "11c3bf39b8e17910d058bfeb1368bae0d97846b08c09dd5ca7a433fd6ee2d1e6"
+  },
+  {
+    "file": "assets/oracle-platform.jpg",
+    "url": "https://www.oracle.com/a/pr/img/cimg16x9sm-css-agentic-ai-platform.jpg",
+    "rights": "官方新闻图候选；并非完整产品实机演示，发布前核对实际采用范围与媒体使用条件",
+    "attribution": "Oracle; https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 18213,
+    "sha256": "3b3a60b134821d78762c950e0f364c715120d3925ef2b35092037961bb6d268c"
+  },
+  {
+    "file": "assets/phronix-architecture.svg",
+    "url": "https://arxiv.org/html/2610.31789v1#S4.F1",
+    "status": "retrieved-candidate",
+    "sha256": "a41a9b6d1eb64586dc4df180891c642ee45f1bbc6db37d911451af54e8d0fede",
+    "bytes": 33839,
+    "adaptation": "Extracted inline Figure 1 SVG; added XML namespace only. Needs visual check before use.",
+    "rights": "CC BY 4.0, paper license",
+    "attribution": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, Figure 1, CC BY 4.0"
+  },
+  {
+    "kind": "video-candidate",
+    "url": "https://x.com/reatools/status/2112574822584918075",
+    "discoveredAt": "https://rea.tools/showcase/",
+    "status": "link-only-not-downloaded",
+    "use": "Official RL-environment demo. Use only if the eventual narration discusses that feature; current REA narration focuses on software analysis, so do not insert unrelated RL footage.",
+    "clipIn": null,
+    "clipOut": null
+  },
+  {
+    "kind": "interactive-candidate",
+    "url": "https://ml4-blog-widgets.netlify.app/document-search/?iframe",
+    "discoveredAt": "https://mistral.ai/news/mistral-large-4/",
+    "status": "not-captured",
+    "use": "Official document-search demo candidate; not required for release-status narration."
+  }
+]

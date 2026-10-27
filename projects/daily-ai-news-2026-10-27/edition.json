@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-27",
+  "status": "script-ready-awaiting-human-recording",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "line": "b",
+  "narration": "human",
+  "narrationFile": "narration.md",
+  "narrationBodySha256": "231d98b5fae7098251a57afbe68a4873073d23e13e0292c7ed39fd049f7dc59d",
+  "ranking": "ranking.json",
+  "headStory": "terra",
+  "storyOrder": [
+    "terra",
+    "science",
+    "phronix",
+    "mistral",
+    "oracle"
+  ],
+  "production": {
+    "humanRecording": "pending",
+    "asrAlignment": "pending",
+    "render": "not-started",
+    "humanReview": "pending",
+    "publish": "not-started"
+  }
+}
