@@ -21,8 +21,8 @@
     "humanRecording": "received-and-preserved",
     "asrAlignment": "word-windows-text-reviewed-listening-pending",
     "render": "complete-native60fps-with-official-footage",
-    "humanReview": "revision-pending",
-    "publish": "paused-by-user-not-uploaded",
+    "humanReview": "user-authorized-submission-full-continuous-review-not-certified",
+    "publish": "uploaded-form-filled-awaiting-human-submit",
     "assets": "ready-with-documented-video-fallbacks",
     "technicalQc": "passed"
   },

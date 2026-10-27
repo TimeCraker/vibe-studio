@@ -2,10 +2,12 @@
   "driver": "pw",
   "platforms": {
     "bili": {
-      "video": "render/daily-ai-news-2026-10-27.mp4",
-      "cover": "render/cover.png",
+      "video": "render/daily-ai-news-2026-10-27-r2.mp4",
+      "cover": "render/cover-bili-safe.png",
       "spec": "exports/bili/form.json",
-      "topics": "AI资讯,OpenAI,人工智能,大模型,Agent"
+      "topics": "AI资讯,OpenAI,人工智能,大模型,Agent",
+      "declare": "含AI生成内容",
+      "category": "人工智能"
     }
   }
 }
