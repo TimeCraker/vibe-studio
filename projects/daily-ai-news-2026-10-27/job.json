@@ -149,7 +149,11 @@
         "remotion-app/src",
         "timeline.json",
         "ranking.json",
-        "audio/mix.wav"
+        "audio/mix.wav",
+        "media-plan.json",
+        "assets/sources.json",
+        "assets/terra-official-launch-1080p.mp4",
+        "remotion-app/public/edition/assets/terra-official-launch-1080p.mp4"
       ],
       "outputs": [
         "render/stills",
@@ -170,7 +174,11 @@
         "timeline.json",
         "ranking.json",
         "audio/mix.wav",
-        "remotion-app/public/edition/assets"
+        "remotion-app/public/edition/assets",
+        "media-plan.json",
+        "assets/sources.json",
+        "assets/terra-official-launch-1080p.mp4",
+        "remotion-app/public/edition/assets/terra-official-launch-1080p.mp4"
       ],
       "outputs": [
         "render/daily-ai-news-2026-10-27.mp4",

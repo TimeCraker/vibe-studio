@@ -58,4 +58,18 @@
 
 B 站标题、简介、来源署名、封面和同版 98 条 SRT 已准备到 exports/bili/；只做本地派生与投稿 dry-run，未上传、未登录、未发布。
 
-保全入口：`node projects/daily-ai-news-2026-10-27/scripts/archive.mjs`，默认输出 `C:/Users/TimeCraker/Videos/vibe-studio-archive/daily-ai-news-2026-10-27-r1`，按 recipe / media / deliverables 分开并保留 archive.json；校验及空目录恢复结果存 qa/archive-verification.json。工作目录保留，不清场。空目录恢复不代表已经重渲染认证。
+保全入口：`node projects/daily-ai-news-2026-10-27/scripts/archive.mjs`，默认输出 `C:/Users/TimeCraker/Videos/vibe-studio-archive/daily-ai-news-2026-10-27-r2`（首版 r1 归档保留），按 recipe / media / deliverables 分开并保留 archive.json；校验及空目录恢复结果存 qa/archive-verification.json。工作目录保留，不清场。空目录恢复不代表已经重渲染认证。
+
+## 视频片段补齐
+
+首版用户反馈“还可以”并要求发布，随后因没有相关视频片段暂停发布；本期视频尚未上传或发布。
+
+- [x] V1：取得并审看匹配本期口播的官方视频，记录来源、实际起止和用途。
+- [x] V2：按现有真人音轨接入适合的片段，渲染局部预览和修订版。
+- [x] V3：核查修订版、保存实际媒体及归档，交用户重新审阅。
+
+补齐进度：3/3。修订版技术检查通过，r2 归档已校验并在空目录恢复 186 个文件；用户重新审阅与发布仍待完成。
+
+修订版实际采用 OpenAI 官方视频原片 9.0–22.3 秒，位于成片 00:33.367–00:46.667，展示电车照片到 Blender 建模及结果；1920×1080 / 60fps / 272.75 秒不变，官方源视频为 24fps 并保留原播放速度。独立版本文件为 `render/daily-ai-news-2026-10-27-r2.mp4`，主交付路径也已更新为相同内容；13.3 秒局部预览 `render/daily-ai-news-2026-10-27-footage-preview.mp4` 直接截自完整新版。
+
+修订版完整 AAC 流与首版哈希一致，录音、混音、字幕和时间线未改。新版实际抽帧与检查记录已更新，未冒用首版人工接受；Oracle 视频仍未取得，未宣称每条资讯均已加入视频。发布继续暂停，等待用户看新版。

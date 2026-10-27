@@ -13,7 +13,7 @@ for(const [name,expected] of Object.entries(pkg.dependencies).filter(([n])=>n===
 const timeline=JSON.parse(readFileSync(join(project,'timeline.json'),'utf8'));if(timeline.fps!==60)throw Error('Native 60fps required');
 copyFileSync(join(project,'audio/mix.wav'),join(app,'public/edition/mix.wav'));mkdirSync(join(project,'render/stills'),{recursive:true});mkdirSync(join(project,'.studio'),{recursive:true});
 const hash=file=>createHash('sha256').update(readFileSync(file)).digest('hex');
-const inputFiles=['timeline.json','ranking.json','audio/mix.wav',...['Edition.tsx','Design.tsx','Scenes.tsx'].map(f=>`remotion-app/src/${f}`)];
+const inputFiles=['timeline.json','ranking.json','audio/mix.wav','media-plan.json','assets/sources.json','assets/terra-official-launch-1080p.mp4','remotion-app/public/edition/assets/terra-official-launch-1080p.mp4',...['Edition.tsx','Design.tsx','Scenes.tsx'].map(f=>`remotion-app/src/${f}`)];
 const inputHashes=inputFiles.map(path=>({path,sha256:hash(join(project,path))}));
 const assertFrozen=()=>{for(const input of inputHashes)if(hash(join(project,input.path))!==input.sha256)throw Error(`Input changed while rendering: ${input.path}; rerender instead of relabeling old media`);};
 const serveUrl=await bundle({entryPoint:join(app,'remotion/index.ts'),publicDir:join(app,'public')});
@@ -37,7 +37,9 @@ try{
   console.log('COVER rendered');
  }
  if(mode==='sample'||mode==='video'){
-  const start=mode==='sample'?41:0,end=mode==='sample'?65:timeline.seconds;
+  const sampleRange=mode==='sample'&&process.argv[3]?process.argv[3].split(',').map(Number):[41,65];
+  const start=mode==='sample'?sampleRange[0]:0,end=mode==='sample'?sampleRange[1]:timeline.seconds;
+  if(!Number.isFinite(start)||!Number.isFinite(end)||start<0||end<=start||end>timeline.seconds)throw Error('Invalid sample range');
   const visuals=join(project,`render/${mode}-visuals.mp4`);let percent=-10;
   await renderMedia({composition,serveUrl,puppeteerInstance:browser,outputLocation:visuals,codec:'h264',crf:18,x264Preset:'veryfast',pixelFormat:'yuv420p',muted:true,concurrency:6,logLevel:'error',onBrowserLog,...(mode==='sample'?{frameRange:[Math.round(start*60),Math.round(end*60)-1]}:{}),onProgress:p=>{const next=Math.floor(p.progress*10)*10;if(next>=percent+10){percent=next;console.log(`RENDER ${mode} ${next}% frames=${p.renderedFrames}`);}}});
   assertFrozen();

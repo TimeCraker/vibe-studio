@@ -20,9 +20,9 @@
   "production": {
     "humanRecording": "received-and-preserved",
     "asrAlignment": "word-windows-text-reviewed-listening-pending",
-    "render": "complete-native60fps",
-    "humanReview": "pending",
-    "publish": "local-materials-only-not-uploaded",
+    "render": "complete-native60fps-with-official-footage",
+    "humanReview": "revision-pending",
+    "publish": "paused-by-user-not-uploaded",
     "assets": "ready-with-documented-video-fallbacks",
     "technicalQc": "passed"
   },

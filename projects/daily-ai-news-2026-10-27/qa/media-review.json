@@ -105,5 +105,30 @@
     "native60fps composition/render",
     "voice/music listening and ducking",
     "final audiovisual and editorial human review"
-  ]
+  ],
+  "videoRescout": {
+    "sourcePage": "https://x.com/OpenAI/status/2114780711664398349",
+    "file": "assets/terra-official-launch-1080p.mp4",
+    "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e",
+    "completeDecode": "passed",
+    "width": 1920,
+    "height": 1080,
+    "sourceFps": 24,
+    "seconds": 31.509333,
+    "observed": "原视频抽帧确认电车照片、Blender 中逐步建模、完成结果；非连续视听审阅。",
+    "selectedSourceRange": [
+      9,
+      22.3
+    ],
+    "finalUse": {
+      "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+      "range": [
+        33.36666666666667,
+        46.666666666666664
+      ],
+      "actualFrames": "qa/render-evidence.json",
+      "humanReview": "pending"
+    },
+    "oracle": "官方介绍片入口已验证，未取得可剪文件，仍用原截图。"
+  }
 }
