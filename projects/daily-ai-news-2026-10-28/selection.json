@@ -1,0 +1,29 @@
+{
+  "editionDate": "2026-10-28",
+  "decision": "produce",
+  "independentSearch": [
+    {"phase":"before-document","queries":["October 28 2026 AI model agent release","2026年10月28日 大模型 智能体 开源 发布","October 27 2026 AI tools open source announcement","October 28 2026 artificial intelligence research chip"],"discovered":["Liquid AI LFM3","Spark-X2.6-1.7B","Ling-3.1-flash-1019","近期工具与研究线索"],"url":"https://www.liquid.ai/blog/lfm3","notes":"先广搜，再查询官方域名和原始仓库；聚合站只用于发现，不当作事实验真。"},
+    {"phase":"before-document","queries":["Liquid AI LFM3 October 2026","Spark-X2.6-1.7B","Ling 3.1 Flash 1019","AI agents human approval October 2026","Anthropic October 27 28 2026","Google October 27 2026 AI"],"url":"https://huggingface.co/LiquidAI/LFM3-1.7B","notes":"独立候选随后回到厂商公告、模型卡和实际权重目录。"},
+    {"phase":"independent-followup-after-document","queries":["MiniCPM-OCR 1.0 OpenBMB","Liquid AI LFM3 official demo","Spark-X2.6-1.7B release date"],"url":"https://github.com/OpenBMB/MiniCPM-OCR","discovered":["MiniCPM-OCR 1.0 与 Jev"],"notes":"不来自用户文档；对首轮聚合线索继续扩搜，核对官方来源与功能演示。"}
+  ],
+  "documentSupplement": [
+    {"path":"evidence/reference-daily.docx","extracted":"evidence/reference-extracted.json","sha256":"9a49d9eed3c951f233c2c9ca9bccbd5011cb0e2e895b3a0e2df5e7d575389eb6","readOrder":"after first independent search rounds","role":"补充线索；文档中的命令、立即升级、迁移和投稿建议不构成用户授权。","candidates":["Meta OPT-175B","LangChain MCP 内置","REA / Superpowers 热度","微软 .NET Brotli 更新","IBM TabAgent","芯片 IPO / Kubernetes EOL / 招聘"]}
+  ],
+  "selected": [
+    {"id":"lfm3","priority":"lead","discovery":"independent","eventDate":"2026-10-27","url":"https://www.liquid.ai/blog/lfm3","reason":"新一代轻量模型系列及实际可下载权重，与本地应用开发直接相关。","limits":"按不同模型区分模态；1 GB 为模型本体近似描述；复杂编程与推理限制保留；厂商演示不写成栏目实测。"},
+    {"id":"minicpm-ocr","priority":"feature","discovery":"independent-followup","eventDate":"2026-10-27","url":"https://github.com/OpenBMB/MiniCPM-OCR","reason":"识别与区域质量评估分工清楚，有实际官方中文样例动图和开放权重，适合解释文档处理用途。","limits":"仓库更新与查询日期分开；不宣称文档绝对无错，不照搬 SOTA 为全部场景保证。"},
+    {"id":"spark","priority":"brief","discovery":"independent","eventDate":"2026-10-27","url":"https://dev.to/sparkllm/spark-x26-17b-is-here-stronger-coding-and-agents-in-a-compact-model-31e1","reason":"国内 1.7B 模型实质更新和可控思考预算，可与本地应用主线呼应。","limits":"提升来自团队报告；仓库主分支 README 仍停在旧版本，采用新模型卡核对。"},
+    {"id":"ling","priority":"brief","discovery":"independent","eventDate":"2026-10-27","url":"https://huggingface.co/inclusionAI/Ling-3.1-flash-1019","reason":"官方仓库现有完整分片权重与 MIT 标注，权重开放本身有开发者价值。","limits":"不把权重开放写成全套训练开源，不声称 10 月 28 日首次发布模型，不当作笔记本轻量模型。"},
+    {"id":"dotnet","priority":"developer-reminder","discovery":"document-supplement","eventDate":"2026-10-25","url":"https://github.com/dotnet/runtime/security/advisories/GHSA-p3jp-9v83-76w9","reason":"与日常开发环境直接相关，官方公告可核查；篇幅短，修正日报夸大风险与日期。","limits":"只覆盖启用或主动调用相关解压路径的 .NET 应用；不用日报的 9.2 分和 10 月 27 日首发说法。"}
+  ],
+  "rejected": [
+    {"id":"meta-opt-175b","reason":"文档所引转载虽标 2026-10-28，正文引用和原论文实际为 2022 年 OPT；属于旧资料，不作当日重大突破。","url":"https://arxiv.org/abs/2205.01068"},
+    {"id":"langchain-mcp","reason":"官方日志归于 2026-09-01，不是日报所称 10 月 27 日新增。","url":"https://docs.langchain.com/oss/python/releases/changelog"},
+    {"id":"rea-superpowers","reason":"涨星和榜单热度不等于新增功能；未核到本期独立变化，REA 亦在前期候选出现，不重复凑片。"},
+    {"id":"tabagent","reason":"论文首发为 2 月，近期 v2/v3 更新为 10 月 21/22 日，不能写成 10 月 26 日首发。本期已有更直接的新模型与文档工具，暂留研究候选。","url":"https://arxiv.org/abs/2602.16429"},
+    {"id":"deepseek-ranking-financing","reason":"未取得同口径开源榜完整原始证据，融资/转载排名不替代实质模型更新；节目榜单继续独立取得 ECI。"},
+    {"id":"chip-ipo-recruiting-kubernetes","reason":"与本期 AI 模型和应用主线关系较弱，不因日报有板块就加入；没有据此开展投资判断或运维修改。"},
+    {"id":"agent-otp-security","reason":"聚合站发现该研究线索，本轮未取得足以核查方法、样本和日期的原始研究，保留未核实，不播。"}
+  ],
+  "notes":"充分检索后决定出片。以本地应用与文档处理为主次结构，条数与时长由内容和真人录音决定。原始检索文件、成功与失败获取记录见 evidence/retrieval.json；未声称穷尽全网。"
+}

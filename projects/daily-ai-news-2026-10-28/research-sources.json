@@ -1,0 +1,23 @@
+[
+  {"id":"liquid-blog","url":"https://www.liquid.ai/blog/lfm3","discovery":"independent","role":"official announcement"},
+  {"id":"liquid-card","url":"https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md","discovery":"independent","role":"official model card"},
+  {"id":"liquid-metadata","url":"https://huggingface.co/api/models/LiquidAI/LFM3-1.7B","discovery":"independent","role":"model repository metadata"},
+  {"id":"spark-card","url":"https://huggingface.co/XHToken/Spark-X2.6-1.7B/raw/main/README.md","discovery":"independent","role":"official model card"},
+  {"id":"spark-repo","url":"https://raw.githubusercontent.com/XHToken/Spark-X2.6/main/README.md","discovery":"independent","role":"official release history"},
+  {"id":"spark-metadata","url":"https://huggingface.co/api/models/XHToken/Spark-X2.6-1.7B","discovery":"independent","role":"model repository metadata"},
+  {"id":"ling-card","url":"https://huggingface.co/inclusionAI/Ling-3.1-flash-1019/raw/main/README.md","discovery":"independent","role":"official model card"},
+  {"id":"ling-metadata","url":"https://huggingface.co/api/models/inclusionAI/Ling-3.1-flash-1019","discovery":"independent","role":"model repository metadata"},
+  {"id":"langchain-changelog","url":"https://docs.langchain.com/oss/python/releases/changelog","discovery":"document-supplement","role":"official dated changelog"},
+  {"id":"meta-document-link","url":"http://zslm.openi.org.cn/index.php?m=content&c=index&a=show&catid=14&id=214","discovery":"document-supplement","role":"document's secondary link"},
+  {"id":"meta-opt-paper","url":"https://arxiv.org/abs/2205.01068","discovery":"document-supplement","role":"original OPT paper date"},
+  {"id":"tabagent-paper","url":"https://arxiv.org/abs/2602.16429","discovery":"document-supplement","role":"original paper and revision dates"},
+  {"id":"dotnet-advisory","url":"https://github.com/dotnet/runtime/security/advisories/GHSA-p3jp-9v83-76w9","discovery":"document-supplement","role":"official security advisory"},
+  {"id":"cert-summary","url":"https://www.cert.at/de/tagesberichte/2026/10/tagesberichte-27102026","discovery":"document-supplement","role":"document's dated CERT summary"},
+  {"id":"bilibili-entry","url":"https://www.bilibili.com/toy/ai-model-world","discovery":"column-required","role":"live ranking entry and iframe discovery"},
+  {"id":"ranking-models","url":"https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json","discovery":"column-required","role":"fresh upstream ranking snapshot"},
+  {"id":"minicpm-card","url":"https://huggingface.co/openbmb/MiniCPM-OCR-1.0/raw/main/README.md","discovery":"independent-followup","role":"official model card"},
+  {"id":"minicpm-judge-card","url":"https://huggingface.co/openbmb/MiniCPM-OCR-Jev/raw/main/README.md","discovery":"independent-followup","role":"official OCR verifier model card"},
+  {"id":"minicpm-metadata","url":"https://huggingface.co/api/models/openbmb/MiniCPM-OCR-1.0","discovery":"independent-followup","role":"repository dates and actual weight inventory"},
+  {"id":"minicpm-official","url":"https://openbmb.cn/en/model/minicpm-ocr","discovery":"independent-followup","role":"official model and demonstration page"},
+  {"id":"minicpm-repo","url":"https://raw.githubusercontent.com/OpenBMB/MiniCPM-OCR/main/README.md","discovery":"independent-followup","role":"official code and media references"}
+]

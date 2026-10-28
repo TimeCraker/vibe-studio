@@ -1,0 +1,833 @@
+{
+  "entryUrl": "https://www.bilibili.com/toy/ai-model-world",
+  "embeddedUrl": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v34855/index.html",
+  "leaderboardUrl": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v34855/leaderboard/index.html",
+  "observations": [
+    {
+      "kind": "global",
+      "filter": "全部",
+      "queriedAt": "2026-10-28T03:50:36.095Z",
+      "selected": [
+        {
+          "value": "eci",
+          "text": "综合智力（225）"
+        },
+        {
+          "value": "",
+          "text": "不限"
+        }
+      ],
+      "pressedButtons": [
+        "综合智力225",
+        "全部",
+        "全部",
+        "全部"
+      ],
+      "rows": [
+        {
+          "text": "1\nClaude Opus 5.5\nAnthropic\n168.8",
+          "links": [
+            {
+              "text": "Claude Opus 5.5",
+              "href": "model/anthropic-claude-opus-5-5/index.html"
+            },
+            {
+              "text": "168.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "2\nGPT-6 Astra\nOpenAI\n168.8",
+          "links": [
+            {
+              "text": "GPT-6 Astra",
+              "href": "model/openai-gpt-6-astra/index.html"
+            },
+            {
+              "text": "168.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "3\nGPT-6.1 Sol\nOpenAI\n168.4",
+          "links": [
+            {
+              "text": "GPT-6.1 Sol",
+              "href": "model/openai-gpt-6-1-sol/index.html"
+            },
+            {
+              "text": "168.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "4\nClaude Fable 5.1\nAnthropic\n166.5",
+          "links": [
+            {
+              "text": "Claude Fable 5.1",
+              "href": "model/anthropic-claude-fable-5-1/index.html"
+            },
+            {
+              "text": "166.5",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "5\nGemini 4 Argon\n谷歌\n166.4",
+          "links": [
+            {
+              "text": "Gemini 4 Argon",
+              "href": "model/google-gemini-4-argon/index.html"
+            },
+            {
+              "text": "166.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "6\nClaude Sonnet 5.5\nAnthropic\n166.2",
+          "links": [
+            {
+              "text": "Claude Sonnet 5.5",
+              "href": "model/anthropic-claude-sonnet-5-5/index.html"
+            },
+            {
+              "text": "166.2",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "7\nClaude Opus 5\nAnthropic\n163.9",
+          "links": [
+            {
+              "text": "Claude Opus 5",
+              "href": "model/anthropic-claude-opus-5/index.html"
+            },
+            {
+              "text": "163.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "8\nGPT-6 Sol\nOpenAI\n163.7",
+          "links": [
+            {
+              "text": "GPT-6 Sol",
+              "href": "model/openai-gpt-6-sol/index.html"
+            },
+            {
+              "text": "163.7",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "9\nClaude Fable 5\nAnthropic\n163.4",
+          "links": [
+            {
+              "text": "Claude Fable 5",
+              "href": "model/anthropic-claude-fable-5/index.html"
+            },
+            {
+              "text": "163.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "10\nGPT-5.5 Pro\nOpenAI\n162.9",
+          "links": [
+            {
+              "text": "GPT-5.5 Pro",
+              "href": "model/openai-gpt-5-5-pro/index.html"
+            },
+            {
+              "text": "162.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "11\nGPT-5.6 Sol\nOpenAI\n162.8",
+          "links": [
+            {
+              "text": "GPT-5.6 Sol",
+              "href": "model/openai-gpt-5-6-sol/index.html"
+            },
+            {
+              "text": "162.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "12\nMuse Wonder\nMeta\n161.8",
+          "links": [
+            {
+              "text": "Muse Wonder",
+              "href": "model/meta-muse-wonder/index.html"
+            },
+            {
+              "text": "161.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "13\nMuse Wonder\nMeta\n161.8",
+          "links": [
+            {
+              "text": "Muse Wonder",
+              "href": "model/meta-muse-wonder-1-0/index.html"
+            },
+            {
+              "text": "161.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "14\nGPT-5.6 Terra\nOpenAI\n160.1",
+          "links": [
+            {
+              "text": "GPT-5.6 Terra",
+              "href": "model/openai-gpt-5-6-terra/index.html"
+            },
+            {
+              "text": "160.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "15\nGPT-5.5\nOpenAI\n159.7",
+          "links": [
+            {
+              "text": "GPT-5.5",
+              "href": "model/openai-gpt-5-5/index.html"
+            },
+            {
+              "text": "159.7",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "16\nGPT-5.4 Pro\nOpenAI\n159.6",
+          "links": [
+            {
+              "text": "GPT-5.4 Pro",
+              "href": "model/openai-gpt-5-4-pro/index.html"
+            },
+            {
+              "text": "159.6",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "17\nClaude Haiku 5.5\nAnthropic\n159.3",
+          "links": [
+            {
+              "text": "Claude Haiku 5.5",
+              "href": "model/anthropic-claude-haiku-5-5/index.html"
+            },
+            {
+              "text": "159.3",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "18\nClaude Opus 4.8\nAnthropic\n159.0",
+          "links": [
+            {
+              "text": "Claude Opus 4.8",
+              "href": "model/anthropic-claude-opus-4-8/index.html"
+            },
+            {
+              "text": "159.0",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "19\nGemini 3.7 Flash\n谷歌\n158.0",
+          "links": [
+            {
+              "text": "Gemini 3.7 Flash",
+              "href": "model/google-gemini-3-7-flash/index.html"
+            },
+            {
+              "text": "158.0",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "20\nKimi K3\n月之暗面\n157.9",
+          "links": [
+            {
+              "text": "Kimi K3",
+              "href": "model/moonshotai-kimi-k3/index.html"
+            },
+            {
+              "text": "157.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "21\nGemini 3.8 Flash\n谷歌\n157.4",
+          "links": [
+            {
+              "text": "Gemini 3.8 Flash",
+              "href": "model/google-gemini-3-8-flash/index.html"
+            },
+            {
+              "text": "157.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "22\nQwen3.8 Max\n阿里通义\n157.4",
+          "links": [
+            {
+              "text": "Qwen3.8 Max",
+              "href": "model/alibaba-qwen3-8-max/index.html"
+            },
+            {
+              "text": "157.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "23\nQwen3.8 Max Preview\n阿里通义\n157.4",
+          "links": [
+            {
+              "text": "Qwen3.8 Max Preview",
+              "href": "model/alibaba-qwen3-8-max-preview/index.html"
+            },
+            {
+              "text": "157.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "24\nGPT-5.4\nOpenAI\n157.3",
+          "links": [
+            {
+              "text": "GPT-5.4",
+              "href": "model/openai-gpt-5-4/index.html"
+            },
+            {
+              "text": "157.3",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "25\nMuse Spark 1.3\nMeta\n157.2",
+          "links": [
+            {
+              "text": "Muse Spark 1.3",
+              "href": "model/meta-muse-spark-1-3/index.html"
+            },
+            {
+              "text": "157.2",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "26\nGPT-5.3 Codex\nOpenAI\n157.1",
+          "links": [
+            {
+              "text": "GPT-5.3 Codex",
+              "href": "model/openai-gpt-5-3-codex/index.html"
+            },
+            {
+              "text": "157.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "27\nClaude Sonnet 5\nAnthropic\n156.9",
+          "links": [
+            {
+              "text": "Claude Sonnet 5",
+              "href": "model/anthropic-claude-sonnet-5/index.html"
+            },
+            {
+              "text": "156.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "28\nClaude Opus 4.7\nAnthropic\n156.8",
+          "links": [
+            {
+              "text": "Claude Opus 4.7",
+              "href": "model/anthropic-claude-opus-4-7/index.html"
+            },
+            {
+              "text": "156.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "29\nGPT-6 Luna\nOpenAI\n156.8",
+          "links": [
+            {
+              "text": "GPT-6 Luna",
+              "href": "model/openai-gpt-6-luna/index.html"
+            },
+            {
+              "text": "156.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "30\nGrok 4.6\nxAI\n156.6",
+          "links": [
+            {
+              "text": "Grok 4.6",
+              "href": "model/xai-grok-4-6/index.html"
+            },
+            {
+              "text": "156.6",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "domestic",
+      "filter": "国内",
+      "queriedAt": "2026-10-28T03:50:36.242Z",
+      "selected": [
+        {
+          "value": "eci",
+          "text": "综合智力（225）"
+        },
+        {
+          "value": "",
+          "text": "不限"
+        }
+      ],
+      "pressedButtons": [
+        "综合智力225",
+        "国内",
+        "全部",
+        "全部"
+      ],
+      "rows": [
+        {
+          "text": "1\nKimi K3\n月之暗面\n157.9",
+          "links": [
+            {
+              "text": "Kimi K3",
+              "href": "model/moonshotai-kimi-k3/index.html"
+            },
+            {
+              "text": "157.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "2\nQwen3.8 Max\n阿里通义\n157.4",
+          "links": [
+            {
+              "text": "Qwen3.8 Max",
+              "href": "model/alibaba-qwen3-8-max/index.html"
+            },
+            {
+              "text": "157.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "3\nQwen3.8 Max Preview\n阿里通义\n157.4",
+          "links": [
+            {
+              "text": "Qwen3.8 Max Preview",
+              "href": "model/alibaba-qwen3-8-max-preview/index.html"
+            },
+            {
+              "text": "157.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "4\nGLM-5.3\n智谱\n156.0",
+          "links": [
+            {
+              "text": "GLM-5.3",
+              "href": "/toy/ai-model-world/model/zhipuai-glm-5-3/"
+            },
+            {
+              "text": "156.0",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "5\nDeepSeek V4.1 Flash\n深度求索\n155.9",
+          "links": [
+            {
+              "text": "DeepSeek V4.1 Flash",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-1-flash/"
+            },
+            {
+              "text": "155.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "6\nDeepSeek V4.1 Flash 1017\n深度求索\n155.9",
+          "links": [
+            {
+              "text": "DeepSeek V4.1 Flash 1017",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-1-flash-1017/"
+            },
+            {
+              "text": "155.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "7\nDeepSeek V4 Pro 0813\n深度求索\n155.6",
+          "links": [
+            {
+              "text": "DeepSeek V4 Pro 0813",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-pro-0813/"
+            },
+            {
+              "text": "155.6",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "8\nQwen3.8 Max 0902\n阿里通义\n155.1",
+          "links": [
+            {
+              "text": "Qwen3.8 Max 0902",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-8-max-0902/"
+            },
+            {
+              "text": "155.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "9\nDeepSeek V4 Flash 0731\n深度求索\n154.8",
+          "links": [
+            {
+              "text": "DeepSeek V4 Flash 0731",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-flash-0731/"
+            },
+            {
+              "text": "154.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "10\nQwen3.7 Max\n阿里通义\n154.0",
+          "links": [
+            {
+              "text": "Qwen3.7 Max",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-7-max/"
+            },
+            {
+              "text": "154.0",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "11\nGLM-5.3-Flash\n智谱\n153.1",
+          "links": [
+            {
+              "text": "GLM-5.3-Flash",
+              "href": "/toy/ai-model-world/model/zhipuai-glm-5-3-flash/"
+            },
+            {
+              "text": "153.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "12\nGLM-5.2\n智谱\n151.9",
+          "links": [
+            {
+              "text": "GLM-5.2",
+              "href": "/toy/ai-model-world/model/zhipuai-glm-5-2/"
+            },
+            {
+              "text": "151.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "13\nQwen3.8 27B\n阿里通义\n151.7",
+          "links": [
+            {
+              "text": "Qwen3.8 27B",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-8-27b/"
+            },
+            {
+              "text": "151.7",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "14\nKimi K2.6\n月之暗面\n150.9",
+          "links": [
+            {
+              "text": "Kimi K2.6",
+              "href": "/toy/ai-model-world/model/moonshotai-kimi-k2-6/"
+            },
+            {
+              "text": "150.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "15\nKimi K2.7 Code\n月之暗面\n150.1",
+          "links": [
+            {
+              "text": "Kimi K2.7 Code",
+              "href": "/toy/ai-model-world/model/moonshotai-kimi-k2-7-code/"
+            },
+            {
+              "text": "150.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "16\nGLM-5.1\n智谱\n149.8",
+          "links": [
+            {
+              "text": "GLM-5.1",
+              "href": "/toy/ai-model-world/model/zhipuai-glm-5-1/"
+            },
+            {
+              "text": "149.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "17\nQwen3.6 Max Preview\n阿里通义\n149.4",
+          "links": [
+            {
+              "text": "Qwen3.6 Max Preview",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-6-max-preview/"
+            },
+            {
+              "text": "149.4",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "18\nDeepSeek V4 Pro\n深度求索\n149.1",
+          "links": [
+            {
+              "text": "DeepSeek V4 Pro",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-pro/"
+            },
+            {
+              "text": "149.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "19\nDeepSeek V4 Pro 0423\n深度求索\n149.1",
+          "links": [
+            {
+              "text": "DeepSeek V4 Pro 0423",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-pro-0423/"
+            },
+            {
+              "text": "149.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "20\nKimi K2.5\n月之暗面\n148.1",
+          "links": [
+            {
+              "text": "Kimi K2.5",
+              "href": "/toy/ai-model-world/model/moonshotai-kimi-k2-5/"
+            },
+            {
+              "text": "148.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "21\nQwen3.6 Plus\n阿里通义\n147.3",
+          "links": [
+            {
+              "text": "Qwen3.6 Plus",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-6-plus/"
+            },
+            {
+              "text": "147.3",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "22\nQwen3.7 Plus\n阿里通义\n147.0",
+          "links": [
+            {
+              "text": "Qwen3.7 Plus",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-7-plus/"
+            },
+            {
+              "text": "147.0",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "23\nMiniMax-M3\nMiniMax\n146.9",
+          "links": [
+            {
+              "text": "MiniMax-M3",
+              "href": "/toy/ai-model-world/model/minimax-minimax-m3/"
+            },
+            {
+              "text": "146.9",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "24\nQwen3.5 397B-A17B\n阿里通义\n146.8",
+          "links": [
+            {
+              "text": "Qwen3.5 397B-A17B",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-5-397b-a17b/"
+            },
+            {
+              "text": "146.8",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "25\nMiniMax-M2.5\nMiniMax\n146.6",
+          "links": [
+            {
+              "text": "MiniMax-M2.5",
+              "href": "/toy/ai-model-world/model/minimax-minimax-m2-5/"
+            },
+            {
+              "text": "146.6",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "26\nQwen3.6 27B\n阿里通义\n146.2",
+          "links": [
+            {
+              "text": "Qwen3.6 27B",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-6-27b/"
+            },
+            {
+              "text": "146.2",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "27\nQwen3.5 Plus\n阿里通义\n146.2",
+          "links": [
+            {
+              "text": "Qwen3.5 Plus",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-5-plus/"
+            },
+            {
+              "text": "146.2",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "28\nQwen3.5 Plus 02 15\n阿里通义\n146.2",
+          "links": [
+            {
+              "text": "Qwen3.5 Plus 02 15",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-5-plus-02-15/"
+            },
+            {
+              "text": "146.2",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "29\nQwen3.5 Plus 20260420\n阿里通义\n146.2",
+          "links": [
+            {
+              "text": "Qwen3.5 Plus 20260420",
+              "href": "/toy/ai-model-world/model/alibaba-qwen3-5-plus-20260420/"
+            },
+            {
+              "text": "146.2",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        },
+        {
+          "text": "30\nDeepSeek V4 Flash\n深度求索\n146.1",
+          "links": [
+            {
+              "text": "DeepSeek V4 Flash",
+              "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-flash/"
+            },
+            {
+              "text": "146.1",
+              "href": "https://epoch.ai/benchmarks"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

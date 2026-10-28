@@ -1,0 +1,28 @@
+MiniCPM-OCR · OpenBMB
+MiniCPM-OCR
+Dual SOTA in real-world document parsing and general OCR among sub-2B models, robust to scanned, photographed, curved, skewed and re-photographed documents, with reliability checks built into the OCR pipeline so parsing goes beyond looking right.
+Highlights
+Parse + Decide
+—
+Two models that define trustworthy OCR
+：MiniCPM-OCR 1.0 handles efficient parsing while MiniCPM-OCR Jev judges the results, turning parse → verify → route into a complete pipeline that works out of the box.
+Dual SOTA in capability and efficiency
+：With 1.3B parameters, MiniCPM-OCR 1.0 achieves SOTA scores of 93.68 on Real5-OmniDocBench and 54.7 on OCRBench v2. With DSpark speculative sampling, end-to-end processing efficiency improves by 55% under identical test conditions, reaching 1.49× the throughput of PaddleOCR-VL-1.6 and 3.62× that of MinerU2.5 Pro.
+From deployment to application, in one step
+：Day-0 support for mainstream inference frameworks including vLLM, SGLang, llama.cpp and Ollama, with multi-chip support and multiple quantized versions. We also provide a pip SDK, a full-featured API and a mature skill.md, and support fine-tuning for easy integration and custom development.
+Technical highlights
+LLaVA-UHD v4 Slice-based Visual Encoding
+：MiniCPM-OCR 1.0 builds on the efficient slicing scheme of LLaVA-UHD v4: high-resolution images are cut into 448×448 slices alongside a low-resolution overview, so even very large images are encoded efficiently and attention cost grows linearly with the number of slices. Visual tokens are also compressed early inside the ViT encoder, cutting the computation of later encoder layers.
+Adaptive Upsize and Auto Upright
+：Auto Upright detects and corrects image orientation, so rotated or upside-down documents need no manual preprocessing. Adaptive Upsize uses adaptive upsampling to better parse fine details such as dense text and small digits. Together they keep results stable under difficult capture conditions.
+DSpark Speculative Sampling
+：With in-house DSpark speculative decoding, MiniCPM-OCR 1.0 raises end-to-end processing efficiency by 55% without lowering parsing quality, reaching a high throughput of 1.2 pages per second and substantially cutting the time cost of large-scale document parsing.
+Jev: Calibrated Probability + System-1 Fast Judgment
+：MiniCPM-OCR Jev does not parse text. It only judges whether a parsing result is correct and directly returns the probability that it is. It is trained on human-annotated block-level correctness labels. As a System-1 fast-judgment layer it needs only a single forward prefill pass with no autoregressive decoding, so latency is very low and it can act as a high-frequency gate that filters out most easy cases before costly human review.
+Benchmarks
+Document Parsing
+：MiniCPM-OCR 1.0 leads overall across a range of real-world captured scenarios (Real5-OmniDocBench 93.68, Wild-OmniDocBench 92.39), OmniDocBench v1.6 (96.51) and olmOCR-Bench (82.7), and sets a SOTA of 54.7 on OCRBench v2.
+Inference Efficiency
+：With DSpark speculative sampling, MiniCPM-OCR improves end-to-end processing efficiency by 55%, with a measured throughput of 1.217 pages per second: 1.49× that of PaddleOCR-VL-1.6 and 3.62× that of MinerU2.5 Pro.
+Parsing Quality Judgment
+：MiniCPM-OCR Jev judges the quality of text, formula and table parsing results. It scores 93.6 overall on JevOCRBench, close to Qwen3.5-397B-A17B (93.8) and ahead of JEV-35B-A3B (90.1), helping developers assess parsing quality and pick out results that need careful review.

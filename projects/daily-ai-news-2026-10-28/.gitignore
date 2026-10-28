@@ -1,0 +1,14 @@
+/evidence/reference-daily.docx
+/evidence/ranking-models-text.txt
+/evidence/liquid-blog.html.gz
+/assets/*.gif
+/assets/minicpm-chinese-cases.png
+/assets/**/*.mp3
+/assets/**/*.wav
+/assets/**/*.ttf
+/assets/**/*.otf
+/audio/source/
+/audio/asr/
+/audio/*.wav
+/audio/*.mp3
+/audio/*.m4a

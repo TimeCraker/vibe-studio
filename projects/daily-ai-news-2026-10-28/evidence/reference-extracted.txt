@@ -1,0 +1,219 @@
+[0] 【计科前沿日报】2026年10月28日 ｜ AI/Agent/开源/芯片/安全
+
+[1] 今日最值得关注 Top3
+
+[2] ① Meta 复刻 GPT-3：175B 参数完整权重 + 训练代码全公布（10/28 量子位）——千亿参数大模型首次被「撬开」，研究团队可从头复现训练流程。
+
+[3] ② 微软紧急 .NET 带外补丁 Broccoli2Shell CVE-2026-111497（10/27 CERT.at）：Brotli 解码器越界写 CVSS 4.0 9.2，波及 .NET 8-11 / Node.js / Bun / Python / Envoy，开了请求/响应自动解压缩的服务今天必须打补丁。
+
+[4] ③ morluto/rea 连续三日霸榜 #1：39.4 万星、日涨 +6,594（昨日 38.7 万/+6,707），TypeScript MCP server 串 Ghidra/IDA/Hopper，让编码 agent 直接逆向二进制。
+
+[5] 一、AI 大模型 & 生成式 AI
+
+[6] Meta 复刻 GPT-3：175B 权重 + 训练代码全公布，千亿参数首次被撬开（2026-10-28，量子位）
+
+[7] Meta AI 开放 175B 参数 GPT-3 复刻模型的完整权重与训练代码，相当于把「千亿级 LLM 是怎么训出来的」从黑盒变成可复现实验——做 LLM 训练/微调研究的同学今天起可拉代码复现数据管线、训练超参与分布式配方。[1]
+LINK http://zslm.openi.org.cn/index.php?m=content&c=index&a=show&catid=14&id=214
+
+[9] 「Meta Llama 官方首页」Meta 持续把 LLaMA 家族做成最主流的开放权重生态；本次 175B GPT-3 复刻把「可训练」这层也补齐，和 Mistral L4、DeepSeek V4.1 Flash 一起把开放权重推到训练-推理全链路。
+
+[10] DeepSeek 登顶开源榜，浙产开源模型成全球开发者台阶（2026-10-28，钱江晚报）
+
+[11] DeepSeek 近日登顶开源模型榜，DeepSeek V4.1 Flash 居第二、MiniMax M3.1 Flash 第三、智谱 GLM 5.3 Flash 与腾讯混元进入前十；DeepSeek 10/20 开源推理框架 DeepInfer、10/22 传出拟筹约 1000 亿元融资，国产开源模型进入「全球开发者默认选项」阶段。[2]
+LINK http://m.toutiao.com/group/7701518490083115574/
+
+[12] 二、智能体 Agent & 工具链
+
+[13] LangChain 把 MCP 支持内置进 langchain.mcp，替代独立 adapters 包（2026-10-27，LangChain Changelog）
+
+[14] LangChain Python 新版把 MCP 客户端内置到 langchain.mcp 命名空间（基于 FastMCP），通过 pip install langchain[mcp] 启用，原独立包 langchain-mcp-adapters 被替代——做 RAG/Agent 框架集成的团队可顺手迁移，少维护一个依赖。[3]
+LINK https://docs.langchain.com/oss/python/releases/changelog
+
+[15] AgentIndex 目录 10/27 更新：MCP 服务/Agent 框架持续扩张（2026-10-27，AgentIndex）
+
+[16] AgentIndex 收录数百个现成 MCP 服务器与 Agent 框架，做 MCP Server 选型时可直接按场景检索；本周 AGNTCon+MCPCon 后目录新增大量企业级鉴权/审计类服务。[4]
+LINK https://agentindex.app/zh/
+
+[17] 三、开源项目 & GitHub 热点
+
+[18] morluto/rea 连续三日 #1：39.4 万星，日涨 +6,594（2026-10-27，ZICQ 月榜）
+
+[19] REA（Reverse Engineer Anything）10/27 总星 394,154，较昨日 387,560 再涨 +6,594；TypeScript MCP server 串 Ghidra/IDA/Hopper，让 Claude Code/Codex/Cursor 在终端直接逆向 App 行为到原生二进制——逆向/安全方向同学今天可直接跑 npx rea-agents setup。[5]
+LINK https://zicq.com/en/rankings/github
+
+[21] 「Superpowers 多主机 agent 技能」一个 Markdown 技能文件同时驱动 Claude Code、Cursor、Codex、Copilot CLI、Gemini CLI、OpenCode；把 TDD/调试/脑暴等工程纪律固化成可组合技能，解决 agent 工具调用碎片化、行为不可控。
+
+[22] Superpowers：编码 agent 方法论 306,351 星，兼容十余个 AI 编程工具（2026-10-27，AmazingIndex）
+
+[23] Superpowers 用可组合技能 + 初始指令让 agent 稳定调用工具，兼容 Claude Code/Cursor/Codex/Copilot CLI/Gemini CLI/OpenCode 等；每条技能开头写死「Iron Law」（如 TDD 先写失败测试、修复必须先做根因分析）并配红旗清单——做 agent 工程化的团队可直接抄这套约束写法。[6]
+LINK https://www.amazingindex.com/
+
+[24] 四、编程语言 / 框架 / 云原生
+
+[25] LangChain MCP 内置：Python 侧统一 MCP 接入入口（2026-10-27，LangChain Changelog）
+
+[26] 继昨日 AGNTCon 后，LangChain 把 MCP 客户端从独立 adapters 包收进主仓，FastMCP 为底座；做 Python 全栈/Agent 平台的团队本周把依赖从 langchain-mcp-adapters 迁到 langchain[mcp]。[3]
+LINK https://docs.langchain.com/oss/python/releases/changelog
+
+[27] Kubernetes 1.34 昨日 EOL 后首日：运维升级窗口（2026-10-28）
+
+[28] 1.34.12 昨日（10/27）正式 EOL，今天起生产集群只剩 1.35.9 / 1.36.5 / 1.37.1 三个受支持分支；K8s 中文博客 cgroup v2 迁移指南可作为升级顺手清理 runtime 配置的参考。[7] [8]
+LINK https://kubernetes.io/zh-cn/releases/
+LINK https://kubernetes.io/zh-cn/blog/
+
+[29] 五、芯片 / 算力 / 硬件加速
+
+[30] 燧原科技（688801）科创板申购：发行价 142.18 元，募资 61.19 亿（2026-10-28，上交所）
+
+[31] 国产 GPU 初创燧原科技科创板 IPO 发行价 142.18 元/股，发行 4303.5 万股，募资 61.19 亿元；公司尚未盈利，按市销率估值——国产算力第一梯队再迎上市里程碑，关注上市后首日表现与推理卡产品线披露。[9]
+LINK https://kcb.cnstock.com/p/xg/detail/688801
+
+[32] 珠海菲高科技 10/27 办理北交所 IPO 辅导备案，东方证券保荐（2026-10-28，界面）
+
+[33] 证监会网站披露：珠海菲高科技 10/27 在广东证监局办理辅导备案，拟北交所上市，于平、于顺亮父子为共同实控人；硬科技上市队列再添一家。[10]
+LINK http://m.toutiao.com/group/7701520971643109922/
+
+[34] 六、网络安全 & 漏洞 / 攻防
+
+[35] 微软紧急 .NET 带外补丁：Broccoli2Shell CVE-2026-111497，CVSS 4.0 9.2（2026-10-27，CERT.at）
+
+[36] 微软为 Brotli 解码器越界发布紧急 .NET 安全更新（外界代号 Node2Shell/HTTP2Shell/Broccoli2Shell）；无需认证，只要应用处理构造过的 Brotli 数据即可读/写进程内存，已在未打补丁 Node.js 上跑出 RCE。.NET 8/9/10/11 受影响，请求/响应自动解压缩默认未开，但用了 ASP.NET Core 请求解压缩、HttpClient 自动响应解压缩或直接调 Brotli API 的服务必须今天升级。[11]
+LINK https://www.cert.at/de/tagesberichte/2026/10/tagesberichte-27102026
+
+[38] 「Wiz Research Broccoli2Shell 直播海报」CVE-2026-111497：Broccoli2Shell = Node2Shell = HTTP2Shell，同一个 Brotli 解码器越界写；除 .NET 外，Bun、Python brotli/brotlicffi、开了 Brotli 解压的 Envoy/Envoy 代理都要跟补丁。
+
+[39] 受影响面
+
+[40] 处置
+
+[41] .NET 8 / 9 / 10 / 11
+
+[42] 装微软 10/27 带外补丁；.NET Framework 不受影响
+
+[43] Node.js / Bun / Python brotli
+
+[44] 10/21 已首发修复，本周再跟一次各自运行时补丁
+
+[45] Envoy / Istio 代理
+
+[46] 开了 Brotli 解压的代理升级到修复版本
+
+[47] 触发条件
+
+[48] ASP.NET Core 请求解压缩、HttpClient 自动响应解压缩、直接调 System.IO.Compression Brotli API
+
+[49] 附加 Linux 提权
+
+[50] CVE-2026-114148：.NET tar 包文件所有权元数据不安全，本地提权，Linux 侧一并打
+
+[51] 银河麒麟 yhkylin-backup-tools 授权缺陷 KVE-2026-0540（2026-10-27，麒麟软件）
+
+[52] 银河麒麟备份工具组件存在授权缺陷，特殊情况下可影响操作系统安全；国产化运维同学本周在麒麟升级窗口一并处理。[12]
+LINK https://support.kylinos.cn/#/security/cve
+
+[53] 七、学术前沿（arXiv / 顶会新成果）
+
+[54] Meta 175B GPT-3 复刻：完整训练代码开放，复现千亿参数训练流程（2026-10-28，量子位引 Meta AI）
+
+[55] 本次开放不仅给权重，还给完整训练代码与数据管线，相当于把 LLM 预训练从「黑箱工艺」变成「可复现实验」；对做 LLM 预训练/分布式训练研究的同学，是第一次能在 175B 这个量级从头复现。[1]
+LINK http://zslm.openi.org.cn/index.php?m=content&c=index&a=show&catid=14&id=214
+
+[56] IBM TabAgent：表格-文本分类器替代生成决策，降延迟降本提成功率（2026-10-26，arXivDaily IBM 专区）
+
+[57] IBM Research 提出 TabAgent：用表格-文本分类器替代 Agent 系统里的生成式决策组件，显著降低端到端延迟与 token 成本，同时提升任务成功率；做表格类企业 Agent 的团队可直接借鉴「能分类就别生成」的取舍。[13]
+LINK https://www.arxivdaily.com/companies/ibm
+
+[58] 八、行业趋势 & 求职机会
+
+[59] 字节跳动 Agent/RL 方向大模型 27 届实习启动（2026-10-27，牛客）
+
+[60] 字节商业信任与安全算法团队招 2027 届 ByteIntern（2026.09-2027.08 毕业），做 Agent/RL 方向大模型，提供转正机会——主栈 Python/PyTorch、做过 RL/Agent 的同学本周可投。[14]
+LINK https://www.nowcoder.com/creation/subject/c818dbaae2fd432c9f42f52391096d22
+
+[61] 公司/团队
+
+[62] 岗位方向
+
+[63] 面向届别
+
+[64] 薪资
+
+[65] 节点
+
+[66] 字节跳动 商安算法
+
+[67] Agent/RL 方向大模型实习（ByteIntern，转正机会）
+
+[68] 2027 届
+
+[69] 面议
+
+[70] 牛客 10/27 更新，在招
+
+[71] 阿里（淘天/闪购/国际/阿里云/钉钉/通义/高德）
+
+[72] AI 应用研发工程师 2027 实习，Cursor 重度玩家优先
+
+[73] 2027 届（2026.11-2027.10）
+
+[74] 面议
+
+[75] 牛客 10/27 内推
+
+[76] 面壁智能
+
+[77] Agentic Infra 实习：用 Agent 做训练/推理/RL/算子 Infra，Harness 工程
+
+[78] 2027 校招实习（北京）
+
+[79] 面议
+
+[80] 飞书招聘 10/27 更新
+
+[81] 信息来源清单
+
+[82] [1] 量子位/智算网络联盟：千亿参数大模型首次被撬开，Meta 复刻 GPT-3 权重与训练代码全公布，http://zslm.openi.org.cn/index.php?m=content&c=index&a=show&catid=14&id=214
+LINK http://zslm.openi.org.cn/index.php?m=content&c=index&a=show&catid=14&id=214
+
+[83] [2] 钱江晚报：DeepSeek 登顶，浙产开源模型成全世界开发者台阶，http://m.toutiao.com/group/7701518490083115574/
+LINK http://m.toutiao.com/group/7701518490083115574/
+
+[84] [3] LangChain Python Changelog：MCP 内置 langchain.mcp，https://docs.langchain.com/oss/python/releases/changelog
+LINK https://docs.langchain.com/oss/python/releases/changelog
+
+[85] [4] AgentIndex：MCP 服务与 Agent 框架目录，https://agentindex.app/zh/
+LINK https://agentindex.app/zh/
+
+[86] [5] ZICQ：Top AI Open-Source Projects on GitHub by Total Stars（2026-10），https://zicq.com/en/rankings/github
+LINK https://zicq.com/en/rankings/github
+
+[87] [6] AmazingIndex：Superpowers 306,351 星，https://www.amazingindex.com/
+LINK https://www.amazingindex.com/
+
+[88] [7] Kubernetes Releases，https://kubernetes.io/zh-cn/releases/
+LINK https://kubernetes.io/zh-cn/releases/
+
+[89] [8] Kubernetes 中文博客：cgroup v2 迁移指南，https://kubernetes.io/zh-cn/blog/
+LINK https://kubernetes.io/zh-cn/blog/
+
+[90] [9] 上海证券报：燧原科技 688801 发行价 142.18 元/股，https://kcb.cnstock.com/p/xg/detail/688801
+LINK https://kcb.cnstock.com/p/xg/detail/688801
+
+[91] [10] 界面快讯：珠海菲高科技北交所 IPO 辅导，http://m.toutiao.com/group/7701520971643109922/
+LINK http://m.toutiao.com/group/7701520971643109922/
+
+[92] [11] CERT.at Tagesbericht 27.10.2026：Microsoft emergency .NET patches for Brotli flaw CVE-2026-111497，https://www.cert.at/de/tagesberichte/2026/10/tagesberichte-27102026
+LINK https://www.cert.at/de/tagesberichte/2026/10/tagesberichte-27102026
+
+[93] [12] 麒麟软件安全公告：KVE-2026-0540 yhkylin-backup-tools 授权缺陷，https://support.kylinos.cn/#/security/cve
+LINK https://support.kylinos.cn/#/security/cve
+
+[94] [13] arXivDaily：IBM TabAgent，https://www.arxivdaily.com/companies/ibm
+LINK https://www.arxivdaily.com/companies/ibm
+
+[95] [14] 牛客网：字节跳动 Agent/RL 方向大模型 27 届实习，https://www.nowcoder.com/creation/subject/c818dbaae2fd432c9f42f52391096d22
+LINK https://www.nowcoder.com/creation/subject/c818dbaae2fd432c9f42f52391096d22
+
+[96] 求职来源补充：牛客 10/27 阿里内推 AI 应用研发 2027 实习（淘天/闪购/国际/阿里云/钉钉/通义/高德）；面壁智能飞书招聘 10/27 Agentic Infra 实习。
+
+[97] |（注：部分内容由豆包工作 AI 生成）

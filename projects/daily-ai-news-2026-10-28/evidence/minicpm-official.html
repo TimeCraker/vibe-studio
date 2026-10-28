@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#315EFE" />
+    <!-- 内联关键背景色：JS 加载前消除白屏闪烁 -->
+    <style>
+      html, body, #root { background: #f9f9f9; }
+      html { overflow-x: hidden !important; }
+      body { margin: 0; overflow-x: hidden !important; }
+      #root { overflow-x: hidden; position: relative; width: 100%; }
+    </style>
+    <meta name="description" content="Dual SOTA in real-world document parsing and general OCR among sub-2B models, robust to scanned, photographed, curved, skewed and re-photographed documents, wi…" />
+    <meta name="keywords" content="OpenBMB,MiniCPM,large language model,LLM,open source,on-device AI,AgentCPM,VoxCPM" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="MiniCPM-OCR · OpenBMB" />
+    <meta property="og:description" content="Dual SOTA in real-world document parsing and general OCR among sub-2B models, robust to scanned, photographed, curved, skewed and re-photographed documents, wi…" />
+    <meta property="og:image" content="https://assets-hub.obs.cn-north-4.myhuaweicloud.com/openbmb/public/images/hero-bg.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://openbmb.cn/en/model/minicpm-ocr" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <title>MiniCPM-OCR · OpenBMB</title>
+    <!-- 英文入口。本文件由 index.html 派生，除 <html lang>、标题/描述/og 与
+         canonical 外结构应与中文版逐行一致 —— 改中文版时记得同步这里。 -->
+    <link rel="canonical" href="https://openbmb.cn/en/model/minicpm-ocr" />
+    <link rel="alternate" hreflang="zh-CN" href="https://openbmb.cn/model/minicpm-ocr" />
+    <link rel="alternate" hreflang="en" href="https://openbmb.cn/en/model/minicpm-ocr" />
+    <link rel="alternate" hreflang="x-default" href="https://openbmb.cn/model/minicpm-ocr" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TX8Y61D0E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6TX8Y61D0E');
+    </script>
+    <!-- Homepage JSON-LD: brand and site entities for crawlers that do not execute JS.
+         Inner-page structured data will be added in the P0 prerender batch. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://openbmb.cn/#organization",
+          "name": "OpenBMB",
+          "url": "https://openbmb.cn/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://openbmb.cn/favicon.svg"
+          },
+          "sameAs": [
+            "https://github.com/OpenBMB",
+            "https://huggingface.co/openbmb",
+            "https://www.zhihu.com/people/OpenBMB"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://openbmb.cn/#website",
+          "url": "https://openbmb.cn/",
+          "name": "OpenBMB · Big Model for Everyone",
+          "description": "OpenBMB is an open-source large model community. We build MiniCPM, AgentCPM, VoxCPM and UltraRAG — efficient models that run everywhere, from cloud to device.",
+          "publisher": { "@id": "https://openbmb.cn/#organization" },
+          "inLanguage": ["zh-CN", "en"]
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/js/react-vendor-Dg-XgdGg.js"></script>
+    <script type="module" crossorigin src="/assets/js/router-vendor-C9uBNE_R.js"></script>
+    <script type="module" crossorigin src="/assets/js/vendor-IEMZZwl2.js"></script>
+    <script type="module" crossorigin src="/assets/js/main-Tx6q4VcV.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/main-Ciq6FoMw.css">
+  </head>
+  <body>
+    <!-- 华为云 APM（RUM）前端监控接入 -->
+    <script>
+      !function(x, n) {
+        window[n] = window[n] || {};
+        window[n].config = { domain: "https://apm-web.cn-north-4.myhuaweicloud.com", appId: "ddb36b70b7c946f1bb313de3d59a2c52", apiRepo: true, thirdApi: true, hashMode: false, JsErrClean: true, smartJsErr: true, webResource: true, traceType: "apm", };
+        var o = document.createElement('script');
+        o.src = x, o.async = !0;
+        var d = document.body.firstChild;
+        document.body.insertBefore(o, d);
+      }('https://res.hc-cdn.com/js-agent/jsagent.min.js', '__fr');
+    </script>
+    <div id="root"><div data-static-page><h1>MiniCPM-OCR</h1><p>Dual SOTA in real-world document parsing and general OCR among sub-2B models, robust to scanned, photographed, curved, skewed and re-photographed documents, with reliability checks built into the OCR pipeline so parsing goes beyond looking right.</p><h2>Highlights</h2><ul><li><strong>Parse + Decide</strong>  — <strong>Two models that define trustworthy OCR</strong>：MiniCPM-OCR 1.0 handles efficient parsing while MiniCPM-OCR Jev judges the results, turning parse → verify → route into a complete pipeline that works out of the box.</li><li><strong>Dual SOTA in capability and efficiency</strong>：With 1.3B parameters, MiniCPM-OCR 1.0 achieves SOTA scores of 93.68 on Real5-OmniDocBench and 54.7 on OCRBench v2. With DSpark speculative sampling, end-to-end processing efficiency improves by 55% under identical test conditions, reaching 1.49× the throughput of PaddleOCR-VL-1.6 and 3.62× that of MinerU2.5 Pro.</li><li><strong>From deployment to application, in one step</strong>：Day-0 support for mainstream inference frameworks including vLLM, SGLang, llama.cpp and Ollama, with multi-chip support and multiple quantized versions. We also provide a pip SDK, a full-featured API and a mature skill.md, and support fine-tuning for easy integration and custom development.</li></ul><h2>Technical highlights</h2><ul><li><strong>LLaVA-UHD v4 Slice-based Visual Encoding</strong>：MiniCPM-OCR 1.0 builds on the efficient slicing scheme of LLaVA-UHD v4: high-resolution images are cut into 448×448 slices alongside a low-resolution overview, so even very large images are encoded efficiently and attention cost grows linearly with the number of slices. Visual tokens are also compressed early inside the ViT encoder, cutting the computation of later encoder layers.</li><li><strong>Adaptive Upsize and Auto Upright</strong>：Auto Upright detects and corrects image orientation, so rotated or upside-down documents need no manual preprocessing. Adaptive Upsize uses adaptive upsampling to better parse fine details such as dense text and small digits. Together they keep results stable under difficult capture conditions.</li><li><strong>DSpark Speculative Sampling</strong>：With in-house DSpark speculative decoding, MiniCPM-OCR 1.0 raises end-to-end processing efficiency by 55% without lowering parsing quality, reaching a high throughput of 1.2 pages per second and substantially cutting the time cost of large-scale document parsing.</li><li><strong>Jev: Calibrated Probability + System-1 Fast Judgment</strong>：MiniCPM-OCR Jev does not parse text. It only judges whether a parsing result is correct and directly returns the probability that it is. It is trained on human-annotated block-level correctness labels. As a System-1 fast-judgment layer it needs only a single forward prefill pass with no autoregressive decoding, so latency is very low and it can act as a high-frequency gate that filters out most easy cases before costly human review.</li></ul><h2>Benchmarks</h2><ul><li><strong>Document Parsing</strong>：MiniCPM-OCR 1.0 leads overall across a range of real-world captured scenarios (Real5-OmniDocBench 93.68, Wild-OmniDocBench 92.39), OmniDocBench v1.6 (96.51) and olmOCR-Bench (82.7), and sets a SOTA of 54.7 on OCRBench v2.</li><li><strong>Inference Efficiency</strong>：With DSpark speculative sampling, MiniCPM-OCR improves end-to-end processing efficiency by 55%, with a measured throughput of 1.217 pages per second: 1.49× that of PaddleOCR-VL-1.6 and 3.62× that of MinerU2.5 Pro.</li><li><strong>Parsing Quality Judgment</strong>：MiniCPM-OCR Jev judges the quality of text, formula and table parsing results. It scores 93.6 overall on JevOCRBench, close to Qwen3.5-397B-A17B (93.8) and ahead of JEV-35B-A3B (90.1), helping developers assess parsing quality and pick out results that need careful review.</li></ul><nav><h2>Site navigation</h2><ul><li><a href="/en/">OpenBMB · Big Model for Everyone</a></li><li><a href="/en/news">News</a></li><li><a href="/en/about">About Us</a></li><li><a href="/en/ambassador">MiniCPM Ambassador Program</a></li><li><a href="/en/spark-program">MiniCPM Spark Program S1</a></li><li><a href="/model/minicpm-ocr">中文</a></li></ul></nav></div></div>
+  </body>
+</html>

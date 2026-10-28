@@ -1,0 +1,406 @@
+大模型世界
+广场
+时间线
+排行榜
+对比
+排行榜
+
+分数全部来自第三方公开评测，按榜单分开比较，跨榜不混算。 当前 99 个榜单可开榜，覆盖 728 个模型。
+
+查全部 728 个模型 →
+综合
+综合智力
+225
+SimpleBench
+105
+实用指标
+性价比
+223
+上下文窗口
+716
+最便宜
+595
+最新发布
+728
+编程
+SWE-bench Verified
+48
+SWE-bench Verified（转载）
+6
+SWE-bench Verified（转载）（厂商自报）
+36
+SWE-bench 多语言版
+16
+SWE-Bench Pro
+17
+SWE-Bench Pro（厂商自报）
+41
+SWE-Marathon
+6
+FrontierSWE
+22
+FrontierSWE（厂商自报）
+5
+DeepSWE
+28
+DeepSWE（厂商自报）
+19
+Terminal-Bench（厂商自报）
+61
+Terminal-Bench 2.0
+69
+Terminal-Bench 2.1
+5
+CursorBench
+17
+LiveBench 智能体编程
+114
+Aider Polyglot
+64
+NL2Repo
+16
+FrontierCode
+50
+LiveBench 编程分项
+134
+LiveCodeBench
+8
+ClawEval
+6
+ALE-Bench
+156
+AlgoTune
+29
+GSO
+41
+SWE-Atlas 代码库问答
+10
+SWE-Atlas 重构
+11
+SWE-Atlas 写测试
+10
+MirrorCode
+10
+WebDev Arena
+136
+数学
+FrontierMath
+113
+FrontierMath 第四层
+85
+AIME 数学
+212
+MATH 五级
+94
+ProofBench
+96
+GSM8K
+11
+知识与推理
+HLE 终极考试
+62
+GPQA 科学
+215
+ARC-AGI-2
+120
+ARC-AGI（第一代）
+119
+SimpleQA 事实问答
+109
+深度研究
+38
+MMLU
+48
+CritPt 物理
+180
+WeirdML
+151
+BIG-Bench Hard
+15
+HellaSwag
+14
+WinoGrande
+19
+PIQA
+16
+BoolQ
+8
+OpenBookQA
+5
+ScienceQA
+6
+ARC（AI2 科学题）
+16
+TriviaQA
+16
+ANLI
+5
+智能体
+独立工作时长
+54
+OSWorld 操作电脑
+10
+OSWorld 2.0
+9
+经营售货机
+100
+虚拟公司实习
+24
+联网搜索竞技场
+13
+APEX 专业任务
+64
+GDPval 职业任务
+21
+远程工作指数
+22
+Cybench 网络安全
+20
+ExploitBench
+9
+PostTrainBench
+11
+BlueprintBench
+38
+CAD 建模
+17
+Surface Evolver
+34
+长文本
+长文本记忆
+46
+CL-bench 长上下文
+41
+CL-bench 生活版
+29
+文档理解竞技场
+42
+多模态
+文生图竞技场
+16
+文生视频竞技场
+6
+图像编辑竞技场
+16
+图生视频竞技场
+6
+视频理解
+8
+看图猜地点
+31
+视觉物理预测
+38
+空间想象
+8
+GBA 游戏评测
+23
+游戏与谜题
+国际象棋残局
+107
+BALROG 游戏
+49
+推理游戏谜题
+105
+EnigmaEval
+52
+EBR-bench
+34
+写作
+创意写作
+61
+其他
+Dtbench
+222
+Lmca
+206
+Furniture Assembly
+41
+Weirdml V3
+29
+Frontiermath Erdos
+13
+Spireclimb
+7
+Spireclimb Sts1 A20 Heart
+7
+Spireclimb Sts2 A10
+7
+显示旧版榜单
+综合智力
+216 位上榜 · 其余 478 位未参赛
+
+Epoch Capabilities Index，把十几项学术评测归并成一个总分。想看综合实力，先看这一栏。 榜单主页 ↗
+
+搜索
+地区
+全部
+国内
+国外
+开放
+全部
+开源
+闭源
+类型
+全部
+多模态 412
+文本 282
+视觉 295
+全模态 55
+图像生成 28
+视频生成 10
+语音 24
+年份
+不限
+2026
+2025
+2024
+2023
+厂商
+▼
+含已退役
+694 个模型符合
+1
+Claude Opus 5.5
+Anthropic
+168.8
+2
+GPT-6 Astra
+OpenAI
+168.8
+3
+GPT-6.1 Sol
+OpenAI
+168.4
+4
+Claude Fable 5.1
+Anthropic
+166.5
+5
+Gemini 4 Argon
+谷歌
+166.4
+6
+Claude Sonnet 5.5
+Anthropic
+166.2
+7
+Claude Opus 5
+Anthropic
+163.9
+8
+GPT-6 Sol
+OpenAI
+163.7
+9
+Claude Fable 5
+Anthropic
+163.4
+10
+GPT-5.5 Pro
+OpenAI
+162.9
+11
+GPT-5.6 Sol
+OpenAI
+162.8
+12
+Muse Wonder
+Meta
+161.8
+13
+Muse Wonder
+Meta
+161.8
+14
+GPT-5.6 Terra
+OpenAI
+160.1
+15
+GPT-5.5
+OpenAI
+159.7
+16
+GPT-5.4 Pro
+OpenAI
+159.6
+17
+Claude Haiku 5.5
+Anthropic
+159.3
+18
+Claude Opus 4.8
+Anthropic
+159.0
+19
+Gemini 3.7 Flash
+谷歌
+158.0
+20
+Kimi K3
+月之暗面
+157.9
+21
+Gemini 3.8 Flash
+谷歌
+157.4
+22
+Qwen3.8 Max
+阿里通义
+157.4
+23
+Qwen3.8 Max Preview
+阿里通义
+157.4
+24
+GPT-5.4
+OpenAI
+157.3
+25
+Muse Spark 1.3
+Meta
+157.2
+26
+GPT-5.3 Codex
+OpenAI
+157.1
+27
+Claude Sonnet 5
+Anthropic
+156.9
+28
+Claude Opus 4.7
+Anthropic
+156.8
+29
+GPT-6 Luna
+OpenAI
+156.8
+30
+Grok 4.6
+xAI
+156.6
+展开全部 216 位
+
+分数来自 Epoch AI（CC-BY 4.0）、LiveBench（Apache-2.0）与 LMArena 官方数据集（CC-BY 4.0）， 每 12 小时同步一次。本站不使用 Artificial Analysis 的数据，它禁止再分发。
+
+作者：程序员鱼皮
+|
+AI 编程入门教程
+零基础学 Vibe Coding
+也看看
+鱼皮 AI 导航
+AI 工具、资讯与提示词大全
+编程导航
+程序员一站式编程学习交流社区
+数据来自
+Epoch AI（CC-BY 4.0）·
+models.dev（MIT）·
+LiveBench（Apache-2.0）·
+LMArena（CC-BY 4.0）
+字体
+Fusion Pixel Font（OFL-1.1）
+·
+素材署名
+源码开源
+liyupi/ai-model-world
+（MIT）

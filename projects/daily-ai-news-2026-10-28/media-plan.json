@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "timingStatus": "pending-human-recording",
+  "shots": [
+    {
+      "sceneId": "overview",
+      "purpose": "用具体名称交代本期头条与精选；精确停留待真人录音",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "lfm-family",
+      "purpose": "按任务选择文字、视觉、声音或混合输入模型，再进行领域微调。",
+      "inputs": [
+        "assets/liquid-banner.webp"
+      ],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "lfm-local",
+      "purpose": "1.7B 文本模型提供本地部署入口。实际总内存随上下文和程序变化。",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "lfm-decisions",
+      "purpose": "用自然语言指定对象，输出物体位置等结构化结果。",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "lfm-limits",
+      "purpose": "先选明确任务，再核对实际结果。",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "ocr-parse",
+      "purpose": "扫描、拍照和弯曲页面，都可进入文档解析流程。",
+      "inputs": [
+        "assets/minicpm-official-chinese-demo.mp4"
+      ],
+      "clipCandidates": [
+        {
+          "file": "assets/minicpm-official-chinese-demo.mp4",
+          "sourceIn": 0,
+          "sourceOut": 18.4,
+          "status": "candidate-not-yet-in-final"
+        }
+      ]
+    },
+    {
+      "sceneId": "ocr-check",
+      "purpose": "对文字、表格和公式区域评分，把可疑结果交回复核。",
+      "inputs": [
+        "assets/minicpm-jev-case.png"
+      ],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "spark-budget",
+      "purpose": "沿用上一代架构，通过后训练改进代码和智能体任务。",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "ling-weights",
+      "purpose": "Ling-3.1-flash-1019 仓库可下载；模型页标注 MIT。",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "dotnet-reminder",
+      "purpose": "核对应用是否会解压外部 Brotli 数据，再按微软公告处理。",
+      "inputs": [],
+      "clipCandidates": []
+    },
+    {
+      "sceneId": "closing",
+      "purpose": "本期来源与使用入口保留在视频简介。",
+      "inputs": [],
+      "clipCandidates": []
+    }
+  ],
+  "missing": [
+    {
+      "sceneId": "lfm-decisions",
+      "entry": "https://www.youtube.com/watch?v=gYaRfmLqCNg",
+      "status": "official-entry-found-file-not-acquired",
+      "attempts": [
+        "Official blog embed found; public download requested sign-in; no cookies or user login accessed",
+        "Checked official d1-2B and LFM3-VL-2B repository media inventory; no downloadable mp4/gif/webm found",
+        "Publisher social search did not yield a usable matching official clip"
+      ],
+      "fallback": "来源明确的文字图解或原发布页截图；取得原文件后再选择片段，不能称已剪入。"
+    }
+  ],
+  "meaning": "Recording-stage shot intentions; no precise scene timing or actual inclusion is claimed."
+}

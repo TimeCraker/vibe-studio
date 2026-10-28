@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "script-ready-awaiting-human-recording",
+  "sourceDocument": "C:/Users/TimeCraker/Downloads/【计科前沿日报】2026年10月28日 ｜ AI_Agent_开源_芯片_安全.docx",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "compositionId": "DailyAI",
+  "coverCompositionId": "DailyAICover",
+  "narration": "human",
+  "narrationFile": "narration.md",
+  "rankingSeconds": 7,
+  "production": {
+    "humanRecording": "pending",
+    "asrAlignment": "pending",
+    "render": "not-started",
+    "humanReview": "pending",
+    "publish": "not-started"
+  },
+  "headStory": "lfm3",
+  "storyOrder": [
+    "lfm3",
+    "minicpm-ocr",
+    "spark",
+    "ling",
+    "dotnet"
+  ],
+  "narrationBodySha256": "f44ae4a163bd6246e63289c9348820e3a83760a0c806c62b8f69b11a87e0d178",
+  "narrationSha256": "4a304419ec3d78eb5ad8bf9cba5dc2e795bab9940effdf9ad6283b6e8b5648a9"
+}

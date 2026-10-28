@@ -1,0 +1,265 @@
+[
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "bytes": 1198,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/claude.png",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "bytes": 3273,
+    "fetchedAt": "2026-10-24T08:41:20.736187+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/openai.svg",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "bytes": 61823,
+    "fetchedAt": "2026-10-24T08:41:21.298240+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/google.png",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "bytes": 8912,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/meta.svg",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "bytes": 7454,
+    "fetchedAt": "2026-10-24T08:41:20.127217+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/kimi.png",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "bytes": 15465,
+    "fetchedAt": "2026-10-24T08:41:21.136261+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/qwen.png",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "bytes": 11037,
+    "fetchedAt": "2026-10-24T08:41:20.833370+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/glm.svg",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "bytes": 209762,
+    "fetchedAt": "2026-10-24T08:41:20.962405+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/deepseek.ico",
+    "selection": "prepared-not-yet-in-video"
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "sceneIds": [
+      "global",
+      "domestic",
+      "all-voice-scenes"
+    ],
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "status": "local-file-hash-verified",
+    "selection": "prepared-not-yet-in-video",
+    "reusedFrom": "../daily-ai-news-2026-10-27/assets/carefree.mp3",
+    "licenseEvidence": "https://incompetech.com/music/royalty-free/faq.html#credit",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "audioReview": "本阶段只核验哈希、时长和解码；完整审听、循环接缝及人声避让待实际混音。",
+    "preparedAt": "2026-10-27T12:28:34+08:00",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "205.139625"
+      }
+    }
+  },
+  {
+    "file": "assets/liquid-banner.webp",
+    "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/resolve/main/assets/liquid-ai-banner.webp",
+    "sourcePage": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+    "rights": "Liquid AI 官方模型页品牌图；仅用于相关报道并署名，商标不声明再许可。",
+    "retrievedAt": "2026-10-28T03:50:37.012812+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-visual-review",
+    "sha256": "30dbbfb9f1b412462ef8f690e95d490100b04487a4f534ac09a92f636f734196",
+    "bytes": 38172
+  },
+  {
+    "file": "assets/liquid-edge-inference.webp",
+    "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/resolve/main/assets/lfm3-edge-inference.webp",
+    "sourcePage": "https://www.liquid.ai/blog/lfm3",
+    "rights": "Liquid AI 官方评测图；标注厂商测试与具体条件，不作为本栏目实测。",
+    "retrievedAt": "2026-10-28T03:50:37.012812+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-visual-review",
+    "sha256": "ac73ebf33a4ea9aa3191d64f28d10a3ed51531dfa5442390071b876ae1b37ea4",
+    "bytes": 213860
+  },
+  {
+    "file": "assets/minicpm-chinese-examples.gif",
+    "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-OCR/main/assets/minicpm-ocr/minicpm-chinese-examples-3-column.gif",
+    "sourcePage": "https://github.com/OpenBMB/MiniCPM-OCR",
+    "rights": "OpenBMB 官方仓库示例动图，Apache-2.0；保留来源与许可，不作为本栏目实测。",
+    "retrievedAt": "2026-10-28T03:50:37.013811+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-visual-review",
+    "sha256": "5f010de2481008ae7a80cd3ddc12af334dedb8816cca9f25cfac76c8b5509fda",
+    "bytes": 6842451
+  },
+  {
+    "file": "assets/minicpm-chinese-cases.png",
+    "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-OCR/main/assets/minicpm-ocr/minicpm-ocr-chinese-cases.png",
+    "sourcePage": "https://github.com/OpenBMB/MiniCPM-OCR",
+    "rights": "OpenBMB 官方仓库样例图，Apache-2.0；保留来源与许可。",
+    "retrievedAt": "2026-10-28T03:50:37.013811+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-visual-review",
+    "sha256": "ce031c971f537622a2d59bc2b26dc4d7a1b22702d19ddb5cd9fabe9ac1003117",
+    "bytes": 14551070
+  },
+  {
+    "file": "assets/minicpm-jev-case.png",
+    "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-OCR/main/assets/minicpm-ocr/jev-case-en.png",
+    "sourcePage": "https://huggingface.co/openbmb/MiniCPM-OCR-Jev",
+    "rights": "OpenBMB 官方 Jev 对照样例，Apache-2.0；示例评分不表示绝对正确率。",
+    "retrievedAt": "2026-10-28T03:50:39.447980+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-viewed-source-hash-retained",
+    "sha256": "bf52bd0b0e4b0ef3699b86aabc6e9616e6eeebcce0737c0e0dde7f59b79d166f",
+    "bytes": 1251025
+  },
+  {
+    "file": "assets/minicpm-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-OCR/main/LICENSE",
+    "sourcePage": "https://github.com/OpenBMB/MiniCPM-OCR",
+    "rights": "Apache-2.0 许可原文。",
+    "retrievedAt": "2026-10-28T03:50:40.486409+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-visual-review",
+    "sha256": "186c8635e1f88660ec113f4935867a612e35b3124aca5c712d97e2e33d7eb677",
+    "bytes": 11332
+  },
+  {
+    "file": "assets/liquid-LICENSE.txt",
+    "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/LICENSE",
+    "sourcePage": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+    "rights": "LFM Open License v1.0 原文；不把开放权重写成无限制开源。",
+    "retrievedAt": "2026-10-28T03:50:42.074001+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-visual-review",
+    "sha256": "4d28ca14dedc0b3d0fcc2b3339f0e79931faa33874f3d24f522183a8fc70068c",
+    "bytes": 10574
+  },
+  {
+    "file": "assets/fonts/sans.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\sans.ttf",
+    "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-hash-verified"
+  },
+  {
+    "file": "assets/fonts/mono.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\mono.ttf",
+    "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-hash-verified"
+  },
+  {
+    "file": "assets/liquid-logo.png",
+    "url": "https://www.liquid.ai/icon.png?icon.2v1ofxrotruka.png",
+    "sourcePage": "https://www.liquid.ai/blog/lfm3",
+    "rights": "Liquid AI 官方品牌图标；相关报道署名，商标不声明再许可。",
+    "retrievedAt": "2026-10-28T03:52:49.960097+00:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-viewed-source-hash-retained",
+    "sha256": "30e5f9d94551a520884effacbd68da5ba148807221dd65504887806ef5623dcf",
+    "bytes": 29678
+  },
+  {
+    "file": "assets/minicpm-official-chinese-demo.mp4",
+    "sourcePage": "https://github.com/OpenBMB/MiniCPM-OCR",
+    "derivedFrom": "assets/minicpm-chinese-examples.gif",
+    "sourceSha256": "5f010de2481008ae7a80cd3ddc12af334dedb8816cca9f25cfac76c8b5509fda",
+    "sha256": "3dcc8aaee5b89698f70fe66772ba369cace82504df63276bbca3cc25a5bb111b",
+    "rights": "OpenBMB 官方仓库示例动图，Apache-2.0；保留来源与许可，不作为本栏目实测。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-probed-decoded-and-keyframe-viewed",
+    "technical": {
+      "width": 1920,
+      "height": 960,
+      "fps": "5/4",
+      "seconds": 18.4,
+      "sourceKind": "official example GIF, no source audio"
+    },
+    "review": "已查看 0.8 秒原文/布局/Markdown 对照帧；不是实机连续录屏，未声称完整视听终审。"
+  },
+  {
+    "file": "assets/minicpm-demo-poster.png",
+    "sourcePage": "https://github.com/OpenBMB/MiniCPM-OCR",
+    "derivedFrom": "assets/minicpm-official-chinese-demo.mp4",
+    "sha256": "6db4b14e2c7dea10fc1855ad96db8d7c7474df81ef36f707843ed6aed820f609",
+    "rights": "OpenBMB 官方仓库示例动图，Apache-2.0；保留来源与许可，不作为本栏目实测。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "actual-frame-viewed",
+    "sourceTime": 0.8
+  }
+]

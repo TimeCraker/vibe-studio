@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-28T03:52:10.359966+00:00",
+  "snapshotSha256": "7b3840d38afcb66385721c093d0558ce76531b9b58f2856eb1f127b6dfa2aaf3",
+  "checks": [
+    {
+      "kind": "global",
+      "actualFilter": "全部",
+      "queriedAt": "2026-10-28T03:50:36.095Z",
+      "modelIds": [
+        "anthropic/claude-opus-5-5",
+        "openai/gpt-6-astra",
+        "openai/gpt-6.1-sol",
+        "anthropic/claude-fable-5-1",
+        "google/gemini-4-argon",
+        "anthropic/claude-sonnet-5-5",
+        "anthropic/claude-opus-5",
+        "openai/gpt-6-sol",
+        "anthropic/claude-fable-5",
+        "openai/gpt-5.5-pro",
+        "openai/gpt-5.6-sol",
+        "meta/muse-wonder",
+        "meta/muse-wonder-1.0",
+        "openai/gpt-5.6-terra",
+        "openai/gpt-5.5"
+      ],
+      "checkedRows": 15,
+      "sourcePrecisionMatches": true
+    },
+    {
+      "kind": "domestic",
+      "actualFilter": "国内",
+      "queriedAt": "2026-10-28T03:50:36.242Z",
+      "modelIds": [
+        "moonshotai/kimi-k3",
+        "alibaba/qwen3.8-max",
+        "alibaba/qwen3.8-max-preview",
+        "zhipuai/glm-5.3",
+        "deepseek/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash-1017",
+        "deepseek/deepseek-v4-pro-0813",
+        "alibaba/qwen3.8-max-0902",
+        "deepseek/deepseek-v4-flash-0731",
+        "alibaba/qwen3.7-max",
+        "zhipuai/glm-5.3-flash",
+        "zhipuai/glm-5.2",
+        "alibaba/qwen3.8-27b",
+        "moonshotai/kimi-k2.6",
+        "moonshotai/kimi-k2.7-code"
+      ],
+      "checkedRows": 15,
+      "sourcePrecisionMatches": true
+    }
+  ]
+}

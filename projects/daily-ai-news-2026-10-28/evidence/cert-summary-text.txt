@@ -1,0 +1,73 @@
+CERT.at  - Show
+Warnungen
+Aktuelles
+Tagesberichte
+Blog
+Spezielles
+Tageszusammenfassung - 27.10.2026
+End-of-Day report
+Timeframe:   Freitag 23-10-2026 18:00 - Dienstag 27-10-2026 18:00
+Handler:     Katharina Siess
+Co-Handler:  Guenes Holler
+News
+Broccoli2shell: Everything You Need To Know About The Critical Brotli Decoder Vulnerability
+A critical vulnerability, tracked as CVE-2026-111497 and referred to as Broccoli2Shell, has been identified in the Brotli decompression library. The vulnerability affects multiple widely used technologies, including Node.js, Bun, Envoy Proxy, and more. Successful exploitation could allow an unauthenticated remote attacker to trigger memory corruption, disclose sensitive information, crash affected processes, or potentially achieve remote code execution (RCE). Organizations using affected components to decompress untrusted Brotli-compressed data are advised to prioritize remediation.
+https://www.wiz.io/blog/cve-2026-111497-brotli-rce-node-js
+PHP2Shell security flaws now sucessfully exploited in the wild
+Two critical RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619), collectively tracked as PHP2Shell, have been successfully exploited in the wild.
+https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/
+Angriffe auf Arista VeloCloud und Collabora/Nextcloud beobachtet
+Angreifer nutzen eine Lücke in Collabora und installieren Webshells auf Nextcloud-Servern. Auch Arista VeloCloud wird attackiert.
+https://www.heise.de/news/Angriffe-auf-Arista-VeloCloud-und-Collabora-Nextcloud-beobachtet-11499615.html
+Das Wohnungsinserat als Einfallstor für Schadsoftware
+Der Immobilienmarkt ist angespannt. Stolpert man zufällig über eine leistbare Wohnung in guter Umgebung, soll es nach Möglichkeit entsprechend schnell gehen. Kontaktaufnahme, Besichtigungstermin, Unterschrift. Eine Situation, in der Menschen eventuell unvorsichtiger reagieren als sonst. Und genau darauf setzen die Kriminellen. Sie nutzen diese positive Aufregung, um über ein Formular Schadsoftware auf die Endgeräte ihrer Opfer zu schleusen.
+https://www.watchlist-internet.at/news/wohnungsinserat-einfallstor-schadsoftware/
+AI coding agents hijacked using AGENTS.md file in Downloads folder
+Researchers found a malicious AGENTS markdown instruction file in a customers Downloads folder that tricked an AI coding agent into installing a rogue npm package.
+https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/
+DreamHost forces password resets in ongoing "incident"
+DreamHost has forced password resets for email and FTP/SFTP users following an incident that disrupted connections to the File Manager interface.
+https://www.bleepingcomputer.com/news/security/dreamhost-forces-email-ftp-sftp-password-resets-in-ongoing-incident/
+Wegen Schadcode-Lücke: Forscher legen millionenfach installierten Updater still
+Angreifer hätten Millionen von Geräten über eine Lücke in einem veralteten Popcorn-Time-Fork kapern können. Wie Forscher das verhindert haben.
+https://www.golem.de/news/wegen-schadcode-luecke-forscher-legen-millionenfach-installierten-updater-still-2610-214498.html
+Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento
+An unknown threat actor has infected 953 online stores, most of them running Magento, as part of a long-running campaign active since July 2025.
+https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html
+Yoba Malware Abuses Signed ChatGPT and Claude Binaries to Target AI Users
+As interest in new AI tools accelerates, cybercriminals are finding ways to exploit the trust surrounding them. Check Point Research (CPR) has uncovered Yoba, a malware campaign using fake GitHub projects impersonating supposed ChatGPT and Claude desktop applications, while abusing legitimate, signed OpenAI and Anthropic executables to help load malware.
+https://blog.checkpoint.com/research/yoba-malware-abuses-signed-chatgpt-and-claude-binaries-to-target-ai-users/
+SPECTER Attack Uses USB Power Signals to Leak Data From Air-Gapped PCs
+Researchers demonstrated SPECTER, a technique that leaks data from compromised air-gapped PCs through USB power controls, phone charging changes and peripherals.
+https://hackread.com/specter-usb-power-signals-air-gapped-pcs-leak-data/
+StealC Malware Returns as Stadia RAT After Operation Endgame Takedown
+StealC-s seller has returned with Stadia RAT, combining credential theft, hidden desktop control, and remote command execution using code reused from StealC v3.5.
+https://hackread.com/stealc-malware-stadia-rat-operation-endgame-takedown/
+CISA Unveils New Strategy to Strengthen National Cyber Defense and Critical Infrastructure Security
+The strategy addresses an increasingly complex threat environment, strengthens national cyber defense, and prioritizes the infrastructure most essential to America-s national security, economy, public health, and safety.
+https://www.cisa.gov/news-events/news/cisa-unveils-new-strategy-strengthen-national-cyber-defense-and-critical-infrastructure-security
+Tailscale warns of SSH flaws allowing root privilege escalation
+The Tailscale security team is working to patch almost a dozen security vulnerabilities that could be exploited to steal credentials, crash servers, gain root privileges, and more.
+https://www.bleepingcomputer.com/news/security/tailscale-warns-of-serious-ssh-flaws-allowing-root-privilege-escalation/
+Vulnerabilities
+Microsoft releases emergency .NET patches for critical Brotli flaw
+Microsoft released emergency .NET security updates to patch a critical vulnerability known as Broccoli2Shell, also tracked as Node2Shell and HTTP2Shell. Tracked as CVE-2026-111497, this critical-severity flaw stems from an out-of-bounds write in the Brotli decoder, which expands data compressed using Google's widely used Brotli lossless compression algorithm.
+https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw/
+Two Critical Wasmtime Flaws Could Let Malicious WebAssembly Modules Escape Sandboxes
+Two critical flaws in Wasmtime, a WebAssembly runtime that can be built into other software, could allow a malicious WebAssembly module to escape the sandbox intended to contain it, the project's maintainers say. An attacker would first need a vulnerable Wasmtime build to compile a module they control, and one of the flaws affects only ARM64 systems. Fixed versions were released on October 19 and 20, and the maintainers have not reported any attacks.
+https://thehackernews.com/2026/10/two-critical-wasmtime-flaws-could-let.html
+Microsoft Authenticator Flaw Let Permissionless Android Apps Steal Work Account Tokens
+Microsoft has fixed a flaw in its Authenticator app for Android that let a malicious app with no permissions pose as a trusted Microsoft app, such as Teams, and collect sign-in tokens for a victim's work account. Microsoft tracks the flaw as CVE-2026-80097 and fixed it in Authenticator for Android version 6.2606.4246, so anyone using the app should update.
+https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html
+Apple Backports Fix for Exploited CoreGraphics Flaw to Older iPhones and iPads
+Apple on Monday backported fixes for a high-severity security flaw that was exploited in real-world cyber attacks to older devices. The vulnerability, tracked as CVE-2026-86950 (CVSS score: 8.8), is an out-of-bounds write affecting CoreGraphics that could result in arbitrary code execution when processing a maliciously crafted file.
+https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html
+Python schließt per Update kritische TLS-Lücke wegen eMudhra-Schlüsseln
+Python 3.15.2, 3.14.10, 3.13.18, 3.12.16 und 3.11.18 beheben eine kritische Schwachstelle durch kompromittierte eMudhra-Zertifikate und weitere Lücken.
+https://www.heise.de/news/Python-schliesst-per-Update-kritische-TLS-Luecke-wegen-eMudhra-Schluesseln-11499933.html
+ZDI-26-792: libwebsockets MQTT Protocol PUBACK Packet Handling Out-Of-Bounds Write Remote Code Execution Vulnerability
+http://www.zerodayinitiative.com/advisories/ZDI-26-792/
+Synology-SA-26:14 PHP2Shell
+https://www.synology.com/en-global/support/security/Synology_SA_26_14
+LWN Security updates for Tuesday
+https://lwn.net/Articles/1103188/

@@ -1,0 +1,7 @@
+# Immutable upstream evidence and official files retain their exact hash bytes.
+# Readable excerpts and source locators remain ordinary files on disk.
+evidence/*.html -text -diff
+evidence/*.txt -text -diff
+evidence/*.json -text -diff
+assets/*LICENSE.txt -text -diff
+assets/*.svg -text -diff

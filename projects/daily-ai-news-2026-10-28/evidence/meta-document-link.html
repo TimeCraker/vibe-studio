@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"-->
+    <link rel="shortcut icon" type="image/png" href="/statics/zslm-2022/img/favicon.png">
+    <title>千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布 - 大模型训练 - 智算网络联盟</title>
+    <meta name="keywords" content="智算网络联盟">
+    <meta name="description" content="千亿级参数 AI 大模型，竟然真的能获取代码了？！一觉醒来，AI 圈发生了一件轰动的事情：Meta AI 开放了一个重达1750 亿参数的大语言   ">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/statics/plugin/bootstrap-4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/statics/plugin/bootstrap-icons-1.8.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/statics/plugin/swiper-6.8.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/statics/plugin/animation/animate.css">
+    <link rel="stylesheet" href="/statics/zslm-2022/css/style.css">
+    <link rel="stylesheet" href="/statics/zslm-2022/css/responsive.css">
+    <link rel="stylesheet" href="/statics/zslm-2022/css/amboot.css">
+    <link rel="stylesheet" href="/statics/zslm-2022/css/zswl-2022.css">
+    <script src="/statics/plugin/swiper-6.8.4/swiper-bundle.min.js"></script>
+</head>
+
+<body data-scroll-animation="true">
+  <div class="body_wrapper">
+    <nav class="navbar navbar-expand-lg menu_two" id="sticky">
+  <div class="container">
+    <a class="navbar-brand" href="https://c2net.openi.org.cn/">
+      <img src="/statics/zslm-2022/img/logo.svg" alt="智算网络联盟">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="menu_toggle">
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="hamburger-cross">
+          <span></span>
+          <span></span>
+        </span>
+      </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav menu dk_menu ml-auto">
+                <li class="nav-item "><a class="nav-link" title="智算网络联盟"
+            href="https://c2net.openi.org.cn/">首页</a></li>
+                        <li class="nav-item ">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=10" title="智算网络" target="_blank">智算网络</a>
+        </li>
+                                <li class="nav-item dropdown submenu ">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            区域调度中心 <i class="dropdown icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=39" target="_blank" >西部算力调度中心</a></li>
+                                  </ul>
+        </li>
+                                <li class="nav-item ">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=2" title="智算网络标准">智算网络标准</a>
+        </li>
+                                <li class="nav-item ">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=4" title="智算网络技术">智算网络技术</a>
+        </li>
+                                <li class="nav-item ">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=21" title="应用场景与案例">应用场景与案例</a>
+        </li>
+                                <li class="nav-item ">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=19" title="共享资源">共享资源</a>
+        </li>
+                                <li class="nav-item active">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=11" title="新闻动态">新闻动态</a>
+        </li>
+                                <li class="nav-item ">
+          <a class="nav-link" href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=5" title="关于联盟">关于联盟</a>
+        </li>
+                              </ul>
+    </div>
+  </div>
+</nav>
+<section class="banner_area">
+	<div class="breadcrumb pb-5" >
+		<div class="container text-center wow fadeInUp">
+			<h1 class="text-white">新闻动态</h1>
+									<ul class="list-inline">
+			 
+				<li class="list-inline-item mx-2">⬡ <a href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=12"  class="text-light"><span>东数西算</span></a></li> 
+			 
+				<li class="list-inline-item mx-2">⬡ <a href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=13"  class="text-light"><span>运营商算力网络建设</span></a></li> 
+			 
+				<li class="list-inline-item mx-2">⬡ <a href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=14"  class="text-white"><span class="border-bottom border-white">大模型训练</span></a></li> 
+			 
+				<li class="list-inline-item mx-2">⬡ <a href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=15"  class="text-light"><span>综合新闻</span></a></li> 
+						</ul>
+							</div>
+	</div>
+</section>
+
+<section class="sec_pad mt-0 pt-0">
+	<div class="container wow fadeInUp">
+		<p class="mt-3 mb-5">当前位置：<a href="https://c2net.openi.org.cn">首页</a> &gt; <a href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=11">新闻动态</a> > <a href="https://c2net.openi.org.cn/index.php?m=content&c=index&a=lists&catid=14">大模型训练</a> > </p>		
+		<h2 class="mb-3 text-center">千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布</h2>
+		<ul class="list-inline text-center mb-4 text-secondary">
+			<li class="list-inline-item mx-2">发布时间：2026-10-28</li>
+						<li class="list-inline-item mx-2">来源：量子位</li>
+						<li class="list-inline-item mx-2"><span id="hits"></span></li>
+		</ul>
+		<p>千亿级参数 AI 大模型，竟然真的能获取代码了？！</p>
+
+<p>一觉醒来，AI 圈发生了一件轰动的事情：Meta AI 开放了一个&ldquo;重达&rdquo;1750 亿参数的大语言模型 OPT-175B，不仅参数比 GPT-3 的 3750 亿更少，效果还完全不输 GPT-3。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/9518dc30-c2be-48fe-b8c8-3ea3340a9f8a.png" style="height:583px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>这意味着 AI 科学家们，终于可以&ldquo;撬开&rdquo;像 GPT-3 这样的大模型，看看里面到底有些什么秘密了。之前 GPT-3 虽然效果惊艳但不够开放，源代码独家授权给了微软，连马斯克都批评过 OpenAI 不够 open。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/30694681-bf4c-4ac1-a478-a73cb54270d5.png" style="height:298px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>虽然论文就在那里，想要在此之上做进一步研究的话就得先复现一个出来再说。而这一次，Meta 从完整模型到训练代码、部署代码全部开放。有人甚至在官宣之前就摸到还没上传好的 GitHub 仓库去蹲点了。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/318ff1b4-063f-4b53-9621-38e164fa521f.png" style="height:664px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>还有人艾特 OpenAI 试图&ldquo;引战&rdquo;：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/aa70e5bd-844a-4ed3-aac8-bba3c2cee152.png" style="height:134px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>那么，Meta 大模型有何特点、如何做到绿色低能耗，又为何要对外开放？一起来看看。</p>
+
+<h3>用 16 块 V100 就能跑起来</h3>
+
+<p>OPT 全称 Open Pre-trained Transformer Language Models，即&ldquo;开放的预训练 Transformer 语言模型&rdquo;。相比 GPT，名字直接把 Generative 换成了 Open，可以说是非常内涵了。（手动狗头）在论文中，Meta AI 也不避讳宣称 OPT-175B 就是对标 GPT-3，还暗示一波自己更环保：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/5c552f60-4d71-4ac3-98d0-b9faff8e3335.png" style="height:162px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>Meta AI 对此解释称，OPT 就是奔着开放代码去的，为了让更多人研究大模型，环境配置肯定是越经济越好。这不，运行时产生的碳足迹连 GPT-3 的 1/7 都不到，属实省能又高效。为了方便研究人员&ldquo;量力而行&rdquo;，Meta AI 搞出了各种大小的 OPT 模型，从 125M 参数到 1750 亿参数的不同大小模型都有。其中，660 亿参数的模型还在制作中，马上也会和大伙儿见面：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/75b73fa3-1a5f-43e7-9bb6-f35bc76db07d.png" style="height:809px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>所以，最大的 OPT-175B 模型究竟有多高效，又是怎么做到的？</p>
+
+<p>性能方面，Meta AI 针对 OPT-175B 和 GPT-3，用 14 个 NLP 任务进行了测试。结果表明，无论是零样本学习（zero-shot）还是多样本学习（Multi-shot），OPT 在这些任务上的平均精度都与 GPT-3 相差不大。其中虚线为 GPT，实线为 OPT：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/a1a4e141-3569-4772-a47c-fb13acfd62ff.png" style="height:287px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>△ 左为零样本学习，右为多样本学习</p>
+
+<p>再看具体任务。在对话任务中，采用无监督学习的方法训练 OPT-175B，效果和监督学习训练的几类模型相近：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/1a734ae8-76a1-4c23-9167-78a71e6ff577.png" style="height:189px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>仇恨言论检测任务上的效果，更是完全超过 Davinci 版本的 GPT-3 模型（在 GPT-3 的四个版本中是效果最好的）：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/f931c20a-27fb-451f-8baa-93c7db1c393f.png" style="height:309px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>训练硬件方面，Meta AI 用了 992 块英伟达 A100 GPU（80GB）训练 OPT，平均每块 GPU 的计算效率最高能达到 147 TFLOP / s。</p>
+
+<p>这个效率，甚至比英伟达自家研究人员用起来还高，大约超过 17% 左右。Meta AI 透露称，一方面是采用了自家推出的一款名叫 FSDP（Fully Sharded Data Parallel）的 GPU 内存节省工具，使得大规模训练的速度比传统方法快上 5 倍左右；另一方面他们也借鉴了英伟达 Megatron-LM 模型的张量并行方法，将一个运算分布到多个处理器上同时进行。甚至 Meta AI 表示，最低只需要 16 块英伟达 V100 GPU，就能训练并部署 OPT-175B 模型。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/5bd1aff2-03b1-4074-973e-b8b8ecccf140.png" style="height:120px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>已经有网友迫不及待地想要一试了：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/94319fff-2e4e-4e47-a9b3-0f95e35b00ed.png" style="height:254px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>当然，Meta AI 也不避讳谈及 OPT-175B 大模型面临的一些问题，例如更容易生成&ldquo;毒性语言&rdquo;（例如使用有攻击性的词汇、语言歧视等）：</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/6cb57f17-4d86-46dd-883e-0586b77c1cba.png" style="height:727px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>研究人员表示，希望能在开放后，有更多人参与进来研究，并真正解决这些问题。</p>
+
+<h3>手把手教你复刻 GPT-3</h3>
+
+<p>上面提到，这一次的 OPT 模型系列，300 亿参数及以下的版本都是可以直接下载，660 亿版还在路上。只有完整的 1750 亿版需要额外填写一张申请表，包括工作单位、用途、相关发表工作等问题。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/8370514a-ed73-4c97-999c-8b0cc935ca3b.png" style="height:837px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>训练和部署的代码工具包 metaseq 发布在 GitHub，并配有使用教程和文档。作为著名的 fairseq 工具包的一个分支，metaseq 专注于 1750 亿规模大模型，删除了训练和使用大模型不需要的部分。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/bd26327a-bbbb-4382-bc22-18270d7412bc.png" style="height:731px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>还有不少开发者特别看重一个与模型和代码同时发布的&ldquo;隐藏宝藏&rdquo;&mdash;&mdash; 开发日志。里面详细记录了 Meta 团队在开发大模型过程中遇到的问题、解决的办法和决策的依据。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/2835e4d6-d450-4b94-8938-8573f47f9b66.png" style="height:181px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/9f47f0ec-130e-4e22-9bce-7ec86bfdfaea.png" style="height:1153px; width:964px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>为自 Pytorch 诞生之前就存在的一系列机器学习研究中的痛点和困惑提供了大厂解法的一手资料。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/3e0dfba2-e575-4c09-aeeb-16528763a479.png" style="height:200px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>如此的开放力度可以说是史无前例了，自然收到了不少赞美。比如同样在做开源大模型项目的 HuggingFace 首席科学家 Thomas Wolf。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/89a40ab8-593e-47d3-841f-0b3826252201.png" style="height:162px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>不过针对 1750 亿参数版需要申请一事，还是有人表示怀疑。</p>
+
+<blockquote>
+<p>我不是学者或从业者，他们会接受我的申请吗？</p>
+</blockquote>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/c18589d5-034f-4890-88bf-04382550842b.png" style="height:175px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>也有开发者建议 Meta 像 OpenAI 一样提供一些 Demo，如果大家看到效果会更愿意参与研究改进，不然的话光是搭建开发环境就挺劝退的。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/be40109b-8e9b-4163-98c4-dabdaa63ce5c.png" style="height:235px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>斯坦福大学基础模型研究中心主任、副教授 Percy Liang 对此发表了观点，将大模型的开放程度总结成 4 个层次，更高层次的开放能让研究者专注于更深的问题。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/526674e6-e7b6-4b9f-8694-ef5f9c1d28a6.png" style="height:299px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>第一层论文开放，证明一些设想的可行性，并提供构建思路。</p>
+
+<p>第二层 API 开放，允许研究人员探索和评估现有模型的能力（如推理能力）和限制（如偏见）</p>
+
+<p>第三层模型权重开放和训练数据开放。允许研究人员逐步改进现有模型，开发更深入的可解释性技术和更有效的微调方法，让研究人员更好地理解训练数据在模型行为中的作用。</p>
+
+<p>第四层计算能力开放，允许研究人员尝试新的体系结构、训练目标和过程、进行数据融合，并在不同的领域开发全新的模型。</p>
+
+<p>Percy Liang 认为更高层次的开放同时也会带来更多风险。也许是时候制定相关的社区规范了？</p>
+
+<h3>One More Thing</h3>
+
+<p>Meta 这次论文的的共同一作有三人，其中 Susan Zhang 加入 Meta 之前正是来自 OpenAI。</p>
+
+<p><img src="https://img.ithome.com/newsuploadfiles/2022/5/4b0899a1-ae30-413b-b4ca-ac2b283805bd.png" style="height:784px; width:1080px" title="千亿参数大模型首次被撬开！Meta 复刻 GPT-3“背刺”OpenAI，完整模型权重及训练代码全公布" /></p>
+
+<p>不过在 OpenAI 期间她并没有负责 GPT-3 的开发，而是参与了玩 Dota 的 OpenAI Five 强化学习项目，以及多模态大模型的研究。</p>
+
+<p>项目地址：</p>
+
+<p>https://github.com/facebookresearch/metaseq/tree/main/projects/OPT</p>
+
+<p>论文地址：</p>
+
+<p>https://arxiv.org/abs/2205.01068</p>
+
+<p>参考链接：</p>
+
+<p>[1]https://ai.facebook.com/blog/democratizing-access-to-large-scale-language-models-with-opt-175b/</p>
+
+<p>[2]https://www.technologyreview.com/2022/05/03/1051691/meta-ai-large-language-model-gpt3-ethics-huggingface-transparency/</p>
+
+<p>[3]https://twitter.com/MetaAI/status/1521489996145958914</p>
+	</div>
+</section>
+
+<script language="JavaScript" src="/api.php?op=count&id=214&modelid=1"></script> 
+  <footer class="bg-dark text-white">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="media">
+            <img src="/statics/zslm-2022/img/zslm-ecode.jpg" width="100" class="mr-3" alt="微信交流群">
+            <div class="media-body">
+              <p><strong>联系我们</strong><br>
+                地址：广东省深圳市南山区兴科一街2号鹏城实验室<br>
+                邮件地址：secretariat@openi.org.cn</p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-6 text-right ">
+          <a href="http://beian.miit.gov.cn/" target="_blank" class="text-secondary">京ICP备18004880号</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div><!--body_wrapper-->
+
+<!-- Back to top button -->
+<a id="back-to-top" title="Back to Top"></a>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/statics/zslm-2022/js/jquery-3.2.1.min.js"></script>
+<script src="/statics/zslm-2022/js/pre-loader.js"></script>
+<script src="/statics/plugin/bootstrap-4.6.1/js/popper.min.js"></script>
+<script src="/statics/plugin/bootstrap-4.6.1/js/bootstrap.min.js"></script>
+<script src="/statics/plugin/wow/wow.min.js"></script>
+<script src="/statics/zslm-2022/js/parallaxie.js"></script>
+<script src="/statics/zslm-2022/js/TweenMax.min.js"></script>
+<script src="/statics/zslm-2022/js/jquery.wavify.js"></script>
+<script src="/statics/plugin/counterup/jquery.counterup.min.js"></script>
+<script src="/statics/plugin/counterup/jquery.waypoints.min.js"></script>
+<script src="/statics/zslm-2022/js/main.js"></script>
+</body>
+</html> 

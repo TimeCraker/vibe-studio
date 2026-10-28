@@ -1,0 +1,26 @@
+{
+  "headline":{"title":"LFM3 发布，小模型走进本地应用","subtitle":"文字、视觉与语音分工；4 位文本模型本体约 1 GB","logo":"assets/liquid-logo.png","source":"Liquid AI 10/27 官方发布；不同模态为不同型号"},
+  "stories":[
+    {"title":"Liquid AI 发布 LFM3","detail":"轻量模型系列，面向本地任务与领域微调"},
+    {"title":"OpenBMB 开放文档识别与质检模型","detail":"MiniCPM-OCR 识别，Jev 评估区域质量"},
+    {"title":"讯飞 Spark 提供三档思考预算","detail":"1.7B 模型更新；按任务选择开销"},
+    {"title":"蚂蚁百灵开放 Ling 1019 权重","detail":"官方仓库已可下载；与轻量模型区分"},
+    {"title":"微软修复 .NET 解压漏洞","detail":"核对实际 Brotli 使用路径与修复版本"}
+  ],
+  "scenes":[
+    {"id":"overview","title":"今日 AI 资讯","section":"今日 AI 资讯","source":"当期原始来源已核对，详见选题与事实记录","anchor":"","draftAnchor":"各位观众们","claimIds":[],"purpose":"用具体名称交代本期头条与精选；精确停留待真人录音"},
+    {"id":"lfm-family","title":"Liquid AI 发布 LFM3 轻量模型系列","section":"模型头条 / LFM3","source":"Liquid AI 10/27 官方公告；各模态为独立模型","anchor":"","draftAnchor":"Liquid AI 在十月二十七日","claimIds":["lfm3-family"],"lead":"按任务选择文字、视觉、声音或混合输入模型，再进行领域微调。","bullets":["首批主要为 2B 级模型","权重可下载与定制","LFM Open License v1.0"],"media":{"kind":"image","file":"assets/liquid-banner.webp","label":"Liquid AI 官方模型页品牌图"}},
+    {"id":"lfm-local","title":"LFM3 文本模型本体约 1 GB","section":"模型头条 / 本地运行","source":"Liquid AI 模型卡；4 位近似值，不含全部缓存与应用开销","anchor":"","draftAnchor":"其中，文本模型","claimIds":["lfm3-memory"],"lead":"1.7B 文本模型提供本地部署入口。实际总内存随上下文和程序变化。","bullets":["约 1.7B 参数","4 位模型本体约 1 GB","上下文缓存另占内存"]},
+    {"id":"lfm-decisions","title":"LFM3 决策模型按描述定位物体","section":"模型头条 / 官方演示","source":"Liquid AI d1-2B 官方演示；不是 1.7B 文本模型或栏目实测","anchor":"","draftAnchor":"同一系列还提供决策模型","claimIds":["lfm3-decision"],"lead":"用自然语言指定对象，输出物体位置等结构化结果。","bullets":["画面输入与目标描述","Point 类型输出物体位置","接入应用执行具体任务"],"productionNote":"官方演示入口已找到，YouTube 直取遇到登录验证；继续查官方替代，未取得前不宣称已有该段视频。"},
+    {"id":"lfm-limits","title":"LFM3 小模型仍有任务边界","section":"模型头条 / 使用边界","source":"LFM3-1.7B 官方模型卡明确限制","anchor":"","draftAnchor":"不过，小模型也有边界","claimIds":["lfm3-limits"],"lead":"先选明确任务，再核对实际结果。","bullets":["本地 Agent 与结构化输出","复杂编程与多步推理不推荐","未作本栏目独立模型评测"]},
+    {"id":"ocr-parse","title":"MiniCPM-OCR 识别中文表格与公式","section":"应用工具 / 文档识别","source":"OpenBMB 官方中文样例动图；非本栏目实测","anchor":"","draftAnchor":"接下来看看文档识别","claimIds":["ocr-parse"],"lead":"扫描、拍照和弯曲页面，都可进入文档解析流程。","bullets":["约 1.3B 识别模型","中文与英文文档","输出布局与 Markdown"],"media":{"kind":"video","file":"assets/minicpm-official-chinese-demo.mp4","sourceIn":0,"sourceOut":18.4,"poster":"assets/minicpm-demo-poster.png","label":"OpenBMB 官方样例；原速；具体片段由实际口播决定"},"productionNote":"正式成片时采用宽幅展示以保证样例阅读；当前 sourceOut 为已取得原片全长候选，待录音再定真实入片范围。"},
+    {"id":"ocr-check","title":"MiniCPM-OCR Jev 评估识别结果质量","section":"应用工具 / 文档复核","source":"OpenBMB Jev 模型卡及官方候选对照示例","anchor":"","draftAnchor":"它还有一个约二十亿参数的搭档","claimIds":["ocr-judge"],"lead":"对文字、表格和公式区域评分，把可疑结果交回复核。","bullets":["约 2B 的质量评估模型","可评估不同解析器的结果","评分不保证文档绝对无错"],"media":{"kind":"image","file":"assets/minicpm-jev-case.png","label":"OpenBMB 官方候选评分示例"}},
+    {"id":"spark-budget","title":"Spark-X2.6-1.7B 提供三档思考预算","section":"国产模型 / Spark","source":"讯飞 Spark 团队模型卡与 10/27 说明；能力改进为团队报告","anchor":"","draftAnchor":"国产小模型方面","claimIds":["spark-budget"],"lead":"沿用上一代架构，通过后训练改进代码和智能体任务。","bullets":["不思考 / 低 / 高","按任务选择响应与开销","Apache 2.0 权重已公开"]},
+    {"id":"ling-weights","title":"蚂蚁百灵开放 Ling 1019 模型权重","section":"国产模型 / 权重开放","source":"inclusionAI 官方模型卡与本次实际权重文件列表","anchor":"","draftAnchor":"蚂蚁百灵也有一条权重开放的更新","claimIds":["ling-weights"],"lead":"Ling-3.1-flash-1019 仓库可下载；模型页标注 MIT。","bullets":["1M token 上下文","体量与本地小模型区分","部署前评估服务器资源"]},
+    {"id":"dotnet-reminder","title":"微软修复 .NET Brotli 解压漏洞","section":"开发者提醒 / 安全更新","source":"Microsoft 官方公告；10/25 初版；CVE-2026-111497","anchor":"","draftAnchor":"再补一条开发者安全提醒","claimIds":["dotnet-brotli"],"lead":"核对应用是否会解压外部 Brotli 数据，再按微软公告处理。","bullets":["相关自动解压默认未开启","启用路径与直接 API 需排查","修复版本以官方公告为准"]},
+    {"id":"closing","title":"我们下期再见","section":"每日 AI 资讯","source":"所有素材与音乐署名随实际交付物保留","anchor":"","draftAnchor":"以上就是本期精选资讯","claimIds":[],"lead":"本期来源与使用入口保留在视频简介。","bullets":[]}
+  ],
+  "fonts":{"sans":"assets/fonts/sans.ttf","mono":"assets/fonts/mono.ttf"},
+  "music":{"file":"assets/carefree.mp3","credit":"Carefree - Kevin MacLeod (incompetech.com). CC BY 4.0. https://creativecommons.org/licenses/by/4.0/"},
+  "productionNote":"录音前镜头意图。anchor 为空；draftAnchor 只提示原稿段落，收到录音并核对 ASR 后填实际 anchor。尚未生成精确时间线、同步字幕或成片，不能将这些输入当已渲染结果。"
+}

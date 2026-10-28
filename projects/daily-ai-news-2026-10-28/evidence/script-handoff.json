@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-28T04:03:20.328442+00:00",
+  "manuscriptSha256": "4a304419ec3d78eb5ad8bf9cba5dc2e795bab9940effdf9ad6283b6e8b5648a9",
+  "paragraphs": 11,
+  "speechCharacters": 938,
+  "sceneIds": [
+    "overview",
+    "lfm-family",
+    "lfm-local",
+    "lfm-decisions",
+    "lfm-limits",
+    "ocr-parse",
+    "ocr-check",
+    "spark-budget",
+    "ling-weights",
+    "dotnet-reminder",
+    "closing"
+  ],
+  "factSourcesExist": true,
+  "draftAnchorsAwaitAsr": true,
+  "nativeOutputIntent": "1920x1080 60fps after real recording",
+  "humanRecording": "pending",
+  "fullRender": "not-started",
+  "humanReview": "pending",
+  "publication": "not-started"
+}
