@@ -58,6 +58,9 @@ test('formal archive is discoverable in products; dry-run is read-only, complete
   assert.ok(existsSync(join(f.product,plan.platforms.bili.video)));
   assert.ok(existsSync(join(f.product,plan.platforms.bili.spec)));
   assert.equal(finalizeDelivery(f.repo,f.project,options(f)).complete,true,'repeated close uses verified receipt, not a missing project');
+  const receiptFile=join(f.product,'operations/finalization.json');
+  writeFileSync(receiptFile,readFileSync(receiptFile,'utf8').replace(/\r?\n/g,'\r\n'));
+  assert.equal(inspectFinalization(f.repo,f.project,options(f)).complete,true,'Git CRLF checkout must not invalidate an identical JSON receipt');
   const interrupted=readJson(join(f.product,'operations/finalization.json'));
   interrupted.status='ready-to-clean';interrupted.complete=false;interrupted.cleaned=false;
   writeJson(join(f.product,'operations/finalization.json'),interrupted);

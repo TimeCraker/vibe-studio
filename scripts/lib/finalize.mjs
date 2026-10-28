@@ -3,7 +3,7 @@ import {basename,dirname,extname,join,relative,resolve,sep} from 'node:path';
 import {homedir} from 'node:os';
 import {spawnSync} from 'node:child_process';
 import {archiveProject,restoreArchive,verifyArchive} from './archive.mjs';
-import {hashFile,inside,readJson,safePath,walk,writeJson} from './files.mjs';
+import {hashFile,hashValue,inside,readJson,safePath,walk,writeJson} from './files.mjs';
 
 const same=(a,b)=>resolve(a).toLowerCase()===resolve(b).toLowerCase();
 const sameDirectory=(a,b)=>{if(same(a,b)) return true;if(!existsSync(a)||!existsSync(b)) return false;const x=statSync(a,{bigint:true}),y=statSync(b,{bigint:true});return x.ino!==0n&&x.ino===y.ino&&x.dev===y.dev;};
@@ -12,6 +12,7 @@ function physicallyInside(root,path) {
 }
 const read=(file,fallback=null)=>existsSync(file)?readJson(file):fallback;
 const readReceipt=file=>{try{return read(file);}catch{return null;}};
+const receiptHash=file=>{const value=readReceipt(file);return value?hashValue(value):null;};
 const relativePath=(root,file)=>relative(root,file).split(sep).join('/');
 const defaultBackup=product=>join(homedir(),'Videos/vibe-studio-archive',basename(product));
 function productPath(repo,id) {
@@ -205,7 +206,7 @@ export function inspectFinalization(repo,project,{archive,backup}={}) {
     if(['closed','ready-to-clean'].includes(receipt.status)) report.blockers.push(...verifyHandoff(receipt.handoffBackup));
     if(receipt.archiveSha256===report.archiveSha256&&!report.blockers.length) {
       const exported=report.backup&&join(report.backup,'finalization.json');
-      const exportPending=receipt.receiptExportPending||!existsSync(receiptFile)||!exported||!existsSync(exported)||hashFile(exported)!==hashFile(receiptFile);
+      const exportPending=receipt.receiptExportPending||!existsSync(receiptFile)||!exported||!existsSync(exported)||receiptHash(exported)!==receiptHash(receiptFile);
       if(receipt.status==='closed'&&receipt.cleaned===true) return {...report,status:exportPending?'cleanup-receipt-pending':'closed',cleaned:true,complete:!exportPending,canFinalize:exportPending,receipt};
       if(receipt.status==='ready-to-clean'&&receipt.restored?.ok) return {...report,status:'cleanup-receipt-pending',canFinalize:true,receipt};
     }
@@ -309,7 +310,7 @@ export function productHandoff(repo,project,{archive:explicitArchive}={}) {
     issues.push(...verifyHandoff(receipt.handoffBackup));
   }
   const exported=receipt?.backup&&join(receipt.backup,'finalization.json');
-  const exportPending=receipt?.receiptExportPending||(receipt?.status==='closed'&&(!exported||!existsSync(exported)||!existsSync(join(product,'operations/finalization.json'))||hashFile(exported)!==hashFile(join(product,'operations/finalization.json'))));
+  const exportPending=receipt?.receiptExportPending||(receipt?.status==='closed'&&(!exported||!existsSync(exported)||!existsSync(join(product,'operations/finalization.json'))||receiptHash(exported)!==receiptHash(join(product,'operations/finalization.json'))));
   const pendingReceipt=!workspaceExists&&manifestMatches&&(receipt?.status==='ready-to-clean'||(receipt?.status==='closed'&&exportPending));
   const closed=!workspaceExists&&receipt?.status==='closed'&&receipt.cleaned&&manifestMatches&&!issues.length&&!pendingReceipt;
   const blockers=issues.length?issues:manifestMatches?(receipt.blockers?.length?receipt.blockers:closed?[]:['已归档，尚未完成统一收尾检查。']):['尚无匹配的统一收尾记录；需检查工作区差异、备份与试恢复。'];
