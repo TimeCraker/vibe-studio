@@ -7,14 +7,14 @@
 | 交付物 | 入口 | 制作方式 |
 |---|---|---|
 | PPT | [ppt](skills/ppt/) | Python 生成、动画、PDF/图片核查 |
-| 每日 AI 资讯（试制） | [daily-ai-news](skills/daily-ai-news/) | 按价值决定是否出片；值得时取得 TOP15，用现有代码渲染链制作有重点的待审片 |
+| 每日 AI 资讯 | [daily-ai-news](skills/daily-ai-news/) | 按价值筛选，先交稿、等真人录音，再对齐制作原生 60fps 视频；支持工程文件接手 |
 | 已有录像做讲解 | [video-motion](skills/video-motion/) | FootageOverlay 叠字幕、数据与标注 |
 | 从项目材料做介绍片 | [总装工作流](workflows/explainer-video.md) | 快速单片走剪映，品牌场景走 DeckVideoV2，封面 CoverV3 |
 | 已有网页或代码动画转视频 | [web-capture](skills/web-capture/) | 状态重放或显式 seek 采集，导演页剪辑 |
 
 边界与决策见 [产品图](docs/product-map.md)。登录、配音、分镜/成片终审、点击发布保留人工节点；机器检查和人工接受分别记录。
 
-每日 AI 资讯已有[技能流程草案](skills/daily-ai-news/SKILL.md)、[本地视觉参考](skills/daily-ai-news/references/visual-style.md)与 [Cursor 首期任务](docs/2026-10-23-daily-ai-news-cursor-prompt.md)。风格已确认，不依赖生图；条数与时长随内容，无合适资讯可以不出片。2026-10-23 首期65秒无声版被否定后，独立重制的视觉方向获用户认可；[2026-10-24第二期](projects/daily-ai-news-2026-10-24/README.md)继续实际试制，新增带官标的全球/国产TOP15、资讯总览、相关新闻图片、真人口播稿与BGM预览。真人配音后同步、最终接受及完整日更自动化仍待验证，进度见[栏目规划](docs/2026-10-23-daily-ai-news-spec.md)。
+每日 AI 资讯从[技能](skills/daily-ai-news/SKILL.md)及[运行手册](skills/daily-ai-news/references/production.md)进入：新会话先运行 `node skills/daily-ai-news/scripts/edition.mjs status`，再明确本期工程；新一期初始化为空数据，不复制旧新闻。按价值决定是否出片，先交稿、等真人录音，以实际词窗安排字幕和镜头，采用纸白珊瑚版式和原生 1080p60。共用工具支持录音保全、对齐、渲染、投稿物料和归档验证；选题、画面取舍及实际审阅仍需 Agent 执行。[2026-10-27 工程](projects/daily-ai-news-2026-10-27/README.md)保存真人录音、官方演示和三平台投稿交接实例；当前阶段看该工程文件，不能把工具检查或填表当成用户接受或发布成功。历史首期任务仅作参考，不作新一期默认输入；跨会话工具验收见[本次 Stage Spec](docs/2026-10-28-daily-ai-news-handoff-spec.md)。
 
 视频质量流程：先分析参考并确定视觉方向，按需用分镜图和临时配音做可播放粗样片；调整结构后制作正式画面与混音，再依据实际视频的时间码返修。方法与裁剪方式统一见[制作流程](workflows/explainer-video.md)，不要求所有任务遍历全部步骤。
 
@@ -30,7 +30,7 @@
 | 板块 | 技能 | 用途（来自 SKILL.md） |
 |---|---|---|
 | 策划与文案 | [content-director](skills/content-director/) | 为产品介绍、科技讲解和内容视频做受众定位、参考分析、事实核查、产品演示设计、系列一致性、分镜与粗样片迭代。按镜头需要调度选材、设计和技术可视化；已有定稿的采集和渲染交给对应制作技能。 |
-| 策划与文案 | [daily-ai-news](skills/daily-ai-news/) | 每日 AI 资讯的选题判断与视频工作流：筛选核查、全球/国产 TOP15、先交口播稿，待用户真人录音后按实际音轨制作字幕和视频。条数与时长随内容，无合适资讯可不出片。用于今日 AI 日报或继续本栏目；完整日更流程仍待验证。 |
+| 策划与文案 | [daily-ai-news](skills/daily-ai-news/) | 制作或续做每日 AI 资讯：主动检索与筛选核查、全球/国产 TOP15、先交真人口播稿，再按录音制作字幕与 60fps 视频、准备三平台投稿。支持从工程文件跨会话接手；新闻条数随价值，无合适资讯可不出片。 |
 | 策划与文案 | [humanizer](skills/humanizer/) | 中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。 去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。 基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检… |
 | 策划与文案 | [narration](skills/narration/) | 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 work… |
 | 内容制作 | [asset-scout](skills/asset-scout/) | 按分镜搜集和筛选截图、录像、图片、音乐、音效及模型，交付实际可用素材、镜头对应关系与来源和使用条件。适用于缺素材、找替代素材和整理选材；生成图片、实际采集和后期制作交给对应技能。 |

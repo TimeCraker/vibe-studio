@@ -7,7 +7,7 @@
 | 交付物 | 默认入口 | 配套工具 |
 |---|---|---|
 | PPT | ppt | content-director 定受众与材料，humanizer 过文案 |
-| 每日 AI 资讯（试制） | [daily-ai-news](../skills/daily-ai-news/SKILL.md) | 按价值决定是否出片；出片时编排新闻/ECI TOP15 与 B 线代码渲染，复用声音、检查与发布工具 |
+| 每日 AI 资讯 | [daily-ai-news](../skills/daily-ai-news/SKILL.md) | 筛选后先交稿、等真人录音，按词窗制作榜单与资讯，原生 60fps；从工程文件续跑 |
 | 录像讲解 | video-motion / FootageOverlay | auto-subtitle、media-qc |
 | 产品介绍片 | workflows/explainer-video.md | content-director、narration、video-motion、media-qc |
 | 网页/代码动画成片 | web-capture | 导演页、配乐、media-qc |
@@ -15,7 +15,7 @@
 
 先判断画面来源：已有网页走 C 线采集；现成素材可走 A 线剪映；需要组件直绘走 B 线 Remotion。已有录像只需叠标注时直接用 FootageOverlay。
 
-每日栏目先按[首期接手任务](2026-10-23-daily-ai-news-cursor-prompt.md)筛选判断，值得报道时生成本地待审版本；条数与时长随内容，无合适资讯可不出片。草案和参考图已具备，不代表正式采集、自动语音或日更成片已验收。栏目事实、选择和进度归[现有 Stage Spec](2026-10-23-daily-ai-news-spec.md)。
+每日栏目从[技能运行手册](../skills/daily-ai-news/references/production.md)进入，先执行 `node skills/daily-ai-news/scripts/edition.mjs status` 确定新建或续做哪一期，再按本期文件推进；不把历史首期任务当新日期默认。条数与时长随内容，无合适资讯可不出片，真人录音后再按实际音轨排镜头。原始栏目选择见[栏目规划](2026-10-23-daily-ai-news-spec.md)，共用接手工具与验证边界见[接手 Stage Spec](2026-10-28-daily-ai-news-handoff-spec.md)；实际制作、人工接受和投稿结果看各期工程。
 
 三条线可混用，默认阶段与裁剪方式见[视频制作流程](../workflows/explainer-video.md)。各技能职责见 [README](../README.md#工具与职责)，不在此复述完整制作与投稿规则。
 

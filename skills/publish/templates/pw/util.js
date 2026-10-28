@@ -39,20 +39,15 @@ const evalSafe = (page, fn, arg, tag = 'evaluate', ms = 15000) => race(page.eval
 /** 把视频/封面塞进页面 file input（CDP 直设，绕开传输限制）。
  *  probe 可以传字符串正则源或 RegExp。返回第一个触发上传的 input 序号。 */
 async function setFiles(page, ctx, files, probe) {
-  const cdp = await ctx.newCDPSession(page);
-  await cdp.send('DOM.enable');
-  const { root } = await cdp.send('DOM.getDocument');
-  const { nodeIds } = await cdp.send('DOM.querySelectorAll', { nodeId: root.nodeId, selector: 'input[type=file]' });
-  console.log('file inputs:', nodeIds.length);
+  const candidates = page.locator('input[type="file"]');
+  const accepts = await candidates.evaluateAll(inputs => inputs.map(e => e.accept));
+  const video = accepts.map((a,i) => /video|\.mp4|\.mov/i.test(a) ? i : -1).filter(i => i >= 0);
+  const index = video.length === 1 ? video[0] : accepts.length === 1 ? 0 : -1;
+  if (index < 0) throw new Error('Video file input is ambiguous; inspect instead of trying every input/cover');
   const re = probe instanceof RegExp ? probe : new RegExp(probe);
-  for (const nid of nodeIds) {
-    await cdp.send('DOM.setFileInputFiles', { files, nodeId: nid });
-    await page.waitForTimeout(2000);
-    const hit = await page.evaluate((r) => new RegExp(r).test(document.body.innerText), re.source);
-    console.log(`  input[${nid}]: uploading=${hit}`);
-    if (hit) return nid;
-  }
-  return null;
+  await candidates.nth(index).setInputFiles(files);
+  await page.waitForFunction(pattern => new RegExp(pattern).test(document.body.innerText), re.source, {timeout:20000});
+  return index;
 }
 
 /** 现场探针：表单选择器失败时转储候选元素，人看着真实 DOM 再改脚本。 */
@@ -88,14 +83,17 @@ async function typeParagraphs(page, editor, paragraphs) {
 }
 
 /** 全页自查截图（<项目>/qa/pw-<tag>.png），人看完自己点发布。 */
-async function selfCheck(page, tag) {
+async function selfCheck(page, tag, details = {}) {
   const expected = loadSpec({ bili: 'form.json', douyin: 'douyin-form.json', xhs: 'xhs-form.json' }[tag]);
   const title = await page.locator('input[placeholder*="标题"], #title-input input, input.bili-input').first().inputValue();
   if (title !== expected.title) throw new Error('Title readback mismatch; human inspection required');
+  const selector = tag === 'bili' ? '.ql-editor[contenteditable="true"]' : tag === 'xhs' ? '#post-textarea [contenteditable="true"], .edit-area [contenteditable="true"], [contenteditable="true"]' : '[contenteditable="true"]';
+  const description = await require('./form-actions').assertDescription(details.editor ?? page.locator(selector).first(), expected.description, details.topicsApplied ?? []);
+  if (arg('declare', '') && !details.declarationVerified) throw new Error('AI declaration has not been verified from the actual control');
   const out = qaPath(`pw-${tag}.png`);
   await page.screenshot({ path: out, fullPage: true });
   console.log(`自查截图: ${out}`);
-  FS.writeFileSync(path.join(ROOT, 'qa', `publish-${tag}.json`), JSON.stringify({ status: 'filled-needs-human-check', titleReadback: true, video: arg('video', ''), screenshot: out, manualChecks: ['video identity', 'category', 'cover', 'topics', 'AI declaration'] }, null, 2));
+  FS.writeFileSync(path.join(ROOT, 'qa', `publish-${tag}.json`), JSON.stringify({ status: 'filled-needs-human-check', titleReadback: true, description, declarationVerified: details.declarationVerified ?? false, topicsApplied: details.topicsApplied ?? [], topicsPending: details.topicsPending ?? [], cover: arg('cover','') ? 'requires-platform-preview-check' : 'not-requested', video: arg('video', ''), screenshot: out, published: false, manualChecks: ['video identity', 'category', 'cover and aspect ratios', 'final human publish click'] }, null, 2));
   console.log('FILLED: review the screenshot and original video; publish remains a human action.');
 }
 

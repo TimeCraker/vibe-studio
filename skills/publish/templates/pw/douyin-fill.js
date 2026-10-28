@@ -4,6 +4,7 @@
 //
 //   node pw/douyin-fill.js [--dry] [--video <mp4>] [--names A,B,C]
 const { arg, hasFlag, loadPlaywright, loadSpec, setFiles, dumpForm, typeParagraphs, selfCheck } = require('./util');
+const {appendTopics,selectDouyinDeclaration,assertExistingVideo} = require('./form-actions');
 
 const DRY = hasFlag('dry');
 const DECLARE = arg('declare', '');
@@ -19,15 +20,17 @@ if (!hasFlag('probe')) { const plan=require('./util').preflight('douyin',spec); 
   const ctx = browser.contexts()[0];
   let page = ctx.pages().find((p) => p.url().includes('creator.douyin.com'));
   if (!page) throw new Error('没找到抖音窗口（先跑 node skills/publish/templates/douyin.mjs launch 扫码）');
+  page.setDefaultTimeout(10000);
   if (hasFlag('probe')) { await dumpForm(page, 'douyin'); process.exit(0); }
   await page.bringToFront();
-  if (!page.url().includes('content/upload')) {
+  if (!/content\/(upload|post\/video)/.test(page.url())) {
     await page.goto('https://creator.douyin.com/creator-micro/content/upload', { waitUntil: 'domcontentloaded', timeout: 30000 });
     await page.waitForTimeout(4000);
   }
 
   if (VIDEO) {
-    await setFiles(page, ctx, [VIDEO], /上传中|%|重新上传|上传完成/);
+    if (page.url().includes('/content/post/video')) await assertExistingVideo(page, VIDEO);
+    else await setFiles(page, ctx, [VIDEO], /上传中|%|重新上传|上传完成/);
     await page.waitForSelector('input[placeholder*="标题"]', { timeout: 300000 });
     await page.waitForTimeout(3000);
   }
@@ -41,83 +44,13 @@ if (!hasFlag('probe')) { const plan=require('./util').preflight('douyin',spec); 
   console.log('标题 =', spec.title);
 
   // 2) 正文（editor-kit：聚焦后逐段输入）
-  const editor = page.locator('.zone-container.editor-kit-container').first();
+  const editor = page.locator('.zone-container.editor-kit-container[contenteditable="true"], .zone-container.editor-kit-container [contenteditable="true"], [contenteditable="true"]').first();
   await typeParagraphs(page, editor, spec.description);
   console.log('正文已输入', spec.description.length, '段');
 
-  // 3) 话题：走联想弹层点第一项；联想不到就删掉，不留假话题
-  for (const name of NAMES) {
-    await editor.click();
-    await page.waitForTimeout(200);
-    await page.keyboard.insertText('#' + name);
-    let picked = null;
-    for (let i = 0; i < 16 && !picked; i++) {
-      await page.waitForTimeout(180);
-      picked = await page.evaluate(() => {
-        const m = document.querySelector('.mention-suggest-mount-dom');
-        if (!m) return null;
-        const items = [...m.querySelectorAll('*')].filter((e) => {
-          const r = e.getBoundingClientRect();
-          return r.width > 100 && r.height > 25 && r.height < 60 && (e.innerText || '').trim().startsWith('#');
-        });
-        return items[0] ? { txt: (items[0].innerText || '').replace(/\s+/g, ' ').trim().slice(0, 24) } : null;
-      });
-    }
-    if (picked) {
-      await page.evaluate(() => {
-        const m = document.querySelector('.mention-suggest-mount-dom');
-        const items = [...m.querySelectorAll('*')].filter((e) => {
-          const r = e.getBoundingClientRect();
-          return r.width > 100 && r.height > 25 && r.height < 60 && (e.innerText || '').trim().startsWith('#');
-        });
-        items[0]?.click();
-      });
-      await page.waitForTimeout(600);
-      const gone = await page.evaluate(() => !document.querySelector('.mention-suggest-mount-dom'));
-      console.log(`话题 #${name}: ${picked.txt} (ok=${gone})`);
-    } else {
-      for (let i = 0; i < name.length + 1; i++) await page.keyboard.press('Backspace');
-      console.log(`话题 #${name}: 联想失败，已删除`);
-    }
-  }
-
-  if (DECLARE) {
-  // 4) 自主声明：内容由AI生成
-  const declareOut = await page.evaluate(() => {
-    const row = [...document.querySelectorAll('*')].find((e) => {
-      const r = e.getBoundingClientRect();
-      return r.width > 300 && (e.innerText || '').trim().startsWith('自主声明') && e.querySelector('[class*="selectBox"]');
-    });
-    const box = row?.querySelector('[class*="selectBox"]');
-    if (!box) return '找不到自主声明行';
-    box.click();
-    return 'ok';
-  });
-  if (declareOut === 'ok') {
-    await page.waitForTimeout(1500);
-    const picked = await page.evaluate(() => {
-      const row = [...document.querySelectorAll('*')].find((e) => {
-        const r = e.getBoundingClientRect();
-        return r.width > 500 && r.height > 30 && r.height < 60 && (e.innerText || '').trim() === '内容由AI生成';
-      });
-      if (!row) return null;
-      row.click();
-      return 'ok';
-    });
-    await page.waitForTimeout(600);
-    await page.evaluate(() => {
-      const el = [...document.querySelectorAll('button')].find((e) => (e.innerText || '').trim() === '确定' && e.getBoundingClientRect().width > 0);
-      el?.click();
-    });
-    await page.waitForTimeout(1200);
-    console.log('声明 picked =', picked, '→ 内容由AI生成');
-  } else {
-    console.log('声明:', declareOut, '（跳过）');
-  }
-
-  }
-
-  await selfCheck(page, 'douyin');
+  const topics = await appendTopics(page, editor, spec.description, NAMES, 'douyin', () => typeParagraphs(page, editor, spec.description));
+  const declarationVerified = DECLARE ? await selectDouyinDeclaration(page, DECLARE) : false;
+  await selfCheck(page, 'douyin', {editor, ...topics, declarationVerified});
 })().then(() => process.exit(0)).catch((e) => {
   console.error('ERR', e.message);
   process.exit(1);

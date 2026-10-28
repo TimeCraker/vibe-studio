@@ -1,5 +1,7 @@
 # 每日 AI 资讯 · 2026-10-27
 
+新会话接手先执行 `node skills/daily-ai-news/scripts/edition.mjs status --project projects/daily-ai-news-2026-10-27`，再读其列出的证据。当前已完成 r2 成片和三平台物料/上传交接：B 站仅用户反馈已投递，抖音与小红书记录为待用户点击发布，尚未独立核验线上结果。下文制作阶段及修订经过保留为历史，最新交接在末尾及 qa/multiplatform-handoff.json。本期沿用自己的 job 与 scripts，不改为新 init 工程；新一期方法见[运行手册](../../skills/daily-ai-news/references/production.md)。
+
 ## 本期制作范围与验收
 
 按 [daily-ai-news](../../skills/daily-ai-news/SKILL.md) 续用已确认栏目方案。本期候选来自主动检索与用户指定的[豆包日报](https://feishu.doubao.com/docx/QCE7dxQuroPzwax098Rc3tg2n1e)，文档只作补充线索，事实以当次原始来源核查为准。本次曾先读文档，随后补做独立检索并调整选题；技能已改为日后先独立检索，实际经过见 selection.md。
@@ -58,7 +60,7 @@
 
 B 站标题、简介、来源署名、封面和同版 98 条 SRT 已准备到 exports/bili/；只做本地派生与投稿 dry-run，未上传、未登录、未发布。
 
-保全入口：`node projects/daily-ai-news-2026-10-27/scripts/archive.mjs`，默认输出 `C:/Users/TimeCraker/Videos/vibe-studio-archive/daily-ai-news-2026-10-27-r2`（首版 r1 归档保留），按 recipe / media / deliverables 分开并保留 archive.json；校验及空目录恢复结果存 qa/archive-verification.json。工作目录保留，不清场。空目录恢复不代表已经重渲染认证。
+保全入口：`node skills/daily-ai-news/scripts/edition.mjs archive --project projects/daily-ai-news-2026-10-27 --destination <新的未占用备份目录>`。最新已验证归档路径查看 qa/archive-verification.json（目前 r6，201 项恢复）；旧脚本的默认 r2 已占用，不要无参重跑。归档按 recipe / media / deliverables 保留实际输入和 archive.json；工作目录不清场，空目录恢复不代表已重渲染认证。
 
 ## 视频片段补齐
 
@@ -82,6 +84,6 @@ B 站标题、简介、来源署名、封面和同版 98 条 SRT 已准备到 ex
 
 ## 抖音与小红书投稿交接
 
-用户表示 B 站已投递，平台审核与链接尚未独立核验。抖音和小红书均已上传同一版 1080p60 视频，完成标题、简介、素材署名、自定义封面与 AI 内容声明的页面核对；两端仍待用户各自点击发布。抖音横封面使用 `render/cover-bili-safe.png`、竖封面使用 `render/cover-vertical-34.png`；小红书使用同一张 3:4 竖封面。竖封面由 `scripts/make-social-cover.py` 和本地微软雅黑／Consolas 字体绘制，实际文件另行归档。
+用户表示 B 站已投递，平台审核与链接尚未独立核验。抖音和小红书均已上传同一版 1080p60 视频，完成标题、简介、素材署名、自定义封面与 AI 内容声明的页面核对；两端仍待用户各自点击发布。抖音横封面使用 `render/cover-bili-safe.png`、竖封面使用 `render/cover-vertical-34.png`；小红书使用同一张 3:4 竖封面。竖封面由[本期绘制脚本](scripts/make-social-cover.py)和本地微软雅黑／Consolas 字体绘制，实际文件另行归档。
 
 两端话题自动插入时曾打断正文链接，已移除话题并重新核对完整正文；最终页面未添加话题。自动填表旧报告的失败状态保留为过程记录，实际手工修复和未发布状态见 `qa/multiplatform-handoff.json`。

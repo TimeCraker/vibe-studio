@@ -4,6 +4,7 @@
 //
 //   node pw/bili-fill.js [--dry]      # --dry 离线预检；--probe 只读已打开页面
 const { arg, hasFlag, loadPlaywright, loadSpec, qaPath, setFiles, dumpForm, typeParagraphs, selfCheck, race } = require('./util');
+const {uploadBiliVideo,assertExistingVideo} = require('./form-actions');
 
 const DRY = hasFlag('dry');
 const DECLARE = arg('declare', '');
@@ -34,11 +35,8 @@ if (!hasFlag('probe')) { const plan=require('./util').preflight('bili',spec); if
     await page.screenshot({ path: qaPath('pw-bili-0-before-upload.png'), fullPage: false });
 
     // Playwright 原生文件选择器拦截：点「上传视频」，接住 chooser 设文件
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser', { timeout: 15000 }),
-      page.locator('button:has-text("上传视频"), div.upload-btn').first().click(),
-    ]);
-    await chooser.setFiles(VIDEO);
+    if (await page.locator('input[placeholder*="标题"]').first().isVisible().catch(()=>false)) await assertExistingVideo(page, VIDEO);
+    else await uploadBiliVideo(page, VIDEO);
     console.log('已通过文件选择器提交视频');
 
     // 等转码/表单就绪：标题输入框出现
@@ -79,13 +77,13 @@ if (!hasFlag('probe')) { const plan=require('./util').preflight('bili',spec); if
     } catch { /* 没有这个标签就算了 */ }
   }
   const tagInput = page.locator('input[placeholder*="标签"]').first();
-  for (const t of spec.tags) {
+  for (const t of spec.tags ?? []) {
     await tagInput.click();
     await tagInput.fill(t);
     await page.keyboard.press('Enter');
     await page.waitForTimeout(350);
   }
-  console.log('标签 x', spec.tags.length);
+  console.log('标签 x', (spec.tags ?? []).length);
   await shot(4);
 
   if (arg('category','') === '人工智能') {
@@ -105,6 +103,7 @@ if (!hasFlag('probe')) { const plan=require('./util').preflight('bili',spec); if
 
   } else if (arg('category','')) console.log('Category needs human selection: '+arg('category'));
 
+  let declarationVerified = false;
   if (DECLARE) {
   // 5) 创作声明：含AI生成内容
   await page.click('.bcc-select, [class*="declare"] .bcc-select');
@@ -113,10 +112,12 @@ if (!hasFlag('probe')) { const plan=require('./util').preflight('bili',spec); if
   await opt.click();
   await page.waitForTimeout(700);
   console.log('声明 = 含AI生成内容');
+  declarationVerified = await page.locator('.bcc-select input, [class*="declare"] input').evaluateAll(inputs => inputs.some(e => e.value === '含AI生成内容'));
+  if (!declarationVerified) throw new Error('Bilibili AI declaration readback mismatch; inspect the control');
 
   }
 
-  await selfCheck(page, 'bili');
+  await selfCheck(page, 'bili', {editor, declarationVerified});
 })().then(() => process.exit(0)).catch(async (e) => {
   console.error('ERR', e.message);
   process.exit(1);

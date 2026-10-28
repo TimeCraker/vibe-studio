@@ -1,4 +1,4 @@
 interface:
   display_name: "每日 AI 资讯"
-  short_description: "从每日新闻筛选、模型榜单到代码成片和发布物料的栏目试制流程"
-  default_prompt: "使用 $daily-ai-news 筛选核查今天的 AI 资讯；有值得报道的内容时制作有重点的待审视频，条数与时长随内容，没有合适资讯则记录今日不出片。"
+  short_description: "可跨会话接手的资讯筛选、真人录音对齐、60fps 成片与三平台投稿流程"
+  default_prompt: "使用 $daily-ai-news，先通过 edition.mjs status 确定新建还是续跑；主动检索并核查资讯、更新两套 TOP15，有价值时先交口播稿，收到真人录音再按音轨制作 60fps 视频。按实际阶段准备或上传三平台物料，保留人工终审、登录和最终发布；没有合适新闻可以不出片。"
