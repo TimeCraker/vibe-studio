@@ -140,6 +140,10 @@ test('delivery rejects stale output inputs and exports real ASR subtitles to all
   const t=readJson(join(root,'timeline.json'));
   put('variants.json',{schemaVersion:1,platforms:Object.fromEntries(['bili','douyin','xhs'].map(platform=>[platform,{title:'技术夹具',description:['仅用于离线测试'],tags:[],sceneIds:t.scenes.map(s=>s.id),format:{width:1920,height:1080,fps:60},video,cover:'assets/icon.svg'}]))});
   assert.equal(checkEdition(root,'delivery').ok,true);
+  const provenance=readJson(join(root,`${video}.json`));
+  provenance.toolInputs=[{path:'skills/daily-ai-news/scripts/edition.mjs',sha256:'0'.repeat(64)}];put(`${video}.json`,provenance);
+  const toolDrift=checkEdition(root,'delivery');assert.equal(toolDrift.ok,true);
+  assert.match(toolDrift.warnings.join(' '),/tool version differs from render provenance/);
   e.production.humanReview='accepted-in-test-fixture-only';e.status='ready-to-submit';put('edition.json',e);
   assert.equal(checkEdition(root,'delivery').ok,true,'recording a review decision must not invalidate unchanged pixels/audio');
   preparePublish(root);

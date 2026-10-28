@@ -1,4 +1,4 @@
 interface:
   display_name: "每日 AI 资讯"
   short_description: "可跨会话接手的资讯筛选、真人录音对齐、60fps 成片与三平台投稿流程"
-  default_prompt: "使用 $daily-ai-news，先通过 edition.mjs status 确定新建还是续跑；主动检索并核查资讯、更新两套 TOP15，有价值时先交口播稿，收到真人录音再按音轨制作 60fps 视频。按实际阶段准备或上传三平台物料，保留人工终审、登录和最终发布；没有合适新闻可以不出片。"
+  default_prompt: "使用 $daily-ai-news，先通过 edition.mjs status 确定新建还是续跑；主动检索并核查资讯、更新两套 TOP15，有价值时先交口播稿，收到真人录音再按音轨制作 60fps 视频。正式成品归档到 products，使用共用 finalize 验证备份与恢复后收尾，有未保全改动时明确保留原因。按实际阶段准备或上传三平台物料，保留人工终审、登录和最终发布；没有合适新闻可以不出片。"

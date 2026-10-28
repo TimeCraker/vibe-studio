@@ -174,16 +174,27 @@ node skills/publish/templates/run.mjs --project $workProject --dry
 
 ## 7. 归档、清场与后续复盘
 
-deliverables.json 明确列出所有最终文件与质检证据，不能只写横版而漏掉竖版。先归档、校验完整性，再向另一个空目录试恢复；大媒体另做备份，确认可取回后才清理施工区。
+deliverables.json 明确列出所有最终文件与质检证据，不能只写横版而漏掉竖版。正式归档必须进入 products；仓库外目录仅作独立备份。archive 只表示快照已保存，finalize 通过成品/备份校验、空目录恢复、工作区一致性及 Git 边界后才默认清理施工区；发布和统计从产品档案继续，不要求留着制作目录。
+
+qa、render 中可能存在人工审阅记录或新修订，不能整目录视为可丢弃缓存。需保留的文件纳入 files；确定可重建、已被最终成品覆盖的输出，可在归档前列入 deliverables.json 的 cleanup.disposable 数组，每项必须有具体 path、实际 sha256 和 reason，仅接受 qa/ 或 render/ 下的单个文件。未归档且未明确列为可丢弃的文件会阻止清场；不能用目录或通配符绕过。
 
 ```powershell
-node scripts/studio.mjs archive --project $workProject
-node scripts/studio.mjs verify-archive --archive products/demo-video/archive.json
-node scripts/studio.mjs restore --archive products/demo-video/archive.json --project projects/demo-video-restore-check
+$productId = 'demo-video'
+node scripts/studio.mjs archive --project $workProject --id $productId
+git add -- "products/$productId"
+git add -f -- "products/$productId/recipe" "products/$productId/.gitattributes"
+node scripts/studio.mjs finalize --project $workProject --archive "products/$productId/archive.json" --dry
+node scripts/studio.mjs finalize --project $workProject --archive "products/$productId/archive.json"
 ```
 
-源码草稿备份用 `archive --source-only`，不等于完整交付。已有归档不覆盖，修订版用新的 `--id`；试恢复成功证明文件可取回，重新渲染成功需要另行验证。上述命令不会自动清场。
+示例 id 替换成本期实际版本。自己的制作输入先完成验证与提交；只暂存本期归档，recipe 里的原施工忽略规则不能导致配方缺失。finalize 的独立备份默认在用户 Videos/vibe-studio-archive/<id>，也可 `--backup <仓库外目录>` 指定新的未占用目录或字节相同的已有备份。备份不能位于仓库中；不覆盖不同内容的备份。
 
-制作配方与清单是固定快照；归档后可持续维护作品根 README 与 `operations/` 下的发布/复盘数据，位置和保存边界见[状态约定](../docs/documentation.md#作品状态记录)。不要直接改 recipe、已归档成品或清单内文件。
+finalize 的 dry-run 不写文件、备份或删除。实际执行检查是否有未归档差异、未提交改动、运行锁、其他项目借用的运行依赖及不安全路径；失败保留施工区，operations/finalization.json 记录 archived-workspace-retained 与具体原因，退出码非零。不能代为提交/撤销他人改动或放宽检查来清场。通过后记录 closed、备份和试恢复证据并移除施工目录，随后提交本期归档及清场产生的已跟踪文件删除。
+
+独立备份同时保全固定制作快照，以及单独的 handoff 快照（作品 README、允许入库的 operations 文本数据，另有清单/哈希）；finalization 收尾凭据单独导出。它不复制账号状态。以后更新投稿/运营记录后可再次 finalize 刷新 handoff 备份，已清场工程无需重建；清场中断已有 ready-to-clean 凭据时按实际检查续写关闭结果。备份完整性和人工接受仍分别记录。
+
+源码草稿备份用 `archive --source-only`，不能按成品 finalize。已有归档不覆盖，修订版用新的 `--id`；试恢复不代表重渲染或人工接受。返修时恢复到新的施工目录，不能在归档里修改固定快照。
+
+制作配方与清单是固定快照；归档后可持续维护作品根 README 与 `operations/` 下的发布/复盘数据，位置和保存边界见[状态约定](../docs/documentation.md#作品状态记录)。archive 会生成 operations/publish-plan.json，将已归档投稿物料指向 recipe/media/deliverables，可使用 publish 的 run.mjs --project 指向作品目录、--plan 指向该文件继续预检/填表。不要直接改 recipe、已归档成品或清单内文件。
 
 [发布后复盘](../skills/publish/references/analytics.md) 读取真实 metrics.json 与原始统计来源；没有数据就保持空表，不生成效果结论。复盘可以晚于归档，制作区无需为等统计长期保留。确认可复用的素材/组件再回流资产库；只有产生可复用经验或实际缺陷时才追加工单台账。

@@ -20,6 +20,10 @@ node skills/daily-ai-news/scripts/edition.mjs status --project projects/daily-ai
 | align-recording / build-inputs | 保存原件、词级 ASR、核对用词/事实、按锚点排镜头 |
 | produce / check-or-repair | 按 job 的具体步骤继续；修复变动影响的部分，勿覆盖他人文件 |
 | review-and-submission | 核对真实成片/素材；按授权投稿，保留人工点击与结果证据 |
+| archived-workspace-retained | 正式成品入口已在 products；运行 finalize --dry 检查具体保留原因，满足条件后清场 |
+| closed | 已归档、备份、试恢复并清场；从作品档案继续投稿/复盘，返修需恢复到施工目录 |
+| archive-needs-verification | 产品档案或独立备份有缺项/变化，先修复，不声称收尾完成 |
+| cleanup-receipt-pending | 删除已发生但收尾凭据尚需补齐/导出；重跑 finalize 恢复，不重建工程 |
 
 不要从头盲跑已有工程的 job：旧脚本可能重建输入，覆盖已改版式或片段。先读 `job.json`，用 `node scripts/studio.mjs run --project <目录> --step <ID>`；确定后续步骤都适用才用 `--from <ID>`。`studio status` 只反映 runner 日志，制作状态看上面的文件证据。不得为“通过”删除运行锁或改写人工接受状态。
 
@@ -114,6 +118,8 @@ node skills/daily-ai-news/scripts/edition.mjs check --project <目录> --phase d
 
 deps 按 lock 安装，不升级；本机已有完全同版依赖时可 `--runtime <已有remotion-app目录>`，只在新工程没有 node_modules 时建链接，并验证实际版本。正文/封面可继续在本期代码扩展。渲染前固定输入、官标、字体和媒体，渲染过程不抓远程资源；结束校验输入未变化。edition 的 status/production 只记交接和人工状态，不参与画面；更新它们无需重渲染，内容、榜单和媒体变化则必须重检。sample 是标明范围的局部片段，不能冒充整片。输出 `render/daily-ai-news-日期.mp4`，原生 1080p60；原始演示为 24/30fps 时保持原速，不声称素材本身也是 60fps。
 
+成片有效性检查绑定本期输入、视频哈希与对应 QC。共享生产工具的后续版本变化提示复现版本差异，不自动推翻未变化的已交付文件；原渲染报告不改写，实际内容/素材/音轨变化仍会阻止复用成片，有实际缺陷按影响返修。
+
 先看代表帧/短片，检查手机缩图、标题/字幕安全区、素材对应与真实播放；必要时局部返修，再完整出片。media-qc 的技术通过与 Agent 实际观察范围、用户连续观看/审听接受分开记录。交付可播放文件与绝对路径，不只给 Studio 或素材预览网页。
 
 ## 投稿和归档
@@ -132,10 +138,18 @@ node skills/publish/templates/run.mjs --project <目录> --dry
 实际输出列入 deliverables.json 后：
 
 ```powershell
-node skills/daily-ai-news/scripts/edition.mjs archive --project <目录> --destination "新的备份目录及版本号"
+node skills/daily-ai-news/scripts/edition.mjs archive --project <目录> --id 本期新归档id
+git add -- products/本期新归档id
+git add -f -- products/本期新归档id/recipe products/本期新归档id/.gitattributes
+node skills/daily-ai-news/scripts/edition.mjs finalize --project <目录> --archive products/本期新归档id/archive.json --dry
+node skills/daily-ai-news/scripts/edition.mjs finalize --project <目录> --archive products/本期新归档id/archive.json
 ```
 
-只用未占用目录；保全 recipe、真实输入、成片/封面/字幕、来源与必要检查结果，验证归档并在空目录恢复。共用生产脚本属于本仓库，恢复制作需要本仓库及锁定依赖；归档不等于打包了完整软件环境。命令不清场、不宣称恢复后已重渲染。账号 profile、登录页面截图和 cookie 不进归档。
+日更 archive 先检查完整交付，再调用共用归档实现，落点固定为 products/<id>；省略 id 使用本期 project.json 的 id，已有版本不可覆盖。自己的制作输入先验证并提交；归档的 recipe 源文件与元数据应按实际范围入 Git，不能因原施工忽略规则漏掉它们。外部 --destination 已移除，独立备份由 finalize 的 --backup 指定，默认在用户 Videos/vibe-studio-archive/<id>。具体收尾条件、备份冲突和清场约定统一见[制作流程](../../../workflows/explainer-video.md#7-归档清场与后续复盘)。
+
+finalize 通过成品哈希、独立备份、空目录恢复、未归档差异、Git 未提交工作与路径/运行检查后清场，记录 products/<id>/operations/finalization.json。有阻塞就保留原目录、记录原因并返回非零；不能为收尾覆盖旧快照、撤销他人修改或伪造接受状态。dry-run 不写文件、不执行清场。原工程无需等待平台发布/统计长期保留；归档后可用 operations/publish-plan.json 从产品目录继续投稿。
+
+共用生产脚本属于本仓库，恢复制作需要本仓库及锁定依赖；收尾不代表恢复后已重渲染、人工接受或平台发布。账号 profile、登录页面截图和 cookie 不进归档。
 
 ## 已有工程参考
 

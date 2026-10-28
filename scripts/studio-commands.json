@@ -12,7 +12,8 @@
     {"syntax":"qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]","description":"检查实际媒体与字幕"},
     {"syntax":"derive --project DIR","description":"按配置派生平台物料"},
     {"syntax":"review --project DIR","description":"根据真实统计生成复盘"},
-    {"syntax":"archive --project DIR [--id NEW-REVISION] [--source-only]","description":"保存制作配方、输入与指定交付物"},
+    {"syntax":"archive --project DIR [--id NEW-REVISION] [--source-only]","description":"归档到 products；草稿备份不算成品收尾"},
+    {"syntax":"finalize --project DIR --archive FILE [--backup DIR] [--dry]","description":"校验成品、独立备份与试恢复，无未保全改动后清理施工区"},
     {"syntax":"verify-archive --archive FILE [--source-only]","description":"校验归档完整性"},
     {"syntax":"restore --archive FILE --project DIR [--source-only]","description":"恢复到不存在或空的目录"}
   ]

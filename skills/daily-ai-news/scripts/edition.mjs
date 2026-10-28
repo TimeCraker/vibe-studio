@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import {copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, symlinkSync, writeFileSync} from 'node:fs';
-import {basename, dirname, extname, join, resolve} from 'node:path';
+import {dirname, extname, join, resolve} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {homedir} from 'node:os';
 import {hashFile, hashValue, readJson, safePath, writeJson} from '../../../scripts/lib/files.mjs';
 import {derive} from '../../publish/scripts/derive.mjs';
-import {archiveProject, restoreArchive, verifyArchive} from '../../../scripts/lib/archive.mjs';
+import {archiveDelivery,finalizeDelivery,findProduct,productHandoff} from '../../../scripts/lib/finalize.mjs';
 
 export const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '../../..');
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -30,6 +30,7 @@ const run = (exe, args, cwd) => {
 };
 export function initEdition(root, date, source) {
   validDate(date);
+  if(findProduct(REPO,root)) throw Error('An archived edition exists; use status or restore for a revision instead of reinitializing it');
   if (existsSync(root) && readdirSync(root).length) throw Error('Existing edition: run status --project instead; init never overwrites');
   mkdirSync(root, {recursive: true});
   for (const dir of ['assets', 'evidence', 'audio/source', 'audio/asr', 'render', 'qa', 'remotion-app/remotion', 'remotion-app/src']) mkdirSync(join(root, dir), {recursive: true});
@@ -153,7 +154,7 @@ export function checkEdition(root, phase = 'render') {
     const sha = exists(output) ? hashFile(safePath(root, output)) : null;
     if (report.videoSha256 !== sha || !report.fullRender || report.partialRender) errors.push('Missing/stale full render evidence');
     for (const input of report.inputs ?? []) if (!exists(input.path) || renderInputHash(root, input) !== input.sha256) errors.push(`Render input changed: ${input.path}`);
-    for (const tool of report.toolInputs ?? []) if (!existsSync(safePath(REPO, tool.path)) || hashFile(safePath(REPO, tool.path)) !== tool.sha256) errors.push(`Production tool changed: ${tool.path}`);
+    for (const tool of report.toolInputs ?? []) if (!existsSync(safePath(REPO, tool.path)) || hashFile(safePath(REPO, tool.path)) !== tool.sha256) warnings.push(`Production tool version differs from render provenance: ${tool.path}; retain the recorded version for reproduction`);
     if (!qc.ok || qc.videoSha256 !== sha) errors.push('Missing/stale technical QC for the delivered file');
     warnings.push('Technical checks do not certify human audiovisual acceptance or publication');
   }
@@ -161,12 +162,18 @@ export function checkEdition(root, phase = 'render') {
 }
 
 export function statusEdition(root) {
+  if(existsSync(join(root,'archive.json'))&&existsSync(join(root,'recipe/edition.json'))) {
+    const manifest=read(root,'archive.json'),info=read(root,'recipe/project.json',{});
+    return productHandoff(REPO,safePath(REPO,manifest.sourceProject??'projects/'+info.id),{archive:join(root,'archive.json')});
+  }
+  const archived=productHandoff(REPO,root);
+  if(archived) return archived;
   const e = read(root, 'edition.json');
   if (!e) throw Error('No edition.json: specify an existing edition or init --date');
   const selection = read(root, 'selection.json'), r = read(root, 'audio/recording-review.json');
   const output = e.videoFile ?? `render/daily-ai-news-${e.date}.mp4`;
   const has = f => existsSync(join(root, f));
-  let stage, next;
+  let stage, next, warnings=[];
   if (selection?.decision === 'no-video' && selection.independentSearch?.length && selection.notes) {stage = 'no-video'; next = '本期不出片；保留筛选依据，不制作空视频。';}
   else if (selection?.decision === 'blocked' || selection?.decision === 'no-video') {stage = 'research-blocked'; next = '记录检索/核实缺口；检索失败不能当成今日没有合适新闻。';}
   else if (!has('narration.md') || !readFileSync(join(root, 'narration.md'), 'utf8').split('## 朗读正文')[1]?.split('## 录音说明')[0].trim()) {stage = 'research-and-script'; next = '先独立检索，再读参考文档；核查选题、取得榜单、编写并交付朗读正文。';}
@@ -174,8 +181,8 @@ export function statusEdition(root) {
   else if (!r || (read(root, 'audio/recording.json')?.originalSha256 && read(root, 'audio/recording.json').originalSha256 !== r.originalSha256)) {stage = 'align-recording'; next = '词级转写，核对实际用词、事实差异和镜头锚点，再运行 align。';}
   else if (!has('timeline.json')) {stage = 'build-inputs'; next = '运行 align 生成实际时间线，再设计/检查画面。';}
   else if (!has(output)) {stage = 'produce'; next = 'check --phase render；运行 job 的 voice/audio/stills，审查代表片段后 render/qc。';}
-  else {const report = checkEdition(root, 'delivery'); stage = report.ok ? 'review-and-submission' : 'check-or-repair'; next = report.ok ? '检查实际成片；按授权准备三平台物料/上传；登录和最终发布由用户完成，保全并验证归档。' : report.errors.join('; ');}
-  return {project: resolve(root), date: e.date, stage, next, sourceDocument: e.sourceDocument ?? null, commands: {check: `node skills/daily-ai-news/scripts/edition.mjs check --project "${root}" --phase render`, job: `node scripts/studio.mjs run --project "${root}" --step <ID>`, uploadPreflight: `node skills/publish/templates/run.mjs --project "${root}" --dry`}, read: ['README.md', 'edition.json', 'selection.json', 'selection.md', 'narration.md', 'audio/recording.json', 'audio/recording-review.json', 'timeline.json', 'media-plan.json', 'assets/sources.json', 'job.json'].filter(has), publish: read(root, 'qa/multiplatform-handoff.json') ?? e.production?.publish ?? 'unknown', humanReview: e.production?.humanReview ?? 'pending', archive: read(root, 'qa/archive-verification.json')?.archive ?? 'not-verified', note: 'This is file evidence, not a claim of full human review or platform publication.'};
+  else {const report = checkEdition(root, 'delivery'); stage = report.ok ? 'review-and-submission' : 'check-or-repair'; warnings=report.warnings; next = report.ok ? '检查实际成片；按授权准备三平台物料/上传；登录和最终发布由用户完成，保全并验证归档。' : report.errors.join('; ');}
+  return {project: resolve(root), date: e.date, stage, next, warnings, sourceDocument: e.sourceDocument ?? null, commands: {check: `node skills/daily-ai-news/scripts/edition.mjs check --project "${root}" --phase render`, job: `node scripts/studio.mjs run --project "${root}" --step <ID>`, uploadPreflight: `node skills/publish/templates/run.mjs --project "${root}" --dry`}, read: ['README.md', 'edition.json', 'selection.json', 'selection.md', 'narration.md', 'audio/recording.json', 'audio/recording-review.json', 'timeline.json', 'media-plan.json', 'assets/sources.json', 'job.json'].filter(has), publish: read(root, 'qa/multiplatform-handoff.json') ?? e.production?.publish ?? 'unknown', humanReview: e.production?.humanReview ?? 'pending', archive:'not-in-products', legacyBackup:read(root,'qa/archive-verification.json')?.archive??null, note: 'This is file evidence, not a claim of full human review or platform publication. An external backup alone is not a formal products archive.'};
 }
 
 export function importRecording(root, file) {
@@ -238,26 +245,29 @@ export function preparePublish(root) {
   writeJson(join(root, 'publish-plan.json'), plan); return {platforms: Object.keys(plan.platforms), uploaded: false};
 }
 
-export function archiveEdition(root, destination) {
-  const e = read(root, 'edition.json'), id = basename(destination);
-  if (existsSync(destination) && readdirSync(destination).length) throw Error('Choose an unused archive revision; never overwrite an archive');
-  const files = read(root, 'deliverables.json')?.files; if (!files?.length) throw Error('Declare actual deliverables.json before archiving');
-  const archived = archiveProject(root, destination, {id, line: 'b', scope: 'source-inputs-and-deliverables', reproducibility: 'inputs-archived-rerender-not-certified', humanReview: e.production?.humanReview ?? 'pending'}, {deliverables: files});
-  const verified = verifyArchive(archived.manifestPath); if (!verified.ok) throw Error('Archive verification failed');
-  const restore = join(REPO, '.cache', `daily-restore-${Date.now()}`); mkdirSync(restore, {recursive: true});
-  const restored = restoreArchive(archived.manifestPath, restore); if (!restored.ok) throw Error('Restore verification failed');
-  const report = {archive: archived.manifestPath, verified, restoredTo: restore, restored, rerenderCertified: false, cleaned: false};
-  writeJson(join(root, 'qa/archive-verification.json'), report); return report;
+export function archiveEdition(root, {id}={}) {
+  const checked=checkEdition(root,'delivery');
+  if(!checked.ok) throw Error(checked.errors.join('\n'));
+  return archiveDelivery(REPO,root,{id});
 }
 
 async function main() {
   const [cmd = 'status', ...argv] = process.argv.slice(2);
   const arg = (key, fallback) => {const i = argv.indexOf(`--${key}`); return i >= 0 && argv[i+1] && !argv[i+1].startsWith('--') ? argv[i+1] : fallback;};
-  if (cmd === 'help' || argv.includes('--help')) return console.log('init --date YYYY-MM-DD [--source URL] [--project DIR]\nstatus --project DIR (or lists editions)\ncheck --project DIR --phase script|render|delivery\nrecording --project DIR --file AUDIO\ndeps --project DIR [--runtime EXISTING_REMOTION_APP]\ntranscribe --project DIR [--python EXE] [--model PATH_OR_NAME]\nalign --project DIR [--python EXE]\nrender --project DIR --mode stills|cover|sample|video [--range START,END]\npublish-materials --project DIR\narchive --project DIR --destination UNUSED_DIR');
+  if (cmd === 'help' || argv.includes('--help')) return console.log('init --date YYYY-MM-DD [--source URL] [--project DIR]\nstatus --project DIR (or lists editions and products)\ncheck --project DIR --phase script|render|delivery\nrecording --project DIR --file AUDIO\ndeps --project DIR [--runtime EXISTING_REMOTION_APP]\ntranscribe --project DIR [--python EXE] [--model PATH_OR_NAME]\nalign --project DIR [--python EXE]\nrender --project DIR --mode stills|cover|sample|video [--range START,END]\npublish-materials --project DIR\narchive --project DIR [--id NEW_REVISION]\nfinalize --project DIR --archive products/ID/archive.json [--backup OUTSIDE_DIR] [--dry]');
   const specified = arg('project'), date = arg('date', today());
   if (cmd === 'status' && !specified) {
-    const candidates = readdirSync(join(REPO, 'projects')).filter(n => /^daily-ai-news-\d{4}-\d{2}-\d{2}$/.test(n)).map(n => join(REPO, 'projects', n)).filter(p => existsSync(join(p, 'edition.json')));
-    return console.log(JSON.stringify({today: today(), editions: candidates.map(p => ({project: p, date: read(p, 'edition.json').date, declaredStatus: read(p, 'edition.json').status})), next: 'Use explicit --project for the edition in this request; never silently resume or relabel an older date.'}, null, 2));
+    const candidates = new Set(readdirSync(join(REPO, 'projects')).map(n => join(REPO, 'projects', n)).filter(p => existsSync(join(p, 'edition.json'))&&/^daily-ai-news-/.test(read(p,'project.json',{}).id??'')));
+    for(const name of readdirSync(join(REPO,'products'))) {
+      const folder=join(REPO,'products',name);
+      if(existsSync(join(folder,'archive.json'))&&existsSync(join(folder,'recipe/edition.json'))) {
+        const manifest=read(folder,'archive.json'),info=read(folder,'recipe/project.json',{});
+        if(manifest.scope==='draft-source-only'||!manifest.files.some(f=>f.kind==='deliverable')) continue;
+        const source=manifest.sourceProject??'projects/'+info.id;
+        if(/^projects\/[^/]+$/.test(source)&&/^daily-ai-news-/.test(info.id??'')) candidates.add(safePath(REPO,source));
+      }
+    }
+    return console.log(JSON.stringify({today: today(), editions:[...candidates].map(p=>{const s=statusEdition(p);return {project:s.project,workspace:s.workspace,date:s.date,stage:s.stage,primaryEntry:s.primaryEntry};}), next: 'Choose the requested edition explicitly; archived deliveries use the products entry, including after cleanup.'}, null, 2));
   }
   if (cmd !== 'init' && !specified) throw Error('Explicit --project required');
   const root = resolve(specified ?? join(REPO, 'projects', `daily-ai-news-${validDate(date)}`));
@@ -276,7 +286,8 @@ async function main() {
   }
   else if (cmd === 'render') {const {renderEdition} = await import('./render.mjs'); result = await renderEdition(root, {mode: arg('mode', 'stills'), range: arg('range')});}
   else if (cmd === 'publish-materials') result = preparePublish(root);
-  else if (cmd === 'archive') {if (!arg('destination')) throw Error('--destination required; choose a new revision'); result = archiveEdition(root, resolve(arg('destination')));}
+  else if (cmd === 'archive') {if(arg('destination')) throw Error('Formal archive destination is products/; use finalize --backup for an independent backup'); result = archiveEdition(root,{id:arg('id')});}
+  else if(cmd==='finalize') {if(!arg('archive')) throw Error('--archive products/ID/archive.json required'); result=finalizeDelivery(REPO,root,{archive:resolve(arg('archive')),backup:arg('backup')?resolve(arg('backup')):undefined,dry:argv.includes('--dry')});if(result.blockers?.length) process.exitCode=1;}
   else throw Error(`Unknown command ${cmd}; use help`);
   console.log(JSON.stringify(result, null, 2));
 }

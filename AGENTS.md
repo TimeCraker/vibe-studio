@@ -5,7 +5,7 @@
 - 正式开发先有 Stage Spec；生产工具修复记录见 docs/2026-10-23-production-workflow-spec.md。
 - 技能正本在 skills/；`node scripts/setup-skills.mjs` 维护本地发现链接，不复制另一份技能。
 - 每日 AI 资讯或收到本栏目录音时，读取 `skills/daily-ai-news/SKILL.md`，先运行 `node skills/daily-ai-news/scripts/edition.mjs status` 再指定本期工程；生产命令及新会话接手方法见该技能的 `references/production.md`，不依赖旧聊天记录。
-- 交付保留 recipe 与 archive.json，原始媒体和成片单独备份；验证归档前不清场。
+- 正式交付统一归档至 products/，外部目录只作独立备份；使用共用 archive / finalize 收尾。成品、备份、试恢复和工作区一致性通过后默认清理施工区；未保全差异、他人未提交改动、运行锁或路径异常时保留并记录原因，不把“已归档”写成“已清场”。
 - 人工配音、分镜/视觉终审、登录、点击发布保留人工状态；技术通过不能写成人工通过。
 - 官方 Remotion skill 是技术参考。本仓模板锁定的渲染版本、项目边界和发布约束优先，不自动升级依赖或重建已有项目。
 - 设计/生图等共享技能按实际环境调用，视觉选路以 content-director 的相关参考为准；品牌与视频帧驱动要求优先，不复制全局技能或把网页自动播放默认值搬入视频。

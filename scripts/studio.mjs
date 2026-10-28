@@ -9,11 +9,8 @@ import {
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJson, writeJson, safePath } from "./lib/files.mjs";
-import {
-  archiveProject,
-  verifyArchive,
-  restoreArchive,
-} from "./lib/archive.mjs";
+import {verifyArchive, restoreArchive} from "./lib/archive.mjs";
+import {archiveDelivery,finalizeDelivery} from "./lib/finalize.mjs";
 import { runJob, validateJob } from "./lib/runner.mjs";
 import { doctor } from "./lib/doctor.mjs";
 import { validatePlan } from "../skills/content-director/scripts/validate-plan.mjs";
@@ -282,34 +279,12 @@ try {
     result = derive(project);
   } else if (cmd === "review") result = writeReview(project);
   else if (cmd === "archive") {
-    const id = String(args.id ?? readJson(join(project, "project.json")).id);
-    if (!/^[a-z][a-z0-9-]{0,63}$/.test(id))
-      throw new Error("Invalid archive id");
-    const deliverables = args["source-only"]
-      ? []
-      : readJson(join(project, "deliverables.json")).files;
-    if (
-      !args["source-only"] &&
-      (!Array.isArray(deliverables) || !deliverables.length)
-    )
-      throw new Error(
-        "Declare final files in deliverables.json; use --source-only only for draft source backup",
-      );
-    result = archiveProject(
-      project,
-      join(REPO, "products", id),
-      {
-        id,
-        line: existsSync(join(project, "project.json"))
-          ? readJson(join(project, "project.json")).line
-          : "unknown",
-        scope: args["source-only"]
-          ? "draft-source-only"
-          : "source-inputs-and-deliverables",
-        reproducibility: "inputs-archived-rerender-not-certified",
-      },
-      { deliverables },
-    );
+    if(args.destination) throw Error('Formal archives always use products/; use finalize --backup for the independent backup');
+    result=archiveDelivery(REPO,project,{id:args.id?String(args.id):undefined,sourceOnly:Boolean(args['source-only'])});
+  } else if(cmd==='finalize') {
+    if(!args.project||!args.archive) throw Error('finalize requires --project and --archive products/<id>/archive.json');
+    result=finalizeDelivery(REPO,project,{archive:resolve(String(args.archive)),backup:args.backup?resolve(String(args.backup)):undefined,dry:Boolean(args.dry)});
+    if(result.blockers?.length) process.exitCode=1;
   } else if (cmd === "verify-archive")
     result = verifyArchive(resolve(String(args.archive)), {
       sourceOnly: Boolean(args["source-only"]),

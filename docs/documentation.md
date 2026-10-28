@@ -41,6 +41,7 @@ README 中 skills、tree、commands、versions 为生成区，块外说明人工
 | 视听审稿观察 | qa/editorial-review.json，README 链接 | 实际媒体哈希、检查者声明的观看/听音区间、问题与修复位置；不自动代表人工接受 |
 | 发布 | README 中逐平台记录 | 填表/待核对/已发布/未知及结果链接；脚本日志不代替实际发布证据 |
 | 归档完整性 | archive.json 与实际校验/恢复记录 | 文件是否保全；不等于重渲染或人工接受 |
+| 施工区收尾 | 作品 operations/finalization.json | closed 绑定归档哈希、独立备份、试恢复与实际清场；archived-workspace-retained 保留具体原因，不等于已清场 |
 
 最小交接页可以只有几行，不要求固定字段全集：
 
@@ -63,6 +64,7 @@ audio-post 和 animatic 的同名报告绑定配置、输入和输出哈希，�
 ### 归档后的持续记录
 
 - 产品目录下 recipe、media、deliverables 及 archive.json 中列出的文件保留快照。新制作版本使用新归档 id。
+- 正式归档统一由共用 archive 创建 products/<id>；finalize 校验后默认清理施工区。有未保全改动、未提交工作等阻塞时保留并记录，待发布和待统计在产品档案继续。具体命令与前置条件只维护在制作流程的归档章节。
 - 作品根 README 是持续维护的入口；`operations/` 可保存后续发布记录、metrics.json、脱敏原始统计来源与 review 输出，独立于制作快照。
 - 需要复盘时，在 operations 内准备 metrics.json，将 source.path 写成相对此目录的已有来源文件；运行 `node scripts/studio.mjs review --project products/<作品id>/operations`。此命令只生成复盘报告，不负责创建数据或记录实际发布。
 - operations 中的 Markdown、JSON 和 CSV 可入 Git；截图/媒体另做备份，来源记录其可取回位置与哈希。脚本需要读取的本地来源仍须存在，不用远程位置描述冒充已有原始数据。

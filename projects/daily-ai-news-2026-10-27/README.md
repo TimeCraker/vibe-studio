@@ -60,7 +60,7 @@
 
 B 站标题、简介、来源署名、封面和同版 98 条 SRT 已准备到 exports/bili/；只做本地派生与投稿 dry-run，未上传、未登录、未发布。
 
-保全入口：`node skills/daily-ai-news/scripts/edition.mjs archive --project projects/daily-ai-news-2026-10-27 --destination <新的未占用备份目录>`。最新已验证归档路径查看 qa/archive-verification.json（目前 r6，201 项恢复）；旧脚本的默认 r2 已占用，不要无参重跑。归档按 recipe / media / deliverables 保留实际输入和 archive.json；工作目录不清场，空目录恢复不代表已重渲染认证。
+正式成品入口见[作品档案](../../products/daily-ai-news-2026-10-27/README.md)。新增修订使用 `node skills/daily-ai-news/scripts/edition.mjs archive --project projects/daily-ai-news-2026-10-27 --id <新的归档id>`，落点固定为 products；本期 archive.mjs 已转接共用入口，不再默认写到仓库外。独立备份和施工区清理由共用 finalize 负责，具体状态看作品 operations/finalization.json；有未归档修改时保留并列出原因。qa/archive-verification.json 中的外部 r6、201 项恢复记录保留为历史证据，不代表当前施工区已清场或已重渲染。
 
 ## 视频片段补齐
 

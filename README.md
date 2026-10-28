@@ -101,7 +101,8 @@ B/录像线 `init --line b|footage` 复制 Remotion 模板并配置依赖安装�
 | `qc --project DIR --video FILE [--srt FILE] [--config FILE] [--require-audio] [--allow-preview] [--out FILE]` | 检查实际媒体与字幕 |
 | `derive --project DIR` | 按配置派生平台物料 |
 | `review --project DIR` | 根据真实统计生成复盘 |
-| `archive --project DIR [--id NEW-REVISION] [--source-only]` | 保存制作配方、输入与指定交付物 |
+| `archive --project DIR [--id NEW-REVISION] [--source-only]` | 归档到 products；草稿备份不算成品收尾 |
+| `finalize --project DIR --archive FILE [--backup DIR] [--dry]` | 校验成品、独立备份与试恢复，无未保全改动后清理施工区 |
 | `verify-archive --archive FILE [--source-only]` | 校验归档完整性 |
 | `restore --archive FILE --project DIR [--source-only]` | 恢复到不存在或空的目录 |
 <!-- /docs:auto -->
@@ -123,9 +124,11 @@ node scripts/studio.mjs review --project projects/first-video
 node scripts/studio.mjs archive --project projects/first-video
 node scripts/studio.mjs verify-archive --archive products/first-video/archive.json
 node scripts/studio.mjs restore --archive products/first-video/archive.json --project projects/first-video-restored
+# 归档源码与元数据暂存后检查收尾；实际执行会按条件清理原施工区
+node scripts/studio.mjs finalize --project projects/first-video --archive products/first-video/archive.json --dry
 ```
 
-归档保存 recipe 制作配方、原始媒体与 deliverables.json 指定的成品，并逐文件记录 SHA-256。恢复校验通过、媒体备份完成后才清场；没有成品时 `archive --source-only` 只做草稿备份，不代表交付。大媒体与成片不入 Git，克隆后只校验源文件可用 `verify-archive --source-only`，它不会把缺失媒体说成完整恢复。
+正式归档进入 products，保存 recipe、原始媒体与指定成品，并逐文件记录 SHA-256；外部目录只作独立备份。归档后按[收尾流程](workflows/explainer-video.md#7-归档清场与后续复盘)执行 finalize，通过备份、恢复及工作区/Git 检查后清场，有阻塞则记录原因并保留。没有成品时 `archive --source-only` 只做草稿备份，不能按成品清场。大媒体与成片不入 Git；`verify-archive --source-only` 不会把缺失媒体说成完整恢复。
 
 ## 结构
 
