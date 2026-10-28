@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "authorization": "User explicitly requested removal of stumbles/retakes and allowed speed processing; this edit uses original speed with short fades.",
+  "originalSource": "audio/source/narration-original-ac8d7bf1a6b1.mp3",
+  "originalSha256": "ac8d7bf1a6b111a82324324be8cdec4229f042e330634fd3c848cdcc6f6a4daa",
+  "source": "audio/source/narration-decoded-ac8d7bf1a6b1.wav",
+  "sourceSha256": "f812886213e40dfca8631d421cb25b77170e10a80f56d55abb054aa701dea0cd",
+  "sourceDuration": 189.384,
+  "editedFile": "audio/source/narration-edited-v1.wav",
+  "editedSha256": "8fb3896d49dc07cfc951ae847c955b3105092b57d6d623df0a9fd6979ad471bf",
+  "editedDuration": 164.43372916666667,
+  "removedSeconds": 24.95027083333332,
+  "edits": [
+    {
+      "start": 0,
+      "end": 2.3,
+      "reason": "首部空白与准备声。",
+      "kind": "head-trim"
+    },
+    {
+      "start": 13.505271,
+      "end": 13.801271,
+      "reason": "实际低能量静音 0.756s，保留约 0.46s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 25.965625,
+      "end": 26.582083,
+      "reason": "实际低能量静音 0.916s，保留约 0.30s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 30.433104,
+      "end": 30.722187,
+      "reason": "实际低能量静音 0.749s，保留约 0.46s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 32.17,
+      "end": 32.6,
+      "reason": "“文本模型参数约17亿参数”中前一次“参数”重复，保留完整数字与句意。",
+      "kind": "duplicate-word"
+    },
+    {
+      "start": 61.918167,
+      "end": 63.176813,
+      "reason": "实际低能量静音 1.719s，保留约 0.46s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 95.700187,
+      "end": 96.497063,
+      "reason": "实际低能量静音 1.257s，保留约 0.46s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 114.877354,
+      "end": 115.665729,
+      "reason": "实际低能量静音 1.248s，保留约 0.46s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 137.330104,
+      "end": 139.021354,
+      "reason": "实际低能量静音 1.991s，保留约 0.30s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 146.452333,
+      "end": 147.919646,
+      "reason": "实际低能量静音 1.927s，保留约 0.46s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 162.049458,
+      "end": 162.492708,
+      "reason": "实际低能量静音 0.743s，保留约 0.30s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 165.833042,
+      "end": 167.245312,
+      "reason": "实际低能量静音 1.712s，保留约 0.30s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 171.8,
+      "end": 172.62,
+      "reason": "移去卡顿式连接语“主要由于”，保留“发布了安全更新，修复解压库漏洞”。",
+      "kind": "phrase-edit"
+    },
+    {
+      "start": 174.95,
+      "end": 186.72,
+      "reason": "移去未说完的“需要重点排查的是”和重读前长停顿，保留末尾完整“相关更新以微软公告为准”。",
+      "kind": "unfinished-take"
+    },
+    {
+      "start": 176.878521,
+      "end": 180.105146,
+      "reason": "实际低能量静音 3.527s，保留约 0.30s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 180.667646,
+      "end": 186.74675,
+      "reason": "实际低能量静音 6.379s，保留约 0.30s 呼吸间隔。",
+      "kind": "silence-edit"
+    },
+    {
+      "start": 188.84,
+      "end": 189.384,
+      "reason": "末句后保留约0.2秒，再去除尾空白。",
+      "kind": "tail-trim"
+    }
+  ],
+  "mergedRemovedIntervals": [
+    {
+      "start": 0,
+      "end": 2.3,
+      "reasons": [
+        "首部空白与准备声。"
+      ]
+    },
+    {
+      "start": 13.505271,
+      "end": 13.801271,
+      "reasons": [
+        "实际低能量静音 0.756s，保留约 0.46s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 25.965625,
+      "end": 26.582083,
+      "reasons": [
+        "实际低能量静音 0.916s，保留约 0.30s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 30.433104,
+      "end": 30.722187,
+      "reasons": [
+        "实际低能量静音 0.749s，保留约 0.46s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 32.17,
+      "end": 32.6,
+      "reasons": [
+        "“文本模型参数约17亿参数”中前一次“参数”重复，保留完整数字与句意。"
+      ]
+    },
+    {
+      "start": 61.918167,
+      "end": 63.176813,
+      "reasons": [
+        "实际低能量静音 1.719s，保留约 0.46s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 95.700187,
+      "end": 96.497063,
+      "reasons": [
+        "实际低能量静音 1.257s，保留约 0.46s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 114.877354,
+      "end": 115.665729,
+      "reasons": [
+        "实际低能量静音 1.248s，保留约 0.46s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 137.330104,
+      "end": 139.021354,
+      "reasons": [
+        "实际低能量静音 1.991s，保留约 0.30s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 146.452333,
+      "end": 147.919646,
+      "reasons": [
+        "实际低能量静音 1.927s，保留约 0.46s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 162.049458,
+      "end": 162.492708,
+      "reasons": [
+        "实际低能量静音 0.743s，保留约 0.30s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 165.833042,
+      "end": 167.245312,
+      "reasons": [
+        "实际低能量静音 1.712s，保留约 0.30s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 171.8,
+      "end": 172.62,
+      "reasons": [
+        "移去卡顿式连接语“主要由于”，保留“发布了安全更新，修复解压库漏洞”。"
+      ]
+    },
+    {
+      "start": 174.95,
+      "end": 186.74675,
+      "reasons": [
+        "移去未说完的“需要重点排查的是”和重读前长停顿，保留末尾完整“相关更新以微软公告为准”。",
+        "实际低能量静音 3.527s，保留约 0.30s 呼吸间隔。",
+        "实际低能量静音 6.379s，保留约 0.30s 呼吸间隔。"
+      ]
+    },
+    {
+      "start": 188.84,
+      "end": 189.384,
+      "reasons": [
+        "末句后保留约0.2秒，再去除尾空白。"
+      ]
+    }
+  ],
+  "keptIntervals": [
+    {
+      "sourceIn": 2.3,
+      "sourceOut": 13.505270833333332,
+      "outputIn": 0.0,
+      "outputOut": 11.205270833333334,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 13.801270833333334,
+      "sourceOut": 25.965625,
+      "outputIn": 11.205270833333334,
+      "outputOut": 23.369625,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 26.582083333333333,
+      "sourceOut": 30.433104166666666,
+      "outputIn": 23.369625,
+      "outputOut": 27.220645833333332,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 30.7221875,
+      "sourceOut": 32.17,
+      "outputIn": 27.220645833333332,
+      "outputOut": 28.668458333333334,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 32.6,
+      "sourceOut": 61.918166666666664,
+      "outputIn": 28.668458333333334,
+      "outputOut": 57.986625,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 63.1768125,
+      "sourceOut": 95.7001875,
+      "outputIn": 57.986625,
+      "outputOut": 90.51,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 96.4970625,
+      "sourceOut": 114.87735416666666,
+      "outputIn": 90.51,
+      "outputOut": 108.89029166666667,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 115.66572916666667,
+      "sourceOut": 137.33010416666667,
+      "outputIn": 108.89029166666667,
+      "outputOut": 130.55466666666666,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 139.02135416666667,
+      "sourceOut": 146.45233333333334,
+      "outputIn": 130.55466666666666,
+      "outputOut": 137.98564583333334,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 147.91964583333333,
+      "sourceOut": 162.04945833333332,
+      "outputIn": 137.98564583333334,
+      "outputOut": 152.11545833333332,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 162.49270833333333,
+      "sourceOut": 165.83304166666667,
+      "outputIn": 152.11545833333332,
+      "outputOut": 155.45579166666667,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 167.2453125,
+      "sourceOut": 171.8,
+      "outputIn": 155.45579166666667,
+      "outputOut": 160.01047916666667,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 172.62,
+      "sourceOut": 174.95,
+      "outputIn": 160.01047916666667,
+      "outputOut": 162.34047916666665,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    },
+    {
+      "sourceIn": 186.74675,
+      "sourceOut": 188.84,
+      "outputIn": 162.34047916666665,
+      "outputOut": 164.43372916666667,
+      "speed": 1.0,
+      "fadeInOutMs": 4
+    }
+  ],
+  "processing": "Exact original PCM segments concatenated with 4ms edge fades; original pitch and playback speed retained. No synthetic speech.",
+  "reviewScope": "Word-level ASR plus focused independent ASR and measured silence. Full subjective listening not certified."
+}

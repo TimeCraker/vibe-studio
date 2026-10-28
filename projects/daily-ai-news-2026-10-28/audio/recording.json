@@ -1,0 +1,16 @@
+{
+  "originalSource": "audio/source/narration-original-ac8d7bf1a6b1.mp3",
+  "originalSha256": "ac8d7bf1a6b111a82324324be8cdec4229f042e330634fd3c848cdcc6f6a4daa",
+  "source": "audio/source/narration-edited-v1.wav",
+  "sourceSha256": "8fb3896d49dc07cfc951ae847c955b3105092b57d6d623df0a9fd6979ad471bf",
+  "asrSource": "audio/source/narration-edited-asr-v1.wav",
+  "asrSha256": "b94798675edcb539446c7715809dc61e85acb77411694cbf5348100c93540862",
+  "sourceDuration": 164.43372916666667,
+  "manuscript": "audio/source/manuscript-ac8d7bf1a6b1.md",
+  "manuscriptSha256": "4a304419ec3d78eb5ad8bf9cba5dc2e795bab9940effdf9ad6283b6e8b5648a9",
+  "clock": "Edited 48kHz PCM with preserved raw lineage and authorized EDL; original MP3 unchanged; original speed 1.0.",
+  "rawDecodedSource": "audio/source/narration-decoded-ac8d7bf1a6b1.wav",
+  "rawDecodedSha256": "f812886213e40dfca8631d421cb25b77170e10a80f56d55abb054aa701dea0cd",
+  "editDecision": "audio/edit-decision.json",
+  "editDecisionSha256": "884796088ee077c3bfa1efbc4edc334e6cc392ae70d68d9d2d38081ca1a65df2"
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "platforms": {
+    "bili": {
+      "title": "LFM3发布：1GB文本模型本体与本地应用边界｜10月28日AI资讯",
+      "description": [
+        "10月28日每日AI资讯：Liquid AI于10月27日发布LFM3系列，面向本地任务与领域微调。约1GB仅指1.7B文本模型的4位模型本体，上下文缓存和应用另占内存；复杂智能体编程、多步推理仍有边界。",
+        "另有MiniCPM-OCR/Jev文档识别与质量评估、讯飞Spark三档思考预算、蚂蚁百灵Ling权重开放，以及微软.NET Brotli安全提醒。官方能力说明与栏目实测分开；本期未独立评测模型。",
+        "LFM3来源：https://www.liquid.ai/blog/lfm3 ；https://huggingface.co/LiquidAI/LFM3-1.7B 。物体定位采用依据官方说明绘制的功能图解，非实测录像。",
+        "OCR样例：OpenBMB https://github.com/OpenBMB/MiniCPM-OCR ；Jev https://huggingface.co/openbmb/MiniCPM-OCR-Jev 。Apache-2.0；原速转码、截取及局部放大，保留原始候选分值，非正确率。",
+        "Spark：https://huggingface.co/XHToken/Spark-X2.6-1.7B ；Ling：https://huggingface.co/inclusionAI/Ling-3.1-flash-1019 。权重下载与部署条件以官方模型页为准。",
+        ".NET公告（10/25初版）：https://github.com/dotnet/runtime/security/advisories/GHSA-p3jp-9v83-76w9 。需结合应用处理外部Brotli数据的实际路径及修复版本核对。",
+        "两榜：Epoch AI ECI（CC BY 4.0）https://epoch.ai/eci ；指定入口 https://www.bilibili.com/toy/ai-model-world ，当次同源数据 https://github.com/liyupi/ai-model-world 。查询 2026-10-28T03:50:36.242Z，上游生成 2026-10-28T01:43:45.001Z。",
+        "音乐：Carefree — Kevin MacLeod (incompetech.com). CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ 。原文件 https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037 ；已裁切、调音量、淡化及人声避让。",
+        "真人配音，经剪辑与音量处理；AI辅助采编、画面与字幕。素材商标用于新闻主体识别。"
+      ],
+      "tags": [
+        "AI资讯",
+        "人工智能",
+        "大模型",
+        "模型权重",
+        "Agent"
+      ],
+      "sceneIds": [
+        "global",
+        "domestic",
+        "overview",
+        "lfm-family",
+        "lfm-local",
+        "lfm-decisions",
+        "lfm-limits",
+        "ocr-parse",
+        "ocr-check",
+        "spark-update",
+        "spark-budget",
+        "spark-license",
+        "ling-weights",
+        "ling-resources",
+        "dotnet-reminder"
+      ],
+      "format": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 60
+      },
+      "video": "render/daily-ai-news-2026-10-28.mp4",
+      "cover": "render/cover.png",
+      "limits": {
+        "titleChars": 80
+      },
+      "safeArea": {
+        "top": 0.04,
+        "bottom": 0.1,
+        "left": 0.04,
+        "right": 0.04
+      },
+      "declare": "含AI生成内容"
+    },
+    "douyin": {
+      "title": "LFM3发布：小模型与本地应用",
+      "description": [
+        "10月28日AI资讯：LFM3发布，约1GB仅指1.7B文本模型4位模型本体，应用和缓存另占内存。另有MiniCPM-OCR/Jev、Spark思考预算、Ling权重及.NET安全提醒。官方说明不等于栏目实测。",
+        "LFM3：https://www.liquid.ai/blog/lfm3 。定位物体为功能图解。OCR：https://github.com/OpenBMB/MiniCPM-OCR ；Jev：https://huggingface.co/openbmb/MiniCPM-OCR-Jev 。Apache-2.0；示例原速截取、局部放大，评分非正确率。",
+        "Spark：https://huggingface.co/XHToken/Spark-X2.6-1.7B ；Ling：https://huggingface.co/inclusionAI/Ling-3.1-flash-1019 。微软公告：https://github.com/dotnet/runtime/security/advisories/GHSA-p3jp-9v83-76w9 。",
+        "榜单：Epoch AI ECI（CC BY 4.0）https://epoch.ai/eci ；入口 https://www.bilibili.com/toy/ai-model-world ，10月28日当次快照。",
+        "音乐：Carefree — Kevin MacLeod (incompetech.com). CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ 。已裁切、调音量、淡化及人声避让。真人配音经剪辑；AI辅助采编、画面与字幕。"
+      ],
+      "tags": [],
+      "sceneIds": [
+        "global",
+        "domestic",
+        "overview",
+        "lfm-family",
+        "lfm-local",
+        "lfm-decisions",
+        "lfm-limits",
+        "ocr-parse",
+        "ocr-check",
+        "spark-update",
+        "spark-budget",
+        "spark-license",
+        "ling-weights",
+        "ling-resources",
+        "dotnet-reminder"
+      ],
+      "format": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 60
+      },
+      "video": "render/daily-ai-news-2026-10-28.mp4",
+      "cover": "render/cover.png",
+      "limits": {
+        "titleChars": 30
+      },
+      "safeArea": {
+        "top": 0.04,
+        "bottom": 0.1,
+        "left": 0.04,
+        "right": 0.04
+      },
+      "declare": "内容由AI生成"
+    },
+    "xhs": {
+      "title": "LFM3发布，小模型能做什么",
+      "description": [
+        "10月28日AI资讯：LFM3发布，约1GB仅指1.7B文本模型4位模型本体，应用和缓存另占内存。另有MiniCPM-OCR/Jev、Spark思考预算、Ling权重及.NET安全提醒。官方说明不等于栏目实测。",
+        "LFM3：https://www.liquid.ai/blog/lfm3 。定位物体为功能图解。OCR：https://github.com/OpenBMB/MiniCPM-OCR ；Jev：https://huggingface.co/openbmb/MiniCPM-OCR-Jev 。Apache-2.0；示例原速截取、局部放大，评分非正确率。",
+        "Spark：https://huggingface.co/XHToken/Spark-X2.6-1.7B ；Ling：https://huggingface.co/inclusionAI/Ling-3.1-flash-1019 。微软公告：https://github.com/dotnet/runtime/security/advisories/GHSA-p3jp-9v83-76w9 。",
+        "榜单：Epoch AI ECI（CC BY 4.0）https://epoch.ai/eci ；入口 https://www.bilibili.com/toy/ai-model-world ，10月28日当次快照。",
+        "音乐：Carefree — Kevin MacLeod (incompetech.com). CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ 。已裁切、调音量、淡化及人声避让。真人配音经剪辑；AI辅助采编、画面与字幕。"
+      ],
+      "tags": [],
+      "sceneIds": [
+        "global",
+        "domestic",
+        "overview",
+        "lfm-family",
+        "lfm-local",
+        "lfm-decisions",
+        "lfm-limits",
+        "ocr-parse",
+        "ocr-check",
+        "spark-update",
+        "spark-budget",
+        "spark-license",
+        "ling-weights",
+        "ling-resources",
+        "dotnet-reminder"
+      ],
+      "format": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 60
+      },
+      "video": "render/daily-ai-news-2026-10-28.mp4",
+      "cover": "render/cover.png",
+      "limits": {
+        "titleChars": 20
+      },
+      "safeArea": {
+        "top": 0.04,
+        "bottom": 0.1,
+        "left": 0.04,
+        "right": 0.04
+      },
+      "declare": "笔记含AI合成内容"
+    }
+  }
+}

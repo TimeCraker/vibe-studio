@@ -1,0 +1,31 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "safeArea": {
+    "top": 0.04,
+    "bottom": 0.1,
+    "left": 0.04,
+    "right": 0.04
+  },
+  "timelineUrl": "../exports/bili/timeline.json",
+  "sourceSceneIds": [
+    "global",
+    "domestic",
+    "overview",
+    "lfm-family",
+    "lfm-local",
+    "lfm-decisions",
+    "lfm-limits",
+    "ocr-parse",
+    "ocr-check",
+    "spark-update",
+    "spark-budget",
+    "spark-license",
+    "ling-weights",
+    "ling-resources",
+    "dotnet-reminder"
+  ],
+  "seconds": 179.21666666666667,
+  "needsLayoutReview": true
+}

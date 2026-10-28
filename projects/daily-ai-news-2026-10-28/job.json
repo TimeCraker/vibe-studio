@@ -45,7 +45,12 @@
       ],
       "inputs": [
         "audio-voice.json",
-        "audio/source"
+        "audio/source",
+        "audio/recording.json",
+        "audio/recording-import.json",
+        "audio/edit-decision.json",
+        "scripts/edit-recording.py",
+        "scripts/review-recording.py"
       ],
       "outputs": [
         "audio/voice-clean.wav",

@@ -3,7 +3,7 @@ import rawEdition from '../../edition.json';
 import rawTimeline from '../../timeline.json';
 import rawRanking from '../../ranking.json';
 export type Media = {kind: 'image'|'video'; file: string; label: string; sourceIn?: number; sourceOut?: number; poster?: string};
-export type NewsScene = {id: string; title: string; section: string; source: string; lead?: string; bullets?: string[]; media?: Media};
+export type NewsScene = {id: string; title: string; section: string; source: string; lead?: string; bullets?: string[]; media?: Media; visual?: string};
 export type Content = {headline: {title: string; subtitle: string; logo: string; source: string}; stories: {title: string; detail: string}[]; scenes: NewsScene[]};
 export const content = rawContent as Content;
 export const edition = rawEdition as {date: string; compositionId: string; coverCompositionId: string};

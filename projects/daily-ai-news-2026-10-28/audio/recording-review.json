@@ -1,0 +1,610 @@
+{
+  "originalSource": "audio/source/narration-original-ac8d7bf1a6b1.mp3",
+  "originalSha256": "ac8d7bf1a6b111a82324324be8cdec4229f042e330634fd3c848cdcc6f6a4daa",
+  "source": "audio/source/narration-edited-v1.wav",
+  "sourceSha256": "8fb3896d49dc07cfc951ae847c955b3105092b57d6d623df0a9fd6979ad471bf",
+  "asrSource": "audio/source/narration-edited-asr-v1.wav",
+  "asrSha256": "b94798675edcb539446c7715809dc61e85acb77411694cbf5348100c93540862",
+  "sourceDuration": 164.43372916666667,
+  "manuscript": "audio/source/manuscript-ac8d7bf1a6b1.md",
+  "manuscriptSha256": "4a304419ec3d78eb5ad8bf9cba5dc2e795bab9940effdf9ad6283b6e8b5648a9",
+  "clock": "Edited 48kHz PCM with preserved raw lineage and authorized EDL; original MP3 unchanged; original speed 1.0.",
+  "rawDecodedSource": "audio/source/narration-decoded-ac8d7bf1a6b1.wav",
+  "rawDecodedSha256": "f812886213e40dfca8631d421cb25b77170e10a80f56d55abb054aa701dea0cd",
+  "editDecision": "audio/edit-decision.json",
+  "editDecisionSha256": "884796088ee077c3bfa1efbc4edc334e6cc392ae70d68d9d2d38081ca1a65df2",
+  "schemaVersion": 1,
+  "sourceIn": 0,
+  "sourceOut": 164.42,
+  "timing": "real ASR word windows; reviewed agent spelling/anchors, human listening pending",
+  "similarityToDraft": 0.8846,
+  "corrections": [
+    {
+      "raw": "近日AI资讯",
+      "text": "今日AI资讯",
+      "start": 2.66,
+      "end": 3.58,
+      "reason": "栏目名称及新闻语境同音校订；不改变声音。"
+    },
+    {
+      "raw": "今天的投降",
+      "text": "今天的头条",
+      "start": 4.24,
+      "end": 4.88,
+      "reason": "开场新闻语境和原稿对应词校订；不伪造替代声音。"
+    },
+    {
+      "raw": "LiquidAI",
+      "text": "Liquid AI",
+      "start": 11.54,
+      "end": 12.5,
+      "reason": "官方品牌拼写与词间空格。"
+    },
+    {
+      "raw": "LiquidAI",
+      "text": "Liquid AI",
+      "start": 5.2,
+      "end": 6.28,
+      "reason": "官方品牌拼写与词间空格。"
+    },
+    {
+      "raw": "四位量化",
+      "text": "4位量化",
+      "start": 31.16,
+      "end": 32.22,
+      "reason": "量化位宽规范写法。"
+    },
+    {
+      "raw": "额外类存",
+      "text": "额外内存",
+      "start": 40.86,
+      "end": 41.58,
+      "reason": "上下文缓存语境，ASR同音校订。"
+    },
+    {
+      "raw": "多部推理",
+      "text": "多步推理",
+      "start": 66.6,
+      "end": 67.28,
+      "reason": "任务边界语境的同音词。"
+    },
+    {
+      "raw": "稳定的完成",
+      "text": "稳定地完成",
+      "start": 72.08,
+      "end": 72.86,
+      "reason": "书面字幕助词校订。"
+    },
+    {
+      "raw": "OpenRMB",
+      "text": "OpenBMB",
+      "start": 75.32,
+      "end": 76.52,
+      "reason": "官方组织名规范拼写，原始词窗保留。"
+    },
+    {
+      "raw": "miniCPMOCR",
+      "text": "MiniCPM-OCR",
+      "start": 77.48,
+      "end": 79.2,
+      "reason": "官方模型名规范拼写。"
+    },
+    {
+      "raw": "代表格的公式的文档",
+      "text": "带表格和公式的文档",
+      "start": 86.06,
+      "end": 87.54,
+      "reason": "文档类型语境，整理连续口语助词，不补原稿整句。"
+    },
+    {
+      "raw": "markdown",
+      "text": "Markdown",
+      "start": 89.12,
+      "end": 89.62,
+      "reason": "文件格式规范拼写。"
+    },
+    {
+      "raw": "JV",
+      "text": "Jev",
+      "start": 93.14,
+      "end": 93.58,
+      "reason": "官方质量评估模型名。"
+    },
+    {
+      "raw": "打质量",
+      "text": "打质量分",
+      "start": 95.8,
+      "end": 96.34,
+      "reason": "整理口语省略的评分宾语；维持原词窗，未补读声音。"
+    },
+    {
+      "raw": "识别的不可靠",
+      "text": "识别得不可靠",
+      "start": 99.86,
+      "end": 101.1,
+      "reason": "字幕助词规范。"
+    },
+    {
+      "raw": "挑出来复合",
+      "text": "挑出来复核",
+      "start": 102.44,
+      "end": 103.32,
+      "reason": "文档质量复核语境的同音词校订。"
+    },
+    {
+      "raw": "文档再没有错误文字",
+      "text": "文档没有错误文字",
+      "start": 106.7,
+      "end": 108.54,
+      "reason": "删口语赘字，保持不能保证无错的原意，不声称声音补读。"
+    },
+    {
+      "raw": "国产小模型方便",
+      "text": "国产小模型方面",
+      "start": 108.54,
+      "end": 110.12,
+      "reason": "衔接新闻的同音词校订。"
+    },
+    {
+      "raw": "训飞",
+      "text": "讯飞",
+      "start": 110.64,
+      "end": 110.9,
+      "reason": "官方主体名规范。"
+    },
+    {
+      "raw": "SparkX的2.6，1.7B",
+      "text": "Spark-X2.6-1.7B",
+      "start": 111.8,
+      "end": 115.5,
+      "reason": "官方型号；保留真实朗读时间范围。"
+    },
+    {
+      "raw": "自信部署",
+      "text": "自行部署",
+      "start": 148.92,
+      "end": 149.46,
+      "reason": "部署资源语境的同音词。"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "reviewer": "Codex / edited-ASR, EDL and frozen-source review",
+    "notes": "核对剪辑后逐词转写、原稿、日期/数字、主体和专名；同音词及少量口语语法校订已逐项记录。原始转写、原录音及EDL保留。此为文本/时钟/事实核对，不代表完整主观审听，仍待用户听看。"
+  },
+  "scenes": [
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "start": 0.14
+    },
+    {
+      "id": "lfm-family",
+      "title": "Liquid AI 发布 LFM3 轻量模型系列",
+      "start": 11.54
+    },
+    {
+      "id": "lfm-local",
+      "title": "LFM3 文本模型本体约 1 GB",
+      "start": 27.32
+    },
+    {
+      "id": "lfm-decisions",
+      "title": "LFM3 决策模型按描述定位物体",
+      "start": 42.24
+    },
+    {
+      "id": "lfm-limits",
+      "title": "LFM3 小模型仍有任务边界",
+      "start": 58.28
+    },
+    {
+      "id": "ocr-parse",
+      "title": "MiniCPM-OCR 识别中文表格与公式",
+      "start": 73.56
+    },
+    {
+      "id": "ocr-check",
+      "title": "MiniCPM-OCR Jev 评估识别结果质量",
+      "start": 90.16
+    },
+    {
+      "id": "spark-update",
+      "title": "讯飞更新 Spark-X2.6-1.7B",
+      "start": 108.54
+    },
+    {
+      "id": "spark-budget",
+      "title": "Spark 提供三档思考预算",
+      "start": 120.36
+    },
+    {
+      "id": "spark-license",
+      "title": "Spark 权重按 Apache 2.0 开放",
+      "start": 129.58
+    },
+    {
+      "id": "ling-weights",
+      "title": "蚂蚁百灵开放 Ling 1019 模型权重",
+      "start": 134.78
+    },
+    {
+      "id": "ling-resources",
+      "title": "Ling 部署需评估服务器资源",
+      "start": 145.96
+    },
+    {
+      "id": "dotnet-reminder",
+      "title": "微软修复 .NET Brotli 解压漏洞",
+      "start": 152.04
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.14,
+      "end": 1.46,
+      "text": "各位观众们大家好",
+      "scene": "overview"
+    },
+    {
+      "start": 2.12,
+      "end": 3.58,
+      "text": "欢迎收看今日AI资讯",
+      "scene": "overview"
+    },
+    {
+      "start": 4.24,
+      "end": 8.42,
+      "text": "今天的头条是Liquid AI发布LFM3",
+      "scene": "overview"
+    },
+    {
+      "start": 8.7,
+      "end": 10.88,
+      "text": "一组面向本地应用的小模型",
+      "scene": "overview"
+    },
+    {
+      "start": 11.54,
+      "end": 15.34,
+      "text": "Liquid AI在10月27日发布了这个系列",
+      "scene": "lfm-family"
+    },
+    {
+      "start": 15.98,
+      "end": 18.0,
+      "text": "首批模型主要在20亿参数左右",
+      "scene": "lfm-family"
+    },
+    {
+      "start": 18.52,
+      "end": 20.82,
+      "text": "分别处理文字、图片、声音",
+      "scene": "lfm-family"
+    },
+    {
+      "start": 21.04,
+      "end": 23.12,
+      "text": "或者把这些输入放在一起整理",
+      "scene": "lfm-family"
+    },
+    {
+      "start": 23.4,
+      "end": 24.9,
+      "text": "开发者可以下载权重",
+      "scene": "lfm-family"
+    },
+    {
+      "start": 25.22,
+      "end": 26.9,
+      "text": "再针对自己的任务做微调",
+      "scene": "lfm-family"
+    },
+    {
+      "start": 27.32,
+      "end": 29.92,
+      "text": "其中文本模型约17亿参数",
+      "scene": "lfm-local"
+    },
+    {
+      "start": 30.14,
+      "end": 30.96,
+      "text": "官方介绍",
+      "scene": "lfm-local"
+    },
+    {
+      "start": 31.16,
+      "end": 34.6,
+      "text": "4位量化后的模型本体约占1GB",
+      "scene": "lfm-local"
+    },
+    {
+      "start": 34.96,
+      "end": 37.12,
+      "text": "能在手机和笔记本上运行",
+      "scene": "lfm-local"
+    },
+    {
+      "start": 37.44,
+      "end": 38.34,
+      "text": "实际使用时",
+      "scene": "lfm-local"
+    },
+    {
+      "start": 38.48,
+      "end": 41.58,
+      "text": "上下文缓存和应用程序还需要额外内存",
+      "scene": "lfm-local"
+    },
+    {
+      "start": 42.24,
+      "end": 44.42,
+      "text": "同一系列还提供决策模型",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 44.64,
+      "end": 45.44,
+      "text": "官方演示中",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 45.82,
+      "end": 48.14,
+      "text": "你用一句话描述要找的物体",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 48.46,
+      "end": 50.88,
+      "text": "模型就会在画面中标出位置",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 51.28,
+      "end": 53.32,
+      "text": "这类能力可以接到具体应用里",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 53.7,
+      "end": 54.7,
+      "text": "用来处理图片",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 55.08,
+      "end": 55.8,
+      "text": "筛选信息",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 56.12,
+      "end": 57.62,
+      "text": "或者调用相应的工具",
+      "scene": "lfm-decisions"
+    },
+    {
+      "start": 58.28,
+      "end": 59.8,
+      "text": "不过小模型有边界",
+      "scene": "lfm-limits"
+    },
+    {
+      "start": 60.02,
+      "end": 61.1,
+      "text": "官方明确提醒",
+      "scene": "lfm-limits"
+    },
+    {
+      "start": 61.3,
+      "end": 63.32,
+      "text": "这个17亿参数的文本模型",
+      "scene": "lfm-limits"
+    },
+    {
+      "start": 63.5,
+      "end": 67.28,
+      "text": "不推荐用于复杂的智能体编程或多步推理",
+      "scene": "lfm-limits"
+    },
+    {
+      "start": 67.64,
+      "end": 70.42,
+      "text": "更合适的方向是先挑一个明确任务",
+      "scene": "lfm-limits"
+    },
+    {
+      "start": 70.74,
+      "end": 72.86,
+      "text": "再测试它能不能稳定地完成",
+      "scene": "lfm-limits"
+    },
+    {
+      "start": 73.56,
+      "end": 75.14,
+      "text": "接下来看看文档识别",
+      "scene": "ocr-parse"
+    },
+    {
+      "start": 75.32,
+      "end": 79.2,
+      "text": "OpenBMB开放了MiniCPM-OCR",
+      "scene": "ocr-parse"
+    },
+    {
+      "start": 79.66,
+      "end": 82.0,
+      "text": "识别模型大约13亿参数",
+      "scene": "ocr-parse"
+    },
+    {
+      "start": 82.3,
+      "end": 84.56,
+      "text": "可以处理中文和英文的扫描件",
+      "scene": "ocr-parse"
+    },
+    {
+      "start": 85.08,
+      "end": 87.54,
+      "text": "照片，以及带表格和公式的文档",
+      "scene": "ocr-parse"
+    },
+    {
+      "start": 87.78,
+      "end": 90.16,
+      "text": "再把内容整理成Markdown格式",
+      "scene": "ocr-parse"
+    },
+    {
+      "start": 90.16,
+      "end": 92.74,
+      "text": "它还有一个约20亿的参数搭档",
+      "scene": "ocr-check"
+    },
+    {
+      "start": 92.86,
+      "end": 96.34,
+      "text": "叫Jev，负责给识别结果打质量分",
+      "scene": "ocr-check"
+    },
+    {
+      "start": 96.86,
+      "end": 101.1,
+      "text": "比如一页文档里的表格或公式识别得不可靠",
+      "scene": "ocr-check"
+    },
+    {
+      "start": 101.34,
+      "end": 103.32,
+      "text": "就可以把这些区域挑出来复核",
+      "scene": "ocr-check"
+    },
+    {
+      "start": 103.76,
+      "end": 105.76,
+      "text": "它是在帮助定位可疑结果",
+      "scene": "ocr-check"
+    },
+    {
+      "start": 105.98,
+      "end": 108.54,
+      "text": "不能保证文档没有错误文字",
+      "scene": "ocr-check"
+    },
+    {
+      "start": 108.54,
+      "end": 110.12,
+      "text": "国产小模型方面",
+      "scene": "spark-update"
+    },
+    {
+      "start": 110.64,
+      "end": 115.5,
+      "text": "讯飞团队发布了Spark-X2.6-1.7B",
+      "scene": "spark-update"
+    },
+    {
+      "start": 115.78,
+      "end": 117.42,
+      "text": "它沿用了上一代的架构",
+      "scene": "spark-update"
+    },
+    {
+      "start": 117.6,
+      "end": 120.08,
+      "text": "通过后训练强化代码和智能体任务",
+      "scene": "spark-update"
+    },
+    {
+      "start": 120.36,
+      "end": 123.96,
+      "text": "并提供不思考低强度和高强度三档思考预算",
+      "scene": "spark-budget"
+    },
+    {
+      "start": 124.44,
+      "end": 125.76,
+      "text": "开发者可以根据任务",
+      "scene": "spark-budget"
+    },
+    {
+      "start": 125.94,
+      "end": 128.92,
+      "text": "在响应速度和推理开销之间做选择",
+      "scene": "spark-budget"
+    },
+    {
+      "start": 129.58,
+      "end": 131.84,
+      "text": "权重按此协议开放",
+      "scene": "spark-license"
+    },
+    {
+      "start": 132.2,
+      "end": 134.26,
+      "text": "官方模型页有部署方法",
+      "scene": "spark-license"
+    },
+    {
+      "start": 134.78,
+      "end": 137.32,
+      "text": "蚂蚁百灵也有一条权重开放的更新",
+      "scene": "ling-weights"
+    },
+    {
+      "start": 138.0,
+      "end": 141.04,
+      "text": "此模型已经能在官方仓库下载",
+      "scene": "ling-weights"
+    },
+    {
+      "start": 141.2,
+      "end": 143.44,
+      "text": "模型页标注MIT许可证",
+      "scene": "ling-weights"
+    },
+    {
+      "start": 143.66,
+      "end": 145.72,
+      "text": "支持100万Token的上下文",
+      "scene": "ling-weights"
+    },
+    {
+      "start": 145.96,
+      "end": 148.52,
+      "text": "它的体量比前面几款本地小模型大得多",
+      "scene": "ling-resources"
+    },
+    {
+      "start": 148.92,
+      "end": 151.56,
+      "text": "自行部署前仍需评估服务器资源",
+      "scene": "ling-resources"
+    },
+    {
+      "start": 152.04,
+      "end": 153.82,
+      "text": "再补一条开发者安全提醒",
+      "scene": "dotnet-reminder"
+    },
+    {
+      "start": 154.22,
+      "end": 159.86,
+      "text": "微软在10月25日发布了安全更新",
+      "scene": "dotnet-reminder"
+    },
+    {
+      "start": 159.94,
+      "end": 162.16,
+      "text": "修复解压库漏洞",
+      "scene": "dotnet-reminder"
+    },
+    {
+      "start": 162.44,
+      "end": 164.22,
+      "text": "相关更新以微软公告为准",
+      "scene": "dotnet-reminder"
+    }
+  ]
+}

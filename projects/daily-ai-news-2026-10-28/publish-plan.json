@@ -1,0 +1,26 @@
+{
+  "driver": "pw",
+  "platforms": {
+    "bili": {
+      "video": "render/daily-ai-news-2026-10-28.mp4",
+      "cover": "render/cover.png",
+      "spec": "exports/bili/form.json",
+      "topics": "AI资讯,人工智能,大模型,模型权重,Agent",
+      "declare": "含AI生成内容"
+    },
+    "douyin": {
+      "video": "render/daily-ai-news-2026-10-28.mp4",
+      "cover": "render/cover.png",
+      "spec": "exports/douyin/form.json",
+      "topics": "",
+      "declare": "内容由AI生成"
+    },
+    "xhs": {
+      "video": "render/daily-ai-news-2026-10-28.mp4",
+      "cover": "render/cover.png",
+      "spec": "exports/xhs/form.json",
+      "topics": "",
+      "declare": "笔记含AI合成内容"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "duration": 164.42,
+  "target": {
+    "integrated": -18,
+    "truePeak": -2,
+    "range": 9
+  },
+  "ducking": false,
+  "tracks": [
+    {
+      "file": "audio/source/narration-edited-v1.wav",
+      "role": "voice",
+      "in": 0,
+      "duration": 164.42,
+      "fadeIn": 0.03,
+      "fadeOut": 0.08,
+      "highpassHz": 65
+    }
+  ]
+}

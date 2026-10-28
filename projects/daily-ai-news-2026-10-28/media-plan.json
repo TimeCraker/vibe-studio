@@ -4,82 +4,84 @@
   "shots": [
     {
       "sceneId": "overview",
-      "purpose": "用具体名称交代本期头条与精选；精确停留待真人录音",
       "inputs": [],
-      "clipCandidates": []
+      "note": "当期原始来源已核对，详见选题与事实记录"
     },
     {
       "sceneId": "lfm-family",
-      "purpose": "按任务选择文字、视觉、声音或混合输入模型，再进行领域微调。",
-      "inputs": [
-        "assets/liquid-banner.webp"
-      ],
-      "clipCandidates": []
+      "inputs": [],
+      "note": "Liquid AI 10/27 官方公告；各模态为独立模型"
     },
     {
       "sceneId": "lfm-local",
-      "purpose": "1.7B 文本模型提供本地部署入口。实际总内存随上下文和程序变化。",
       "inputs": [],
-      "clipCandidates": []
+      "note": "Liquid AI 模型卡；4 位近似值，不含全部缓存与应用开销"
     },
     {
       "sceneId": "lfm-decisions",
-      "purpose": "用自然语言指定对象，输出物体位置等结构化结果。",
       "inputs": [],
-      "clipCandidates": []
+      "note": "Liquid AI d1-2B 官方演示；不是 1.7B 文本模型或栏目实测"
     },
     {
       "sceneId": "lfm-limits",
-      "purpose": "先选明确任务，再核对实际结果。",
       "inputs": [],
-      "clipCandidates": []
+      "note": "LFM3-1.7B 官方模型卡明确限制"
     },
     {
       "sceneId": "ocr-parse",
-      "purpose": "扫描、拍照和弯曲页面，都可进入文档解析流程。",
       "inputs": [
         "assets/minicpm-official-chinese-demo.mp4"
       ],
-      "clipCandidates": [
+      "note": "OpenBMB 官方中文样例动图；非本栏目实测",
+      "videoClips": [
         {
+          "sceneId": "ocr-parse",
           "file": "assets/minicpm-official-chinese-demo.mp4",
           "sourceIn": 0,
-          "sourceOut": 18.4,
-          "status": "candidate-not-yet-in-final"
+          "sourceOut": 16.6,
+          "timelineIn": 87.56666666666666,
+          "timelineOut": 104.16666666666666,
+          "playbackRate": 1,
+          "muted": true
         }
       ]
     },
     {
       "sceneId": "ocr-check",
-      "purpose": "对文字、表格和公式区域评分，把可疑结果交回复核。",
       "inputs": [
         "assets/minicpm-jev-case.png"
       ],
-      "clipCandidates": []
+      "note": "OpenBMB Jev 模型卡及官方候选对照示例"
+    },
+    {
+      "sceneId": "spark-update",
+      "inputs": [],
+      "note": "讯飞 Spark 团队模型卡与 10/27 说明；能力改进为团队报告"
     },
     {
       "sceneId": "spark-budget",
-      "purpose": "沿用上一代架构，通过后训练改进代码和智能体任务。",
       "inputs": [],
-      "clipCandidates": []
+      "note": "讯飞 Spark 团队模型卡与 10/27 说明；能力改进为团队报告"
+    },
+    {
+      "sceneId": "spark-license",
+      "inputs": [],
+      "note": "讯飞 Spark 团队模型卡与 10/27 说明；能力改进为团队报告"
     },
     {
       "sceneId": "ling-weights",
-      "purpose": "Ling-3.1-flash-1019 仓库可下载；模型页标注 MIT。",
       "inputs": [],
-      "clipCandidates": []
+      "note": "inclusionAI 官方模型卡与本次实际权重文件列表"
+    },
+    {
+      "sceneId": "ling-resources",
+      "inputs": [],
+      "note": "inclusionAI 官方模型卡与本次实际权重文件列表"
     },
     {
       "sceneId": "dotnet-reminder",
-      "purpose": "核对应用是否会解压外部 Brotli 数据，再按微软公告处理。",
       "inputs": [],
-      "clipCandidates": []
-    },
-    {
-      "sceneId": "closing",
-      "purpose": "本期来源与使用入口保留在视频简介。",
-      "inputs": [],
-      "clipCandidates": []
+      "note": "Microsoft 官方公告；10/25 初版；CVE-2026-111497"
     }
   ],
   "missing": [
@@ -95,5 +97,7 @@
       "fallback": "来源明确的文字图解或原发布页截图；取得原文件后再选择片段，不能称已剪入。"
     }
   ],
-  "meaning": "Recording-stage shot intentions; no precise scene timing or actual inclusion is claimed."
+  "meaning": "Recording-stage shot intentions; no precise scene timing or actual inclusion is claimed.",
+  "editionDate": "2026-10-28",
+  "timing": "actual recorded speech; real video ranges, original speed"
 }
