@@ -1,0 +1,3 @@
+# Preserve manifest and deliverable hashes across Windows checkouts.
+archive.json -text
+deliverables/** -text -whitespace

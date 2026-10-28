@@ -14,7 +14,7 @@
 
 边界与决策见 [产品图](docs/product-map.md)。登录、配音、分镜/成片终审、点击发布保留人工节点；机器检查和人工接受分别记录。
 
-每日 AI 资讯从[技能](skills/daily-ai-news/SKILL.md)及[运行手册](skills/daily-ai-news/references/production.md)进入：新会话先运行 `node skills/daily-ai-news/scripts/edition.mjs status`，再明确本期工程；新一期初始化为空数据，不复制旧新闻。按价值决定是否出片，先交稿、等真人录音，以实际词窗安排字幕和镜头，采用纸白珊瑚版式和原生 1080p60。共用工具支持录音保全、对齐、渲染、投稿物料和归档验证；选题、画面取舍及实际审阅仍需 Agent 执行。[2026-10-27 工程](projects/daily-ai-news-2026-10-27/README.md)保存真人录音、官方演示和三平台投稿交接实例；当前阶段看该工程文件，不能把工具检查或填表当成用户接受或发布成功。历史首期任务仅作参考，不作新一期默认输入；跨会话工具验收见[本次 Stage Spec](docs/2026-10-28-daily-ai-news-handoff-spec.md)。
+每日 AI 资讯从[技能](skills/daily-ai-news/SKILL.md)及[运行手册](skills/daily-ai-news/references/production.md)进入：新会话先运行 `node skills/daily-ai-news/scripts/edition.mjs status`，再明确本期工程；新一期初始化为空数据，不复制旧新闻。按价值决定是否出片，先交稿、等真人录音，以实际词窗安排字幕和镜头，采用纸白珊瑚版式和原生 1080p60。共用工具支持录音保全、对齐、渲染、投稿物料和归档验证；选题、画面取舍及实际审阅仍需 Agent 执行。[2026-10-27 作品档案](products/daily-ai-news-2026-10-27/README.md)保存真人录音、官方演示和三平台投稿交接实例；当前交付与发布状态看作品根 README，原工程保留供返修，不能把工具检查或填表当成用户接受或发布成功。历史首期任务仅作参考，不作新一期默认输入；跨会话工具验收见[本次 Stage Spec](docs/2026-10-28-daily-ai-news-handoff-spec.md)。
 
 视频质量流程：先分析参考并确定视觉方向，按需用分镜图和临时配音做可播放粗样片；调整结构后制作正式画面与混音，再依据实际视频的时间码返修。方法与裁剪方式统一见[制作流程](workflows/explainer-video.md)，不要求所有任务遍历全部步骤。
 

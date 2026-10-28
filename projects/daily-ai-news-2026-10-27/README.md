@@ -1,6 +1,6 @@
 # 每日 AI 资讯 · 2026-10-27
 
-新会话接手先执行 `node skills/daily-ai-news/scripts/edition.mjs status --project projects/daily-ai-news-2026-10-27`，再读其列出的证据。当前已完成 r2 成片和三平台物料/上传交接：B 站仅用户反馈已投递，抖音与小红书记录为待用户点击发布，尚未独立核验线上结果。下文制作阶段及修订经过保留为历史，最新交接在末尾及 qa/multiplatform-handoff.json。本期沿用自己的 job 与 scripts，不改为新 init 工程；新一期方法见[运行手册](../../skills/daily-ai-news/references/production.md)。
+本期成片已归档，观看入口、归档校验和当前投稿交接见[作品档案](../../products/daily-ai-news-2026-10-27/README.md)。本目录保留为施工及返修区，下文为制作过程记录。需要续做时先执行 `node skills/daily-ai-news/scripts/edition.mjs status --project projects/daily-ai-news-2026-10-27`，读取其列出的实际输入，并沿用本期 job 与 scripts；不改为新 init 工程。新一期方法见[运行手册](../../skills/daily-ai-news/references/production.md)。
 
 ## 本期制作范围与验收
 

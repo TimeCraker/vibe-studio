@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "editionDate": "2026-10-27",
+  "preparedAt": "2026-10-27T12:32:31+08:00",
+  "status": "official-footage-acquired-revision-in-progress",
+  "draftFileSha256": "d3d08222a40ec8d6bfccb468df1d8ef26615b3737ad9e029b5f6729e7727c210",
+  "timing": "保留实际录音时间线；Terra 片段替换头条原截图，其他时长不变。",
+  "shots": [
+    {
+      "sceneId": "global",
+      "inputs": [
+        "ranking.json"
+      ],
+      "note": "现有八家官标覆盖全球/国产 TOP15；沿用本期查询快照，只配 BGM。"
+    },
+    {
+      "sceneId": "domestic",
+      "inputs": [
+        "ranking.json"
+      ],
+      "note": "与全球榜平齐，不人为增加分数或升降。"
+    },
+    {
+      "sceneId": "overview",
+      "inputs": [
+        "script.json"
+      ],
+      "note": "今日 AI 资讯；收到录音后核对采用文稿再生成正文标题。"
+    },
+    {
+      "sceneId": "terra",
+      "inputs": [
+        "assets/terra-model-icon.png",
+        "assets/terra-model-page.png",
+        "graphics/terra-invoice-flow.svg",
+        "assets/terra-pricing-page.png",
+        "assets/terra-official-launch-1080p.mp4"
+      ],
+      "anchorText": [
+        "先看 GPT-6.1 Terra",
+        "读取一张发票",
+        "价格方面"
+      ],
+      "note": "头条采用 OpenAI 官方视频的照片→Blender 操作→模型结果；发票段仍明确为用途示意，价格和入口保留截图/图解。",
+      "optionalVideo": {
+        "file": "assets/terra-family-context-6s.mp4",
+        "in": 0,
+        "out": 6,
+        "selected": false,
+        "reason": "低分辨率家族宣传，仅备用，不是操作演示。"
+      },
+      "videoClips": [
+        {
+          "sceneId": "terra-launch",
+          "file": "assets/terra-official-launch-1080p.mp4",
+          "sourceIn": 9,
+          "sourceOut": 22.3,
+          "timelineIn": 33.36666666666667,
+          "timelineOut": 46.666666666666664,
+          "playbackRate": 1,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "sceneId": "science",
+      "inputs": [
+        "assets/openai-eth-paper-title.png",
+        "assets/openai-eth-paper-page1.png",
+        "evidence/openai-eth-scope.md"
+      ],
+      "anchorText": [
+        "再看一条科研消息",
+        "指数时间假设",
+        "已公开部分证明材料"
+      ],
+      "note": "原文标题/归属→中文解释→外部核验状态；不让观众阅读整页公式。"
+    },
+    {
+      "sceneId": "phronix",
+      "inputs": [
+        "assets/phronix-paper-title.png",
+        "assets/phronix-figure1.png",
+        "graphics/phronix-reuse-flow.svg"
+      ],
+      "anchorText": [
+        "让 AI 积累工作经验",
+        "执行步骤和结果保存下来",
+        "三十道软件修复任务"
+      ],
+      "note": "论文标题→保留标签的原图局部→中文复用流程→样本边界。"
+    },
+    {
+      "sceneId": "mistral",
+      "inputs": [
+        "assets/mistral-large-4.svg",
+        "assets/mistral-release-status.png"
+      ],
+      "anchorText": [
+        "Mistral Large 4 的开放进度",
+        "预计日期是十月三十一日"
+      ],
+      "note": "官标＋真实待发布状态，突出日期，不采用无主体暗色背景。"
+    },
+    {
+      "sceneId": "oracle",
+      "inputs": [
+        "assets/oracle-platform.jpg",
+        "assets/oracle-starter-configuration.webp",
+        "assets/oracle-project-tracking.webp",
+        "graphics/oracle-agent-flow.svg"
+      ],
+      "anchorText": [
+        "甲骨文",
+        "需求分析、应用设计、配置和测试"
+      ],
+      "note": "产品识别→官方平台界面→中文分工图；界面只作平台参考，不冒充新增功能实测。"
+    },
+    {
+      "sceneId": "closing",
+      "inputs": [
+        "credits.md"
+      ],
+      "note": "按实际录音收尾，简介/片尾带素材署名。"
+    }
+  ],
+  "music": {
+    "file": "assets/carefree.mp3",
+    "opening": "全球/国产榜只配音乐",
+    "voice": "按实际人声自动避让，必要时循环并检查接缝",
+    "review": "mix-and-listening-pending"
+  },
+  "gaps": [
+    {
+      "item": "Terra 高清介绍/操作视频",
+      "status": "resolved-official-x-video",
+      "reason": "官网发布页仍受验证限制，转查官方原帖附件取得 1080p、约 31.5 秒完整视频；已实际解码并审看关键操作与结果。",
+      "fallback": "不再以静态文档截图替代 terra-launch；其他不对应的段落仍使用原图和图解。"
+    },
+    {
+      "item": "Oracle 官方 1:26 平台介绍视频",
+      "sourcePage": "https://www.oracle.com/customer-success/navigator/",
+      "url": "https://www.youtube.com/watch?v=l6IH8pAbXWA",
+      "status": "optional-not-downloaded",
+      "reason": "复核官网中英文页面，缩略图与按钮分别指向 NmsQp7T5lw4 和 l6IH8pAbXWA；浏览器确认后者为 Oracle 官方介绍片。公共下载提示反机器人登录，区域页未提供另一可取得文件，未绕过或导出账号 cookies。",
+      "fallback": "采用官方平台配图和分工图。"
+    }
+  ],
+  "next": [
+    "渲染 Terra 官方演示局部预览并核对字幕安全区",
+    "渲染修订版，更新同版 QC 与来源署名",
+    "保留首版归档，用户重新审阅前保持发布暂停"
+  ]
+}

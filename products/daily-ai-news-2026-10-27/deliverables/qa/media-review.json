@@ -1,0 +1,134 @@
+{
+  "reviewer": "agent",
+  "checkedAt": "2026-10-27T12:36:04+08:00",
+  "humanReview": "pending",
+  "scope": "local source media and source-derived diagrams only; no rendered episode exists",
+  "technical": {
+    "hashVerifiedFiles": 36,
+    "paths": [
+      "assets/claude.png",
+      "assets/deepseek.ico",
+      "assets/glm.svg",
+      "assets/google.png",
+      "assets/kimi.png",
+      "assets/meta.svg",
+      "assets/openai.svg",
+      "assets/qwen.png",
+      "assets/mistral-large-4.svg",
+      "assets/mistral-hero.jpg",
+      "assets/rea-hopper.png",
+      "assets/rea-investigation.svg",
+      "assets/oracle-platform.jpg",
+      "assets/phronix-architecture.svg",
+      "assets/terra-official-intro.gif",
+      "assets/terra-official-chart.png",
+      "assets/terra-official-intro.mp4",
+      "assets/terra-family-context-6s.mp4",
+      "assets/terra-model-icon.png",
+      "assets/terra-model-page.png",
+      "assets/terra-pricing-page.png",
+      "assets/phronix-paper.pdf",
+      "assets/phronix-paper-page1.png",
+      "assets/phronix-paper-page3.png",
+      "assets/phronix-paper-title.png",
+      "assets/phronix-figure1.png",
+      "assets/openai-eth-paper.pdf",
+      "assets/openai-eth-paper-page1.png",
+      "assets/openai-eth-paper-title.png",
+      "assets/mistral-release-status.png",
+      "assets/oracle-starter-configuration.webp",
+      "assets/oracle-project-tracking.webp",
+      "assets/carefree.mp3",
+      "graphics/terra-invoice-flow.svg",
+      "graphics/phronix-reuse-flow.svg",
+      "graphics/oracle-agent-flow.svg"
+    ],
+    "decode": "full MP4 and MP3 decode succeeded",
+    "preview": "11 images plus 6-second video and BGM loaded in actual browser; SVG Chinese text viewed"
+  },
+  "visualObservations": [
+    {
+      "asset": "assets/phronix-figure1.png",
+      "result": "selected",
+      "note": "PDF figure retains all labels and caption, unlike HTML SVG."
+    },
+    {
+      "asset": "assets/phronix-paper-title.png",
+      "result": "selected",
+      "note": "Adjusted crop after first attempt clipped title; full two-line title and authors now visible."
+    },
+    {
+      "asset": "assets/mistral-hero.jpg",
+      "result": "rejected",
+      "note": "Only dark textured background, no useful news subject."
+    },
+    {
+      "asset": "assets/terra-family-context-6s.mp4",
+      "result": "reserve",
+      "note": "Low-resolution family promotion, not a computer-use demo. Only contact-sheet frames viewed, not continuous audiovisual review."
+    },
+    {
+      "asset": "graphics/",
+      "result": "selected",
+      "note": "Three native paper/coral diagrams displayed correctly; actual final video timing/layout still pending."
+    },
+    {
+      "asset": "assets/oracle-starter-configuration.webp",
+      "result": "selected-as-context",
+      "note": "784x441 official platform reference, use as inset without claiming new agent demonstration."
+    },
+    {
+      "asset": "assets/oracle-project-tracking.webp",
+      "result": "selected-as-context",
+      "note": "784x441 official platform reference, no invented new-feature outcome."
+    }
+  ],
+  "gaps": [
+    {
+      "item": "Terra 高清介绍/操作视频",
+      "status": "optional-unavailable",
+      "reason": "检索出现 30 秒 Vimeo 介绍说明，但当前官方英文页遇到 Cloudflare 真人验证，未取得可验证视频 URL；未自动完成验证。",
+      "fallback": "已准备官方模型页、价格截图和明确标注的发票流程图。"
+    },
+    {
+      "item": "Oracle 官方 1:26 平台介绍视频",
+      "sourcePage": "https://www.oracle.com/customer-success/navigator/",
+      "url": "https://www.youtube.com/watch?v=l6IH8pAbXWA",
+      "status": "optional-not-downloaded",
+      "reason": "官方页面嵌入入口已确认，公开下载要求登录/反机器人验证；未导出用户 cookies。",
+      "fallback": "采用官方平台配图和分工图。"
+    }
+  ],
+  "pending": [
+    "final human manuscript/recording",
+    "ASR alignment",
+    "native60fps composition/render",
+    "voice/music listening and ducking",
+    "final audiovisual and editorial human review"
+  ],
+  "videoRescout": {
+    "sourcePage": "https://x.com/OpenAI/status/2114780711664398349",
+    "file": "assets/terra-official-launch-1080p.mp4",
+    "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e",
+    "completeDecode": "passed",
+    "width": 1920,
+    "height": 1080,
+    "sourceFps": 24,
+    "seconds": 31.509333,
+    "observed": "原视频抽帧确认电车照片、Blender 中逐步建模、完成结果；非连续视听审阅。",
+    "selectedSourceRange": [
+      9,
+      22.3
+    ],
+    "finalUse": {
+      "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+      "range": [
+        33.36666666666667,
+        46.666666666666664
+      ],
+      "actualFrames": "qa/render-evidence.json",
+      "humanReview": "pending"
+    },
+    "oracle": "官方介绍片入口已验证，未取得可剪文件，仍用原截图。"
+  }
+}

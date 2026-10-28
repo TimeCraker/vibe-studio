@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-28T08:00:04.999Z",
+  "scope": "placement of existing verified r6 archive; no video or skill changes",
+  "originalBackup": "C:\\Users\\TimeCraker\\Videos\\vibe-studio-archive\\daily-ai-news-2026-10-27-r6\\archive.json",
+  "archive": "archive.json",
+  "archiveSha256": "0ad88339f111e7aac54be32fc944603e348fadaa35a2f9f80d481c73e9f98069",
+  "verified": {
+    "ok": true,
+    "errors": [],
+    "scope": "source-and-media"
+  },
+  "restored": {
+    "ok": true,
+    "restored": 201,
+    "scope": "source-and-media",
+    "missingExternalInputs": []
+  },
+  "restoredTo": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\.cache\\daily-product-restore-KybP6M",
+  "entries": 201,
+  "video": "deliverables/render/daily-ai-news-2026-10-27.mp4",
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "workingManuscriptUnchanged": true,
+  "projectRetained": true,
+  "rerenderCertified": false
+}

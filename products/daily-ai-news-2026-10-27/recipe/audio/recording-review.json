@@ -1,0 +1,1239 @@
+{
+  "schemaVersion": 1,
+  "source": "audio/source/narration-decoded.wav",
+  "sourceSha256": "c13a6b581036832cf5323bca86dad0e732123e72317b79dd546ffcc37b34ac26",
+  "originalSource": "audio/source/narration-original.mp3",
+  "originalSha256": "58e0315ac1069d55156af9d0a9a4ff58ec3707dc3e0dea597d977d1c174c8fa1",
+  "sourceDuration": 261.024,
+  "sourceIn": 1.15,
+  "sourceOut": 259.1,
+  "edit": "仅去掉首尾空白，保留内部停顿和个人评论；不加速。原 MP3 解码有坏包提示，时间窗统一以保留的 PCM 解码音轨为准。",
+  "timing": "large-v3-turbo 真实词时间窗聚合，非按稿件字数摊时",
+  "similarityToDraft": 0.9481,
+  "actualWording": [
+    "保留“感觉这个就有点像 Skill 啊”的个人评论",
+    "录音未念 Phronix 和 Mistral 完整名称，由画面明确展示主体",
+    "保留“研究成果”“证明资料”“多长时间”等实际改词"
+  ],
+  "corrections": [
+    {
+      "raw": "看动屏幕",
+      "text": "看懂屏幕",
+      "start": 30.05,
+      "end": 30.89,
+      "reason": "与原稿及上下文一致的同音 ASR 用字校订；原声不变，审听待完成"
+    },
+    {
+      "raw": "新阶段",
+      "text": "现阶段",
+      "start": 114.99,
+      "end": 115.65,
+      "reason": "与原稿及上下文一致的同音 ASR 用字校订；原声不变，审听待完成"
+    },
+    {
+      "raw": "机口预览",
+      "text": "接口预览",
+      "start": 191.51,
+      "end": 192.15,
+      "reason": "与原稿及上下文一致的同音 ASR 用字校订；原声不变，审听待完成"
+    },
+    {
+      "raw": "测试用力",
+      "text": "测试用例",
+      "start": 237.99,
+      "end": 238.61,
+      "reason": "与原稿及上下文一致的同音 ASR 用字校订；原声不变，审听待完成"
+    },
+    {
+      "raw": "GPT-6.1Terra",
+      "text": "GPT-6.1 Terra",
+      "start": 21.63,
+      "end": 23.55,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "GPT-6.1Terra",
+      "text": "GPT-6.1 Terra",
+      "start": 7.07,
+      "end": 8.55,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "GPT-5.6Terra",
+      "text": "GPT-5.6 Terra",
+      "start": 53.57,
+      "end": 55.49,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "ChatGPT-Work",
+      "text": "ChatGPT Work",
+      "start": 57.65,
+      "end": 58.91,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "HuggingFace",
+      "text": "Hugging Face",
+      "start": 203.21,
+      "end": 204.03,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "OpenAI",
+      "text": "OpenAI",
+      "start": 109.87,
+      "end": 110.45,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "OpenAI",
+      "text": "OpenAI",
+      "start": 92.27,
+      "end": 92.77,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "OpenAI",
+      "text": "OpenAI",
+      "start": 72.35,
+      "end": 72.85,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "OpenAI",
+      "text": "OpenAI",
+      "start": 23.99,
+      "end": 24.65,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "OpenAI",
+      "text": "OpenAI",
+      "start": 6.07,
+      "end": 6.63,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "Codex",
+      "text": "Codex",
+      "start": 59.61,
+      "end": 60.23,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "Fusion",
+      "text": "Fusion",
+      "start": 220.51,
+      "end": 220.97,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "skill",
+      "text": "Skill",
+      "start": 156.69,
+      "end": 157.25,
+      "reason": "专有名词/口语大小写排版，保留完整词时间窗，不更换实际录音措辞"
+    },
+    {
+      "raw": "新模型",
+      "text": "新模型",
+      "start": 188.05,
+      "end": 188.53,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "新模型",
+      "text": "新模型",
+      "start": 28.09,
+      "end": 28.67,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "开发者",
+      "text": "开发者",
+      "start": 243.39,
+      "end": 243.85,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "开发者",
+      "text": "开发者",
+      "start": 62.21,
+      "end": 62.89,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "开发者",
+      "text": "开发者",
+      "start": 45.13,
+      "end": 45.63,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "付费用户",
+      "text": "付费用户",
+      "start": 60.85,
+      "end": 61.53,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "合作安排",
+      "text": "合作安排",
+      "start": 118.45,
+      "end": 119.19,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "更快的算法",
+      "text": "更快的算法",
+      "start": 90.79,
+      "end": 91.87,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "10月31号",
+      "text": "10月31号",
+      "start": 207.53,
+      "end": 208.95,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "技能",
+      "text": "技能",
+      "start": 250.15,
+      "end": 250.55,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    },
+    {
+      "raw": "测试用例",
+      "text": "测试用例",
+      "start": 237.99,
+      "end": 238.61,
+      "reason": "聚合实际词时间窗，避免字幕在词语或日期中间截断"
+    }
+  ],
+  "cues": [
+    {
+      "start": 1.49,
+      "end": 2.89,
+      "text": "各位观众们大家好",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 3.11,
+      "end": 4.69,
+      "text": "欢迎收看今日AI资讯",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 5.17,
+      "end": 7.07,
+      "text": "今天的头条是OpenAI发布",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 7.07,
+      "end": 8.55,
+      "text": "GPT-6.1 Terra",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 8.95,
+      "end": 11.77,
+      "text": "主打看图理解和操作电脑",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 11.95,
+      "end": 13.87,
+      "text": "除此之外还有AI科研进展",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 14.23,
+      "end": 16.55,
+      "text": "让智能体积累工作经验的新研究",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 16.77,
+      "end": 18.25,
+      "text": "以及其他相关资讯",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 18.45,
+      "end": 20.01,
+      "text": "下面我们来看详细内容",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 21.01,
+      "end": 23.55,
+      "text": "先看GPT-6.1 Terra",
+      "scene": "terra-launch",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 23.99,
+      "end": 27.05,
+      "text": "OpenAI在10月26日的官方更新中",
+      "scene": "terra-launch",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 27.05,
+      "end": 28.67,
+      "text": "公布了这款新模型",
+      "scene": "terra-launch",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 29.03,
+      "end": 31.69,
+      "text": "它主要面向看懂屏幕、操作电脑",
+      "scene": "terra-launch",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 31.69,
+      "end": 33.59,
+      "text": "以及日常写作这类任务",
+      "scene": "terra-launch",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 34.03,
+      "end": 35.67,
+      "text": "比如，读取一张发票",
+      "scene": "terra-invoice",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 35.87,
+      "end": 38.35,
+      "text": "再把里面的信息填进财务软件",
+      "scene": "terra-invoice",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 38.73,
+      "end": 40.59,
+      "text": "这是官方给出的应用场景",
+      "scene": "terra-invoice",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 41.19,
+      "end": 43.87,
+      "text": "对于需要让AI在多个软件之间",
+      "scene": "terra-invoice",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 43.87,
+      "end": 45.63,
+      "text": "完成重复工作的开发者",
+      "scene": "terra-invoice",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 45.83,
+      "end": 47.43,
+      "text": "这次更新值得关注",
+      "scene": "terra-invoice",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 48.07,
+      "end": 48.85,
+      "text": "价格方面",
+      "scene": "terra-price",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 49.31,
+      "end": 53.57,
+      "text": "标准接口的输入输出的单价都是上一代",
+      "scene": "terra-price",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 53.57,
+      "end": 55.95,
+      "text": "GPT-5.6 Terra的一半",
+      "scene": "terra-price",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 56.25,
+      "end": 58.91,
+      "text": "模型已经向ChatGPT Work",
+      "scene": "terra-access",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 58.91,
+      "end": 61.91,
+      "text": "和Codex的相关付费用户开放",
+      "scene": "terra-access",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 62.21,
+      "end": 64.47,
+      "text": "开发者也可以通过接口调用",
+      "scene": "terra-access",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 65.35,
+      "end": 67.83,
+      "text": "具体在自己的任务上好不好用",
+      "scene": "terra-access",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 67.99,
+      "end": 69.09,
+      "text": "还需要实际测试",
+      "scene": "terra-access",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 70.53,
+      "end": 72.21,
+      "text": "再看一条科研消息",
+      "scene": "science-news",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 72.35,
+      "end": 74.45,
+      "text": "OpenAI在10月26日发布",
+      "scene": "science-news",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 74.67,
+      "end": 77.43,
+      "text": "内部AI模型在数学、计算机科学",
+      "scene": "science-news",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 77.43,
+      "end": 78.47,
+      "text": "和物理三个方向",
+      "scene": "science-news",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 78.47,
+      "end": 80.41,
+      "text": "产出了新的研究成果",
+      "scene": "science-news",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 81.67,
+      "end": 86.07,
+      "text": "其中，计算机科学的一项结果涉及指数时间假设",
+      "scene": "science-eth",
+      "asrSegments": [
+        5
+      ]
+    },
+    {
+      "start": 86.07,
+      "end": 89.71,
+      "text": "简单说，它讨论一类复杂的计算问题",
+      "scene": "science-eth",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 89.71,
+      "end": 91.87,
+      "text": "到底有没有更快的算法",
+      "scene": "science-eth",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 92.27,
+      "end": 95.91,
+      "text": "OpenAI声称找到了推翻这个假设的证明",
+      "scene": "science-eth",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 96.25,
+      "end": 97.27,
+      "text": "如果结论成立",
+      "scene": "science-eth",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 97.43,
+      "end": 99.69,
+      "text": "会影响相关问题的算法研究",
+      "scene": "science-eth",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 99.97,
+      "end": 104.11,
+      "text": "但这不等于今天的软件马上就能跑得更快",
+      "scene": "science-limit",
+      "asrSegments": [
+        7
+      ]
+    },
+    {
+      "start": 104.51,
+      "end": 106.69,
+      "text": "把理论转成可用算法",
+      "scene": "science-limit",
+      "asrSegments": [
+        7
+      ]
+    },
+    {
+      "start": 107.07,
+      "end": 109.13,
+      "text": "还需要后续的工作",
+      "scene": "science-limit",
+      "asrSegments": [
+        7
+      ]
+    },
+    {
+      "start": 109.87,
+      "end": 112.09,
+      "text": "OpenAI已公开部分证明资料",
+      "scene": "science-review",
+      "asrSegments": [
+        8
+      ]
+    },
+    {
+      "start": 112.25,
+      "end": 114.81,
+      "text": "并邀请外部学者继续核验和解释",
+      "scene": "science-review",
+      "asrSegments": [
+        8
+      ]
+    },
+    {
+      "start": 114.99,
+      "end": 117.01,
+      "text": "现阶段，我们可以确认的是",
+      "scene": "science-review",
+      "asrSegments": [
+        9
+      ]
+    },
+    {
+      "start": 117.01,
+      "end": 119.85,
+      "text": "这些研究材料和合作安排已经发布",
+      "scene": "science-review",
+      "asrSegments": [
+        9
+      ]
+    },
+    {
+      "start": 120.23,
+      "end": 124.01,
+      "text": "具体结论的意义还要看后续学界的检验",
+      "scene": "science-review",
+      "asrSegments": [
+        9
+      ]
+    },
+    {
+      "start": 126.09,
+      "end": 129.15,
+      "text": "接下来是一项让AI积累工作经验的研究",
+      "scene": "phronix-question",
+      "asrSegments": [
+        10
+      ]
+    },
+    {
+      "start": 130.65,
+      "end": 132.39,
+      "text": "它想解决的问题是",
+      "scene": "phronix-question",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 132.71,
+      "end": 134.05,
+      "text": "AI做成了一件事",
+      "scene": "phronix-question",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 134.23,
+      "end": 135.37,
+      "text": "下次遇到类似任务",
+      "scene": "phronix-question",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 135.47,
+      "end": 136.71,
+      "text": "能不能少走一些弯路",
+      "scene": "phronix-question",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 136.71,
+      "end": 140.85,
+      "text": "研究人员让智能体把执行步骤和结果保存下来",
+      "scene": "phronix-method",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 140.97,
+      "end": 142.53,
+      "text": "经过检查之后",
+      "scene": "phronix-method",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 142.69,
+      "end": 145.65,
+      "text": "整理成可重复使用的工具和操作方法",
+      "scene": "phronix-method",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 146.05,
+      "end": 148.91,
+      "text": "之后再遇到类似问题",
+      "scene": "phronix-method",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 149.37,
+      "end": 150.87,
+      "text": "就先调用已有经验",
+      "scene": "phronix-method",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 151.07,
+      "end": 151.77,
+      "text": "执行出错",
+      "scene": "phronix-method",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 152.35,
+      "end": 154.83,
+      "text": "还会根据结果修正方法",
+      "scene": "phronix-method",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 155.27,
+      "end": 157.47,
+      "text": "感觉这个就有点像Skill啊",
+      "scene": "phronix-method",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 158.55,
+      "end": 161.17,
+      "text": "论文在30道软件修复任务",
+      "scene": "phronix-test",
+      "asrSegments": [
+        15
+      ]
+    },
+    {
+      "start": 161.17,
+      "end": 164.71,
+      "text": "和一套科研计算流程上做了测试",
+      "scene": "phronix-test",
+      "asrSegments": [
+        15
+      ]
+    },
+    {
+      "start": 165.55,
+      "end": 166.61,
+      "text": "作者报告",
+      "scene": "phronix-test",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 166.83,
+      "end": 169.25,
+      "text": "在已经累积经验的重复任务中",
+      "scene": "phronix-test",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 169.41,
+      "end": 172.09,
+      "text": "系统能减少反复尝试和处理成本",
+      "scene": "phronix-test",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 172.73,
+      "end": 173.83,
+      "text": "这里需要分清",
+      "scene": "phronix-limit",
+      "asrSegments": [
+        17
+      ]
+    },
+    {
+      "start": 173.95,
+      "end": 176.09,
+      "text": "这主要是在测试经验能不能复用",
+      "scene": "phronix-limit",
+      "asrSegments": [
+        17
+      ]
+    },
+    {
+      "start": 176.23,
+      "end": 177.53,
+      "text": "还不能据此判断",
+      "scene": "phronix-limit",
+      "asrSegments": [
+        17
+      ]
+    },
+    {
+      "start": 177.87,
+      "end": 180.41,
+      "text": "它面对全新问题也会有相同的表现",
+      "scene": "phronix-limit",
+      "asrSegments": [
+        17
+      ]
+    },
+    {
+      "start": 180.79,
+      "end": 183.89,
+      "text": "这项研究改进的是AI保存和复用经验的方法",
+      "scene": "phronix-limit",
+      "asrSegments": [
+        18
+      ]
+    },
+    {
+      "start": 184.23,
+      "end": 185.17,
+      "text": "值得持续关注",
+      "scene": "phronix-limit",
+      "asrSegments": [
+        18
+      ]
+    },
+    {
+      "start": 186.79,
+      "end": 189.67,
+      "text": "然后更新一下这款新模型的开放进度",
+      "scene": "mistral-status",
+      "asrSegments": [
+        19
+      ]
+    },
+    {
+      "start": 189.87,
+      "end": 192.15,
+      "text": "这款模型已经提供了接口预览",
+      "scene": "mistral-status",
+      "asrSegments": [
+        19
+      ]
+    },
+    {
+      "start": 192.39,
+      "end": 193.93,
+      "text": "但截至本期查询",
+      "scene": "mistral-status",
+      "asrSegments": [
+        19
+      ]
+    },
+    {
+      "start": 194.09,
+      "end": 197.49,
+      "text": "官方模型页仍然显示等待发布",
+      "scene": "mistral-status",
+      "asrSegments": [
+        19
+      ]
+    },
+    {
+      "start": 197.77,
+      "end": 199.91,
+      "text": "完整模型文件还没有开放下载",
+      "scene": "mistral-status",
+      "asrSegments": [
+        19
+      ]
+    },
+    {
+      "start": 200.51,
+      "end": 202.91,
+      "text": "模型的公告说会在月底开放",
+      "scene": "mistral-date",
+      "asrSegments": [
+        20
+      ]
+    },
+    {
+      "start": 203.21,
+      "end": 206.01,
+      "text": "Hugging Face上目前列出的",
+      "scene": "mistral-date",
+      "asrSegments": [
+        20
+      ]
+    },
+    {
+      "start": 206.01,
+      "end": 208.95,
+      "text": "预计日期是10月31号",
+      "scene": "mistral-date",
+      "asrSegments": [
+        20
+      ]
+    },
+    {
+      "start": 209.17,
+      "end": 210.43,
+      "text": "想自己部署朋友",
+      "scene": "mistral-date",
+      "asrSegments": [
+        20
+      ]
+    },
+    {
+      "start": 210.71,
+      "end": 212.85,
+      "text": "还需要等正式文件和使用许可",
+      "scene": "mistral-date",
+      "asrSegments": [
+        20
+      ]
+    },
+    {
+      "start": 213.29,
+      "end": 215.31,
+      "text": "最后是一条企业应用消息",
+      "scene": "oracle-news",
+      "asrSegments": [
+        21
+      ]
+    },
+    {
+      "start": 215.43,
+      "end": 219.27,
+      "text": "甲骨文在当地时间10月26日公布了",
+      "scene": "oracle-news",
+      "asrSegments": [
+        21
+      ]
+    },
+    {
+      "start": 219.27,
+      "end": 220.97,
+      "text": "帮助企业部署Fusion",
+      "scene": "oracle-news",
+      "asrSegments": [
+        21
+      ]
+    },
+    {
+      "start": 221.31,
+      "end": 225.11,
+      "text": "云应用和AI智能体平台",
+      "scene": "oracle-news",
+      "asrSegments": [
+        21
+      ]
+    },
+    {
+      "start": 225.57,
+      "end": 228.37,
+      "text": "这些智能体分工处理需求分析",
+      "scene": "oracle-method",
+      "asrSegments": [
+        22
+      ]
+    },
+    {
+      "start": 228.57,
+      "end": 229.41,
+      "text": "应用设计",
+      "scene": "oracle-method",
+      "asrSegments": [
+        22
+      ]
+    },
+    {
+      "start": 229.73,
+      "end": 230.85,
+      "text": "配置和测试",
+      "scene": "oracle-method",
+      "asrSegments": [
+        22
+      ]
+    },
+    {
+      "start": 231.05,
+      "end": 233.85,
+      "text": "比如先把业务需求整理成设计文档",
+      "scene": "oracle-method",
+      "asrSegments": [
+        22
+      ]
+    },
+    {
+      "start": 234.17,
+      "end": 238.61,
+      "text": "再生成配置原型并准备对应的测试用例",
+      "scene": "oracle-method",
+      "asrSegments": [
+        22
+      ]
+    },
+    {
+      "start": 238.61,
+      "end": 242.47,
+      "text": "它主要服务正在部署甲骨文的企业软件的团队",
+      "scene": "oracle-use",
+      "asrSegments": [
+        23
+      ]
+    },
+    {
+      "start": 242.57,
+      "end": 244.75,
+      "text": "对于其他开发者可以关注的是",
+      "scene": "oracle-use",
+      "asrSegments": [
+        23
+      ]
+    },
+    {
+      "start": 245.15,
+      "end": 248.15,
+      "text": "它怎样把配置规则和产品经验",
+      "scene": "oracle-use",
+      "asrSegments": [
+        23
+      ]
+    },
+    {
+      "start": 248.15,
+      "end": 250.55,
+      "text": "整理成AI能调用的技能",
+      "scene": "oracle-use",
+      "asrSegments": [
+        23
+      ]
+    },
+    {
+      "start": 250.89,
+      "end": 252.17,
+      "text": "实际能节省多长时间",
+      "scene": "oracle-use",
+      "asrSegments": [
+        23
+      ]
+    },
+    {
+      "start": 252.41,
+      "end": 254.29,
+      "text": "还要看具体项目效果",
+      "scene": "oracle-use",
+      "asrSegments": [
+        23
+      ]
+    },
+    {
+      "start": 255.59,
+      "end": 257.79,
+      "text": "以上是本期精选资讯",
+      "scene": "closing",
+      "asrSegments": [
+        24
+      ]
+    },
+    {
+      "start": 257.99,
+      "end": 258.69,
+      "text": "我们下期再见",
+      "scene": "closing",
+      "asrSegments": [
+        24
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "anchor": "各位观众们",
+      "firstWord": 1.49,
+      "priorWordEnd": 1.15
+    },
+    {
+      "id": "terra-launch",
+      "title": "OpenAI 发布 GPT-6.1 Terra",
+      "anchor": "先看GPT-6.1 Terra",
+      "firstWord": 21.01,
+      "priorWordEnd": 20.01
+    },
+    {
+      "id": "terra-invoice",
+      "title": "看懂发票，再录入财务软件",
+      "anchor": "比如，读取一张发票",
+      "firstWord": 34.03,
+      "priorWordEnd": 33.59
+    },
+    {
+      "id": "terra-price",
+      "title": "标准接口单价降至上一代的一半",
+      "anchor": "价格方面",
+      "firstWord": 48.07,
+      "priorWordEnd": 47.43
+    },
+    {
+      "id": "terra-access",
+      "title": "ChatGPT Work、Codex 与 API 已可用",
+      "anchor": "模型已经向",
+      "firstWord": 56.25,
+      "priorWordEnd": 55.95
+    },
+    {
+      "id": "science-news",
+      "title": "OpenAI 公布三个方向的科研结果",
+      "anchor": "再看一条科研消息",
+      "firstWord": 70.53,
+      "priorWordEnd": 69.09
+    },
+    {
+      "id": "science-eth",
+      "title": "一项关于计算难度的研究主张",
+      "anchor": "其中，计算机科学",
+      "firstWord": 81.67,
+      "priorWordEnd": 80.41
+    },
+    {
+      "id": "science-limit",
+      "title": "理论结果，怎样变成可用算法？",
+      "anchor": "但这不等于",
+      "firstWord": 99.97,
+      "priorWordEnd": 99.69
+    },
+    {
+      "id": "science-review",
+      "title": "公开研究材料，邀请外部学者核验",
+      "anchor": "OpenAI已公开",
+      "firstWord": 109.87,
+      "priorWordEnd": 109.13
+    },
+    {
+      "id": "phronix-question",
+      "title": "Phronix：让 AI 积累做事经验",
+      "anchor": "接下来是一项",
+      "firstWord": 126.09,
+      "priorWordEnd": 124.01
+    },
+    {
+      "id": "phronix-method",
+      "title": "把执行经验整理成可复用方法",
+      "anchor": "研究人员",
+      "firstWord": 136.71,
+      "priorWordEnd": 136.71
+    },
+    {
+      "id": "phronix-test",
+      "title": "在重复任务中测试经验复用",
+      "anchor": "论文在30道",
+      "firstWord": 158.55,
+      "priorWordEnd": 157.47
+    },
+    {
+      "id": "phronix-limit",
+      "title": "复用已有经验，不代表解决所有新问题",
+      "anchor": "这里需要分清",
+      "firstWord": 172.73,
+      "priorWordEnd": 172.09
+    },
+    {
+      "id": "mistral-status",
+      "title": "Mistral Large 4 权重尚待发布",
+      "anchor": "然后更新一下",
+      "firstWord": 186.79,
+      "priorWordEnd": 185.17
+    },
+    {
+      "id": "mistral-date",
+      "title": "完整模型文件预计 10 月 31 日开放",
+      "anchor": "模型的公告说",
+      "firstWord": 200.51,
+      "priorWordEnd": 199.91
+    },
+    {
+      "id": "oracle-news",
+      "title": "甲骨文公布企业软件部署智能体平台",
+      "anchor": "最后是一条企业应用消息",
+      "firstWord": 213.29,
+      "priorWordEnd": 212.85
+    },
+    {
+      "id": "oracle-method",
+      "title": "需求、设计、配置与测试分工",
+      "anchor": "这些智能体",
+      "firstWord": 225.57,
+      "priorWordEnd": 225.11
+    },
+    {
+      "id": "oracle-use",
+      "title": "面向部署 Fusion 云应用的团队",
+      "anchor": "它主要服务",
+      "firstWord": 238.61,
+      "priorWordEnd": 238.61
+    },
+    {
+      "id": "closing",
+      "title": "我们下期再见",
+      "anchor": "以上是本期精选资讯",
+      "firstWord": 255.59,
+      "priorWordEnd": 254.29
+    }
+  ],
+  "listening": {
+    "status": "pending",
+    "note": "ASR 与稿件已核对；未把技术/文本检查当作人工审听。Oracle 段“Fusion 云应用和 AI 智能体平台”保留录音表述，标题明确为用于部署云应用的平台。"
+  }
+}

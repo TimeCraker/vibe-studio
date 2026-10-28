@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="500" viewBox="0 0 1440 500">
+<rect width="1440" height="500" fill="#f8f6f0"/>
+<g font-family="Microsoft YaHei, Noto Sans SC, sans-serif">
+<text x="64" y="67" font-size="20" fill="#ac4e35">每日 AI / 流程示意</text>
+<text x="64" y="135" font-size="42" font-weight="700" fill="#171714">让 AI 保存并复用做事经验</text>
+<line x1="64" y1="210" x2="329" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="64" y="249" font-size="21" fill="#ac4e35">01</text>
+<text x="64" y="313" font-size="31" font-weight="700" fill="#171714">执行任务</text>
+<path d="M344 280 h35 l-10 -9 m10 9 l-10 9" stroke="#ac4e35" fill="none" stroke-width="2"/>
+<line x1="399" y1="210" x2="664" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="399" y="249" font-size="21" fill="#ac4e35">02</text>
+<text x="399" y="313" font-size="31" font-weight="700" fill="#171714">检查与修正</text>
+<path d="M679 280 h35 l-10 -9 m10 9 l-10 9" stroke="#ac4e35" fill="none" stroke-width="2"/>
+<line x1="734" y1="210" x2="999" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="734" y="249" font-size="21" fill="#ac4e35">03</text>
+<text x="734" y="313" font-size="31" font-weight="700" fill="#171714">保存操作方法</text>
+<path d="M1014 280 h35 l-10 -9 m10 9 l-10 9" stroke="#ac4e35" fill="none" stroke-width="2"/>
+<line x1="1069" y1="210" x2="1334" y2="210" stroke="#b35138" stroke-width="3"/>
+<text x="1069" y="249" font-size="21" fill="#ac4e35">04</text>
+<text x="1069" y="313" font-size="31" font-weight="700" fill="#171714">下次调用经验</text>
+<text x="64" y="438" font-size="21" fill="#75766b">据 Phronix 论文方法绘制 · 研究不等同于全新任务的普遍效果</text>
+</g></svg>

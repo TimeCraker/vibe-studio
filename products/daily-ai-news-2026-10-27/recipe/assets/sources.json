@@ -1,0 +1,704 @@
+[
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "bytes": 1198,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/claude.png"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "bytes": 209762,
+    "fetchedAt": "2026-10-24T08:41:20.962405+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/deepseek.ico"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "bytes": 11037,
+    "fetchedAt": "2026-10-24T08:41:20.833370+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/glm.svg"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "bytes": 61823,
+    "fetchedAt": "2026-10-24T08:41:21.298240+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/google.png"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "bytes": 7454,
+    "fetchedAt": "2026-10-24T08:41:20.127217+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/kimi.png"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "bytes": 8912,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/meta.svg"
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "bytes": 3273,
+    "fetchedAt": "2026-10-24T08:41:20.736187+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/openai.svg"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "bytes": 15465,
+    "fetchedAt": "2026-10-24T08:41:21.136261+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/qwen.png"
+  },
+  {
+    "file": "assets/mistral-large-4.svg",
+    "url": "https://docs.mistral.ai/assets/models/ML4-Lechonk.svg",
+    "rights": "Mistral 官方模型图标；用于封面识别，商标不声明再许可",
+    "attribution": "Mistral AI; https://docs.mistral.ai/models/mistral-large-4-0",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 11933,
+    "sha256": "2aa0cb250f7a5b6006839b753eeb6c652d633c1a4ee451ad7daf260e06a5ba79"
+  },
+  {
+    "file": "assets/mistral-hero.jpg",
+    "url": "https://mistral.ai/images/heros/hero-ml4@2x.jpg",
+    "rights": "官方发布图候选；仅作相关报道，发布前核对实际采用范围与品牌条款",
+    "attribution": "Mistral AI; https://mistral.ai/news/mistral-large-4/",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 398259,
+    "sha256": "157b2f82b51cec3d9e82024fef70c6a8ff0e4ed6d62604eda88c841ae4545e9a",
+    "selection": "rejected",
+    "review": "实际查看为无模型主体的暗色纹理背景，不选作新闻配图。"
+  },
+  {
+    "file": "assets/rea-hopper.png",
+    "url": "https://raw.githubusercontent.com/morluto/rea/main/docs/assets/rea-hopper-analysis.png",
+    "rights": "项目作者提供的 Hopper 分析示意；保留项目署名及第三方界面权利，标官方演示，非本栏目实测",
+    "attribution": "morluto/rea; https://github.com/morluto/rea",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 1355107,
+    "sha256": "144e207c9ca57f61a311210a0d679c55d36f6614cbf4d15b7b280a268389aa1d"
+  },
+  {
+    "file": "assets/rea-investigation.svg",
+    "url": "https://raw.githubusercontent.com/morluto/rea/main/website/public/assets/figures/rea-investigation-flow.svg",
+    "rights": "REA 作者图解，项目 MIT；保留作者署名及许可",
+    "attribution": "morluto/rea; https://github.com/morluto/rea/blob/main/LICENSE",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 3552,
+    "sha256": "11c3bf39b8e17910d058bfeb1368bae0d97846b08c09dd5ca7a433fd6ee2d1e6"
+  },
+  {
+    "file": "assets/oracle-platform.jpg",
+    "url": "https://www.oracle.com/a/pr/img/cimg16x9sm-css-agentic-ai-platform.jpg",
+    "rights": "官方新闻图候选；并非完整产品实机演示，发布前核对实际采用范围与媒体使用条件",
+    "attribution": "Oracle; https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+    "queriedAt": "2026-10-27T10:52:19+08:00",
+    "status": "retrieved-candidate",
+    "bytes": 18213,
+    "sha256": "3b3a60b134821d78762c950e0f364c715120d3925ef2b35092037961bb6d268c"
+  },
+  {
+    "file": "assets/phronix-architecture.svg",
+    "url": "https://arxiv.org/html/2610.31789v1#S4.F1",
+    "status": "retrieved-candidate",
+    "sha256": "a41a9b6d1eb64586dc4df180891c642ee45f1bbc6db37d911451af54e8d0fede",
+    "bytes": 33839,
+    "adaptation": "Extracted inline Figure 1 SVG; added XML namespace only. Needs visual check before use.",
+    "rights": "CC BY 4.0, paper license",
+    "attribution": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, Figure 1, CC BY 4.0",
+    "selection": "rejected",
+    "review": "抽取的 HTML SVG 缺少 LaTeXML 叠加文字；改用 PDF 原图，禁止直接采用。"
+  },
+  {
+    "file": "assets/terra-official-intro.gif",
+    "url": "https://us1.discourse-cdn.com/openai1/original/4X/7/2/a/72a94b5bdadcd030edc11dac9a005ec0ab8271d7.gif",
+    "sourcePage": "https://community.openai.com/t/gpt-6-1-terra-delivering-fast-and-capable-computer-use-at-a-lower-price/1409900",
+    "queriedAt": "2026-10-27T12:23:33+08:00",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "bytes": 9799246,
+    "sha256": "ff50c3dd47de7ea73da15bdc01d46cd6a79947e4016c535d94701aec3b04ed0d",
+    "sceneIds": [
+      "terra"
+    ],
+    "selection": "reserve",
+    "review": "已看抽帧/原图；动图是模型家族宣传，480×270、6fps、120秒，非功能操作演示；图表黑底且非本期口播重点，不作为主画面。",
+    "preparedAt": "2026-10-27T12:24:14+08:00",
+    "media": {
+      "width": 480,
+      "height": 270,
+      "frames": 720
+    }
+  },
+  {
+    "file": "assets/terra-official-chart.png",
+    "url": "https://us1.discourse-cdn.com/openai1/original/4X/b/f/6/bf6c5bf2e7e2d5d40b5d91d2bda29d0b60491e5f.png",
+    "sourcePage": "https://community.openai.com/t/gpt-6-1-terra-delivering-fast-and-capable-computer-use-at-a-lower-price/1409900",
+    "queriedAt": "2026-10-27T12:23:33+08:00",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "bytes": 28801,
+    "sha256": "616c2f5c824811b00b14a2e42177b237573640537b4160f3da3db2436ca8aa96",
+    "sceneIds": [
+      "terra"
+    ],
+    "selection": "reserve",
+    "review": "已看抽帧/原图；动图是模型家族宣传，480×270、6fps、120秒，非功能操作演示；图表黑底且非本期口播重点，不作为主画面。",
+    "preparedAt": "2026-10-27T12:23:35+08:00",
+    "media": {
+      "width": 1574,
+      "height": 1438,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/terra-official-intro.mp4",
+    "sha256": "ea025b5ff0ce0a49f3ce02628baccb7b2cabc6cde41e81bacd2b772a3efe49e8",
+    "bytes": 3094337,
+    "sourcePage": "https://community.openai.com/t/gpt-6-1-terra-delivering-fast-and-capable-computer-use-at-a-lower-price/1409900",
+    "sceneIds": [
+      "terra"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "reserve",
+    "adaptation": "GIF 原时间轴转 H.264；未提升原始分辨率或运动帧率。",
+    "preparedAt": "2026-10-27T12:32:32+08:00",
+    "derivedFrom": "assets/terra-official-intro.gif",
+    "parentSha256": "ff50c3dd47de7ea73da15bdc01d46cd6a79947e4016c535d94701aec3b04ed0d",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 480,
+          "height": 270,
+          "r_frame_rate": "6/1"
+        }
+      ],
+      "format": {
+        "duration": "120.000000"
+      }
+    }
+  },
+  {
+    "file": "assets/terra-family-context-6s.mp4",
+    "sha256": "78847b1bfee87011376c7188ccf99e42ad2c16cefec65de3292a5270fb7ff953",
+    "bytes": 170687,
+    "sourcePage": "https://community.openai.com/t/gpt-6-1-terra-delivering-fast-and-capable-computer-use-at-a-lower-price/1409900",
+    "sceneIds": [
+      "terra"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "reserve",
+    "clipIn": 0,
+    "clipOut": 6,
+    "review": "仅可作小幅品牌背景，禁止全屏拉大或作为新模型操作实测。",
+    "preparedAt": "2026-10-27T12:32:32+08:00",
+    "derivedFrom": "assets/terra-official-intro.mp4",
+    "parentSha256": "ea025b5ff0ce0a49f3ce02628baccb7b2cabc6cde41e81bacd2b772a3efe49e8",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 480,
+          "height": 270,
+          "r_frame_rate": "6/1"
+        }
+      ],
+      "format": {
+        "duration": "6.000000"
+      }
+    }
+  },
+  {
+    "file": "assets/terra-model-icon.png",
+    "sha256": "16af77612c26d31d39308bbb5ee99c47d4fc45d953a170fbab4ae7472c5e37c3",
+    "bytes": 10584,
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "sceneIds": [
+      "terra",
+      "cover"
+    ],
+    "rights": "OpenAI 官方模型图标/商标，用于准确识别产品。",
+    "status": "local-verified",
+    "url": "https://developers.openai.com/images/api/models/icons/gpt-6.1-terra.png",
+    "selection": "selected",
+    "preparedAt": "2026-10-27T12:24:44+08:00",
+    "media": {
+      "width": 128,
+      "height": 128,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/terra-model-page.png",
+    "sha256": "61b573eada3792b5892afbb1dabeea5deb6134c21dce7fb9e825c94ccb3705ed",
+    "bytes": 85948,
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "sceneIds": [
+      "terra"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "capture": "本次浏览器 1280×720 视口截图，保留原页；已实际查看。",
+    "layout": "剪辑时聚焦主体区域；定价每百万 token，比较限标准单价。",
+    "preparedAt": "2026-10-27T12:25:15+08:00",
+    "media": {
+      "width": 1280,
+      "height": 720,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/terra-pricing-page.png",
+    "sha256": "569dc849d3636481ee36bbc35d783ac4d9d52ea45bacba625c76276b0ce89457",
+    "bytes": 81641,
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "sceneIds": [
+      "terra"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "capture": "本次浏览器 1280×720 视口截图，保留原页；已实际查看。",
+    "layout": "剪辑时聚焦主体区域；定价每百万 token，比较限标准单价。",
+    "preparedAt": "2026-10-27T12:25:28+08:00",
+    "media": {
+      "width": 1280,
+      "height": 720,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/phronix-paper.pdf",
+    "sha256": "dbb69f20650ce01af60b68ff48059b62cf7ef8fb30c9134d76aeb49a877c7c20",
+    "bytes": 313854,
+    "sourcePage": "https://arxiv.org/abs/2610.31789",
+    "sceneIds": [
+      "phronix"
+    ],
+    "rights": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, CC BY 4.0；裁切和 PDF 转图已注明。",
+    "status": "local-verified",
+    "url": "https://arxiv.org/pdf/2610.31789",
+    "selection": "source",
+    "preparedAt": "2026-10-27T12:24:45+08:00"
+  },
+  {
+    "file": "assets/phronix-paper-page1.png",
+    "sha256": "0da37098f4344f31d90167c6052893a5f1a462ec89be050db16db674724bdc1e",
+    "bytes": 509070,
+    "sourcePage": "https://arxiv.org/abs/2610.31789",
+    "sceneIds": [
+      "phronix"
+    ],
+    "rights": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, CC BY 4.0；裁切和 PDF 转图已注明。",
+    "status": "local-verified",
+    "selection": "source",
+    "adaptation": "PDF 原页渲染；title 为第一页标题区域，figure1 为第三页图与原始图注。",
+    "preparedAt": "2026-10-27T12:32:31+08:00",
+    "derivedFrom": "assets/phronix-paper.pdf",
+    "parentSha256": "dbb69f20650ce01af60b68ff48059b62cf7ef8fb30c9134d76aeb49a877c7c20",
+    "media": {
+      "width": 1224,
+      "height": 1584,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/phronix-paper-page3.png",
+    "sha256": "f9426543aeb75584952d27c7d7a34508059c49c78edd81ae76fe8599d5ea527a",
+    "bytes": 458430,
+    "sourcePage": "https://arxiv.org/abs/2610.31789",
+    "sceneIds": [
+      "phronix"
+    ],
+    "rights": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, CC BY 4.0；裁切和 PDF 转图已注明。",
+    "status": "local-verified",
+    "selection": "source",
+    "adaptation": "PDF 原页渲染；title 为第一页标题区域，figure1 为第三页图与原始图注。",
+    "preparedAt": "2026-10-27T12:32:31+08:00",
+    "derivedFrom": "assets/phronix-paper.pdf",
+    "parentSha256": "dbb69f20650ce01af60b68ff48059b62cf7ef8fb30c9134d76aeb49a877c7c20",
+    "media": {
+      "width": 1224,
+      "height": 1584,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/phronix-paper-title.png",
+    "sha256": "09d52c8a111261a8dd68ea1953d2a777483b637268824dd20f1051680e5391bb",
+    "bytes": 64799,
+    "sourcePage": "https://arxiv.org/abs/2610.31789",
+    "sceneIds": [
+      "phronix"
+    ],
+    "rights": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, CC BY 4.0；裁切和 PDF 转图已注明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "PDF 原页渲染；title 为第一页标题区域，figure1 为第三页图与原始图注。",
+    "preparedAt": "2026-10-27T12:32:31+08:00",
+    "derivedFrom": "assets/phronix-paper.pdf",
+    "parentSha256": "dbb69f20650ce01af60b68ff48059b62cf7ef8fb30c9134d76aeb49a877c7c20",
+    "media": {
+      "width": 1611,
+      "height": 369,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/phronix-figure1.png",
+    "sha256": "95137173da80ce5baf00d779bb3642fc0566e42c0be3df1c338e51d12ad242c8",
+    "bytes": 108982,
+    "sourcePage": "https://arxiv.org/abs/2610.31789",
+    "sceneIds": [
+      "phronix"
+    ],
+    "rights": "Hariharan Devarajan et al., Phronix, arXiv:2610.31789v1, CC BY 4.0；裁切和 PDF 转图已注明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "PDF 原页渲染；title 为第一页标题区域，figure1 为第三页图与原始图注。",
+    "preparedAt": "2026-10-27T12:32:31+08:00",
+    "derivedFrom": "assets/phronix-paper.pdf",
+    "parentSha256": "dbb69f20650ce01af60b68ff48059b62cf7ef8fb30c9134d76aeb49a877c7c20",
+    "media": {
+      "width": 1036,
+      "height": 880,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/openai-eth-paper.pdf",
+    "sha256": "5b1612dc2eebb2cad5b4cbe62d1fed2982f01ab1908c26f70010a651487e8123",
+    "bytes": 887884,
+    "sourcePage": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+    "sceneIds": [
+      "science"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "url": "https://raw.githubusercontent.com/openai/math/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+    "selection": "source",
+    "review": "只检查文件可读与标题/归属，未验证数学证明。",
+    "preparedAt": "2026-10-27T12:24:46+08:00"
+  },
+  {
+    "file": "assets/openai-eth-paper-page1.png",
+    "sha256": "42150362d833c082160b5cec8b267ec52e7a79d3d53b584a9e5240316fcd4b21",
+    "bytes": 212159,
+    "sourcePage": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+    "sceneIds": [
+      "science"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "PDF 第一页渲染/标题和摘要区域裁切；须配‘OpenAI 公布的研究主张，待外部核验’说明。",
+    "preparedAt": "2026-10-27T12:32:31+08:00",
+    "derivedFrom": "assets/openai-eth-paper.pdf",
+    "parentSha256": "5b1612dc2eebb2cad5b4cbe62d1fed2982f01ab1908c26f70010a651487e8123",
+    "media": {
+      "width": 1224,
+      "height": 1584,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/openai-eth-paper-title.png",
+    "sha256": "4fbab6f90096ca643b09862f39fd719f3f42bd3e42c7397e5726fb892a83d0fb",
+    "bytes": 64321,
+    "sourcePage": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+    "sceneIds": [
+      "science"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "PDF 第一页渲染/标题和摘要区域裁切；须配‘OpenAI 公布的研究主张，待外部核验’说明。",
+    "preparedAt": "2026-10-27T12:32:31+08:00",
+    "derivedFrom": "assets/openai-eth-paper.pdf",
+    "parentSha256": "5b1612dc2eebb2cad5b4cbe62d1fed2982f01ab1908c26f70010a651487e8123",
+    "media": {
+      "width": 1506,
+      "height": 450,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/mistral-release-status.png",
+    "sha256": "7463f209600fdb3679d71ea08044d59e479d9eb3ca5f032ca8154f0277b20c81",
+    "bytes": 46629,
+    "sourcePage": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+    "sceneIds": [
+      "mistral"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "capture": "本次浏览器截图；已查看 Upcoming release / October 31 Current ETA。",
+    "layout": "聚焦产品名、待发布与预计日期，省去易过时的倒计时；录音跨日需复核。",
+    "preparedAt": "2026-10-27T12:26:08+08:00",
+    "media": {
+      "width": 1265,
+      "height": 712,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/oracle-starter-configuration.webp",
+    "sha256": "3164a5799b3d63537299cff22b5989ba62a92f27d1f2a826094e0896b217a7b5",
+    "bytes": 24888,
+    "sourcePage": "https://www.oracle.com/customer-success/navigator/",
+    "sceneIds": [
+      "oracle"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "url": "https://www.oracle.com/a/ocom/img/cimg16x9md-starter-configuration.webp",
+    "review": "官方平台界面参考；不能声称展示了 10/26 新增智能体的实际运行。",
+    "preparedAt": "2026-10-27T12:30:01+08:00",
+    "media": {
+      "width": 784,
+      "height": 441,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/oracle-project-tracking.webp",
+    "sha256": "fc8bc4c34e6ed76c42e65906ebbc14c35b528276eeaf5c67eab9bc6d3e982379",
+    "bytes": 42796,
+    "sourcePage": "https://www.oracle.com/customer-success/navigator/",
+    "sceneIds": [
+      "oracle"
+    ],
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。",
+    "status": "local-verified",
+    "selection": "selected",
+    "url": "https://www.oracle.com/a/ocom/img/cimg16x9md-css-create-transparency.webp",
+    "review": "官方平台界面参考；不能声称展示了 10/26 新增智能体的实际运行。",
+    "preparedAt": "2026-10-27T12:30:02+08:00",
+    "media": {
+      "width": 784,
+      "height": 441,
+      "frames": 1
+    }
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "sceneIds": [
+      "global",
+      "domestic",
+      "all-voice-scenes"
+    ],
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "status": "local-verified",
+    "selection": "selected",
+    "reusedFrom": "../daily-ai-news-2026-10-24/assets/carefree.mp3",
+    "licenseEvidence": "https://incompetech.com/music/royalty-free/faq.html#credit",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "audioReview": "本阶段只核验哈希、时长和解码；完整审听、循环接缝及人声避让待实际混音。",
+    "preparedAt": "2026-10-27T12:28:34+08:00",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "205.139625"
+      }
+    }
+  },
+  {
+    "file": "graphics/terra-invoice-flow.svg",
+    "sha256": "c08e4f7650dc5b94c317bdbc6a572ad20eda6f6a792865e40dbf7451aa88f965",
+    "bytes": 1439,
+    "sourcePage": "https://openai.com/index/introducing-gpt-6-1-terra/",
+    "sceneIds": [
+      "terra"
+    ],
+    "rights": "本栏目代码绘制的解释图；所据事实保留原始来源，不伪装官方界面或实测。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "纸白、珊瑚色、中文流程说明，原生 SVG，无 AI 生图。",
+    "preparedAt": "2026-10-27T12:32:32+08:00"
+  },
+  {
+    "file": "graphics/phronix-reuse-flow.svg",
+    "sha256": "069b2ca03b26f30fb40be6e93c1a2a250420d1786279a55e756a311c675076ea",
+    "bytes": 1774,
+    "sourcePage": "https://arxiv.org/abs/2610.31789",
+    "sceneIds": [
+      "phronix"
+    ],
+    "rights": "本栏目代码绘制的解释图；所据事实保留原始来源，不伪装官方界面或实测。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "纸白、珊瑚色、中文流程说明，原生 SVG，无 AI 生图。",
+    "preparedAt": "2026-10-27T12:32:32+08:00"
+  },
+  {
+    "file": "graphics/oracle-agent-flow.svg",
+    "sha256": "ba285821ee8506f288bf830ce9e3f33a678cbaaeeb8b54eca15b64ff2ac34776",
+    "bytes": 1769,
+    "sourcePage": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+    "sceneIds": [
+      "oracle"
+    ],
+    "rights": "本栏目代码绘制的解释图；所据事实保留原始来源，不伪装官方界面或实测。",
+    "status": "local-verified",
+    "selection": "selected",
+    "adaptation": "纸白、珊瑚色、中文流程说明，原生 SVG，无 AI 生图。",
+    "preparedAt": "2026-10-27T12:32:32+08:00"
+  },
+  {
+    "file": "assets/terra-model-detail.png",
+    "derivedFrom": "assets/terra-model-page.png",
+    "parentSha256": "61b573eada3792b5892afbb1dabeea5deb6134c21dce7fb9e825c94ccb3705ed",
+    "sha256": "30e402a9d55cef3127b0cffa6938c846e1e869cc89851abba0e40cb18602fe73",
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "adaptation": "原始截图主体区域裁切；未改原页面文字",
+    "crop": [
+      245,
+      140,
+      1250,
+      650
+    ],
+    "status": "local-verified",
+    "selection": "selected",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。"
+  },
+  {
+    "file": "assets/terra-pricing-detail.png",
+    "derivedFrom": "assets/terra-pricing-page.png",
+    "parentSha256": "569dc849d3636481ee36bbc35d783ac4d9d52ea45bacba625c76276b0ce89457",
+    "sha256": "cac8a06e33516889e5d96870e2579f7b76357e588a30bad5ef8f18a052826a78",
+    "sourcePage": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "adaptation": "原始截图主体区域裁切；未改原页面文字",
+    "crop": [
+      460,
+      210,
+      1250,
+      365
+    ],
+    "status": "local-verified",
+    "selection": "selected",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。"
+  },
+  {
+    "file": "assets/mistral-status-detail.png",
+    "derivedFrom": "assets/mistral-release-status.png",
+    "parentSha256": "7463f209600fdb3679d71ea08044d59e479d9eb3ca5f032ca8154f0277b20c81",
+    "sha256": "3776f17b55825ec43f7acfc75189b7f9deb50e4c3194e8e846300c2eb90ec14a",
+    "sourcePage": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+    "adaptation": "原始截图主体区域裁切；未改原页面文字",
+    "crop": [
+      330,
+      145,
+      1000,
+      350
+    ],
+    "status": "local-verified",
+    "selection": "selected",
+    "rights": "官方公开材料，用于相关报道引用，保留原作者/页面出处；无通用再许可声明。"
+  },
+  {
+    "kind": "video-candidate",
+    "url": "https://x.com/reatools/status/2112574822584918075",
+    "discoveredAt": "https://rea.tools/showcase/",
+    "status": "link-only-not-downloaded",
+    "use": "Official RL-environment demo. Use only if the eventual narration discusses that feature; current REA narration focuses on software analysis, so do not insert unrelated RL footage.",
+    "clipIn": null,
+    "clipOut": null
+  },
+  {
+    "kind": "interactive-candidate",
+    "url": "https://ml4-blog-widgets.netlify.app/document-search/?iframe",
+    "discoveredAt": "https://mistral.ai/news/mistral-large-4/",
+    "status": "not-captured",
+    "use": "Official document-search demo candidate; not required for release-status narration."
+  },
+  {
+    "file": "assets/terra-official-launch-1080p.mp4",
+    "sourcePage": "https://x.com/OpenAI/status/2114780711664398349",
+    "url": "https://x.com/OpenAI/status/2114780711664398349",
+    "author": "OpenAI",
+    "fetchedAt": "2026-10-27T09:29:37.845302+00:00",
+    "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e",
+    "bytes": 13810288,
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "duration": 31.509333,
+    "kind": "official-video",
+    "status": "local-verified",
+    "selection": "selected-for-terra-launch",
+    "sourceRange": [
+      9,
+      22.3
+    ],
+    "use": "Terra 头条：从照片理解到 Blender 3D 模型的官方演示；不替代发票示意，不声称本栏目实测。原片注明实际速度、部分操作省略。",
+    "rights": "OpenAI 官方版权材料，报道解说中引用必要短片段并署名；不声称获得全片再分发或一般商业素材许可。",
+    "adaptation": "截取 9.0–22.3 秒，保留画幅与实际播放速度，静音，使用本期原口播和 BGM。"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "video": "render/daily-ai-news-2026-10-27-r2.mp4",
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "cover": "render/cover-bili-safe.png",
+  "coverSha256": "88c9f7d1dfe4776ddef3ceb1fa5d6a43a2dc491fec8415469e963e5e8862ade4",
+  "coverSource": "render/cover.png",
+  "coverMethod": "将 1920x1080 原封面等比缩小至 1440x810，居中放入纸色 1440x1080 画布。",
+  "coverPreview": "4:3 和 16:9 页面预览已目视检查",
+  "title": "GPT-6.1 Terra 发布：看图、操作电脑，标准接口单价减半｜每日 AI",
+  "category": "人工智能",
+  "declaration": "含AI生成内容",
+  "tags": [
+    "AI资讯",
+    "OpenAI",
+    "人工智能",
+    "大模型",
+    "Agent"
+  ],
+  "upload": "页面显示上传完成",
+  "form": "已填写并检查",
+  "submitted": false,
+  "status": "awaiting-human-submit"
+}

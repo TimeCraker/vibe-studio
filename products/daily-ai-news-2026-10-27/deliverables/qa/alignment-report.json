@@ -1,0 +1,11 @@
+{
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "referenceVideoSha256": "b195f82caa116bbfbb6b545d228e434d388fd9ffc4ee4e649f8aff0d80cd5431",
+  "method": "对新版和保留首版的完整 AAC 流做 SHA256 比较；相同音频及未变的实际 ASR 时间线证明本轮未更改声音/字幕时钟，不是主观审听。",
+  "encodedAudioIdentical": true,
+  "encodedAudioHash": "SHA256=e2a974f9b4489a3e6a0466013ba66eada286c9ac7e5c450402c5bc06beb4e4d8",
+  "cueCount": 98,
+  "timelineSha256": "22d450d51e1b5745dbcfef0af76c7988cb78b875777083411cc52181d4176d5d",
+  "captionsSha256": "3c5786dc7d222565f38aadc5fcfe371a2950d244141d344b42949d552788676e",
+  "humanListening": "pending"
+}

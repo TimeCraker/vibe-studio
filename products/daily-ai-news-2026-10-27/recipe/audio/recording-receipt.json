@@ -1,0 +1,11 @@
+{
+  "receivedAt": "2026-10-27T14:33:13+08:00",
+  "file": "audio/source/narration-original.mp3",
+  "sourcePath": "C:\\Users\\TimeCraker\\Downloads\\标准录音 37..mp3",
+  "sha256": "58e0315ac1069d55156af9d0a9a4ff58ec3707dc3e0dea597d977d1c174c8fa1",
+  "bytes": 10457418,
+  "duration": 261.43545,
+  "voice": "human",
+  "speedChanged": false,
+  "review": "pending-asr-and-comparison"
+}

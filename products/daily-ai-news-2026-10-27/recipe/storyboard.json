@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "audience": "关注 AI 模型和实际用途的普通观众与独立开发者",
+  "goal": "说清本期模型发布、科研主张、经验复用研究与两条简讯",
+  "profile": "data",
+  "claims": [
+    {
+      "id": "ranking",
+      "text": "当次读取指定入口的全球及国内 ECI TOP15，精确值来自此次上游快照；无分不补分。",
+      "status": "verified",
+      "source": {
+        "path": "ranking.json",
+        "locator": "global, domestic, queriedAt, sourceGeneratedAt; browser observations in evidence/browser-observations.md",
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "terra-release",
+      "text": "OpenAI 官方 10/26 更新日志公布 GPT-6.1 Terra，发布页说明其视觉理解、电脑操作、标准 API 价格和可用性；减半比较限相较 GPT-5.6 Terra 的标准输入/输出单价。",
+      "status": "verified",
+      "source": {
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+        "locator": "From visual understanding to action; Pricing and availability. Release date cross-check: developers.openai.com/api/docs/changelog Oct 26.",
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "science-announcement",
+      "text": "OpenAI 10/26 公布内部模型的数学/计算机科学/物理研究主张及外部学者合作安排，部分材料公开。仅核实公告与材料存在，未独立验证证明。",
+      "status": "verified",
+      "source": {
+        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+        "locator": "Opening, release strategies, The Exponential Time Hypothesis is false; official openai/math/lean/docs/378.md scope.",
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "phronix-study",
+      "text": "Phronix 预印本报告从执行中保存、验证与复用能力；测试含 30 道 SWE-bench Lite 任务及科研流程，区分冷/暖启动。表述限作者研究报告，不声称普遍推广或独立复现。",
+      "status": "verified",
+      "source": {
+        "url": "https://arxiv.org/html/2610.31789v1",
+        "locator": "IV; V-A3 Workloads; V-A4 Run Protocol; V-A5 Metrics; V-B and V-D. Submitted 22 Oct 2026.",
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "mistral-status",
+      "text": "查询时官方 HF 模型页仍为 Upcoming release，Current ETA October 31；公开 API 预览已在 10/6 公告。",
+      "status": "verified",
+      "source": {
+        "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+        "locator": "Upcoming release; Expected release; cross-check mistral.ai/news/mistral-large-4 Try it today.",
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "oracle-platform",
+      "text": "Oracle 当地 10/26 公布面向 Fusion Cloud 实施的智能体平台，包含需求、设计、配置、测试等分工；不保证每个客户的实际效果。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-agentic-ai-platform-to-accelerate-implementation-of-oracle-fusion-cloud-applications-2026-10-26/",
+        "locator": "An agentic platform for faster implementation, specialized agents list.",
+        "checkedAt": "2026-10-27"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "global",
+      "title": "全球 AI 模型综合能力 TOP15",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期榜单与官标，只配 BGM",
+      "subject": "全球 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国产 AI 模型综合能力 TOP15",
+      "start": 7,
+      "end": 14,
+      "purpose": "相同网格、说明与数据查询时间",
+      "subject": "国内 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "start": 14,
+      "end": 33.36666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "今日 AI 资讯",
+      "claimIds": [
+        "terra-release",
+        "science-announcement",
+        "phronix-study",
+        "mistral-status",
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "terra-launch",
+      "title": "OpenAI 发布 GPT-6.1 Terra",
+      "start": 33.36666666666667,
+      "end": 46.666666666666664,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "OpenAI 发布 GPT-6.1 Terra",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-invoice",
+      "title": "看懂发票，再录入财务软件",
+      "start": 46.666666666666664,
+      "end": 60.6,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "看懂发票，再录入财务软件",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-price",
+      "title": "标准接口单价降至上一代的一半",
+      "start": 60.6,
+      "end": 68.95,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "标准接口单价降至上一代的一半",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "terra-access",
+      "title": "ChatGPT Work、Codex 与 API 已可用",
+      "start": 68.95,
+      "end": 82.66666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "ChatGPT Work、Codex 与 API 已可用",
+      "claimIds": [
+        "terra-release"
+      ]
+    },
+    {
+      "id": "science-news",
+      "title": "OpenAI 公布三个方向的科研结果",
+      "start": 82.66666666666667,
+      "end": 93.88333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "OpenAI 公布三个方向的科研结果",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-eth",
+      "title": "一项关于计算难度的研究主张",
+      "start": 93.88333333333334,
+      "end": 112.68333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "一项关于计算难度的研究主张",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-limit",
+      "title": "理论结果，怎样变成可用算法？",
+      "start": 112.68333333333334,
+      "end": 122.35,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "理论结果，怎样变成可用算法？",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "science-review",
+      "title": "公开研究材料，邀请外部学者核验",
+      "start": 122.35,
+      "end": 137.9,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "公开研究材料，邀请外部学者核验",
+      "claimIds": [
+        "science-announcement"
+      ]
+    },
+    {
+      "id": "phronix-question",
+      "title": "Phronix：让 AI 积累做事经验",
+      "start": 137.9,
+      "end": 149.56666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "Phronix：让 AI 积累做事经验",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-method",
+      "title": "把执行经验整理成可复用方法",
+      "start": 149.56666666666666,
+      "end": 170.86666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "把执行经验整理成可复用方法",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-test",
+      "title": "在重复任务中测试经验复用",
+      "start": 170.86666666666667,
+      "end": 185.26666666666668,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "在重复任务中测试经验复用",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "phronix-limit",
+      "title": "复用已有经验，不代表解决所有新问题",
+      "start": 185.26666666666668,
+      "end": 198.83333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "复用已有经验，不代表解决所有新问题",
+      "claimIds": [
+        "phronix-study"
+      ]
+    },
+    {
+      "id": "mistral-status",
+      "title": "Mistral Large 4 权重尚待发布",
+      "start": 198.83333333333334,
+      "end": 213.06666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "Mistral Large 4 权重尚待发布",
+      "claimIds": [
+        "mistral-status"
+      ]
+    },
+    {
+      "id": "mistral-date",
+      "title": "完整模型文件预计 10 月 31 日开放",
+      "start": 213.06666666666666,
+      "end": 225.91666666666666,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "完整模型文件预计 10 月 31 日开放",
+      "claimIds": [
+        "mistral-status"
+      ]
+    },
+    {
+      "id": "oracle-news",
+      "title": "甲骨文公布企业软件部署智能体平台",
+      "start": 225.91666666666666,
+      "end": 238.18333333333334,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "甲骨文公布企业软件部署智能体平台",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "oracle-method",
+      "title": "需求、设计、配置与测试分工",
+      "start": 238.18333333333334,
+      "end": 251.46666666666667,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "需求、设计、配置与测试分工",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "oracle-use",
+      "title": "面向部署 Fusion 云应用的团队",
+      "start": 251.46666666666667,
+      "end": 267.78333333333336,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "面向部署 Fusion 云应用的团队",
+      "claimIds": [
+        "oracle-platform"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "我们下期再见",
+      "start": 267.78333333333336,
+      "end": 272.75,
+      "purpose": "按真实词窗口和语义换镜头，原图与中文解释配合",
+      "subject": "我们下期再见",
+      "claimIds": []
+    }
+  ],
+  "review": {
+    "status": "pending",
+    "notes": "根据本期真人录音生成，程序与 ASR 核对不代表人工视听接受。"
+  }
+}

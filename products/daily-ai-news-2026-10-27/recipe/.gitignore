@@ -1,0 +1,10 @@
+# Downloaded evidence stays with the local production inputs and future archive.
+evidence/*.html
+evidence/models-upstream.json
+assets/*
+!assets/sources.json
+audio/*
+!audio/*.md
+__pycache__/
+qa/*.png
+qa/*.jpg

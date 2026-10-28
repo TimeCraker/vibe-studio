@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "video": "render/daily-ai-news-2026-10-27.mp4",
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "reviewer": "Agent: 修订版实际抽帧核对；未声称连续播放或人工审听",
+  "inspection": {
+    "visual": [
+      {
+        "start": 33.6,
+        "end": 33.616667
+      },
+      {
+        "start": 37.5,
+        "end": 37.516667
+      },
+      {
+        "start": 40,
+        "end": 40.016667
+      },
+      {
+        "start": 43,
+        "end": 43.016667
+      },
+      {
+        "start": 45.816667,
+        "end": 45.833334
+      },
+      {
+        "start": 46.7,
+        "end": 46.716667
+      }
+    ],
+    "audio": []
+  },
+  "checks": [
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 33.6,
+      "end": 33.616667,
+      "note": "已查看修订版实际 MP4 抽帧：官方视频主体/结果、原声字幕和来源说明不互相遮挡；接续发票示意保留清楚标注。不代表连续观看。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 37.5,
+      "end": 37.516667,
+      "note": "已查看修订版实际 MP4 抽帧：官方视频主体/结果、原声字幕和来源说明不互相遮挡；接续发票示意保留清楚标注。不代表连续观看。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 40,
+      "end": 40.016667,
+      "note": "已查看修订版实际 MP4 抽帧：官方视频主体/结果、原声字幕和来源说明不互相遮挡；接续发票示意保留清楚标注。不代表连续观看。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 43,
+      "end": 43.016667,
+      "note": "已查看修订版实际 MP4 抽帧：官方视频主体/结果、原声字幕和来源说明不互相遮挡；接续发票示意保留清楚标注。不代表连续观看。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 45.816667,
+      "end": 45.833334,
+      "note": "已查看修订版实际 MP4 抽帧：官方视频主体/结果、原声字幕和来源说明不互相遮挡；接续发票示意保留清楚标注。不代表连续观看。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 46.7,
+      "end": 46.716667,
+      "note": "已查看修订版实际 MP4 抽帧：官方视频主体/结果、原声字幕和来源说明不互相遮挡；接续发票示意保留清楚标注。不代表连续观看。"
+    },
+    {
+      "kind": "audio",
+      "status": "unreviewed",
+      "note": "完整主观视听和内容接受留待用户。声音一致性另见 alignment-report.json，技术检查不代替审听。"
+    },
+    {
+      "kind": "sync",
+      "status": "unreviewed",
+      "note": "完整主观视听和内容接受留待用户。声音一致性另见 alignment-report.json，技术检查不代替审听。"
+    },
+    {
+      "kind": "story",
+      "status": "unreviewed",
+      "note": "完整主观视听和内容接受留待用户。声音一致性另见 alignment-report.json，技术检查不代替审听。"
+    },
+    {
+      "kind": "facts",
+      "status": "unreviewed",
+      "note": "完整主观视听和内容接受留待用户。声音一致性另见 alignment-report.json，技术检查不代替审听。"
+    }
+  ]
+}

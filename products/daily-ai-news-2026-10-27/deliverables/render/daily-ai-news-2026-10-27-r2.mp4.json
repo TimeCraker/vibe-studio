@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "compositionId": "DailyAI20261027",
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "seconds": 272.75,
+  "renderedFrameRange": [
+    0,
+    16364
+  ],
+  "fullRender": true,
+  "partialRender": false,
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "inputs": [
+    {
+      "path": "timeline.json",
+      "sha256": "22d450d51e1b5745dbcfef0af76c7988cb78b875777083411cc52181d4176d5d"
+    },
+    {
+      "path": "ranking.json",
+      "sha256": "98560c1751cf0b6fabf1a54448764385ad7ee811d2e1e255dc1acb64767694cb"
+    },
+    {
+      "path": "audio/mix.wav",
+      "sha256": "ef8b7a3b41748e36cebc41f70d85e89a98fba53aade9cafe566e4825e43b6b89"
+    },
+    {
+      "path": "media-plan.json",
+      "sha256": "8d0ff7fe3c56c6dfd4fc23c2e60595648190d643de1ed7169930322941c0c43e"
+    },
+    {
+      "path": "assets/sources.json",
+      "sha256": "656434932b45886054c3208b0bc8901184cf7bad4530960e98b75228924202fe"
+    },
+    {
+      "path": "assets/terra-official-launch-1080p.mp4",
+      "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-official-launch-1080p.mp4",
+      "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e"
+    },
+    {
+      "path": "remotion-app/src/Edition.tsx",
+      "sha256": "248b49d2ff779f7c872de8333ac0a8798f7eb474b70f09afef2302ff4a5bf8af"
+    },
+    {
+      "path": "remotion-app/src/Design.tsx",
+      "sha256": "6c4b09dd0eb49bdc2a375844e0d0838d4955e7f473a85d63e08f635dba56066c"
+    },
+    {
+      "path": "remotion-app/src/Scenes.tsx",
+      "sha256": "98614ea4406b0626aba10fdc5b472eb6152d1046fcf9d03e4f358f48083e6a52"
+    }
+  ],
+  "humanReview": "pending",
+  "browserErrors": []
+}

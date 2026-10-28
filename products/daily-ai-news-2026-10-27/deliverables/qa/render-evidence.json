@@ -1,0 +1,162 @@
+{
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "kind": "修订版实际 MP4 抽帧；不代表连续观看",
+  "frames": [
+    {
+      "scene": "global",
+      "videoTime": 6.15,
+      "file": "qa/final-frames/global.png",
+      "sha256": "fee9624b6bb1fdf0e8f9c3a9a0ab5864639b5989d8cb6efb3648ea4ec543f565"
+    },
+    {
+      "scene": "domestic",
+      "videoTime": 13.15,
+      "file": "qa/final-frames/domestic.png",
+      "sha256": "c2c4d8299a4dbec86f1d04999e0659dfa4aa413ad65c3a783a0b4224b8955498"
+    },
+    {
+      "scene": "overview",
+      "videoTime": 32.516667,
+      "file": "qa/final-frames/overview.png",
+      "sha256": "23928d44cce01666730091720c65f85992d76a6d1e8bf18323e5f76c98961684"
+    },
+    {
+      "scene": "terra-launch",
+      "videoTime": 45.816667,
+      "file": "qa/final-frames/terra-launch.png",
+      "sha256": "4dac0b4093a4cdc90cd40179bff2ff0555819e3737a5c4f3f3275652cb856d9f"
+    },
+    {
+      "scene": "terra-invoice",
+      "videoTime": 59.75,
+      "file": "qa/final-frames/terra-invoice.png",
+      "sha256": "c218acee253b783870a887dc206a2e21ecde9dda7696f68d19b6a0b122a281cd"
+    },
+    {
+      "scene": "terra-price",
+      "videoTime": 68.1,
+      "file": "qa/final-frames/terra-price.png",
+      "sha256": "847015df41dc4c47b44612b7e7912be2dca746d8a3697aa11a1fed6ad76c8eb0"
+    },
+    {
+      "scene": "terra-access",
+      "videoTime": 81.816667,
+      "file": "qa/final-frames/terra-access.png",
+      "sha256": "6c8703bf92e56c5245a6bdea97da8b519756bd33af2b1791d85c25b991a5212c"
+    },
+    {
+      "scene": "science-news",
+      "videoTime": 93.033333,
+      "file": "qa/final-frames/science-news.png",
+      "sha256": "9f9cd31f2f5361f4cedaddbf69950f3a35494bf396cc61cb14d1a3de89854a2a"
+    },
+    {
+      "scene": "science-eth",
+      "videoTime": 111.833333,
+      "file": "qa/final-frames/science-eth.png",
+      "sha256": "ed03f0521ede2dcf8909a400dda6f7568bd37c4ec11827f5b66efcb984b2493c"
+    },
+    {
+      "scene": "science-limit",
+      "videoTime": 121.5,
+      "file": "qa/final-frames/science-limit.png",
+      "sha256": "582cbeea9d043cfe6051bbed0672a5dc435d8f3a9f7fdd15d4b7cb7eeb9384b4"
+    },
+    {
+      "scene": "science-review",
+      "videoTime": 137.05,
+      "file": "qa/final-frames/science-review.png",
+      "sha256": "336c55a94059e589a37fa21f677074cd09a9b3efb8b52eb6d2847887741758b6"
+    },
+    {
+      "scene": "phronix-question",
+      "videoTime": 148.716667,
+      "file": "qa/final-frames/phronix-question.png",
+      "sha256": "3fc3b417d9e01a04bec74aa698fdc0eb806ded642b5a5910289431af13202d09"
+    },
+    {
+      "scene": "phronix-method",
+      "videoTime": 170.016667,
+      "file": "qa/final-frames/phronix-method.png",
+      "sha256": "732ffdbd5237d4995cfbcd1738e08cafd0bdfaaeaca061334873e953326da3d7"
+    },
+    {
+      "scene": "phronix-test",
+      "videoTime": 184.416667,
+      "file": "qa/final-frames/phronix-test.png",
+      "sha256": "ae8a7821bb0fc4e1f1187c39c2f2d5a08faf9704157378e90ba1564f1eb0de18"
+    },
+    {
+      "scene": "phronix-limit",
+      "videoTime": 197.983333,
+      "file": "qa/final-frames/phronix-limit.png",
+      "sha256": "5b3aaf08d7c536e8725c0b80b0436a0ab56a247cfda6c3e997842809aa2b3162"
+    },
+    {
+      "scene": "mistral-status",
+      "videoTime": 212.216667,
+      "file": "qa/final-frames/mistral-status.png",
+      "sha256": "24ee1f5afafd34b368bb0a219ef85502c4d94a2fc0cdb94755d7e5d9b4bbfba4"
+    },
+    {
+      "scene": "mistral-date",
+      "videoTime": 225.066667,
+      "file": "qa/final-frames/mistral-date.png",
+      "sha256": "1798fa09a6ca8ba8729fcfac96ec9838155b6efda3b49e9323f71d4a56449e54"
+    },
+    {
+      "scene": "oracle-news",
+      "videoTime": 237.333333,
+      "file": "qa/final-frames/oracle-news.png",
+      "sha256": "c1a1e802ad8b3cac52b6c88d97c077ffa4989de595e5f47529373fa0ecb80ba0"
+    },
+    {
+      "scene": "oracle-method",
+      "videoTime": 250.616667,
+      "file": "qa/final-frames/oracle-method.png",
+      "sha256": "2ae2cabd7744f22c2f6f911f7cffabd0520b7253ab284529575f513640cfcc45"
+    },
+    {
+      "scene": "oracle-use",
+      "videoTime": 266.933333,
+      "file": "qa/final-frames/oracle-use.png",
+      "sha256": "8ada58d7166eb77b02b7e183e3f950b4f5eed16889b9450bf06a522c225d3040"
+    },
+    {
+      "scene": "closing",
+      "videoTime": 271.9,
+      "file": "qa/final-frames/closing.png",
+      "sha256": "9b03ca83bfa566fe82d705bad4236d76423eb9e383e83f7c268c0a929ab0bec8"
+    },
+    {
+      "scene": "footage-boundary",
+      "videoTime": 33.6,
+      "file": "qa/final-frames/footage-33-6.png",
+      "sha256": "e0511d7fa03da48e49d0d31d19aee3d7ae6d27bbe4ae18c1a629728fe6d7c60a"
+    },
+    {
+      "scene": "footage-boundary",
+      "videoTime": 37.5,
+      "file": "qa/final-frames/footage-37-5.png",
+      "sha256": "c40968750b565aa2fbc49ff77d30360dc847d08070f6ea383069bfb921f3703c"
+    },
+    {
+      "scene": "footage-boundary",
+      "videoTime": 40,
+      "file": "qa/final-frames/footage-40.png",
+      "sha256": "55b6c635a94849d30a772d7af0df1fbbd82bd871aa6108a33cb920586a77c7f2"
+    },
+    {
+      "scene": "footage-boundary",
+      "videoTime": 43,
+      "file": "qa/final-frames/footage-43.png",
+      "sha256": "63edc4464e19dc38af8da6a221e24a2365914559f628a2cab5bad467c66a1a4f"
+    },
+    {
+      "scene": "footage-boundary",
+      "videoTime": 46.7,
+      "file": "qa/final-frames/footage-46-7.png",
+      "sha256": "5475ccb3e1821bf91c00b1bbbc5d580e4f73697e90e9b0c0d36ead38844658ab"
+    }
+  ]
+}

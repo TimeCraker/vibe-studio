@@ -1,0 +1,25 @@
+{
+  "video": "render/daily-ai-news-2026-10-27-r2.mp4",
+  "videoSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "bili": {
+    "status": "user-reported-submitted",
+    "platformResult": "not-independently-checked"
+  },
+  "douyin": {
+    "status": "uploaded-form-ready-awaiting-human-publish",
+    "coverHorizontal": "render/cover-bili-safe.png",
+    "coverVertical": "render/cover-vertical-34.png",
+    "aiDeclaration": "内容由AI生成",
+    "description": "confirmed intact including source links and music credit",
+    "topics": "none; cleared because automated insertion interrupted source URL"
+  },
+  "xhs": {
+    "status": "uploaded-form-ready-awaiting-human-publish",
+    "cover": "render/cover-vertical-34.png",
+    "coverRatio": "3:4",
+    "aiDeclaration": "笔记含AI合成内容",
+    "description": "confirmed intact including source links and music credit",
+    "topics": "none; cleared because automated insertion interrupted source text"
+  },
+  "publishedByAutomation": false
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "source": "render/daily-ai-news-2026-10-27.mp4",
+  "sourceSha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f",
+  "videoSha256": "f6dc53f866769480614e0bc760e92576b718b9f414cb518e774bfebf34d2f227",
+  "fullRender": false,
+  "partialRender": true,
+  "sourceRange": [
+    33.36666666666667,
+    46.666666666666664
+  ],
+  "seconds": 13.3,
+  "fps": 60,
+  "humanReview": "pending"
+}

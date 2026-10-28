@@ -1,0 +1,1418 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-27T10:26:21.300Z",
+  "id": "daily-ai-news-2026-10-27-r6",
+  "line": "b",
+  "scope": "source-inputs-and-deliverables",
+  "reproducibility": "inputs-archived-rerender-not-certified",
+  "humanReview": "pending",
+  "files": [
+    {
+      "path": ".gitignore",
+      "stored": "recipe/.gitignore",
+      "kind": "source",
+      "bytes": 208,
+      "sha256": "aaa6af2432891a4b4250ffdf386f534c6ffabbab9710c6c10519353e2a7c54a7"
+    },
+    {
+      "path": "assets/carefree.mp3",
+      "stored": "media/assets/carefree.mp3",
+      "kind": "media",
+      "bytes": 6566713,
+      "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311"
+    },
+    {
+      "path": "assets/claude.png",
+      "stored": "media/assets/claude.png",
+      "kind": "media",
+      "bytes": 1198,
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
+    },
+    {
+      "path": "assets/deepseek.ico",
+      "stored": "media/assets/deepseek.ico",
+      "kind": "media",
+      "bytes": 209762,
+      "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321"
+    },
+    {
+      "path": "assets/glm.svg",
+      "stored": "recipe/assets/glm.svg",
+      "kind": "source",
+      "bytes": 11037,
+      "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7"
+    },
+    {
+      "path": "assets/google.png",
+      "stored": "media/assets/google.png",
+      "kind": "media",
+      "bytes": 61823,
+      "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1"
+    },
+    {
+      "path": "assets/kimi.png",
+      "stored": "media/assets/kimi.png",
+      "kind": "media",
+      "bytes": 7454,
+      "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273"
+    },
+    {
+      "path": "assets/meta.svg",
+      "stored": "recipe/assets/meta.svg",
+      "kind": "source",
+      "bytes": 8912,
+      "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e"
+    },
+    {
+      "path": "assets/mistral-hero.jpg",
+      "stored": "media/assets/mistral-hero.jpg",
+      "kind": "media",
+      "bytes": 398259,
+      "sha256": "157b2f82b51cec3d9e82024fef70c6a8ff0e4ed6d62604eda88c841ae4545e9a"
+    },
+    {
+      "path": "assets/mistral-large-4.svg",
+      "stored": "recipe/assets/mistral-large-4.svg",
+      "kind": "source",
+      "bytes": 11933,
+      "sha256": "2aa0cb250f7a5b6006839b753eeb6c652d633c1a4ee451ad7daf260e06a5ba79"
+    },
+    {
+      "path": "assets/mistral-release-status.png",
+      "stored": "media/assets/mistral-release-status.png",
+      "kind": "media",
+      "bytes": 46629,
+      "sha256": "7463f209600fdb3679d71ea08044d59e479d9eb3ca5f032ca8154f0277b20c81"
+    },
+    {
+      "path": "assets/mistral-status-detail.png",
+      "stored": "media/assets/mistral-status-detail.png",
+      "kind": "media",
+      "bytes": 92292,
+      "sha256": "3776f17b55825ec43f7acfc75189b7f9deb50e4c3194e8e846300c2eb90ec14a"
+    },
+    {
+      "path": "assets/openai-eth-paper-page1.png",
+      "stored": "media/assets/openai-eth-paper-page1.png",
+      "kind": "media",
+      "bytes": 212159,
+      "sha256": "42150362d833c082160b5cec8b267ec52e7a79d3d53b584a9e5240316fcd4b21"
+    },
+    {
+      "path": "assets/openai-eth-paper-title.png",
+      "stored": "media/assets/openai-eth-paper-title.png",
+      "kind": "media",
+      "bytes": 64321,
+      "sha256": "4fbab6f90096ca643b09862f39fd719f3f42bd3e42c7397e5726fb892a83d0fb"
+    },
+    {
+      "path": "assets/openai-eth-paper.pdf",
+      "stored": "media/assets/openai-eth-paper.pdf",
+      "kind": "media",
+      "bytes": 887884,
+      "sha256": "5b1612dc2eebb2cad5b4cbe62d1fed2982f01ab1908c26f70010a651487e8123"
+    },
+    {
+      "path": "assets/openai.svg",
+      "stored": "recipe/assets/openai.svg",
+      "kind": "source",
+      "bytes": 3273,
+      "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6"
+    },
+    {
+      "path": "assets/oracle-platform.jpg",
+      "stored": "media/assets/oracle-platform.jpg",
+      "kind": "media",
+      "bytes": 18213,
+      "sha256": "3b3a60b134821d78762c950e0f364c715120d3925ef2b35092037961bb6d268c"
+    },
+    {
+      "path": "assets/oracle-project-tracking.webp",
+      "stored": "media/assets/oracle-project-tracking.webp",
+      "kind": "media",
+      "bytes": 42796,
+      "sha256": "fc8bc4c34e6ed76c42e65906ebbc14c35b528276eeaf5c67eab9bc6d3e982379"
+    },
+    {
+      "path": "assets/oracle-starter-configuration.webp",
+      "stored": "media/assets/oracle-starter-configuration.webp",
+      "kind": "media",
+      "bytes": 24888,
+      "sha256": "3164a5799b3d63537299cff22b5989ba62a92f27d1f2a826094e0896b217a7b5"
+    },
+    {
+      "path": "assets/phronix-architecture.png",
+      "stored": "media/assets/phronix-architecture.png",
+      "kind": "media",
+      "bytes": 42771,
+      "sha256": "5fd8e2c68da98f5784611bd23cce3ca3ab95f0d3f1a757a582dfb31c5dbcdea9"
+    },
+    {
+      "path": "assets/phronix-architecture.svg",
+      "stored": "recipe/assets/phronix-architecture.svg",
+      "kind": "source",
+      "bytes": 33839,
+      "sha256": "a41a9b6d1eb64586dc4df180891c642ee45f1bbc6db37d911451af54e8d0fede"
+    },
+    {
+      "path": "assets/phronix-figure1.png",
+      "stored": "media/assets/phronix-figure1.png",
+      "kind": "media",
+      "bytes": 108982,
+      "sha256": "95137173da80ce5baf00d779bb3642fc0566e42c0be3df1c338e51d12ad242c8"
+    },
+    {
+      "path": "assets/phronix-paper-page1.png",
+      "stored": "media/assets/phronix-paper-page1.png",
+      "kind": "media",
+      "bytes": 509070,
+      "sha256": "0da37098f4344f31d90167c6052893a5f1a462ec89be050db16db674724bdc1e"
+    },
+    {
+      "path": "assets/phronix-paper-page3.png",
+      "stored": "media/assets/phronix-paper-page3.png",
+      "kind": "media",
+      "bytes": 458430,
+      "sha256": "f9426543aeb75584952d27c7d7a34508059c49c78edd81ae76fe8599d5ea527a"
+    },
+    {
+      "path": "assets/phronix-paper-title.png",
+      "stored": "media/assets/phronix-paper-title.png",
+      "kind": "media",
+      "bytes": 64799,
+      "sha256": "09d52c8a111261a8dd68ea1953d2a777483b637268824dd20f1051680e5391bb"
+    },
+    {
+      "path": "assets/phronix-paper.pdf",
+      "stored": "media/assets/phronix-paper.pdf",
+      "kind": "media",
+      "bytes": 313854,
+      "sha256": "dbb69f20650ce01af60b68ff48059b62cf7ef8fb30c9134d76aeb49a877c7c20"
+    },
+    {
+      "path": "assets/qwen.png",
+      "stored": "media/assets/qwen.png",
+      "kind": "media",
+      "bytes": 15465,
+      "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3"
+    },
+    {
+      "path": "assets/rea-hopper.png",
+      "stored": "media/assets/rea-hopper.png",
+      "kind": "media",
+      "bytes": 1355107,
+      "sha256": "144e207c9ca57f61a311210a0d679c55d36f6614cbf4d15b7b280a268389aa1d"
+    },
+    {
+      "path": "assets/rea-investigation.svg",
+      "stored": "recipe/assets/rea-investigation.svg",
+      "kind": "source",
+      "bytes": 3552,
+      "sha256": "11c3bf39b8e17910d058bfeb1368bae0d97846b08c09dd5ca7a433fd6ee2d1e6"
+    },
+    {
+      "path": "assets/sources.json",
+      "stored": "recipe/assets/sources.json",
+      "kind": "source",
+      "bytes": 30744,
+      "sha256": "656434932b45886054c3208b0bc8901184cf7bad4530960e98b75228924202fe"
+    },
+    {
+      "path": "assets/terra-family-context-6s.mp4",
+      "stored": "media/assets/terra-family-context-6s.mp4",
+      "kind": "media",
+      "bytes": 170687,
+      "sha256": "78847b1bfee87011376c7188ccf99e42ad2c16cefec65de3292a5270fb7ff953"
+    },
+    {
+      "path": "assets/terra-model-detail.png",
+      "stored": "media/assets/terra-model-detail.png",
+      "kind": "media",
+      "bytes": 230702,
+      "sha256": "30e402a9d55cef3127b0cffa6938c846e1e869cc89851abba0e40cb18602fe73"
+    },
+    {
+      "path": "assets/terra-model-icon.png",
+      "stored": "media/assets/terra-model-icon.png",
+      "kind": "media",
+      "bytes": 10584,
+      "sha256": "16af77612c26d31d39308bbb5ee99c47d4fc45d953a170fbab4ae7472c5e37c3"
+    },
+    {
+      "path": "assets/terra-model-page.png",
+      "stored": "media/assets/terra-model-page.png",
+      "kind": "media",
+      "bytes": 85948,
+      "sha256": "61b573eada3792b5892afbb1dabeea5deb6134c21dce7fb9e825c94ccb3705ed"
+    },
+    {
+      "path": "assets/terra-official-chart.png",
+      "stored": "media/assets/terra-official-chart.png",
+      "kind": "media",
+      "bytes": 28801,
+      "sha256": "616c2f5c824811b00b14a2e42177b237573640537b4160f3da3db2436ca8aa96"
+    },
+    {
+      "path": "assets/terra-official-intro.gif",
+      "stored": "media/assets/terra-official-intro.gif",
+      "kind": "media",
+      "bytes": 9799246,
+      "sha256": "ff50c3dd47de7ea73da15bdc01d46cd6a79947e4016c535d94701aec3b04ed0d"
+    },
+    {
+      "path": "assets/terra-official-intro.mp4",
+      "stored": "media/assets/terra-official-intro.mp4",
+      "kind": "media",
+      "bytes": 3094337,
+      "sha256": "ea025b5ff0ce0a49f3ce02628baccb7b2cabc6cde41e81bacd2b772a3efe49e8"
+    },
+    {
+      "path": "assets/terra-official-launch-1080p.mp4",
+      "stored": "media/assets/terra-official-launch-1080p.mp4",
+      "kind": "media",
+      "bytes": 13810288,
+      "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e"
+    },
+    {
+      "path": "assets/terra-pricing-detail.png",
+      "stored": "media/assets/terra-pricing-detail.png",
+      "kind": "media",
+      "bytes": 42679,
+      "sha256": "cac8a06e33516889e5d96870e2579f7b76357e588a30bad5ef8f18a052826a78"
+    },
+    {
+      "path": "assets/terra-pricing-page.png",
+      "stored": "media/assets/terra-pricing-page.png",
+      "kind": "media",
+      "bytes": 81641,
+      "sha256": "569dc849d3636481ee36bbc35d783ac4d9d52ea45bacba625c76276b0ce89457"
+    },
+    {
+      "path": "audio/asr/raw-transcript.txt",
+      "stored": "recipe/audio/asr/raw-transcript.txt",
+      "kind": "source",
+      "bytes": 3754,
+      "sha256": "fffccc97d54e839bdb8cb458e8eaf61fecd2c446d4b47e1934ddad022d050912"
+    },
+    {
+      "path": "audio/asr/raw-words.json",
+      "stored": "recipe/audio/asr/raw-words.json",
+      "kind": "source",
+      "bytes": 154345,
+      "sha256": "bc8944fcb29d5e57d0daadda377430c44b497221d9e5309330edffdbeaa30743"
+    },
+    {
+      "path": "audio/asr/reviewed-transcript.txt",
+      "stored": "recipe/audio/asr/reviewed-transcript.txt",
+      "kind": "source",
+      "bytes": 4866,
+      "sha256": "f6537616227cb46902c071d953ab106f137a3cf5a094420d41acdb4a7d51b606"
+    },
+    {
+      "path": "audio/mix.wav",
+      "stored": "media/audio/mix.wav",
+      "kind": "media",
+      "bytes": 78552102,
+      "sha256": "ef8b7a3b41748e36cebc41f70d85e89a98fba53aade9cafe566e4825e43b6b89"
+    },
+    {
+      "path": "audio/mix.wav.json",
+      "stored": "recipe/audio/mix.wav.json",
+      "kind": "source",
+      "bytes": 2613,
+      "sha256": "fd360cceaaedbb2e0ede26b18d6d8489d497fe1328595a370790c6bb2e1ac10e"
+    },
+    {
+      "path": "audio/recording-receipt.json",
+      "stored": "recipe/audio/recording-receipt.json",
+      "kind": "source",
+      "bytes": 395,
+      "sha256": "9a870312f6e42ecb24ce2eacd4756ec79d1b235a3e92e365b8838d92ddfe3cd0"
+    },
+    {
+      "path": "audio/recording-review.json",
+      "stored": "recipe/audio/recording-review.json",
+      "kind": "source",
+      "bytes": 29554,
+      "sha256": "b79c295c1718dd74ac432c07c1cdca54ffbf742352acbcfcab8f25d26ead87e4"
+    },
+    {
+      "path": "audio/source/manuscript-received.md",
+      "stored": "recipe/audio/source/manuscript-received.md",
+      "kind": "source",
+      "bytes": 6437,
+      "sha256": "d3d08222a40ec8d6bfccb468df1d8ef26615b3737ad9e029b5f6729e7727c210"
+    },
+    {
+      "path": "audio/source/narration-asr.wav",
+      "stored": "media/audio/source/narration-asr.wav",
+      "kind": "media",
+      "bytes": 8352846,
+      "sha256": "7be4bee774a8c4747acd3bbd777503a51bcc078132da2226f3381fbaf62bb113"
+    },
+    {
+      "path": "audio/source/narration-decoded.wav",
+      "stored": "media/audio/source/narration-decoded.wav",
+      "kind": "media",
+      "bytes": 50116686,
+      "sha256": "c13a6b581036832cf5323bca86dad0e732123e72317b79dd546ffcc37b34ac26"
+    },
+    {
+      "path": "audio/source/narration-original.mp3",
+      "stored": "media/audio/source/narration-original.mp3",
+      "kind": "media",
+      "bytes": 10457418,
+      "sha256": "58e0315ac1069d55156af9d0a9a4ff58ec3707dc3e0dea597d977d1c174c8fa1"
+    },
+    {
+      "path": "audio/voice-clean.wav",
+      "stored": "media/audio/voice-clean.wav",
+      "kind": "media",
+      "bytes": 74289702,
+      "sha256": "97e370c9e8d987bcb783536e19825269ba39c5e451eb949b823e6e859fc5aaca"
+    },
+    {
+      "path": "audio/voice-clean.wav.json",
+      "stored": "recipe/audio/voice-clean.wav.json",
+      "kind": "source",
+      "bytes": 1703,
+      "sha256": "2a2403f6b257c5cb023d642ebc82343d9d8773748603a3c9c38ae2829e84bd79"
+    },
+    {
+      "path": "audio-voice.json",
+      "stored": "recipe/audio-voice.json",
+      "kind": "source",
+      "bytes": 407,
+      "sha256": "12f84ab3165887b46bb16f6a143d4a9cd51828b9a4ae6ffd1849924afb276671"
+    },
+    {
+      "path": "audio.json",
+      "stored": "recipe/audio.json",
+      "kind": "source",
+      "bytes": 980,
+      "sha256": "7bf3d6e8694441459c92cdc7238be37af0221eb23c7152fd6f8d3c07423cea4b"
+    },
+    {
+      "path": "brief.md",
+      "stored": "recipe/brief.md",
+      "kind": "source",
+      "bytes": 4555,
+      "sha256": "e5d5e585d7ae35e11354f9e349a74fb67ed241fa653a98d23e6fe09eef6a132f"
+    },
+    {
+      "path": "captions.cues.json",
+      "stored": "recipe/captions.cues.json",
+      "kind": "source",
+      "bytes": 11005,
+      "sha256": "b6d26008565ece8397fc736f57c13864ce6ad09756fdddf14c86f329e4f69797"
+    },
+    {
+      "path": "captions.srt",
+      "stored": "recipe/captions.srt",
+      "kind": "source",
+      "bytes": 7001,
+      "sha256": "3c5786dc7d222565f38aadc5fcfe371a2950d244141d344b42949d552788676e"
+    },
+    {
+      "path": "claims.json",
+      "stored": "recipe/claims.json",
+      "kind": "source",
+      "bytes": 3087,
+      "sha256": "4da7a8400c3980dfc1ff4ad3e7b0d66689013639358df5fa9d75a514c16080f0"
+    },
+    {
+      "path": "credits.md",
+      "stored": "recipe/credits.md",
+      "kind": "source",
+      "bytes": 2265,
+      "sha256": "92e4bd3ed762759e2706353bf54657bdae2075513b6b4ac147002a4047eb9392"
+    },
+    {
+      "path": "deliverables.json",
+      "stored": "recipe/deliverables.json",
+      "kind": "source",
+      "bytes": 1820,
+      "sha256": "80b4c91cdc25753cd0f62fb3f63a84a293e1533c374fd410d66c4d6e74706114"
+    },
+    {
+      "path": "edition.json",
+      "stored": "recipe/edition.json",
+      "kind": "source",
+      "bytes": 1167,
+      "sha256": "d86af612156e1c14398fe6d1cdaddf045b7a40acb53acd2485fe02adaa72b975"
+    },
+    {
+      "path": "evidence/browser-observations.md",
+      "stored": "recipe/evidence/browser-observations.md",
+      "kind": "source",
+      "bytes": 2113,
+      "sha256": "c2f744a4d6e44cff09d637c163bc08d736cc67a56591981e7c63f49fb7de536f"
+    },
+    {
+      "path": "evidence/mistral-announcement.html",
+      "stored": "recipe/evidence/mistral-announcement.html",
+      "kind": "source",
+      "bytes": 292895,
+      "sha256": "c6a4d0a4d40cb7143a0a7cf66c4ba715315f8449aae376166d82e404a7fdec9e"
+    },
+    {
+      "path": "evidence/mistral-docs.html",
+      "stored": "recipe/evidence/mistral-docs.html",
+      "kind": "source",
+      "bytes": 1293265,
+      "sha256": "e183cc043091bc4d28400c16e045e18784924dc5a5f9e147d4e939fd8f542ac0"
+    },
+    {
+      "path": "evidence/mistral-release-status.html",
+      "stored": "recipe/evidence/mistral-release-status.html",
+      "kind": "source",
+      "bytes": 79746,
+      "sha256": "f54bef15fd5dea6dcd9efef0e255bed15552d014a15e9814ee9b5258de9d8424"
+    },
+    {
+      "path": "evidence/models-upstream.json",
+      "stored": "recipe/evidence/models-upstream.json",
+      "kind": "source",
+      "bytes": 3058780,
+      "sha256": "1b8fa6074a34854f8f84de7f30461059bf77ffa4025088b011b046810fe0fea7"
+    },
+    {
+      "path": "evidence/openai-changelog.html",
+      "stored": "recipe/evidence/openai-changelog.html",
+      "kind": "source",
+      "bytes": 554445,
+      "sha256": "f6cb7fb6d52bf23f2f19a4123d8d6a52bceccaa072a5e85cf00857d91903b1a2"
+    },
+    {
+      "path": "evidence/openai-eth-scope.md",
+      "stored": "recipe/evidence/openai-eth-scope.md",
+      "kind": "source",
+      "bytes": 1090,
+      "sha256": "a2f7b390d6308997350b903be02c40a1227ebd2b9376982da528574500531f79"
+    },
+    {
+      "path": "evidence/oracle-announcement.html",
+      "stored": "recipe/evidence/oracle-announcement.html",
+      "kind": "source",
+      "bytes": 51429,
+      "sha256": "ab420a61d8cd49ffbc324c2ed83cf4c458ad3d4b6e7d91b94326e6259aba1465"
+    },
+    {
+      "path": "evidence/oracle-navigator.html",
+      "stored": "recipe/evidence/oracle-navigator.html",
+      "kind": "source",
+      "bytes": 52647,
+      "sha256": "d03e3328701230928e2c450c25b72d7ebd56b6b9dec2c113b2e01cd579d19d4b"
+    },
+    {
+      "path": "evidence/oracle-release-clip-search.html",
+      "stored": "recipe/evidence/oracle-release-clip-search.html",
+      "kind": "source",
+      "bytes": 53776,
+      "sha256": "66e0be7753dabd60e0b41ffa08fa5f0a8887a582becb3be3d4917e27ec586c06"
+    },
+    {
+      "path": "evidence/phronix-abstract.html",
+      "stored": "recipe/evidence/phronix-abstract.html",
+      "kind": "source",
+      "bytes": 43152,
+      "sha256": "e81adacb74b237a327b6ef85f0cb8ac106d5cf500df1e65b1597371e2db3e4aa"
+    },
+    {
+      "path": "evidence/phronix-paper.html",
+      "stored": "recipe/evidence/phronix-paper.html",
+      "kind": "source",
+      "bytes": 285491,
+      "sha256": "dc653978304997e7d533e33816cd68167297f18c44021643805577edeb557280"
+    },
+    {
+      "path": "evidence/rea-readme.md",
+      "stored": "recipe/evidence/rea-readme.md",
+      "kind": "source",
+      "bytes": 29405,
+      "sha256": "ff4c7366008e14251faee8aa9f516f4d4686e92e40c1800ae5ea7e4230d6d2ab"
+    },
+    {
+      "path": "evidence/source-notes.md",
+      "stored": "recipe/evidence/source-notes.md",
+      "kind": "source",
+      "bytes": 1983,
+      "sha256": "fccb32e766024e61f1b7fff3cbf5a531251f0aa9db5985fb89d90898c5540d2b"
+    },
+    {
+      "path": "evidence/terra-model.html",
+      "stored": "recipe/evidence/terra-model.html",
+      "kind": "source",
+      "bytes": 459063,
+      "sha256": "96092f83a0d7b475a18261b9f01178b671903093f95e98e4edb0139fb4d84a09"
+    },
+    {
+      "path": "exports/bili/captions.srt",
+      "stored": "recipe/exports/bili/captions.srt",
+      "kind": "source",
+      "bytes": 7001,
+      "sha256": "3c5786dc7d222565f38aadc5fcfe371a2950d244141d344b42949d552788676e"
+    },
+    {
+      "path": "exports/bili/form.json",
+      "stored": "recipe/exports/bili/form.json",
+      "kind": "source",
+      "bytes": 2434,
+      "sha256": "037d2952b0f39906c2224d835c2ef0ac9d291245111f6c94ea6d020456e4352b"
+    },
+    {
+      "path": "exports/bili/qc.json",
+      "stored": "recipe/exports/bili/qc.json",
+      "kind": "source",
+      "bytes": 73,
+      "sha256": "da56a9c0a90e8fe65c842b071b2cb29d788300c81e415538f3f7965973f56d9d"
+    },
+    {
+      "path": "exports/bili/render-spec.json",
+      "stored": "recipe/exports/bili/render-spec.json",
+      "kind": "source",
+      "bytes": 680,
+      "sha256": "372611e67b0106561e5e6fdfe24388bafa9dad62dc332b5882c79eaa6c2c7942"
+    },
+    {
+      "path": "exports/bili/timeline.json",
+      "stored": "recipe/exports/bili/timeline.json",
+      "kind": "source",
+      "bytes": 14776,
+      "sha256": "c1c1ddc9b5d440da3eb6f312e29b4e538b5aa3ef572bdef58fc522670f367914"
+    },
+    {
+      "path": "exports/douyin/captions.srt",
+      "stored": "recipe/exports/douyin/captions.srt",
+      "kind": "source",
+      "bytes": 7001,
+      "sha256": "3c5786dc7d222565f38aadc5fcfe371a2950d244141d344b42949d552788676e"
+    },
+    {
+      "path": "exports/douyin/form.json",
+      "stored": "recipe/exports/douyin/form.json",
+      "kind": "source",
+      "bytes": 1229,
+      "sha256": "280bc7cd7763b0529f2308a6c3ccdcaaafc8faef50e9135ecfbeec15a4de5b4f"
+    },
+    {
+      "path": "exports/douyin/qc.json",
+      "stored": "recipe/exports/douyin/qc.json",
+      "kind": "source",
+      "bytes": 73,
+      "sha256": "da56a9c0a90e8fe65c842b071b2cb29d788300c81e415538f3f7965973f56d9d"
+    },
+    {
+      "path": "exports/douyin/render-spec.json",
+      "stored": "recipe/exports/douyin/render-spec.json",
+      "kind": "source",
+      "bytes": 682,
+      "sha256": "591880320a884689023b74c77a0af97e0b5e2cb529210fd5fad89edd279c2ec7"
+    },
+    {
+      "path": "exports/douyin/timeline.json",
+      "stored": "recipe/exports/douyin/timeline.json",
+      "kind": "source",
+      "bytes": 14776,
+      "sha256": "c1c1ddc9b5d440da3eb6f312e29b4e538b5aa3ef572bdef58fc522670f367914"
+    },
+    {
+      "path": "exports/xhs/captions.srt",
+      "stored": "recipe/exports/xhs/captions.srt",
+      "kind": "source",
+      "bytes": 7001,
+      "sha256": "3c5786dc7d222565f38aadc5fcfe371a2950d244141d344b42949d552788676e"
+    },
+    {
+      "path": "exports/xhs/form.json",
+      "stored": "recipe/exports/xhs/form.json",
+      "kind": "source",
+      "bytes": 1217,
+      "sha256": "2d35eb3f030154ecedbd25ae13176e4346246e912ca249f4287ff9d531d6a3d2"
+    },
+    {
+      "path": "exports/xhs/qc.json",
+      "stored": "recipe/exports/xhs/qc.json",
+      "kind": "source",
+      "bytes": 73,
+      "sha256": "da56a9c0a90e8fe65c842b071b2cb29d788300c81e415538f3f7965973f56d9d"
+    },
+    {
+      "path": "exports/xhs/render-spec.json",
+      "stored": "recipe/exports/xhs/render-spec.json",
+      "kind": "source",
+      "bytes": 679,
+      "sha256": "90950f99ad6ab6275f4cd32302aa418635948346789d9f9bb9f4741e0e10e0d1"
+    },
+    {
+      "path": "exports/xhs/timeline.json",
+      "stored": "recipe/exports/xhs/timeline.json",
+      "kind": "source",
+      "bytes": 14776,
+      "sha256": "c1c1ddc9b5d440da3eb6f312e29b4e538b5aa3ef572bdef58fc522670f367914"
+    },
+    {
+      "path": "graphics/oracle-agent-flow.svg",
+      "stored": "recipe/graphics/oracle-agent-flow.svg",
+      "kind": "source",
+      "bytes": 1769,
+      "sha256": "ba285821ee8506f288bf830ce9e3f33a678cbaaeeb8b54eca15b64ff2ac34776"
+    },
+    {
+      "path": "graphics/phronix-reuse-flow.svg",
+      "stored": "recipe/graphics/phronix-reuse-flow.svg",
+      "kind": "source",
+      "bytes": 1774,
+      "sha256": "069b2ca03b26f30fb40be6e93c1a2a250420d1786279a55e756a311c675076ea"
+    },
+    {
+      "path": "graphics/terra-invoice-flow.svg",
+      "stored": "recipe/graphics/terra-invoice-flow.svg",
+      "kind": "source",
+      "bytes": 1439,
+      "sha256": "c08e4f7650dc5b94c317bdbc6a572ad20eda6f6a792865e40dbf7451aa88f965"
+    },
+    {
+      "path": "job.json",
+      "stored": "recipe/job.json",
+      "kind": "source",
+      "bytes": 5557,
+      "sha256": "7e6ad9d4a75771d3375f450cb77fef284dfc27aeaffd9e58fe29745fa0bb1515"
+    },
+    {
+      "path": "media-plan.json",
+      "stored": "recipe/media-plan.json",
+      "kind": "source",
+      "bytes": 5511,
+      "sha256": "8d0ff7fe3c56c6dfd4fc23c2e60595648190d643de1ed7169930322941c0c43e"
+    },
+    {
+      "path": "media-preview.html",
+      "stored": "recipe/media-preview.html",
+      "kind": "source",
+      "bytes": 5458,
+      "sha256": "eb7bec7179dfb20b6f0fffd8d78d829bbdf0d1eb842637caf0b051dd5b40cc1f"
+    },
+    {
+      "path": "narration-recorded.md",
+      "stored": "recipe/narration-recorded.md",
+      "kind": "source",
+      "bytes": 3706,
+      "sha256": "49c7a9e3f5c42736b062d5aa11e03988ac3294add63999ca5a465299c7121360"
+    },
+    {
+      "path": "narration.md",
+      "stored": "recipe/narration.md",
+      "kind": "source",
+      "bytes": 6437,
+      "sha256": "d3d08222a40ec8d6bfccb468df1d8ef26615b3737ad9e029b5f6729e7727c210"
+    },
+    {
+      "path": "project.json",
+      "stored": "recipe/project.json",
+      "kind": "source",
+      "bytes": 193,
+      "sha256": "cb25f35534cf12187ff6c90e3bc6f069eb6c81f2881700e765dca6faaafd11c4"
+    },
+    {
+      "path": "publish-plan.json",
+      "stored": "recipe/publish-plan.json",
+      "kind": "source",
+      "bytes": 790,
+      "sha256": "06574b8c7620cb2c7537b5b298333aa4fc1f05c163195248624c23e2d31467db"
+    },
+    {
+      "path": "qc.json",
+      "stored": "recipe/qc.json",
+      "kind": "source",
+      "bytes": 132,
+      "sha256": "464a9e8dffa3ddee18de41db3fc755a87b66c7d5114b7c9df44be6ca1507e38e"
+    },
+    {
+      "path": "ranking.json",
+      "stored": "recipe/ranking.json",
+      "kind": "source",
+      "bytes": 7158,
+      "sha256": "98560c1751cf0b6fabf1a54448764385ad7ee811d2e1e255dc1acb64767694cb"
+    },
+    {
+      "path": "README.md",
+      "stored": "recipe/README.md",
+      "kind": "source",
+      "bytes": 11628,
+      "sha256": "589d3408555db2506c4b3decf487a007b2289e4f459a5a7cdc5f0f0f582d65e6"
+    },
+    {
+      "path": "remotion-app/package-lock.json",
+      "stored": "recipe/remotion-app/package-lock.json",
+      "kind": "source",
+      "bytes": 158342,
+      "sha256": "1b73a83f83e4507b4de20b00d5989b9e4b81b6370a381394b2ffc9343f4cc31c"
+    },
+    {
+      "path": "remotion-app/package.json",
+      "stored": "recipe/remotion-app/package.json",
+      "kind": "source",
+      "bytes": 1314,
+      "sha256": "945563a81d0d43d72fffea53075e93f1d161ecfdc78bf7c487d16faaff5f6d16"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/claude.png",
+      "stored": "media/remotion-app/public/edition/assets/claude.png",
+      "kind": "media",
+      "bytes": 1198,
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/deepseek.ico",
+      "stored": "media/remotion-app/public/edition/assets/deepseek.ico",
+      "kind": "media",
+      "bytes": 209762,
+      "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/glm.svg",
+      "stored": "recipe/remotion-app/public/edition/assets/glm.svg",
+      "kind": "source",
+      "bytes": 11037,
+      "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/google.png",
+      "stored": "media/remotion-app/public/edition/assets/google.png",
+      "kind": "media",
+      "bytes": 61823,
+      "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/kimi.png",
+      "stored": "media/remotion-app/public/edition/assets/kimi.png",
+      "kind": "media",
+      "bytes": 7454,
+      "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/meta.svg",
+      "stored": "recipe/remotion-app/public/edition/assets/meta.svg",
+      "kind": "source",
+      "bytes": 8912,
+      "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/mistral-large-4.svg",
+      "stored": "recipe/remotion-app/public/edition/assets/mistral-large-4.svg",
+      "kind": "source",
+      "bytes": 11933,
+      "sha256": "2aa0cb250f7a5b6006839b753eeb6c652d633c1a4ee451ad7daf260e06a5ba79"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/mistral-release-status.png",
+      "stored": "media/remotion-app/public/edition/assets/mistral-release-status.png",
+      "kind": "media",
+      "bytes": 46629,
+      "sha256": "7463f209600fdb3679d71ea08044d59e479d9eb3ca5f032ca8154f0277b20c81"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/mistral-status-detail.png",
+      "stored": "media/remotion-app/public/edition/assets/mistral-status-detail.png",
+      "kind": "media",
+      "bytes": 92292,
+      "sha256": "3776f17b55825ec43f7acfc75189b7f9deb50e4c3194e8e846300c2eb90ec14a"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/openai-eth-paper-page1.png",
+      "stored": "media/remotion-app/public/edition/assets/openai-eth-paper-page1.png",
+      "kind": "media",
+      "bytes": 212159,
+      "sha256": "42150362d833c082160b5cec8b267ec52e7a79d3d53b584a9e5240316fcd4b21"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/openai-eth-paper-title.png",
+      "stored": "media/remotion-app/public/edition/assets/openai-eth-paper-title.png",
+      "kind": "media",
+      "bytes": 64321,
+      "sha256": "4fbab6f90096ca643b09862f39fd719f3f42bd3e42c7397e5726fb892a83d0fb"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/openai.svg",
+      "stored": "recipe/remotion-app/public/edition/assets/openai.svg",
+      "kind": "source",
+      "bytes": 3273,
+      "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/oracle-project-tracking.webp",
+      "stored": "media/remotion-app/public/edition/assets/oracle-project-tracking.webp",
+      "kind": "media",
+      "bytes": 42796,
+      "sha256": "fc8bc4c34e6ed76c42e65906ebbc14c35b528276eeaf5c67eab9bc6d3e982379"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/oracle-starter-configuration.webp",
+      "stored": "media/remotion-app/public/edition/assets/oracle-starter-configuration.webp",
+      "kind": "media",
+      "bytes": 24888,
+      "sha256": "3164a5799b3d63537299cff22b5989ba62a92f27d1f2a826094e0896b217a7b5"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/phronix-figure1.png",
+      "stored": "media/remotion-app/public/edition/assets/phronix-figure1.png",
+      "kind": "media",
+      "bytes": 108982,
+      "sha256": "95137173da80ce5baf00d779bb3642fc0566e42c0be3df1c338e51d12ad242c8"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/phronix-paper-title.png",
+      "stored": "media/remotion-app/public/edition/assets/phronix-paper-title.png",
+      "kind": "media",
+      "bytes": 64799,
+      "sha256": "09d52c8a111261a8dd68ea1953d2a777483b637268824dd20f1051680e5391bb"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/qwen.png",
+      "stored": "media/remotion-app/public/edition/assets/qwen.png",
+      "kind": "media",
+      "bytes": 15465,
+      "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-model-detail.png",
+      "stored": "media/remotion-app/public/edition/assets/terra-model-detail.png",
+      "kind": "media",
+      "bytes": 230702,
+      "sha256": "30e402a9d55cef3127b0cffa6938c846e1e869cc89851abba0e40cb18602fe73"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-model-icon.png",
+      "stored": "media/remotion-app/public/edition/assets/terra-model-icon.png",
+      "kind": "media",
+      "bytes": 10584,
+      "sha256": "16af77612c26d31d39308bbb5ee99c47d4fc45d953a170fbab4ae7472c5e37c3"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-model-page.png",
+      "stored": "media/remotion-app/public/edition/assets/terra-model-page.png",
+      "kind": "media",
+      "bytes": 85948,
+      "sha256": "61b573eada3792b5892afbb1dabeea5deb6134c21dce7fb9e825c94ccb3705ed"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-official-launch-1080p.mp4",
+      "stored": "media/remotion-app/public/edition/assets/terra-official-launch-1080p.mp4",
+      "kind": "media",
+      "bytes": 13810288,
+      "sha256": "a2e71cc1df5d94535d478ad4a060643b4cccf8c96114a4da2837fbcd3e446c8e"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-pricing-detail.png",
+      "stored": "media/remotion-app/public/edition/assets/terra-pricing-detail.png",
+      "kind": "media",
+      "bytes": 42679,
+      "sha256": "cac8a06e33516889e5d96870e2579f7b76357e588a30bad5ef8f18a052826a78"
+    },
+    {
+      "path": "remotion-app/public/edition/assets/terra-pricing-page.png",
+      "stored": "media/remotion-app/public/edition/assets/terra-pricing-page.png",
+      "kind": "media",
+      "bytes": 81641,
+      "sha256": "569dc849d3636481ee36bbc35d783ac4d9d52ea45bacba625c76276b0ce89457"
+    },
+    {
+      "path": "remotion-app/public/edition/fonts/mono.ttf",
+      "stored": "media/remotion-app/public/edition/fonts/mono.ttf",
+      "kind": "media",
+      "bytes": 453088,
+      "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179"
+    },
+    {
+      "path": "remotion-app/public/edition/fonts/sans.ttf",
+      "stored": "media/remotion-app/public/edition/fonts/sans.ttf",
+      "kind": "media",
+      "bytes": 17773244,
+      "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a"
+    },
+    {
+      "path": "remotion-app/public/edition/mix.wav",
+      "stored": "media/remotion-app/public/edition/mix.wav",
+      "kind": "media",
+      "bytes": 78552102,
+      "sha256": "ef8b7a3b41748e36cebc41f70d85e89a98fba53aade9cafe566e4825e43b6b89"
+    },
+    {
+      "path": "remotion-app/remotion/index.ts",
+      "stored": "recipe/remotion-app/remotion/index.ts",
+      "kind": "source",
+      "bytes": 110,
+      "sha256": "2b766dc5716a36d6358dc6caee49c6ca689c020a296c6556620413b239b7a8dc"
+    },
+    {
+      "path": "remotion-app/src/Design.tsx",
+      "stored": "recipe/remotion-app/src/Design.tsx",
+      "kind": "source",
+      "bytes": 8016,
+      "sha256": "6c4b09dd0eb49bdc2a375844e0d0838d4955e7f473a85d63e08f635dba56066c"
+    },
+    {
+      "path": "remotion-app/src/Edition.tsx",
+      "stored": "recipe/remotion-app/src/Edition.tsx",
+      "kind": "source",
+      "bytes": 3816,
+      "sha256": "248b49d2ff779f7c872de8333ac0a8798f7eb474b70f09afef2302ff4a5bf8af"
+    },
+    {
+      "path": "remotion-app/src/Scenes.tsx",
+      "stored": "recipe/remotion-app/src/Scenes.tsx",
+      "kind": "source",
+      "bytes": 14540,
+      "sha256": "98614ea4406b0626aba10fdc5b472eb6152d1046fcf9d03e4f358f48083e6a52"
+    },
+    {
+      "path": "remotion-app/tsconfig.json",
+      "stored": "recipe/remotion-app/tsconfig.json",
+      "kind": "source",
+      "bytes": 418,
+      "sha256": "cb6d04ded64d24fdb00ecdb9939ad42ff647e2c53e1be06497e6ef47cbf84355"
+    },
+    {
+      "path": "script.json",
+      "stored": "recipe/script.json",
+      "kind": "source",
+      "bytes": 14477,
+      "sha256": "d2220d8814e8cbb821838d87cf2ec3dd67babef8fbb5a980f1fd54e32fd2a6ab"
+    },
+    {
+      "path": "scripts/archive.mjs",
+      "stored": "recipe/scripts/archive.mjs",
+      "kind": "source",
+      "bytes": 1812,
+      "sha256": "1ccb727411925557eaa38504dc9e9e416829e96b06467f803254b1b3c3f49ebf"
+    },
+    {
+      "path": "scripts/build-narrated-inputs.py",
+      "stored": "recipe/scripts/build-narrated-inputs.py",
+      "kind": "source",
+      "bytes": 7226,
+      "sha256": "806764a6876a62135381a18877385b78f8d56a3bee71a1126e0ece065793a62d"
+    },
+    {
+      "path": "scripts/collect-sources.py",
+      "stored": "recipe/scripts/collect-sources.py",
+      "kind": "source",
+      "bytes": 3205,
+      "sha256": "c8607a76d927065aaee461df4a79a1a02afbf02a3055f1800e5c32e6f06716d3"
+    },
+    {
+      "path": "scripts/deps.mjs",
+      "stored": "recipe/scripts/deps.mjs",
+      "kind": "source",
+      "bytes": 1689,
+      "sha256": "0b20e79a8241a8b6569ef124e2177e8712c16ba766a9695c3a8a9927c202484b"
+    },
+    {
+      "path": "scripts/make-social-cover.py",
+      "stored": "recipe/scripts/make-social-cover.py",
+      "kind": "source",
+      "bytes": 1489,
+      "sha256": "1ff9d168cec9fc679b82abc4536bddcf7ab576f8780baad93afb200dedf2cecc"
+    },
+    {
+      "path": "scripts/prepare-inputs.py",
+      "stored": "recipe/scripts/prepare-inputs.py",
+      "kind": "source",
+      "bytes": 7946,
+      "sha256": "5a88cd72cb75ce3a15cb7f3209612dea014f9c05469e08fe127eb337a0a24816"
+    },
+    {
+      "path": "scripts/prepare-media.py",
+      "stored": "recipe/scripts/prepare-media.py",
+      "kind": "source",
+      "bytes": 15197,
+      "sha256": "697cf15b5fdd0f0314bbf9c5d0beb7ccf5ed53cecf7102640c84936faa468b05"
+    },
+    {
+      "path": "scripts/prepare-publish.mjs",
+      "stored": "recipe/scripts/prepare-publish.mjs",
+      "kind": "source",
+      "bytes": 1862,
+      "sha256": "dba71136d4586f2389f1dc0eacf63561de2ba38950db8e5808517b33fd3b6bbc"
+    },
+    {
+      "path": "scripts/prepare-script.py",
+      "stored": "recipe/scripts/prepare-script.py",
+      "kind": "source",
+      "bytes": 7860,
+      "sha256": "93ec2357dd0330907875af5a2673291b11d12a628d2a55e7f2c7c0f86bc50587"
+    },
+    {
+      "path": "scripts/render.mjs",
+      "stored": "recipe/scripts/render.mjs",
+      "kind": "source",
+      "bytes": 5637,
+      "sha256": "fd0cd979a9cb52e4d20e184b9763a4f021d83f40a17b53e7b1e63847e63b8054"
+    },
+    {
+      "path": "scripts/review-recording.py",
+      "stored": "recipe/scripts/review-recording.py",
+      "kind": "source",
+      "bytes": 8970,
+      "sha256": "b91b53d27754a54f15be09a5db71996c768c1284c4435b8b286b79d17cf72c94"
+    },
+    {
+      "path": "scripts/transcribe-recording.py",
+      "stored": "recipe/scripts/transcribe-recording.py",
+      "kind": "source",
+      "bytes": 1990,
+      "sha256": "9802ddd62e4fb59d09ae98c572f86250dbda1a62790d5b619d6a5de9706a573c"
+    },
+    {
+      "path": "selection.md",
+      "stored": "recipe/selection.md",
+      "kind": "source",
+      "bytes": 5845,
+      "sha256": "9f2c2872b49f2f37ea4f4fd451e62dd5baa8cdb6ecbeaa06b7782fc974362c5a"
+    },
+    {
+      "path": "sources.json",
+      "stored": "recipe/sources.json",
+      "kind": "source",
+      "bytes": 5347,
+      "sha256": "5fa6f518ef5316c925fdc38f103548d54d22722eb17f8de1351ef402838d45d8"
+    },
+    {
+      "path": "storyboard.json",
+      "stored": "recipe/storyboard.json",
+      "kind": "source",
+      "bytes": 11239,
+      "sha256": "78248862be4019f07644ce9ce656dbaa5f9a45ca1385e132ef65b342fe05f8d3"
+    },
+    {
+      "path": "timeline.json",
+      "stored": "recipe/timeline.json",
+      "kind": "source",
+      "bytes": 28993,
+      "sha256": "22d450d51e1b5745dbcfef0af76c7988cb78b875777083411cc52181d4176d5d"
+    },
+    {
+      "path": "variants.json",
+      "stored": "recipe/variants.json",
+      "kind": "source",
+      "bytes": 8021,
+      "sha256": "6532683d7bdaac7a147d5b04ea6d07537a1bf9c4ef5babbd6a7e4ed57b9cf6cd"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-27.mp4",
+      "stored": "deliverables/render/daily-ai-news-2026-10-27.mp4",
+      "kind": "deliverable",
+      "bytes": 21255517,
+      "sha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-27.mp4.json",
+      "stored": "deliverables/render/daily-ai-news-2026-10-27.mp4.json",
+      "kind": "deliverable",
+      "bytes": 1779,
+      "sha256": "55de4f960a5deed0c79e139cdf4485b563da44dcee4c4241edb038714fd656f1"
+    },
+    {
+      "path": "render/cover.png",
+      "stored": "deliverables/render/cover.png",
+      "kind": "deliverable",
+      "bytes": 158001,
+      "sha256": "1562c053d52bd185a1a6551e85b131989a88b3b2bab065bed15342464affbe8e"
+    },
+    {
+      "path": "qa/media-report.json",
+      "stored": "deliverables/qa/media-report.json",
+      "kind": "deliverable",
+      "bytes": 2072,
+      "sha256": "b6c12903a5d0ae9367a5df1750fecce485c8949424c9ca0ec21dff7f6ac571fc"
+    },
+    {
+      "path": "qa/media-report-contact-sheet.png",
+      "stored": "deliverables/qa/media-report-contact-sheet.png",
+      "kind": "deliverable",
+      "bytes": 278252,
+      "sha256": "7a540af5650410b4bba47db8b21b3b8dab25fab49f76d9fd04834fbc533d6a50"
+    },
+    {
+      "path": "qa/media-review.json",
+      "stored": "deliverables/qa/media-review.json",
+      "kind": "deliverable",
+      "bytes": 5163,
+      "sha256": "2515bbb899e3d70b6892cb5f9e8780a373153bb65e77bbab2980472009b8fbe4"
+    },
+    {
+      "path": "qa/alignment-report.json",
+      "stored": "deliverables/qa/alignment-report.json",
+      "kind": "deliverable",
+      "bytes": 733,
+      "sha256": "6ab7c07c99dc6e6737377720f0aca0362e21879291ade600722ebeeb62c31ed9"
+    },
+    {
+      "path": "qa/render-evidence.json",
+      "stored": "deliverables/qa/render-evidence.json",
+      "kind": "deliverable",
+      "bytes": 5662,
+      "sha256": "aad5403f3400b5b7686edcd0f43a76819f9e75d64f8f61dda09c9823f1efe743"
+    },
+    {
+      "path": "qa/inspection-input.json",
+      "stored": "deliverables/qa/inspection-input.json",
+      "kind": "deliverable",
+      "bytes": 3430,
+      "sha256": "0a4f9d84942419da66fc54d1b7778d744d0b2626755fa3137bb344bb1a2040b2"
+    },
+    {
+      "path": "qa/editorial-review.json",
+      "stored": "deliverables/qa/editorial-review.json",
+      "kind": "deliverable",
+      "bytes": 3771,
+      "sha256": "f1a5697bc611f21714151272320237f3cfe4b625bd845a098b16c946ede4fb0b"
+    },
+    {
+      "path": "qa/final-contact.jpg",
+      "stored": "deliverables/qa/final-contact.jpg",
+      "kind": "deliverable",
+      "bytes": 596111,
+      "sha256": "0e380752fba68a8517161598f0c21db9e3319ed2c60aba2091d02d45fe4620bc"
+    },
+    {
+      "path": "qa/final-frames/global.png",
+      "stored": "deliverables/qa/final-frames/global.png",
+      "kind": "deliverable",
+      "bytes": 613463,
+      "sha256": "fee9624b6bb1fdf0e8f9c3a9a0ab5864639b5989d8cb6efb3648ea4ec543f565"
+    },
+    {
+      "path": "qa/final-frames/domestic.png",
+      "stored": "deliverables/qa/final-frames/domestic.png",
+      "kind": "deliverable",
+      "bytes": 645662,
+      "sha256": "c2c4d8299a4dbec86f1d04999e0659dfa4aa413ad65c3a783a0b4224b8955498"
+    },
+    {
+      "path": "qa/final-frames/overview.png",
+      "stored": "deliverables/qa/final-frames/overview.png",
+      "kind": "deliverable",
+      "bytes": 498603,
+      "sha256": "23928d44cce01666730091720c65f85992d76a6d1e8bf18323e5f76c98961684"
+    },
+    {
+      "path": "qa/final-frames/terra-launch.png",
+      "stored": "deliverables/qa/final-frames/terra-launch.png",
+      "kind": "deliverable",
+      "bytes": 469194,
+      "sha256": "4dac0b4093a4cdc90cd40179bff2ff0555819e3737a5c4f3f3275652cb856d9f"
+    },
+    {
+      "path": "qa/final-frames/terra-invoice.png",
+      "stored": "deliverables/qa/final-frames/terra-invoice.png",
+      "kind": "deliverable",
+      "bytes": 407320,
+      "sha256": "c218acee253b783870a887dc206a2e21ecde9dda7696f68d19b6a0b122a281cd"
+    },
+    {
+      "path": "qa/final-frames/terra-price.png",
+      "stored": "deliverables/qa/final-frames/terra-price.png",
+      "kind": "deliverable",
+      "bytes": 391469,
+      "sha256": "847015df41dc4c47b44612b7e7912be2dca746d8a3697aa11a1fed6ad76c8eb0"
+    },
+    {
+      "path": "qa/final-frames/terra-access.png",
+      "stored": "deliverables/qa/final-frames/terra-access.png",
+      "kind": "deliverable",
+      "bytes": 446337,
+      "sha256": "6c8703bf92e56c5245a6bdea97da8b519756bd33af2b1791d85c25b991a5212c"
+    },
+    {
+      "path": "qa/final-frames/science-news.png",
+      "stored": "deliverables/qa/final-frames/science-news.png",
+      "kind": "deliverable",
+      "bytes": 367866,
+      "sha256": "9f9cd31f2f5361f4cedaddbf69950f3a35494bf396cc61cb14d1a3de89854a2a"
+    },
+    {
+      "path": "qa/final-frames/science-eth.png",
+      "stored": "deliverables/qa/final-frames/science-eth.png",
+      "kind": "deliverable",
+      "bytes": 496818,
+      "sha256": "ed03f0521ede2dcf8909a400dda6f7568bd37c4ec11827f5b66efcb984b2493c"
+    },
+    {
+      "path": "qa/final-frames/science-limit.png",
+      "stored": "deliverables/qa/final-frames/science-limit.png",
+      "kind": "deliverable",
+      "bytes": 359099,
+      "sha256": "582cbeea9d043cfe6051bbed0672a5dc435d8f3a9f7fdd15d4b7cb7eeb9384b4"
+    },
+    {
+      "path": "qa/final-frames/science-review.png",
+      "stored": "deliverables/qa/final-frames/science-review.png",
+      "kind": "deliverable",
+      "bytes": 479320,
+      "sha256": "336c55a94059e589a37fa21f677074cd09a9b3efb8b52eb6d2847887741758b6"
+    },
+    {
+      "path": "qa/final-frames/phronix-question.png",
+      "stored": "deliverables/qa/final-frames/phronix-question.png",
+      "kind": "deliverable",
+      "bytes": 469030,
+      "sha256": "3fc3b417d9e01a04bec74aa698fdc0eb806ded642b5a5910289431af13202d09"
+    },
+    {
+      "path": "qa/final-frames/phronix-method.png",
+      "stored": "deliverables/qa/final-frames/phronix-method.png",
+      "kind": "deliverable",
+      "bytes": 641399,
+      "sha256": "732ffdbd5237d4995cfbcd1738e08cafd0bdfaaeaca061334873e953326da3d7"
+    },
+    {
+      "path": "qa/final-frames/phronix-test.png",
+      "stored": "deliverables/qa/final-frames/phronix-test.png",
+      "kind": "deliverable",
+      "bytes": 447979,
+      "sha256": "ae8a7821bb0fc4e1f1187c39c2f2d5a08faf9704157378e90ba1564f1eb0de18"
+    },
+    {
+      "path": "qa/final-frames/phronix-limit.png",
+      "stored": "deliverables/qa/final-frames/phronix-limit.png",
+      "kind": "deliverable",
+      "bytes": 392704,
+      "sha256": "5b3aaf08d7c536e8725c0b80b0436a0ab56a247cfda6c3e997842809aa2b3162"
+    },
+    {
+      "path": "qa/final-frames/mistral-status.png",
+      "stored": "deliverables/qa/final-frames/mistral-status.png",
+      "kind": "deliverable",
+      "bytes": 477994,
+      "sha256": "24ee1f5afafd34b368bb0a219ef85502c4d94a2fc0cdb94755d7e5d9b4bbfba4"
+    },
+    {
+      "path": "qa/final-frames/mistral-date.png",
+      "stored": "deliverables/qa/final-frames/mistral-date.png",
+      "kind": "deliverable",
+      "bytes": 429862,
+      "sha256": "1798fa09a6ca8ba8729fcfac96ec9838155b6efda3b49e9323f71d4a56449e54"
+    },
+    {
+      "path": "qa/final-frames/oracle-news.png",
+      "stored": "deliverables/qa/final-frames/oracle-news.png",
+      "kind": "deliverable",
+      "bytes": 585384,
+      "sha256": "c1a1e802ad8b3cac52b6c88d97c077ffa4989de595e5f47529373fa0ecb80ba0"
+    },
+    {
+      "path": "qa/final-frames/oracle-method.png",
+      "stored": "deliverables/qa/final-frames/oracle-method.png",
+      "kind": "deliverable",
+      "bytes": 419945,
+      "sha256": "2ae2cabd7744f22c2f6f911f7cffabd0520b7253ab284529575f513640cfcc45"
+    },
+    {
+      "path": "qa/final-frames/oracle-use.png",
+      "stored": "deliverables/qa/final-frames/oracle-use.png",
+      "kind": "deliverable",
+      "bytes": 452342,
+      "sha256": "8ada58d7166eb77b02b7e183e3f950b4f5eed16889b9450bf06a522c225d3040"
+    },
+    {
+      "path": "qa/final-frames/closing.png",
+      "stored": "deliverables/qa/final-frames/closing.png",
+      "kind": "deliverable",
+      "bytes": 302088,
+      "sha256": "9b03ca83bfa566fe82d705bad4236d76423eb9e383e83f7c268c0a929ab0bec8"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-27-footage-preview.mp4",
+      "stored": "deliverables/render/daily-ai-news-2026-10-27-footage-preview.mp4",
+      "kind": "deliverable",
+      "bytes": 2375235,
+      "sha256": "f6dc53f866769480614e0bc760e92576b718b9f414cb518e774bfebf34d2f227"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-27-footage-preview.mp4.json",
+      "stored": "deliverables/render/daily-ai-news-2026-10-27-footage-preview.mp4.json",
+      "kind": "deliverable",
+      "bytes": 440,
+      "sha256": "ffbdcb15dba601cda960dca42598741a76051e8e11398ff8161c74b957e9d9f5"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-27-r2.mp4",
+      "stored": "deliverables/render/daily-ai-news-2026-10-27-r2.mp4",
+      "kind": "deliverable",
+      "bytes": 21255517,
+      "sha256": "4648acb9548ca10de400470d632b546b9d5c9632b44229be29ced511a0774d2f"
+    },
+    {
+      "path": "render/daily-ai-news-2026-10-27-r2.mp4.json",
+      "stored": "deliverables/render/daily-ai-news-2026-10-27-r2.mp4.json",
+      "kind": "deliverable",
+      "bytes": 1779,
+      "sha256": "55de4f960a5deed0c79e139cdf4485b563da44dcee4c4241edb038714fd656f1"
+    },
+    {
+      "path": "qa/final-frames/footage-33-6.png",
+      "stored": "deliverables/qa/final-frames/footage-33-6.png",
+      "kind": "deliverable",
+      "bytes": 796611,
+      "sha256": "e0511d7fa03da48e49d0d31d19aee3d7ae6d27bbe4ae18c1a629728fe6d7c60a"
+    },
+    {
+      "path": "qa/final-frames/footage-37-5.png",
+      "stored": "deliverables/qa/final-frames/footage-37-5.png",
+      "kind": "deliverable",
+      "bytes": 516543,
+      "sha256": "c40968750b565aa2fbc49ff77d30360dc847d08070f6ea383069bfb921f3703c"
+    },
+    {
+      "path": "qa/final-frames/footage-40.png",
+      "stored": "deliverables/qa/final-frames/footage-40.png",
+      "kind": "deliverable",
+      "bytes": 565397,
+      "sha256": "55b6c635a94849d30a772d7af0df1fbbd82bd871aa6108a33cb920586a77c7f2"
+    },
+    {
+      "path": "qa/final-frames/footage-43.png",
+      "stored": "deliverables/qa/final-frames/footage-43.png",
+      "kind": "deliverable",
+      "bytes": 584394,
+      "sha256": "63edc4464e19dc38af8da6a221e24a2365914559f628a2cab5bad467c66a1a4f"
+    },
+    {
+      "path": "qa/final-frames/footage-46-7.png",
+      "stored": "deliverables/qa/final-frames/footage-46-7.png",
+      "kind": "deliverable",
+      "bytes": 224404,
+      "sha256": "5475ccb3e1821bf91c00b1bbbc5d580e4f73697e90e9b0c0d36ead38844658ab"
+    },
+    {
+      "path": "render/cover-bili-safe.png",
+      "stored": "deliverables/render/cover-bili-safe.png",
+      "kind": "deliverable",
+      "bytes": 180348,
+      "sha256": "88c9f7d1dfe4776ddef3ceb1fa5d6a43a2dc491fec8415469e963e5e8862ade4"
+    },
+    {
+      "path": "qa/publish-handoff.json",
+      "stored": "deliverables/qa/publish-handoff.json",
+      "kind": "deliverable",
+      "bytes": 891,
+      "sha256": "ad7aec2d2a43bd4e051ba24a8d0bfb7b4e87461596bb1f6429d4b76297c0094f"
+    },
+    {
+      "path": "render/cover-vertical-34.png",
+      "stored": "deliverables/render/cover-vertical-34.png",
+      "kind": "deliverable",
+      "bytes": 118261,
+      "sha256": "99001473403faf2b4265c39c525e9ed132331bb66faf65d67f4f14ae2533de7f"
+    },
+    {
+      "path": "qa/multiplatform-handoff.json",
+      "stored": "deliverables/qa/multiplatform-handoff.json",
+      "kind": "deliverable",
+      "bytes": 1050,
+      "sha256": "dd69df9c9c7af72232b52e94f7eedcfc45a4d5a00be073be1e374af1632e71dd"
+    }
+  ]
+}
