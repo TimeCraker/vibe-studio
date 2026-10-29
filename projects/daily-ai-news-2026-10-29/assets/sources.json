@@ -291,7 +291,7 @@
     "rights": "官方组织头像与商标，仅用于品牌识别，不声明商标再许可。",
     "use": "MiniMax 官方组织标志；新闻身份识别；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。",
     "retrievedAt": "2026-10-29T10:47:37+08:00",
-    "selection": "prepared-not-yet-in-video",
+    "selection": "not-used-in-revised-edition",
     "status": "downloaded-awaiting-content-review",
     "bytes": 18199,
     "sha256": "d095a4fff8770ace5d8b537a9f642e3c4f1230a56a36177a16537d36d84b2e33"
@@ -303,7 +303,7 @@
     "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
     "use": "Expo 官方发布图，配合工具能力介绍",
     "retrievedAt": "2026-10-29T10:47:37+08:00",
-    "selection": "reference-only-not-selected-for-full-frame",
+    "selection": "not-used-in-revised-edition",
     "status": "image-visually-reviewed",
     "bytes": 153922,
     "sha256": "8517f28434e794d8b5bf312c8d1ce30355c43b59e9a23cd4ca66409a274a0129",
@@ -316,7 +316,7 @@
     "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
     "use": "Expo 官方图标；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。",
     "retrievedAt": "2026-10-29T10:47:37+08:00",
-    "selection": "prepared-not-yet-in-video",
+    "selection": "not-used-in-revised-edition",
     "status": "downloaded-awaiting-content-review",
     "bytes": 540,
     "sha256": "b4b35d78cf3901e26fc7cf55afbe97a04f29c893476f52bc9c2d247811487f6b"
@@ -328,7 +328,7 @@
     "rights": "论文作者，CC BY 4.0；保留论文署名、arXiv链接和是否裁切的说明。",
     "use": "论文方法图；仅作局部解说，主体用本期中文缓存示意",
     "retrievedAt": "2026-10-29T10:47:37+08:00",
-    "selection": "prepared-not-yet-in-video",
+    "selection": "not-used-in-revised-edition",
     "status": "downloaded-awaiting-content-review",
     "bytes": 254705,
     "sha256": "f31e550f34f90d7f8171bedfba0ef5db0887afebd5a57966266c1145ad9a26fd"
@@ -341,7 +341,7 @@
     "bytes": 576409,
     "retrievedAt": "2026-10-29T10:47:37+08:00",
     "status": "image-visually-reviewed",
-    "selection": "reference-only-not-selected-for-full-frame",
+    "selection": "not-used-in-revised-edition",
     "rights": "MCode Stack: MIT except adapted engineering skills under CC BY 3.0; see evidence/mcode-notice.md. Preserve source attribution.",
     "use": "中文技能地图，正文按具体技能局部放大；不缩整张让观众读密集文字。",
     "review": "官方素材偏黑底文字；保留作资料佐证，本栏目主要采用浅色图解与必要源文局部。"
@@ -354,7 +354,7 @@
     "sha256": "a01f232fadc672604d8927f89d18e265a486bd81dbce5b729e5f604e32878c61",
     "bytes": 969025,
     "status": "image-visually-reviewed",
-    "selection": "candidate-not-selected",
+    "selection": "selected-for-carbon-awaiting-recording",
     "use": "官方发布主图，只承担新闻身份展示，不作为能力证明",
     "rights": "Google官方版权与品牌材料，用于相关报道的必要引用并署名，不声明一般素材再许可。",
     "review": "看过原图；发布主图用于身份，密集评测表仅为证据候选。它们尚不足以表示功能演示视频已准备。"
@@ -367,7 +367,7 @@
     "sha256": "bf06006b602be15bc91f0a65d2b4ced392aeb4f4ca69fa0466ae068dc594bed3",
     "bytes": 77418,
     "status": "image-visually-reviewed",
-    "selection": "candidate-not-selected",
+    "selection": "selected-for-carbon-awaiting-recording",
     "use": "官方评测表候选，只选与解说有关的少量指标，不将密集表格原样铺屏",
     "rights": "Google官方版权与品牌材料，用于相关报道的必要引用并署名，不声明一般素材再许可。",
     "review": "看过原图；发布主图用于身份，密集评测表仅为证据候选。它们尚不足以表示功能演示视频已准备。"

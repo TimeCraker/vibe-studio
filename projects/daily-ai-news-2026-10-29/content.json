@@ -1,275 +1,182 @@
 {
   "headline": {
-    "title": "Clover 开源，AI 编程多一条新路线",
-    "subtitle": "扩散语言模型预览版 · 官方演示与实际获取方式",
-    "logo": "assets/clover-logo.svg",
-    "source": "DiffuSpace 官方发布及模型卡；测试数据为团队自报"
+    "title": "谷歌公布 Gemini 4 Carbon",
+    "subtitle": "长任务与安全能力更新，首批向部分防御人员开放",
+    "logo": "assets/google.png",
+    "source": "Google官方10月28日公告；非普遍开放声明"
   },
   "stories": [
     {
+      "title": "谷歌公布 Gemini 4 Carbon",
+      "detail": "长任务、编程与安全能力；先向部分防御人员开放"
+    },
+    {
       "title": "扩散智能开源 Clover",
-      "detail": "扩散语言模型，展示 AI 编程与工具使用"
-    },
-    {
-      "title": "MiniMax 开源工程技能库",
-      "detail": "任务拆分、上下文与代码审查"
-    },
-    {
-      "title": "Expo 更新 AI 开发工具",
-      "detail": "检查并运行手机应用；10月27日发布"
-    },
-    {
-      "title": "新研究检查提示词缓存",
-      "detail": "缓存失效与用量误记，论文10月26/27日更新"
+      "detail": "尝试并行生成文字；权重可下载"
     }
   ],
   "scenes": [
     {
       "id": "overview",
       "title": "今日 AI 资讯",
-      "section": "今日 AI 资讯",
       "anchor": "各位观众们",
       "claimIds": [],
-      "lead": "Clover 新模型与近期工具更新",
+      "lead": "Gemini 4 Carbon 头条；Clover 次重点",
       "bullets": [],
+      "section": "今日 AI 资讯",
       "source": "",
-      "presentation": "editorial-overview"
+      "presentation": "two-story-overview"
     },
     {
-      "id": "clover-intro",
-      "title": "扩散智能开源 Clover 语言模型",
-      "section": "模型头条",
-      "anchor": "先看模型",
+      "id": "carbon-intro",
+      "title": "谷歌公布 Gemini 4 Carbon",
+      "anchor": "谷歌在十月",
       "claimIds": [
-        "clover-model"
+        "carbon-announcement"
       ],
-      "lead": "Clover / 三叶 · 扩散语言模型预览版",
+      "lead": "2026.10.28公告 · 编程、安全与长任务",
+      "bullets": [],
+      "section": "模型头条",
+      "source": "Google官方公告",
+      "presentation": "identity",
+      "media": {
+        "kind": "image",
+        "file": "assets/gemini-carbon-official.png",
+        "label": "Google官方发布图；品牌展示"
+      }
+    },
+    {
+      "id": "carbon-long",
+      "title": "Carbon 面向需要持续推进的复杂任务",
+      "anchor": "这里的长任务",
+      "claimIds": [
+        "carbon-long"
+      ],
+      "lead": "谷歌内部观察：持续数天推进工程任务",
       "bullets": [
-        "AI 编程",
-        "工具使用"
+        "定位问题",
+        "尝试修复并检查结果"
       ],
-      "source": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview",
-      "presentation": "official-logo-and-model-identity"
+      "section": "模型头条",
+      "source": "Google官方公告",
+      "presentation": "long-task-diagram"
+    },
+    {
+      "id": "carbon-evals",
+      "title": "Carbon 有提升，具体任务仍需比较",
+      "anchor": "评测也有进步",
+      "claimIds": [
+        "carbon-evals"
+      ],
+      "lead": "安全代码内部测试相较Argon超过2倍成功率",
+      "bullets": [
+        "厂商内部测试",
+        "电脑操作仍有其他模型成绩更高"
+      ],
+      "section": "模型头条",
+      "source": "Google官方公告",
+      "presentation": "focused-comparison",
+      "media": {
+        "kind": "image",
+        "file": "assets/gemini-carbon-evals.webp",
+        "label": "Google官方评测表；只呈现当前指标局部"
+      }
+    },
+    {
+      "id": "carbon-access",
+      "title": "Carbon 先向部分安全防御人员开放",
+      "anchor": "大家更关心的是",
+      "claimIds": [
+        "carbon-announcement"
+      ],
+      "lead": "普遍开放日期未明确",
+      "bullets": [
+        "首批：部分防御人员",
+        "随后：更多可信合作伙伴"
+      ],
+      "section": "模型头条",
+      "source": "Google官方公告",
+      "presentation": "availability"
     },
     {
       "id": "clover-method",
-      "title": "Clover 尝试并行生成文字",
-      "section": "模型原理",
-      "anchor": "我们常用的语言模型",
+      "title": "Clover 开源，尝试并行生成文字",
+      "anchor": "接下来是另一条路线",
       "claimIds": [
         "clover-model"
       ],
-      "lead": "目标：减少生成等待；块内多个位置并行确定",
+      "lead": "块内多位置并行补全，目标是减少生成等待",
       "bullets": [
-        "总参数 350 亿",
-        "激活参数约 30 亿"
+        "Clover / 三叶 · 预览版"
       ],
-      "source": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview",
+      "section": "开源模型",
+      "source": "DiffuSpace官方材料；非本栏目实测",
       "presentation": "block-diffusion-diagram"
     },
     {
+      "id": "clover-speed",
+      "title": "Clover 团队公布同卡生成速度对比",
+      "anchor": "官方给了一个具体对比",
+      "claimIds": [
+        "clover-speed"
+      ],
+      "lead": "单张H200 · Agent任务 · 团队测试",
+      "bullets": [
+        "Clover：515 tokens/s",
+        "DFlash2对照：365 tokens/s"
+      ],
+      "section": "开源模型",
+      "source": "DiffuSpace官方材料；非本栏目实测",
+      "presentation": "two-bar-comparison"
+    },
+    {
       "id": "clover-demo",
-      "title": "Clover 用一个 HTML 文件生成模拟桌面",
-      "section": "官方演示",
-      "anchor": "看这段官方演示",
+      "title": "Clover 生成可交互的模拟桌面",
+      "anchor": "画面里是它的官方编程演示",
       "claimIds": [
         "clover-demo"
       ],
-      "lead": "拖动窗口、输入文字、打开计算器",
+      "lead": "展示生成结果，不作为全面领先的证明",
       "bullets": [],
-      "source": "https://diffuspace.ai/blog/clover-35b/",
-      "presentation": "large-demonstration",
-      "mediaReview": "26–42秒已看抽帧；精确镜头长度留待真人录音，必要时拆镜头，不拉慢补时长。",
+      "section": "开源模型",
+      "source": "DiffuSpace官方材料；非本栏目实测",
+      "presentation": "large-video",
       "media": {
         "kind": "video",
         "file": "assets/clover-genui.mp4",
         "sourceIn": 26,
         "sourceOut": 42,
         "poster": "assets/clover-genui-poster.jpg",
-        "label": "DiffuSpace 官方演示；按源片速度播放；非本栏目实测"
+        "label": "DiffuSpace官方演示；保持源片速度；非本栏目实测"
       }
     },
     {
       "id": "clover-access",
       "title": "Clover 权重可下载，在线体验需申请",
-      "section": "获取方式",
-      "anchor": "官方也公布了",
+      "anchor": "Clover 的模型权重",
       "claimIds": [
+        "clover-model",
         "clover-access"
       ],
-      "lead": "性能数据来自团队测试；实际表现取决于部署与任务",
+      "lead": "Apache 2.0；部署条件以推理版本为准",
       "bullets": [
-        "权重已公开",
+        "权重下载",
         "在线申请内测"
       ],
-      "source": "https://diffuspace.ai/blog/clover-35b/",
-      "presentation": "evidence-and-access",
-      "media": {
-        "kind": "image",
-        "file": "assets/clover-benchmarks.jpg",
-        "label": "DiffuSpace 官方评测图；团队测试，具体条件以原文为准"
-      }
-    },
-    {
-      "id": "mcode-intro",
-      "title": "MiniMax 开源 AI 编程工程技能库",
-      "section": "开发工具",
-      "anchor": "接下来看 MiniMax",
-      "claimIds": [
-        "mcode-purpose"
-      ],
-      "lead": "MCode Stack · MiniMax Code 团队的日常工作方法",
-      "bullets": [
-        "任务拆分",
-        "上下文管理",
-        "代码审查"
-      ],
-      "source": "https://github.com/MiniMax-AI/mcode-stack",
-      "presentation": "official-logo-and-plain-language"
-    },
-    {
-      "id": "mcode-examples",
-      "title": "MCode Stack 给长任务留下检查与交接方法",
-      "section": "工程技能",
-      "anchor": "比如一个任务",
-      "claimIds": [
-        "mcode-purpose"
-      ],
-      "lead": "长命令检查、长会话交接、独立审查",
-      "bullets": [
-        "选需要的技能",
-        "结果仍需核对"
-      ],
-      "source": "https://github.com/MiniMax-AI/mcode-stack",
-      "presentation": "source-excerpt-on-paper",
-      "sourceExcerpt": {
-        "path": "evidence/mcode-readme.md",
-        "locator": "What's inside table",
-        "officialImage": "assets/mcode-skills-map-zh.png",
-        "note": "正文不铺满黑色卡片；只按当前讲解取一项源文和中文解释。"
-      }
-    },
-    {
-      "id": "mcode-usage",
-      "title": "MCode Stack 可按实际任务选用技能",
-      "section": "使用方式",
-      "anchor": "它使用通用的",
-      "claimIds": [
-        "mcode-purpose"
-      ],
-      "lead": "通用SKILL格式；官方提供Claude Code安装方法",
-      "bullets": [
-        "按需要选用",
-        "代码和运行结果仍须核对"
-      ],
-      "source": "https://github.com/MiniMax-AI/mcode-stack",
-      "presentation": "selected-skill-and-use-boundary"
-    },
-    {
-      "id": "expo-intro",
-      "title": "Expo 推出面向 AI 的手机应用开发工具",
-      "section": "近期更新",
-      "anchor": "再看移动端开发工具",
-      "claimIds": [
-        "expo-agent"
-      ],
-      "lead": "2026.10.27 · @expo/agent-cli · 实验性工具",
-      "bullets": [
-        "检查项目状态",
-        "判断是否重编译"
-      ],
-      "source": "https://expo.dev/blog/introducing-expo-agent-cli",
-      "presentation": "project-status-explanation",
-      "officialLogo": "assets/expo.svg"
-    },
-    {
-      "id": "expo-workflow",
-      "title": "Expo 帮 AI 启动应用并检查运行错误",
-      "section": "开发流程",
-      "anchor": "过去 AI 给手机应用",
-      "claimIds": [
-        "expo-agent"
-      ],
-      "lead": "先判断运行条件，再启动并检查",
-      "bullets": [
-        "status：项目状态",
-        "dev：启动",
-        "smoke：运行检查"
-      ],
-      "source": "https://expo.dev/blog/introducing-expo-agent-cli",
-      "presentation": "three-step-editorial-diagram"
-    },
-    {
-      "id": "expo-skills",
-      "title": "Expo 让技能与项目依赖配套管理",
-      "section": "适用边界",
-      "anchor": "它还支持",
-      "claimIds": [
-        "expo-agent"
-      ],
-      "lead": "安装了哪些依赖，就同步相应技能；目前仍在实验阶段",
-      "bullets": [
-        "技能随包同步",
-        "版本相关指导"
-      ],
-      "source": "https://expo.dev/blog/introducing-expo-agent-cli",
-      "presentation": "package-and-guidance"
-    },
-    {
-      "id": "cachelint-intro",
-      "title": "新研究检查 AI 缓存失效与用量误记",
-      "section": "研究观察",
-      "anchor": "最后是一项",
-      "claimIds": [
-        "cachelint-findings"
-      ],
-      "lead": "应用能运行，缓存仍可能没有正确生效",
-      "bullets": [
-        "重复输入可复用",
-        "请求与用量记录都需核对"
-      ],
-      "source": "https://arxiv.org/abs/2610.34817v2",
-      "presentation": "cache-explanation"
-    },
-    {
-      "id": "cachelint-case",
-      "title": "变化的时间戳可能破坏缓存前缀",
-      "section": "具体案例",
-      "anchor": "一个具体例子",
-      "claimIds": [
-        "cachelint-timestamp"
-      ],
-      "lead": "时间戳变化 → 前缀变化 → 重复内容无法命中",
-      "bullets": [],
-      "source": "https://arxiv.org/html/2610.34817v2",
-      "presentation": "cache-prefix-comparison"
-    },
-    {
-      "id": "cachelint-results",
-      "title": "CacheLint 已推动 18 处上游修复",
-      "section": "研究结果",
-      "anchor": "研究团队做了",
-      "claimIds": [
-        "cachelint-findings"
-      ],
-      "lead": "571 个项目；报告 32 处问题；21 项开发者确认",
-      "bullets": [
-        "18 处上游修复",
-        "检查实际缓存与用量"
-      ],
-      "source": "https://arxiv.org/abs/2610.34817v2",
-      "presentation": "numbers-revealed-in-sequence"
+      "section": "开源模型",
+      "source": "DiffuSpace官方材料；非本栏目实测",
+      "presentation": "model-access"
     },
     {
       "id": "closing",
-      "title": "本期项目与来源见简介",
-      "section": "今日 AI 资讯",
+      "title": "本期来源与项目见简介",
       "anchor": "以上就是本期",
       "claimIds": [],
-      "lead": "官方项目、演示和论文链接随发布物料保存",
+      "lead": "我们下期再见",
       "bullets": [],
+      "section": "今日 AI 资讯",
       "source": "",
-      "presentation": "brief-signoff"
+      "presentation": "signoff"
     }
   ],
   "fonts": {
@@ -280,5 +187,5 @@
     "file": "assets/carefree.mp3",
     "credit": "Carefree by Kevin MacLeod (incompetech.com), CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ ; source https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037 ; planned trimming, fades and narration ducking"
   },
-  "productionNote": "presentation为本期镜头意图，通用版式未实现的图解需在录音后本期代码中落实；不声称填写字段就已渲染。"
+  "productionNote": "presentation是镜头意图，录音后在本期代码落实。未渲染，不将静态图和宣传材料当操作实测。"
 }

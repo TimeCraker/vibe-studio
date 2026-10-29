@@ -44,58 +44,47 @@
     }
   },
   {
-    "id": "mcode-purpose",
-    "text": "MiniMax-AI/mcode-stack发布团队实际使用的工程技能和工作流，涵盖子任务、上下文、长命令、交接和代码审查；支持MiniMax Code，并提供Claude Code安装方法。",
+    "id": "carbon-announcement",
+    "text": "Google于10月28日公布Carbon，主打编程、安全和长任务；先向部分防御人员开放，普遍开放未给确定日期。",
     "status": "verified",
     "source": {
-      "url": "https://github.com/MiniMax-AI/mcode-stack",
-      "locator": "README Quick start / What's inside / Relationship to MiniMax Code",
-      "checkedAt": "2026-10-29T10:59:08+08:00",
-      "path": "evidence/mcode-readme.md"
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "path": "evidence/gemini-carbon-launch.txt",
+      "locator": "日期、rollout及Coming soon段",
+      "checkedAt": "2026-10-29T13:25:19+08:00"
     }
   },
   {
-    "id": "mcode-licensing",
-    "text": "本次main树内stacks目录有17份SKILL.md；仓库MIT为主，engineering改编内容仍适用CC BY 3.0，不统一声称所有内容MIT。",
+    "id": "carbon-long",
+    "text": "Google表示内部团队观察到Carbon持续数天处理复杂工程任务，是厂商观察，不是全部任务无人值守保证。",
     "status": "verified",
     "source": {
-      "url": "https://github.com/MiniMax-AI/mcode-stack/blob/main/stacks/ronny/NOTICE.md",
-      "locator": "Third-party notices；evidence/mcode-tree.json完整树快照",
-      "checkedAt": "2026-10-29T10:59:08+08:00",
-      "path": "evidence/mcode-notice.md"
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "path": "evidence/gemini-carbon-launch.txt",
+      "locator": "Improving coding and reasoning for challenging, long-horizon tasks",
+      "checkedAt": "2026-10-29T13:25:19+08:00"
     }
   },
   {
-    "id": "expo-agent",
-    "text": "Expo于2026-10-27介绍实验性@expo/agent-cli，status检查兼容与重编译需求，dev启动，smoke检查运行错误，支持技能随包同步。",
+    "id": "carbon-evals",
+    "text": "Google内部安全代码测试报告相较Argon超过2倍成功率；官方表格OSWorld-21 Carbon81.5%、Claude Opus5.5为87.2%。",
     "status": "verified",
     "source": {
-      "url": "https://expo.dev/blog/introducing-expo-agent-cli",
-      "locator": "页面日期；Understand your project with status / One command to start developing / Introducing co-located skills；未运行本地Expo产品",
-      "checkedAt": "2026-10-29T10:59:08+08:00",
-      "path": "evidence/expo-agent-launch.txt"
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "path": "assets/gemini-carbon-evals.webp",
+      "locator": "安全代码段与官方评测表；不表述为全面领先",
+      "checkedAt": "2026-10-29T13:25:19+08:00"
     }
   },
   {
-    "id": "cachelint-findings",
-    "text": "论文初稿10-26、v2于10-27；缓存集成错误可静默发生；在571项目中报告32处，21项开发者确认、18处上游修复。",
+    "id": "clover-speed",
+    "text": "DiffuSpace报告单张H200 Agent任务515 tokens/s，对照DFlash2方案365 tokens/s；不外推用户设备。",
     "status": "verified",
     "source": {
-      "url": "https://arxiv.org/abs/2610.34817v2",
-      "locator": "Abstract and submission history；32处不是32处均经确认",
-      "checkedAt": "2026-10-29T10:59:08+08:00",
-      "path": "evidence/cachelint-abstract.txt"
-    }
-  },
-  {
-    "id": "cachelint-timestamp",
-    "text": "论文以private-gpt中系统提示开头的亚秒级时间戳破坏缓存前缀为具体案例。",
-    "status": "verified",
-    "source": {
-      "url": "https://arxiv.org/html/2610.34817v2",
-      "locator": "Figure 2 / III Motivating Example；不据此估算损失金额",
-      "checkedAt": "2026-10-29T10:59:08+08:00",
-      "path": "evidence/cachelint-paper.txt"
+      "url": "https://diffuspace.ai/blog/clover-35b/",
+      "path": "evidence/clover-launch.txt",
+      "locator": "H200推理效率段；不混用GB300的680数值",
+      "checkedAt": "2026-10-29T13:25:19+08:00"
     }
   }
 ]
