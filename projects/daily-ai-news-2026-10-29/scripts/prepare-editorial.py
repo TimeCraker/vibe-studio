@@ -9,6 +9,10 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 NOW = datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
 
+existing_selection = json.loads((ROOT / "selection.json").read_text(encoding="utf-8"))
+if existing_selection.get("review", {}).get("status") == "revision-required":
+    raise SystemExit("Editorial revision required: preserve the user's rejection and old manuscript; revise the selected stories and this edition-specific builder before generating new inputs.")
+
 def read(name):
     return json.loads((ROOT / name).read_text(encoding="utf-8"))
 

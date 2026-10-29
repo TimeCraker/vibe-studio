@@ -345,5 +345,31 @@
     "rights": "MCode Stack: MIT except adapted engineering skills under CC BY 3.0; see evidence/mcode-notice.md. Preserve source attribution.",
     "use": "中文技能地图，正文按具体技能局部放大；不缩整张让观众读密集文字。",
     "review": "官方素材偏黑底文字；保留作资料佐证，本栏目主要采用浅色图解与必要源文局部。"
+  },
+  {
+    "file": "assets/gemini-carbon-official.png",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "retrievedAt": "2026-10-29T11:18:01+08:00",
+    "sha256": "a01f232fadc672604d8927f89d18e265a486bd81dbce5b729e5f604e32878c61",
+    "bytes": 969025,
+    "status": "image-visually-reviewed",
+    "selection": "candidate-not-selected",
+    "use": "官方发布主图，只承担新闻身份展示，不作为能力证明",
+    "rights": "Google官方版权与品牌材料，用于相关报道的必要引用并署名，不声明一般素材再许可。",
+    "review": "看过原图；发布主图用于身份，密集评测表仅为证据候选。它们尚不足以表示功能演示视频已准备。"
+  },
+  {
+    "file": "assets/gemini-carbon-evals.webp",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon__evals-table.width-1200.format-webp.webp",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "retrievedAt": "2026-10-29T11:18:01+08:00",
+    "sha256": "bf06006b602be15bc91f0a65d2b4ced392aeb4f4ca69fa0466ae068dc594bed3",
+    "bytes": 77418,
+    "status": "image-visually-reviewed",
+    "selection": "candidate-not-selected",
+    "use": "官方评测表候选，只选与解说有关的少量指标，不将密集表格原样铺屏",
+    "rights": "Google官方版权与品牌材料，用于相关报道的必要引用并署名，不声明一般素材再许可。",
+    "review": "看过原图；发布主图用于身份，密集评测表仅为证据候选。它们尚不足以表示功能演示视频已准备。"
   }
 ]

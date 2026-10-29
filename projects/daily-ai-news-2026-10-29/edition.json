@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-10-29",
-  "status": "script-ready-awaiting-human-recording",
+  "status": "editorial-reselection",
   "sourceDocument": "https://feishu.doubao.com/docx/UpQJdqCvSopLVxxkU3acFLO0nuh",
   "fps": 60,
   "width": 1920,
@@ -17,7 +17,13 @@
     "publish": "not-started",
     "asrAlignment": "pending",
     "render": "not-started",
-    "script": "draft-prepared"
+    "script": "revision-required",
+    "editorialReview": {
+      "status": "revision-required",
+      "reviewedAt": "2026-10-29T11:20:28+08:00",
+      "userFeedback": "新闻与视听素材均需提高质量",
+      "recordingHandoff": "hold"
+    }
   },
   "narrationBodySha256": "0a9ef788519876a28c5f42a574b3035ba41eaeab3c9ee4a0bd0b2fce373f5b1d",
   "ranking": "ranking.json",

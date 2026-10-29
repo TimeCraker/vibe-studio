@@ -11,6 +11,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {
+    "gemini-carbon-launch": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
     "clover-launch": "https://diffuspace.ai/blog/clover-35b/",
     "clover-model": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview/raw/main/README.md",
     "clover-model-meta": "https://huggingface.co/api/models/Diffuspace/Clover-35B-A3B-Preview",
