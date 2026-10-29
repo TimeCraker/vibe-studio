@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "status": "script-ready-awaiting-human-recording",
+  "sourceDocument": "https://feishu.doubao.com/docx/UpQJdqCvSopLVxxkU3acFLO0nuh",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "compositionId": "DailyAI",
+  "coverCompositionId": "DailyAICover",
+  "narration": "human",
+  "narrationFile": "narration.md",
+  "rankingSeconds": 7,
+  "production": {
+    "humanRecording": "pending",
+    "humanReview": "pending",
+    "publish": "not-started",
+    "asrAlignment": "pending",
+    "render": "not-started",
+    "script": "draft-prepared"
+  },
+  "narrationBodySha256": "0a9ef788519876a28c5f42a574b3035ba41eaeab3c9ee4a0bd0b2fce373f5b1d",
+  "ranking": "ranking.json",
+  "headStory": "clover",
+  "storyOrder": [
+    "clover",
+    "mcode",
+    "expo",
+    "cachelint"
+  ]
+}

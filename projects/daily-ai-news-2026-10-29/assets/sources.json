@@ -1,0 +1,349 @@
+[
+  {
+    "file": "assets/carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "sceneIds": [
+      "global",
+      "domestic",
+      "all-voice-scenes"
+    ],
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "status": "local-file-hash-verified",
+    "selection": "prepared-not-yet-in-video",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/carefree.mp3",
+    "licenseEvidence": "https://incompetech.com/music/royalty-free/faq.html#credit",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "audioReview": "本阶段只核验哈希、时长和解码；完整审听、循环接缝及人声避让待实际混音。",
+    "preparedAt": "2026-10-29T10:47:37+08:00",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "205.139625"
+      }
+    }
+  },
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "bytes": 1198,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/claude.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "bytes": 209762,
+    "fetchedAt": "2026-10-24T08:41:20.962405+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/deepseek.ico",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/fonts/mono.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\mono.ttf",
+    "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-hash-verified",
+    "bytes": 453088,
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/fonts/mono.ttf",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/fonts/sans.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\sans.ttf",
+    "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-hash-verified",
+    "bytes": 17773244,
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/fonts/sans.ttf",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "bytes": 11037,
+    "fetchedAt": "2026-10-24T08:41:20.833370+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/glm.svg",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "bytes": 61823,
+    "fetchedAt": "2026-10-24T08:41:21.298240+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/google.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "bytes": 7454,
+    "fetchedAt": "2026-10-24T08:41:20.127217+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/kimi.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "bytes": 8912,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/meta.svg",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "bytes": 3273,
+    "fetchedAt": "2026-10-24T08:41:20.736187+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/openai.svg",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "bytes": 15465,
+    "fetchedAt": "2026-10-24T08:41:21.136261+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-28/assets/qwen.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-29T10:47:37+08:00"
+  },
+  {
+    "file": "assets/clover-logo.svg",
+    "url": "https://diffuspace.ai/assets/favicon.svg",
+    "sourcePage": "https://diffuspace.ai/blog/clover-35b/",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "头条与封面，直接使用官方图标；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 3842,
+    "sha256": "ab8579d50694664f1866baa2795c60ecdc7a535469a15ba98cf3d8cb03bb9311"
+  },
+  {
+    "file": "assets/clover-benchmarks.jpg",
+    "url": "https://diffuspace.ai/assets/blog/clover/agentic-benchmarks.jpg?v=20261028",
+    "sourcePage": "https://diffuspace.ai/blog/clover-35b/",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "模型评测页；厂商自报，不作为独立实测",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 1364784,
+    "sha256": "204306433e3fea716a08304aa1a1a51676cc19f906e5818ef0352ebcd4899a43"
+  },
+  {
+    "file": "assets/clover-genui.mp4",
+    "url": "https://diffuspace.ai/assets/blog/clover/genui-desktop.mp4?v=20261028",
+    "sourcePage": "https://diffuspace.ai/blog/clover-35b/",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "Clover模拟桌面的官方结果演示；26–42秒候选，按源片速度、不额外变速；精确入片范围等待录音。",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "selected-for-clover-demo-awaiting-recording",
+    "status": "local-file-decode-and-frame-reviewed",
+    "bytes": 16792613,
+    "sha256": "8499dcc0c1119f403d09423b554ddd5be199d0cab4048a79eebe07d61cbb03d2",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2240,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "52.833333"
+      }
+    },
+    "decode": "full-file-pass",
+    "sourceRangeCandidate": [
+      26,
+      42
+    ],
+    "review": {
+      "method": "local contact sheets at 0,5,10,15,20,25 and 26,31,36,41,46 seconds",
+      "observed": "前段为代码生成，后段展示模拟桌面、窗口和记事本/设置等交互；优先采用后段。",
+      "limit": "未完整连续审看/审听；入片使用源片速度，不声称原片等于实时任务耗时。"
+    }
+  },
+  {
+    "file": "assets/clover-genui-poster.jpg",
+    "url": "https://diffuspace.ai/assets/blog/clover/genui-desktop-poster.jpg?v=20261028",
+    "sourcePage": "https://diffuspace.ai/blog/clover-35b/",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "桌面演示的官方封面；片段后承接",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 15643,
+    "sha256": "bbd5bda02a40b35b0448a19c84f2c64364f19407938187da08b32b510884281a"
+  },
+  {
+    "file": "assets/clover-webmcp.mp4",
+    "url": "https://diffuspace.ai/assets/blog/clover/webmcp.mp4?v=20261028",
+    "sourcePage": "https://diffuspace.ai/blog/clover-35b/",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "网页工具调用演示候选；只在讲到对应任务时采用",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "reserve-not-selected",
+    "status": "local-file-decode-and-frame-reviewed",
+    "bytes": 1347085,
+    "sha256": "b9b1652fb2f07637cdc1d8eabe84232bb2ccf8d02e2cf4822638c24196154d79",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "29.720000"
+      }
+    },
+    "decode": "full-file-pass",
+    "review": {
+      "observed": "6项网页任务对比；源片自带playback 6x与fast-forward 30x标注。",
+      "limit": "不可当作真实任务速度对比；当前稿件没有讲对应6项任务，不强行插入。"
+    }
+  },
+  {
+    "file": "assets/clover-webmcp-poster.jpg",
+    "url": "https://diffuspace.ai/assets/blog/clover/webmcp-poster.jpg?v=20261028",
+    "sourcePage": "https://diffuspace.ai/blog/clover-35b/",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "网页演示官方封面",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 26972,
+    "sha256": "6d74f8f0025d2d83fed9a5a381cc593f093010a865bf7211852e72c5629d1092"
+  },
+  {
+    "file": "assets/minimax.png",
+    "url": "https://avatars.githubusercontent.com/u/194880281?v=4",
+    "sourcePage": "https://github.com/MiniMax-AI/mcode-stack",
+    "rights": "官方组织头像与商标，仅用于品牌识别，不声明商标再许可。",
+    "use": "MiniMax 官方组织标志；新闻身份识别；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 18199,
+    "sha256": "d095a4fff8770ace5d8b537a9f642e3c4f1230a56a36177a16537d36d84b2e33"
+  },
+  {
+    "file": "assets/expo-agent-cover.png",
+    "url": "https://cdn.sanity.io/images/9r24npb8/production/03dabb891658e1f9819fa4a8e717137d1a2f1e6d-3600x2025.png?auto=format&fit=max&q=75&w=1600",
+    "sourcePage": "https://expo.dev/blog/introducing-expo-agent-cli",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "Expo 官方发布图，配合工具能力介绍",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "reference-only-not-selected-for-full-frame",
+    "status": "image-visually-reviewed",
+    "bytes": 153922,
+    "sha256": "8517f28434e794d8b5bf312c8d1ce30355c43b59e9a23cd4ca66409a274a0129",
+    "review": "官方素材偏黑底文字；保留作资料佐证，本栏目主要采用浅色图解与必要源文局部。"
+  },
+  {
+    "file": "assets/expo.svg",
+    "url": "https://expo.dev/static/images/exponential.svg",
+    "sourcePage": "https://expo.dev/blog/introducing-expo-agent-cli",
+    "rights": "官方公开材料；仅用于相关资讯的必要引用并在简介署名，不主张获得一般素材再许可或官方背书。",
+    "use": "Expo 官方图标；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。；保持原始官方文件，置于纸白背景，不添加黑色图标方块。",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 540,
+    "sha256": "b4b35d78cf3901e26fc7cf55afbe97a04f29c893476f52bc9c2d247811487f6b"
+  },
+  {
+    "file": "assets/cachelint-overview.png",
+    "url": "https://arxiv.org/html/2610.34817v2/fig_overview.png",
+    "sourcePage": "https://arxiv.org/html/2610.34817v2",
+    "rights": "论文作者，CC BY 4.0；保留论文署名、arXiv链接和是否裁切的说明。",
+    "use": "论文方法图；仅作局部解说，主体用本期中文缓存示意",
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "downloaded-awaiting-content-review",
+    "bytes": 254705,
+    "sha256": "f31e550f34f90d7f8171bedfba0ef5db0887afebd5a57966266c1145ad9a26fd"
+  },
+  {
+    "file": "assets/mcode-skills-map-zh.png",
+    "sourcePage": "https://github.com/MiniMax-AI/mcode-stack/blob/main/docs/assets/skills-map-zh.png",
+    "url": "https://raw.githubusercontent.com/MiniMax-AI/mcode-stack/main/docs/assets/skills-map-zh.png",
+    "sha256": "4c78e2826f26924ee33352f5b105a6195ed87959ad937d21ebd5e45c62b4e547",
+    "bytes": 576409,
+    "retrievedAt": "2026-10-29T10:47:37+08:00",
+    "status": "image-visually-reviewed",
+    "selection": "reference-only-not-selected-for-full-frame",
+    "rights": "MCode Stack: MIT except adapted engineering skills under CC BY 3.0; see evidence/mcode-notice.md. Preserve source attribution.",
+    "use": "中文技能地图，正文按具体技能局部放大；不缩整张让观众读密集文字。",
+    "review": "官方素材偏黑底文字；保留作资料佐证，本栏目主要采用浅色图解与必要源文局部。"
+  }
+]

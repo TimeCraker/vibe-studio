@@ -1,0 +1,9 @@
+# 本期原始材料留在本地，成片归档时由清单收集；不把大媒体提交 Git。
+assets/*
+!assets/sources.json
+evidence/*.html
+evidence/*.txt
+evidence/ranking-upstream.json
+evidence/clover-model-meta.json
+evidence/mcode-tree.json
+evidence/retrieval.json

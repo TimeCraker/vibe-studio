@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ranking",
+    "text": "全球/国产各15项按当次指定网页的ECI口径核对；精确数值由本次取得的开源快照固定，查询和源更新时间分开。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.bilibili.com/toy/ai-model-world",
+      "locator": "综合智力；地区全部/国内；核对记录 evidence/browser-observations.md，原始文件 evidence/ranking-upstream.json",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "ranking.json"
+    }
+  },
+  {
+    "id": "clover-model",
+    "text": "DiffuSpace Clover-35B-A3B-Preview为文本扩散MoE预览模型，总参数35B/激活约3B，块内多位置并行去噪；权重Apache-2.0。",
+    "status": "verified",
+    "source": {
+      "url": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview",
+      "locator": "Architecture and decoding / License；不将激活参数当作权重内存",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/clover-model.md"
+    }
+  },
+  {
+    "id": "clover-demo",
+    "text": "官方GenUI示例以单个HTML生成可交互模拟桌面，包含窗口、记事本、计算器与设置；不代表本栏目实测或真实操作系统。",
+    "status": "verified",
+    "source": {
+      "url": "https://diffuspace.ai/blog/clover-35b/",
+      "locator": "GenUI: An Interactive Desktop in a Single HTML File / GenUI：用一个HTML文件构建交互式桌面；对应genui-desktop.mp4",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/clover-launch.txt"
+    }
+  },
+  {
+    "id": "clover-access",
+    "text": "官网提供权重/代码入口和在线内测申请；性能和速度数据为团队报告，未由本栏目复测。",
+    "status": "verified",
+    "source": {
+      "url": "https://diffuspace.ai/blog/clover-35b/",
+      "locator": "模型开源段、Next Steps / 下一步；HF模型卡与官方公开申请入口",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/clover-launch.txt"
+    }
+  },
+  {
+    "id": "mcode-purpose",
+    "text": "MiniMax-AI/mcode-stack发布团队实际使用的工程技能和工作流，涵盖子任务、上下文、长命令、交接和代码审查；支持MiniMax Code，并提供Claude Code安装方法。",
+    "status": "verified",
+    "source": {
+      "url": "https://github.com/MiniMax-AI/mcode-stack",
+      "locator": "README Quick start / What's inside / Relationship to MiniMax Code",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/mcode-readme.md"
+    }
+  },
+  {
+    "id": "mcode-licensing",
+    "text": "本次main树内stacks目录有17份SKILL.md；仓库MIT为主，engineering改编内容仍适用CC BY 3.0，不统一声称所有内容MIT。",
+    "status": "verified",
+    "source": {
+      "url": "https://github.com/MiniMax-AI/mcode-stack/blob/main/stacks/ronny/NOTICE.md",
+      "locator": "Third-party notices；evidence/mcode-tree.json完整树快照",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/mcode-notice.md"
+    }
+  },
+  {
+    "id": "expo-agent",
+    "text": "Expo于2026-10-27介绍实验性@expo/agent-cli，status检查兼容与重编译需求，dev启动，smoke检查运行错误，支持技能随包同步。",
+    "status": "verified",
+    "source": {
+      "url": "https://expo.dev/blog/introducing-expo-agent-cli",
+      "locator": "页面日期；Understand your project with status / One command to start developing / Introducing co-located skills；未运行本地Expo产品",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/expo-agent-launch.txt"
+    }
+  },
+  {
+    "id": "cachelint-findings",
+    "text": "论文初稿10-26、v2于10-27；缓存集成错误可静默发生；在571项目中报告32处，21项开发者确认、18处上游修复。",
+    "status": "verified",
+    "source": {
+      "url": "https://arxiv.org/abs/2610.34817v2",
+      "locator": "Abstract and submission history；32处不是32处均经确认",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/cachelint-abstract.txt"
+    }
+  },
+  {
+    "id": "cachelint-timestamp",
+    "text": "论文以private-gpt中系统提示开头的亚秒级时间戳破坏缓存前缀为具体案例。",
+    "status": "verified",
+    "source": {
+      "url": "https://arxiv.org/html/2610.34817v2",
+      "locator": "Figure 2 / III Motivating Example；不据此估算损失金额",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "path": "evidence/cachelint-paper.txt"
+    }
+  }
+]

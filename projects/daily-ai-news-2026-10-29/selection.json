@@ -1,0 +1,140 @@
+{
+  "editionDate": "2026-10-29",
+  "decision": "produce",
+  "independentSearch": [
+    {
+      "phase": "before-document",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "queries": [
+        "AI model release October 29 2026 official",
+        "AI 新模型 发布 2026年10月29日",
+        "Anthropic October 2026 announcements",
+        "Google October 29 2026 AI",
+        "Qwen latest model",
+        "DeepSeek releases"
+      ],
+      "sources": [
+        "https://www.anthropic.com/news",
+        "https://blog.google/technology/ai/",
+        "https://qwen.ai/blog?id=qwen3.8",
+        "https://www.deepseek.com/en/transparency/"
+      ],
+      "result": "先独立搜了模型/产品/工具新闻并查官方更新页；没有将旧旗舰介绍或企业IPO自动选为头条。Google部分内容动态加载，本轮没有据此声称搜尽当日资讯。"
+    },
+    {
+      "phase": "follow-up-primary-source",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "sources": [
+        "https://expo.dev/blog/introducing-expo-agent-cli",
+        "https://arxiv.org/abs/2610.34817v2"
+      ],
+      "result": "Expo 10-27的真实新增是面向agent的实验性CLI，替换文档里技能库今日首发的说法；论文核对原始题名/样本/结果。"
+    }
+  ],
+  "documentSupplement": [
+    {
+      "url": "https://feishu.doubao.com/docx/UpQJdqCvSopLVxxkU3acFLO0nuh",
+      "checkedAt": "2026-10-29T10:59:08+08:00",
+      "method": "browser-visible document, not web search excerpt",
+      "candidates": [
+        "Clover",
+        "MCode Stack",
+        "fast-agent",
+        "Expo skills",
+        "REA",
+        "hallmark",
+        "TKE",
+        "Moore Threads quarterly report",
+        "Hui Xi IPO",
+        "security advisories",
+        "CacheLint",
+        "LoyalAgent-Bench",
+        "recruitment"
+      ],
+      "notes": "只作线索；重复Expo合并，原文未给的模型权重计划不照搬。"
+    }
+  ],
+  "selected": [
+    {
+      "id": "clover",
+      "tier": "lead",
+      "title": "扩散智能开源 Clover，展示 AI 编程和工具使用",
+      "sources": [
+        "https://diffuspace.ai/blog/clover-35b/",
+        "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview"
+      ],
+      "reason": "有实际模型权重、清楚的技术差异和相关官方演示，符合模型头条定位。博客未明确可读发布日期，HF仓库创建10-24不等于正式公告日，口播用近期公开，不声称10-29首发。"
+    },
+    {
+      "id": "mcode",
+      "tier": "secondary",
+      "title": "MiniMax 开源 AI 编程的工程技能库",
+      "sources": [
+        "https://github.com/MiniMax-AI/mcode-stack"
+      ],
+      "reason": "官方实际文件可取得，任务拆解、上下文、交接、审查用途明确；本次树快照有17项stacks内技能。不把此仓误写成模型权重发布或所有改编技能统一MIT。"
+    },
+    {
+      "id": "expo",
+      "tier": "secondary",
+      "title": "Expo 新工具帮助 AI 检查并运行手机应用",
+      "eventDate": "2026-10-27",
+      "sources": [
+        "https://expo.dev/blog/introducing-expo-agent-cli"
+      ],
+      "reason": "主动跟进找到了官方近期具体更新，替代缺少日期核实的技能库消息；说明实验状态，不做本机执行成功承诺。"
+    },
+    {
+      "id": "cachelint",
+      "tier": "brief",
+      "title": "新研究检查 AI 提示词缓存失效和用量误记",
+      "eventDate": "2026-10-26",
+      "updatedAt": "2026-10-27",
+      "sources": [
+        "https://arxiv.org/abs/2610.34817v2"
+      ],
+      "reason": "有明确案例、原论文和结果，能用白话解释成本影响；不照抄百万美元损失营销数字。"
+    }
+  ],
+  "rejected": [
+    {
+      "items": [
+        "Expo skills release repeated in two sections"
+      ],
+      "reason": "原有技能库早在7月官方材料中已有，不能包装成10-29新开源；合并并换成10-27真实CLI更新。"
+    },
+    {
+      "items": [
+        "fast-agent MCP directory entry",
+        "REA four-day trending",
+        "hallmark/DeepTutor/cindy popularity"
+      ],
+      "reason": "目录上架和星数增加本身不是这期所需的实质功能变化；不再花篇幅重复项目介绍。不声称已逐项核实文档的星数。"
+    },
+    {
+      "items": [
+        "TKE maintenance",
+        "security advisories",
+        "LoyalAgent-Bench"
+      ],
+      "reason": "本期主题与大众用途优先；相关候选不比已入选项目更适合本片，未完成原始通报/论文核查的数字不进入稿件。"
+    },
+    {
+      "items": [
+        "Moore Threads quarterly report",
+        "Hui Xi IPO",
+        "campus recruitment",
+        "Anthropic IPO"
+      ],
+      "reason": "偏财报、资本或招聘，与本期模型/实用工具重点关联较弱，不为凑栏目塞入。未据文档数字作事实性播报。"
+    },
+    {
+      "items": [
+        "old Claude/Qwen/DeepSeek model introductions",
+        "Claude drug-development partnerships"
+      ],
+      "reason": "本次查询看到的官方更新；旧发布不作今日首发，专业研究合作需要更多篇幅解释且已有更直接的模型和工具素材，暂不进入本期。"
+    }
+  ],
+  "notes": "四项为本期价值选择，不是固定配额；先交口播稿，真人录音后定镜头。无假今天首发、无营销速度排名、无TTS。"
+}
