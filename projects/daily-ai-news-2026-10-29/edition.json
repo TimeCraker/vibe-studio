@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-10-29",
-  "status": "script-ready-awaiting-human-recording",
+  "status": "cancelled-by-user",
   "sourceDocument": "https://feishu.doubao.com/docx/UpQJdqCvSopLVxxkU3acFLO0nuh",
   "fps": 60,
   "width": 1920,
@@ -23,7 +23,8 @@
       "userInstruction": "那你合理编排一下继续吧",
       "recordingHandoff": "new-script",
       "humanFinalReview": "pending"
-    }
+    },
+    "continuation": "cancelled-by-user"
   },
   "narrationBodySha256": "205232b99300c2dedb932eb90cf991feab8d83168aa4ea8f31c757f94b770adb",
   "ranking": "ranking.json",
@@ -31,5 +32,10 @@
   "storyOrder": [
     "gemini-carbon",
     "clover"
-  ]
+  ],
+  "cancellation": {
+    "date": "2026-10-30",
+    "reason": "用户明确取消昨天资讯，重新制作10月30日期。保留稿件和素材，不再等待本期录音或制作。",
+    "supersededBy": "../daily-ai-news-2026-10-30"
+  }
 }

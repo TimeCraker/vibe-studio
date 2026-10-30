@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ranking",
+    "text": "本次查询全球和国产ECI前15，保留模型版本与榜单顺序。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.bilibili.com/toy/ai-model-world",
+      "locator": "本次页面综合智力，全部/国内；ranking.json及evidence/browser-observations.md",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "mistral-release",
+    "text": "10月29日开放改进版Mistral Large 4权重；10月6日已有公开预览；文字和图像输入，文字输出，可自行部署。",
+    "status": "verified",
+    "source": {
+      "url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "locator": "opening / Get started; evidence/mistral-launch.txt; model card",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "mistral-eval",
+    "text": "Mistral发布材料：Terminal-Bench 4.0从预览版28%至41%，输出token减少30%；不是本栏目独立实测。",
+    "status": "verified",
+    "source": {
+      "url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "locator": "Built for the Builders / Terminal-Bench 4.0; preview selfreported label",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "mistral-scale-license",
+    "text": "约万亿参数；Mistral Ecosystem Open-Weight License有MaaS商业限制，不称无条件开源或普通电脑可流畅部署。",
+    "status": "verified",
+    "source": {
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "locator": "Architecture; evidence/mistral-license.html condition 2",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "pika-release",
+    "text": "10月29日Pika发布在MiniMax H3上后训练的H3 Flex；提供适配器权重与代码，依赖基础模型组件。",
+    "status": "verified",
+    "source": {
+      "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+      "locator": "System overview / Weight packages / License",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "pika-refs",
+    "text": "多模态参考合计至多12文件，最多9图、3视频、3音频，另有时长/尺寸/显存限制；支持同步音视频。",
+    "status": "verified",
+    "source": {
+      "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+      "locator": "Generation modes and reference limits; no claim of 12 images or every combination fitting memory",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "pika-hosted",
+    "text": "本地原生480p/768p及混合立体声；1080p/2K/4K处理和音轨分离属于托管API扩展；生成产品预计11月2日接入。",
+    "status": "verified",
+    "source": {
+      "url": "https://pika.art/blog/pika-h3-flex",
+      "locator": "Native versus hosted features; Flex coming November 2; evidence/pika-model.md",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "pika-demo",
+    "text": "官方模型页包含耳机产品影片、运镜等生成样例，不是栏目实测或真实品牌拍摄；示例种子等未全部披露。",
+    "status": "verified",
+    "source": {
+      "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+      "locator": "Watch the model / showcased assets and model-card caveat",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "sfx-release",
+    "text": "ElevenLabs于10月29日发布SFX v3，强调一条指令内多个声音的遵循；ElevenCreative及API已可用，性能提升是官方自报。",
+    "status": "verified",
+    "source": {
+      "url": "https://elevenlabs.io/blog/sound-effects-v3",
+      "locator": "Published Oct29 / Better handling of multiple sounds / Available now",
+      "checkedAt": "2026-10-30T15:07:01+08:00"
+    }
+  },
+  {
+    "id": "sfx-access",
+    "text": "SFX v3目前有限访问且不一定在所有地区可用，未获权限账号可能返回Unknown model；不承诺所有账号立刻可用。",
+    "status": "verified",
+    "source": {
+      "url": "https://elevenlabs.io/docs/overview/capabilities/sound-effects",
+      "locator": "SFX v3 / limited access; 本次网页检索直接返回官方文档正文，HTTP本地取证403",
+      "checkedAt": "2026-10-30T15:10:30+08:00"
+    }
+  }
+]

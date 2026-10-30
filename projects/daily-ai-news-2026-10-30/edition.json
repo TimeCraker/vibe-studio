@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "status": "script-ready-awaiting-human-recording",
+  "sourceDocument": "https://feishu.doubao.com/docx/LhH0dM1xOo9Bx2xf0Lhc07Z4nPT",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "compositionId": "DailyAI",
+  "coverCompositionId": "DailyAICover",
+  "narration": "human",
+  "narrationFile": "narration.md",
+  "rankingSeconds": 7,
+  "production": {
+    "humanRecording": "pending",
+    "humanReview": "pending",
+    "publish": "not-started",
+    "script": "delivered-for-human-recording",
+    "asrAlignment": "pending",
+    "render": "not-started"
+  },
+  "headStory": "mistral-large4",
+  "storyOrder": [
+    "mistral-large4",
+    "pika-h3-flex",
+    "sfx-v3"
+  ],
+  "narrationBodySha256": "6db6cfa2aa62a7c9d81602db2aaf7203bfea74af8f38b8eb826e8bbaaae6358e",
+  "editorialReview": {
+    "status": "agent-draft-awaiting-user",
+    "humanFinalReview": "pending"
+  }
+}

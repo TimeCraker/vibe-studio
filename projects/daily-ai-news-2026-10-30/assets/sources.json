@@ -1,0 +1,350 @@
+[
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "bytes": 1198,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/claude.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "bytes": 3273,
+    "fetchedAt": "2026-10-24T08:41:20.736187+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/openai.svg",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "bytes": 61823,
+    "fetchedAt": "2026-10-24T08:41:21.298240+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/google.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "bytes": 8912,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/meta.svg",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "bytes": 7454,
+    "fetchedAt": "2026-10-24T08:41:20.127217+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/kimi.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "bytes": 15465,
+    "fetchedAt": "2026-10-24T08:41:21.136261+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/qwen.png",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "bytes": 11037,
+    "fetchedAt": "2026-10-24T08:41:20.833370+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/glm.svg",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "bytes": 209762,
+    "fetchedAt": "2026-10-24T08:41:20.962405+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/deepseek.ico",
+    "selection": "prepared-not-yet-in-video",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "sceneIds": [
+      "global",
+      "domestic",
+      "all-voice-scenes"
+    ],
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "status": "local-file-hash-verified",
+    "selection": "prepared-not-yet-in-video",
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/carefree.mp3",
+    "licenseEvidence": "https://incompetech.com/music/royalty-free/faq.html#credit",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "audioReview": "本阶段只核验哈希、时长和解码；完整审听、循环接缝及人声避让待实际混音。",
+    "preparedAt": "2026-10-30T15:04:03+08:00",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "205.139625"
+      }
+    }
+  },
+  {
+    "file": "assets/fonts/sans.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\sans.ttf",
+    "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-hash-verified",
+    "bytes": 17773244,
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/fonts/sans.ttf",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/fonts/mono.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\mono.ttf",
+    "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "prepared-not-yet-in-video",
+    "status": "local-file-hash-verified",
+    "bytes": 453088,
+    "reusedFrom": "../daily-ai-news-2026-10-29/assets/fonts/mono.ttf",
+    "preparedAt": "2026-10-30T15:04:03+08:00"
+  },
+  {
+    "file": "assets/mistral-cat.svg",
+    "url": "https://mistral.ai/images/heros/ml4-oss/cat-signal.svg?dpl=6ae3844da0718a08567e65ba",
+    "sourcePage": "https://mistral.ai/news/mistral-large-4-oss/",
+    "use": "模型官方猫形视觉标志/封面辅助",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 1157,
+    "sha256": "cf200321cc9047cbd86b08e845b9ed2ed1ca62af0891e37f3f97b1e569650a04"
+  },
+  {
+    "file": "assets/mistral-cover.webp",
+    "url": "https://mistral.ai/cms-media/api/media/file/cover-mistral-sovereign%20copie.webp",
+    "sourcePage": "https://mistral.ai/news/mistral-large-4-oss/",
+    "use": "官方发布配图候选",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 42116,
+    "sha256": "b9f908e46ae5c579c7f5305f22ea633a5737828fa59e4778e0f2cd7743ddb23b"
+  },
+  {
+    "file": "assets/pika-logo.svg",
+    "url": "https://pika.art/icon.svg?icon.3bty87qirfeg8.svg",
+    "sourcePage": "https://pika.art/blog/pika-h3-flex",
+    "use": "官方产品标志",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 631,
+    "sha256": "824758826a4823324167b7ff4e0c6c7c3c59dbe615ec6f7474703aa463b4da31"
+  },
+  {
+    "file": "assets/pika-cover.jpg",
+    "url": "https://pika.art/blog/pika-h3-flex-og.jpg",
+    "sourcePage": "https://pika.art/blog/pika-h3-flex",
+    "use": "官方发布图",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 68628,
+    "sha256": "2bda2923da1c1272251b49a7c50e9a82ae2d2ef90f7e974ce2cedc996a3b568e"
+  },
+  {
+    "file": "assets/pika-camera-rally.mp4",
+    "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex/resolve/main/assets/showcases/camera-rally.mp4",
+    "sourcePage": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+    "use": "参考图控制、运镜和同步音频的官方生成样例",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 22237564,
+    "sha256": "3ce11cee6b48649d942b1f0c9eb65395f136eeab43d982b24e1a13f0e7e80e28",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1344,
+          "height": 768,
+          "r_frame_rate": "24/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "15.083333"
+      }
+    },
+    "decode": "full-file-pass",
+    "contentReview": {
+      "method": "keyframes at approximately 0,5,10 seconds; full-file decode passed",
+      "audioListening": "not-performed",
+      "continuousHumanReview": "pending",
+      "observed": "空泳池内两人打乒乓球，多视角运镜；戴蛙头套的人物"
+    }
+  },
+  {
+    "file": "assets/pika-product-film.mp4",
+    "url": "https://huggingface.co/Pika-Labs/Pika-H3-Flex/resolve/main/assets/showcases/product-film.mp4",
+    "sourcePage": "https://huggingface.co/Pika-Labs/Pika-H3-Flex",
+    "use": "耳机产品影片官方生成样例；不是品牌实拍",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 15553262,
+    "sha256": "3d72b3a2b74f32c064d6c8038c99f11e3825536bb6909df204c54ced4c153905",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1344,
+          "height": 768,
+          "r_frame_rate": "24/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "15.083333"
+      }
+    },
+    "decode": "full-file-pass",
+    "contentReview": {
+      "method": "keyframes at approximately 0,5,10 seconds; full-file decode passed",
+      "audioListening": "not-performed",
+      "continuousHumanReview": "pending",
+      "observed": "耳机产品近景/产品构图"
+    }
+  },
+  {
+    "file": "assets/elevenlabs-logo.svg",
+    "url": "https://elevenlabs.io/icon.svg?c23f5371fdd26632",
+    "sourcePage": "https://elevenlabs.io/blog/sound-effects-v3",
+    "use": "官方标志",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 404,
+    "sha256": "a8ccade64d9d38696c6f47a17ad1eb6d941d687bea0adc7af9b2ccce0e26c29a"
+  },
+  {
+    "file": "assets/sfx-cover.webp",
+    "url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/4i9xsghce45-SFX-v3_-Thumbnail--1-.webp",
+    "sourcePage": "https://elevenlabs.io/blog/sound-effects-v3",
+    "use": "官方发布图",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "prepared-not-yet-in-video",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 29526,
+    "sha256": "49893acaa0358b412885eedf3f841b9799a64c2ba8049229f61ace824dcf96fa"
+  },
+  {
+    "file": "assets/sfx-demo.mp4",
+    "url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/video-derived/6adbec3191d296f530f3a08a/h264_720.mp4",
+    "sourcePage": "https://elevenlabs.io/blog/sound-effects-v3",
+    "use": "官方多声音指令样例，录音后留短暂无旁白播放区",
+    "rights": "官方公开新闻/演示材料；保留出处，仅选与报道直接相关的必要片段，不视作一般素材授权或官方背书。最终选段需检查语境。",
+    "retrievedAt": "2026-10-30T15:04:03+08:00",
+    "selection": "reserve-not-used-in-script-visual",
+    "status": "acquired-awaiting-content-review",
+    "bytes": 6278304,
+    "sha256": "44f12eb947e36c73f77bee8066995ab625c0f1f44c7169f0e9e512c1bf72d8cd",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "25.800000"
+      }
+    },
+    "decode": "full-file-pass",
+    "contentReview": {
+      "method": "keyframes at approximately 0,5,10 seconds; full-file decode passed",
+      "audioListening": "not-performed",
+      "continuousHumanReview": "pending"
+    },
+    "note": "实际文件只有视频轨，无音轨；HLS master也未声明音轨。发现官方X来源但未取得可审听文件，不可宣称已准备声音AB样例。"
+  }
+]

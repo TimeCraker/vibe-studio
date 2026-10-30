@@ -1,0 +1,195 @@
+{
+  "headline": {
+    "title": "Mistral Large 4 权重开放",
+    "subtitle": "编程表现提升；Pika 视频模型更新",
+    "logo": "assets/mistral-cat.svg",
+    "source": "Mistral 官方公告与模型卡；评测为官方发布对比"
+  },
+  "stories": [
+    {
+      "title": "Mistral 开放 Large 4 改进版权重",
+      "detail": "编程效率提升，支持自行部署"
+    },
+    {
+      "title": "Pika 发布 H3 Flex 视频模型",
+      "detail": "多种参考素材控制生成内容"
+    },
+    {
+      "title": "ElevenLabs 更新音效模型",
+      "detail": "一条指令描述多种声音"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "section": "今日 AI 资讯",
+      "title": "今日 AI 资讯",
+      "claimIds": [],
+      "lead": "Mistral 权重开放 · Pika 视频模型 · ElevenLabs 音效更新",
+      "source": "本期核实的三项官方公告",
+      "anchor": "各位观众们，大家好，欢迎收看今日 A"
+    },
+    {
+      "id": "mistral-release",
+      "section": "模型头条",
+      "title": "Mistral Large 4 开放改进版模型权重",
+      "claimIds": [
+        "mistral-release"
+      ],
+      "lead": "支持文字、图片输入；有条件的团队可自行部署",
+      "media": {
+        "kind": "image",
+        "file": "assets/mistral-cat.svg",
+        "label": "Mistral 官方模型视觉标志"
+      },
+      "presentation": {
+        "intent": "用官方模型猫标识作身份，配代码在自有服务器处理的简洁图解；不铺大黑底方块。"
+      },
+      "source": "Mistral 官方公告与模型卡；评测为官方发布对比",
+      "anchor": "十月二十九日，法国 Mistral "
+    },
+    {
+      "id": "mistral-eval",
+      "section": "模型头条",
+      "title": "Mistral 编程评测成绩提升，输出更精简",
+      "claimIds": [
+        "mistral-eval"
+      ],
+      "lead": "Terminal-Bench 4.0：28% → 41%",
+      "bullets": [
+        "输出 token 减少30%",
+        "预览版对比，按官方发布口径"
+      ],
+      "presentation": {
+        "intent": "画两根可读柱形，标注预览版与权重开放版；token减少另行揭示，不与ECI综合榜混算。"
+      },
+      "source": "Mistral 官方公告与模型卡；评测为官方发布对比",
+      "anchor": "编程表现比月初的预览版有了提升。按官"
+    },
+    {
+      "id": "mistral-access",
+      "section": "使用方式",
+      "title": "Mistral 可在线体验，自行部署有硬件要求",
+      "claimIds": [
+        "mistral-release",
+        "mistral-scale-license"
+      ],
+      "bullets": [
+        "约万亿参数",
+        "商业模型服务需另行授权"
+      ],
+      "presentation": {
+        "intent": "在线体验与自有服务器两列，用官方标志和清楚入口；许可一句提示。"
+      },
+      "source": "Mistral 官方公告与模型卡；评测为官方发布对比",
+      "anchor": "它是一个约万亿参数的模型，自行部署需"
+    },
+    {
+      "id": "pika-release",
+      "section": "视频模型",
+      "title": "Pika H3 Flex 发布，支持同步音视频生成",
+      "claimIds": [
+        "pika-release"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/pika-cover.jpg",
+        "label": "Pika 官方发布配图"
+      },
+      "lead": "基于 MiniMax H3 后训练，开放适配器权重与代码",
+      "source": "Pika 官方公告、模型卡及官方生成样例；非本栏目实测",
+      "anchor": "接下来是 Pika 的 H3 Fle"
+    },
+    {
+      "id": "pika-demo",
+      "section": "视频模型",
+      "title": "Pika 支持图片、视频和声音共同参考",
+      "claimIds": [
+        "pika-refs",
+        "pika-demo"
+      ],
+      "lead": "参考素材合计最多12个文件；另有各类数量和时长限制",
+      "media": {
+        "kind": "video",
+        "file": "assets/pika-product-film.mp4",
+        "sourceIn": 0,
+        "sourceOut": 15,
+        "poster": "assets/pika-cover.jpg",
+        "label": "Pika 官方生成样例，非实拍或本栏目实测"
+      },
+      "presentation": {
+        "intent": "让耳机视频占主要画面，配极少中文注释；片段不足时用参考输入示意承接，不放慢或循环冒充长片。另备camera-rally，按录音可拆成第二镜。"
+      },
+      "source": "Pika 官方公告、模型卡及官方生成样例；非本栏目实测",
+      "anchor": "对创作者来说，一个具体变化是，图片、"
+    },
+    {
+      "id": "pika-local-hosted",
+      "section": "使用方式",
+      "title": "Pika 的本地模型与云端扩展功能不同",
+      "claimIds": [
+        "pika-hosted"
+      ],
+      "lead": "本地480p/768p；更高分辨率和五条音轨分离由云端接口提供",
+      "bullets": [
+        "对白",
+        "配乐",
+        "音效",
+        "拟音",
+        "环境声"
+      ],
+      "presentation": {
+        "intent": "先呈现本地/云端两列，再让五条音轨依次出现；不把本地模型画成原生4K。"
+      },
+      "source": "Pika 官方公告、模型卡及官方生成样例；非本栏目实测",
+      "anchor": "使用时要分清本地和云端。按官方说明，"
+    },
+    {
+      "id": "sfx-intro",
+      "section": "音效简讯",
+      "title": "ElevenLabs 更新音效模型，可用一句话描述多种声音",
+      "claimIds": [
+        "sfx-release"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/sfx-cover.webp",
+        "label": "ElevenLabs 官方发布图"
+      },
+      "lead": "示例指令：网球回合 → 观众鼓掌 → 裁判报分",
+      "presentation": {
+        "intent": "短指令分三段揭示；官方对比视频目前取得版无音轨，不作为声音试听。不要播放假的音频AB对比。"
+      },
+      "source": "ElevenLabs 官方公告和示例指令；改善效果为厂商描述",
+      "anchor": "再看一条音效更新。ElevenLab"
+    },
+    {
+      "id": "sfx-access",
+      "section": "音效简讯",
+      "title": "ElevenLabs 新音效模型已接入平台，访问范围有限",
+      "claimIds": [
+        "sfx-release",
+        "sfx-access"
+      ],
+      "lead": "ElevenCreative / ElevenAPI；以账号与地区权限为准",
+      "source": "ElevenLabs 官方功能文档：SFX v3 limited access",
+      "anchor": "官方说，新版还改善了音乐、人声和部分"
+    },
+    {
+      "id": "closing",
+      "section": "本期结束",
+      "title": "本期资讯与演示链接见简介",
+      "claimIds": [],
+      "source": "本期来源与素材记录",
+      "anchor": "以上就是本期精选资讯。相关公告、模型"
+    }
+  ],
+  "fonts": {
+    "sans": "assets/fonts/sans.ttf",
+    "mono": "assets/fonts/mono.ttf"
+  },
+  "music": {
+    "file": "assets/carefree.mp3",
+    "credit": "Carefree by Kevin MacLeod，CC BY 4.0；完整署名与来源见assets/sources.json，口播时自动避让。"
+  }
+}
