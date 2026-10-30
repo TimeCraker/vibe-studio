@@ -111,7 +111,12 @@
   ],
   "notes": "新一期独立开始；报道近期24至48小时内已核实的实质变化，不声称每条均10月30日首发。条数由新闻价值决定；已取消10月29日制作，不沿用那期新闻/分数。",
   "review": {
-    "status": "agent-draft-awaiting-user",
+    "status": "agent-final-for-recording",
     "humanAcceptance": "pending"
+  },
+  "scriptRevision": {
+    "version": "v2",
+    "reason": "用户要求直接定稿；精简参数和重复限定，Mistral头条、Pika演示重点、音效简讯。",
+    "previousNarration": "narration-first-draft.md"
   }
 }

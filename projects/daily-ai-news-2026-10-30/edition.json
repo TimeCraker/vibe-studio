@@ -15,7 +15,7 @@
     "humanRecording": "pending",
     "humanReview": "pending",
     "publish": "not-started",
-    "script": "delivered-for-human-recording",
+    "script": "recording-final-delivered",
     "asrAlignment": "pending",
     "render": "not-started"
   },
@@ -25,9 +25,11 @@
     "pika-h3-flex",
     "sfx-v3"
   ],
-  "narrationBodySha256": "6db6cfa2aa62a7c9d81602db2aaf7203bfea74af8f38b8eb826e8bbaaae6358e",
+  "narrationBodySha256": "976a471edfd2fbc0707e6082f9f3aad7d24da0c43f4e82540296c2fb6fff68a5",
   "editorialReview": {
-    "status": "agent-draft-awaiting-user",
-    "humanFinalReview": "pending"
-  }
+    "status": "agent-final-for-recording",
+    "humanFinalReview": "pending",
+    "note": "按用户要求由Agent定稿；不是用户已审阅或批准成片。"
+  },
+  "narrationVersion": "v2-recording-final"
 }
