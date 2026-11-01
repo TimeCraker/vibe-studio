@@ -59,3 +59,45 @@ test("audio rejects source overwrite, implicit truncation, traversal and silent 
   assert.throws(() => mixAudio(f.root), /silent|too short/);
   assert.equal(existsSync(join(f.root, "audio/mix.wav")), false);
 });
+
+test("optional voice denoising reduces stationary noise without muting the signal or changing its clock", () => {
+  const root = mkdtempSync(join(tmpdir(), "vibe-denoise-"));
+  const source = join(root, "noisy.wav");
+  mediaCommand("ffmpeg", ["-v", "error", "-f", "lavfi", "-i", "sine=frequency=1200:duration=3.5:sample_rate=48000",
+    "-f", "lavfi", "-i", "anoisesrc=color=white:amplitude=0.02:duration=5:sample_rate=48000:seed=37",
+    "-filter_complex", "[0:a]adelay=1500,apad=whole_dur=5[tone];[tone][1:a]amix=inputs=2:normalize=0,atrim=duration=5",
+    "-y", source]);
+  const before = hashFile(source);
+  const config = {schemaVersion:1, duration:5, normalize:false, ducking:false,
+    tracks:[{role:"voice",file:"noisy.wav",denoise:{reductionDb:10,noiseFloorDb:-35}}]};
+  const put = () => writeFileSync(join(root,"audio.json"), JSON.stringify(config));
+  const rms = (file, start, filter = "anull") => {
+    const bytes = mediaCommand("ffmpeg",["-v","error","-ss",String(start),"-i",file,"-t","0.5","-af",filter,"-ac","1","-ar","48000","-f","f32le","-"],{encoding:null}).stdout;
+    let sum=0; for(let i=0;i<bytes.length;i+=4) sum+=bytes.readFloatLE(i)**2;
+    return Math.sqrt(sum/(bytes.length/4));
+  };
+  put(); const processed=mixAudio(root,{out:"denoised.wav"});
+  config.tracks[0].denoise=false;put();mixAudio(root,{out:"baseline.wav"});
+  const clean=join(root,"denoised.wav"),base=join(root,"baseline.wav");
+  assert.ok(rms(clean,.5)<rms(base,.5)*.65,"quiet-region noise must measurably fall");
+  const band="highpass=f=1100,lowpass=f=1300";
+  const signalRatio=rms(clean,2,band)/rms(base,2,band);
+  assert.ok(signalRatio>.85&&signalRatio<1.1,"retained test tone must not be muted or amplified");
+  assert.ok(rms(clean,4.5,band)>rms(base,4.5,band)*.85,"the final speech samples must survive filter flushing");
+  const onset = (file) => {
+    const bytes=mediaCommand("ffmpeg",["-v","error","-i",file,"-ac","1","-ar","48000","-f","f32le","-"],{encoding:null}).stdout;
+    for(let i=67200;i<86400;i++) if(Math.abs(bytes.readFloatLE(i*4))>.06) return i/48000;
+    throw Error("Test signal onset not found");
+  };
+  assert.ok(Math.abs(onset(clean)-onset(base))<.002,"denoising must not delay words against existing subtitles");
+  assert.equal(hashFile(source),before);
+  assert.ok(Math.abs(probeMedia(clean).duration-5)<.02);
+  assert.deepEqual(processed.inputs[0].denoise,{reductionDb:10,noiseFloorDb:-35});
+  assert.equal(processed.inputs[0].denoiseDelayCompensationSamples,1200);
+  assert.equal(processed.humanReview.status,"pending");
+  for(const bad of [true, [], null, {reductionDb:0}, {noiseFloorDb:-100}, {unexpected:1}]) {
+    config.tracks[0].denoise=bad;put();assert.throws(()=>mixAudio(root),/denoise/);
+  }
+  config.tracks[0].denoise={};config.tracks[0].role="music";put();
+  assert.throws(()=>mixAudio(root),/voice track/);
+});

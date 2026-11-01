@@ -51,8 +51,19 @@ export function mixAudio(project, { configPath = "audio.json", out = "audio/mix.
     const fadeIn = bounded(track.fadeIn ?? 0, "track.fadeIn", 0, length);
     const fadeOut = bounded(track.fadeOut ?? 0, "track.fadeOut", 0, length);
     const highpassHz = bounded(track.highpassHz ?? 0, "track.highpassHz", 0, 400);
+    let denoise = false;
+    if (track.denoise !== undefined && track.denoise !== false) {
+      if (track.role !== "voice" || !track.denoise || typeof track.denoise !== "object" || Array.isArray(track.denoise))
+        throw new Error("track.denoise must be a settings object on a voice track, or false");
+      if (Object.keys(track.denoise).some((key) => !["reductionDb", "noiseFloorDb"].includes(key)))
+        throw new Error("Unknown track.denoise setting; use reductionDb/noiseFloorDb");
+      denoise = {
+        reductionDb: bounded(track.denoise.reductionDb ?? 8, "track.denoise.reductionDb", 0.01, 30),
+        noiseFloorDb: bounded(track.denoise.noiseFloorDb ?? -50, "track.denoise.noiseFloorDb", -80, -20),
+      };
+    }
     if (fadeIn + fadeOut > length) throw new Error("Fades overlap; shorten them or lengthen the clip");
-    return { ...track, file, start, inputStart, length, gainDb, fadeIn, fadeOut, highpassHz, sha256: hashFile(file) };
+    return { ...track, file, start, inputStart, length, gainDb, fadeIn, fadeOut, highpassHz, denoise, sha256: hashFile(file) };
   });
   const protectedPaths = [configFile, ...tracks.map((t) => t.file)].map((p) => p.toLowerCase());
   if ([output, reportPath].some((p) => protectedPaths.includes(p.toLowerCase()))) throw new Error("Output would overwrite an input");
@@ -61,7 +72,15 @@ export function mixAudio(project, { configPath = "audio.json", out = "audio/mix.
     if (t.loop) inputArgs.push("-stream_loop", "-1");
     inputArgs.push("-i", t.file);
     const chain = [`atrim=start=${t.inputStart}:duration=${t.length}`, "asetpts=PTS-STARTPTS", "aresample=48000",
-      "aformat=sample_fmts=fltp:channel_layouts=stereo", `volume=${t.gainDb}dB`];
+      "aformat=sample_fmts=fltp:channel_layouts=stereo"];
+    // Noise floor refers to the source level, before gain and loudness normalization.
+    if (t.denoise) {
+      // afftdn uses a 3-hop window and delays samples by 2 hops: 25ms at 48kHz.
+      // Flush the tail, then compensate that delay so existing word timing remains valid.
+      chain.push("apad=pad_len=1200", `afftdn=nr=${t.denoise.reductionDb}:nf=${t.denoise.noiseFloorDb}`,
+        `atrim=start_sample=1200:duration=${t.length}`, "asetpts=PTS-STARTPTS");
+    }
+    chain.push(`volume=${t.gainDb}dB`);
     if (t.highpassHz) chain.push(`highpass=f=${t.highpassHz}`);
     if (t.fadeIn) chain.push(`afade=t=in:st=0:d=${t.fadeIn}`);
     if (t.fadeOut) chain.push(`afade=t=out:st=${t.length - t.fadeOut}:d=${t.fadeOut}`);
@@ -108,7 +127,7 @@ export function mixAudio(project, { configPath = "audio.json", out = "audio/mix.
     const report = { schemaVersion: 1, ok: !errors.length, status: errors.length ? "failed" : "processed-needs-listening",
       output: out, outputSha256: hashFile(output), duration: meta.duration, sampleRate: 48000, channels: 2,
       config: { path: configPath, sha256: configSha256 },
-      inputs: tracks.map((t) => ({ path: t.file, sha256: t.sha256, role: t.role, start: t.start, in: t.inputStart, duration: t.length })),
+      inputs: tracks.map((t) => ({ path: t.file, sha256: t.sha256, role: t.role, start: t.start, in: t.inputStart, duration: t.length, gainDb: t.gainDb, highpassHz: t.highpassHz, denoise: t.denoise, denoiseDelayCompensationSamples: t.denoise ? 1200 : 0 })),
       duckingApplied, normalized: config.normalize !== false, target, before, after, errors,
       warnings: config.normalize === false ? ["Normalization disabled by project config"] : [],
       humanReview: { status: "pending", checks: ["intelligibility", "music balance", "cuts and fades", "distortion", "sync with picture"] } };
