@@ -31,3 +31,11 @@
 能力演示区明确是官方端到端生成的案例，列实时流体模拟、商业经营分析、3D文物交互展示、客户反馈分析报告、城市沙盘、中国风色彩美学页、微缩场景资产、活动邀请函生成器。读取实际video元素src与poster后取得三维文物和商业分析两段原文件；不是仅凭视频标题认定取得。官方更新日志单独标2026-11-02正式版开放、2026-09-25 Preview开放，日期与旧版本区别已核对。
 
 本地longcat-release.html仅为SPA初始壳，不包含完整动态正文；上述正文依据来自本次实际浏览器AX读取。两段原文件属性与抽帧观察见assets/sources.json，未连续观看或审听，不标已入片。
+
+## 追加：重选时实际核查GDPx
+
+2026-11-02，实际打开https://gdpx.semianalysis.com/，默认METRIC Score、DOMAIN All domains、MODELS13of20。页面显示206任务、11领域、14合作方，前三为Claude Opus5.5 12.0%、Gemini4Carbon10.9%、GPT6Astra9.6%。说明按领域等权、领域内合作方等权，任务按领域采用二元/连续评分，三次尝试均值。不能把12%当成真实工作成功率，也不能与开场ECI榜混用。
+
+实际打开发布文https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities，DOM time元素datetime为2026-11-02T01:51:42.757Z，title为Nov2 at9:51am。已读Interpreting the results、Our methodology与任务举例；作者说明安全分类器会影响部分模型总分，不能将所有低分归因于推理能力。网页读取成功后另已保存HTTP正文及来源哈希，不以聚合站转发时间作发布时间。
+
+去重：读取历史工程发现Gemini4Carbon在10月29日已报道，故不重复首发；在已有narration/selection中未发现Genie4稿件命中。Genie4官方原文日期为10月27日，本期只能明确作为近期补报。

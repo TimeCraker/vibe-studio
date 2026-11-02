@@ -4,3 +4,4 @@ evidence/*.html
 evidence/*.txt
 evidence/*.assets.json
 evidence/ranking-upstream.json
+audio/source/

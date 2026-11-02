@@ -35,6 +35,17 @@
       "query": "天垓300 H200 1.05 天数智芯官方、产品页、上海仪电测试、媒体开放日",
       "url": "https://www.iluvatar.com/productDetails?fullCode=cpjs-yj-xlxl-tg300",
       "result": "厂商产品页和产品图可读；本次未取得原始测试报告及比较条件。转载和多篇媒体引述不能替代原报告，性能结论仍待核实，不入正式稿。"
+    },
+    {
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00",
+      "query": "2026-11-02 AI科技发布；GDPx原站与方法；Google Genie/Carbon官方；Anthropic官方安全研究；与10/27—11/1工程稿件去重",
+      "sources": [
+        "https://gdpx.semianalysis.com/",
+        "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude"
+      ],
+      "result": "GDPx发布日期11月2日09:51北京时间，206任务/11领域与混合评分已读；Genie4官方日期10月27日，列近期补报，未在既有narration/selection命中；Carbon已在10/29报道，不能重复首发；Anthropic安全研究10/27旧事转备选。不是今天只有三条消息的全面性结论。"
     }
   ],
   "documentSupplement": [
@@ -48,38 +59,30 @@
   "selected": [
     {
       "id": "longcat",
-      "tier": "头条",
+      "tier": "当日重点",
       "title": "美团LongCat-2.5正式版开放接口",
       "url": "https://longcat.ai/platform/docs/change-log",
-      "reason": "当期有官方可核的新版本开放，视觉理解、长任务编程和可查看演示都有具体信息，优先于旧例行更新。",
+      "reason": "正式版接口在11月2日开放，原生视觉与长任务编程有新变化，已有官方演示文件可说明具体用途；不用参数量或单纯正式上线包装领先结论。",
       "eventDate": "2026-11-02",
       "limits": "发布页标11月1日，API更新日志11月2日；GitHub/HuggingFace仍敬请期待，不称已开源。演示为官方选例，非本栏目实测。"
     },
     {
-      "id": "dsh",
-      "tier": "次重点",
-      "title": "社区DSH安卓版把执行引擎装进手机",
-      "url": "https://github.com/jackwener/DSH-Android",
-      "reason": "手机上授权操作App与文件有普通观众能理解的实际用途，区分本地执行引擎、远程客户端与离线模型；项目本次仍在更新，最新发布11月1日。不是因为涨星入选。",
-      "limits": "社区项目，非官方客户端；Android10+ arm64，需模型服务，最新v0.3.6作者注明未真机测试。"
+      "id": "gdpx",
+      "tier": "当日重点",
+      "title": "GDPx用复杂专业工作环境检验前沿智能体",
+      "url": "https://gdpx.semianalysis.com/",
+      "eventDate": "2026-11-02",
+      "reason": "新增评测把模型放进芯片设计、硬件、法律等复杂环境；可解释为什么会写答案不等于可靠完成整项工作，能改变观众对能力排行的理解。",
+      "limits": "206任务、11领域，默认Score按各领域等权，混合二元/连续评分、三次尝试均值；12%是该评测综合得分，不是现实工作成功率，不能等同ECI。"
     },
     {
-      "id": "coral",
-      "tier": "研究精选",
-      "title": "CORAL先保存进度再清理上下文",
-      "url": "https://arxiv.org/html/2610.40350v1",
-      "reason": "解释长任务越做越乱的具体问题；用一个机制和一组同实验结果说明，训练边界保留。",
-      "eventDate": "2026-10-29",
-      "limits": "论文实验，非本栏目实测，结果包含SFT和RL，不承诺通用助手直接复现。"
-    },
-    {
-      "id": "clickhouse",
-      "tier": "简讯",
-      "title": "自托管ClickHouse核对安全修复",
-      "url": "https://clickhouse.com/docs/resources/changelogs/security-changelog",
-      "reason": "未认证远程执行风险、修复已出，仍有明确行动价值，安全小更新可因影响升格。",
-      "eventDate": "2026-10-30",
-      "limits": "特定条件，不是网络可达即必然利用；Cloud/BYOC已修，不传播未证实根因与攻击端口。"
+      "id": "genie4",
+      "tier": "近期补报",
+      "title": "Google Genie4生成可交互世界并支持原生声音",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "eventDate": "2026-10-27",
+      "reason": "自然语言在运行中改变场景、生成同步声音，变化直观，面向游戏原型/仿真有独立信息；明确是近期重要进展，不冒充11月2日首发。",
+      "limits": "仅研究预览/可信测试者，非所有人可用；交互为几分钟级，一致性、复杂交互、文字和声音准确性仍有限，不能说替代游戏引擎或证明理解物理。"
     }
   ],
   "rejected": [
@@ -135,15 +138,52 @@
       "title": "格尔木60MW液态空气储能并网",
       "url": "https://www.thepaper.cn/newsDetail_forward_34384486",
       "reason": "用户明确认为本期价值不大，移出本期推荐与稿件；不由此推断整个栏目排除能源资讯。"
+    },
+    {
+      "title": "社区DSH安卓版把执行引擎装进手机",
+      "url": "https://github.com/jackwener/DSH-Android",
+      "reason": "用户认为本期价值一般。社区身份不是自动否决项，但本次没有足够独特实测和影响证据支撑重点篇幅，不因项目名、开源或热度入选。"
+    },
+    {
+      "title": "CORAL先保存进度再清理上下文",
+      "url": "https://arxiv.org/html/2610.40350v1",
+      "reason": "研究仍有价值，但本期用户更关注明显能力变化与实际影响，移出正文，保留技术专题备选。不是单纯因为另一条也是研究。"
+    },
+    {
+      "title": "自托管ClickHouse核对安全修复",
+      "url": "https://clickhouse.com/docs/resources/changelogs/security-changelog",
+      "reason": "对自托管运维用户重要，对当前普通科技观众适用面窄，本期移出正文，必要时另做定向提醒。"
+    },
+    {
+      "title": "Gemini4 Carbon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "reason": "10月28日官方发布，10月29日栏目已有稿件报道，没有新的开放或能力变化就不重复首发。"
+    },
+    {
+      "title": "Claude发现真实软件漏洞的研究",
+      "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+      "reason": "原文10月27日发布，影响较大但本次没有新的披露进展；列备选，不将聚合站11月2日转发当新公告。"
     }
   ],
-  "notes": "2026-11-02用户要求重查并写稿后修订：LongCat正式版头条、DSH次重点、CORAL研究精选、ClickHouse短讯。四条由价值决定，不是配额。储能按用户本期判断排除；天垓待核单列，不混为低价值。LongCat两段官方录像已取得并检查属性/代表帧，尚未入片。",
+  "notes": "当前推荐为LongCat正式版+GDPx两条当日重点，Genie4一条明确标日期的近期补报。条数由价值决定；DSH移出，CORAL/ClickHouse转备选，储能遵从用户本期排除，天垓仍待核。不编辑用户原录音；旧稿停用，尚未写/交新稿。",
   "pendingVerification": [
     {
       "title": "天垓300实机演示与H200比较",
       "value": "用户条件认可：核实真实后可以入片。",
       "missing": "原始测试报告/可复核模型负载与部署比较条件",
       "decision": "不写全面超过H200，也不把多篇转述称为独立复核；本版暂不播性能结论。"
+    }
+  ],
+  "revisionHistory": [
+    {
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00",
+      "reason": "用户认为原四条总体一般，要求先调整资讯。移出DSH、CORAL、ClickHouse正文，保留原稿和录音；不因非官方一刀切，按实际影响与独特变化重选。",
+      "previousSelected": [
+        "longcat",
+        "dsh",
+        "coral",
+        "clickhouse"
+      ]
     }
   ]
 }

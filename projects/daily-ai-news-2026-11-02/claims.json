@@ -11,61 +11,6 @@
     }
   },
   {
-    "id": "dsh-engine",
-    "text": "DSH-Android社区项目把DSH引擎放在Android App进程中，免Root/Termux，支持授权后的文件、文档与无障碍读屏操作；需要模型服务，非离线大模型。",
-    "status": "verified",
-    "source": {
-      "url": "https://github.com/jackwener/DSH-Android",
-      "locator": "README：亮点/能做什么/架构/系统要求",
-      "checkedAt": "2026-11-02T03:38:46.248Z",
-      "path": "evidence/dsh-readme.md"
-    }
-  },
-  {
-    "id": "dsh-limits",
-    "text": "Android10+ arm64-v8a；任务可暂停插话，v0.3.6发布记录注明这版未真机测试。",
-    "status": "verified",
-    "source": {
-      "url": "https://github.com/jackwener/DSH-Android/releases/tag/v0.3.6",
-      "locator": "v0.3.6 11月1日发布记录，未真机测试；系统要求",
-      "checkedAt": "2026-11-02T03:38:46.248Z",
-      "path": "evidence/dsh-releases-page.html"
-    }
-  },
-  {
-    "id": "coral-method",
-    "text": "10月29日提交CORAL，保存进度与已核事实后清理杂乱上下文继续推理；使用专门行为克隆和强化学习。",
-    "status": "verified",
-    "source": {
-      "url": "https://arxiv.org/html/2610.40350v1",
-      "locator": "摘要、§3、§4.2 Impact of Training；arxiv abs提交日期",
-      "checkedAt": "2026-11-02T03:38:46.248Z",
-      "path": "evidence/coral-paper.html"
-    }
-  },
-  {
-    "id": "coral-results",
-    "text": "论文Qwen3-8B GAIA实验ReAct平均19.4%、CORAL RL42.8%；输入token减少87.4%。口播约19%到43%，仅描述同论文实验，非普遍承诺。",
-    "status": "verified",
-    "source": {
-      "url": "https://arxiv.org/html/2610.40350v1",
-      "locator": "表1、表2与§4.2/§4.3；103题×8次轨迹",
-      "checkedAt": "2026-11-02T03:38:46.248Z",
-      "path": "evidence/coral-paper.html"
-    }
-  },
-  {
-    "id": "clickhouse-security",
-    "text": "10月30日CVE-2026-116366：特定条件下有网络访问的未认证用户可执行任意代码；修复26.3.62.3-lts、26.8.36.3-lts、26.9.27.3-stable、26.10.3.7-stable；Cloud及BYOC已修复。",
-    "status": "verified",
-    "source": {
-      "url": "https://clickhouse.com/docs/resources/changelogs/security-changelog",
-      "locator": "Fixed in ClickHouse v26.10.3.7, 2026-10-30 第一条公告",
-      "checkedAt": "2026-11-02T03:38:46.248Z",
-      "path": "evidence/clickhouse-security.html"
-    }
-  },
-  {
     "id": "longcat-release",
     "text": "LongCat官方API更新日志2026-11-02确认2.5正式版可用，区别9月25日Preview；主打原生多模态、复杂代码库和长任务工程，与Agent工具接入。",
     "status": "verified",
@@ -85,6 +30,61 @@
       "path": "evidence/browser-observations.md",
       "locator": "实际浏览器AX读取发布页标题/日期/入口、能力演示及视频DOM；本地HTML为SPA壳，不伪称包含全文",
       "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+    }
+  },
+  {
+    "id": "gdpx-launch",
+    "text": "GDPx发布于2026-11-02T01:51:42Z，即北京时间09:51；官网列206任务、11领域、14合作方。",
+    "status": "verified",
+    "source": {
+      "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+      "path": "evidence/gdpx-launch.html",
+      "locator": "datePublished；首页AX DOM；发布说明领域列表",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "gdpx-score",
+    "text": "当次默认榜单Claude Opus5.5为12.0%，Gemini4Carbon10.9%，GPT6Astra9.6%；仅该评测当次默认综合Score。",
+    "status": "verified",
+    "source": {
+      "url": "https://gdpx.semianalysis.com/",
+      "path": "evidence/gdpx-leaderboard.html",
+      "locator": "默认METRIC Score / DOMAIN All domains / MODELS13of20，浏览器核对",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "gdpx-method",
+    "text": "Score按11领域等权且领域内合作方等权，按任务采用二元与连续评分，三次尝试均值；安全拒答也可能影响得分。不是统一现实成功率。",
+    "status": "verified",
+    "source": {
+      "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+      "path": "evidence/gdpx-launch.html",
+      "locator": "Our methodology及Interpreting the results；榜单页说明",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "genie4-release",
+    "text": "Google10月27日发布Genie4研究预览，支持键盘导航、自然语言实时修改场景和原生声音，当前先向可信测试者开放。",
+    "status": "verified",
+    "source": {
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "path": "evidence/genie4-launch.html",
+      "locator": "October27,2026；发布说明；四项能力与开放范围",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "genie4-limits",
+    "text": "官方列出一致性漂移、复杂交互、现实地点、文字渲染、几分钟交互时长和声音准确性限制。",
+    "status": "verified",
+    "source": {
+      "url": "https://deepmind.google/models/genie/",
+      "path": "evidence/genie4-model.html",
+      "locator": "Limitations章节",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
     }
   }
 ]

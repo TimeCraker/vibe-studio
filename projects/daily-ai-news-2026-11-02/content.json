@@ -1,148 +1,25 @@
 {
   "headline": {
-    "title": "美团LongCat-2.5正式版上线",
-    "subtitle": "原生多模态与长任务编程；网页和接口可体验",
+    "title": "LongCat-2.5正式版上线",
+    "subtitle": "本期重选：新模型、复杂任务评测、交互世界",
     "logo": "assets/longcat-logo.svg",
-    "source": "美团LongCat官方发布与更新日志；非本栏目实测"
+    "source": "待修订口播稿与具体镜头，非已接受封面"
   },
   "stories": [
     {
       "title": "美团LongCat-2.5正式版开放接口",
-      "detail": "视觉理解结合长任务编程"
+      "detail": "当日重点；事件日期2026-11-02"
     },
     {
-      "title": "社区DSH安卓版把执行引擎装进手机",
-      "detail": "授权后处理文件与操作App"
+      "title": "GDPx用复杂专业工作环境检验前沿智能体",
+      "detail": "当日重点；事件日期2026-11-02"
     },
     {
-      "title": "CORAL保存任务进度再清理上下文",
-      "detail": "论文实验，包含专门训练"
-    },
-    {
-      "title": "自托管ClickHouse需核对安全修复",
-      "detail": "官方Cloud/BYOC已应用修复"
+      "title": "Google Genie4生成可交互世界并支持原生声音",
+      "detail": "近期补报；事件日期2026-10-27"
     }
   ],
-  "scenes": [
-    {
-      "id": "overview",
-      "title": "今日AI资讯",
-      "section": "今日AI资讯",
-      "source": "",
-      "anchor": "各位观众们，大家好，欢迎收看今日",
-      "claimIds": []
-    },
-    {
-      "id": "longcat-release",
-      "title": "美团LongCat-2.5正式版开放接口",
-      "section": "模型头条",
-      "source": "LongCat官方更新日志，2026-11-02",
-      "anchor": "先看美团的 LongCat-2.",
-      "claimIds": [
-        "longcat-release"
-      ]
-    },
-    {
-      "id": "longcat-demos",
-      "title": "官方演示：三维展览与商业分析",
-      "section": "模型头条",
-      "source": "美团官方演示，非本栏目实测",
-      "anchor": "官方演示包括交互式三维文物展览、",
-      "claimIds": [
-        "longcat-demos"
-      ]
-    },
-    {
-      "id": "longcat-access",
-      "title": "网页与接口可体验，权重入口仍待开放",
-      "section": "模型头条",
-      "source": "LongCat发布页；GitHub/HuggingFace敬请期待",
-      "anchor": "目前可通过官方网页和接口体验，代",
-      "claimIds": [
-        "longcat-release",
-        "longcat-demos"
-      ]
-    },
-    {
-      "id": "dsh-intro",
-      "title": "社区DSH安卓版把执行引擎装进手机",
-      "section": "开源手机助手",
-      "source": "DSH-Android社区项目；非DeepSeek官方客户端",
-      "anchor": "接着看手机助手。社区项目 DSH",
-      "claimIds": [
-        "dsh-engine"
-      ]
-    },
-    {
-      "id": "dsh-example",
-      "title": "查文件、开勿扰，需联网和权限适配",
-      "section": "开源手机助手",
-      "source": "项目说明与v0.3.6发布记录，非本栏目实测",
-      "anchor": "比如，找出下载目录里最大的五个文",
-      "claimIds": [
-        "dsh-engine",
-        "dsh-limits"
-      ]
-    },
-    {
-      "id": "coral-problem",
-      "title": "CORAL研究长任务中的上下文混乱",
-      "section": "智能体研究",
-      "source": "CORAL论文，2026-10-29",
-      "anchor": "再看一项智能体研究。十月二十九日",
-      "claimIds": [
-        "coral-method"
-      ]
-    },
-    {
-      "id": "coral-memory",
-      "title": "保存已核事实和进度，再清理上下文",
-      "section": "智能体研究",
-      "source": "CORAL论文§3；非本栏目实测",
-      "anchor": "它的办法是，让智能体先保存已核实",
-      "claimIds": [
-        "coral-method"
-      ]
-    },
-    {
-      "id": "coral-result",
-      "title": "论文实验：准确率约19%到43%",
-      "section": "智能体研究",
-      "source": "论文表1/2，包含专门训练；非本栏目实测",
-      "anchor": "论文报告，在一组需要搜索和使用工",
-      "claimIds": [
-        "coral-results"
-      ]
-    },
-    {
-      "id": "security-risk",
-      "title": "ClickHouse披露服务器执行代码漏洞",
-      "section": "安全简讯",
-      "source": "ClickHouse官方安全更新，2026-10-30",
-      "anchor": "再看一条安全提醒。ClickHo",
-      "claimIds": [
-        "clickhouse-security"
-      ]
-    },
-    {
-      "id": "security-fix",
-      "title": "自托管核对修复，云与BYOC已修",
-      "section": "安全简讯",
-      "source": "ClickHouse官方安全更新，2026-10-30",
-      "anchor": "自己部署这套数据库的团队，要核对",
-      "claimIds": [
-        "clickhouse-security"
-      ]
-    },
-    {
-      "id": "closing",
-      "title": "我们下期见",
-      "section": "本期结束",
-      "source": "2026-11-02",
-      "anchor": "以上就是今天的精选资讯，我们下期",
-      "claimIds": []
-    }
-  ],
+  "scenes": [],
   "fonts": {
     "sans": "assets/fonts/sans.ttf",
     "mono": "assets/fonts/mono.ttf"
