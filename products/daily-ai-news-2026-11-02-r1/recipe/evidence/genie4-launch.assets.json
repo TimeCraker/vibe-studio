@@ -1,0 +1,1450 @@
+[
+  {
+    "tag": "meta",
+    "content": "ie=edge"
+  },
+  {
+    "tag": "meta",
+    "content": "width=device-width,initial-scale=1.0",
+    "name": "viewport"
+  },
+  {
+    "tag": "link",
+    "href": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "rel": "canonical"
+  },
+  {
+    "tag": "meta",
+    "content": "Genie 4 introduces real-time interactive world simulation with native audio, advanced physics, natural human motion, and steering powered by Gemini models.",
+    "name": "description"
+  },
+  {
+    "tag": "meta",
+    "content": "Raia Hadsell, Diego Rivas and Hang Qi",
+    "name": "author"
+  },
+  {
+    "tag": "meta",
+    "content": "Genie 4: A new generation of world simulation",
+    "property": "og:title"
+  },
+  {
+    "tag": "meta",
+    "content": "Genie 4 introduces real-time interactive world simulation with native audio, advanced physics, natural human motion, and steering powered by Gemini models.",
+    "property": "og:description"
+  },
+  {
+    "tag": "meta",
+    "content": "https://lh3.googleusercontent.com/i7iotPkcMbMubxRzAdriO5wsIsowROonBvjLNnmPbOaRgEb1k4LKTBqay5VrcPpZi0R4il_bYCCsPYQ0Gy_-XbAw66azAGEfE-E6_9Izz5apP0BMJVE=w1200-h630-n-nu-rw",
+    "property": "og:image"
+  },
+  {
+    "tag": "meta",
+    "content": "Google DeepMind",
+    "property": "og:site_name"
+  },
+  {
+    "tag": "meta",
+    "content": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "property": "og:url"
+  },
+  {
+    "tag": "meta",
+    "content": "article",
+    "property": "og:type"
+  },
+  {
+    "tag": "meta",
+    "content": "Raia Hadsell, Diego Rivas and Hang Qi",
+    "property": "article:author"
+  },
+  {
+    "tag": "meta",
+    "content": "2026-10-27T16:13:00+00:00",
+    "property": "article:published_time"
+  },
+  {
+    "tag": "meta",
+    "content": "2026-10-30T13:40:28.755228+00:00",
+    "property": "article:modified_time"
+  },
+  {
+    "tag": "meta",
+    "content": "Models",
+    "property": "article:section"
+  },
+  {
+    "tag": "meta",
+    "content": "summary_large_image",
+    "name": "twitter:card"
+  },
+  {
+    "tag": "meta",
+    "content": "Genie 4: A new generation of world simulation",
+    "name": "twitter:title"
+  },
+  {
+    "tag": "meta",
+    "content": "https://lh3.googleusercontent.com/i7iotPkcMbMubxRzAdriO5wsIsowROonBvjLNnmPbOaRgEb1k4LKTBqay5VrcPpZi0R4il_bYCCsPYQ0Gy_-XbAw66azAGEfE-E6_9Izz5apP0BMJVE=w1200-h630-n-nu-rw",
+    "name": "twitter:image"
+  },
+  {
+    "tag": "meta",
+    "content": "Genie 4 introduces real-time interactive world simulation with native audio, advanced physics, natural human motion, and steering powered by Gemini models.",
+    "name": "twitter:description"
+  },
+  {
+    "tag": "meta",
+    "content": "@GoogleDeepMind",
+    "name": "twitter:site"
+  },
+  {
+    "tag": "link",
+    "href": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_2x_96dp.png",
+    "rel": "apple-touch-icon"
+  },
+  {
+    "tag": "link",
+    "href": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_32dp.ico",
+    "rel": "icon",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "href": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_16dp.ico",
+    "rel": "icon",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "href": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_alldp.ico",
+    "rel": "icon",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "href": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/icons/google_deepmind_48dp.svg",
+    "rel": "icon",
+    "type": "image/svg+xml"
+  },
+  {
+    "tag": "link",
+    "href": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "rel": "canonical"
+  },
+  {
+    "tag": "link",
+    "href": "https://fonts.googleapis.com",
+    "rel": "preconnect"
+  },
+  {
+    "tag": "link",
+    "href": "https://fonts.gstatic.com",
+    "rel": "preconnect"
+  },
+  {
+    "tag": "link",
+    "href": "https://www.gstatic.com",
+    "rel": "preconnect"
+  },
+  {
+    "tag": "link",
+    "href": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap",
+    "rel": "preload"
+  },
+  {
+    "tag": "link",
+    "href": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap",
+    "rel": "stylesheet"
+  },
+  {
+    "tag": "link",
+    "href": "https://fonts.googleapis.com/css2?family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@48,100..300,0..1,0,100&display=swap",
+    "rel": "preload"
+  },
+  {
+    "tag": "link",
+    "href": "https://fonts.googleapis.com/css2?family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@48,100..300,0..1,0,100&display=swap",
+    "rel": "stylesheet"
+  },
+  {
+    "tag": "link",
+    "href": "https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css",
+    "rel": "preload"
+  },
+  {
+    "tag": "link",
+    "href": "https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css",
+    "rel": "stylesheet"
+  },
+  {
+    "tag": "link",
+    "href": "/static/dist/css/site.84f84656.css",
+    "rel": "preload"
+  },
+  {
+    "tag": "link",
+    "href": "/static/dist/css/site.84f84656.css",
+    "rel": "stylesheet"
+  },
+  {
+    "tag": "a",
+    "href": "#page-content"
+  },
+  {
+    "tag": "a",
+    "href": "/models/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-omni/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/KmpjWlhFA-6wtqBm/nav__dm__gemini-omni__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-image/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__nano-banana__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-audio/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini-audio__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/veo/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__veo__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/lyria/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__lyria__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/genie/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__genie-3__large_OKty371.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-robotics/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini-robotics__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemma/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemma__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "/research/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__sima-2__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/genie/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__genie-3__large_OKty371.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/alphago/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__alphago__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-robotics/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini-robotics__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/evals/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/publications/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/responsibility-and-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/frontier-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "/science/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/alphafold/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__alphafold__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/alphagenome/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/4tfPUEsyxOPhmrk6/nav__alphagenome_bNSjpuc.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/weathernext/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__weathernext__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__alphaearth__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/P2_ApBXR8azw8BBn/nav__dm__alphaevolve__large_YxQUEj6.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://ai.google/gemini-for-science?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://labs.google/science?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://antigravity.google/use-cases/science?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/about/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/responsibility-and-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/careers/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/education/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/national-partnerships-for-ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/accelerators/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/the-podcast/"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://institute.deepmind.com/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-omni/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/KmpjWlhFA-6wtqBm/nav__dm__gemini-omni__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-image/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__nano-banana__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-audio/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini-audio__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/veo/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__veo__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/lyria/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__lyria__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/genie/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__genie-3__large_OKty371.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-robotics/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini-robotics__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemma/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemma__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "/research/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__sima-2__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/genie/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__genie-3__large_OKty371.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/alphago/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__alphago__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-robotics/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__gemini-robotics__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/evals/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/publications/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/responsibility-and-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/frontier-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "/science/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/alphafold/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__alphafold__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/alphagenome/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/4tfPUEsyxOPhmrk6/nav__alphagenome_bNSjpuc.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/weathernext/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__weathernext__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/nav__dm__alphaearth__large.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/P2_ApBXR8azw8BBn/nav__dm__alphaevolve__large_YxQUEj6.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://ai.google/gemini-for-science?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://labs.google/science?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://antigravity.google/use-cases/science?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/about/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/education/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/national-partnerships-for-ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/accelerators/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/the-podcast/"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://institute.deepmind.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/responsibility-and-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/careers/"
+  },
+  {
+    "tag": "a",
+    "href": "https://aistudio.google.com/prompts/new_chat?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://gemini.google.com/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/images/0xBk-c8kzB5UTrWs/nav__gdm-lockup__light.height-25.svg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/images/0xBk-c8kzB5UTrWs/nav__gdm-lockup__dark.height-25.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://ai.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://labs.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://research.google?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://gemini.google.com/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://aistudio.google.com/prompts/new_chat?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://antigravity.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content="
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/research/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/science/"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/about/"
+  },
+  {
+    "tag": "a",
+    "href": "https://aistudio.google.com/prompts/new_chat?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://gemini.google.com/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://forms.gle/WQnSNEM3omF7Uruu7"
+  },
+  {
+    "tag": "a",
+    "href": "https://twitter.com/intent/tweet?url=https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/&text=Genie%204%3A%20A%20new%20generation%20of%20world%20simulation",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.facebook.com/sharer/sharer.php?u=https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:?subject=Genie%204%3A%20A%20new%20generation%20of%20world%20simulation&body=https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+  },
+  {
+    "tag": "source",
+    "srcset": "https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w393-h221-n-nu-rw-lo 393w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w480-h270-n-nu-rw-lo 480w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w640-h360-n-nu-rw-lo 640w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w768-h432-n-nu-rw-lo 768w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w1024-h576-n-nu-rw-lo 1024w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w1440-h810-n-nu-rw-lo 1440w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w1728-h972-n-nu-rw-lo 1728w, https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w2880-h1620-n-nu-rw-lo 1920w",
+    "type": "image/webp"
+  },
+  {
+    "tag": "img",
+    "src": "https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM=w1440-h810-n-nu",
+    "alt": null
+  },
+  {
+    "tag": "video",
+    "poster": "https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "https://lh3.googleusercontent.com/mKq26Yz8rlcAthtTHS2GaID7LuUM9a4zM16VHUszY-zyKly80QRUt5nn6V4jQN8_bJ4_UMesp1D_88ethzTEJPoo6NUPyhO76QZ7zNJM5KzfPE5GKjM"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/G1xRCCXCq4NFRhFG/genie-4__blog__header__motion.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/WkNULci6vI-1eQBz/genie-4__hero-film__posterframe.webm",
+    "type": "video/webm"
+  },
+  {
+    "tag": "iframe",
+    "src": "https://www.youtube.com/embed/sFfPkUJd_Jk?enablejsapi=1&rel=0&origin=https%3A%2F%2Fdeepmind.google"
+  },
+  {
+    "tag": "a",
+    "href": "https://forms.gle/WQnSNEM3omF7Uruu7",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/e2tW3OdRkPELhHH3/wm_genie4_demo_backstage_genie3-v-genie_4_compare_with-disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/6EmGCHuk3yxF-wGH/wm_genie4_demo_island_piano_duet_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/Hx57sxbj0Ia3OXDq/genie4_demo_silk-scarf_UI_with-disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/EAIt62AyeO_ZlSZD/genie4_demo_hot-air-balloon_UI_with-disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/WYS0b0zRNiNoUPSD/genie4_demo_watermelon_UI_with-disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/iAu-BtCxO97Ng8MH/genie4_demo_maple-seed_UI_with-disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/6M5UjZJz39r6PWJE/wm_genie4_demo_japanese_train_station_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/ImzUsu3YUnkjGByt/wm_genie4_demo_stained_glass_world_UI_with_disclaimer_16x9_final_Stitched_Clip.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/U2fgq2F4J18EL3hC/wm_genie4_demo_dragon_flight_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/MiidpBWn_XH7Tf66/wm_genie4_demo_motorcycle_hero_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/lh6-ABDF7flJ3HcQ/wm_genie4_demo_robotics_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/FLbHGJDuL6wvFcdv/wm_genie4_demo_1p_magician_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/ivd7jo-kiif9gXGt/wm_genie4_demo_crane_UI_with_disclaimer_16x9_final.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/models/gemini-robotics/",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "img",
+    "alt": null,
+    "src": "/static/images/fallback/video_poster_fallback_dark.4d55bc99efa6.jpg"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "source",
+    "type": "video/webm"
+  },
+  {
+    "tag": "video",
+    "poster": "/static/images/fallback/video_poster_fallback_light.57b61d57842a.jpg"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/jsLTAn-laUIpto1B/Genie-4_Robotics-demo_light.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "source",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/oxCFeWXzOz5FcyoN/Genie-4_Robotics-demo_dark.webm#t=0.1",
+    "type": "video/webm"
+  },
+  {
+    "tag": "a",
+    "href": "https://forms.gle/WQnSNEM3omF7Uruu7",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "/models/genie/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/genie/"
+  },
+  {
+    "tag": "source",
+    "srcset": "https://lh3.googleusercontent.com/1VZnw2Hpxqv0k9uWSq72tmUtTSi1MNcPdvcNYi67il-RLthbavo4wQ7r3IrKA9Cp8UAh2PPGR7lxrdPys8ZoURwlz3G4eKNpCKxh7S9JryHQzqBc=w1232-h1232-n-nu-rw-lo 1232w, https://lh3.googleusercontent.com/1VZnw2Hpxqv0k9uWSq72tmUtTSi1MNcPdvcNYi67il-RLthbavo4wQ7r3IrKA9Cp8UAh2PPGR7lxrdPys8ZoURwlz3G4eKNpCKxh7S9JryHQzqBc=w2464-h2464-n-nu-rw-lo 2160w, https://lh3.googleusercontent.com/1VZnw2Hpxqv0k9uWSq72tmUtTSi1MNcPdvcNYi67il-RLthbavo4wQ7r3IrKA9Cp8UAh2PPGR7lxrdPys8ZoURwlz3G4eKNpCKxh7S9JryHQzqBc=w800-h800-n-nu-rw-lo 800w",
+    "type": "image/webp"
+  },
+  {
+    "tag": "img",
+    "src": "https://lh3.googleusercontent.com/1VZnw2Hpxqv0k9uWSq72tmUtTSi1MNcPdvcNYi67il-RLthbavo4wQ7r3IrKA9Cp8UAh2PPGR7lxrdPys8ZoURwlz3G4eKNpCKxh7S9JryHQzqBc=w2464-h2464-n-nu",
+    "alt": null
+  },
+  {
+    "tag": "a",
+    "href": "/blog/genie-3-a-new-frontier-for-world-models/"
+  },
+  {
+    "tag": "a",
+    "href": "/blog/genie-3-a-new-frontier-for-world-models/"
+  },
+  {
+    "tag": "source",
+    "srcset": "https://lh3.googleusercontent.com/dYQNUd8y-Wq7EfPmt2zxj16phpg7FFP0OBUYCnf3tKbrRnlzuRu8aqDfWMk_p_nYM-W4cLIGp8dTP8fRvhuXWYTWwH4EwBqGSkQDF0ghnAUBeYSO=w352-h352-n-nu-rw-lo 352w, https://lh3.googleusercontent.com/dYQNUd8y-Wq7EfPmt2zxj16phpg7FFP0OBUYCnf3tKbrRnlzuRu8aqDfWMk_p_nYM-W4cLIGp8dTP8fRvhuXWYTWwH4EwBqGSkQDF0ghnAUBeYSO=w704-h704-n-nu-rw-lo 624w",
+    "type": "image/webp"
+  },
+  {
+    "tag": "img",
+    "src": "https://lh3.googleusercontent.com/dYQNUd8y-Wq7EfPmt2zxj16phpg7FFP0OBUYCnf3tKbrRnlzuRu8aqDfWMk_p_nYM-W4cLIGp8dTP8fRvhuXWYTWwH4EwBqGSkQDF0ghnAUBeYSO=w704-h704-n-nu",
+    "alt": null
+  },
+  {
+    "tag": "a",
+    "href": "/models/genie/prompt-guide/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/genie/prompt-guide/"
+  },
+  {
+    "tag": "source",
+    "srcset": "https://lh3.googleusercontent.com/TxYykg_PMUpS7HmSk2hlASHvI9BYvjgGk1ochw6SyYKwV-oUEqIjtvyvsbM51jg_-1po0Um9xtvPDyMSzZRF4hq71FIG_rxeFrEcE1qORvFqPtm7=w352-h352-n-nu-rw-lo 352w, https://lh3.googleusercontent.com/TxYykg_PMUpS7HmSk2hlASHvI9BYvjgGk1ochw6SyYKwV-oUEqIjtvyvsbM51jg_-1po0Um9xtvPDyMSzZRF4hq71FIG_rxeFrEcE1qORvFqPtm7=w704-h704-n-nu-rw-lo 704w, https://lh3.googleusercontent.com/TxYykg_PMUpS7HmSk2hlASHvI9BYvjgGk1ochw6SyYKwV-oUEqIjtvyvsbM51jg_-1po0Um9xtvPDyMSzZRF4hq71FIG_rxeFrEcE1qORvFqPtm7=w800-h800-n-nu-rw-lo 800w",
+    "type": "image/webp"
+  },
+  {
+    "tag": "img",
+    "src": "https://lh3.googleusercontent.com/TxYykg_PMUpS7HmSk2hlASHvI9BYvjgGk1ochw6SyYKwV-oUEqIjtvyvsbM51jg_-1po0Um9xtvPDyMSzZRF4hq71FIG_rxeFrEcE1qORvFqPtm7=w704-h704-n-nu",
+    "alt": null
+  },
+  {
+    "tag": "a",
+    "href": "https://x.com/googledeepmind"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.instagram.com/googledeepmind"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.youtube.com/@googledeepmind"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.linkedin.com/company/googledeepmind/"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/google-deepmind"
+  },
+  {
+    "tag": "a",
+    "href": "https://policies.google.com/privacy"
+  },
+  {
+    "tag": "a",
+    "href": "/models/gemini/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/gemini-omni/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/gemini-image/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/gemini-audio/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/gemma/"
+  },
+  {
+    "tag": "img",
+    "alt": "footer_gemma__light",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/images/footer_gemma__light_j46lu5D_ChuL4ZZ.max-24x24.svg"
+  },
+  {
+    "tag": "img",
+    "alt": "footer_gemma__dark",
+    "src": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/images/footer_gemma__dark_NkmSuN7_L3lpSMo.max-24x24.svg"
+  },
+  {
+    "tag": "a",
+    "href": "/models/genie/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/lyria/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/veo/"
+  },
+  {
+    "tag": "a",
+    "href": "/models/gemini-robotics/"
+  },
+  {
+    "tag": "a",
+    "href": "/research/projects/"
+  },
+  {
+    "tag": "a",
+    "href": "/research/evals/"
+  },
+  {
+    "tag": "a",
+    "href": "/research/publications/"
+  },
+  {
+    "tag": "a",
+    "href": "/frontier-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "/responsibility-and-safety/"
+  },
+  {
+    "tag": "a",
+    "href": "/science/alphafold/"
+  },
+  {
+    "tag": "a",
+    "href": "/science/alphagenome/"
+  },
+  {
+    "tag": "a",
+    "href": "/science/weathernext/"
+  },
+  {
+    "tag": "a",
+    "href": "/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/"
+  },
+  {
+    "tag": "a",
+    "href": "/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+  },
+  {
+    "tag": "a",
+    "href": "https://gemini.google.com/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://aistudio.google.com/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://antigravity.google/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/about/"
+  },
+  {
+    "tag": "a",
+    "href": "/blog/"
+  },
+  {
+    "tag": "a",
+    "href": "/careers/"
+  },
+  {
+    "tag": "a",
+    "href": "/national-partnerships-for-ai/"
+  },
+  {
+    "tag": "a",
+    "href": "/accelerators/"
+  },
+  {
+    "tag": "a",
+    "href": "/the-podcast/"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://institute.deepmind.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.google.com/?utm_source=ai.google&utm_medium=referral"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://about.google/"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://about.google/products/"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://policies.google.com/privacy"
+  },
+  {
+    "tag": "a",
+    "rel": "noopener noreferrer",
+    "href": "https://policies.google.com/terms"
+  }
+]

@@ -1,0 +1,228 @@
+{
+  "editionDate": "2026-11-02",
+  "metric": "ECI",
+  "queriedAt": "2026-11-02T11:32:24+08:00",
+  "sourceGeneratedAt": "2026-11-02T01:42:42.598Z",
+  "entryUrl": "https://www.bilibili.com/toy/ai-model-world",
+  "discoveredEmbedUrl": "https://bilibilitoy.com/toy/ai-model-world/34090174887936-v36822/leaderboard/index.html",
+  "sourceUrl": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+  "rawSnapshot": "evidence/ranking-upstream.json",
+  "rawSha256": "505f79a823dbdae40c6a88389ec42aac04a556a53d55f4deda79f4ff205dab79",
+  "browserEvidence": "evidence/browser-observations.md",
+  "sourceNote": "当次B站入口发现v36822，已实际切换全部/国内核对前15名字、顺序、一位小数。页面首页标10月31日，开源快照生成于11月2日；前15在页面显示精度内一致，采用本次开源快照精确值。保留不同id和原序，不画升降。",
+  "attribution": "ECI: Epoch AI (CC BY 4.0); aggregation: liyupi/ai-model-world (MIT). 署名保留在视频简介和记录。",
+  "global": [
+    {
+      "id": "openai/gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "eci": 169.06,
+      "vendor": "openai",
+      "icon": "assets/openai.svg"
+    },
+    {
+      "id": "anthropic/claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "eci": 168.4,
+      "vendor": "anthropic",
+      "icon": "assets/claude.png"
+    },
+    {
+      "id": "openai/gpt-6.1-terra",
+      "name": "GPT-6.1 Terra",
+      "eci": 168.11,
+      "vendor": "openai",
+      "icon": "assets/openai.svg"
+    },
+    {
+      "id": "openai/gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "eci": 167.82,
+      "vendor": "openai",
+      "icon": "assets/openai.svg"
+    },
+    {
+      "id": "anthropic/claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "eci": 166.74,
+      "vendor": "anthropic",
+      "icon": "assets/claude.png"
+    },
+    {
+      "id": "anthropic/claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "eci": 166.36,
+      "vendor": "anthropic",
+      "icon": "assets/claude.png"
+    },
+    {
+      "id": "google/gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "eci": 166.07,
+      "vendor": "google",
+      "icon": "assets/google.png"
+    },
+    {
+      "id": "anthropic/claude-opus-5",
+      "name": "Claude Opus 5",
+      "eci": 164.47,
+      "vendor": "anthropic",
+      "icon": "assets/claude.png"
+    },
+    {
+      "id": "openai/gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "eci": 163.78,
+      "vendor": "openai",
+      "icon": "assets/openai.svg"
+    },
+    {
+      "id": "openai/gpt-5.5-pro",
+      "name": "GPT-5.5 Pro",
+      "eci": 163.11,
+      "vendor": "openai",
+      "icon": "assets/openai.svg"
+    },
+    {
+      "id": "anthropic/claude-fable-5",
+      "name": "Claude Fable 5",
+      "eci": 163.02,
+      "vendor": "anthropic",
+      "icon": "assets/claude.png"
+    },
+    {
+      "id": "openai/gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "eci": 162.55,
+      "vendor": "openai",
+      "icon": "assets/openai.svg"
+    },
+    {
+      "id": "meta/muse-wonder",
+      "name": "Muse Wonder",
+      "eci": 161.71,
+      "vendor": "meta",
+      "icon": "assets/meta.svg"
+    },
+    {
+      "id": "meta/muse-wonder-1.0",
+      "name": "Muse Wonder",
+      "eci": 161.71,
+      "vendor": "meta",
+      "icon": "assets/meta.svg"
+    },
+    {
+      "id": "anthropic/claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "eci": 160.37,
+      "vendor": "anthropic",
+      "icon": "assets/claude.png"
+    }
+  ],
+  "domestic": [
+    {
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "eci": 158.83,
+      "vendor": "deepseek",
+      "icon": "assets/deepseek.ico"
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "name": "Kimi K3",
+      "eci": 158.33,
+      "vendor": "moonshotai",
+      "icon": "assets/kimi.png"
+    },
+    {
+      "id": "alibaba/qwen3.8-max",
+      "name": "Qwen3.8 Max",
+      "eci": 157.98,
+      "vendor": "alibaba",
+      "icon": "assets/qwen.png"
+    },
+    {
+      "id": "alibaba/qwen3.8-max-preview",
+      "name": "Qwen3.8 Max Preview",
+      "eci": 157.98,
+      "vendor": "alibaba",
+      "icon": "assets/qwen.png"
+    },
+    {
+      "id": "alibaba/qwen3.8-max-0902",
+      "name": "Qwen3.8 Max 0902",
+      "eci": 156.24,
+      "vendor": "alibaba",
+      "icon": "assets/qwen.png"
+    },
+    {
+      "id": "zhipuai/glm-5.3",
+      "name": "GLM-5.3",
+      "eci": 156.17,
+      "vendor": "zhipuai",
+      "icon": "assets/glm.svg"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "eci": 156.11,
+      "vendor": "deepseek",
+      "icon": "assets/deepseek.ico"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek V4 Pro 0813",
+      "eci": 155.87,
+      "vendor": "deepseek",
+      "icon": "assets/deepseek.ico"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "name": "DeepSeek V4 Flash 0731",
+      "eci": 154.94,
+      "vendor": "deepseek",
+      "icon": "assets/deepseek.ico"
+    },
+    {
+      "id": "alibaba/qwen3.7-max",
+      "name": "Qwen3.7 Max",
+      "eci": 154.22,
+      "vendor": "alibaba",
+      "icon": "assets/qwen.png"
+    },
+    {
+      "id": "zhipuai/glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "eci": 153.22,
+      "vendor": "zhipuai",
+      "icon": "assets/glm.svg"
+    },
+    {
+      "id": "zhipuai/glm-5.2",
+      "name": "GLM-5.2",
+      "eci": 152.07,
+      "vendor": "zhipuai",
+      "icon": "assets/glm.svg"
+    },
+    {
+      "id": "alibaba/qwen3.8-27b",
+      "name": "Qwen3.8 27B",
+      "eci": 151.8,
+      "vendor": "alibaba",
+      "icon": "assets/qwen.png"
+    },
+    {
+      "id": "moonshotai/kimi-k2.6",
+      "name": "Kimi K2.6",
+      "eci": 151.06,
+      "vendor": "moonshotai",
+      "icon": "assets/kimi.png"
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "eci": 150.23,
+      "vendor": "moonshotai",
+      "icon": "assets/kimi.png"
+    }
+  ]
+}

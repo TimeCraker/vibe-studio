@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "audience": "关注 AI 实际变化的普通观众",
+  "goal": "讲清本期真实、有用的 AI 新闻",
+  "profile": "data",
+  "claims": [
+    {
+      "id": "ranking",
+      "text": "本次全球/国产ECI TOP15已按当前页面核对，精确值取11月2日开源快照，不合并同名不同id，不造升降。",
+      "status": "verified",
+      "source": {
+        "url": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+        "locator": "models[].benchmarks.eci；ranking.json及browser-observations.md",
+        "checkedAt": "2026-11-02T03:38:46.248Z",
+        "path": "evidence/ranking-upstream.json"
+      }
+    },
+    {
+      "id": "longcat-release",
+      "text": "LongCat官方API更新日志2026-11-02确认2.5正式版可用，区别9月25日Preview；主打原生多模态、复杂代码库和长任务工程，与Agent工具接入。",
+      "status": "verified",
+      "source": {
+        "url": "https://longcat.ai/platform/docs/change-log",
+        "path": "evidence/longcat-changelog.html",
+        "locator": "Version 2026-11-02 LongCat-2.5 Now Available；Version2026-09-25 Preview；网页/API入口参见发布页",
+        "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+      }
+    },
+    {
+      "id": "longcat-demos",
+      "text": "官方发布页标2026-11-1，能力演示列三维文物、实时流体模拟、商业分析等；标GitHub/HuggingFace敬请期待，不能称已开放权重。",
+      "status": "verified",
+      "source": {
+        "url": "https://longcat.ai/blog/longcat-2.5/",
+        "path": "evidence/browser-observations.md",
+        "locator": "实际浏览器AX读取发布页标题/日期/入口、能力演示及视频DOM；本地HTML为SPA壳，不伪称包含全文",
+        "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+      }
+    },
+    {
+      "id": "gdpx-launch",
+      "text": "GDPx发布于2026-11-02T01:51:42Z，即北京时间09:51；官网列206任务、11领域、14合作方。",
+      "status": "verified",
+      "source": {
+        "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+        "path": "evidence/gdpx-launch.html",
+        "locator": "datePublished；首页AX DOM；发布说明领域列表",
+        "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+      }
+    },
+    {
+      "id": "gdpx-score",
+      "text": "当次默认榜单Claude Opus5.5为12.0%，Gemini4Carbon10.9%，GPT6Astra9.6%；仅该评测当次默认综合Score。",
+      "status": "verified",
+      "source": {
+        "url": "https://gdpx.semianalysis.com/",
+        "path": "evidence/gdpx-leaderboard.html",
+        "locator": "默认METRIC Score / DOMAIN All domains / MODELS13of20，浏览器核对",
+        "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+      }
+    },
+    {
+      "id": "gdpx-method",
+      "text": "Score按11领域等权且领域内合作方等权，按任务采用二元与连续评分，三次尝试均值；安全拒答也可能影响得分。不是统一现实成功率。",
+      "status": "verified",
+      "source": {
+        "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+        "path": "evidence/gdpx-launch.html",
+        "locator": "Our methodology及Interpreting the results；榜单页说明",
+        "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+      }
+    },
+    {
+      "id": "genie4-release",
+      "text": "Google10月27日发布Genie4研究预览，支持键盘导航、自然语言实时修改场景和原生声音，当前先向可信测试者开放。",
+      "status": "verified",
+      "source": {
+        "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "path": "evidence/genie4-launch.html",
+        "locator": "October27,2026；发布说明；四项能力与开放范围",
+        "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+      }
+    },
+    {
+      "id": "genie4-limits",
+      "text": "官方列出一致性漂移、复杂交互、现实地点、文字渲染、几分钟交互时长和声音准确性限制。",
+      "status": "verified",
+      "source": {
+        "url": "https://deepmind.google/models/genie/",
+        "path": "evidence/genie4-model.html",
+        "locator": "Limitations章节",
+        "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+      }
+    },
+    {
+      "id": "carbon-release",
+      "text": "Google10月28日公布Gemini4Carbon，强调长程工程与网络安全能力；初期先向部分网络安全防御人员与Fairwind可信伙伴开放。官方评测结论有其条件，不等同本栏目实测或所有用户立即可用。",
+      "status": "verified",
+      "source": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "path": "evidence/carbon-launch.html",
+        "locator": "Oct28,2026；初期开放范围；长任务与网络安全章节；evaluated without guardrails限定",
+        "checkedAt": "2026-11-02T11:22:16.457976+00:00"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "global",
+      "title": "全球 AI 模型综合能力 TOP15",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期全球榜与官标，BGM，无口播",
+      "subject": "全球 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国产 AI 模型综合能力 TOP15",
+      "start": 7,
+      "end": 14,
+      "purpose": "同版式当期国产榜",
+      "subject": "国产 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "今日AI资讯",
+      "start": 14,
+      "end": 24.333333333333332,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "今日AI资讯",
+      "claimIds": []
+    },
+    {
+      "id": "longcat-release",
+      "title": "美团LongCat-2.5正式版开放接口",
+      "start": 24.333333333333332,
+      "end": 39.233333333333334,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "美团LongCat-2.5正式版开放接口",
+      "claimIds": [
+        "longcat-release"
+      ]
+    },
+    {
+      "id": "longcat-demos",
+      "title": "LongCat官方演示：交互式三维文物展览",
+      "start": 39.233333333333334,
+      "end": 43.983333333333334,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "LongCat官方演示：交互式三维文物展览",
+      "claimIds": [
+        "longcat-demos"
+      ]
+    },
+    {
+      "id": "longcat-office",
+      "title": "LongCat商业分析演示与体验入口",
+      "start": 43.983333333333334,
+      "end": 57.3,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "LongCat商业分析演示与体验入口",
+      "claimIds": [
+        "longcat-demos"
+      ]
+    },
+    {
+      "id": "carbon-release",
+      "title": "Gemini4 Carbon强调长任务与安全能力",
+      "start": 57.3,
+      "end": 70.23333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Gemini4 Carbon强调长任务与安全能力",
+      "claimIds": [
+        "carbon-release"
+      ]
+    },
+    {
+      "id": "carbon-limits",
+      "title": "Carbon评测有条件，初期开放范围有限",
+      "start": 70.23333333333333,
+      "end": 92.4,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Carbon评测有条件，初期开放范围有限",
+      "claimIds": [
+        "carbon-release"
+      ]
+    },
+    {
+      "id": "genie-world",
+      "title": "Genie4支持实时修改交互世界与声音",
+      "start": 92.4,
+      "end": 113.23333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Genie4支持实时修改交互世界与声音",
+      "claimIds": [
+        "genie4-release"
+      ]
+    },
+    {
+      "id": "genie-limits",
+      "title": "研究预览，交互时长与一致性仍有限",
+      "start": 113.23333333333333,
+      "end": 129.63333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "研究预览，交互时长与一致性仍有限",
+      "claimIds": [
+        "genie4-limits"
+      ]
+    },
+    {
+      "id": "gdpx-tasks",
+      "title": "GDPx在11领域检验复杂工作能力",
+      "start": 129.63333333333333,
+      "end": 143.75,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "GDPx在11领域检验复杂工作能力",
+      "claimIds": [
+        "gdpx-launch"
+      ]
+    },
+    {
+      "id": "gdpx-scores",
+      "title": "GDPx综合得分不等于现实成功率",
+      "start": 143.75,
+      "end": 165.36666666666667,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "GDPx综合得分不等于现实成功率",
+      "claimIds": [
+        "gdpx-score",
+        "gdpx-method"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "我们下期见",
+      "start": 165.36666666666667,
+      "end": 168.93333333333334,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "我们下期见",
+      "claimIds": []
+    }
+  ],
+  "review": {
+    "status": "pending"
+  }
+}

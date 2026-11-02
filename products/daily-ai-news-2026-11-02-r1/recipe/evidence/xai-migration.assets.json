@@ -1,0 +1,830 @@
+[
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/XMonoVF_Variable.p.29l71xg2bryrd.woff2?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/XVF_Variable-s.p.2_a5y-slrzff6.woff2?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/07nr-c2g217rl.css?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/1g6miy93ej5jw.css?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/0fywvms8qa4xy.css?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/chunks/21a8xaenqbwaz.js?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "Migration guide for grok-imagine-image-quality, which switches to grok-imagine-image-2.0 at low quality on November 2, 2026"
+  },
+  {
+    "tag": "link",
+    "rel": "canonical",
+    "href": "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "grok-imagine-image-quality Retirement on November 2, 2026 | SpaceXSI Docs"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "Migration guide for grok-imagine-image-quality, which switches to grok-imagine-image-2.0 at low quality on November 2, 2026"
+  },
+  {
+    "tag": "meta",
+    "property": "og:url",
+    "content": "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "meta",
+    "property": "og:site_name",
+    "content": "SpaceXSI Docs"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://docs.x.ai/api/og?t=eyJ0aXRsZSI6Imdyb2staW1hZ2luZS1pbWFnZS1xdWFsaXR5IFJldGlyZW1lbnQgb24gTm92ZW1iZXIgMiwgMjAyNiIsInYiOiI3Iiwic2NvcGUiOiJkZXZlbG9wZXJzIiwic2VjdGlvbiI6Ik1pZ3JhdGlvbiBHdWlkZXMifQ._mx25B8xeUixk1Gk8FiMO36iI3o6i4oFDLj-Iz6E7LI"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "article"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "grok-imagine-image-quality Retirement on November 2, 2026 | SpaceXSI Docs"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:description",
+    "content": "Migration guide for grok-imagine-image-quality, which switches to grok-imagine-image-2.0 at low quality on November 2, 2026"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image",
+    "content": "https://docs.x.ai/api/og?t=eyJ0aXRsZSI6Imdyb2staW1hZ2luZS1pbWFnZS1xdWFsaXR5IFJldGlyZW1lbnQgb24gTm92ZW1iZXIgMiwgMjAyNiIsInYiOiI3Iiwic2NvcGUiOiJkZXZlbG9wZXJzIiwic2VjdGlvbiI6Ik1pZ3JhdGlvbiBHdWlkZXMifQ._mx25B8xeUixk1Gk8FiMO36iI3o6i4oFDLj-Iz6E7LI"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/_next/static/media/icon.2023htx52lx-a.ico?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/_next/static/media/icon.2jebtfdg6783w.png?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "image/png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "/_next/static/media/apple-icon.167itqrsbgzm4.png?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "image/png"
+  },
+  {
+    "tag": "meta",
+    "name": "next-size-adjust",
+    "content": ""
+  },
+  {
+    "tag": "meta",
+    "name": "sentry-trace",
+    "content": "b2f1e61d7d0b455db8e6ffafafd8baf9-a327a69fb8e1f916-0"
+  },
+  {
+    "tag": "meta",
+    "name": "baggage",
+    "content": "sentry-environment=production,sentry-release=docs%40319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b,sentry-public_key=87bfcb1b7e565f75c852ebb00d0c31d4,sentry-trace_id=b2f1e61d7d0b455db8e6ffafafd8baf9,sentry-org_id=4508179396558848,sentry-sampled=false,sentry-sample_rand=0.4488348519793327,sentry-sample_rate=0"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/build/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok-bot/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/x-subscription/overview"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai?utm_source=docs&utm_medium=referral&utm_campaign=developers-migration-imagine-image-quality-nov-2&utm_content=header-api-console",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://grok.com/?referrer=docs"
+  },
+  {
+    "tag": "a",
+    "href": "https://status.x.ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/llms.txt",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://discord.gg/x-ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:support@x.ai"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/legal",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/quickstart"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-7"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/pricing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/release-notes"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/generate-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/streaming"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/reasoning"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/structured-outputs"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/understanding"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/multi-agent"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/best-practices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/imagine"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/multi-image-editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/prompting-guide"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/image-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/reference-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/extension"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/voice"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/text-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/custom-voices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/ephemeral-tokens"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/managing-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/public-urls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/files/chat-with-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/metadata"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/function-calling"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/web-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/x-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/code-execution"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/image-generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/collections-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/remote-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/rate-limits"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/context-compaction"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/priority-processing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/custom-moderation-controls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/deferred-chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/async"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/websocket-mode"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/mtls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/regions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/watermarking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/cost-tracking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/debugging"
+  },
+  {
+    "tag": "a",
+    "href": "/cookbook"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/google-cloud-vertex-ai"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/microsoft-foundry"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/docs-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/may-15-retirement"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/comparison"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/legacy/chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/security"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/general"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/rest-api-reference/inference"
+  },
+  {
+    "tag": "a",
+    "href": "/build/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok-bot/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/x-subscription/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/quickstart"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-7"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/pricing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/release-notes"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/generate-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/streaming"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/reasoning"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/structured-outputs"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/understanding"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/multi-agent"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/best-practices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/imagine"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/multi-image-editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/prompting-guide"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/image-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/reference-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/extension"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/voice"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/text-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/custom-voices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/ephemeral-tokens"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/managing-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/public-urls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/files/chat-with-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/metadata"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/function-calling"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/web-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/x-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/code-execution"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/image-generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/collections-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/remote-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/rate-limits"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/context-compaction"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/priority-processing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/custom-moderation-controls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/deferred-chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/async"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/websocket-mode"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/mtls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/regions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/watermarking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/cost-tracking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/debugging"
+  },
+  {
+    "tag": "a",
+    "href": "/cookbook"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/google-cloud-vertex-ai"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/microsoft-foundry"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/docs-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/may-15-retirement"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/comparison"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/legacy/chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/security"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/general"
+  },
+  {
+    "tag": "a",
+    "href": "#migration-guides"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-imagine-image-quality-retirement-on-november-2-2026"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/imagine-image-quality-nov-2.md",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai/team/default/api-keys?utm_source=docs&utm_medium=referral&utm_campaign=developers-migration-imagine-image-quality-nov-2&utm_content=article-api-key",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-4-7",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#pricing-impact"
+  },
+  {
+    "tag": "a",
+    "href": "#how-the-redirect-works"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/may-15-retirement"
+  },
+  {
+    "tag": "a",
+    "href": "#pricing-impact"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/pricing"
+  },
+  {
+    "tag": "a",
+    "href": "#recommended-replacement"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation#quality"
+  },
+  {
+    "tag": "a",
+    "href": "https://arena.ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/editing"
+  },
+  {
+    "tag": "a",
+    "href": "#need-help"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:support@x.ai",
+    "rel": "noopener noreferrer"
+  }
+]

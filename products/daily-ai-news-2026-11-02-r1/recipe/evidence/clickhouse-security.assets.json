@@ -1,0 +1,919 @@
+[
+  {
+    "tag": "link",
+    "rel": "preconnect",
+    "href": "https://cdn-prod.securiti.ai"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//cdn-prod.securiti.ai"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//discover.clickhouse.com"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://discover.clickhouse.com/rs/238-FPC-317/images/securiti-cookie-banner-styles.css?version=0"
+  },
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "type": "font/woff2",
+    "href": "/docs/_mintlify/assets/fonts/inter/Inter-latin.woff2"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "Security changelog detailing security related updates and changes"
+  },
+  {
+    "tag": "meta",
+    "name": "application-name",
+    "content": "ClickHouse Documentation"
+  },
+  {
+    "tag": "meta",
+    "name": "generator",
+    "content": "Mintlify"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon/android-chrome-192x192.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon/apple-touch-icon.png"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon/favicon-16x16.png"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon/favicon-32x32.png"
+  },
+  {
+    "tag": "link",
+    "rel": "shortcut icon",
+    "type": "image/x-icon",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon/favicon.ico"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon-dark/android-chrome-192x192.png"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon-dark/favicon-16x16.png"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon-dark/favicon-32x32.png"
+  },
+  {
+    "tag": "link",
+    "rel": "shortcut icon",
+    "type": "image/x-icon",
+    "href": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon-dark/favicon.ico"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "Security changelog - ClickHouse Documentation"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "Security changelog detailing security related updates and changes"
+  },
+  {
+    "tag": "meta",
+    "property": "og:site_name",
+    "content": "ClickHouse Documentation"
+  },
+  {
+    "tag": "meta",
+    "property": "og:url",
+    "content": "https://clickhouse.com/docs/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://private-7c7dfe99.mintlify.app/_mintlify/api/og/v2?division=Documentation&title=Security+changelog&description=Security+changelog+detailing+security+related+updates+and+changes&theme=de5161c1b5df52f178b39943&signature=bd5fc1a5c456fc98e1d3199b39afe53bde498d0eb9d8077fb93b9e8a577cd85f"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:width",
+    "content": "1200"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:height",
+    "content": "630"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "Security changelog - ClickHouse Documentation"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:description",
+    "content": "Security changelog detailing security related updates and changes"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image",
+    "content": "https://private-7c7dfe99.mintlify.app/_mintlify/api/og/v2?division=Documentation&title=Security+changelog&description=Security+changelog+detailing+security+related+updates+and+changes&theme=de5161c1b5df52f178b39943&signature=bd5fc1a5c456fc98e1d3199b39afe53bde498d0eb9d8077fb93b9e8a577cd85f"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:width",
+    "content": "1200"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:height",
+    "content": "630"
+  },
+  {
+    "tag": "meta",
+    "name": "msapplication-config",
+    "content": "/docs/mintlify-assets/_mintlify/favicons/private-7c7dfe99/4UShO1VxIGDRhyfj/_generated/favicon/browserconfig.xml"
+  },
+  {
+    "tag": "meta",
+    "name": "apple-mobile-web-app-title",
+    "content": "ClickHouse Documentation"
+  },
+  {
+    "tag": "meta",
+    "name": "msapplication-TileColor",
+    "content": "#1c1c1c"
+  },
+  {
+    "tag": "link",
+    "rel": "canonical",
+    "href": "https://clickhouse.com/docs/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "type": "application/xml",
+    "href": "/docs/sitemap.xml"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "type": "text/markdown",
+    "href": "/docs/resources/changelogs/security-changelog.md"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/ar/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/es/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/fr/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/ja/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/ko/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/pt-BR/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/ru/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/zh/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "href": "https://clickhouse.com/docs/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "/docs/_mintlify/assets/index-Cv3SbzlN.js?dpl=dpl_6cCEiK8XNNvaLBBkWzcBhdE9QfLC"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "/docs/_mintlify/assets/rolldown-runtime-Bjp52BOI.js?dpl=dpl_6cCEiK8XNNvaLBBkWzcBhdE9QfLC"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "/docs/_mintlify/assets/initial-vendor-Bwp0WnYO.js?dpl=dpl_6cCEiK8XNNvaLBBkWzcBhdE9QfLC"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/a0ab956a7a3c7ff5/_site/customizations/ask-ai-button.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/39eb0ad87fa3adc8/_site/customizations/clickhouse-sql-highlight.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/f2f887f569696d41/_site/customizations/clickhouse-sql-lexer-wasm.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/564839e4bb02c38e/_site/customizations/custom-footer.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/240e3ba1823c3bae/_site/customizations/galaxy.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/38fd3c627bad5620/_site/customizations/inkeep-init.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/ad7415752a665282/_site/customizations/kapa-init.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/c54d4536629b44db/_site/customizations/nav-icon-preload.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/10c01e58e00a0bb5/_site/customizations/navbar-cta.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/f75dab9369f45602/_site/customizations/raise-issue-link.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/a97e716bfafb62fd/_site/customizations/scroll-reset.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/bb66ab6ab59dfc53/_site/customizations/settings-legacy-redirect.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/b734912855230cc2/_site/customizations/settings-legacy-routes/format-settings.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/e07c37962b288c7e/_site/customizations/settings-legacy-routes/mergetree-settings.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/2b8fcba9c043bce4/_site/customizations/settings-legacy-routes/server-settings.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/45f86a3a93f67ec0/_site/customizations/settings-legacy-routes/session-settings.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/3bd87f000900d6e2/_site/customizations/tab-nav.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/5c7ce50607c95a70/_site/customizations/webterminal.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/7b903fec76456ee0/_site/customizations/cloud-sidebar-ad.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/346eac2572f9fb1d/_site/customizations/section-ticker.js"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/docs/_mintlify/assets/index-BSPJDRoU.css?dpl=dpl_6cCEiK8XNNvaLBBkWzcBhdE9QfLC"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://mintcdn.com/private-7c7dfe99/h2VHbIjccjT9ClSc/_site/logo/light.svg?fit=max&auto=format&n=h2VHbIjccjT9ClSc&q=85&s=b8a838f982def2b530a95016300bc7ec"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://mintcdn.com/private-7c7dfe99/h2VHbIjccjT9ClSc/_site/logo/dark.svg?fit=max&auto=format&n=h2VHbIjccjT9ClSc&q=85&s=563dcf3fc5bb3694597dec207c9b4ecf"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://mintlify.s3.us-west-1.amazonaws.com/private-7c7dfe99/images/icons/icon-server.svg"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/images/icons/icon-mcp.svg"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/docs/_mintlify/assets/katex-DET2o0Vg.css?dpl=dpl_6cCEiK8XNNvaLBBkWzcBhdE9QfLC"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/llms.txt"
+  },
+  {
+    "tag": "iframe",
+    "src": "https://www.googletagmanager.com/ns.html?id=GTM-WTNTDT7W"
+  },
+  {
+    "tag": "a",
+    "href": "#content-area"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/docs/_mintlify/custom/private-7c7dfe99/2a1d0d506d6c7ad1/_site/styles.css"
+  },
+  {
+    "tag": "a",
+    "href": "/docs"
+  },
+  {
+    "tag": "img",
+    "src": "https://mintcdn.com/private-7c7dfe99/h2VHbIjccjT9ClSc/_site/logo/light.svg?fit=max&auto=format&n=h2VHbIjccjT9ClSc&q=85&s=b8a838f982def2b530a95016300bc7ec",
+    "alt": "light logo"
+  },
+  {
+    "tag": "img",
+    "src": "https://mintcdn.com/private-7c7dfe99/h2VHbIjccjT9ClSc/_site/logo/dark.svg?fit=max&auto=format&n=h2VHbIjccjT9ClSc&q=85&s=563dcf3fc5bb3694597dec207c9b4ecf",
+    "alt": "dark logo"
+  },
+  {
+    "tag": "img",
+    "src": "https://mintlify.s3.us-west-1.amazonaws.com/private-7c7dfe99/images/icons/icon-server.svg",
+    "alt": ""
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2026"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2025"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2024"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2023"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2022"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2021"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2020"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2019"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2018"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2017"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/security-changelog"
+  },
+  {
+    "tag": "a",
+    "href": "/docs"
+  },
+  {
+    "tag": "a",
+    "href": "/docs"
+  },
+  {
+    "tag": "img",
+    "src": "https://mintcdn.com/private-7c7dfe99/h2VHbIjccjT9ClSc/_site/logo/light.svg?fit=max&auto=format&n=h2VHbIjccjT9ClSc&q=85&s=b8a838f982def2b530a95016300bc7ec",
+    "alt": "light logo"
+  },
+  {
+    "tag": "img",
+    "src": "https://mintcdn.com/private-7c7dfe99/h2VHbIjccjT9ClSc/_site/logo/dark.svg?fit=max&auto=format&n=h2VHbIjccjT9ClSc&q=85&s=563dcf3fc5bb3694597dec207c9b4ecf",
+    "alt": "dark logo"
+  },
+  {
+    "tag": "a",
+    "href": "/docs"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-cve-2026-116366"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2026-116366"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.cve.org/cverecord?id=CVE-2026-116366",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/endorphin13",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-2025-01-05"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2025-1385"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-5phv-x8x4-83x5",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ZerLes",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-2024-08-01"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2024-6873"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-432f-r822-j66f",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-24-01-30"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2024-22412"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-45h5-f7g3-gr8r",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://blog.runreveal.com/cve-2024-22412-behind-the-bug-a-classic-caching-problem-in-the-clickhouse-query-cache/",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-23-10-5-20-2023-11-26"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2023-47118"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-g22g-p6q2-x39v",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2023-48298"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-qw9f-qv29-8938",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2023-48704"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-5rmf-5g48-xv63",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-22-9-1-2603-2022-9-22"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2022-44011"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2022-44010"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-21-10-2-215-2021-10-18"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-43304"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-43305"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42387"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42388"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42389"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42390"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42391"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-21-4-3-21-2021-04-12"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-25263"
+  },
+  {
+    "tag": "a",
+    "href": "https://twitter.com/vegoshin",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-19-14-3-3-2019-09-10"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-15024"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-16535"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-16536"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-19-13-6-1-2019-09-20"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-18657"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/NSTikhomirov",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-18-12-13-2018-09-10"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14672"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-18-10-3-2018-08-13"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14671"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-1-1-54388-2018-06-28"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14668"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-1-1-54390-2018-07-06"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14669"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-1-1-54131-2017-01-10"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14670"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/clickhouse/clickhouse/edit/master/docs/resources/changelogs/security-changelog.mdx",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/clickhouse/clickhouse/issues/new?title=Issue on docs&body=Path: /resources/changelogs/security-changelog",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/docs/resources/changelogs/oss/2017",
+    "rel": "prev"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-cve-2026-116366"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2026-116366"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-2025-01-05"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2025-1385"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-2024-08-01"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2024-6873"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-24-01-30"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2024-22412"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-23-10-5-20-2023-11-26"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2023-47118"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2023-48298"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2023-48704"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-22-9-1-2603-2022-9-22"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2022-44011"
+  },
+  {
+    "tag": "a",
+    "href": "#CVE-2022-44010"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-21-10-2-215-2021-10-18"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-43304"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-43305"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42387"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42388"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42389"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42390"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-42391"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-21-4-3-21-2021-04-12"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2021-25263"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-19-14-3-3-2019-09-10"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-15024"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-16535"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-16536"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-19-13-6-1-2019-09-20"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2019-18657"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-18-12-13-2018-09-10"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14672"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-18-10-3-2018-08-13"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14671"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-1-1-54388-2018-06-28"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14668"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-1-1-54390-2018-07-06"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14669"
+  },
+  {
+    "tag": "a",
+    "href": "#fixed-in-clickhouse-release-1-1-54131-2017-01-10"
+  },
+  {
+    "tag": "a",
+    "href": "#cve-2018-14670"
+  },
+  {
+    "tag": "img",
+    "src": "/docs/images/icons/icon-mcp.svg",
+    "alt": ""
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://discover.clickhouse.com/rs/238-FPC-317/images/securiti-cookie-banner-styles.css?version=0"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://discover.clickhouse.com/rs/238-FPC-317/images/securiti-cookie-banner-styles.css?version=0"
+  }
+]

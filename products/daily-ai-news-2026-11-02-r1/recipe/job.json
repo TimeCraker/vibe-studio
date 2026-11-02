@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "steps": [
+    {
+      "id": "deps",
+      "inputs": [
+        "remotion-app/package.json",
+        "remotion-app/package-lock.json"
+      ],
+      "outputs": [
+        ".studio/deps.json"
+      ],
+      "command": [
+        "node",
+        "{repo}/skills/daily-ai-news/scripts/edition.mjs",
+        "deps",
+        "--project",
+        "{project}"
+      ]
+    },
+    {
+      "id": "plan",
+      "command": [
+        "node",
+        "{repo}/skills/content-director/scripts/validate-plan.mjs",
+        "{project}"
+      ],
+      "inputs": [
+        "storyboard.json"
+      ],
+      "outputs": []
+    },
+    {
+      "id": "voice",
+      "command": [
+        "node",
+        "{repo}/scripts/studio.mjs",
+        "audio",
+        "--project",
+        "{project}",
+        "--config",
+        "audio-voice.json",
+        "--out",
+        "audio/voice-clean.wav"
+      ],
+      "inputs": [
+        "audio-voice.json",
+        "audio/source"
+      ],
+      "outputs": [
+        "audio/voice-clean.wav",
+        "audio/voice-clean.wav.json"
+      ]
+    },
+    {
+      "id": "audio",
+      "command": [
+        "node",
+        "{repo}/scripts/studio.mjs",
+        "audio",
+        "--project",
+        "{project}"
+      ],
+      "inputs": [
+        "audio.json",
+        "audio/voice-clean.wav",
+        "assets"
+      ],
+      "outputs": [
+        "audio/mix.wav",
+        "audio/mix.wav.json"
+      ]
+    },
+    {
+      "id": "stills",
+      "inputs": [
+        "timeline.json",
+        "ranking.json",
+        "content.json",
+        "remotion-app/src",
+        "assets",
+        "audio/mix.wav"
+      ],
+      "outputs": [
+        "render/stills",
+        "render/cover.png"
+      ],
+      "timeoutSeconds": 900,
+      "command": [
+        "node",
+        "{repo}/skills/daily-ai-news/scripts/edition.mjs",
+        "render",
+        "--mode",
+        "stills",
+        "--project",
+        "{project}"
+      ]
+    },
+    {
+      "id": "render",
+      "inputs": [
+        "timeline.json",
+        "ranking.json",
+        "content.json",
+        "remotion-app/src",
+        "assets",
+        "audio/mix.wav",
+        "media-plan.json"
+      ],
+      "outputs": [
+        "render/daily-ai-news-2026-11-02.mp4",
+        "render/daily-ai-news-2026-11-02.mp4.json"
+      ],
+      "timeoutSeconds": 3600,
+      "command": [
+        "node",
+        "{repo}/skills/daily-ai-news/scripts/edition.mjs",
+        "render",
+        "--mode",
+        "video",
+        "--project",
+        "{project}"
+      ]
+    },
+    {
+      "id": "qc",
+      "command": [
+        "node",
+        "{repo}/scripts/studio.mjs",
+        "qc",
+        "--project",
+        "{project}",
+        "--video",
+        "render/daily-ai-news-2026-11-02.mp4",
+        "--srt",
+        "captions.srt",
+        "--require-audio"
+      ],
+      "inputs": [
+        "render/daily-ai-news-2026-11-02.mp4",
+        "captions.srt",
+        "qc.json"
+      ],
+      "outputs": [
+        "qa/media-report.json"
+      ],
+      "timeoutSeconds": 900
+    },
+    {
+      "id": "publish-materials",
+      "inputs": [
+        "variants.json",
+        "storyboard.json",
+        "timeline.json",
+        "captions.srt"
+      ],
+      "outputs": [
+        "publish-plan.json"
+      ],
+      "timeoutSeconds": 180,
+      "command": [
+        "node",
+        "{repo}/skills/daily-ai-news/scripts/edition.mjs",
+        "publish-materials",
+        "--project",
+        "{project}"
+      ]
+    }
+  ]
+}

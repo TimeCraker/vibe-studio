@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ranking",
+    "text": "本次全球/国产ECI TOP15已按当前页面核对，精确值取11月2日开源快照，不合并同名不同id，不造升降。",
+    "status": "verified",
+    "source": {
+      "url": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+      "locator": "models[].benchmarks.eci；ranking.json及browser-observations.md",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/ranking-upstream.json"
+    }
+  },
+  {
+    "id": "longcat-release",
+    "text": "LongCat官方API更新日志2026-11-02确认2.5正式版可用，区别9月25日Preview；主打原生多模态、复杂代码库和长任务工程，与Agent工具接入。",
+    "status": "verified",
+    "source": {
+      "url": "https://longcat.ai/platform/docs/change-log",
+      "path": "evidence/longcat-changelog.html",
+      "locator": "Version 2026-11-02 LongCat-2.5 Now Available；Version2026-09-25 Preview；网页/API入口参见发布页",
+      "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+    }
+  },
+  {
+    "id": "longcat-demos",
+    "text": "官方发布页标2026-11-1，能力演示列三维文物、实时流体模拟、商业分析等；标GitHub/HuggingFace敬请期待，不能称已开放权重。",
+    "status": "verified",
+    "source": {
+      "url": "https://longcat.ai/blog/longcat-2.5/",
+      "path": "evidence/browser-observations.md",
+      "locator": "实际浏览器AX读取发布页标题/日期/入口、能力演示及视频DOM；本地HTML为SPA壳，不伪称包含全文",
+      "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+    }
+  },
+  {
+    "id": "gdpx-launch",
+    "text": "GDPx发布于2026-11-02T01:51:42Z，即北京时间09:51；官网列206任务、11领域、14合作方。",
+    "status": "verified",
+    "source": {
+      "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+      "path": "evidence/gdpx-launch.html",
+      "locator": "datePublished；首页AX DOM；发布说明领域列表",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "gdpx-score",
+    "text": "当次默认榜单Claude Opus5.5为12.0%，Gemini4Carbon10.9%，GPT6Astra9.6%；仅该评测当次默认综合Score。",
+    "status": "verified",
+    "source": {
+      "url": "https://gdpx.semianalysis.com/",
+      "path": "evidence/gdpx-leaderboard.html",
+      "locator": "默认METRIC Score / DOMAIN All domains / MODELS13of20，浏览器核对",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "gdpx-method",
+    "text": "Score按11领域等权且领域内合作方等权，按任务采用二元与连续评分，三次尝试均值；安全拒答也可能影响得分。不是统一现实成功率。",
+    "status": "verified",
+    "source": {
+      "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+      "path": "evidence/gdpx-launch.html",
+      "locator": "Our methodology及Interpreting the results；榜单页说明",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "genie4-release",
+    "text": "Google10月27日发布Genie4研究预览，支持键盘导航、自然语言实时修改场景和原生声音，当前先向可信测试者开放。",
+    "status": "verified",
+    "source": {
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "path": "evidence/genie4-launch.html",
+      "locator": "October27,2026；发布说明；四项能力与开放范围",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "genie4-limits",
+    "text": "官方列出一致性漂移、复杂交互、现实地点、文字渲染、几分钟交互时长和声音准确性限制。",
+    "status": "verified",
+    "source": {
+      "url": "https://deepmind.google/models/genie/",
+      "path": "evidence/genie4-model.html",
+      "locator": "Limitations章节",
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00"
+    }
+  },
+  {
+    "id": "carbon-release",
+    "text": "Google10月28日公布Gemini4Carbon，强调长程工程与网络安全能力；初期先向部分网络安全防御人员与Fairwind可信伙伴开放。官方评测结论有其条件，不等同本栏目实测或所有用户立即可用。",
+    "status": "verified",
+    "source": {
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "path": "evidence/carbon-launch.html",
+      "locator": "Oct28,2026；初期开放范围；长任务与网络安全章节；evaluated without guardrails限定",
+      "checkedAt": "2026-11-02T11:22:16.457976+00:00"
+    }
+  }
+]

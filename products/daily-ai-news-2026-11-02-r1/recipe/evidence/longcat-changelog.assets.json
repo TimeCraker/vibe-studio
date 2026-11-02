@@ -1,0 +1,621 @@
+[
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width,initial-scale=1"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "LongCat Platform"
+  },
+  {
+    "tag": "meta",
+    "name": "generator",
+    "content": "VitePress v1.6.4"
+  },
+  {
+    "tag": "link",
+    "rel": "preload stylesheet",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.platformdocs/platform/docs/assets/style.Cf1wJNsK.css"
+  },
+  {
+    "tag": "link",
+    "rel": "preload stylesheet",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.platformdocs/platform/docs/vp-icons.css"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.platformdocs/platform/docs/assets/chunks/theme.C7TsxZzE.js"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.platformdocs/platform/docs/assets/chunks/framework.D0XfMJl0.js"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.platformdocs/platform/docs/assets/change-log.md.By1H_9D8.lean.js"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "https://s3plus.meituan.net/aigc-media-resources/longcat/yeqian-logo.svg"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/"
+  },
+  {
+    "tag": "img",
+    "src": "https://s3plus.meituan.net/elsa-multimedia-data/longcat/logo-group.svg",
+    "alt": "LongCat"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/token-pack"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-pay-as-you-go"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/faq"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/change-log"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/image-video-understanding"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api/chat"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api/responses"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api/messages"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api/model-params"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api/models"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api/model"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/tools-overview"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/claude-code"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/codex"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/open-code"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/catpaw"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/cline"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/kilo-code"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/cherry-studio"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/chatbox"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/code-buddy"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/open-claw"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/hermes-agent"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/cc-switch"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/work-buddy"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/pricing/longcat-2.5"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/zh/change-log"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/"
+  },
+  {
+    "tag": "img",
+    "src": "https://s3plus.meituan.net/elsa-multimedia-data/longcat/logo-group.svg",
+    "alt": "LongCat"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/change-log"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/zh/change-log"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/tools-overview"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/pricing/longcat-2.5"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/token-pack"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-pay-as-you-go"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/faq"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/change-log"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-api-platform-change-log"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-11-02"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-25"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-preview-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-10"
+  },
+  {
+    "tag": "a",
+    "href": "#introducing-enterprise-services"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/platform/docs/faq#invoices",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/platform/docs/faq#account-verification-and-benefits",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-11-02-1"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-now-available-1"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-25-1"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-preview-now-available-1"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-02"
+  },
+  {
+    "tag": "a",
+    "href": "#introducing-enterprise-services-1"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/platform/docs/faq#invoices",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/platform/docs/faq#account-verification-and-benefits",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-06-30"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-0-release-billing-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-05-29"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-model-service-sunset"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-04-20"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-0-preview-release"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/platform/feedback",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-03-12"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-thinking-upgrade"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-03-11"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-omni-2603-release"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-02-05"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-lite-release"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/meituan-longcat/LongCat-Flash-Lite",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-01-14"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-thinking-2601-release"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking-2601",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/meituan-longcat/LongCat-Flash-Thinking-2601",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-12-22"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-chat-update"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-09-22"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-thinking-release"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-09-05"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-api-platform-launch"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/api-docs"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-08-29"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-chat-release"
+  },
+  {
+    "tag": "a",
+    "href": "https://longcat.chat/",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/meituan-longcat/LongCat-Flash-Chat",
+    "rel": "noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/platform/docs/faq"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-11-02"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-25"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-preview-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-10"
+  },
+  {
+    "tag": "a",
+    "href": "#introducing-enterprise-services"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-11-02-1"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-now-available-1"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-25-1"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-5-preview-now-available-1"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-09-02"
+  },
+  {
+    "tag": "a",
+    "href": "#introducing-enterprise-services-1"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-06-30"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-0-release-billing-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-05-29"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-model-service-sunset"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-04-20"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-2-0-preview-release"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-03-12"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-thinking-upgrade"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-03-11"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-omni-2603-release"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-02-05"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-lite-release"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2026-01-14"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-thinking-2601-release"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-12-22"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-chat-update"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-09-22"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-thinking-release"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-09-05"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-api-platform-launch"
+  },
+  {
+    "tag": "a",
+    "href": "#version-2025-08-29"
+  },
+  {
+    "tag": "a",
+    "href": "#longcat-flash-chat-release"
+  }
+]

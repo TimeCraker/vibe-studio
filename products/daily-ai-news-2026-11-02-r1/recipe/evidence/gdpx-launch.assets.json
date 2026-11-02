@@ -1,0 +1,1494 @@
+[
+  {
+    "tag": "meta",
+    "name": "norton-safeweb-site-verification",
+    "content": "24usqpep0ejc5w6hod3dulxwciwp0djs6c6ufp96av3t4whuxovj72wfkdjxu82yacb7430qjm8adbd5ezlt4592dq4zrvadcn9j9n-0btgdzpiojfzno16-fnsnu7xd"
+  },
+  {
+    "tag": "link",
+    "rel": "preconnect",
+    "href": "https://substackcdn.com"
+  },
+  {
+    "tag": "meta",
+    "name": "theme-color",
+    "content": "#14101b"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "article"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "A frontier benchmark spanning RSI, hardware design, cyber, bio, finance, legal, quant trading, chip design, software engineering, materials science, and alignment"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "A frontier benchmark spanning RSI, hardware design, cyber, bio, finance, legal, quant trading, chip design, software engineering, materials science, and alignment"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:description",
+    "content": "A frontier benchmark spanning RSI, hardware design, cyber, bio, finance, legal, quant trading, chip design, software engineering, materials science, and alignment"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://substackcdn.com/image/fetch/$s_!MHBL!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdeb2f1cd-9bc7-4329-a247-79c26636c70a_1672x941.png"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image",
+    "content": "https://substackcdn.com/image/fetch/$s_!E8y6!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fsemianalysis.substack.com%2Fapi%2Fv1%2Fpost_preview%2F223102484%2Ftwitter.jpg%3Fversion%3D4"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "tag": "meta",
+    "property": "article:modified_time",
+    "content": "2026-11-02T06:16:50.405Z"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://substackcdn.com/bundle/theme/main.392135edc793f5dd32a4.css"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://fonts.gstatic.com/s/spectral/v13/rnCr-xNNww_2s0amA9M5knjsS_ul.woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/32347.bf8244f0.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/31443.530546da.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/34133.83ae1e0b.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/26613.99d4e7f0.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/1099.08309fd9.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/56879.935cd047.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/96042.6cd7c175.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/52312.8840472f.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/90020.572fa4fb.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/6772.5a697695.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/657.60112eae.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/22763.a47aeffd.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/72116.df1e735c.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/43203.d8c43e69.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/19498.5d29c06b.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/50975.fdf3a78b.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/reactMain.60d90b3d.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/49171.fff6cb5f.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/74844.e56902c1.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "type": "text/css",
+    "href": "https://substackcdn.com/bundle/static/css/32934.58559442.css"
+  },
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+  },
+  {
+    "tag": "meta",
+    "name": "author",
+    "content": "Max Kan"
+  },
+  {
+    "tag": "meta",
+    "property": "og:url",
+    "content": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+  },
+  {
+    "tag": "link",
+    "rel": "canonical",
+    "href": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/x-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!FPNA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Ffavicon.ico"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "https://substackcdn.com/image/fetch/$s_!Ibf-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Ffavicon-16x16.png"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "https://substackcdn.com/image/fetch/$s_!C61q!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Ffavicon-32x32.png"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/png",
+    "href": "https://substackcdn.com/image/fetch/$s_!_lct!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Ffavicon-48x48.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!odH1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-57x57.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!UU3q!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-60x60.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!dGoL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-72x72.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!8ZXc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-76x76.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!ZvpG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-114x114.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!B6aT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-120x120.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!nbYd!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-144x144.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!tJKD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-152x152.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!QLGo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-167x167.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!fDIN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-180x180.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "https://substackcdn.com/image/fetch/$s_!l48-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a8d11c6-c42f-46b0-b965-1fb7cad03546%2Fapple-touch-icon-1024x1024.png"
+  },
+  {
+    "tag": "link",
+    "rel": "alternate",
+    "type": "application/rss+xml",
+    "href": "/feed"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://substackcdn.com/bundle/theme/main.392135edc793f5dd32a4.css"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!y_cf!,w_40,h_40,c_fill,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png 40w, https://substackcdn.com/image/fetch/$s_!y_cf!,w_80,h_80,c_fill,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png 80w, https://substackcdn.com/image/fetch/$s_!y_cf!,w_120,h_120,c_fill,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png 120w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!y_cf!,w_40,h_40,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!y_cf!,w_40,h_40,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png 40w, https://substackcdn.com/image/fetch/$s_!y_cf!,w_80,h_80,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png 80w, https://substackcdn.com/image/fetch/$s_!y_cf!,w_120,h_120,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1af867ac-65cc-46ad-aa7b-13323ae19142_444x415.png 120w",
+    "alt": "SemiAnalysis"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "img",
+    "alt": "SemiAnalysis",
+    "src": "https://substackcdn.com/image/fetch/$s_!k9Ca!,e_trim:10:white/e_trim:10:transparent/h_72,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71370eb1-d1cd-4168-9eea-539a33392912_668x374.png"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/@mlkan"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/@megalaa"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/@semianalysis"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!6qa6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!6qa6!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 424w, https://substackcdn.com/image/fetch/$s_!6qa6!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 848w, https://substackcdn.com/image/fetch/$s_!6qa6!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 1272w, https://substackcdn.com/image/fetch/$s_!6qa6!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!6qa6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!6qa6!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 424w, https://substackcdn.com/image/fetch/$s_!6qa6!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 848w, https://substackcdn.com/image/fetch/$s_!6qa6!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 1272w, https://substackcdn.com/image/fetch/$s_!6qa6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!wrWt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!wrWt!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 424w, https://substackcdn.com/image/fetch/$s_!wrWt!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 848w, https://substackcdn.com/image/fetch/$s_!wrWt!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 1272w, https://substackcdn.com/image/fetch/$s_!wrWt!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!wrWt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!wrWt!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 424w, https://substackcdn.com/image/fetch/$s_!wrWt!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 848w, https://substackcdn.com/image/fetch/$s_!wrWt!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 1272w, https://substackcdn.com/image/fetch/$s_!wrWt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6055d6d4-60f1-4bcc-88ea-596719f3cf9d_2048x1919.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!CSSs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!CSSs!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 424w, https://substackcdn.com/image/fetch/$s_!CSSs!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 848w, https://substackcdn.com/image/fetch/$s_!CSSs!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!CSSs!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!CSSs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!CSSs!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 424w, https://substackcdn.com/image/fetch/$s_!CSSs!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 848w, https://substackcdn.com/image/fetch/$s_!CSSs!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!CSSs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F69efc6d9-782a-4606-9199-0b4cabac786a_1991x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!je1Q!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!je1Q!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 424w, https://substackcdn.com/image/fetch/$s_!je1Q!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 848w, https://substackcdn.com/image/fetch/$s_!je1Q!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 1272w, https://substackcdn.com/image/fetch/$s_!je1Q!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!je1Q!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!je1Q!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 424w, https://substackcdn.com/image/fetch/$s_!je1Q!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 848w, https://substackcdn.com/image/fetch/$s_!je1Q!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 1272w, https://substackcdn.com/image/fetch/$s_!je1Q!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23bfe0e6-277b-417a-b1db-d6223bb1f648_2048x1233.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!VPlX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!VPlX!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 424w, https://substackcdn.com/image/fetch/$s_!VPlX!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 848w, https://substackcdn.com/image/fetch/$s_!VPlX!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 1272w, https://substackcdn.com/image/fetch/$s_!VPlX!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!VPlX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!VPlX!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 424w, https://substackcdn.com/image/fetch/$s_!VPlX!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 848w, https://substackcdn.com/image/fetch/$s_!VPlX!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 1272w, https://substackcdn.com/image/fetch/$s_!VPlX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a9e242c-75d6-45f4-a7d0-aeedf067bb11_2048x1241.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!em47!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!em47!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 424w, https://substackcdn.com/image/fetch/$s_!em47!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 848w, https://substackcdn.com/image/fetch/$s_!em47!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 1272w, https://substackcdn.com/image/fetch/$s_!em47!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!em47!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!em47!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 424w, https://substackcdn.com/image/fetch/$s_!em47!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 848w, https://substackcdn.com/image/fetch/$s_!em47!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 1272w, https://substackcdn.com/image/fetch/$s_!em47!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59e97d49-0b51-49a3-ba2f-980e0edda5c7_2048x1255.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://openai.com/index/gdpval/"
+  },
+  {
+    "tag": "a",
+    "href": "https://artificialanalysis.ai/evaluations/gdpval-aa"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.anthropic.com/claude-opus-5-5"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.anthropic.com/claude-sonnet-5-5"
+  },
+  {
+    "tag": "a",
+    "href": "https://openai.com/index/gpt-5-6/"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.com/EpochAIResearch/status/2100704765332394255?s=20"
+  },
+  {
+    "tag": "a",
+    "href": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/"
+  },
+  {
+    "tag": "a",
+    "href": "https://preferencemodel.com/blog/terminal-bench-4-is-saturated/"
+  },
+  {
+    "tag": "a",
+    "href": "https://ariadata.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://arcverex.io/"
+  },
+  {
+    "tag": "a",
+    "href": "https://ergodex.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://arithmeticlabs.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://latch.bio/"
+  },
+  {
+    "tag": "a",
+    "href": "https://livingcontextai.com/#data-partnerships"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.chakra.dev/"
+  },
+  {
+    "tag": "a",
+    "href": "https://thirdmomentresearch.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://extrapolate-ai.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.beautifulmachines.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://valenceforge.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://emulated.so/"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.fleetai.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://datacurve.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "http://fireworks/"
+  },
+  {
+    "tag": "a",
+    "href": "https://modal.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.com/abhijaymrana"
+  },
+  {
+    "tag": "a",
+    "href": "https://arxiv.org/pdf/2510.04374"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/datasets/openai/gdpval"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!eu1o!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!eu1o!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 424w, https://substackcdn.com/image/fetch/$s_!eu1o!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 848w, https://substackcdn.com/image/fetch/$s_!eu1o!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 1272w, https://substackcdn.com/image/fetch/$s_!eu1o!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!eu1o!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!eu1o!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 424w, https://substackcdn.com/image/fetch/$s_!eu1o!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 848w, https://substackcdn.com/image/fetch/$s_!eu1o!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 1272w, https://substackcdn.com/image/fetch/$s_!eu1o!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae9b2ea3-d6e3-4c8f-a522-4b49be480924_1511x851.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!E7y8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!E7y8!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 424w, https://substackcdn.com/image/fetch/$s_!E7y8!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 848w, https://substackcdn.com/image/fetch/$s_!E7y8!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 1272w, https://substackcdn.com/image/fetch/$s_!E7y8!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!E7y8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!E7y8!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 424w, https://substackcdn.com/image/fetch/$s_!E7y8!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 848w, https://substackcdn.com/image/fetch/$s_!E7y8!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 1272w, https://substackcdn.com/image/fetch/$s_!E7y8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5699d279-933e-483c-9a1a-ae0d8d696eb7_1924x1368.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/datasets/openai/gdpval/resolve/main/deliverable_files/67e6577509223a9f2242939226fa1a63/Tiny%20Rod%20Hit%20Inc%20Report.pdf"
+  },
+  {
+    "tag": "a",
+    "href": "https://surgehq.ai/blog/dayjob"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/datasets/openai/gdpval/viewer/default/train?row=155"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/datasets/openai/gdpval/viewer/default/train?q=0ec25916-1b5c-4bfe-93d3-4e103d860f3a&row=180"
+  },
+  {
+    "tag": "a",
+    "href": "https://huggingface.co/datasets/openai/gdpval/viewer/default/train?row=64"
+  },
+  {
+    "tag": "a",
+    "href": "https://livingcontextai.com/#data-partnerships"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!tOSB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!tOSB!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 424w, https://substackcdn.com/image/fetch/$s_!tOSB!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 848w, https://substackcdn.com/image/fetch/$s_!tOSB!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 1272w, https://substackcdn.com/image/fetch/$s_!tOSB!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!tOSB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!tOSB!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 424w, https://substackcdn.com/image/fetch/$s_!tOSB!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 848w, https://substackcdn.com/image/fetch/$s_!tOSB!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 1272w, https://substackcdn.com/image/fetch/$s_!tOSB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbaa0cd73-2c89-4a5c-b612-85b08d8d5c38_1513x843.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://semianalysis.com/tokenomics-model/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!C-Gn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!C-Gn!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 424w, https://substackcdn.com/image/fetch/$s_!C-Gn!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 848w, https://substackcdn.com/image/fetch/$s_!C-Gn!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!C-Gn!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!C-Gn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!C-Gn!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 424w, https://substackcdn.com/image/fetch/$s_!C-Gn!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 848w, https://substackcdn.com/image/fetch/$s_!C-Gn!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!C-Gn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9e6c63f-8b9e-4a4b-aa2f-347cbdbb9e73_1949x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/rsi"
+  },
+  {
+    "tag": "a",
+    "href": "https://extrapolate-ai.com/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:founders@extrapolate-ai.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!E4NQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!E4NQ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 424w, https://substackcdn.com/image/fetch/$s_!E4NQ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 848w, https://substackcdn.com/image/fetch/$s_!E4NQ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 1272w, https://substackcdn.com/image/fetch/$s_!E4NQ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!E4NQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!E4NQ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 424w, https://substackcdn.com/image/fetch/$s_!E4NQ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 848w, https://substackcdn.com/image/fetch/$s_!E4NQ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 1272w, https://substackcdn.com/image/fetch/$s_!E4NQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27d52e13-bf5b-4dd9-a7c3-52f7e6c91ff1_2048x1152.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!eOqL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!eOqL!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 424w, https://substackcdn.com/image/fetch/$s_!eOqL!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 848w, https://substackcdn.com/image/fetch/$s_!eOqL!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 1272w, https://substackcdn.com/image/fetch/$s_!eOqL!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!eOqL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!eOqL!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 424w, https://substackcdn.com/image/fetch/$s_!eOqL!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 848w, https://substackcdn.com/image/fetch/$s_!eOqL!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 1272w, https://substackcdn.com/image/fetch/$s_!eOqL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe6677a75-32c0-4b1d-8401-91dfb39a24ad_2048x1188.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!R752!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!R752!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 424w, https://substackcdn.com/image/fetch/$s_!R752!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 848w, https://substackcdn.com/image/fetch/$s_!R752!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!R752!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!R752!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!R752!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 424w, https://substackcdn.com/image/fetch/$s_!R752!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 848w, https://substackcdn.com/image/fetch/$s_!R752!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!R752!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2593551-f647-4c74-9db1-01ffbf2c6e0f_1925x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/hardware-design"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.beautifulmachines.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:partnerships@beautifulmachines.ai"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!qv4v!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!qv4v!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 424w, https://substackcdn.com/image/fetch/$s_!qv4v!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 848w, https://substackcdn.com/image/fetch/$s_!qv4v!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 1272w, https://substackcdn.com/image/fetch/$s_!qv4v!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!qv4v!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!qv4v!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 424w, https://substackcdn.com/image/fetch/$s_!qv4v!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 848w, https://substackcdn.com/image/fetch/$s_!qv4v!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 1272w, https://substackcdn.com/image/fetch/$s_!qv4v!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29ed827f-1fae-45b9-ade9-11be33d55c25_1024x1536.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.diode.computer/"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/diodeinc/pcb"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!0mjy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!0mjy!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 424w, https://substackcdn.com/image/fetch/$s_!0mjy!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 848w, https://substackcdn.com/image/fetch/$s_!0mjy!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 1272w, https://substackcdn.com/image/fetch/$s_!0mjy!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!0mjy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!0mjy!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 424w, https://substackcdn.com/image/fetch/$s_!0mjy!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 848w, https://substackcdn.com/image/fetch/$s_!0mjy!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 1272w, https://substackcdn.com/image/fetch/$s_!0mjy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9216b448-75b3-452d-bd40-8dfc3837dd05_1408x389.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!70lX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!70lX!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 424w, https://substackcdn.com/image/fetch/$s_!70lX!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 848w, https://substackcdn.com/image/fetch/$s_!70lX!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 1272w, https://substackcdn.com/image/fetch/$s_!70lX!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!70lX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!70lX!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 424w, https://substackcdn.com/image/fetch/$s_!70lX!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 848w, https://substackcdn.com/image/fetch/$s_!70lX!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 1272w, https://substackcdn.com/image/fetch/$s_!70lX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabfad5b3-16fb-4071-9cab-d2d08257e861_1254x1254.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!J1OO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!J1OO!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 424w, https://substackcdn.com/image/fetch/$s_!J1OO!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 848w, https://substackcdn.com/image/fetch/$s_!J1OO!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!J1OO!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!J1OO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!J1OO!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 424w, https://substackcdn.com/image/fetch/$s_!J1OO!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 848w, https://substackcdn.com/image/fetch/$s_!J1OO!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!J1OO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8cb16f1-f757-4061-904d-585668765bbd_1672x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!vn_G!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!vn_G!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 424w, https://substackcdn.com/image/fetch/$s_!vn_G!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 848w, https://substackcdn.com/image/fetch/$s_!vn_G!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!vn_G!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!vn_G!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!vn_G!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 424w, https://substackcdn.com/image/fetch/$s_!vn_G!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 848w, https://substackcdn.com/image/fetch/$s_!vn_G!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!vn_G!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F095b3785-a11d-48e9-a26f-23671c01301b_1960x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/cybersecurity"
+  },
+  {
+    "tag": "a",
+    "href": "https://arithmeticlabs.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!eD_y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!eD_y!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 424w, https://substackcdn.com/image/fetch/$s_!eD_y!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 848w, https://substackcdn.com/image/fetch/$s_!eD_y!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 1272w, https://substackcdn.com/image/fetch/$s_!eD_y!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!eD_y!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!eD_y!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 424w, https://substackcdn.com/image/fetch/$s_!eD_y!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 848w, https://substackcdn.com/image/fetch/$s_!eD_y!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 1272w, https://substackcdn.com/image/fetch/$s_!eD_y!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c3032f-4c36-4960-abe4-d5011751bb61_2048x1732.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!-PqZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!-PqZ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 424w, https://substackcdn.com/image/fetch/$s_!-PqZ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 848w, https://substackcdn.com/image/fetch/$s_!-PqZ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 1272w, https://substackcdn.com/image/fetch/$s_!-PqZ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!-PqZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!-PqZ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 424w, https://substackcdn.com/image/fetch/$s_!-PqZ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 848w, https://substackcdn.com/image/fetch/$s_!-PqZ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 1272w, https://substackcdn.com/image/fetch/$s_!-PqZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F177cd8ba-430d-4794-b554-06207ca34c58_2048x1748.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!zCkt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!zCkt!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 424w, https://substackcdn.com/image/fetch/$s_!zCkt!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 848w, https://substackcdn.com/image/fetch/$s_!zCkt!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!zCkt!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!zCkt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!zCkt!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 424w, https://substackcdn.com/image/fetch/$s_!zCkt!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 848w, https://substackcdn.com/image/fetch/$s_!zCkt!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!zCkt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe8648b-a244-4555-9dfc-f106a017caf7_1897x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/finance"
+  },
+  {
+    "tag": "a",
+    "href": "https://livingcontextai.com/#data-partnerships"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:Partnerships@LivingContextAI.Com"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!tNcW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!tNcW!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 424w, https://substackcdn.com/image/fetch/$s_!tNcW!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 848w, https://substackcdn.com/image/fetch/$s_!tNcW!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 1272w, https://substackcdn.com/image/fetch/$s_!tNcW!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!tNcW!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!tNcW!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 424w, https://substackcdn.com/image/fetch/$s_!tNcW!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 848w, https://substackcdn.com/image/fetch/$s_!tNcW!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 1272w, https://substackcdn.com/image/fetch/$s_!tNcW!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34d425f7-c976-4f14-8431-c7b491245879_2048x1698.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!3_Pr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!3_Pr!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 424w, https://substackcdn.com/image/fetch/$s_!3_Pr!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 848w, https://substackcdn.com/image/fetch/$s_!3_Pr!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!3_Pr!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!3_Pr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!3_Pr!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 424w, https://substackcdn.com/image/fetch/$s_!3_Pr!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 848w, https://substackcdn.com/image/fetch/$s_!3_Pr!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!3_Pr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8fa2c70-03c9-4d11-80a2-3dc46dbf873b_1992x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!UK68!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!UK68!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 424w, https://substackcdn.com/image/fetch/$s_!UK68!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 848w, https://substackcdn.com/image/fetch/$s_!UK68!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 1272w, https://substackcdn.com/image/fetch/$s_!UK68!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!UK68!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!UK68!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 424w, https://substackcdn.com/image/fetch/$s_!UK68!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 848w, https://substackcdn.com/image/fetch/$s_!UK68!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 1272w, https://substackcdn.com/image/fetch/$s_!UK68!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017398e8-0c8e-4ff4-8e5e-8a40947118bd_2048x1942.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!MKf3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!MKf3!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 424w, https://substackcdn.com/image/fetch/$s_!MKf3!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 848w, https://substackcdn.com/image/fetch/$s_!MKf3!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!MKf3!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!MKf3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!MKf3!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 424w, https://substackcdn.com/image/fetch/$s_!MKf3!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 848w, https://substackcdn.com/image/fetch/$s_!MKf3!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!MKf3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e5c7285-a13c-4299-bce5-b9d24198719a_1954x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/chip-design"
+  },
+  {
+    "tag": "a",
+    "href": "http://www.ariadata.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:team@ariadata.ai"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!roai!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!roai!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 424w, https://substackcdn.com/image/fetch/$s_!roai!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 848w, https://substackcdn.com/image/fetch/$s_!roai!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 1272w, https://substackcdn.com/image/fetch/$s_!roai!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!roai!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!roai!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 424w, https://substackcdn.com/image/fetch/$s_!roai!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 848w, https://substackcdn.com/image/fetch/$s_!roai!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 1272w, https://substackcdn.com/image/fetch/$s_!roai!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eca86b4-478b-4012-aa3a-da1bd8c76ded_2048x1271.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!i7To!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!i7To!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 424w, https://substackcdn.com/image/fetch/$s_!i7To!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 848w, https://substackcdn.com/image/fetch/$s_!i7To!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 1272w, https://substackcdn.com/image/fetch/$s_!i7To!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!i7To!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!i7To!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 424w, https://substackcdn.com/image/fetch/$s_!i7To!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 848w, https://substackcdn.com/image/fetch/$s_!i7To!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 1272w, https://substackcdn.com/image/fetch/$s_!i7To!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4f258360-5529-4c33-8878-b4c97a176d1d_2048x1377.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "http://ariadata.ai/gdpx"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!WYPP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!WYPP!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 424w, https://substackcdn.com/image/fetch/$s_!WYPP!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 848w, https://substackcdn.com/image/fetch/$s_!WYPP!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 1272w, https://substackcdn.com/image/fetch/$s_!WYPP!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!WYPP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!WYPP!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 424w, https://substackcdn.com/image/fetch/$s_!WYPP!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 848w, https://substackcdn.com/image/fetch/$s_!WYPP!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 1272w, https://substackcdn.com/image/fetch/$s_!WYPP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50b127ca-5846-4d30-9857-0c085b64851d_1519x872.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!qsmS!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!qsmS!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 424w, https://substackcdn.com/image/fetch/$s_!qsmS!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 848w, https://substackcdn.com/image/fetch/$s_!qsmS!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 1272w, https://substackcdn.com/image/fetch/$s_!qsmS!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!qsmS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!qsmS!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 424w, https://substackcdn.com/image/fetch/$s_!qsmS!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 848w, https://substackcdn.com/image/fetch/$s_!qsmS!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 1272w, https://substackcdn.com/image/fetch/$s_!qsmS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe13e09d8-5c2b-4375-a702-43c9e6fa15d1_2048x1237.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "http://ergodex.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:founders@ergodex.ai"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.dropbox.com/scl/fi/jxzdvicaw8f4wxusnzj96/partcl-hrt-proxy.tar.gz?rlkey=m66lfw8nhgtzf2jmxxq7qrh33&st=oh5iwsh3&dl=0"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/partcleda/macro-place-challenge-2026"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!VJxP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!VJxP!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 424w, https://substackcdn.com/image/fetch/$s_!VJxP!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 848w, https://substackcdn.com/image/fetch/$s_!VJxP!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 1272w, https://substackcdn.com/image/fetch/$s_!VJxP!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!VJxP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!VJxP!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 424w, https://substackcdn.com/image/fetch/$s_!VJxP!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 848w, https://substackcdn.com/image/fetch/$s_!VJxP!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 1272w, https://substackcdn.com/image/fetch/$s_!VJxP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff06dc6bd-8905-4ec7-80e2-d18468b93941_2048x1470.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!EQB5!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!EQB5!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 424w, https://substackcdn.com/image/fetch/$s_!EQB5!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 848w, https://substackcdn.com/image/fetch/$s_!EQB5!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!EQB5!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!EQB5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!EQB5!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 424w, https://substackcdn.com/image/fetch/$s_!EQB5!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 848w, https://substackcdn.com/image/fetch/$s_!EQB5!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!EQB5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563b12e9-6197-4b16-a874-325ac6616201_1961x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/biology"
+  },
+  {
+    "tag": "a",
+    "href": "https://latch.bio/"
+  },
+  {
+    "tag": "a",
+    "href": "https://benchmarks.bio/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:bench@latch.bio"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!ugnT!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 424w, https://substackcdn.com/image/fetch/$s_!ugnT!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 848w, https://substackcdn.com/image/fetch/$s_!ugnT!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 1272w, https://substackcdn.com/image/fetch/$s_!ugnT!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!ugnT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!ugnT!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 424w, https://substackcdn.com/image/fetch/$s_!ugnT!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 848w, https://substackcdn.com/image/fetch/$s_!ugnT!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 1272w, https://substackcdn.com/image/fetch/$s_!ugnT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdda75542-e6d1-464d-8134-43ff7b2047dc_1806x248.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!SmKs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!SmKs!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 424w, https://substackcdn.com/image/fetch/$s_!SmKs!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 848w, https://substackcdn.com/image/fetch/$s_!SmKs!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 1272w, https://substackcdn.com/image/fetch/$s_!SmKs!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!SmKs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!SmKs!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 424w, https://substackcdn.com/image/fetch/$s_!SmKs!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 848w, https://substackcdn.com/image/fetch/$s_!SmKs!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 1272w, https://substackcdn.com/image/fetch/$s_!SmKs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cfbf230-9795-4fdd-aa0e-81ec2655a319_1800x630.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!SXCN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!SXCN!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 424w, https://substackcdn.com/image/fetch/$s_!SXCN!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 848w, https://substackcdn.com/image/fetch/$s_!SXCN!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!SXCN!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!SXCN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!SXCN!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 424w, https://substackcdn.com/image/fetch/$s_!SXCN!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 848w, https://substackcdn.com/image/fetch/$s_!SXCN!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!SXCN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e711eef-72ab-43da-85c3-0cb407255c72_1923x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/materials-science"
+  },
+  {
+    "tag": "a",
+    "href": "https://valenceforge.com/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:contact@valenceforge.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.nature.com/articles/s41560-019-0356-8"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!gXeQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!gXeQ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 424w, https://substackcdn.com/image/fetch/$s_!gXeQ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 848w, https://substackcdn.com/image/fetch/$s_!gXeQ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 1272w, https://substackcdn.com/image/fetch/$s_!gXeQ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!gXeQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!gXeQ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 424w, https://substackcdn.com/image/fetch/$s_!gXeQ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 848w, https://substackcdn.com/image/fetch/$s_!gXeQ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 1272w, https://substackcdn.com/image/fetch/$s_!gXeQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48681886-b881-4882-b23b-e32558c7e0a9_1530x844.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://emulated.so/"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:founders@emulated.so"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!uB-3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!uB-3!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 424w, https://substackcdn.com/image/fetch/$s_!uB-3!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 848w, https://substackcdn.com/image/fetch/$s_!uB-3!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 1272w, https://substackcdn.com/image/fetch/$s_!uB-3!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!uB-3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!uB-3!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 424w, https://substackcdn.com/image/fetch/$s_!uB-3!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 848w, https://substackcdn.com/image/fetch/$s_!uB-3!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 1272w, https://substackcdn.com/image/fetch/$s_!uB-3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faedb688f-189b-4c46-8fb9-4da16ef0bed3_1840x590.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!TYQ1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!TYQ1!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 424w, https://substackcdn.com/image/fetch/$s_!TYQ1!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 848w, https://substackcdn.com/image/fetch/$s_!TYQ1!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 1272w, https://substackcdn.com/image/fetch/$s_!TYQ1!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!TYQ1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!TYQ1!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 424w, https://substackcdn.com/image/fetch/$s_!TYQ1!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 848w, https://substackcdn.com/image/fetch/$s_!TYQ1!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 1272w, https://substackcdn.com/image/fetch/$s_!TYQ1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0afadf77-8faa-4174-812c-2e0e25ae898b_1840x876.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!B_LH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!B_LH!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 424w, https://substackcdn.com/image/fetch/$s_!B_LH!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 848w, https://substackcdn.com/image/fetch/$s_!B_LH!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 1272w, https://substackcdn.com/image/fetch/$s_!B_LH!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!B_LH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!B_LH!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 424w, https://substackcdn.com/image/fetch/$s_!B_LH!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 848w, https://substackcdn.com/image/fetch/$s_!B_LH!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 1272w, https://substackcdn.com/image/fetch/$s_!B_LH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40a1b513-95f3-4f66-999f-7608775f7793_1840x1094.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://doi.org/10.1038/s41467-026-69733-1"
+  },
+  {
+    "tag": "a",
+    "href": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!OQhQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!OQhQ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 424w, https://substackcdn.com/image/fetch/$s_!OQhQ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 848w, https://substackcdn.com/image/fetch/$s_!OQhQ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!OQhQ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!OQhQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!OQhQ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 424w, https://substackcdn.com/image/fetch/$s_!OQhQ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 848w, https://substackcdn.com/image/fetch/$s_!OQhQ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!OQhQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F37386117-9270-43c8-b247-aa259e7e732d_1891x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://chakra.dev/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!RQHq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!RQHq!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 424w, https://substackcdn.com/image/fetch/$s_!RQHq!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 848w, https://substackcdn.com/image/fetch/$s_!RQHq!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 1272w, https://substackcdn.com/image/fetch/$s_!RQHq!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!RQHq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!RQHq!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 424w, https://substackcdn.com/image/fetch/$s_!RQHq!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 848w, https://substackcdn.com/image/fetch/$s_!RQHq!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 1272w, https://substackcdn.com/image/fetch/$s_!RQHq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad92f632-8775-405b-be28-d1bba881e9a9_2048x1225.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!HZAh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!HZAh!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 424w, https://substackcdn.com/image/fetch/$s_!HZAh!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 848w, https://substackcdn.com/image/fetch/$s_!HZAh!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!HZAh!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!HZAh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!HZAh!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 424w, https://substackcdn.com/image/fetch/$s_!HZAh!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 848w, https://substackcdn.com/image/fetch/$s_!HZAh!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!HZAh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec45ed3c-2301-46df-857e-a71bdf605d7f_1959x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:team@thirdmomentresearch.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.linkedin.com/in/jeffrey-yan-89098369/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!TOmj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!TOmj!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 424w, https://substackcdn.com/image/fetch/$s_!TOmj!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 848w, https://substackcdn.com/image/fetch/$s_!TOmj!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 1272w, https://substackcdn.com/image/fetch/$s_!TOmj!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!TOmj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!TOmj!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 424w, https://substackcdn.com/image/fetch/$s_!TOmj!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 848w, https://substackcdn.com/image/fetch/$s_!TOmj!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 1272w, https://substackcdn.com/image/fetch/$s_!TOmj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7642845-f3c3-4cad-85e1-2bbde23a05a0_1522x824.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!nVYO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!nVYO!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 424w, https://substackcdn.com/image/fetch/$s_!nVYO!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 848w, https://substackcdn.com/image/fetch/$s_!nVYO!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!nVYO!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!nVYO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!nVYO!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 424w, https://substackcdn.com/image/fetch/$s_!nVYO!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 848w, https://substackcdn.com/image/fetch/$s_!nVYO!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!nVYO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f5387f7-b82c-4628-8139-99072a728314_1967x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/software-engineering"
+  },
+  {
+    "tag": "a",
+    "href": "https://datacurve.ai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!GwQv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!GwQv!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 424w, https://substackcdn.com/image/fetch/$s_!GwQv!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 848w, https://substackcdn.com/image/fetch/$s_!GwQv!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 1272w, https://substackcdn.com/image/fetch/$s_!GwQv!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!GwQv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!GwQv!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 424w, https://substackcdn.com/image/fetch/$s_!GwQv!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 848w, https://substackcdn.com/image/fetch/$s_!GwQv!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 1272w, https://substackcdn.com/image/fetch/$s_!GwQv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa506480c-a4fe-4fdb-a1ea-2f67f1e7e50b_1536x880.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!IeSm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!IeSm!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 424w, https://substackcdn.com/image/fetch/$s_!IeSm!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 848w, https://substackcdn.com/image/fetch/$s_!IeSm!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!IeSm!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!IeSm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!IeSm!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 424w, https://substackcdn.com/image/fetch/$s_!IeSm!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 848w, https://substackcdn.com/image/fetch/$s_!IeSm!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!IeSm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6f1aa9a-b5c8-48fe-bc9f-f529cc4553dc_2042x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!tJNJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!tJNJ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 424w, https://substackcdn.com/image/fetch/$s_!tJNJ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 848w, https://substackcdn.com/image/fetch/$s_!tJNJ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!tJNJ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!tJNJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!tJNJ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 424w, https://substackcdn.com/image/fetch/$s_!tJNJ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 848w, https://substackcdn.com/image/fetch/$s_!tJNJ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!tJNJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5f623e7-3874-4d21-8bc8-3add06bcde4f_1935x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://gdpx.semianalysis.com/domains/alignment"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.fleetai.com/"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!JN9A!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!JN9A!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 424w, https://substackcdn.com/image/fetch/$s_!JN9A!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 848w, https://substackcdn.com/image/fetch/$s_!JN9A!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 1272w, https://substackcdn.com/image/fetch/$s_!JN9A!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!JN9A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!JN9A!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 424w, https://substackcdn.com/image/fetch/$s_!JN9A!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 848w, https://substackcdn.com/image/fetch/$s_!JN9A!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 1272w, https://substackcdn.com/image/fetch/$s_!JN9A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6babac6-de68-4190-b72f-4055a416b5a0_2048x1053.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "https://substackcdn.com/image/fetch/$s_!UA30!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png"
+  },
+  {
+    "tag": "source",
+    "type": "image/webp",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!UA30!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 424w, https://substackcdn.com/image/fetch/$s_!UA30!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 848w, https://substackcdn.com/image/fetch/$s_!UA30!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!UA30!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 1456w"
+  },
+  {
+    "tag": "img",
+    "src": "https://substackcdn.com/image/fetch/$s_!UA30!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png",
+    "alt": "",
+    "srcset": "https://substackcdn.com/image/fetch/$s_!UA30!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 424w, https://substackcdn.com/image/fetch/$s_!UA30!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 848w, https://substackcdn.com/image/fetch/$s_!UA30!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 1272w, https://substackcdn.com/image/fetch/$s_!UA30!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed0c4ce9-e6db-4dd0-9f8e-2278466f4acd_1446x2048.png 1456w"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:gdpx@semianalysis.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://newsletter.semianalysis.com/subscribe?simple=true&next=https%3A%2F%2Fnewsletter.semianalysis.com%2Fp%2Fgdpx-measuring-frontier-model-capabilities%3Futm_source%3Dchatgpt.com&utm_source=paywall&utm_medium=web&utm_content=223102484"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/sign-in?redirect=%2Fp%2Fgdpx-measuring-frontier-model-capabilities%3Futm_source%3Dchatgpt.com&for_pub=semianalysis&change_user=false"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/privacy",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/tos",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/ccpa#personal-data-collected",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/signup?utm_source=substack&utm_medium=web&utm_content=footer"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com/app/app-store-redirect?utm_campaign=app-marketing&utm_content=web-footer-button"
+  },
+  {
+    "tag": "a",
+    "href": "https://substack.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://enable-javascript.com/"
+  }
+]

@@ -1,0 +1,70 @@
+GDPx
+byLeaderboardDomainsRollouts
+v1.0
+Measuring frontier model capabilities across the most valuable domains
+Read the blogExplore domains
+11domains
+14partners
+206tasks
+A collaboration with
+14 specialized
+data partners
+ArithmeticCybersecurity
+ArcverexChip Design
+DatacurveSoftware Engineering
+EmulatedMaterials Science
+ChakraLegal
+Living ContextFinance
+FleetAlignment
+ExtrapolateRecursive Self-Improvement
+Beautiful MachinesHardware Design
+AriaChip Design
+LatchBioBiology
+ErgodexChip Design
+ValenceForgeMaterials Science
+Third MomentQuant Trading
+ArithmeticCybersecurity
+ArcverexChip Design
+DatacurveSoftware Engineering
+EmulatedMaterials Science
+ChakraLegal
+Living ContextFinance
+FleetAlignment
+ExtrapolateRecursive Self-Improvement
+Beautiful MachinesHardware Design
+AriaChip Design
+LatchBioBiology
+ErgodexChip Design
+ValenceForgeMaterials Science
+Third MomentQuant Trading
+Cost vs. Performance Pareto Frontier
+DomainAll domains
+Models20 of 20
+X axisCostOutput tokens
+0%3%6%9%12%15%$1.00$2.00$5.00$10.00$20.00$50.00Claude Opus 5.5Gemini 4 CarbonGPT 6.1 TerraGPT 6.1 SolDeepSeek 4.1 Flash 1017GPT-6 Luna
+0%3%6%9%12%15%$1.00$2.00$5.00$10.00$20.00$50.00Claude Opus 5.5Gemini 4 CarbonGPT-6 AstraClaude Fable 5.1GPT 6.1 TerraGPT 6.1 SolClaude Sonnet 5.5Gemini 4 ArgonMuse WonderDeepSeek 4.1 Flash 1017GPT-6 LunaClaude Haiku 5.5MiniMax M3.1 FlashGrok 4.7Kimi K3Qwen 3.8 MaxGLM 5.3InklingMuse Spark Open
+↑ GDPx scoreAvg cost per task (log) →
+Not shown: Muse Wonder Full, with no public price.
+by
+Compare models by domain
+Domains11 of 11
+Models13 of 20
+Recursive Self-ImprovementRSIRSIChip DesignChip DesignChipDesignCybersecurityCyberCyberBiologyBioBioFinanceFinanceFinanceLegalLegalLegalQuant TradingQuantQuantHardware DesignHardware DesignHardwareDesignMaterials ScienceMaterials ScienceMaterialsScienceAlignmentAlignmentAlignmentSoftware EngineeringSWESWE10203040
+ModelGDPx
+Claude Opus 5.512.0
+Gemini 4 Carbon10.9
+GPT-6 Astra9.6
+Muse Wonder Full9.0
+Claude Fable 5.18.5
+GPT 6.1 Sol8.4
+Claude Sonnet 5.58.2
+Gemini 4 Argon7.3
+Muse Wonder6.8
+DeepSeek 4.1 Flash 10175.4
+GPT-6 Luna5.1
+Grok 4.73.9
+GLM 5.32.7
+by
+Thanks to
+for providing inference for all the open-source modelsfor providing sandbox infrastructure
+Main sitePrivacy policy© 2026 SemiAnalysis

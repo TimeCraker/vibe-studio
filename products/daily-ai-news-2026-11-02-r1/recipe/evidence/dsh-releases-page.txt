@@ -1,0 +1,472 @@
+Releases · jackwener/DSH-Android · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Products
+Platform
+GitHubRepository hosting, code review, and collaboration
+CopilotAI coding agent for tasks, projects and automated work
+Build & Ship
+ActionsCI/CD and automation
+Code QualityQuality analysis, fixes, and enforcement
+CodespacesCloud development environments
+Secure
+Code SecurityVulnerability detection and remediation
+Secret ProtectionSecret scanning and leak prevention
+All Features
+Developers
+Learn
+Documentation
+Training
+Certifications
+Build
+Build with Copilot
+Customize Copilot
+Integrations
+Explore
+Trending repos
+GitHub Sponsors
+Events
+Changelog
+ChangelogYour source for the latest features, improvements, and fixes across GitHub products, all in one place.
+Businesses
+By Stage
+Enterprises
+Team
+Startups
+Nonprofits
+By Industry
+Healthcare
+Financial services
+Manufacturing
+Government
+See all industries
+Evaluate GitHub
+Why GitHub
+Customer Stories
+Business insights
+Trust Center
+Add-ons
+GitHub Advanced SecurityEnterprise-grade code security
+Copilot for businessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Resources
+Learn & Connect
+Documentation
+Resource center
+Blog
+Events & webinars
+Community Forum
+Customer Stories
+Integrations
+Support
+Customer support
+Training
+GitHub Status
+Company
+About
+Partners
+Changelog
+GitHub Universe
+GitHub UniverseThe event for developers, by developers — talks, workshops, and what’s next for GitHub.
+Pricing
+Search/
+Sign inSign up
+Appearance settings
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+{{ message }}
+jackwener
+DSH-Android
+Repository navigation
+Code
+Issues5 (5)
+Pull requests11 (11)
+Actions
+Projects
+Security and quality
+Insights
+More items
+Releases: jackwener/DSH-Android
+Releases
+Tags
+Releases · jackwener/DSH-Android
+Release list
+v0.3.6
+v0.3.5
+v0.3.4
+v0.3.3
+v0.3.2
+v0.3.1
+v0.3.0
+v0.2.7
+v0.2.6
+v0.2.5
+Previous Next
+Jump to release
+v0.3.6
+v0.3.5
+v0.3.4
+v0.3.3
+v0.3.2
+v0.3.1
+v0.3.0
+v0.2.7
+v0.2.6
+v0.2.5
+Previous Next
+v0.3.6
+v0.3.6
+Latest
+Latest
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+01 Nov 14:48
+v0.3.6
+6f56557
+插话立即生效（#41）：任务进行中发的插话（插话发送、排队栏“立即发送”）马上显示在对话里，模型在当前任务的下一步就能看到，不再等这一轮结束才另开一轮。停止任务时，还没插进去的话会退回输入框
+悬浮球和通知能回到正在运行的对话（#39）：后台运行时点悬浮球或进度胶囊，打开的是正在运行的那个对话，不再新开对话；点通知栏的运行通知能回到 App。适配了 HyperOS 等系统对后台打开界面的限制
+第三方识图模型能看到图片了（#39）：之前不在内置列表里的识图模型（Gemini、GPT-4o、Qwen-VL、GLM-4V 等）会被当成纯文本模型，图片被替换成文字说明。现在按服务商接口返回的信息和模型名自动判断，模型编辑页可以手动设“图片输入”；图片发不到当前模型时，输入框会提示
+App 内切换语言（#40）：设置 → 通用 → 语言，可选跟随系统、中文、English，Android 10–12 也能用。新增语言只需要加一份翻译文件，欢迎贡献
+这版没有在真机上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装，也可以在 设置 → 关于 里直接更新
+APK SHA-256: 45ba1e2177afb91002741815bbfe9841555f989d0658fd586e82120e4a9d01e0
+Assets
+4
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.3.5
+v0.3.5
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+01 Nov 09:54
+v0.3.5
+6bd7092
+修复部分手机提示“安装包没有签名文件”：安装包同时带上 v1、v2、v3 三种签名。之前只有 v2，有些国内手机的安装器、文件管理器和应用商店只认 v1，会把它当成没签名。证书没有变
+其他功能和 v0.3.4 相同
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本，装了 v0.3.4 的可以在 设置 → 关于 里直接更新
+APK SHA-256: 94508b7be5f919b8ebd35cbdd9c67148df6afb5b1611f943d8d4f05a38035663
+Assets
+4
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.3.4
+v0.3.4
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+31 Oct 11:12
+v0.3.4
+4e170f0
+应用内更新：设置 → 关于 可以检查更新，默认每天在后台自动检查一次。有新版时显示更新说明，可以选更新、稍后或跳过此版本；在 App 内下载（支持断点续传），先核对 SHA-256 和签名，再用系统安装器安装，会话、设置和插件都保留。从这个版本起，以后的版本都可以在 App 里直接更新
+长任务不再中途停下（#37）：模型在待办还没做完时提前停下，会在同一轮里自动继续，界面保持运行状态；每轮结束都会说明原因。如果还有没做完的待办，会显示进度、下一项和“继续”按钮，继续时不会重复已经成功的操作。模型不会再说“下一轮会自动继续”。移除了手机上不可靠的 goal 自动轮次
+大幅减少输入 token（#36）：不常用的工具改为用到时才加载。新会话发一句“你好”的输入从约 1.9 万 token 降到约 5400（手机操作模式约 1.7 万 → 4300），DeepSeek 的提示词缓存照常生效
+这版没有在真机上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: 17549579a505c5af4b53f144eebc4c2586e7307e454d3077300d79ce3a32d5ea
+Assets
+4
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.3.3
+v0.3.3
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+31 Oct 08:44
+v0.3.3
+4fcfd97
+从链接导入技能、插件更稳（#17）：所有用户贴的链接统一走带镜像切换的下载路径，慢但能连上的源不会被提前放弃；github.com 的 blob/tree 链接会自动换成文件本身，导入 SKILL.md 时会带上整个技能目录。失败时列出试过的每个源和具体错误
+安全模式的提示不再残留：已安装的插件里没有被暂停的，安全模式就自动结束。旧版本误进的安全模式在升级后清除一次，插件重新启用
+返回键、插件安装、技能导入、诊断导出已在真机上测过（v0.3.2 基础上）；本版改动只在电脑上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: aa1b6d28eeed618be26a6dd35c247f4be8378dfbc5ba5f56f1454f0faf0b796a
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.3.2
+v0.3.2
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+31 Oct 07:27
+v0.3.2
+90ce520
+返回键统一为“回上一级”：所有页面都放进同一个返回栈，系统返回、手势返回和左上角箭头效果一致。修复了这些地方按返回直接回桌面或跳级的问题：首次引导填 API Key 那一步、增强能力那一步、登录/充值/用量网页、扩展里的插件详情/索引条目/管理索引/MCP 编辑、新建模型服务、应用经验详情。从侧栏、报错、分享等处直接打开设置页时，返回会逐级回到设置首页再回首页
+插件索引在国内网络下能拉下来（#17）：修复引擎连接多 IP 域名时过早放弃的问题；索引在 jsDelivr 多个节点和 GitHub 之间自动切换并记住能用的那个；地址改为新仓库名。失败时说明试过哪些源，并可以重试
+插件标题用多语言写法时，扩展页不再显示“引擎没能启动”（#17）：插件文案支持多语言；单个插件信息读不懂只影响它自己
+诊断信息可以导出到文件：保存到 下载/DSH-Android/
+这版没有在真机上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: 3c28680522d167701032ee5b485d0c054318b4c3c595034f1c724b45ad45bc59
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.3.1
+v0.3.1
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+31 Oct 02:55
+v0.3.1
+5d9b9ef
+修复 Android 17 上后台屏建不出来（#34）：通过 Shizuku 创建后台屏时，传给系统的包名和 Shizuku 的身份对不上，Android 17 会拒绝。现在以 shell 的身份创建。再失败时会写明原因，自检和诊断信息里也能看到
+可以访问 Android/data 和 Android/obb（#35）：Android 11 起，开着 Shizuku 时，文件工具可以列出、读取、写入、复制、移动、删除和搜索这两个目录里的文件。不允许整个删除或移动这两个目录本身。没开 Shizuku 时会提示去哪里打开
+新工具 adb_shell（#35）：通过 Shizuku 以 shell 身份执行命令，相当于电脑上的 adb shell，可以用 pm、am、dumpsys、cmd、logcat 等。走正常的审批，危险命令和终端一样直接拦截。需要开着 Shizuku
+升级后如果 Shizuku 里的旧服务还在运行，请在 Shizuku 里重启一次服务，新功能才能用
+这版没有在真机上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: a9f63f7c6b30521b81a8420cba47fdffe562459cbbd91f9839dd6b77186cbe9c
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.3.0
+v0.3.0
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+30 Oct 21:12
+v0.3.0
+9e22d7e
+插件、技能和 MCP（#17）：设置里新增“扩展”，分插件、技能、MCP 三栏。
+插件：用的是 dsh 自己的插件格式和插件管理器，和桌面版 dsh 装的是同一套插件。可以浏览精选列表、搜索，也可以粘贴 npm 包名、npm 或 GitHub 链接，或者选 .tgz/.zip 文件安装。插件的设置表单按插件自己声明的配置自动生成，改了立即生效。安装、启用、更新、卸载后，引擎会在当前任务结束后自动重启生效
+装之前就判断手机能不能用：需要原生模块的插件，在下载前就拒绝并说明原因；装完再扫一遍，发现原生文件就回滚。依赖 dsh 网页版服务的插件（例如 DS-Bot）也会在安装时说明用不了的原因
+坏插件不会让 App 起不来：哪个插件导致引擎崩溃就自动暂停哪个；连续两次起不来时进入安全模式，暂停全部插件，再逐个恢复
+一次提示：安装卡片里如实说明插件拥有和智能体一样的能力，此外没有额外弹窗。插件工具在会话模式里归为“扩展工具”，“只聊天”模式默认关闭；每个插件可以单独打开“调用前问我”
+技能：从文件、zip、链接或 GitHub 导入 SKILL.md，不用重启
+MCP：粘贴地址或 mcpServers 配置接入远程 MCP 服务；npm 上的纯 JS MCP 服务也能在手机上运行。需要 Python、Docker 的服务会明确说明不支持
+国内网络：插件下载源在 npmmirror 和 npm 官方之间自动选择，一个不通就换另一个
+可以从系统分享菜单“安装为 DSH 扩展”
+内置 dsh 升级到 0.2.1-rc.5；冷启动时间不变
+这版没有在真机上测试过，插件安装这条链路尤其需要真机验证
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: c5345170198b72156a9246c7be93aff6dbf9dc7992afcc051245d5d21cf7cd96
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.2.7
+v0.2.7
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+30 Oct 19:53
+v0.2.7
+76e4adf
+支持 OpenCode Go（#32）：新增 OpenCode Go 预设。OpenCode Go 要求每段对话带一个固定的会话标识，以前没带，所以模型列表能拉到、一对话就失败。现在同一段对话用同一个标识，不同对话互不相同，标识由会话号单向推出，不暴露原始会话号
+自定义服务商可以加请求头：编辑服务商 → 高级设置，可以填“会话标识请求头”和“额外请求头”。看起来像密钥的值会和 API Key 一样加密保存
+“没开通这个模型”不再报成 Key 错误：对话中遇到账号没开通某个模型（火山方舟、硅基流动、智谱、通义、OpenAI 等的这类报错），会写明是哪个模型没开通，附上服务商原话，并给出“去设置”按钮。“测试并保存”的说法与之一致
+请求模型时带上 DSH-Android/版本号 的客户端标识
+这版没有在真机上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: 11591cd144874db4a0c0989fa16c857117fdf1a34a93bddefcde79844f9dba47
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+👍
+1
+m17334224627-crypto reacted with thumbs up emoji
+😄
+1
+m17334224627-crypto reacted with laugh emoji
+🎉
+1
+m17334224627-crypto reacted with hooray emoji
+❤️
+1
+m17334224627-crypto reacted with heart emoji
+🚀
+1
+m17334224627-crypto reacted with rocket emoji
+👀
+1
+m17334224627-crypto reacted with eyes emoji
+All reactions
+👍
+1 reaction
+😄
+1 reaction
+🎉
+1 reaction
+❤️
+1 reaction
+🚀
+1 reaction
+👀
+1 reaction
+1 person reacted
+v0.2.6
+v0.2.6
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+30 Oct 17:32
+v0.2.6
+27e89c4
+保存模型服务商时真调用一次：“测试并保存”会让模型实际调用一次工具，通过才算可用。没指定主模型时自动挑最多 3 个候选试；失败原因分清楚：Key 不对、账号没开通这个模型、模型名不存在、模型不支持工具、额度用完、网络问题。不提供模型列表的服务商，填模型名后同样实测。设置里没测试通过的模型会标出来，可以“重新测试”
+新增 Ollama、LM Studio 预设（电脑上跑的本地模型，Key 可不填）；核对并更新了 MiniMax、Kimi、智谱、火山方舟的地址和默认模型
+复制诊断信息：关于 → 自检里一键生成诊断，先完整显示给你看，点“复制”或“分享”才会离开手机。不含 Key、对话和屏幕内容，IP、邮箱等自动打码。提 issue 时请贴上它
+第三方推理模型的思考内容：按收到时的格式原样回传给同一个服务商，不会发给别家；被服务商拒绝时自动去掉重试
+兼容更多网关的返回格式：新增 87 组网关返回的回放测试（DeepSeek、OpenAI、vLLM、sglang、NVIDIA、OpenRouter、Ollama、LM Studio、硅基流动、火山方舟、Kimi、智谱、通义、Mistral、MiniMax、Gemini 等），并修复了它暴露出来的问题：并行工具调用参数被拼坏、没有 id 的工具调用被丢掉、非流式返回、“余额不足”被误报成 Key 错误等
+滚轮选择器一次转到位：新工具，选时间、日期、数量的滚轮直接转到目标值并读回核对
+闹钟设完会核实是否真的设上；新增“查看闹钟”；新建日程改为打开日历的预填页，不需要日历权限
+没有输入框时打字会直接报错，不再假装成功；输入框里的提示文字不再被当成内容
+这版没有在真机上测试过
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: 07fc4f9b6da65b44e748278a7f3e49cbeabe07c27a08c67c24f0c4d309d50f77
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+v0.2.5
+v0.2.5
+Compare
+Choose a tag to compare
+Sorry, something went wrong.
+Filter
+Loading
+Sorry, something went wrong.
+Uh oh!
+There was an error while loading. Please reload this page.
+No results found
+View all tags
+jackwener
+released this
+30 Oct 13:03
+v0.2.5
+833166f
+修复第三方模型对话必失败（#20 #28）：很多 OpenAI 兼容网关（magpie、NVIDIA NIM、公司内网网关等）在流式返回里每帧都带 "usage": null，以前会被误报成“provider transport failed”并反复重试。现在正常对话；解析不了的返回会直接说“模型服务返回的数据格式不兼容”，不再伪装成网络错误、也不再空等重试
+接口地址没写 /v1 时，“获取模型列表”遇到 404 会自动试 /v1 并帮你改好地址；对话时的 404 也会提示试 /v1
+模型列表刷新（#25）：刷新后列表就是接口这次返回的模型；已勾选但接口不再返回的模型标“接口未返回”留在最上面
+上下文窗口和最大输出（#27）：不再写死 128K。能从接口返回里自动识别（vLLM、sglang、OpenRouter、llama.cpp 等），也可以按服务商或按模型手动设置；引擎和输入框的上下文圈都用这个值，并标明来源
+语音发起任务（#23）：唤起助手或长按悬浮球后直接开始听，说完自动发送（1.5 秒内可点击改为编辑）；输入框也有麦克风按钮
+安装时如果 Google Play 保护机制提示“已屏蔽有害应用”，属于误报：核对下面的 SHA-256 后，点“更多详情”→“仍要安装”（见 README）
+仅支持 arm64-v8a，Android 10 及以上；正式签名，可直接覆盖安装 v0.1.1 及以后版本
+APK SHA-256: d81269fedaff5559c4099ac3ae842f8ae36dfb4f3f37389076a2fb824d4d36bb
+Assets
+3
+Loading
+Uh oh!
+There was an error while loading. Please reload this page.
+All reactions
+Previous 1 2 3 Next
+Previous Next
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

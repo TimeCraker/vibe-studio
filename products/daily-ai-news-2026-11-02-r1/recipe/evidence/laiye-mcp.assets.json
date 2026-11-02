@@ -1,0 +1,442 @@
+[
+  {
+    "tag": "meta",
+    "content": "IE=edge"
+  },
+  {
+    "tag": "meta",
+    "name": "format-detection",
+    "content": "telephone=no"
+  },
+  {
+    "tag": "meta",
+    "name": "keywords",
+    "content": "智能体文档解析与抽取 MCP"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "智能体文档解析与抽取 MCP - 腾讯云"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/gateway/shareicons/cloud.png"
+  },
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"
+  },
+  {
+    "tag": "meta",
+    "name": "referrer",
+    "content": "unsafe-url"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//qccommunity.qcloudimg.com"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//ask.qcloudimg.com"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//cloudcache.tencent-cloud.com"
+  },
+  {
+    "tag": "meta",
+    "name": "next-head-count",
+    "content": "14"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/portal/css/base.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://qccommunity.qcloudimg.com/tvp/tdesign.min.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://cloudcache.tencentcs.cn/qcloud/ui/cloud-community/build/base/base-202607031707.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://cloudcache.tencentcs.cn/qcloud/ui/cloud-community/build/MCP/MCP-202510271502.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://cloudcache.tencent-cloud.cn/qcloud/draft-master/dist/draft-master-v2.1.33.d4s2ddo9sb.css"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "//cloudcache.tencent-cloud.com/qcloud/favicon.ico?t=201902181234",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "https://qccommunity.qcloudimg.com/community/_next/static/css/5fdee83e7ffc4836.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "https://qccommunity.qcloudimg.com/community/_next/static/css/5fdee83e7ffc4836.css"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/?from=20060&from_column=20060"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/document/product?from=20702&from_column=20702"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/voc/?from=20703&from_column=20703"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.cloud.tencent.com/?from=20063&from_column=20063"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/mcp"
+  },
+  {
+    "tag": "img",
+    "src": "https://qccommunity.qcloudimg.com/image/new.png"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/mcp"
+  },
+  {
+    "tag": "img",
+    "src": "https://developer.qcloudimg.com/operation/attachment/900005/20260624-2674668f.png"
+  },
+  {
+    "tag": "img",
+    "src": "https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/1dcf443b-0740-4f79-9c6a-e996de52d7e5.svg"
+  },
+  {
+    "tag": "a",
+    "href": "https://adp.laiye.com/?utm_source=github",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "src": "https://qccommunity.qcloudimg.com/icons/copy-icon.png"
+  },
+  {
+    "tag": "img",
+    "src": "https://qccommunity.qcloudimg.com/icons/copy-icon.png"
+  },
+  {
+    "tag": "img",
+    "src": "https://qccommunity.qcloudimg.com/icons/copy-icon.png"
+  },
+  {
+    "tag": "img",
+    "src": "https://qccommunity.qcloudimg.com/icons/copy-icon.png"
+  },
+  {
+    "tag": "img",
+    "src": "https://qccommunity.qcloudimg.com/icons/copy-icon.png"
+  },
+  {
+    "tag": "a",
+    "href": "https://adp.laiye.com/?utm_source=github",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://laiye-tech.feishu.cn/wiki/PO9Jw4cH3iV2ThkMPW2c539pnkc",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://laiye-tech.feishu.cn/wiki/UDYIwG42pisBbFkJI39ctpeKnWh",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://laiye.com/product/adp-platform",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/column"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/ask"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/salon"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/video"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/learning"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/techpedia"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/zone/list"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/support-plan"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/support-plan-invitation"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/article/1535830"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/competition"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/tvp"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/program/tm"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/program/tci"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/tdp"
+  },
+  {
+    "tag": "a",
+    "rel": "nofollow",
+    "href": "https://developer.cloud.tencent.com/article/1006434"
+  },
+  {
+    "tag": "a",
+    "rel": "nofollow",
+    "href": "https://developer.cloud.tencent.com/article/1006435"
+  },
+  {
+    "tag": "a",
+    "rel": "nofollow",
+    "href": "mailto:cloudcommunity@tencent.com"
+  },
+  {
+    "tag": "a",
+    "rel": "nofollow",
+    "href": "https://developer.cloud.tencent.com/friendlink"
+  },
+  {
+    "tag": "a",
+    "rel": "nofollow",
+    "href": "https://developer.cloud.tencent.com/article/2537547"
+  },
+  {
+    "tag": "img",
+    "src": "https://qcloudimg.tencent-cloud.cn/raw/a8907230cd5be483497c7e90b061b861.png?imageView2/2/w/200",
+    "alt": "扫码关注腾讯云开发者"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/domain?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/cvm?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/tbaas?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/message-queue-catalog?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/ecdn?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/tencentdb-catalog?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/dns?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/cos?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/css?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/facerecognition?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/tm?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/act/pro/enterprise2022?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/cdn?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/trtc?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/imagerecognition?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/cdb?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/ssl?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/asr?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/solution/data_protection?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/clb?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/sms?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/ocr?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/vod?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/bigdata-class?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/solution/la?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/tcop?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://cloud.tencent.com/product/cdm?from=20064&from_column=20064"
+  },
+  {
+    "tag": "a",
+    "href": "https://qcloudimg.tencent-cloud.cn/raw/986376a919726e0c35e96b311f54184d.jpg"
+  },
+  {
+    "tag": "a",
+    "href": "https://beian.miit.gov.cn/#/Integrated/index"
+  },
+  {
+    "tag": "img",
+    "src": "https://qcloudimg.tencent-cloud.cn/raw/eed02831a0e201b8d794c8282c40cf2e.png"
+  },
+  {
+    "tag": "a",
+    "href": "https://beian.mps.gov.cn/#/query/webSearch?code=44030502008569"
+  },
+  {
+    "tag": "a",
+    "href": "https://qcloudimg.tencent-cloud.cn/raw/a2390663ee4a95ceeead8fdc34d4b207.jpg"
+  },
+  {
+    "tag": "a",
+    "href": "https://beian.miit.gov.cn/#/Integrated/index"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/ask/archives.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/column/archives.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/news/archives.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/information/all.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/devdocs/archives.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.cloud.tencent.com/devdocs/sections_p1.html"
+  }
+]

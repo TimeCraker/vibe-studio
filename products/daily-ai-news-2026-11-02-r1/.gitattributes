@@ -1,0 +1,4 @@
+# Archived checksums refer to exact bytes.
+archive.json -text
+recipe/** -text -whitespace
+deliverables/** -text -whitespace

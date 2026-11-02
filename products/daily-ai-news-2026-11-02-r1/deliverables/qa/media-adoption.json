@@ -1,0 +1,58 @@
+{
+  "video": "render/daily-ai-news-2026-11-02.mp4",
+  "videoSha256": "5a911d687f53a85066d469042fe8a4550eccccaac918e006de945077ccdb6e89",
+  "videoClips": [
+    {
+      "sceneId": "longcat-demos",
+      "file": "assets/longcat-3d-demo.mp4",
+      "sourceIn": 0,
+      "sourceOut": 4.7,
+      "timelineIn": 39.233333333333334,
+      "timelineOut": 43.93333333333334,
+      "actualSourceOut": 4.7,
+      "includedInVideo": true
+    },
+    {
+      "sceneId": "longcat-office",
+      "file": "assets/longcat-office-demo.mp4",
+      "sourceIn": 0,
+      "sourceOut": 8.8,
+      "timelineIn": 43.983333333333334,
+      "timelineOut": 52.78333333333333,
+      "actualSourceOut": 8.8,
+      "includedInVideo": true
+    },
+    {
+      "sceneId": "genie-world",
+      "file": "assets/genie4-balloon-demo.webm",
+      "sourceIn": 0,
+      "sourceOut": 14.5,
+      "timelineIn": 92.4,
+      "timelineOut": 106.9,
+      "actualSourceOut": 14.5,
+      "includedInVideo": true
+    },
+    {
+      "sceneId": "genie-limits",
+      "file": "assets/genie4-cloth-demo.webm",
+      "sourceIn": 0,
+      "sourceOut": 16.5,
+      "timelineIn": 113.23333333333333,
+      "timelineOut": 129.63333333333333,
+      "actualSourceOut": 16.4,
+      "includedInVideo": true
+    }
+  ],
+  "imagesActuallyVisible": [
+    "assets/carbon-official-hero.png",
+    "assets/carbon-official-secbench.webp",
+    "assets/genie4-official-hero.webp",
+    "assets/longcat-office-poster.jpg"
+  ],
+  "notes": [
+    "assets/sources.json是渲染前取得清单，其includedInVideo=false是准备阶段状态；本记录和绑定成片哈希的渲染报告记录实际入片。",
+    "Carbon没有专属官方录像，采用官方发布图及评测图；GDPx采用有来源的大字数字与评分口径图解，未把榜单静图当录像。",
+    "四段演示原速静音，保留源片可见免责声明；取样帧确认对应主体。",
+    "字体和音乐沿用有来源的本地版本，官方官标用于榜单和封面。"
+  ]
+}

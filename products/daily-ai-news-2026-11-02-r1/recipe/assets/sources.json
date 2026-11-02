@@ -1,0 +1,438 @@
+[
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "OpenAI 官方仓库 favicon（浅底，白色圆形底）",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Anthropic Claude 官方资源图",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Google Gemini 官方闪标",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Meta 官方站资源",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "DeepSeek 官方站 favicon",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Kimi 官方站 logo",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Qwen 官方 GitHub 组织头像",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "智谱 Z.ai 官方 CDN logo",
+    "status": "retrieved",
+    "selection": "本期榜单对应厂商识别标志",
+    "reuseFrom": "daily-ai-news-2026-11-01"
+  },
+  {
+    "file": "assets/dsh-hero.webp",
+    "url": "https://raw.githubusercontent.com/jackwener/DSH-Android/main/docs/screenshots/hero.webp",
+    "sha256": "e47c669256d30222abc9df2f0c7392c031bb40fc017ed4f1c2b9acd0cd01044c",
+    "rights": "项目作者仓库配图；按仓库Apache-2.0及第三方商标分别处理，不转授品牌权利",
+    "selection": "头条项目识别，不能作为实测",
+    "status": "retrieved",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/dsh-showcase.webp",
+    "url": "https://raw.githubusercontent.com/jackwener/DSH-Android/main/docs/screenshots/showcase-dark.webp",
+    "sha256": "e88fb7375d8a94b187e7b20ce502bf98e666682bac3a03d46d5308a0d525fe0d",
+    "rights": "项目作者仓库界面截图；保留项目署名，Apache-2.0，第三方商标除外",
+    "selection": "逐个手机界面局部放大；作者截图，未实测",
+    "status": "retrieved",
+    "includedInVideo": false
+  },
+  {
+    "file": "evidence/coral-paper.pdf",
+    "url": "https://arxiv.org/pdf/2610.40350",
+    "sha256": "03b395a0363687bc8a3e8eb1c4ba8c1b58b7bda00f5dc116497a370fd9a07dde",
+    "rights": "作者论文；arXiv非独占许可不等于任意转载许可。仅作核查，画面优先自行绘制带出处的结果图",
+    "selection": "研究事实和表1/2原始证据",
+    "status": "retrieved",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/longcat-3d-demo.mp4",
+    "url": "https://s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/video2n-B6KVKw3k.mp4",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "checkedAt": "2026-11-02T04:48:13.105457+00:00",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "selection": "官方3D文物交互展示案例，待核对采用片段",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "6213a7940ec12759bdc74dc41eb7b8d36f42becf0886c84632a599c6b1c947af",
+    "bytes": 18811554,
+    "technical": {
+      "durationSeconds": 14.672993,
+      "width": 2214,
+      "height": 1440,
+      "fps": 30,
+      "videoCodec": "h264",
+      "audioCodec": "aac"
+    },
+    "inspection": "已解码并查看8秒代表帧，三维青铜神树交互界面；未连续观看、未审听、未入片。"
+  },
+  {
+    "file": "assets/longcat-office-demo.mp4",
+    "url": "https://s3plus-bj02.meituan.net/xiaomei-execute-result/0blogvideo/video5nt.mp4",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "checkedAt": "2026-11-02T04:48:13.106463+00:00",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "selection": "官方商业经营分析案例，待核对采用片段",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "eb38dd4b4c8373e71da99a39033413fb1941f64dd8580418431bd29e394e20ae",
+    "bytes": 7821610,
+    "technical": {
+      "durationSeconds": 8.8,
+      "width": 3808,
+      "height": 2160,
+      "fps": 30,
+      "videoCodec": "h264",
+      "audioCodec": "aac"
+    },
+    "inspection": "已解码并查看4秒代表帧，商业分析任务修改界面；未连续观看、未审听、未入片。"
+  },
+  {
+    "file": "assets/longcat-3d-poster.jpg",
+    "url": "https://s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/poster-sanxingdui-3d-MOfuE69s.jpg",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "checkedAt": "2026-11-02T04:48:13.106463+00:00",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "selection": "官方演示封面，待核对局部构图",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "c0d3144113fa11a23fb710c416fd724cc78ef5f5efa655d22a11fb1264c62d25",
+    "bytes": 37849,
+    "technical": {
+      "width": 640,
+      "height": 416,
+      "format": "JPEG"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/longcat-logo.svg",
+    "url": "https://s3plus.meituan.net/aigc-media-resources/longcat/yeqian-logo.svg",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "sha256": "2a15f1d32cd8b2687bff4adab822d0facd2c5c7840b3adb432ccd5b4c700de1d",
+    "rights": "官方商标素材，仅用于身份识别，不转授商标权。",
+    "selection": "本期封面与LongCat新闻识别",
+    "status": "retrieved",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/tiangai300-official-specs.png",
+    "url": "https://resource.iluvatar.com/20260731/6238f205-799a-4f4b-b699-4880a0388244/6buR6Imy5p2_5Y2h.png",
+    "sourcePage": "https://www.iluvatar.com/productDetails?fullCode=cpjs-yj-xlxl-tg300",
+    "sha256": "e6663e588f79d83959da02f3685533a5b1f577e60b9c243a36798c0a6fd6747b",
+    "status": "retrieved",
+    "rights": "天数智芯官方产品配图，未主张再授权。",
+    "selection": "待核候选产品图；已实际查看，仅板卡外观，不支持任何性能数值结论。",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/carbon-official-hero.png",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "checkedAt": "2026-11-02T11:20:11.409462+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "Carbon官方主视觉；短暂识别，不撑整段",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "a01f232fadc672604d8927f89d18e265a486bd81dbce5b729e5f604e32878c61",
+    "bytes": 969025,
+    "technical": {
+      "width": 1300,
+      "height": 731,
+      "format": "PNG"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/carbon-official-evals.webp",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon__evals-table.width-1200.format-webp.webp",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "checkedAt": "2026-11-02T11:20:11.410467+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "Carbon官方评测表；只取与解说相关局部，保留厂商口径",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "bf06006b602be15bc91f0a65d2b4ced392aeb4f4ca69fa0466ae068dc594bed3",
+    "bytes": 77418,
+    "technical": {
+      "width": 1200,
+      "height": 1009,
+      "format": "WEBP"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/carbon-official-secbench.webp",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_secbench-pro.width-1200.format-webp.webp",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "checkedAt": "2026-11-02T11:20:11.410970+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "漏洞发现评测图，官方发布口径，不当操作演示",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "3d1a4a65b2d0ab6087f6e9c997b1e69a89e2c37a86fbb0ecfaf9497b72910155",
+    "bytes": 18740,
+    "technical": {
+      "width": 1200,
+      "height": 675,
+      "format": "WEBP"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/gdpx-official-ranking.webp",
+    "url": "https://substackcdn.com/image/fetch/$s_!6qa6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png",
+    "sourcePage": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "checkedAt": "2026-11-02T11:20:11.411471+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "GDPx发布者榜单图；核对默认Score和计分口径",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "641fa2d249fbca58d9264032ac2a908237db84fde0c82a3d5e1191f483e38c9c",
+    "bytes": 1116064,
+    "technical": {
+      "width": 1456,
+      "height": 1397,
+      "format": "PNG"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/genie4-official-hero.webp",
+    "url": "https://lh3.googleusercontent.com/i7iotPkcMbMubxRzAdriO5wsIsowROonBvjLNnmPbOaRgEb1k4LKTBqay5VrcPpZi0R4il_bYCCsPYQ0Gy_-XbAw66azAGEfE-E6_9Izz5apP0BMJVE=w1200-h630-n-nu-rw",
+    "sourcePage": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "checkedAt": "2026-11-02T11:20:11.411968+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "Genie4官方主视觉，非本栏目生成",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "a231bb8fb23a2161ac842b0711e77b508c4c3eb5f6173429a4c30a416ceefb9e",
+    "bytes": 350726,
+    "technical": {
+      "width": 1200,
+      "height": 630,
+      "format": "WEBP"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/genie4-balloon-demo.webm",
+    "url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/EAIt62AyeO_ZlSZD/genie4_demo_hot-air-balloon_UI_with-disclaimer_16x9_final.webm",
+    "sourcePage": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "checkedAt": "2026-11-02T11:20:12.084539+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "官方交互世界热气球案例，保留原有免责声明",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "d5f9d7a2a7ef2dcaa6a9325b439243052ec05ac6f6fecb133450d5d9b99b2ca2",
+    "bytes": 5221914,
+    "technical": {
+      "codec_name": "vp9",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1",
+      "durationSeconds": 14.75
+    },
+    "inspection": {
+      "frameAtSeconds": 5.9,
+      "continuousVideoReview": "not-done",
+      "audioListening": "not-done",
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/genie4-cloth-demo.webm",
+    "url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/Hx57sxbj0Ia3OXDq/genie4_demo_silk-scarf_UI_with-disclaimer_16x9_final.webm",
+    "sourcePage": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "checkedAt": "2026-11-02T11:20:12.515732+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "官方交互世界布料案例，保留原有免责声明",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "6ea3ee9bea1a086d95ac035d29fec82da4a77bc954493f74a7200a5b2293f7b3",
+    "bytes": 7135817,
+    "technical": {
+      "codec_name": "vp9",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1",
+      "durationSeconds": 16.792
+    },
+    "inspection": {
+      "frameAtSeconds": 6.717,
+      "continuousVideoReview": "not-done",
+      "audioListening": "not-done",
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "status": "search-completed-no-official-dedicated-video-adopted",
+    "selection": "Carbon专属录像搜索",
+    "searchEvidence": [
+      "官方公告只含主视觉和评测图；另查DeepMind Gemini模型页",
+      "检索Carbon demo / Google official video，聚合页Google announces Gemini4Carbon实际署名Matthew Berman，为第三方解读，未采用"
+    ],
+    "fallback": "使用官方主视觉、SEC-bench图及带来源的长任务/开放范围图解；不把Argon或Genie录像当Carbon演示。",
+    "includedInVideo": false
+  },
+  {
+    "sourcePage": "https://gdpx.semianalysis.com/rollouts/compressor-housing",
+    "status": "search-completed-no-video-file-adopted",
+    "selection": "GDPx官方任务回放核对",
+    "searchEvidence": [
+      "发布原文及官网均核对",
+      "浏览器进入Rollouts→Compressor Housing，Watch呈现逐步会话记录与JSONL下载，无录制时间标记；不是视频文件"
+    ],
+    "fallback": "用发布者榜单图、自绘分步评分对照与复杂任务说明；不将会话记录称录像。",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "sceneIds": [
+      "global",
+      "domestic",
+      "all-voice-scenes"
+    ],
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "status": "local-file-hash-verified",
+    "selection": "frozen-for-this-edition",
+    "reusedFrom": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-28\\assets\\carefree.mp3",
+    "licenseEvidence": "https://incompetech.com/music/royalty-free/faq.html#credit",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "audioReview": "本阶段只核验哈希、时长和解码；完整审听、循环接缝及人声避让待实际混音。",
+    "preparedAt": "2026-10-27T12:28:34+08:00",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "205.139625"
+      }
+    },
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/fonts/sans.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\sans.ttf",
+    "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "frozen-for-this-edition",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-28\\assets\\fonts\\sans.ttf",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/fonts/mono.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\mono.ttf",
+    "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "frozen-for-this-edition",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-28\\assets\\fonts\\mono.ttf",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/longcat-office-poster.jpg",
+    "sha256": "7648e42e21cd6403ecbc913d551b3bf4261dc073ff2fa1a834d984e21cb1d224",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "derivedFrom": "assets/longcat-office-demo.mp4 at 4.0 seconds",
+    "selection": "poster after original-speed clip",
+    "includedInVideo": false
+  }
+]

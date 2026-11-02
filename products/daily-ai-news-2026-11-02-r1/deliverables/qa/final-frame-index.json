@@ -1,0 +1,129 @@
+{
+  "video": "render/daily-ai-news-2026-11-02.mp4",
+  "videoSha256": "5a911d687f53a85066d469042fe8a4550eccccaac918e006de945077ccdb6e89",
+  "formatVerified": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "60/1",
+    "frames": 10136,
+    "seconds": 168.933333
+  },
+  "frames": [
+    {
+      "time": 1,
+      "file": "qa/final-frames/1.jpg",
+      "sha256": "e1ca288bda749824473421754b21b8ab3855485bfe24dd26f0bf72fba7074e9d"
+    },
+    {
+      "time": 8,
+      "file": "qa/final-frames/8.jpg",
+      "sha256": "eafafc427c8feda893e237fcad422c5f87ea4c94fcaeae44787fab35a437ecaa"
+    },
+    {
+      "time": 18,
+      "file": "qa/final-frames/18.jpg",
+      "sha256": "6e62b9267c21cd2205a51433d76fd366dd6d00d07547dc9a34ed793c54261c91"
+    },
+    {
+      "time": 29,
+      "file": "qa/final-frames/29.jpg",
+      "sha256": "ad6cc562139113ef7225c59518b0d12236a0fedb7aa3b4af779705c8697b253f"
+    },
+    {
+      "time": 35,
+      "file": "qa/final-frames/35.jpg",
+      "sha256": "794c1fed8265809d30924d0dbf3e75c3fcd9c1165c663f6d9b633e0d1225dfd7"
+    },
+    {
+      "time": 41,
+      "file": "qa/final-frames/41.jpg",
+      "sha256": "e0eba7be701390c35613579027dbfaae307244eee82d81e034c8937db0bfd4c9"
+    },
+    {
+      "time": 47,
+      "file": "qa/final-frames/47.jpg",
+      "sha256": "1e2dde2be26590dd68890e575f866b3620cc03b5210019df3628e3dbebb170d0"
+    },
+    {
+      "time": 54,
+      "file": "qa/final-frames/54.jpg",
+      "sha256": "d9f61c641c64a66adb3c60e9a5998128c5de5661ee2b28d4bc4f783878de5faa"
+    },
+    {
+      "time": 62,
+      "file": "qa/final-frames/62.jpg",
+      "sha256": "b79f1e47393e9d3cb659218dab41fa1f65678a3c8731b9ce434abf4ca1d4e4cc"
+    },
+    {
+      "time": 68,
+      "file": "qa/final-frames/68.jpg",
+      "sha256": "a1e591673ce94611f9efdef8ed4b6f57e60077c6ad20a4ca908dec56b7497453"
+    },
+    {
+      "time": 74,
+      "file": "qa/final-frames/74.jpg",
+      "sha256": "b94081d580b4c99a3e575ab10a525f72a1ebff79149d33d7294c4486685ce2f7"
+    },
+    {
+      "time": 85,
+      "file": "qa/final-frames/85.jpg",
+      "sha256": "d9d78e1e07628e2f580e4f048dc77a4d395833817303ce01e612915243e72a7d"
+    },
+    {
+      "time": 96,
+      "file": "qa/final-frames/96.jpg",
+      "sha256": "47e7549cbc0b1fec381cf3a2036e52d3d8a857674ce6b88f666feb38d02cd5d6"
+    },
+    {
+      "time": 105,
+      "file": "qa/final-frames/105.jpg",
+      "sha256": "f81ecd494935886ec617925282a03db3ce0c71f7e23dc7337f2d7a7743ce3e03"
+    },
+    {
+      "time": 117,
+      "file": "qa/final-frames/117.jpg",
+      "sha256": "451c9c823917082d79c732a9dba1c5395f5f11545df2befd39630f39f16d770d"
+    },
+    {
+      "time": 125,
+      "file": "qa/final-frames/125.jpg",
+      "sha256": "f65a9644e578e8bad96a5b29a2cdc301cea073a17a512385728b0eed01ad7478"
+    },
+    {
+      "time": 136,
+      "file": "qa/final-frames/136.jpg",
+      "sha256": "a4e7eacf2a711e1679554b4da16f77b315bacf761ddf0c91d9b0a559898c248e"
+    },
+    {
+      "time": 140,
+      "file": "qa/final-frames/140.jpg",
+      "sha256": "1620e1595e2de073c2bb93c953245a04755a88198a5f0ebf5dd6fefb676d62f3"
+    },
+    {
+      "time": 146.5,
+      "file": "qa/final-frames/146.5.jpg",
+      "sha256": "ab9ec66379763ba84b6e680284e1de4e4922f7669ddc500a04ac28fe1ccc5f3b"
+    },
+    {
+      "time": 148.7,
+      "file": "qa/final-frames/148.7.jpg",
+      "sha256": "f234a81d1ae5b69b34dd0fb7ff34aca1821cb4fbbbd8fd8c65b8109dbc505f94"
+    },
+    {
+      "time": 155,
+      "file": "qa/final-frames/155.jpg",
+      "sha256": "2a3131783ba9d38330feb1badce01e1b36e4a0fc84bab2a56a388b760023da08"
+    },
+    {
+      "time": 163,
+      "file": "qa/final-frames/163.jpg",
+      "sha256": "cbd732c54b390aae8cac59fa538bfc231365902b53f2142c45e07b3bc19d2338"
+    },
+    {
+      "time": 167,
+      "file": "qa/final-frames/167.jpg",
+      "sha256": "9c05b6572554a5074f10aa25a2080726aa08e1185b138ebf88daf1f06fa4998d"
+    }
+  ],
+  "scope": "Indexed static samples only; no claim of continuous viewing, subjective audio or human acceptance."
+}

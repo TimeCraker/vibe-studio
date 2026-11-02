@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "editionDate": "2026-11-02",
+  "shots": [
+    {
+      "sceneId": "overview",
+      "inputs": [],
+      "note": ""
+    },
+    {
+      "sceneId": "longcat-release",
+      "inputs": [],
+      "note": "LongCat官方更新日志，2026-11-02"
+    },
+    {
+      "sceneId": "longcat-demos",
+      "inputs": [
+        "assets/longcat-3d-demo.mp4"
+      ],
+      "note": "美团官方演示，非本栏目实测",
+      "videoClips": [
+        {
+          "sceneId": "longcat-demos",
+          "file": "assets/longcat-3d-demo.mp4",
+          "sourceIn": 0,
+          "sourceOut": 4.7,
+          "timelineIn": 39.233333333333334,
+          "timelineOut": 43.93333333333334,
+          "playbackRate": 1,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "sceneId": "longcat-office",
+      "inputs": [
+        "assets/longcat-office-demo.mp4"
+      ],
+      "note": "美团官方生成案例，非本栏目实测",
+      "videoClips": [
+        {
+          "sceneId": "longcat-office",
+          "file": "assets/longcat-office-demo.mp4",
+          "sourceIn": 0,
+          "sourceOut": 8.8,
+          "timelineIn": 43.983333333333334,
+          "timelineOut": 52.78333333333333,
+          "playbackRate": 1,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "sceneId": "carbon-release",
+      "inputs": [
+        "assets/carbon-official-hero.png"
+      ],
+      "note": "Google官方公告，2026-10-28；非当日首发"
+    },
+    {
+      "sceneId": "carbon-limits",
+      "inputs": [
+        "assets/carbon-official-secbench.webp"
+      ],
+      "note": "Google发布口径，非本栏目实测"
+    },
+    {
+      "sceneId": "genie-world",
+      "inputs": [
+        "assets/genie4-balloon-demo.webm"
+      ],
+      "note": "Google官方演示，2026-10-27；非本栏目实测",
+      "videoClips": [
+        {
+          "sceneId": "genie-world",
+          "file": "assets/genie4-balloon-demo.webm",
+          "sourceIn": 0,
+          "sourceOut": 14.5,
+          "timelineIn": 92.4,
+          "timelineOut": 106.9,
+          "playbackRate": 1,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "sceneId": "genie-limits",
+      "inputs": [
+        "assets/genie4-cloth-demo.webm"
+      ],
+      "note": "Google官方Limitations，非成熟游戏引擎",
+      "videoClips": [
+        {
+          "sceneId": "genie-limits",
+          "file": "assets/genie4-cloth-demo.webm",
+          "sourceIn": 0,
+          "sourceOut": 16.5,
+          "timelineIn": 113.23333333333333,
+          "timelineOut": 129.63333333333333,
+          "playbackRate": 1,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "sceneId": "gdpx-tasks",
+      "inputs": [],
+      "note": "SemiAnalysis发布，2026-11-02"
+    },
+    {
+      "sceneId": "gdpx-scores",
+      "inputs": [
+        "assets/gdpx-official-ranking.webp"
+      ],
+      "note": "GDPx默认Score；领域等权，混合评分，三次尝试均值"
+    },
+    {
+      "sceneId": "closing",
+      "inputs": [],
+      "note": "2026-11-02"
+    }
+  ],
+  "timing": "actual recorded speech; real video ranges, original speed"
+}

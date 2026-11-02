@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "compositionId": "DailyAI",
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "seconds": 8,
+  "renderedFrameRange": [
+    8790,
+    9269
+  ],
+  "fullRender": false,
+  "partialRender": true,
+  "videoSha256": "9c73481d00c06628bd2aa50727d5725960efabd79387d332b55fc18ce1cea43d",
+  "browserErrors": [],
+  "inputs": [
+    {
+      "path": "assets/carbon-official-hero.png",
+      "sha256": "a01f232fadc672604d8927f89d18e265a486bd81dbce5b729e5f604e32878c61"
+    },
+    {
+      "path": "assets/carbon-official-secbench.webp",
+      "sha256": "3d1a4a65b2d0ab6087f6e9c997b1e69a89e2c37a86fbb0ecfaf9497b72910155"
+    },
+    {
+      "path": "assets/claude.png",
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
+    },
+    {
+      "path": "assets/deepseek.ico",
+      "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321"
+    },
+    {
+      "path": "assets/fonts/mono.ttf",
+      "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179"
+    },
+    {
+      "path": "assets/fonts/sans.ttf",
+      "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a"
+    },
+    {
+      "path": "assets/gdpx-official-ranking.webp",
+      "sha256": "641fa2d249fbca58d9264032ac2a908237db84fde0c82a3d5e1191f483e38c9c"
+    },
+    {
+      "path": "assets/genie4-balloon-demo.webm",
+      "sha256": "d5f9d7a2a7ef2dcaa6a9325b439243052ec05ac6f6fecb133450d5d9b99b2ca2"
+    },
+    {
+      "path": "assets/genie4-cloth-demo.webm",
+      "sha256": "6ea3ee9bea1a086d95ac035d29fec82da4a77bc954493f74a7200a5b2293f7b3"
+    },
+    {
+      "path": "assets/genie4-official-hero.webp",
+      "sha256": "a231bb8fb23a2161ac842b0711e77b508c4c3eb5f6173429a4c30a416ceefb9e"
+    },
+    {
+      "path": "assets/glm.svg",
+      "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7"
+    },
+    {
+      "path": "assets/google.png",
+      "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1"
+    },
+    {
+      "path": "assets/kimi.png",
+      "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273"
+    },
+    {
+      "path": "assets/longcat-3d-demo.mp4",
+      "sha256": "6213a7940ec12759bdc74dc41eb7b8d36f42becf0886c84632a599c6b1c947af"
+    },
+    {
+      "path": "assets/longcat-3d-poster.jpg",
+      "sha256": "c0d3144113fa11a23fb710c416fd724cc78ef5f5efa655d22a11fb1264c62d25"
+    },
+    {
+      "path": "assets/longcat-logo.svg",
+      "sha256": "2a15f1d32cd8b2687bff4adab822d0facd2c5c7840b3adb432ccd5b4c700de1d"
+    },
+    {
+      "path": "assets/longcat-office-demo.mp4",
+      "sha256": "eb38dd4b4c8373e71da99a39033413fb1941f64dd8580418431bd29e394e20ae"
+    },
+    {
+      "path": "assets/longcat-office-poster.jpg",
+      "sha256": "7648e42e21cd6403ecbc913d551b3bf4261dc073ff2fa1a834d984e21cb1d224"
+    },
+    {
+      "path": "assets/meta.svg",
+      "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e"
+    },
+    {
+      "path": "assets/openai.svg",
+      "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6"
+    },
+    {
+      "path": "assets/qwen.png",
+      "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3"
+    },
+    {
+      "path": "assets/sources.json",
+      "sha256": "bdc85343125ca30ce2fde0c2e9d6ae718a78779071b532154083fb4df252beae"
+    },
+    {
+      "path": "audio/mix.wav",
+      "sha256": "565f5975c99d0eeceeb7b6aa2c17047c11631506bb18f140a7645b1970627926"
+    },
+    {
+      "path": "audio/recording-review.json",
+      "sha256": "3eccb49ed748605cc295422cd4dc11fc6cb9815adf1942c57a5cdbf238b7724f"
+    },
+    {
+      "path": "captions.srt",
+      "sha256": "9f6404db656308e6d3e9fbd07e1c1428af4c8868702fef7138740376a358ff5e"
+    },
+    {
+      "path": "content.json",
+      "sha256": "9f23002e5eb6c5f2322e335ed287008d748adf0e909f0416145908afbcd5a7e7"
+    },
+    {
+      "path": "edition.json",
+      "hashMode": "edition-render-settings-v1",
+      "sha256": "cf5994ea228b40f2aca7e76ba344b00b20c2300312fd4635a740bb1624bd4c4d"
+    },
+    {
+      "path": "media-plan.json",
+      "sha256": "bf930258149b91e8aede259fe7aef349e67abaa5bf33fe82b25b64817e689f5c"
+    },
+    {
+      "path": "ranking.json",
+      "sha256": "a43b8b1fdf9b3045cab5499f39bc084a5e2803e2ac97b8e7f4a476245f19a7b4"
+    },
+    {
+      "path": "remotion-app/package-lock.json",
+      "sha256": "1b73a83f83e4507b4de20b00d5989b9e4b81b6370a381394b2ffc9343f4cc31c"
+    },
+    {
+      "path": "remotion-app/remotion/index.ts",
+      "sha256": "2b766dc5716a36d6358dc6caee49c6ca689c020a296c6556620413b239b7a8dc"
+    },
+    {
+      "path": "remotion-app/src/Design.tsx",
+      "sha256": "6c32f1965c6ce37ffd1e8d34a89c6cc13f56a96f0fe8ffc4e046f5f7120e0173"
+    },
+    {
+      "path": "remotion-app/src/Edition.tsx",
+      "sha256": "cf06e62eb73964f0ce05b87cc40c8292e62ba13316df74d764e0cbe2502a12ff"
+    },
+    {
+      "path": "remotion-app/src/News.tsx",
+      "sha256": "5a7fdcd855362524e0fd47729bbe8de6c5e2803c4547fbd67bc06cd07bc38bd8"
+    },
+    {
+      "path": "remotion-app/src/data.ts",
+      "sha256": "db4e562b94e841a2bcabbd9656ad549e0271a5d83f59017e3372f269757f0ed6"
+    },
+    {
+      "path": "timeline.json",
+      "sha256": "feca51254d2677f7225e3938fc1f563def3d432a848b86d209616db0df8fdfab"
+    }
+  ],
+  "toolInputs": [
+    {
+      "path": "skills/daily-ai-news/scripts/render.mjs",
+      "sha256": "d164829f8c87821a7f8348ed91b6287a0e85099dcdf3b409de563d6313527a19"
+    },
+    {
+      "path": "skills/daily-ai-news/scripts/edition.mjs",
+      "sha256": "69053ad6c3ac1cce516b53bbbacea15f64bc6b45574bc8ba046ff318e86e3ee5"
+    }
+  ],
+  "publicInputs": [
+    {
+      "path": "assets/carbon-official-hero.png",
+      "sha256": "a01f232fadc672604d8927f89d18e265a486bd81dbce5b729e5f604e32878c61"
+    },
+    {
+      "path": "assets/carbon-official-secbench.webp",
+      "sha256": "3d1a4a65b2d0ab6087f6e9c997b1e69a89e2c37a86fbb0ecfaf9497b72910155"
+    },
+    {
+      "path": "assets/claude.png",
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6"
+    },
+    {
+      "path": "assets/deepseek.ico",
+      "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321"
+    },
+    {
+      "path": "assets/gdpx-official-ranking.webp",
+      "sha256": "641fa2d249fbca58d9264032ac2a908237db84fde0c82a3d5e1191f483e38c9c"
+    },
+    {
+      "path": "assets/genie4-balloon-demo.webm",
+      "sha256": "d5f9d7a2a7ef2dcaa6a9325b439243052ec05ac6f6fecb133450d5d9b99b2ca2"
+    },
+    {
+      "path": "assets/genie4-cloth-demo.webm",
+      "sha256": "6ea3ee9bea1a086d95ac035d29fec82da4a77bc954493f74a7200a5b2293f7b3"
+    },
+    {
+      "path": "assets/genie4-official-hero.webp",
+      "sha256": "a231bb8fb23a2161ac842b0711e77b508c4c3eb5f6173429a4c30a416ceefb9e"
+    },
+    {
+      "path": "assets/glm.svg",
+      "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7"
+    },
+    {
+      "path": "assets/google.png",
+      "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1"
+    },
+    {
+      "path": "assets/kimi.png",
+      "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273"
+    },
+    {
+      "path": "assets/longcat-3d-demo.mp4",
+      "sha256": "6213a7940ec12759bdc74dc41eb7b8d36f42becf0886c84632a599c6b1c947af"
+    },
+    {
+      "path": "assets/longcat-3d-poster.jpg",
+      "sha256": "c0d3144113fa11a23fb710c416fd724cc78ef5f5efa655d22a11fb1264c62d25"
+    },
+    {
+      "path": "assets/longcat-logo.svg",
+      "sha256": "2a15f1d32cd8b2687bff4adab822d0facd2c5c7840b3adb432ccd5b4c700de1d"
+    },
+    {
+      "path": "assets/longcat-office-demo.mp4",
+      "sha256": "eb38dd4b4c8373e71da99a39033413fb1941f64dd8580418431bd29e394e20ae"
+    },
+    {
+      "path": "assets/longcat-office-poster.jpg",
+      "sha256": "7648e42e21cd6403ecbc913d551b3bf4261dc073ff2fa1a834d984e21cb1d224"
+    },
+    {
+      "path": "assets/meta.svg",
+      "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e"
+    },
+    {
+      "path": "assets/openai.svg",
+      "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6"
+    },
+    {
+      "path": "assets/qwen.png",
+      "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3"
+    },
+    {
+      "path": "fonts/mono.ttf",
+      "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179"
+    },
+    {
+      "path": "fonts/sans.ttf",
+      "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a"
+    },
+    {
+      "path": "mix.wav",
+      "sha256": "565f5975c99d0eeceeb7b6aa2c17047c11631506bb18f140a7645b1970627926"
+    }
+  ],
+  "videoClips": [
+    {
+      "sceneId": "longcat-demos",
+      "file": "assets/longcat-3d-demo.mp4",
+      "sourceIn": 0,
+      "sourceOut": 4.7,
+      "timelineIn": 39.233333333333334,
+      "timelineOut": 43.93333333333334
+    },
+    {
+      "sceneId": "longcat-office",
+      "file": "assets/longcat-office-demo.mp4",
+      "sourceIn": 0,
+      "sourceOut": 8.8,
+      "timelineIn": 43.983333333333334,
+      "timelineOut": 52.78333333333333
+    },
+    {
+      "sceneId": "genie-world",
+      "file": "assets/genie4-balloon-demo.webm",
+      "sourceIn": 0,
+      "sourceOut": 14.5,
+      "timelineIn": 92.4,
+      "timelineOut": 106.9
+    },
+    {
+      "sceneId": "genie-limits",
+      "file": "assets/genie4-cloth-demo.webm",
+      "sourceIn": 0,
+      "sourceOut": 16.5,
+      "timelineIn": 113.23333333333333,
+      "timelineOut": 129.63333333333333
+    }
+  ],
+  "humanReview": "pending"
+}

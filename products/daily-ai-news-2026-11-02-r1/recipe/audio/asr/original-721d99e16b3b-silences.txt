@@ -1,0 +1,67 @@
+[aist#0:0/pcm_s16le @ 000001dcf9347c80] Guessed Channel Layout: stereo
+Input #0, wav, from 'projects/daily-ai-news-2026-11-02/audio/source/narration-decoded-721d99e16b3b.wav':
+  Metadata:
+    encoder         : Lavf63.1.100
+  Duration: 00:02:41.23, bitrate: 1536 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, stereo, s16, 1536 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf63.1.100
+  Stream #0:0: Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s
+    Metadata:
+      encoder         : Lavc63.1.100 pcm_s16le
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 0
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 1.011417 | silence_duration: 1.011417
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 2.081313
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 2.440958 | silence_duration: 0.359646
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 10.489187
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 11.020417 | silence_duration: 0.531229
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 13.032187
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 13.806625 | silence_duration: 0.774438
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 21.917687
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 22.311604 | silence_duration: 0.393917
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 25.611146
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 25.975896 | silence_duration: 0.36475
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 30.641562
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 30.999333 | silence_duration: 0.357771
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 39.876167
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 40.504896 | silence_duration: 0.628729
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 43.033437
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 43.888146 | silence_duration: 0.854708
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 49.185625
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 49.700271 | silence_duration: 0.514646
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 58.031708
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 59.033083 | silence_duration: 1.001375
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 78.488208
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 79.002083 | silence_duration: 0.513875
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 79.022729
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 79.760396 | silence_duration: 0.737667
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 83.7185
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 84.817687 | silence_duration: 1.099187
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 84.854458
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 85.992979 | silence_duration: 1.138521
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 109.618042
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 110.034125 | silence_duration: 0.416083
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 117.943021
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 118.323396 | silence_duration: 0.380375
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 118.516958
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 118.919708 | silence_duration: 0.40275
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 121.633021
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 121.998708 | silence_duration: 0.365687
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 132.786917
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 133.291542 | silence_duration: 0.504625
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 134.669708
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 138.434521 | silence_duration: 3.764812
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 149.819125
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 150.221917 | silence_duration: 0.402792
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 155.471667
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 155.865375 | silence_duration: 0.393708
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 157.263667
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 157.637062 | silence_duration: 0.373396
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_start: 160.096062
+[Parsed_silencedetect_0 @ 000001dcf9316280] silence_end: 161.015167 | silence_duration: 0.919104
+[out#0/null @ 000001dcf927d3c0] video:0KiB audio:30231KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+size=N/A time=00:02:41.23 bitrate=N/A speed=1.72e+03x elapsed=0:00:00.09    

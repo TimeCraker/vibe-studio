@@ -1,0 +1,354 @@
+[
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/AnthropicMono_Italic_Web-s.p.0x1wr-4z1xgw3.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/AnthropicMono_Roman_Web-s.p.16xhthj2n-pap.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/AnthropicSans_Italic_Web-s.p.212cqpul8-axk.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/AnthropicSans_Roman_Web-s.p.1e3n6bt4oqimz.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/AnthropicSerif_Italic_Web-s.p.1fjksu1uimpf3.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/AnthropicSerif_Roman_Web-s.p.0twp0vwi-lncj.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/JetBrainsMono_VF-s.p.3-7d89st7id7n.ttf",
+    "type": "font/ttf"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/3lfhvsoi4d4vt.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/3_0qx9s-ohsdh.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/0zjrix53pdagy.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/16bfh721-emix.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/3-rb9z9s_7jz_.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/3o9di1p9cgo-l.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/2y6g9_1fokilo.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/2uzdzei5vni2y.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/35uako10vtsya.css"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/20y336fy0c2fa.css"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/chunks/2jjnafy-v_mvn.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/chunks/3nyib0-i4ygca.css"
+  },
+  {
+    "tag": "meta",
+    "name": "theme-color",
+    "content": "#141413"
+  },
+  {
+    "tag": "meta",
+    "name": "next-size-adjust",
+    "content": ""
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "Over the past few months, we’ve used an unreleased, internal research model to find critical vulnerabilities in some of the world’s most widely used software, such as browsers and operating systems. In this post, we share details of five attack chains, which led to remote code execution and other critical impacts with little to no user interaction."
+  },
+  {
+    "tag": "meta",
+    "name": "msapplication-TileColor",
+    "content": "141413"
+  },
+  {
+    "tag": "meta",
+    "name": "msapplication-config",
+    "content": "/browserconfig.xml"
+  },
+  {
+    "tag": "link",
+    "rel": "canonical",
+    "href": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude"
+  },
+  {
+    "tag": "meta",
+    "name": "google-site-verification",
+    "content": "BqiAW_sWOg-KrPk-Accxm6ge9dtnFEyV6DB6vzVZSGs"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "Over the past few months, we’ve used an unreleased, internal research model to find critical vulnerabilities in some of the world’s most widely used software, such as browsers and operating systems. In this post, we share details of five attack chains, which led to remote code execution and other critical impacts with little to no user interaction."
+  },
+  {
+    "tag": "meta",
+    "property": "og:url",
+    "content": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:alt",
+    "content": "Anthropic logo"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "article"
+  },
+  {
+    "tag": "meta",
+    "property": "article:published_time",
+    "content": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "tag": "meta",
+    "property": "article:modified_time",
+    "content": "2026-10-30T15:24:16.000Z"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:site",
+    "content": "@AnthropicAI"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:creator",
+    "content": "@AnthropicAI"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:description",
+    "content": "Over the past few months, we’ve used an unreleased, internal research model to find critical vulnerabilities in some of the world’s most widely used software, such as browsers and operating systems. In this post, we share details of five attack chains, which led to remote code execution and other critical impacts with little to no user interaction."
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image",
+    "content": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:alt",
+    "content": "Anthropic logo"
+  },
+  {
+    "tag": "link",
+    "rel": "shortcut icon",
+    "href": "/favicon.ico"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/images/icons/favicon-32x32.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "/images/icons/apple-touch-icon.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "/images/icons/apple-touch-icon.png"
+  },
+  {
+    "tag": "link",
+    "rel": "mask-icon",
+    "href": "/images/icons/safari-pinned-tab.svg"
+  },
+  {
+    "tag": "a",
+    "href": "#main-content"
+  },
+  {
+    "tag": "a",
+    "href": "/news"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "rel": "nofollow",
+    "href": "/search"
+  },
+  {
+    "tag": "a",
+    "href": "#1-one-click-remote-code-execution-in-chrome"
+  },
+  {
+    "tag": "a",
+    "href": "#2-a-one-click-exploit-chain-in-safari"
+  },
+  {
+    "tag": "a",
+    "href": "#3-android-lock-screen-bypass"
+  },
+  {
+    "tag": "a",
+    "href": "#4-windows-remote-denial-of-service"
+  },
+  {
+    "tag": "a",
+    "href": "#5-zero-click-remote-code-execution-in-linux"
+  },
+  {
+    "tag": "a",
+    "href": "#what-we-learned"
+  },
+  {
+    "tag": "a",
+    "href": "#what-this-means-for-defenders"
+  },
+  {
+    "tag": "a",
+    "href": "/research/team/frontier-red-team"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.anthropic.com/coordinated-vulnerability-disclosure"
+  },
+  {
+    "tag": "a",
+    "href": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_02018666648.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://support.apple.com/en-us/127594"
+  },
+  {
+    "tag": "a",
+    "href": "https://nvd.nist.gov/vuln/detail/cve-2026-33096"
+  },
+  {
+    "tag": "a",
+    "href": "https://nvd.nist.gov/vuln/detail/cve-2026-98432"
+  },
+  {
+    "tag": "a",
+    "href": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.anthropic.com/news/cyber-verification-program"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "https://claude.ai/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://platform.claude.com/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.youtube.com/@anthropic-ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.com/AnthropicAI",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.linkedin.com/company/anthropicresearch",
+    "rel": "noopener noreferrer"
+  }
+]

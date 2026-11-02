@@ -1,0 +1,690 @@
+{
+  "date": "2026-11-02",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "durationInFrames": 10136,
+  "seconds": 168.93333333333334,
+  "voice": "human-recorded",
+  "timingMode": "real-ASR-word-windows-agent-reviewed-human-listening-pending",
+  "recording": "audio/source/narration-original-721d99e16b3b.mp3",
+  "recordingSha256": "721d99e16b3befddce6787911504020935e4109dbde623aa69f14a18930126d6",
+  "sourceIn": 0,
+  "sourceOut": 154.14,
+  "voiceStart": 14,
+  "scenes": [
+    {
+      "id": "global",
+      "title": "全球 AI 模型综合能力 TOP15",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期全球榜与官标，BGM，无口播",
+      "subject": "全球 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国产 AI 模型综合能力 TOP15",
+      "start": 7,
+      "end": 14,
+      "purpose": "同版式当期国产榜",
+      "subject": "国产 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "今日AI资讯",
+      "start": 14,
+      "end": 24.333333333333332,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "今日AI资讯",
+      "claimIds": []
+    },
+    {
+      "id": "longcat-release",
+      "title": "美团LongCat-2.5正式版开放接口",
+      "start": 24.333333333333332,
+      "end": 39.233333333333334,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "美团LongCat-2.5正式版开放接口",
+      "claimIds": [
+        "longcat-release"
+      ]
+    },
+    {
+      "id": "longcat-demos",
+      "title": "LongCat官方演示：交互式三维文物展览",
+      "start": 39.233333333333334,
+      "end": 43.983333333333334,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "LongCat官方演示：交互式三维文物展览",
+      "claimIds": [
+        "longcat-demos"
+      ]
+    },
+    {
+      "id": "longcat-office",
+      "title": "LongCat商业分析演示与体验入口",
+      "start": 43.983333333333334,
+      "end": 57.3,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "LongCat商业分析演示与体验入口",
+      "claimIds": [
+        "longcat-demos"
+      ]
+    },
+    {
+      "id": "carbon-release",
+      "title": "Gemini4 Carbon强调长任务与安全能力",
+      "start": 57.3,
+      "end": 70.23333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Gemini4 Carbon强调长任务与安全能力",
+      "claimIds": [
+        "carbon-release"
+      ]
+    },
+    {
+      "id": "carbon-limits",
+      "title": "Carbon评测有条件，初期开放范围有限",
+      "start": 70.23333333333333,
+      "end": 92.4,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Carbon评测有条件，初期开放范围有限",
+      "claimIds": [
+        "carbon-release"
+      ]
+    },
+    {
+      "id": "genie-world",
+      "title": "Genie4支持实时修改交互世界与声音",
+      "start": 92.4,
+      "end": 113.23333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Genie4支持实时修改交互世界与声音",
+      "claimIds": [
+        "genie4-release"
+      ]
+    },
+    {
+      "id": "genie-limits",
+      "title": "研究预览，交互时长与一致性仍有限",
+      "start": 113.23333333333333,
+      "end": 129.63333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "研究预览，交互时长与一致性仍有限",
+      "claimIds": [
+        "genie4-limits"
+      ]
+    },
+    {
+      "id": "gdpx-tasks",
+      "title": "GDPx在11领域检验复杂工作能力",
+      "start": 129.63333333333333,
+      "end": 143.75,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "GDPx在11领域检验复杂工作能力",
+      "claimIds": [
+        "gdpx-launch"
+      ]
+    },
+    {
+      "id": "gdpx-scores",
+      "title": "GDPx综合得分不等于现实成功率",
+      "start": 143.75,
+      "end": 165.36666666666667,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "GDPx综合得分不等于现实成功率",
+      "claimIds": [
+        "gdpx-score",
+        "gdpx-method"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "我们下期见",
+      "start": 165.36666666666667,
+      "end": 168.93333333333334,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "我们下期见",
+      "claimIds": []
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "scene": "overview",
+      "text": "各位观众们大家好",
+      "from": 845,
+      "to": 926,
+      "sourceStart": 0.08,
+      "sourceEnd": 1.44
+    },
+    {
+      "id": 2,
+      "scene": "overview",
+      "text": "欢迎收看今日AI资讯",
+      "from": 940,
+      "to": 1022,
+      "sourceStart": 1.66,
+      "sourceEnd": 3.04
+    },
+    {
+      "id": 3,
+      "scene": "overview",
+      "text": "今天我们来看美团的新模型和一项新的智能体评测",
+      "from": 1038,
+      "to": 1256,
+      "sourceStart": 3.3,
+      "sourceEnd": 6.94
+    },
+    {
+      "id": 4,
+      "scene": "overview",
+      "text": "再补充两项谷歌近期公布的重要进展",
+      "from": 1273,
+      "to": 1435,
+      "sourceStart": 7.22,
+      "sourceEnd": 9.92
+    },
+    {
+      "id": 5,
+      "scene": "longcat-release",
+      "text": "先看美团的这个模型的正式版",
+      "from": 1460,
+      "to": 1586,
+      "sourceStart": 10.34,
+      "sourceEnd": 12.44
+    },
+    {
+      "id": 6,
+      "scene": "longcat-release",
+      "text": "官方更新日志确认",
+      "from": 1620,
+      "to": 1711,
+      "sourceStart": 13.0,
+      "sourceEnd": 14.52
+    },
+    {
+      "id": 7,
+      "scene": "longcat-release",
+      "text": "11月2日开放的新版本把视觉理解和多步编程",
+      "from": 1722,
+      "to": 1950,
+      "sourceStart": 14.7,
+      "sourceEnd": 18.5
+    },
+    {
+      "id": 8,
+      "scene": "longcat-release",
+      "text": "结合起来",
+      "from": 1950,
+      "to": 1987,
+      "sourceStart": 18.5,
+      "sourceEnd": 19.12
+    },
+    {
+      "id": 9,
+      "scene": "longcat-release",
+      "text": "重点面向复杂代码库开发",
+      "from": 2005,
+      "to": 2110,
+      "sourceStart": 19.42,
+      "sourceEnd": 21.16
+    },
+    {
+      "id": 10,
+      "scene": "longcat-release",
+      "text": "完整项目构建",
+      "from": 2138,
+      "to": 2215,
+      "sourceStart": 21.64,
+      "sourceEnd": 22.92
+    },
+    {
+      "id": 11,
+      "scene": "longcat-release",
+      "text": "这类需要持续执行的任务",
+      "from": 2226,
+      "to": 2342,
+      "sourceStart": 23.1,
+      "sourceEnd": 25.04
+    },
+    {
+      "id": 12,
+      "scene": "longcat-demos",
+      "text": "官方演示中",
+      "from": 2354,
+      "to": 2408,
+      "sourceStart": 25.24,
+      "sourceEnd": 26.14
+    },
+    {
+      "id": 13,
+      "scene": "longcat-demos",
+      "text": "有交互式三维文物展览",
+      "from": 2431,
+      "to": 2545,
+      "sourceStart": 26.52,
+      "sourceEnd": 28.42
+    },
+    {
+      "id": 14,
+      "scene": "longcat-demos",
+      "text": "流体模拟网页",
+      "from": 2567,
+      "to": 2639,
+      "sourceStart": 28.78,
+      "sourceEnd": 29.98
+    },
+    {
+      "id": 15,
+      "scene": "longcat-office",
+      "text": "也有商业分析案例",
+      "from": 2639,
+      "to": 2762,
+      "sourceStart": 29.98,
+      "sourceEnd": 32.04
+    },
+    {
+      "id": 16,
+      "scene": "longcat-office",
+      "text": "目前可通过官方网页和接口体验",
+      "from": 2777,
+      "to": 2962,
+      "sourceStart": 32.28,
+      "sourceEnd": 35.36
+    },
+    {
+      "id": 17,
+      "scene": "longcat-office",
+      "text": "不过，代码和模型下载入口仍标着敬请期待",
+      "from": 2972,
+      "to": 3194,
+      "sourceStart": 35.54,
+      "sourceEnd": 39.24
+    },
+    {
+      "id": 18,
+      "scene": "longcat-office",
+      "text": "不能把正式版说成已经开源",
+      "from": 3234,
+      "to": 3382,
+      "sourceStart": 39.9,
+      "sourceEnd": 42.36
+    },
+    {
+      "id": 19,
+      "scene": "carbon-release",
+      "text": "接着补充看谷歌10月28日公布的此项模型",
+      "from": 3438,
+      "to": 3752,
+      "sourceStart": 43.3,
+      "sourceEnd": 48.54
+    },
+    {
+      "id": 20,
+      "scene": "carbon-release",
+      "text": "官方重点强调两件事",
+      "from": 3767,
+      "to": 3890,
+      "sourceStart": 48.78,
+      "sourceEnd": 50.84
+    },
+    {
+      "id": 21,
+      "scene": "carbon-release",
+      "text": "持续完成复杂工程任务",
+      "from": 3912,
+      "to": 4015,
+      "sourceStart": 51.2,
+      "sourceEnd": 52.92
+    },
+    {
+      "id": 22,
+      "scene": "carbon-release",
+      "text": "以及发现、验证和修复软件漏洞",
+      "from": 4031,
+      "to": 4201,
+      "sourceStart": 53.18,
+      "sourceEnd": 56.02
+    },
+    {
+      "id": 23,
+      "scene": "carbon-limits",
+      "text": "按照谷歌公布的结果",
+      "from": 4214,
+      "to": 4360,
+      "sourceStart": 56.24,
+      "sourceEnd": 58.66
+    },
+    {
+      "id": 24,
+      "scene": "carbon-limits",
+      "text": "Carbon在多项安全评测中取得提升",
+      "from": 4381,
+      "to": 4568,
+      "sourceStart": 59.02,
+      "sourceEnd": 62.14
+    },
+    {
+      "id": 25,
+      "scene": "carbon-limits",
+      "text": "但这些成绩有各自的测试条件",
+      "from": 4577,
+      "to": 4738,
+      "sourceStart": 62.28,
+      "sourceEnd": 64.96
+    },
+    {
+      "id": 26,
+      "scene": "carbon-limits",
+      "text": "不能直接当成我们日常使用时的结果",
+      "from": 4752,
+      "to": 4908,
+      "sourceStart": 65.2,
+      "sourceEnd": 67.8
+    },
+    {
+      "id": 27,
+      "scene": "carbon-limits",
+      "text": "开放方面",
+      "from": 4925,
+      "to": 4963,
+      "sourceStart": 68.08,
+      "sourceEnd": 68.72
+    },
+    {
+      "id": 28,
+      "scene": "carbon-limits",
+      "text": "公告先面向部分网络安全防御人员和可信合作伙伴",
+      "from": 4999,
+      "to": 5261,
+      "sourceStart": 69.32,
+      "sourceEnd": 73.68
+    },
+    {
+      "id": 29,
+      "scene": "carbon-limits",
+      "text": "并不是宣布所有用户能够立即体验",
+      "from": 5279,
+      "to": 5476,
+      "sourceStart": 73.98,
+      "sourceEnd": 77.26
+    },
+    {
+      "id": 30,
+      "scene": "genie-world",
+      "text": "谷歌另一项",
+      "from": 5544,
+      "to": 5615,
+      "sourceStart": 78.4,
+      "sourceEnd": 79.58
+    },
+    {
+      "id": 31,
+      "scene": "genie-world",
+      "text": "值得看的进展",
+      "from": 5767,
+      "to": 5915,
+      "sourceStart": 82.11,
+      "sourceEnd": 84.59
+    },
+    {
+      "id": 32,
+      "scene": "genie-world",
+      "text": "是10月27日发布的此项世界模型",
+      "from": 5924,
+      "to": 6109,
+      "sourceStart": 84.73,
+      "sourceEnd": 87.81
+    },
+    {
+      "id": 33,
+      "scene": "genie-world",
+      "text": "它生成的场景可以交互",
+      "from": 6121,
+      "to": 6220,
+      "sourceStart": 88.01,
+      "sourceEnd": 89.67
+    },
+    {
+      "id": 34,
+      "scene": "genie-world",
+      "text": "用键盘移动视角",
+      "from": 6235,
+      "to": 6305,
+      "sourceStart": 89.91,
+      "sourceEnd": 91.09
+    },
+    {
+      "id": 35,
+      "scene": "genie-world",
+      "text": "也可以运用文字改变天气",
+      "from": 6305,
+      "to": 6471,
+      "sourceStart": 91.09,
+      "sourceEnd": 93.85
+    },
+    {
+      "id": 36,
+      "scene": "genie-world",
+      "text": "添加角色",
+      "from": 6477,
+      "to": 6519,
+      "sourceStart": 93.95,
+      "sourceEnd": 94.65
+    },
+    {
+      "id": 37,
+      "scene": "genie-world",
+      "text": "让场景持续演化",
+      "from": 6531,
+      "to": 6631,
+      "sourceStart": 94.85,
+      "sourceEnd": 96.51
+    },
+    {
+      "id": 38,
+      "scene": "genie-world",
+      "text": "同时生成环境声音和对话",
+      "from": 6643,
+      "to": 6771,
+      "sourceStart": 96.71,
+      "sourceEnd": 98.85
+    },
+    {
+      "id": 39,
+      "scene": "genie-limits",
+      "text": "这给游戏原型和仿真研究提供了新的尝试方向",
+      "from": 6794,
+      "to": 6987,
+      "sourceStart": 99.23,
+      "sourceEnd": 102.45
+    },
+    {
+      "id": 40,
+      "scene": "genie-limits",
+      "text": "不过，目前仍是面向可信测试者的研究预览",
+      "from": 7001,
+      "to": 7227,
+      "sourceStart": 102.69,
+      "sourceEnd": 106.45
+    },
+    {
+      "id": 41,
+      "scene": "genie-limits",
+      "text": "连续交互是几分钟的级别",
+      "from": 7262,
+      "to": 7401,
+      "sourceStart": 107.03,
+      "sourceEnd": 109.35
+    },
+    {
+      "id": 42,
+      "scene": "genie-limits",
+      "text": "画面一致性和声音准确性也有限制",
+      "from": 7415,
+      "to": 7575,
+      "sourceStart": 109.59,
+      "sourceEnd": 112.25
+    },
+    {
+      "id": 43,
+      "scene": "genie-limits",
+      "text": "还不能把它当成成熟的游戏引擎",
+      "from": 7592,
+      "to": 7737,
+      "sourceStart": 112.53,
+      "sourceEnd": 114.95
+    },
+    {
+      "id": 44,
+      "scene": "gdpx-tasks",
+      "text": "再看今天发布的此项智能体评测",
+      "from": 7778,
+      "to": 7958,
+      "sourceStart": 115.63,
+      "sourceEnd": 118.63
+    },
+    {
+      "id": 45,
+      "scene": "gdpx-tasks",
+      "text": "它覆盖芯片设计、软件工程、法律等11个领域",
+      "from": 7969,
+      "to": 8213,
+      "sourceStart": 118.81,
+      "sourceEnd": 122.89
+    },
+    {
+      "id": 46,
+      "scene": "gdpx-tasks",
+      "text": "共206个任务",
+      "from": 8222,
+      "to": 8317,
+      "sourceStart": 123.03,
+      "sourceEnd": 124.61
+    },
+    {
+      "id": 47,
+      "scene": "gdpx-tasks",
+      "text": "模型需要在复杂的文件和工具环境里完成工作",
+      "from": 8327,
+      "to": 8539,
+      "sourceStart": 124.79,
+      "sourceEnd": 128.31
+    },
+    {
+      "id": 48,
+      "scene": "gdpx-tasks",
+      "text": "不只是回答一道题",
+      "from": 8552,
+      "to": 8625,
+      "sourceStart": 128.53,
+      "sourceEnd": 129.75
+    },
+    {
+      "id": 49,
+      "scene": "gdpx-scores",
+      "text": "在当前的默认榜单上",
+      "from": 8625,
+      "to": 8738,
+      "sourceStart": 129.75,
+      "sourceEnd": 131.63
+    },
+    {
+      "id": 50,
+      "scene": "gdpx-scores",
+      "text": "最高综合得分是12%。注意",
+      "from": 8757,
+      "to": 8919,
+      "sourceStart": 131.95,
+      "sourceEnd": 134.65
+    },
+    {
+      "id": 51,
+      "scene": "gdpx-scores",
+      "text": "这是评测下的综合分数",
+      "from": 8931,
+      "to": 9045,
+      "sourceStart": 134.85,
+      "sourceEnd": 136.75
+    },
+    {
+      "id": 52,
+      "scene": "gdpx-scores",
+      "text": "混合了不同任务的评分方式",
+      "from": 9058,
+      "to": 9193,
+      "sourceStart": 136.97,
+      "sourceEnd": 139.21
+    },
+    {
+      "id": 53,
+      "scene": "gdpx-scores",
+      "text": "不代表模型在现实工作中只有12%的成功率",
+      "from": 9209,
+      "to": 9455,
+      "sourceStart": 139.49,
+      "sourceEnd": 143.59
+    },
+    {
+      "id": 54,
+      "scene": "gdpx-scores",
+      "text": "它更值得我们关注的是",
+      "from": 9478,
+      "to": 9568,
+      "sourceStart": 143.97,
+      "sourceEnd": 145.47
+    },
+    {
+      "id": 55,
+      "scene": "gdpx-scores",
+      "text": "模型能给出答案",
+      "from": 9581,
+      "to": 9641,
+      "sourceStart": 145.69,
+      "sourceEnd": 146.69
+    },
+    {
+      "id": 56,
+      "scene": "gdpx-scores",
+      "text": "和能把复杂工作可靠的完成",
+      "from": 9662,
+      "to": 9779,
+      "sourceStart": 147.03,
+      "sourceEnd": 148.99
+    },
+    {
+      "id": 57,
+      "scene": "gdpx-scores",
+      "text": "中间还有哪些差距",
+      "from": 9813,
+      "to": 9902,
+      "sourceStart": 149.55,
+      "sourceEnd": 151.03
+    },
+    {
+      "id": 58,
+      "scene": "closing",
+      "text": "以上就是今天的精选资讯",
+      "from": 9922,
+      "to": 10011,
+      "sourceStart": 151.37,
+      "sourceEnd": 152.85
+    },
+    {
+      "id": 59,
+      "scene": "closing",
+      "text": "我们下期再见",
+      "from": 10022,
+      "to": 10063,
+      "sourceStart": 153.03,
+      "sourceEnd": 153.71
+    }
+  ]
+}

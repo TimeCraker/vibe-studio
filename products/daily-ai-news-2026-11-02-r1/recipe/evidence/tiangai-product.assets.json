@@ -1,0 +1,1165 @@
+[
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "描述"
+  },
+  {
+    "tag": "meta",
+    "name": "keyword",
+    "content": "关键字"
+  },
+  {
+    "tag": "meta",
+    "name": "format-detection",
+    "content": "telephone=no"
+  },
+  {
+    "tag": "meta",
+    "name": "mobile-web-app-capable",
+    "content": "yes"
+  },
+  {
+    "tag": "meta",
+    "name": "apple-mobile-web-app-title",
+    "content": "天数智芯"
+  },
+  {
+    "tag": "meta",
+    "name": "og:type",
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "tag": "meta",
+    "name": "og:title",
+    "property": "og:title",
+    "content": "天数智芯"
+  },
+  {
+    "tag": "meta",
+    "name": "og:site_name",
+    "property": "og:site_name",
+    "content": "天数智芯"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "type": "image/x-icon",
+    "href": "/favicon.ico"
+  },
+  {
+    "tag": "link",
+    "rel": "shortcut icon",
+    "href": "/_nuxt/icons/icon_64x64.1247e4.png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "/_nuxt/icons/icon_512x512.1247e4.png"
+  },
+  {
+    "tag": "link",
+    "rel": "manifest",
+    "href": "/_nuxt/manifest.069b9c9e.json"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/9e2529e.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/11d0a19.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/5267556.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/7fbb082.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/e623fea.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/c419710.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/a5f94fc.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/ae2da6f.js"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_nuxt/308d13b.js"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg300"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg150"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg100"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-tyty1000"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1100"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1100_NX"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1100NXPRO"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1200"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-tlxltt-zk100"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/software?fullCode=cpjs-rj-rjz"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=cpjs-yj-xlxl"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=cpjs-yj-ytxl"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=cpjs-yj-tlxltt"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=cpjs-rj-rjz"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/applications"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-zhyl"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-ny"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-hlw"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-zhjy"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-znyy"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-znzz"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-AIGC"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/solution?fullCode=scyy-jjfa-ysjs"
+  },
+  {
+    "tag": "a",
+    "href": "/solution?fullCode=scyy-jjfa-3Djm3Dxr"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/cooperation/registry"
+  },
+  {
+    "tag": "a",
+    "href": "/news"
+  },
+  {
+    "tag": "a",
+    "href": "https://ir.iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=khzc-shzc-bxzc"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=khzc-shzc-yjzc"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=khzc-shzc-shxt"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=khzc-shzc-yjbx"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=khzc-shzc-rexiandianhua"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "https://support.iluvatar.com/#/DocumentCentre?id=1&nameCenter=1",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://support.iluvatar.com/#/DocumentCentre?id=2&nameCenter=2",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0);",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://ixkb.iluvatar.com.cn:9443",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/#/DocumentCentre?id=1&nameCenter=1",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/#/DocumentCentre?id=2&nameCenter=2",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "http://",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://ixkb.iluvatar.com.cn:9443",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "http://",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "http://",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/about"
+  },
+  {
+    "tag": "a",
+    "href": "/social"
+  },
+  {
+    "tag": "a",
+    "href": "/concactus"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/about"
+  },
+  {
+    "tag": "a",
+    "href": "/social"
+  },
+  {
+    "tag": "a",
+    "href": "/concactus"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/social-recruitment/iluvatar/98705",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/campus-recruitment/iluvatar/44785",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/social-recruitment/iluvatar/98705",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/campus-recruitment/iluvatar/44785",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg300"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg150"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg100"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-tyty1000"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1100"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1100_NX"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1100NXPRO"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-TY1200"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-tlxltt-zk100"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/software?fullCode=cpjs-rj-rjz"
+  },
+  {
+    "tag": "a",
+    "href": "/applications"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-zhyl"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-ny"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-hlw"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-zhjy"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-znyy"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-znzz"
+  },
+  {
+    "tag": "a",
+    "href": "/app?fullCode=scyy-hyyy-AIGC"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/solution?fullCode=scyy-jjfa-ysjs"
+  },
+  {
+    "tag": "a",
+    "href": "/solution?fullCode=scyy-jjfa-3Djm3Dxr"
+  },
+  {
+    "tag": "a",
+    "href": "/cooperation/registry"
+  },
+  {
+    "tag": "a",
+    "href": "/news"
+  },
+  {
+    "tag": "a",
+    "href": "https://ir.iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "https://support.iluvatar.com/#/DocumentCentre?id=1&nameCenter=1"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "https://developer.iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "/about"
+  },
+  {
+    "tag": "a",
+    "href": "/social"
+  },
+  {
+    "tag": "a",
+    "href": "/concactus"
+  },
+  {
+    "tag": "a",
+    "href": "javascript:void(0)"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/social-recruitment/iluvatar/98705",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/campus-recruitment/iluvatar/44785",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/84cb1619-84f8-4fcb-80aa-637ff901ae3b/WW1GdWJtVnlYMk52YlhCeVpYTnpaV1E9.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/eff51e27-87cf-4c21-a011-063923fade46/YmFubmVyX21vYmlsZQ==.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/6238f205-799a-4f4b-b699-4880a0388244/6buR6Imy5p2_5Y2h.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/c1d6501c-1791-4fae-bc7d-2173b33b1a19/VTI1cGNHRnpkR1ZmTWpBeU5TMHdNUzB3TjE4eE1pMDFNQzAxTXc9PQ==.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/321fe22c-c77b-4bd8-ac41-c3a2b6771cde/NkxldjViNkVJRFk9.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/fee326fe-1ff6-4ca7-8038-bf830f456557/NTd1RUlEST0=.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/925fbd3f-74b8-49ac-9040-1b1e4e05ea86/VTI1cGNHRnpkR1ZmTWpBeU5TMHdNUzB3TjE4eE1pMDBPQzB6TlE9PQ==.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/2bc27f92-3cbd-4529-bbd1-bd3255c5ae0e/VTI1cGNHRnpkR1ZmTWpBeU5TMHdNUzB3TjE4eE1pMDBNaTB6TXc9PQ==.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/fdab10b1-a7af-4adc-9049-e8d4eae7a945/VTI1cGNHRnpkR1ZmTWpBeU5TMHdNUzB3TjE4eE1pMDBNUzB6Tnc9PQ==.png",
+    "alt": null
+  },
+  {
+    "tag": "img",
+    "src": "https://resource.iluvatar.com/20260731/cf4fc215-708e-4440-b7ac-00bbbf2edbcc/VTI1cGNHRnpkR1ZmTWpBeU5TMHdNUzB3TjE4eE1pMDFNaTB5T0E9PQ==.png",
+    "alt": null
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg100"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-tlxltt-zk100"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-tyty1000"
+  },
+  {
+    "tag": "a",
+    "href": "/software?fullCode=cpjs-rj-rjz"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-eula"
+  },
+  {
+    "tag": "a",
+    "href": "/about"
+  },
+  {
+    "tag": "a",
+    "href": "/concactus"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-hgsm"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-flsm"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-yszc"
+  },
+  {
+    "tag": "a",
+    "href": "https://app.mokahr.com/social-recruitment/iluvatar/98705",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:business@iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:compliance@iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:Recruitment.CV@iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:pr@iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:services@iluvatar.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:400 008 4990",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-xlxl-tg100"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-tlxltt-zk100"
+  },
+  {
+    "tag": "a",
+    "href": "/productDetails?fullCode=cpjs-yj-ytxl-tyty1000"
+  },
+  {
+    "tag": "a",
+    "href": "/software?fullCode=cpjs-rj-rjz"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-eula"
+  },
+  {
+    "tag": "a",
+    "href": "/about"
+  },
+  {
+    "tag": "a",
+    "href": "/concactus"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-hgsm"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-flsm"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-yszc"
+  },
+  {
+    "tag": "a",
+    "href": "/https://app.mokahr.com/social-recruitment/iluvatar/98705"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:business@iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:compliance@iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:Recruitment.CV@iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:pr@iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:services@iluvatar.com"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:400 008 4990"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-hgsm"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-flsm"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-eula"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-yszc"
+  },
+  {
+    "tag": "a",
+    "href": "/compliance?id=xy-statement"
+  },
+  {
+    "tag": "a",
+    "href": "//beian.miit.gov.cn/"
+  },
+  {
+    "tag": "img",
+    "src": "/_nuxt/img/gongan.8ac5f69.png",
+    "alt": null
+  },
+  {
+    "tag": "a",
+    "href": "//www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011202014607"
+  },
+  {
+    "tag": "img",
+    "src": "/_nuxt/img/assistant.6240083.svg",
+    "alt": null
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "driver": "pw",
+  "platforms": {
+    "bili": {
+      "video": "deliverables/render/daily-ai-news-2026-11-02.mp4",
+      "cover": "deliverables/render/cover.png",
+      "spec": "recipe/exports/bili/form.json",
+      "topics": "AI资讯,人工智能,大模型",
+      "declare": "含AI生成内容"
+    },
+    "douyin": {
+      "video": "deliverables/render/daily-ai-news-2026-11-02.mp4",
+      "cover": "deliverables/render/cover.png",
+      "spec": "recipe/exports/douyin/form.json",
+      "topics": "",
+      "declare": "含AI生成内容"
+    },
+    "xhs": {
+      "video": "deliverables/render/daily-ai-news-2026-11-02.mp4",
+      "cover": "deliverables/render/cover.png",
+      "spec": "recipe/exports/xhs/form.json",
+      "topics": "",
+      "declare": "含AI生成内容"
+    }
+  }
+}

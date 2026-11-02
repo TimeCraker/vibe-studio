@@ -1,0 +1,13 @@
+{
+  "basis": "Explicit pause windows inspected against full word ASR, focused ASR and -36dB silence evidence; no bulk silence removal; subjective listening pending.",
+  "cuts": [
+    {"start": 0, "end": 0.55, "reason": "首部准备空白，保留起声前余量。"},
+    {"start": 58.25, "end": 58.81, "reason": "按照谷歌公布的结果句内约1秒停顿，仅压缩中部，保留两侧字音。"},
+    {"start": 79.15, "end": 79.6, "reason": "Carbon到Genie换段空白局部压缩，其余换气和微弱声保留。"},
+    {"start": 83.93, "end": 84.6, "reason": "谷歌另一项值得看的进展句内第一处长空白压缩；保留前后未确认语音。"},
+    {"start": 85.08, "end": 85.78, "reason": "同句第二处长空白局部压缩，保留值得看的起声余量。"},
+    {"start": 134.9, "end": 138.15, "reason": "默认榜单上与最高综合得分之间约3.8秒长空白，保留约0.5秒句间停顿。"},
+    {"start": 160.32, "end": 161.232, "reason": "结束语后留约0.4秒再裁去尾部空白和尾部杂声。"}
+  ],
+  "uncertain": "81至84秒附近可能有未识别的犹豫声；未实际听音，不删该处有声内容。专有名词及不代表等转写低可信处不据此改音。"
+}

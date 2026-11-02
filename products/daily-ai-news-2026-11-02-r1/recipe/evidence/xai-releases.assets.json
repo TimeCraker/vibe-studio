@@ -1,0 +1,1447 @@
+[
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/XMonoVF_Variable.p.29l71xg2bryrd.woff2?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/media/XVF_Variable-s.p.2_a5y-slrzff6.woff2?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "font/woff2"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/07nr-c2g217rl.css?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/1g6miy93ej5jw.css?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/chunks/0fywvms8qa4xy.css?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/chunks/21a8xaenqbwaz.js?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "meta",
+    "name": "next-size-adjust",
+    "content": ""
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "The changelog on SpaceX Super Intelligence product updates."
+  },
+  {
+    "tag": "link",
+    "rel": "canonical",
+    "href": "https://docs.x.ai/developers/release-notes"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "Release Notes | SpaceXSI Docs"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "The changelog on SpaceX Super Intelligence product updates."
+  },
+  {
+    "tag": "meta",
+    "property": "og:url",
+    "content": "https://docs.x.ai/developers/release-notes"
+  },
+  {
+    "tag": "meta",
+    "property": "og:site_name",
+    "content": "SpaceXSI Docs"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://docs.x.ai/api/og?t=eyJ0aXRsZSI6IlJlbGVhc2UgTm90ZXMiLCJ2IjoiNyIsInNjb3BlIjoiZGV2ZWxvcGVycyIsInNlY3Rpb24iOiJEZXZlbG9wZXJzIn0.UOuwQ0E7fr20uDDdbCdzOFhiGE9dGykBsL1U1gJuhMA"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "article"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "Release Notes | SpaceXSI Docs"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:description",
+    "content": "The changelog on SpaceX Super Intelligence product updates."
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image",
+    "content": "https://docs.x.ai/api/og?t=eyJ0aXRsZSI6IlJlbGVhc2UgTm90ZXMiLCJ2IjoiNyIsInNjb3BlIjoiZGV2ZWxvcGVycyIsInNlY3Rpb24iOiJEZXZlbG9wZXJzIn0.UOuwQ0E7fr20uDDdbCdzOFhiGE9dGykBsL1U1gJuhMA"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/_next/static/media/icon.2023htx52lx-a.ico?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/_next/static/media/icon.2jebtfdg6783w.png?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "image/png"
+  },
+  {
+    "tag": "link",
+    "rel": "apple-touch-icon",
+    "href": "/_next/static/media/apple-icon.167itqrsbgzm4.png?dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b",
+    "type": "image/png"
+  },
+  {
+    "tag": "meta",
+    "name": "sentry-trace",
+    "content": "90fd0fc7224943bb98f7276cefb213f9-bfcea227d9e3954b-0"
+  },
+  {
+    "tag": "meta",
+    "name": "baggage",
+    "content": "sentry-environment=production,sentry-release=docs%40319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b,sentry-public_key=87bfcb1b7e565f75c852ebb00d0c31d4,sentry-trace_id=90fd0fc7224943bb98f7276cefb213f9,sentry-org_id=4508179396558848,sentry-sampled=false,sentry-sample_rand=0.6048545552130902,sentry-sample_rate=0"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/build/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok-bot/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/x-subscription/overview"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai?utm_source=docs&utm_medium=referral&utm_campaign=developers-release-notes&utm_content=header-api-console",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://grok.com/?referrer=docs"
+  },
+  {
+    "tag": "a",
+    "href": "https://status.x.ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/llms.txt",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://discord.gg/x-ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "mailto:support@x.ai"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/legal",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/quickstart"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-7"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/pricing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/release-notes"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/generate-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/streaming"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/reasoning"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/structured-outputs"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/understanding"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/multi-agent"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/best-practices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/imagine"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/multi-image-editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/prompting-guide"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/image-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/reference-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/extension"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/voice"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/text-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/custom-voices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/ephemeral-tokens"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/managing-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/public-urls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/files/chat-with-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/metadata"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/function-calling"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/web-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/x-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/code-execution"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/image-generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/collections-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/remote-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/rate-limits"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/context-compaction"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/priority-processing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/custom-moderation-controls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/deferred-chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/async"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/websocket-mode"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/mtls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/regions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/watermarking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/cost-tracking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/debugging"
+  },
+  {
+    "tag": "a",
+    "href": "/cookbook"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/google-cloud-vertex-ai"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/microsoft-foundry"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/docs-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/may-15-retirement"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/comparison"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/legacy/chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/security"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/general"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/rest-api-reference/inference"
+  },
+  {
+    "tag": "a",
+    "href": "/build/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok-bot/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/x-subscription/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/quickstart"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-7"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/pricing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/release-notes"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/generate-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/streaming"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/reasoning"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/structured-outputs"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/understanding"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/multi-agent"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/best-practices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/imagine"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/multi-image-editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/prompting-guide"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/image-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/reference-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/extension"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/voice"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/text-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/custom-voices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/ephemeral-tokens"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/managing-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/public-urls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/files/chat-with-files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/collections/metadata"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/function-calling"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/web-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/x-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/code-execution"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/image-generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/collections-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/remote-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/rate-limits"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/context-compaction"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/priority-processing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/custom-moderation-controls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/deferred-chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/async"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/websocket-mode"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/mtls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/regions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/watermarking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/cost-tracking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/debugging"
+  },
+  {
+    "tag": "a",
+    "href": "/cookbook"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/google-cloud-vertex-ai"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/community/microsoft-foundry"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/docs-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/may-15-retirement"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/comparison"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/legacy/chat-completions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/security"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/general"
+  },
+  {
+    "tag": "a",
+    "href": "#release-notes"
+  },
+  {
+    "tag": "a",
+    "href": "#release-notes-1"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/release-notes.md",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai/team/default/api-keys?utm_source=docs&utm_medium=referral&utm_campaign=developers-release-notes&utm_content=article-api-key",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-4-7",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#october"
+  },
+  {
+    "tag": "a",
+    "href": "#custom-moderation-controls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/custom-moderation-controls"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-voice-30-is-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-voice-20-deprecation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-speech#upgrading-from-grok-voice-20"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-voice-transcribe-10-end-of-life"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "#september"
+  },
+  {
+    "tag": "a",
+    "href": "#safety_identifier-request-field"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/faq/security#how-do-i-identify-which-of-my-end-users-caused-a-policy-violation"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-47"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/regions"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-7"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-4-7",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-voice-transcribe-20"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-imagine-image-quality-retirement-on-november-2"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/migration/imagine-image-quality-nov-2"
+  },
+  {
+    "tag": "a",
+    "href": "#august"
+  },
+  {
+    "tag": "a",
+    "href": "#imagine-image-api-updates"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation#quality"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/multi-image-editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation#aspect-ratio"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-46"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-6"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-4-6",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-bot"
+  },
+  {
+    "tag": "a",
+    "href": "/grok-bot/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/grok-bot/get-started"
+  },
+  {
+    "tag": "a",
+    "href": "#july"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-imagine-video-15-modalities"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/image-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/reference-to-video"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-voice-20-is-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-voice-think-fast-2",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#adjustable-vad-threshold-for-speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-45-available-in-the-eu"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-5"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-45"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/grok-4-5"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-4-5",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#june"
+  },
+  {
+    "tag": "a",
+    "href": "#priority-processing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/priority-processing"
+  },
+  {
+    "tag": "a",
+    "href": "#public-urls-and-files-api--imagine-integration"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files/public-urls"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/imagine/files/inputs"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/imagine/files/outputs"
+  },
+  {
+    "tag": "a",
+    "href": "#may"
+  },
+  {
+    "tag": "a",
+    "href": "#smart-turn-for-streaming-stt"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text#smart-turn"
+  },
+  {
+    "tag": "a",
+    "href": "#context-compaction"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/context-compaction"
+  },
+  {
+    "tag": "a",
+    "href": "#websocket-responses-api-mode"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/websocket-mode"
+  },
+  {
+    "tag": "a",
+    "href": "#image-search-in-web-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/web-search#enable-image-search"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-build-01"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models/grok-build-0.1"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-build"
+  },
+  {
+    "tag": "a",
+    "href": "/build/overview"
+  },
+  {
+    "tag": "a",
+    "href": "#custom-voices"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/custom-voices"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-custom-voices",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#april"
+  },
+  {
+    "tag": "a",
+    "href": "#cost-tracking"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/cost-tracking"
+  },
+  {
+    "tag": "a",
+    "href": "#files-api-ttl"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-voice-10-is-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-voice-think-fast-1",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#speech-to-text-is-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/speech-to-text"
+  },
+  {
+    "tag": "a",
+    "href": "#march"
+  },
+  {
+    "tag": "a",
+    "href": "#text-to-speech-is-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/text-to-speech"
+  },
+  {
+    "tag": "a",
+    "href": "#batch-api-supports-image-and-video-generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/editing"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "#batch-api-jsonl-file-upload"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api#jsonl-file-upload"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-420-and-grok-420-multi-agent-are-live"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/multi-agent"
+  },
+  {
+    "tag": "a",
+    "href": "#january"
+  },
+  {
+    "tag": "a",
+    "href": "#video-generation--next-gen-image-generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/video/generation"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "#batch-api-is-released"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/advanced-api-usage/batch-api"
+  },
+  {
+    "tag": "a",
+    "href": "#december-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-speech-to-speech-api-is-released"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/audio/voice"
+  },
+  {
+    "tag": "a",
+    "href": "#november-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-41-fast-is-available-in-enterprise-api"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/api",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.ai/news/grok-4-1-fast",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#agent-tools-adapt-to-grok-41-fast-models-and-tool-prices-dropped"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/pricing#tools-pricing"
+  },
+  {
+    "tag": "a",
+    "href": "#files-api-is-generally-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/files"
+  },
+  {
+    "tag": "a",
+    "href": "#new-tools-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/collections-search"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/remote-mcp"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/advanced-usage#mixing-server-side-and-client-side-tools"
+  },
+  {
+    "tag": "a",
+    "href": "#october-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#tools-are-now-generally-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/tools/overview"
+  },
+  {
+    "tag": "a",
+    "href": "#september-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#responses-api-is-generally-available"
+  },
+  {
+    "tag": "a",
+    "href": "#august-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#collections-api-is-released"
+  },
+  {
+    "tag": "a",
+    "href": "#july-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-4-is-released"
+  },
+  {
+    "tag": "a",
+    "href": "https://grok.com",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#june-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#management-api-is-released"
+  },
+  {
+    "tag": "a",
+    "href": "https://management-api.x.ai",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#may-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#cached-prompt-is-now-available"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "#live-search-is-available-on-api"
+  },
+  {
+    "tag": "a",
+    "href": "#april-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#grok-3-models-launch-on-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "#march-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#image-generation-model-available-on-api"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/images/generation"
+  },
+  {
+    "tag": "a",
+    "href": "#february-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#audit-logs"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai?utm_source=docs&utm_medium=referral&utm_campaign=developers-release-notes&utm_content=console-home",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "#january-2025"
+  },
+  {
+    "tag": "a",
+    "href": "#docs-dark-mode"
+  },
+  {
+    "tag": "a",
+    "href": "#status-page"
+  },
+  {
+    "tag": "a",
+    "href": "https://status.x.ai/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#december-2024"
+  },
+  {
+    "tag": "a",
+    "href": "#replit--spacexsi"
+  },
+  {
+    "tag": "a",
+    "href": "https://x.com/Replit/status/1874211039258333643",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#tokenizer-playground"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai?utm_source=docs&utm_medium=referral&utm_campaign=developers-release-notes&utm_content=console-home",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "alt": "Tokenizer example",
+    "srcset": "/_next/image?url=%2Fassets%2Fdocs%2Frelease-notes%2Ftokenizer.png&w=1920&q=75&dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b 1x, /_next/image?url=%2Fassets%2Fdocs%2Frelease-notes%2Ftokenizer.png&w=3840&q=75&dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b 2x",
+    "src": "/_next/image?url=%2Fassets%2Fdocs%2Frelease-notes%2Ftokenizer.png&w=3840&q=75&dpl=319b9a1c9d0c0538a6d4b3497e5f4b2d99a00e1b"
+  },
+  {
+    "tag": "a",
+    "href": "#structured-outputs"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/model-capabilities/text/structured-outputs"
+  },
+  {
+    "tag": "a",
+    "href": "#released-the-new-grok-2-1212-and-grok-2-vision-1212-models"
+  },
+  {
+    "tag": "a",
+    "href": "/developers/models"
+  },
+  {
+    "tag": "a",
+    "href": "#november-2024"
+  },
+  {
+    "tag": "a",
+    "href": "#langchain--spacexsi"
+  },
+  {
+    "tag": "a",
+    "href": "https://python.langchain.com/integrations/providers/xai/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "https://js.langchain.com/integrations/chat/xai/",
+    "rel": "noopener noreferrer"
+  },
+  {
+    "tag": "a",
+    "href": "#api-public-beta"
+  },
+  {
+    "tag": "a",
+    "href": "https://console.x.ai/?utm_source=docs&utm_medium=referral&utm_campaign=developers-release-notes&utm_content=console-home",
+    "rel": "noopener"
+  }
+]

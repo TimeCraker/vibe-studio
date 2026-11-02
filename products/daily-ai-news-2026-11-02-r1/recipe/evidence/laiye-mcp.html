@@ -1,0 +1,723 @@
+<!DOCTYPE html><html lang="zh" munual-autotracker-init="" qct-uid="" qct-pv-id="i8VDWT7fa52BVglKPfxIG" qct-ip="undefined" style="background:#ffffff;overscroll-behavior:auto;height:100%"><head><meta charSet="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="format-detection" content="telephone=no"/><title>智能体文档解析与抽取 MCP - 腾讯云</title><meta name="keywords" content="智能体文档解析与抽取 MCP"/><meta name="description" content="ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。"/><meta property="og:title" content="智能体文档解析与抽取 MCP - 腾讯云"/><meta property="og:description" content="ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。"/><meta property="og:image" content="https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/gateway/shareicons/cloud.png"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"/><meta name="referrer" content="unsafe-url"/><link rel="dns-prefetch" href="//qccommunity.qcloudimg.com"/><link rel="dns-prefetch" href="//ask.qcloudimg.com"/><link rel="dns-prefetch" href="//cloudcache.tencent-cloud.com"/><meta name="next-head-count" content="14"/><link rel="stylesheet" href="https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/portal/css/base.css"/><link rel="stylesheet" href="https://qccommunity.qcloudimg.com/tvp/tdesign.min.css"/><link rel="stylesheet" href="https://cloudcache.tencentcs.cn/qcloud/ui/cloud-community/build/base/base-202607031707.css"/><style type="text/css">
+        .rno-markdown p * {
+          white-space: pre-wrap;
+          word-break: break-all;
+        }
+        .tea-overlay {
+          z-index: 99999!important;
+        }
+        .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar {
+          top: 57px !important;
+        }
+      </style><link rel="stylesheet" href="https://cloudcache.tencentcs.cn/qcloud/ui/cloud-community/build/MCP/MCP-202510271502.css"/><link rel="stylesheet" href="https://cloudcache.tencent-cloud.cn/qcloud/draft-master/dist/draft-master-v2.1.33.d4s2ddo9sb.css"/><script src="https://tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js"></script><script>
+              if (typeof Aegis !== 'undefined') {
+                new Aegis({
+                  id: 'dWlmyFvjDnalkbZO8q',
+                  env: 'production',
+                  onError: true,
+                  pagePerformance: true,
+                  reportAssetSpeed: true,
+                  api: {
+                    reportRequest: true,
+                    resHeaders: ['x-req-id'],
+                  },
+                  reportApiSpeed: true,
+                  beforeRequest: function (data) {
+                    // load js failed
+                    if (data.logType === 'log') {
+                      if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false;
+                    }
+                    var ignoreKeys = [
+                      'Script error',
+                      'chrome-extension',
+                      'qq.com',
+                      'queryWeappQrcodeStatus',
+                      'login/ajax/info',
+                      'woa.com',
+                      'trafficCollect.php',
+                      'google',
+                      'dscache',
+                      'act-api',
+                      'set_qc_cookie',
+                      'opc.cloud.tencent.com',
+                      'uc_gre_ad_buss',
+                      'eb.xcj.pub',
+                      'UCShellJava',
+                      '/developer/labs/quick/loader',
+                      'edgeImmersiveReaderDOM',
+                      'sendBeacon',
+                      'error-decoder.html',
+                      'qcloud-community-track.min.js'
+                    ];
+                    var alarmMsg = [data.logs.url, data.logs.msg].join('|');
+                    for (var i = 0; i < ignoreKeys.length; i++) {
+                      if (alarmMsg.indexOf(ignoreKeys[i]) != -1) return false;
+                    }
+                    if (/bot|wechatdevtools|spider/i.test(navigator.userAgent)) {
+                      return false;
+                    }
+                    if (location.hostname.indexOf('cloud.tencent.') === -1) {
+                      return false;
+                    }
+                  },
+                });
+              }
+    </script><link rel="icon" href="//cloudcache.tencent-cloud.com/qcloud/favicon.ico?t=201902181234" type="image/x-icon"/><link rel="preload" href="https://qccommunity.qcloudimg.com/community/_next/static/css/5fdee83e7ffc4836.css" as="style"/><link rel="stylesheet" href="https://qccommunity.qcloudimg.com/community/_next/static/css/5fdee83e7ffc4836.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/webpack-7dfa892ed3866b2e.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/framework-bae252e255276064.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/main-b7d71dcdaa35e222.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/pages/_app-44c6c5eb4fc3ab50.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/913-4342da4c5ab2ce47.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/8159-1a93cdd747990dd6.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/4031-e3e3905dc88f3f92.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/8850-812a04d9f9a3fc6b.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/4752-9c230434e4753e19.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/7705-93fa5d5ae6ef96e2.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/5053-48d98d9b66e9b5b4.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/6191-ee61d3891edb9d29.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/5459-6901f391873a2029.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/8748-29bc8904347f75a5.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/chunks/pages/mcp/server/%5Bid%5D-247057e766eb0636.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/cuZM2K64kkamALj2LRvUg/_buildManifest.js" defer=""></script><script src="https://qccommunity.qcloudimg.com/community/_next/static/cuZM2K64kkamALj2LRvUg/_ssgManifest.js" defer=""></script></head><body class="is-pc" id="body" style="overscroll-behavior:none"><div id="__next"><script src="https://dscache.tencent-cloud.cn/ecache/qcstat/qcloud/qcloudStatApi.js"></script><script src="https://qccommunity.qcloudimg.com/common/exposure-plugin-4.1.15.min.js"></script><script src="https://qccommunity.qcloudimg.com/community-track/qcloud-community-track.min.js"></script><div class="cdc-mcp-detail qct-page" qct-area="mcp-local-11820"><div class="cdc-header is-fixed cdc-header--air"><div class="cdc-header__placeholder"></div><div class="cdc-header__inner"><div id="community-top-header-product-container"></div><div class="cdc-header__top"><div class="cdc-header__top-left"><a href="https://cloud.tencent.com/?from=20060&amp;from_column=20060" target="_blank" class="cdc-header__top-logo" hotrep=""><i>腾讯云</i></a><div class="cdc-header__top-line"></div><a href="https://developer.cloud.tencent.com" class="cdc-header__top-logo community"><i>开发者社区</i></a></div><div class="cdc-header__top-operates"><a href="https://cloud.tencent.com/document/product?from=20702&amp;from_column=20702" target="_blank" class="cdc-header__link">文档</a><a href="https://cloud.tencent.com/voc/?from=20703&amp;from_column=20703" target="_blank" class="cdc-header__link">建议反馈</a><a href="https://console.cloud.tencent.com/?from=20063&amp;from_column=20063" target="_blank" class="cdc-header__link">控制台</a><div class="cdc-header__account"><div class="cdc-header__account-inner"><button class="cdc-btn cdc-header__account-btn  cdc-btn--primary">登录/注册</button></div></div></div></div><div class="cdc-header__bottom"><div class="cdc-header__bottom-nav"><a href="https://developer.cloud.tencent.com" class="cdc-header__bottom-home">首页</a><div class="cdc-header__nav-list"><div class="cdc-header__nav-item">学习</div><div class="cdc-header__nav-item">活动</div><div class="cdc-header__nav-item">专区</div><div class="cdc-header__nav-item">圈层</div><div class="cdc-header__nav-item">工具</div></div><div class="cdc-header__activity"><a class="cdc-header__activity-tit" href="https://developer.cloud.tencent.com/mcp" target="_blank" style="position:relative">MCP广场<img src="https://qccommunity.qcloudimg.com/image/new.png" style="position:absolute;width:24px;top:-6px;right:-20px"/></a></div></div><div class="cdc-header__bottom-operates"><div class="cdc-header__search"><div class="cdc-search__wrap"><div class="cdc-search"><span class="cdc-search__text">文章/答案/技术大牛</span><button class="cdc-search__btn">搜索<i class="cdc-search__i search"></i></button></div><div class="cdc-search__dropdown"><div class="cdc-search__bar"><input type="text" class="cdc-search__bar-input" placeholder="文章/答案/技术大牛" value=""/><div class="cdc-search__bar-btns"><button class="cdc-search__btn">搜索<i class="cdc-search__i search"></i></button><button class="cdc-search__btn">关闭<i class="cdc-search__i clear"></i></button></div></div></div></div></div><div class="cdc-header__create"><span class="cdc-header__create-btn not-logged"><span class="cdc-svg-icon-con"><span class="cdc-svg-icon" style="width:16px;height:16px;color:#0052D9"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="M14.2466 12.0145C14.1698 13.6258 12.8381 14.9131 11.2129 14.9131H11.1579H4.0927H4.03772C2.4125 14.9131 1.08014 13.6258 1.00334 12.0145H1V11.8668V4.07213V4.04627V3.89922H1.00334C1.08014 2.28732 2.4125 1 4.03772 1H9.6473V1.00069H10.0786L8.7688 2.10773H8.43888H7.7916H6.37904H4.03772C2.97234 2.10773 2.10445 2.9777 2.10445 4.04629V4.41869V4.4472V6.39498V11.4269V11.4309V11.8668C2.10445 12.9354 2.97234 13.8053 4.03772 13.8053H6.37904H8.87153H11.2129C12.2782 13.8053 13.1461 12.9355 13.1461 11.8668V11.466V11.454V9.5181V6.39364L14.2506 5.3051V11.8668V12.0145H14.2466ZM10.4324 7.15226L9.63146 7.99761C9.36577 8.2693 8.69326 8.95104 8.48066 9.17631C8.26726 9.40288 8.09039 9.58901 7.95061 9.73544C7.81079 9.88188 7.72667 9.96597 7.70083 9.98656C7.63321 10.0488 7.55703 10.1144 7.47022 10.1846C7.38412 10.2542 7.29404 10.3099 7.20063 10.3516C7.10722 10.4007 6.97072 10.459 6.79049 10.5305C6.61028 10.6001 6.42213 10.6676 6.22468 10.7339C6.02792 10.8002 5.84109 10.8571 5.66484 10.9061C5.48795 10.9538 5.3561 10.9863 5.2693 11.0009C5.08977 11.0214 4.96988 10.993 4.90956 10.9168C4.84931 10.8405 4.83276 10.7107 4.85924 10.5312C4.87315 10.4331 4.9043 10.292 4.95468 10.1078C5.00431 9.92297 5.05802 9.7315 5.11431 9.53341C5.1713 9.33526 5.22629 9.15179 5.27926 8.98484C5.33297 8.8179 5.37599 8.7026 5.40978 8.64032C5.44953 8.54357 5.49463 8.45413 5.54495 8.37399C5.59465 8.29379 5.66616 8.20503 5.75965 8.10766C5.79934 8.06588 5.89281 7.96649 6.03988 7.81018C6.18624 7.65311 6.80114 7.02774 7.02104 6.79783L7.75117 6.03524L8.56212 5.1899L10.6345 3.02466L12.5214 4.93874L10.4324 7.15226ZM13.816 3.58581C13.7166 3.68987 13.6272 3.78064 13.5483 3.85883C13.4694 3.93703 13.4006 4.0066 13.3423 4.06686C13.276 4.13643 13.2144 4.19738 13.1561 4.24903L11.2785 2.33569C11.3785 2.24025 11.4965 2.12565 11.6336 1.99115C11.7707 1.85668 11.8854 1.75061 11.9761 1.67242C12.0934 1.57708 12.2133 1.51013 12.3385 1.47109C12.4525 1.43529 12.5644 1.41805 12.6751 1.41876H12.7056C12.7665 1.42139 12.8268 1.42729 12.8851 1.43724C12.8838 1.4366 12.8811 1.43724 12.8798 1.4366C12.8811 1.4366 12.8838 1.4366 12.8851 1.43724C13.1376 1.48428 13.4019 1.62009 13.6265 1.83743C13.7511 1.95871 13.8524 2.09382 13.9259 2.23296C14.0346 2.43834 14.0863 2.65304 14.0763 2.8491C14.0763 2.87294 14.0783 2.89748 14.0783 2.92201C14.0783 3.03529 14.0571 3.14789 14.0154 3.26055C13.9737 3.37314 13.9067 3.48185 13.816 3.58581Z" fill="#0052D9"></path></svg></span></span>发布<span class="cdc-svg-icon-con cdc-header__create-btn-arrow"><span class="cdc-svg-icon" style="width:16px;height:16px"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="M8.16377 4L9.57798 5.41421L14.5277 10.364L13.1135 11.7782L8.1638 6.829L3.21402 11.7782L1.7998 10.364L8.16377 4Z"></path></svg></span></span></span></div></div></div></div></div><div class="cdc-m-header is-fixed"><div class="cdc-m-header__placeholder"></div><div class="cdc-m-header__inner"><div class="cdc-m-header__main"><div class="cdc-m-header__trigger"></div><div class="cdc-m-header__logo"><i class="cdc-m-header__logo-icon"></i></div><div class="cdc-m-header__search"><i class="cdc-m-header__search-icon"></i></div><div class="cdc-m-header__operate"><span class="cdc-m-header__operate-icon"></span></div></div></div></div><div class="cdc-mcp-detail__bd"><div class="cdc-crumb cdc-mcp-detail__crumb"><div class="cdc-crumb__inner"><a class="cdc-crumb__item" href="https://developer.cloud.tencent.com/mcp">MCP广场</a><span class="cdc-crumb__split"> &gt;</span><span class="cdc-crumb__item current">详情页</span></div></div><div class="cdc-mcp-detail__info-hd"><div class="cdc-mcp-detail__info-hd-inner"><div class="cdc-mcp-detail__info-main"><span class="cdc-mcp-detail__info-name"><img class="cdc-mcp-detail__info-logo" src="https://developer.qcloudimg.com/operation/attachment/900005/20260624-2674668f.png"/>智能体文档解析与抽取 MCP</span><span class="cdc-mcp-detail__info-tag"><span class="cdc-svg-icon-con"><span class="cdc-svg-icon" style="width:16px;height:16px;color:#4B5B76"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#clip0_134_2025)"><path d="M13.3333 7.33346C13.1703 6.16028 12.626 5.07324 11.7844 4.23979C10.9428 3.40635 9.85046 2.87274 8.67574 2.72116C7.50102 2.56959 6.30904 2.80845 5.28343 3.40096C4.25781 3.99347 3.45546 4.90675 2.99996 6.00013M2.66663 3.33346V6.00013H5.33329" stroke="#4B5B76" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.66663 8.66699C2.82967 9.84018 3.37391 10.9272 4.21553 11.7607C5.05715 12.5941 6.14946 13.1277 7.32418 13.2793C8.4989 13.4309 9.69088 13.192 10.7165 12.5995C11.7421 12.007 12.5445 11.0937 13 10.0003M13.3333 12.667V10.0003H10.6666" stroke="#4B5B76" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_134_2025"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg></span><span class="cdc-svg-icon-text" style="color:#4B5B76">2026-11-02</span></span></span><span class="cdc-mcp-detail__info-tag"><span class="cdc-svg-icon-con"><span class="cdc-svg-icon" style="width:16px;height:16px;color:#4B5B76"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="ç¼ç 1"><g id="Union"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.64051 5.96136C7.03495 5.6978 7.49869 5.55713 7.97308 5.55713C8.60923 5.55713 9.21931 5.80984 9.66913 6.25966C10.119 6.70948 10.3717 7.31956 10.3717 7.9557C10.3717 8.4301 10.231 8.89384 9.96743 9.28828C9.70387 9.68272 9.32926 9.99016 8.89098 10.1717C8.4527 10.3532 7.97042 10.4007 7.50515 10.3082C7.03987 10.2156 6.61248 9.9872 6.27704 9.65175C5.94159 9.31631 5.71315 8.88892 5.6206 8.42364C5.52805 7.95836 5.57555 7.47609 5.75709 7.03781C5.93863 6.59953 6.24606 6.22492 6.64051 5.96136ZM7.20877 9.09958C7.43501 9.25075 7.70099 9.33143 7.97308 9.33143V9.34166C8.15461 9.34167 8.33435 9.30575 8.50193 9.23597C8.66951 9.16619 8.82162 9.06394 8.94951 8.93511C9.07739 8.80628 9.17851 8.65341 9.24704 8.48531C9.31557 8.31722 9.35016 8.13723 9.34881 7.9557C9.34881 7.68361 9.26813 7.41763 9.11696 7.19139C8.96579 6.96515 8.75093 6.78882 8.49955 6.6847C8.24817 6.58057 7.97156 6.55333 7.70469 6.60641C7.43783 6.65949 7.1927 6.79052 7.0003 6.98292C6.8079 7.17532 6.67687 7.42045 6.62379 7.68731C6.57071 7.95418 6.59795 8.23079 6.70208 8.48217C6.8062 8.73355 6.98253 8.94841 7.20877 9.09958Z" fill="#4B5B76"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5309 7.22217C14.6659 7.40227 14.7836 7.55937 14.8845 7.68464C14.9571 7.77534 14.9967 7.88808 14.9967 8.00428C14.9967 8.12047 14.9571 8.23321 14.8845 8.32392C14.784 8.44866 14.6668 8.60497 14.5324 8.78412C13.4771 10.1915 11.3646 13.0086 7.99834 13.0086C4.64137 13.0086 2.53524 10.207 1.47437 8.79578C1.33602 8.61175 1.21545 8.45136 1.11219 8.32392C1.03957 8.23321 1 8.12047 1 8.00428C1 7.88808 1.03957 7.77534 1.11219 7.68464C1.22407 7.54887 1.35507 7.37572 1.50585 7.17642C2.5819 5.75408 4.66547 3 7.99834 3C11.3673 3 13.4759 5.81407 14.5309 7.22217ZM2.66447 8.60065C3.74941 9.96215 5.35784 11.9806 7.99834 11.9806C10.6158 11.9806 12.2399 9.96368 13.3362 8.6022C13.5144 8.3809 13.6786 8.17691 13.831 8.00172C13.6786 7.82653 13.5144 7.62254 13.3362 7.40123C12.2399 6.03976 10.6158 4.02285 7.99834 4.02285C5.37111 4.02285 3.74472 6.05478 2.65486 7.4164C2.48241 7.63186 2.32338 7.83053 2.17595 8.00172C2.32648 8.1765 2.4886 8.37995 2.66447 8.60065Z" fill="#4B5B76"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.64051 5.96136C7.03495 5.6978 7.49869 5.55713 7.97308 5.55713C8.60923 5.55713 9.21931 5.80984 9.66913 6.25966C10.119 6.70948 10.3717 7.31956 10.3717 7.9557C10.3717 8.4301 10.231 8.89384 9.96743 9.28828C9.70387 9.68272 9.32926 9.99016 8.89098 10.1717C8.4527 10.3532 7.97042 10.4007 7.50515 10.3082C7.03987 10.2156 6.61248 9.9872 6.27704 9.65175C5.94159 9.31631 5.71315 8.88892 5.6206 8.42364C5.52805 7.95836 5.57555 7.47609 5.75709 7.03781C5.93863 6.59953 6.24606 6.22492 6.64051 5.96136ZM7.20877 9.09958C7.43501 9.25075 7.70099 9.33143 7.97308 9.33143V9.34166C8.15461 9.34167 8.33435 9.30575 8.50193 9.23597C8.66951 9.16619 8.82162 9.06394 8.94951 8.93511C9.07739 8.80628 9.17851 8.65341 9.24704 8.48531C9.31557 8.31722 9.35016 8.13723 9.34881 7.9557C9.34881 7.68361 9.26813 7.41763 9.11696 7.19139C8.96579 6.96515 8.75093 6.78882 8.49955 6.6847C8.24817 6.58057 7.97156 6.55333 7.70469 6.60641C7.43783 6.65949 7.1927 6.79052 7.0003 6.98292C6.8079 7.17532 6.67687 7.42045 6.62379 7.68731C6.57071 7.95418 6.59795 8.23079 6.70208 8.48217C6.8062 8.73355 6.98253 8.94841 7.20877 9.09958Z" stroke="#4B5B76" stroke-width="0.2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5309 7.22217C14.6659 7.40227 14.7836 7.55937 14.8845 7.68464C14.9571 7.77534 14.9967 7.88808 14.9967 8.00428C14.9967 8.12047 14.9571 8.23321 14.8845 8.32392C14.784 8.44866 14.6668 8.60497 14.5324 8.78412C13.4771 10.1915 11.3646 13.0086 7.99834 13.0086C4.64137 13.0086 2.53524 10.207 1.47437 8.79578C1.33602 8.61175 1.21545 8.45136 1.11219 8.32392C1.03957 8.23321 1 8.12047 1 8.00428C1 7.88808 1.03957 7.77534 1.11219 7.68464C1.22407 7.54887 1.35507 7.37572 1.50585 7.17642C2.5819 5.75408 4.66547 3 7.99834 3C11.3673 3 13.4759 5.81407 14.5309 7.22217ZM2.66447 8.60065C3.74941 9.96215 5.35784 11.9806 7.99834 11.9806C10.6158 11.9806 12.2399 9.96368 13.3362 8.6022C13.5144 8.3809 13.6786 8.17691 13.831 8.00172C13.6786 7.82653 13.5144 7.62254 13.3362 7.40123C12.2399 6.03976 10.6158 4.02285 7.99834 4.02285C5.37111 4.02285 3.74472 6.05478 2.65486 7.4164C2.48241 7.63186 2.32338 7.83053 2.17595 8.00172C2.32648 8.1765 2.4886 8.37995 2.66447 8.60065Z" stroke="#4B5B76" stroke-width="0.2"></path></g></g></svg></span><span class="cdc-svg-icon-text" style="color:#4B5B76">223</span></span></span><span class="cdc-mcp-detail__info-tag"><span class="cdc-svg-icon-con"><span class="cdc-svg-icon" style="width:16px;height:16px;color:#4B5B76"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg"><path d="M14.3707 10.2642C14.3533 9.8662 14.0828 9.61919 13.7506 9.61527C13.4173 9.61134 13.159 9.85524 13.1276 10.2552C13.0996 10.6111 13.1289 10.9711 13.1098 11.328C13.0772 11.939 12.8705 12.1662 12.2602 12.1687C9.42316 12.1803 6.58596 12.1802 3.74889 12.1694C3.09193 12.1669 2.88474 11.9476 2.88179 11.2816C2.87215 9.10909 2.87176 6.93643 2.88163 4.76392C2.88492 4.03616 3.05404 3.88165 3.81069 3.87022C4.62843 3.85788 5.44651 3.87041 6.26437 3.86435C6.46718 3.86285 6.70754 3.89318 6.86283 3.79811C7.05555 3.68013 7.25319 3.46827 7.31241 3.25844C7.39845 2.95379 7.19079 2.7182 6.89244 2.62286C6.72684 2.56995 6.54127 2.56464 6.36455 2.56372C5.3933 2.5585 4.42193 2.55185 3.45078 2.56363C2.21007 2.57868 1.61636 3.16785 1.61154 4.4061C1.60217 6.80869 1.60177 9.21137 1.61158 11.6139C1.61666 12.8619 2.19852 13.4325 3.45172 13.439C4.95971 13.4468 6.46776 13.4408 7.97579 13.4403C9.56047 13.4398 11.1453 13.4528 12.7298 13.4347C13.6258 13.4245 14.2877 12.8586 14.3621 12.0262C14.4143 11.443 14.3964 10.8507 14.3707 10.2642Z"></path><path d="M9.52202 3.86232C10.1352 3.87762 10.7491 3.86256 11.3625 3.86961C11.5532 3.87181 11.7435 3.90295 12.0435 3.93113C11.8014 4.19488 11.6413 4.38225 11.4678 4.55628C9.86157 6.16775 8.2527 7.77659 6.64571 9.38721C6.50149 9.53179 6.3502 9.67287 6.22792 9.83499C6.01699 10.1146 6.01736 10.4124 6.26071 10.6704C6.5079 10.9324 6.81446 10.9244 7.09864 10.7432C7.26779 10.6353 7.4021 10.471 7.54653 10.3265C9.17315 8.69931 10.7981 7.07041 12.4256 5.44411C12.5987 5.27112 12.7851 5.11149 13.1087 4.81383C13.1087 5.25673 13.1076 5.52645 13.1089 5.79614C13.1121 6.43516 13.1073 7.07436 13.1239 7.71305C13.1333 8.07346 13.3638 8.27341 13.7013 8.32288C14.0138 8.36869 14.3095 8.0882 14.372 7.71829C14.3889 7.61846 14.3828 7.51427 14.3828 7.41209C14.3835 6.1083 14.3905 4.80446 14.3807 3.50074C14.3751 2.75238 14.1804 2.56563 13.4083 2.56021C12.1558 2.55141 10.903 2.55799 9.6504 2.5581C9.59926 2.5581 9.54803 2.55653 9.49703 2.55918C8.9332 2.58843 8.63286 2.82201 8.63929 3.22537C8.64559 3.62181 8.94019 3.84781 9.52202 3.86232Z"></path></svg></span><span class="cdc-svg-icon-text" style="color:#4B5B76">分享</span></span></span><span class="cdc-mcp-detail__info-tag group-tag"><i class="icon-add"></i><em>添加福利群：</em>解决AI开发者的「MCP实战痛点」</span></div></div></div><div class="cdc-mcp-detail__info-cnt"><div class="cdc-mcp-detail__info-inner"><div><div class="cdc-mcp-detail__info-bd">ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。</div></div><div class="cdc-mcp-detail__info-ft">By <!-- -->来也科技（北京）有限公司</div><div class="cdc-mcp-detail__info-opt"><div><span class="cdc-svg-icon-con"><span class="cdc-svg-icon" style="width:16px;height:16px;color:#4B5B76"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#clip0_134_2025)"><path d="M13.3333 7.33346C13.1703 6.16028 12.626 5.07324 11.7844 4.23979C10.9428 3.40635 9.85046 2.87274 8.67574 2.72116C7.50102 2.56959 6.30904 2.80845 5.28343 3.40096C4.25781 3.99347 3.45546 4.90675 2.99996 6.00013M2.66663 3.33346V6.00013H5.33329" stroke="#4B5B76" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.66663 8.66699C2.82967 9.84018 3.37391 10.9272 4.21553 11.7607C5.05715 12.5941 6.14946 13.1277 7.32418 13.2793C8.4989 13.4309 9.69088 13.192 10.7165 12.5995C11.7421 12.007 12.5445 11.0937 13 10.0003M13.3333 12.667V10.0003H10.6666" stroke="#4B5B76" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_134_2025"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg></span><span class="cdc-svg-icon-text" style="color:#4B5B76">2026-11-02</span></span><span class="cdc-svg-icon-con"><span class="cdc-svg-icon" style="width:16px;height:16px;color:#4B5B76"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="ç¼ç 1"><g id="Union"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.64051 5.96136C7.03495 5.6978 7.49869 5.55713 7.97308 5.55713C8.60923 5.55713 9.21931 5.80984 9.66913 6.25966C10.119 6.70948 10.3717 7.31956 10.3717 7.9557C10.3717 8.4301 10.231 8.89384 9.96743 9.28828C9.70387 9.68272 9.32926 9.99016 8.89098 10.1717C8.4527 10.3532 7.97042 10.4007 7.50515 10.3082C7.03987 10.2156 6.61248 9.9872 6.27704 9.65175C5.94159 9.31631 5.71315 8.88892 5.6206 8.42364C5.52805 7.95836 5.57555 7.47609 5.75709 7.03781C5.93863 6.59953 6.24606 6.22492 6.64051 5.96136ZM7.20877 9.09958C7.43501 9.25075 7.70099 9.33143 7.97308 9.33143V9.34166C8.15461 9.34167 8.33435 9.30575 8.50193 9.23597C8.66951 9.16619 8.82162 9.06394 8.94951 8.93511C9.07739 8.80628 9.17851 8.65341 9.24704 8.48531C9.31557 8.31722 9.35016 8.13723 9.34881 7.9557C9.34881 7.68361 9.26813 7.41763 9.11696 7.19139C8.96579 6.96515 8.75093 6.78882 8.49955 6.6847C8.24817 6.58057 7.97156 6.55333 7.70469 6.60641C7.43783 6.65949 7.1927 6.79052 7.0003 6.98292C6.8079 7.17532 6.67687 7.42045 6.62379 7.68731C6.57071 7.95418 6.59795 8.23079 6.70208 8.48217C6.8062 8.73355 6.98253 8.94841 7.20877 9.09958Z" fill="#4B5B76"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5309 7.22217C14.6659 7.40227 14.7836 7.55937 14.8845 7.68464C14.9571 7.77534 14.9967 7.88808 14.9967 8.00428C14.9967 8.12047 14.9571 8.23321 14.8845 8.32392C14.784 8.44866 14.6668 8.60497 14.5324 8.78412C13.4771 10.1915 11.3646 13.0086 7.99834 13.0086C4.64137 13.0086 2.53524 10.207 1.47437 8.79578C1.33602 8.61175 1.21545 8.45136 1.11219 8.32392C1.03957 8.23321 1 8.12047 1 8.00428C1 7.88808 1.03957 7.77534 1.11219 7.68464C1.22407 7.54887 1.35507 7.37572 1.50585 7.17642C2.5819 5.75408 4.66547 3 7.99834 3C11.3673 3 13.4759 5.81407 14.5309 7.22217ZM2.66447 8.60065C3.74941 9.96215 5.35784 11.9806 7.99834 11.9806C10.6158 11.9806 12.2399 9.96368 13.3362 8.6022C13.5144 8.3809 13.6786 8.17691 13.831 8.00172C13.6786 7.82653 13.5144 7.62254 13.3362 7.40123C12.2399 6.03976 10.6158 4.02285 7.99834 4.02285C5.37111 4.02285 3.74472 6.05478 2.65486 7.4164C2.48241 7.63186 2.32338 7.83053 2.17595 8.00172C2.32648 8.1765 2.4886 8.37995 2.66447 8.60065Z" fill="#4B5B76"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.64051 5.96136C7.03495 5.6978 7.49869 5.55713 7.97308 5.55713C8.60923 5.55713 9.21931 5.80984 9.66913 6.25966C10.119 6.70948 10.3717 7.31956 10.3717 7.9557C10.3717 8.4301 10.231 8.89384 9.96743 9.28828C9.70387 9.68272 9.32926 9.99016 8.89098 10.1717C8.4527 10.3532 7.97042 10.4007 7.50515 10.3082C7.03987 10.2156 6.61248 9.9872 6.27704 9.65175C5.94159 9.31631 5.71315 8.88892 5.6206 8.42364C5.52805 7.95836 5.57555 7.47609 5.75709 7.03781C5.93863 6.59953 6.24606 6.22492 6.64051 5.96136ZM7.20877 9.09958C7.43501 9.25075 7.70099 9.33143 7.97308 9.33143V9.34166C8.15461 9.34167 8.33435 9.30575 8.50193 9.23597C8.66951 9.16619 8.82162 9.06394 8.94951 8.93511C9.07739 8.80628 9.17851 8.65341 9.24704 8.48531C9.31557 8.31722 9.35016 8.13723 9.34881 7.9557C9.34881 7.68361 9.26813 7.41763 9.11696 7.19139C8.96579 6.96515 8.75093 6.78882 8.49955 6.6847C8.24817 6.58057 7.97156 6.55333 7.70469 6.60641C7.43783 6.65949 7.1927 6.79052 7.0003 6.98292C6.8079 7.17532 6.67687 7.42045 6.62379 7.68731C6.57071 7.95418 6.59795 8.23079 6.70208 8.48217C6.8062 8.73355 6.98253 8.94841 7.20877 9.09958Z" stroke="#4B5B76" stroke-width="0.2"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5309 7.22217C14.6659 7.40227 14.7836 7.55937 14.8845 7.68464C14.9571 7.77534 14.9967 7.88808 14.9967 8.00428C14.9967 8.12047 14.9571 8.23321 14.8845 8.32392C14.784 8.44866 14.6668 8.60497 14.5324 8.78412C13.4771 10.1915 11.3646 13.0086 7.99834 13.0086C4.64137 13.0086 2.53524 10.207 1.47437 8.79578C1.33602 8.61175 1.21545 8.45136 1.11219 8.32392C1.03957 8.23321 1 8.12047 1 8.00428C1 7.88808 1.03957 7.77534 1.11219 7.68464C1.22407 7.54887 1.35507 7.37572 1.50585 7.17642C2.5819 5.75408 4.66547 3 7.99834 3C11.3673 3 13.4759 5.81407 14.5309 7.22217ZM2.66447 8.60065C3.74941 9.96215 5.35784 11.9806 7.99834 11.9806C10.6158 11.9806 12.2399 9.96368 13.3362 8.6022C13.5144 8.3809 13.6786 8.17691 13.831 8.00172C13.6786 7.82653 13.5144 7.62254 13.3362 7.40123C12.2399 6.03976 10.6158 4.02285 7.99834 4.02285C5.37111 4.02285 3.74472 6.05478 2.65486 7.4164C2.48241 7.63186 2.32338 7.83053 2.17595 8.00172C2.32648 8.1765 2.4886 8.37995 2.66447 8.60065Z" stroke="#4B5B76" stroke-width="0.2"></path></g></g></svg></span><span class="cdc-svg-icon-text" style="color:#4B5B76">223</span></span></div><button class="cdc-btn cdc-mcp-detail__info-btn cdc-btn--hole" href=""><img class="btn-logo" src="https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/1dcf443b-0740-4f79-9c6a-e996de52d7e5.svg"/></button></div></div></div><div class="cdc-mcp-detail__main"><div class="cdc-layout"><div class="cdc-layout__main is-local"><div class="t-tabs"><div class="t-tabs__header t-is-top"><div class="t-tabs__nav" style="min-height:48px"><div class="t-tabs__operations t-tabs__operations--left"></div><div class="t-tabs__operations t-tabs__operations--right"></div><div class="t-tabs__nav-container t-is-top"><div class="t-tabs__nav-scroll"><div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0)"><div class="t-tabs__bar t-is-top"></div><div class="t-tabs__bar t-is-top"></div><div class="t-tabs__nav-item t-size-l t-is-active t-is-top"><div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">详情内容</span></div></div></div></div></div></div></div><div class="t-tabs__content t-is-top"><div class="t-tab-panel"><div class="markdown-body"><h2>关于 ADP MCP Server</h2>
+<p>ADP MCP Server 是来也科技<strong>智能体文档处理产品 (Agentic Document Processing，简称 ADP)</strong> 的 Model Context Protocol 服务端，让任何支持 MCP 协议的 AI 客户端（Claude Desktop、Cursor、Copilot Chat、通义灵码、Coze 等）无需编写代码即可调用 ADP 的文档解析与抽取能力。与 CLI 工具不同，MCP Server 以 <strong>Streamable HTTP</strong> 传输运行，一条连接即可发现所有可用工具、调用处理、查询结果——完全在对话窗口内完成。</p>
+<p>ADP 产品深度融合视觉语言模型（VLM）、大语言模型（LLM）与智能体自主决策技术，彻底颠覆传统文档处理模式，将行业沿用多年的规则驱动的机械字段抽取，全面升级为目标驱动的全流程智能自动化。产品专注于各类业务单据智能化处理，可对海外发票、国内票据、采购合同、物流单据、金融报表、交易合同等文件自动分类并精准抽取关键字段，同时支持表格解析、内容核验与多语种识别，无需人工搭建模板、标注数据和维护规则，高效完成大批量文档处理工作。</p>
+<hr>
+<h2>快速接入</h2>
+<h3>1. 获取 API Key</h3>
+<p>访问 <a href="https://adp.laiye.com/?utm_source=github" target="_blank" rel="noopener">https://adp.laiye.com/</a> 注册 ADP 账号，在个人设置「我的MCP」中获取 API Key。</p>
+<h3>2. 配置 MCP 客户端</h3>
+<h4>方式一：可视化界面配置（推荐）</h4>
+<p>大多数 MCP 客户端（Cursor、通义灵码、Coze 等）支持在设置界面直接添加 MCP 服务。以 Cursor 为例：</p>
+<ol>
+<li>打开 <strong>Settings → MCP</strong></li>
+<li>点击 <strong>Add new MCP server</strong></li>
+<li>填写以下信息：
+<ul>
+<li><strong>Name</strong>：<code>ADP</code>（自定义名称）</li>
+<li><strong>Type</strong>：<code>streamable-http</code></li>
+<li><strong>URL</strong>：<code>https://adp.laiye.com/mcp?key=&lt;YOUR-ADP-API-Key&gt;</code></li>
+</ul>
+</li>
+<li>保存后即可在对话中使用 ADP 工具</li>
+</ol>
+<h4>方式二：编辑配置文件</h4>
+<p>以 Claude Desktop 为例，在 <code>claude_desktop_config.json</code> 中添加：</p>
+<pre class="pre"><code class="hljs"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;mcpServers&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;adp&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://adp.laiye.com/mcp?key=&lt;YOUR-ADP-API-Key&gt;&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;transport&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;streamable-http&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code><img class="code-copy" data-type="mcp" src="https://qccommunity.qcloudimg.com/icons/copy-icon.png"/></pre></pre>
+<p>其他客户端配置方式同理，核心参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Endpoint</strong></td>
+<td><code>https://adp.laiye.com/mcp</code></td>
+</tr>
+<tr>
+<td><strong>Transport</strong></td>
+<td>Streamable HTTP</td>
+</tr>
+<tr>
+<td><strong>认证方式</strong></td>
+<td>URL Query <code>?key=&lt;YOUR-ADP-API-Key&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>私有部署环境请将域名替换为实际服务地址。</p>
+</blockquote>
+<h3>3. 开始使用</h3>
+<p>连接成功后，AI 客户端会自动发现所有可用的 ADP 工具。直接在对话中描述你的需求即可，例如：</p>
+<ul>
+<li>&quot;帮我解析这份 PDF 的结构&quot;</li>
+<li>&quot;提取这张身份证的信息&quot;</li>
+<li>&quot;从这张发票里抽取金额和日期&quot;</li>
+</ul>
+<hr>
+<h2>工具列表</h2>
+<h3>文档解析</h3>
+<table>
+<thead>
+<tr>
+<th>工具名</th>
+<th>标题</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parse_document</code></td>
+<td>通用文档解析</td>
+<td>对 PDF、图片、Word、Excel、PPT 等文档进行版面解析，返回结构化的文本块、表格、阅读顺序与页面坐标。适用于不确定文档类型、需要先获取原始结构再做后续处理的场景；如已确认是发票、证件等特定类型，请优先使用对应的专用提取工具。</td>
+</tr>
+</tbody>
+</table>
+<h3>票据与订单抽取</h3>
+<table>
+<thead>
+<tr>
+<th>工具名</th>
+<th>标题</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>extract_china_invoice</code></td>
+<td>中国票据</td>
+<td>覆盖中国地区 30+ 种常见票据：支持全电发票、普通发票、专用发票、出租车票、火车票、飞机行程单、财政发票等财务场景常见票据。可从票据中提取发票号码、开票日期、金额、购买方、销售方等关键信息，以及支持判断发票真假。</td>
+</tr>
+<tr>
+<td><code>extract_global_invoice</code></td>
+<td>海外发票/收据</td>
+<td>从 PDF 或图片格式的海外发票、收据、票据中提取关键字段（发票号、开票日期、金额、税额、币种、明细行等）。适用于跨境贸易、报销、应付账款自动化等场景；中国大陆增值税发票请使用专门的国内发票工具。</td>
+</tr>
+<tr>
+<td><code>extract_purchase_order</code></td>
+<td>订单</td>
+<td>从 PDF 或图片格式的采购订单、销售订单中提取关键字段（订单号、买卖双方信息、下单日期、商品明细、数量、单价、总金额、收货地址等）。适用于电商订单录入、供应链对账、出入库管理自动化等场景。</td>
+</tr>
+</tbody>
+</table>
+<h3>卡证抽取</h3>
+<table>
+<thead>
+<tr>
+<th>工具名</th>
+<th>标题</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>extract_id_card</code></td>
+<td>身份证</td>
+<td>从中国大陆居民身份证图片中提取关键字段（姓名、性别、民族、出生日期、身份证号、住址、签发机关、有效期等），支持正反面识别。适用于实名认证、用户注册等场景。</td>
+</tr>
+<tr>
+<td><code>extract_bank_card</code></td>
+<td>银行卡</td>
+<td>从银行卡正面图片中提取关键字段（卡号、所属银行、卡种类型、有效期等）。适用于绑卡、收款账户录入、支付渠道配置等场景。注意：仅识别卡面公开信息，不涉及 CVV 等敏感字段。</td>
+</tr>
+<tr>
+<td><code>extract_vehicle_cert</code></td>
+<td>车辆合格证</td>
+<td>从机动车整车出厂合格证图片中提取关键字段（合格证编号、车辆品牌、型号、车辆识别代号 VIN、发动机号、制造日期等）。适用于车辆上户、二手车交易、车辆资产管理等场景。</td>
+</tr>
+<tr>
+<td><code>extract_account_permit</code></td>
+<td>开户许可证</td>
+<td>从企业开户许可证图片中提取关键字段（企业名称、基本账户账号、开户银行、核准号、发证日期等）。适用于对公收款账户校验、企业财务审核、应付账款收款方信息核对等场景。</td>
+</tr>
+<tr>
+<td><code>extract_driver_license</code></td>
+<td>驾驶证</td>
+<td>从中国机动车驾驶证图片中提取关键字段（姓名、性别、国籍、出生日期、驾驶证号、准驾车型、初次领证日期、有效期等），支持正副页识别。适用于驾驶员资质核验、网约车/货运司机准入审核等场景。</td>
+</tr>
+<tr>
+<td><code>extract_business_license</code></td>
+<td>营业执照</td>
+<td>从中国企业营业执照图片中提取关键字段（企业名称、统一社会信用代码、法定代表人、注册资本、成立日期、经营范围、注册地址等）。适用于企业开户、商户入驻、供应商资质审核、企业实名认证等场景。</td>
+</tr>
+<tr>
+<td><code>extract_passport_cn</code></td>
+<td>护照-中国</td>
+<td>从中华人民共和国护照图片中提取关键字段（中文姓名、姓名拼音、性别、出生日期、护照号、国籍、签发日期、有效期、签发机关等）。适用于出境业务、跨境身份核验、签证办理等场景；外国护照不在支持范围内。</td>
+</tr>
+<tr>
+<td><code>extract_vehicle_license</code></td>
+<td>行驶证</td>
+<td>从中国机动车行驶证图片中提取关键字段（车牌号、车辆类型、所有人、车辆识别代号 VIN、发动机号、注册日期、发证日期等），支持正副页识别。适用于车辆登记、保险投保、网约车/货运车辆准入等场景。</td>
+</tr>
+<tr>
+<td><code>extract_org_code_cert</code></td>
+<td>组织机构代码证</td>
+<td>从组织机构代码证图片中提取关键字段（机构名称、组织机构代码、法定代表人、地址、发证日期、有效期等）。适用于历史档案数字化、存量企业资质核验等场景；新办企业建议使用营业执照工具。</td>
+</tr>
+<tr>
+<td><code>extract_household_book</code></td>
+<td>户口本</td>
+<td>从中国居民户口本图片中提取关键字段（户号、户别、住址、家庭成员列表，含成员姓名、身份证号、与户主关系等），支持首页与个人页两种页面类型。适用于户籍核验、亲属关系认证、社保业务等场景。</td>
+</tr>
+<tr>
+<td><code>extract_hk_macao_permit</code></td>
+<td>港澳通行证</td>
+<td>从港澳通行证（往来港澳通行证）图片中提取关键字段（姓名、性别、出生日期、证件号、签发日期、有效期、签发机关等）。适用于出入境业务、酒店登记、票务实名等场景。</td>
+</tr>
+</tbody>
+</table>
+<h3>自定义抽取</h3>
+<p>除上述开箱即用工具外，MCP 提供两个固定工具来使用你在 ADP 平台上创建的自定义抽取应用：</p>
+<table>
+<thead>
+<tr>
+<th>工具名</th>
+<th>标题</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list_custom_extract_apps</code></td>
+<td>列出自定义抽取应用</td>
+<td>列出当前用户创建的所有自定义文档抽取应用，返回每个应用的 ID、名称、描述、标签和输出字段定义。可用于查找 <code>execute_custom_extract_app</code> 所需的 <code>app_id</code>。</td>
+</tr>
+<tr>
+<td><code>execute_custom_extract_app</code></td>
+<td>执行自定义抽取应用</td>
+<td>使用指定的自定义文档抽取应用处理文件。需先通过 <code>list_custom_extract_apps</code> 获取可用的 <code>app_id</code>。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用流程：</strong> 先调用 <code>list_custom_extract_apps</code> 查看可用应用列表，获取目标应用的 <code>app_id</code>，再调用 <code>execute_custom_extract_app</code> 传入 <code>app_id</code> 与文件进行抽取。</p>
+<hr>
+<h2>工具输入参数</h2>
+<h3>文档解析与 OOTB 抽取工具</h3>
+<p>所有开箱即用工具共享统一的输入 Schema：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>string</td>
+<td>是</td>
+<td>文件 URL 或 Base64 编码内容</td>
+</tr>
+<tr>
+<td><code>file_name</code></td>
+<td>string</td>
+<td>否</td>
+<td>文件名（含扩展名）</td>
+</tr>
+<tr>
+<td><code>with_rec_result</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否包含 OCR 中间结果，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>wait</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否同步等待结果，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>timeout_seconds</code></td>
+<td>integer</td>
+<td>否</td>
+<td>同步等待超时秒数，默认 <code>300</code>，范围 1–900</td>
+</tr>
+</tbody>
+</table>
+<h3>execute_custom_extract_app</h3>
+<p>在上述参数基础上增加：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td>string</td>
+<td>是</td>
+<td>自定义抽取应用 ID（通过 <code>list_custom_extract_apps</code> 获取）</td>
+</tr>
+</tbody>
+</table>
+<h3>list_custom_extract_apps</h3>
+<p>无需输入参数。</p>
+<p><strong>文件传入方式：</strong></p>
+<ul>
+<li><strong>URL</strong>：<code>file</code> 传入以 <code>http://</code>、<code>https://</code>、<code>file://</code> 开头的可访问链接</li>
+<li><strong>Base64</strong>：<code>file</code> 传入 Base64 编码的文件内容（非 URL 格式时自动识别）</li>
+</ul>
+<p><strong>同步 vs 异步：</strong></p>
+<ul>
+<li><code>wait=true</code>（默认）：阻塞等待处理完成，直接返回结果</li>
+<li><code>wait=false</code>：立即返回 <code>task_id</code>，后续可查询任务状态</li>
+</ul>
+<hr>
+<h2>工具输出</h2>
+<h3>parse_document 输出</h3>
+<pre class="pre"><code class="hljs"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;task_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;fabd7f0a4e7211f1bbc4d85ed35661fd&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;status&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;doc_recognize_result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;page_num&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;document_content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Full text content of this page...&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;document_details&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Text&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Paragraph content...&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;position&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;points&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">311</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">50</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">500</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">50</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">500</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">80</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;x&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">311</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;y&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">80</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;ocr_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">&quot;ocr_mean_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.999</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;ocr_min_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0.998</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;is_overall_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span>
+          <span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Table&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Column A\tColumn B\nValue 1\tValue 2&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;position&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;points&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;ocr_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>...<span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Picture&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://adp.laiye.com/web/.../file/abc123&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;position&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;points&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;ocr_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>...<span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code><img class="code-copy" data-type="" src="https://qccommunity.qcloudimg.com/icons/copy-icon.png"/></pre></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_id</code></td>
+<td>string</td>
+<td>任务 ID</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>integer</td>
+<td>任务状态码</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>状态消息</td>
+</tr>
+<tr>
+<td><code>doc_recognize_result</code></td>
+<td>array</td>
+<td>各页识别结果</td>
+</tr>
+<tr>
+<td><code>doc_recognize_result[].page_num</code></td>
+<td>integer</td>
+<td>页码（1 起始）</td>
+</tr>
+<tr>
+<td><code>doc_recognize_result[].document_content</code></td>
+<td>string</td>
+<td>该页完整文本（按阅读顺序）</td>
+</tr>
+<tr>
+<td><code>doc_recognize_result[].document_details</code></td>
+<td>array</td>
+<td>元素级详情</td>
+</tr>
+<tr>
+<td><code>document_details[].type</code></td>
+<td>string</td>
+<td>元素类型：<code>Text</code>、<code>Table</code>、<code>Picture</code></td>
+</tr>
+<tr>
+<td><code>document_details[].text</code></td>
+<td>string</td>
+<td>文本内容；Picture 类型为图片 URL</td>
+</tr>
+<tr>
+<td><code>document_details[].position</code></td>
+<td>array</td>
+<td>边界框坐标（4 个角点）</td>
+</tr>
+<tr>
+<td><code>document_details[].ocr_confidence.ocr_mean_confidence</code></td>
+<td>float</td>
+<td>平均 OCR 置信度 (0–1)</td>
+</tr>
+<tr>
+<td><code>document_details[].ocr_confidence.ocr_min_confidence</code></td>
+<td>float</td>
+<td>最低 OCR 置信度 (0–1)</td>
+</tr>
+</tbody>
+</table>
+<h3>extract 类工具输出</h3>
+<pre class="pre"><code class="hljs"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;task_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;91283e544e7111f18cd6d85ed35661fd&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;status&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;extraction_result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;field_key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;invoice_number&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;field_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;发票号码&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;field_values&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+          <span class="hljs-attr">&quot;field_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;24VLT0591617&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;field_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1.0</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;references&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span>
+        <span class="hljs-punctuation">}</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;field_key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;line_items&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;field_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;商品明细&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;references&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;field_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1.0</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;table_values&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">[</span>
+          <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">&quot;field_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;商品名称&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;field_key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;line_items_description&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;field_values&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+              <span class="hljs-punctuation">{</span>
+                <span class="hljs-attr">&quot;field_value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;TESLA MODEL 3&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;field_confidence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1.0</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-attr">&quot;references&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Description: TESLA MODEL 3&quot;</span>
+              <span class="hljs-punctuation">}</span>
+            <span class="hljs-punctuation">]</span>
+          <span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code><img class="code-copy" data-type="" src="https://qccommunity.qcloudimg.com/icons/copy-icon.png"/></pre></pre>
+<p><strong>普通字段</strong>（无 <code>table_values</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>field_key</code></td>
+<td>string</td>
+<td>字段标识</td>
+</tr>
+<tr>
+<td><code>field_name</code></td>
+<td>string</td>
+<td>字段名称</td>
+</tr>
+<tr>
+<td><code>field_values</code></td>
+<td>array</td>
+<td>提取值列表</td>
+</tr>
+<tr>
+<td><code>field_values[].field_value</code></td>
+<td>string</td>
+<td>提取值</td>
+</tr>
+<tr>
+<td><code>field_values[].field_confidence</code></td>
+<td>float</td>
+<td>置信度 (0–1)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表格字段</strong>（含 <code>table_values</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>field_key</code></td>
+<td>string</td>
+<td>表格标识</td>
+</tr>
+<tr>
+<td><code>field_name</code></td>
+<td>string</td>
+<td>表格名称</td>
+</tr>
+<tr>
+<td><code>table_values</code></td>
+<td>array[array]</td>
+<td>二维数组：每行是一个单元格数组，每个单元格含 <code>field_name</code>、<code>field_key</code>、<code>field_values</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断方式：</strong> 字段对象包含 <code>table_values</code> → 表格字段；仅含 <code>field_values</code> → 普通字段。</p>
+<h3>异步返回（<code>wait=false</code>）</h3>
+<pre class="pre"><code class="hljs"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;task_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;fabd7f0a4e7211f1bbc4d85ed35661fd&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;status&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;running&quot;</span>
+<span class="hljs-punctuation">}</span>
+</code><img class="code-copy" data-type="" src="https://qccommunity.qcloudimg.com/icons/copy-icon.png"/></pre></pre>
+<hr>
+<h2>任务状态码</h2>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>MCP 状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>running</td>
+<td>未知</td>
+</tr>
+<tr>
+<td>1</td>
+<td>running</td>
+<td>就绪/排队中</td>
+</tr>
+<tr>
+<td>2</td>
+<td>running</td>
+<td>处理中</td>
+</tr>
+<tr>
+<td>4</td>
+<td>success</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>5</td>
+<td>failed</td>
+<td>失败</td>
+</tr>
+<tr>
+<td>6</td>
+<td>failed</td>
+<td>已取消</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>支持的文件格式</h2>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>扩展名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDF</td>
+<td><code>.pdf</code></td>
+<td>支持扫描件与电子版</td>
+</tr>
+<tr>
+<td>图片</td>
+<td><code>.jpg</code> <code>.jpeg</code> <code>.png</code> <code>.bmp</code> <code>.tiff</code> <code>.webp</code></td>
+<td>支持手机拍摄件</td>
+</tr>
+<tr>
+<td>Word</td>
+<td><code>.doc</code> <code>.docx</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>Excel</td>
+<td><code>.xls</code> <code>.xlsx</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>PPT</td>
+<td><code>.ppt</code> <code>.pptx</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>认证说明</h2>
+<p>ADP MCP Server 使用 API Key 认证，通过 URL Query 参数传递：</p>
+<pre class="pre"><code class="hljs">https://adp.laiye.com/mcp?key=&lt;YOUR-ADP-API-Key&gt;
+</code><img class="code-copy" data-type="" src="https://qccommunity.qcloudimg.com/icons/copy-icon.png"/></pre></pre>
+<ul>
+<li>API Key 可在 ADP 控制台「我的MCP」页面获取</li>
+<li>每个 API Key 绑定一个用户，仅可访问该用户下的应用与数据</li>
+<li>API Key 不会出现在请求体或响应中，仅用于认证</li>
+</ul>
+<hr>
+<h2>常见问题</h2>
+<p><strong>Q: MCP 连接后看不到某些卡证工具？</strong></p>
+<p>A: 工具列表按当前用户的已初始化应用动态生成。首次连接时系统会自动初始化所有开箱即用应用，初始化完成后刷新工具列表即可看到全部工具。</p>
+<p><strong>Q: 卡证工具返回「文档抽取失败」？</strong></p>
+<p>A: 请确认上传的文件与工具类型匹配（例如：身份证图片使用 <code>extract_id_card</code>，不要用 <code>extract_vehicle_cert</code>）。文件格式需为支持的图片或 PDF。</p>
+<p><strong>Q: 超时怎么处理？</strong></p>
+<p>A: 默认超时 300 秒（5 分钟），可通过 <code>timeout_seconds</code> 参数调整（最大 900 秒）。大文件或复杂文档建议使用 <code>wait=false</code> 异步模式，再通过 <code>task_id</code> 查询结果。</p>
+<p><strong>Q: 与 ADP CLI / OpenAPI 有什么区别？</strong></p>
+<p>A: 三者功能等价，区别仅在接入方式：</p>
+<table>
+<thead>
+<tr>
+<th>接入方式</th>
+<th>适合场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MCP Server</strong></td>
+<td>AI 客户端（Claude Desktop、Cursor 等）直接调用，无需写代码</td>
+</tr>
+<tr>
+<td><strong>ADP CLI</strong></td>
+<td>终端命令行、脚本自动化、AI Skill 集成</td>
+</tr>
+<tr>
+<td><strong>OpenAPI</strong></td>
+<td>业务系统集成、后端服务调用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>授权许可</h2>
+<ul>
+<li><strong>MCP Server</strong>：免费接入，作为 ADP 产品的一部分提供</li>
+<li><strong>ADP 服务</strong>：基于公有云的 AI 文档处理服务，按使用量计费</li>
+</ul>
+<p>免费额度：新用户注册后每月可获得 <strong>100 免费积分</strong></p>
+<p><a href="https://adp.laiye.com/?utm_source=github" target="_blank" rel="noopener">立即体验</a></p>
+<hr>
+<h2>支持与联系</h2>
+<ul>
+<li><strong>API 接口文档：</strong> <a href="https://laiye-tech.feishu.cn/wiki/PO9Jw4cH3iV2ThkMPW2c539pnkc" target="_blank" rel="noopener">Open API 使用指南</a></li>
+<li><strong>ADP 产品操作手册：</strong> <a href="https://laiye-tech.feishu.cn/wiki/UDYIwG42pisBbFkJI39ctpeKnWh" target="_blank" rel="noopener">公有云操作手册</a></li>
+<li><strong>邮箱：</strong> mkt@laiye.com</li>
+<li><strong>官网：</strong> <a href="https://laiye.com/product/adp-platform" target="_blank" rel="noopener">来也科技</a></li>
+</ul>
+<div align="center">
+<p><strong>用 ❤️ 构建智能体 AI 的未来</strong>
+版权所有 © 2026 [来也科技（北京）有限公司] 保留所有权利。</p>
+</div>
+</div></div></div></div></div></div></div><div class="cdc-widget-global"><div class="cdc-widget-global__btn code"><div class="cdc-widget-global__btn-tag">领券</div></div><div class="cdc-widget-global__btn top" style="visibility:hidden"></div></div><div class="cdc-footer"><div class="cdc-footer__inner"><div class="cdc-footer__main"><div class="cdc-footer__website"><ul class="cdc-footer__website-group"><li class="cdc-footer__website-column"><div class="cdc-footer__website-box"><h3 class="cdc-footer__website-title">社区</h3><ul class="cdc-footer__website-list"><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/column">技术文章</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/ask">技术问答</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/salon">技术沙龙</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/video">技术视频</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/learning">学习中心</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/techpedia">技术百科</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/zone/list">技术专区</a></li></ul></div></li><li class="cdc-footer__website-column"><div class="cdc-footer__website-box"><h3 class="cdc-footer__website-title">活动</h3><ul class="cdc-footer__website-list"><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/support-plan">自媒体同步曝光计划</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/support-plan-invitation">邀请作者入驻</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/article/1535830">自荐上首页</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/competition">技术竞赛</a></li></ul></div></li><li class="cdc-footer__website-column"><div class="cdc-footer__website-box"><h3 class="cdc-footer__website-title">圈层</h3><ul class="cdc-footer__website-list"><li class="cdc-footer__website-item"><a href="https://cloud.tencent.com/tvp" target="_blank">腾讯云最具价值专家</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/program/tm">腾讯云架构师技术同盟</a></li><li class="cdc-footer__website-item"><a href="https://developer.cloud.tencent.com/program/tci">腾讯云创作之星</a></li><li class="cdc-footer__website-item"><a href="https://cloud.tencent.com/tdp" target="_blank">腾讯云TDP</a></li></ul></div></li><li class="cdc-footer__website-column"><div class="cdc-footer__website-box"><h3 class="cdc-footer__website-title">关于</h3><ul class="cdc-footer__website-list"><li class="cdc-footer__website-item"><a rel="nofollow" href="https://developer.cloud.tencent.com/article/1006434">社区规范</a></li><li class="cdc-footer__website-item"><a rel="nofollow" href="https://developer.cloud.tencent.com/article/1006435">免责声明</a></li><li class="cdc-footer__website-item"><a rel="nofollow" href="mailto:cloudcommunity@tencent.com">联系我们</a></li><li class="cdc-footer__website-item"><a rel="nofollow" href="https://developer.cloud.tencent.com/friendlink">友情链接</a></li><li class="cdc-footer__website-item"><a rel="nofollow" href="https://developer.cloud.tencent.com/article/2537547">MCP广场开源版权声明</a></li></ul></div></li></ul></div><div class="cdc-footer__qr"><h3 class="cdc-footer__qr-title">腾讯云开发者</h3><div class="cdc-footer__qr-object"><img src="https://qcloudimg.tencent-cloud.cn/raw/a8907230cd5be483497c7e90b061b861.png?imageView2/2/w/200" class="cdc-footer__qr-image" alt="扫码关注腾讯云开发者"/></div><div class="cdc-footer__qr-infos"><p class="cdc-footer__qr-info"><span class="cdc-footer__qr-text">扫码关注腾讯云开发者</span></p><p class="cdc-footer__qr-info"><span class="cdc-footer__qr-text">领取腾讯云代金券</span></p></div></div></div><div class="cdc-footer__recommend"><div class="cdc-footer__recommend-rows"><div class="cdc-footer__recommend-cell"><h3 class="cdc-footer__recommend-title">热门产品</h3><div class="cdc-footer__recommend-wrap"><ul class="cdc-footer__recommend-list"><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/domain?from=20064&amp;from_column=20064" target="_blank">域名注册</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/cvm?from=20064&amp;from_column=20064" target="_blank">云服务器</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/tbaas?from=20064&amp;from_column=20064" target="_blank">区块链服务</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/message-queue-catalog?from=20064&amp;from_column=20064" target="_blank">消息队列</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/ecdn?from=20064&amp;from_column=20064" target="_blank">网络加速</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/tencentdb-catalog?from=20064&amp;from_column=20064" target="_blank">云数据库</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/dns?from=20064&amp;from_column=20064" target="_blank">域名解析</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/cos?from=20064&amp;from_column=20064" target="_blank">云存储</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/css?from=20064&amp;from_column=20064" target="_blank">视频直播</a></li></ul></div></div><div class="cdc-footer__recommend-cell"><h3 class="cdc-footer__recommend-title">热门推荐</h3><div class="cdc-footer__recommend-wrap"><ul class="cdc-footer__recommend-list"><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/facerecognition?from=20064&amp;from_column=20064" target="_blank">人脸识别</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/tm?from=20064&amp;from_column=20064" target="_blank">腾讯会议</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/act/pro/enterprise2022?from=20064&amp;from_column=20064" target="_blank">企业云</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/cdn?from=20064&amp;from_column=20064" target="_blank">CDN加速</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/trtc?from=20064&amp;from_column=20064" target="_blank">视频通话</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/imagerecognition?from=20064&amp;from_column=20064" target="_blank">图像分析</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/cdb?from=20064&amp;from_column=20064" target="_blank">MySQL 数据库</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/ssl?from=20064&amp;from_column=20064" target="_blank">SSL 证书</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/asr?from=20064&amp;from_column=20064" target="_blank">语音识别</a></li></ul></div></div><div class="cdc-footer__recommend-cell"><h3 class="cdc-footer__recommend-title">更多推荐</h3><div class="cdc-footer__recommend-wrap"><ul class="cdc-footer__recommend-list"><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/solution/data_protection?from=20064&amp;from_column=20064" target="_blank">数据安全</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/clb?from=20064&amp;from_column=20064" target="_blank">负载均衡</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/sms?from=20064&amp;from_column=20064" target="_blank">短信</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/ocr?from=20064&amp;from_column=20064" target="_blank">文字识别</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/vod?from=20064&amp;from_column=20064" target="_blank">云点播</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/bigdata-class?from=20064&amp;from_column=20064" target="_blank">大数据</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/solution/la?from=20064&amp;from_column=20064" target="_blank">小程序开发</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/tcop?from=20064&amp;from_column=20064" target="_blank">网站监控</a></li><li class="cdc-footer__recommend-item"><a class="com-2-footer-recommend-link" href="https://cloud.tencent.com/product/cdm?from=20064&amp;from_column=20064" target="_blank">数据迁移</a></li></ul></div></div></div></div><div class="cdc-footer__copyright"><div class="cdc-footer__copyright-text"><p>Copyright © 2013 - <!-- -->2026<!-- --> Tencent Cloud. All Rights Reserved. 腾讯云 版权所有 </p><p style="line-height:22px;display:inline-flex;align-items:center"><a href="https://qcloudimg.tencent-cloud.cn/raw/986376a919726e0c35e96b311f54184d.jpg" target="_blank">深圳市腾讯计算机系统有限公司</a><span> ICP备案/许可证号：</span><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">粤B2-20090059 </a><img width="14" src="https://qcloudimg.tencent-cloud.cn/raw/eed02831a0e201b8d794c8282c40cf2e.png" style="margin-right:5px"/><a href="https://beian.mps.gov.cn/#/query/webSearch?code=44030502008569" target="_blank">粤公网安备44030502008569号</a></p><p><a href="https://qcloudimg.tencent-cloud.cn/raw/a2390663ee4a95ceeead8fdc34d4b207.jpg" target="_blank">腾讯云计算（北京）有限责任公司</a> 京ICP证150476号 |  <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备11018762号</a></p></div></div></div></div><div style="display:none"><a href="https://developer.cloud.tencent.com/ask/archives.html">问题归档</a><a href="https://developer.cloud.tencent.com/column/archives.html">专栏文章</a><a href="https://developer.cloud.tencent.com/news/archives.html">快讯文章归档</a><a href="https://developer.cloud.tencent.com/information/all.html">关键词归档</a><a href="https://developer.cloud.tencent.com/devdocs/archives.html">开发者手册归档</a><a href="https://developer.cloud.tencent.com/devdocs/sections_p1.html">开发者手册 Section 归档</a></div></div></div></div><script>
+          if (!String.prototype.replaceAll) {
+            String.prototype.replaceAll = function (str, newStr) {
+              // If a regex pattern
+              if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+                return this.replace(str, newStr);
+              }
+        
+              // If a string
+              return this.replace(new RegExp(str, 'g'), newStr);
+            };
+          }
+          </script><script src="https://developer.qcloudimg.com/static/jquery.min.js"></script><script src="https://cloud.tencent.com/qccomponent/login/api.js"></script><script src="https://cloudcache.tencent-cloud.com/qcloud/main/scripts/release/common/vendors/react/react.16.8.6.min.js"></script><script src="https://dscache.tencent-cloud.com/sdk/dianshi-sdk/loader/umd/dianshi-sdk-loader.v0.0.18.js"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"isMobile":false,"isSupportWebp":false,"currentDomain":"developer.cloud.tencent.com","baseUrl":"https://developer.cloud.tencent.com","reqId":"i8VDWT7fa52BVglKPfxIG","query":{"id":"11820"},"platform":"other","env":"production","__N_SSP":true,"pageProps":{"detail":{"abstract":"ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。","categoryIds":[111],"categoryList":[],"createdAt":"2026-06-24 14:29:19","iconUrl":"https://developer.qcloudimg.com/operation/attachment/900005/20260624-2674668f.png","isHosted":0,"isVerified":0,"mcpId":11820,"mcpName":"Agentic Document Processing MCP","mcpParams":[],"rawReadme":"","readNum":223,"readme":"\n## 关于 ADP MCP Server\n\nADP MCP Server 是来也科技**智能体文档处理产品 (Agentic Document Processing，简称 ADP)** 的 Model Context Protocol 服务端，让任何支持 MCP 协议的 AI 客户端（Claude Desktop、Cursor、Copilot Chat、通义灵码、Coze 等）无需编写代码即可调用 ADP 的文档解析与抽取能力。与 CLI 工具不同，MCP Server 以 **Streamable HTTP** 传输运行，一条连接即可发现所有可用工具、调用处理、查询结果——完全在对话窗口内完成。\n\nADP 产品深度融合视觉语言模型（VLM）、大语言模型（LLM）与智能体自主决策技术，彻底颠覆传统文档处理模式，将行业沿用多年的规则驱动的机械字段抽取，全面升级为目标驱动的全流程智能自动化。产品专注于各类业务单据智能化处理，可对海外发票、国内票据、采购合同、物流单据、金融报表、交易合同等文件自动分类并精准抽取关键字段，同时支持表格解析、内容核验与多语种识别，无需人工搭建模板、标注数据和维护规则，高效完成大批量文档处理工作。\n\n\n---\n\n## 快速接入\n\n### 1. 获取 API Key\n\n访问 [https://adp.laiye.com/](https://adp.laiye.com/?utm_source=github) 注册 ADP 账号，在个人设置「我的MCP」中获取 API Key。\n\n\n### 2. 配置 MCP 客户端\n\n#### 方式一：可视化界面配置（推荐）\n\n大多数 MCP 客户端（Cursor、通义灵码、Coze 等）支持在设置界面直接添加 MCP 服务。以 Cursor 为例：\n\n1. 打开 **Settings → MCP**\n2. 点击 **Add new MCP server**\n3. 填写以下信息：\n   - **Name**：`ADP`（自定义名称）\n   - **Type**：`streamable-http`\n   - **URL**：`https://adp.laiye.com/mcp?key=\u003cYOUR-ADP-API-Key\u003e`\n4. 保存后即可在对话中使用 ADP 工具\n\n#### 方式二：编辑配置文件\n\n以 Claude Desktop 为例，在 `claude_desktop_config.json` 中添加：\n\n```json\n{\n  \"mcpServers\": {\n    \"adp\": {\n      \"url\": \"https://adp.laiye.com/mcp?key=\u003cYOUR-ADP-API-Key\u003e\",\n      \"transport\": \"streamable-http\"\n    }\n  }\n}\n```\n\n其他客户端配置方式同理，核心参数：\n\n| 参数 | 值 |\n|------|---|\n| **Endpoint** | `https://adp.laiye.com/mcp` |\n| **Transport** | Streamable HTTP |\n| **认证方式** | URL Query `?key=\u003cYOUR-ADP-API-Key\u003e` |\n\n\u003e 私有部署环境请将域名替换为实际服务地址。\n\n### 3. 开始使用\n\n连接成功后，AI 客户端会自动发现所有可用的 ADP 工具。直接在对话中描述你的需求即可，例如：\n\n- \"帮我解析这份 PDF 的结构\"\n- \"提取这张身份证的信息\"\n- \"从这张发票里抽取金额和日期\"\n\n---\n\n## 工具列表\n\n### 文档解析\n\n| 工具名 | 标题 | 说明 |\n|--------|------|------|\n| `parse_document` | 通用文档解析 | 对 PDF、图片、Word、Excel、PPT 等文档进行版面解析，返回结构化的文本块、表格、阅读顺序与页面坐标。适用于不确定文档类型、需要先获取原始结构再做后续处理的场景；如已确认是发票、证件等特定类型，请优先使用对应的专用提取工具。 |\n\n### 票据与订单抽取\n\n| 工具名 | 标题 | 说明 |\n|--------|------|------|\n| `extract_china_invoice` | 中国票据 | 覆盖中国地区 30+ 种常见票据：支持全电发票、普通发票、专用发票、出租车票、火车票、飞机行程单、财政发票等财务场景常见票据。可从票据中提取发票号码、开票日期、金额、购买方、销售方等关键信息，以及支持判断发票真假。 |\n| `extract_global_invoice` | 海外发票/收据 | 从 PDF 或图片格式的海外发票、收据、票据中提取关键字段（发票号、开票日期、金额、税额、币种、明细行等）。适用于跨境贸易、报销、应付账款自动化等场景；中国大陆增值税发票请使用专门的国内发票工具。 |\n| `extract_purchase_order` | 订单 | 从 PDF 或图片格式的采购订单、销售订单中提取关键字段（订单号、买卖双方信息、下单日期、商品明细、数量、单价、总金额、收货地址等）。适用于电商订单录入、供应链对账、出入库管理自动化等场景。 |\n\n### 卡证抽取\n\n| 工具名 | 标题 | 说明 |\n|--------|------|------|\n| `extract_id_card` | 身份证 | 从中国大陆居民身份证图片中提取关键字段（姓名、性别、民族、出生日期、身份证号、住址、签发机关、有效期等），支持正反面识别。适用于实名认证、用户注册等场景。 |\n| `extract_bank_card` | 银行卡 | 从银行卡正面图片中提取关键字段（卡号、所属银行、卡种类型、有效期等）。适用于绑卡、收款账户录入、支付渠道配置等场景。注意：仅识别卡面公开信息，不涉及 CVV 等敏感字段。 |\n| `extract_vehicle_cert` | 车辆合格证 | 从机动车整车出厂合格证图片中提取关键字段（合格证编号、车辆品牌、型号、车辆识别代号 VIN、发动机号、制造日期等）。适用于车辆上户、二手车交易、车辆资产管理等场景。 |\n| `extract_account_permit` | 开户许可证 | 从企业开户许可证图片中提取关键字段（企业名称、基本账户账号、开户银行、核准号、发证日期等）。适用于对公收款账户校验、企业财务审核、应付账款收款方信息核对等场景。 |\n| `extract_driver_license` | 驾驶证 | 从中国机动车驾驶证图片中提取关键字段（姓名、性别、国籍、出生日期、驾驶证号、准驾车型、初次领证日期、有效期等），支持正副页识别。适用于驾驶员资质核验、网约车/货运司机准入审核等场景。 |\n| `extract_business_license` | 营业执照 | 从中国企业营业执照图片中提取关键字段（企业名称、统一社会信用代码、法定代表人、注册资本、成立日期、经营范围、注册地址等）。适用于企业开户、商户入驻、供应商资质审核、企业实名认证等场景。 |\n| `extract_passport_cn` | 护照-中国 | 从中华人民共和国护照图片中提取关键字段（中文姓名、姓名拼音、性别、出生日期、护照号、国籍、签发日期、有效期、签发机关等）。适用于出境业务、跨境身份核验、签证办理等场景；外国护照不在支持范围内。 |\n| `extract_vehicle_license` | 行驶证 | 从中国机动车行驶证图片中提取关键字段（车牌号、车辆类型、所有人、车辆识别代号 VIN、发动机号、注册日期、发证日期等），支持正副页识别。适用于车辆登记、保险投保、网约车/货运车辆准入等场景。 |\n| `extract_org_code_cert` | 组织机构代码证 | 从组织机构代码证图片中提取关键字段（机构名称、组织机构代码、法定代表人、地址、发证日期、有效期等）。适用于历史档案数字化、存量企业资质核验等场景；新办企业建议使用营业执照工具。 |\n| `extract_household_book` | 户口本 | 从中国居民户口本图片中提取关键字段（户号、户别、住址、家庭成员列表，含成员姓名、身份证号、与户主关系等），支持首页与个人页两种页面类型。适用于户籍核验、亲属关系认证、社保业务等场景。 |\n| `extract_hk_macao_permit` | 港澳通行证 | 从港澳通行证（往来港澳通行证）图片中提取关键字段（姓名、性别、出生日期、证件号、签发日期、有效期、签发机关等）。适用于出入境业务、酒店登记、票务实名等场景。 |\n\n### 自定义抽取\n\n除上述开箱即用工具外，MCP 提供两个固定工具来使用你在 ADP 平台上创建的自定义抽取应用：\n\n| 工具名 | 标题 | 说明 |\n|--------|------|------|\n| `list_custom_extract_apps` | 列出自定义抽取应用 | 列出当前用户创建的所有自定义文档抽取应用，返回每个应用的 ID、名称、描述、标签和输出字段定义。可用于查找 `execute_custom_extract_app` 所需的 `app_id`。 |\n| `execute_custom_extract_app` | 执行自定义抽取应用 | 使用指定的自定义文档抽取应用处理文件。需先通过 `list_custom_extract_apps` 获取可用的 `app_id`。 |\n\n**使用流程：** 先调用 `list_custom_extract_apps` 查看可用应用列表，获取目标应用的 `app_id`，再调用 `execute_custom_extract_app` 传入 `app_id` 与文件进行抽取。\n\n---\n\n## 工具输入参数\n\n### 文档解析与 OOTB 抽取工具\n\n所有开箱即用工具共享统一的输入 Schema：\n\n| 参数 | 类型 | 必填 | 说明 |\n|------|------|------|------|\n| `file` | string | 是 | 文件 URL 或 Base64 编码内容 |\n| `file_name` | string | 否 | 文件名（含扩展名） |\n| `with_rec_result` | boolean | 否 | 是否包含 OCR 中间结果，默认 `true` |\n| `wait` | boolean | 否 | 是否同步等待结果，默认 `true` |\n| `timeout_seconds` | integer | 否 | 同步等待超时秒数，默认 `300`，范围 1–900 |\n\n### execute_custom_extract_app\n\n在上述参数基础上增加：\n\n| 参数 | 类型 | 必填 | 说明 |\n|------|------|------|------|\n| `app_id` | string | 是 | 自定义抽取应用 ID（通过 `list_custom_extract_apps` 获取） |\n\n### list_custom_extract_apps\n\n无需输入参数。\n\n**文件传入方式：**\n\n- **URL**：`file` 传入以 `http://`、`https://`、`file://` 开头的可访问链接\n- **Base64**：`file` 传入 Base64 编码的文件内容（非 URL 格式时自动识别）\n\n**同步 vs 异步：**\n\n- `wait=true`（默认）：阻塞等待处理完成，直接返回结果\n- `wait=false`：立即返回 `task_id`，后续可查询任务状态\n\n---\n\n## 工具输出\n\n### parse_document 输出\n\n```json\n{\n  \"task_id\": \"fabd7f0a4e7211f1bbc4d85ed35661fd\",\n  \"status\": 4,\n  \"message\": \"\",\n  \"doc_recognize_result\": [\n    {\n      \"page_num\": 1,\n      \"document_content\": \"Full text content of this page...\",\n      \"document_details\": [\n        {\n          \"type\": \"Text\",\n          \"text\": \"Paragraph content...\",\n          \"position\": [{\"points\": [{\"x\": 311, \"y\": 50}, {\"x\": 500, \"y\": 50}, {\"x\": 500, \"y\": 80}, {\"x\": 311, \"y\": 80}]}],\n          \"ocr_confidence\": {\n            \"ocr_mean_confidence\": 0.999,\n            \"ocr_min_confidence\": 0.998,\n            \"is_overall_confidence\": 1\n          }\n        },\n        {\n          \"type\": \"Table\",\n          \"text\": \"Column A\\tColumn B\\nValue 1\\tValue 2\",\n          \"position\": [{\"points\": [...]}],\n          \"ocr_confidence\": {...}\n        },\n        {\n          \"type\": \"Picture\",\n          \"text\": \"https://adp.laiye.com/web/.../file/abc123\",\n          \"position\": [{\"points\": [...]}],\n          \"ocr_confidence\": {...}\n        }\n      ]\n    }\n  ]\n}\n```\n\n| 字段 | 类型 | 说明 |\n|------|------|------|\n| `task_id` | string | 任务 ID |\n| `status` | integer | 任务状态码 |\n| `message` | string | 状态消息 |\n| `doc_recognize_result` | array | 各页识别结果 |\n| `doc_recognize_result[].page_num` | integer | 页码（1 起始） |\n| `doc_recognize_result[].document_content` | string | 该页完整文本（按阅读顺序） |\n| `doc_recognize_result[].document_details` | array | 元素级详情 |\n| `document_details[].type` | string | 元素类型：`Text`、`Table`、`Picture` |\n| `document_details[].text` | string | 文本内容；Picture 类型为图片 URL |\n| `document_details[].position` | array | 边界框坐标（4 个角点） |\n| `document_details[].ocr_confidence.ocr_mean_confidence` | float | 平均 OCR 置信度 (0–1) |\n| `document_details[].ocr_confidence.ocr_min_confidence` | float | 最低 OCR 置信度 (0–1) |\n\n### extract 类工具输出\n\n```json\n{\n  \"task_id\": \"91283e544e7111f18cd6d85ed35661fd\",\n  \"status\": 4,\n  \"message\": \"\",\n  \"extraction_result\": [\n    {\n      \"field_key\": \"invoice_number\",\n      \"field_name\": \"发票号码\",\n      \"field_values\": [\n        {\n          \"field_value\": \"24VLT0591617\",\n          \"field_confidence\": 1.0,\n          \"references\": []\n        }\n      ]\n    },\n    {\n      \"field_key\": \"line_items\",\n      \"field_name\": \"商品明细\",\n      \"references\": [],\n      \"field_confidence\": 1.0,\n      \"table_values\": [\n        [\n          {\n            \"field_name\": \"商品名称\",\n            \"field_key\": \"line_items_description\",\n            \"field_values\": [\n              {\n                \"field_value\": \"TESLA MODEL 3\",\n                \"field_confidence\": 1.0,\n                \"references\": \"Description: TESLA MODEL 3\"\n              }\n            ]\n          }\n        ]\n      ]\n    }\n  ]\n}\n```\n\n**普通字段**（无 `table_values`）：\n\n| 字段 | 类型 | 说明 |\n|------|------|------|\n| `field_key` | string | 字段标识 |\n| `field_name` | string | 字段名称 |\n| `field_values` | array | 提取值列表 |\n| `field_values[].field_value` | string | 提取值 |\n| `field_values[].field_confidence` | float | 置信度 (0–1) |\n\n**表格字段**（含 `table_values`）：\n\n| 字段 | 类型 | 说明 |\n|------|------|------|\n| `field_key` | string | 表格标识 |\n| `field_name` | string | 表格名称 |\n| `table_values` | array\\[array\\] | 二维数组：每行是一个单元格数组，每个单元格含 `field_name`、`field_key`、`field_values` |\n\n**判断方式：** 字段对象包含 `table_values` → 表格字段；仅含 `field_values` → 普通字段。\n\n### 异步返回（`wait=false`）\n\n```json\n{\n  \"task_id\": \"fabd7f0a4e7211f1bbc4d85ed35661fd\",\n  \"status\": \"running\"\n}\n```\n\n---\n\n## 任务状态码\n\n| 状态码 | MCP 状态 | 说明 |\n|--------|----------|------|\n| 0 | running | 未知 |\n| 1 | running | 就绪/排队中 |\n| 2 | running | 处理中 |\n| 4 | success | 成功 |\n| 5 | failed | 失败 |\n| 6 | failed | 已取消 |\n\n---\n\n## 支持的文件格式\n\n| 格式 | 扩展名 | 说明 |\n|------|--------|------|\n| PDF | `.pdf` | 支持扫描件与电子版 |\n| 图片 | `.jpg` `.jpeg` `.png` `.bmp` `.tiff` `.webp` | 支持手机拍摄件 |\n| Word | `.doc` `.docx` | - |\n| Excel | `.xls` `.xlsx` | - |\n| PPT | `.ppt` `.pptx` | - |\n\n---\n\n## 认证说明\n\nADP MCP Server 使用 API Key 认证，通过 URL Query 参数传递：\n\n```\nhttps://adp.laiye.com/mcp?key=\u003cYOUR-ADP-API-Key\u003e\n```\n\n- API Key 可在 ADP 控制台「我的MCP」页面获取\n- 每个 API Key 绑定一个用户，仅可访问该用户下的应用与数据\n- API Key 不会出现在请求体或响应中，仅用于认证\n\n---\n\n## 常见问题\n\n**Q: MCP 连接后看不到某些卡证工具？**\n\nA: 工具列表按当前用户的已初始化应用动态生成。首次连接时系统会自动初始化所有开箱即用应用，初始化完成后刷新工具列表即可看到全部工具。\n\n**Q: 卡证工具返回「文档抽取失败」？**\n\nA: 请确认上传的文件与工具类型匹配（例如：身份证图片使用 `extract_id_card`，不要用 `extract_vehicle_cert`）。文件格式需为支持的图片或 PDF。\n\n**Q: 超时怎么处理？**\n\nA: 默认超时 300 秒（5 分钟），可通过 `timeout_seconds` 参数调整（最大 900 秒）。大文件或复杂文档建议使用 `wait=false` 异步模式，再通过 `task_id` 查询结果。\n\n**Q: 与 ADP CLI / OpenAPI 有什么区别？**\n\nA: 三者功能等价，区别仅在接入方式：\n\n| 接入方式 | 适合场景 |\n|----------|----------|\n| **MCP Server** | AI 客户端（Claude Desktop、Cursor 等）直接调用，无需写代码 |\n| **ADP CLI** | 终端命令行、脚本自动化、AI Skill 集成 |\n| **OpenAPI** | 业务系统集成、后端服务调用 |\n\n---\n\n## 授权许可\n\n- **MCP Server**：免费接入，作为 ADP 产品的一部分提供\n- **ADP 服务**：基于公有云的 AI 文档处理服务，按使用量计费\n\n免费额度：新用户注册后每月可获得 **100 免费积分**\n\n[立即体验](https://adp.laiye.com/?utm_source=github)\n\n---\n\n## 支持与联系\n\n- **API 接口文档：** [Open API 使用指南](https://laiye-tech.feishu.cn/wiki/PO9Jw4cH3iV2ThkMPW2c539pnkc)\n- **ADP 产品操作手册：** [公有云操作手册](https://laiye-tech.feishu.cn/wiki/UDYIwG42pisBbFkJI39ctpeKnWh)\n- **邮箱：** mkt@laiye.com\n- **官网：** [来也科技](https://laiye.com/product/adp-platform)\n\n\u003cdiv align=\"center\"\u003e\n\n**用 ❤️ 构建智能体 AI 的未来**\n版权所有 © 2026 [来也科技（北京）有限公司] 保留所有权利。\n\n\u003c/div\u003e\n","relatedObjects":[],"samplePrompts":[],"source":0,"srcAuthor":"来也科技（北京）有限公司","srcSite":"","srcUrl":"","status":2,"title":"智能体文档解析与抽取 MCP","tools":"[]","updatedAt":"2026-11-02 08:35:39"},"cssName":["MCP"],"tdk":{"title":"智能体文档解析与抽取 MCP - 腾讯云","keywords":"智能体文档解析与抽取 MCP","description":"ADP MCP Server 是来也科技智能体文档处理产品 (Agentic Document Processing，简称 ADP) 的 Model Context Protocol 服务端。"},"pvId":"i8VDWT7fa52BVglKPfxIG","clientIp":"undefined","globalAnnounce":{"announceId":0},"rbConfig":{"versionUpdateTipList":[{"id":1008,"title":"一站式MCP教程库，解锁AI应用新玩法","description":"涵盖代码开发、场景应用、自动测试全流程，助你从零构建专属AI助手","start_time":"2025/09/08 00:00:00","end_time":"2025/10/08 23:59:59","url":"https://cloud.tencent.com/developer/special/mcp?from=28419\u0026from_column=28419"},{"id":1009,"title":"社区富文本\u0026Markdown编辑器全新改版上线，欢迎大家体验!","description":"聚焦“写作效率、视觉美观与运行性能”三方面进行全面升级，为您提供更高效、稳定的创作环境","start_time":"2025/11/17 00:00:00","end_time":"2025/11/20 23:59:59","url":"https://cloud.tencent.com/developer/article/write?fromchannel=update_notice"},{"id":1010,"title":"社区新版编辑器体验调研","description":"诚挚邀请您参与本次调研，分享您的真实使用感受与建议。您的反馈至关重要，感谢您的支持与参与！","start_time":"2025/12/01 00:00:00","end_time":"2025/12/05 23:59:59","url":"https://doc.weixin.qq.com/forms/AJEAIQdfAAoAVIAoAZxAL0CN9ODn0Xvaf?page=1"}],"navList":[{"text":"学习","menuList":[{"iconName":"article","title":"文章","desc":"技术干货聚集地","href":"/developer/column?from=19154"},{"iconName":"ask","title":"问答","desc":"技术问题讨论区","href":"/developer/ask?from=19155"},{"iconName":"video","title":"视频","desc":"技术视频记录区","href":"/developer/video?from=19156"},{"iconName":"https://qccommunity.qcloudimg.com/icons/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0.svg","title":"教程","desc":"技术学习实践区","href":"/developer/tutorial/practice"},{"iconName":"learn","title":"学习中心","desc":"一站式学习平台","href":"/developer/learning"},{"iconName":"lab","title":"腾讯云实验室","desc":"体验腾讯云产品功能","href":"/lab/labslist?from=20154\u0026from_column=20154\u0026channel=c1004\u0026sceneCode=dev"}]},{"text":"活动","menuList":[{"iconName":"living","title":"直播","desc":"技术大咖面对面","href":"/developer/salon?from=19161"},{"iconName":"competition","title":"竞赛","desc":"秀出你的技术影响力","href":"/developer/competition?from=19162"}]},{"text":"专区","menuList":[{"iconName":"https://qccommunity.qcloudimg.com/icons/demo-analyze.svg","title":"腾讯云代码分析专区","desc":"关注每行代码迭代","href":"/developer/zone/tencentcloudcodeanalysis"},{"iconName":"https://qccommunity.qcloudimg.com/icons/ioa.svg","title":"腾讯iOA零信任安全管理系统专区","desc":"腾讯自研自用的办公安全一体化平台","href":"/developer/zone/zerotrustsecuritymanagement"},{"iconName":"https://qccommunity.qcloudimg.com/icons/tm-zone.svg","title":"腾讯云架构师技术同盟交流圈","desc":"架构行家智汇，海量一线案例","href":"/developer/zone/tm"},{"iconName":"https://qcloudimg.tencent-cloud.cn/raw/1deae15bfe2dcdd1036f601852df7dd2.svg","title":"腾讯云数据库专区","desc":"数据智能管理专家","href":"/developer/zone/tencentdb"},{"iconName":"https://qccommunity.qcloudimg.com/icons/cloud_assistant.svg","title":"腾讯云智能顾问专区","desc":"实现便捷、灵活的一站式云上治理","href":"/developer/zone/tencentcloudsmartadvisor"},{"iconName":"cloudnative","title":"腾讯云原生专区","desc":"助力业务降本增效","href":"/developer/zone/cloudnative?from=19164"},{"iconName":"https://qccommunity.qcloudimg.com/icons/tencenthunyuan.svg","title":"腾讯混元专区","desc":"具备强大的中文创作、逻辑推理、任务执行能力","href":"/developer/zone/tencenthunyuan"},{"iconName":"https://qcloudimg.tencent-cloud.cn/raw/1d60f881ef280ea992e2e4b6490d974b.svg","title":"腾讯云TCE专区","desc":"私有化云解决方案","href":"/developer/zone/tce"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/lighthouse.svg","title":"腾讯云Lighthouse专区","desc":"新一代开箱即用、面向轻量应用场景的云服务器","href":"/developer/zone/lighthouse"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/HAi.svg","title":"腾讯云HAI专区","desc":"提供即插即用的高性能云服务","href":"/developer/zone/hai"},{"iconName":"https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/b3e1b483-be77-4e08-827f-ef0e5cda26cf.svg","title":"腾讯云Edgeone专区","desc":"下一代CDN—EdgeOne，不止加速","href":"/developer/zone/tencentcloudedgeone"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/cos.svg","title":"腾讯云存储专区","desc":"安全稳定的海量分布式存储服务","href":"/developer/zone/cos"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/ai.svg","title":"腾讯云智能专区","desc":"数实融合，云上智能","href":"/developer/zone/ai"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/ipass.svg","title":"腾讯轻联专区 ","desc":"新一代应用与数据集成平台","href":"/developer/zone/ipaas"},{"iconName":"https://qccommunity.qcloudimg.com/image/cloudbase.svg","title":"腾讯云开发专区","desc":"云原生一体化开发平台","href":"/developer/zone/tencentcloudbase"},{"iconName":"https://qccommunity.qcloudimg.com/image/TAPD.svg","title":"TAPD专区","desc":"让协作更敏捷","href":"/developer/zone/tapd"},{"iconName":"https://qccommunity.qcloudimg.com/icons/game.svg","title":"腾讯轻量云游戏服专区","desc":"一键开服，畅快开玩，稳定可靠的游戏服务器","href":"/developer/zone/lightgame"},{"iconName":"https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/b3e1b483-be77-4e08-827f-ef0e5cda26cf.svg","title":"EdgeOne AI 安全实战专区","desc":"免费开启安全防护","href":"/developer/zone/edgeoneaisecurity"}]},{"text":"圈层","menuList":[{"iconName":"https://qccommunity.qcloudimg.com/community/image/sphereExpert.svg","title":"腾讯云最具价值专家","desc":"汇聚行业顶级技术专家，用科技影响世界","href":"/tvp"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/sphereAlliance.svg","title":"腾讯云架构师技术同盟","desc":"同盟共创，关注每位架构师成长","href":"/developer/program/tm"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/sphereStar.svg","title":"腾讯云创作之星","desc":"做知识摆渡人，共造技术普惠加速度","href":"/developer/program/tci"},{"iconName":"https://qccommunity.qcloudimg.com/community/image/spherePioneer.svg","title":"腾讯云开发者先锋","desc":"聚技术先锋之力，携开发者共拓产品新界","href":"~/tdp"}]},{"text":"工具","menuList":[{"iconName":"https://qccommunity.qcloudimg.com/icons/ai-assistant.svg","title":"腾讯云代码助手","desc":"辅助编码工具，使研发提效增质","href":"/product/acc?from=22178"},{"iconName":"https://qccommunity.qcloudimg.com/icons/CNB.svg","title":"云原生构建","desc":"帮助开发者以更酷的方式构建软件","href":"/product/cnb?Is=sdk-topnav"},{"iconName":"https://qccommunity.qcloudimg.com/image/TAPD.svg","title":"TAPD 敏捷项目管理","desc":"让协作更敏捷","href":"/product/tapd?Is=sdk-topnav"},{"iconName":"studio","title":"Cloud Studio","desc":"随时随地在线协作开发","href":"https://cloudstudio.net/"},{"iconName":"sdk","title":"SDK中心","desc":"开发者语言与SDK","href":"/document/sdk?from=20154\u0026from_column=20154"},{"iconName":"api","title":"API中心","desc":"API 助力快捷使用云产品","href":"/document/api?from=20154\u0026from_column=20154"},{"iconName":"tool","title":"命令行工具","desc":"可快速调用管理云资源","href":"/document/product/440/6176?from=20154\u0026from_column=20154"}]}],"activity-popup":{"mImgUrl":"https://qccommunity.qcloudimg.com/mp/images/11-11mobile.jpg","imgUrl":"https://qccommunity.qcloudimg.com/mp/images/11-11pc.jpg","beginTime":"2024/10/24 00:00:00","endTime":"2024/10/31 23:59:59"},"header-advertisement":{"imageUrl":"https://qccommunity.qcloudimg.com/image/2024-11-01-18-15.png","link":"https://cloud.tencent.com/act/pro/double11-2024?from=22374\u0026from_column=22374#miaosha"}},"isBot":false,"session":{"isLogined":false,"isQCloudLogined":false,"isQCommunityLogined":false,"isDifferentUin":false,"editMode":"rich"}}},"page":"/mcp/server/[id]","query":{"id":"11820"},"buildId":"cuZM2K64kkamALj2LRvUg","assetPrefix":"https://qccommunity.qcloudimg.com/community","isFallback":false,"gssp":true,"appGip":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,202 @@
+{
+  "decision": "produce",
+  "independentSearch": [
+    {
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "query": "technology AI announcements November 2 2026 official model open source / 科技 2026年11月2日 发布 开源 芯片",
+      "result": "第一轮独立检索，命中模型目录、行业转载、预测日程，未以搜索标题作发布证据；未发现足够可靠的当天旗舰官宣。"
+    },
+    {
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "query": "November 2, 2026 release model AI / 2026年11月2日 发布 科技",
+      "url": "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2",
+      "result": "主动发现xAI图像接口迁移，读取官方文档，属于接口别名与价格默认值变化，降为备选。"
+    },
+    {
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "query": "近期材料/能源/芯片与科技进展，核对原始发布",
+      "url": "https://www.iluvatar.com/news",
+      "result": "查到天垓300媒体演示线索，官方站新闻列表此次未返回该活动可读原文；不得采用未经核实的全负载性能结论。检索未全面覆盖所有领域。"
+    },
+    {
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "query": "site.cas.cn 2026-11-02 材料 能源 / site.nature.com 02 November 2026 energy materials / 60MW 液态空气 中国绿发 2026 并网",
+      "url": "https://www.thepaper.cn/newsDetail_forward_34384486",
+      "result": "补充检索材料/能源，发现格尔木60MW液态空气储能10月30日并网、11月1日项目参与方政务号跟进；作为工程专题备选，未因非AI排除。"
+    },
+    {
+      "checkedAt": "2026-11-02T04:50:06.266685+00:00",
+      "query": "AI news November 2 2026 model release / 2026-11-02 AI 发布 模型；回溯LongCat官方更新日志与发布页",
+      "url": "https://longcat.ai/platform/docs/change-log",
+      "result": "主动补查发现LongCat-2.5正式版：官方发布页11月1日，接口更新日志11月2日；与9月25日Preview区别明确。替换原头条，非无新事可讲。"
+    },
+    {
+      "checkedAt": "2026-11-02T04:50:06.266685+00:00",
+      "query": "天垓300 H200 1.05 天数智芯官方、产品页、上海仪电测试、媒体开放日",
+      "url": "https://www.iluvatar.com/productDetails?fullCode=cpjs-yj-xlxl-tg300",
+      "result": "厂商产品页和产品图可读；本次未取得原始测试报告及比较条件。转载和多篇媒体引述不能替代原报告，性能结论仍待核实，不入正式稿。"
+    },
+    {
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00",
+      "query": "2026-11-02 AI科技发布；GDPx原站与方法；Google Genie/Carbon官方；Anthropic官方安全研究；与10/27—11/1工程稿件去重",
+      "sources": [
+        "https://gdpx.semianalysis.com/",
+        "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude"
+      ],
+      "result": "GDPx发布日期11月2日09:51北京时间，206任务/11领域与混合评分已读；Genie4官方日期10月27日，列近期补报，未在既有narration/selection命中；Carbon已在10/29报道，不能重复首发；Anthropic安全研究10/27旧事转备选。不是今天只有三条消息的全面性结论。"
+    }
+  ],
+  "documentSupplement": [
+    {
+      "url": "https://feishu.doubao.com/docx/WXjSdNCoboPqcjxCzy9cyvQqn2c",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "scope": "实际滚动读取八部分及14项来源至页尾，evidence/browser-observations.md",
+      "result": "补充DSH-Android、CORAL和ClickHouse，分别回溯项目/论文/官方公告，不默认全部入片。"
+    }
+  ],
+  "selected": [
+    {
+      "id": "longcat",
+      "tier": "当日重点",
+      "title": "美团LongCat-2.5正式版开放接口",
+      "url": "https://longcat.ai/platform/docs/change-log",
+      "reason": "正式版接口在11月2日开放，原生视觉与长任务编程有新变化，已有官方演示文件可说明具体用途；不用参数量或单纯正式上线包装领先结论。",
+      "eventDate": "2026-11-02",
+      "limits": "发布页标11月1日，API更新日志11月2日；GitHub/HuggingFace仍敬请期待，不称已开源。演示为官方选例，非本栏目实测。"
+    },
+    {
+      "id": "carbon",
+      "tier": "用户指定近期补充",
+      "title": "谷歌Gemini4 Carbon强调长任务与网络安全能力",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "eventDate": "2026-10-28",
+      "reason": "用户明确要求加入；与本期复杂任务和新评测主题相连，已报道过仍按用户指令补充，但不改写日期或伪称新增开放。",
+      "limits": "厂商报告的性能与对应评测条件分开；初期面向部分安全防御人员及可信伙伴，不称所有用户已可用。"
+    },
+    {
+      "id": "gdpx",
+      "tier": "当日重点",
+      "title": "GDPx用复杂专业工作环境检验前沿智能体",
+      "url": "https://gdpx.semianalysis.com/",
+      "eventDate": "2026-11-02",
+      "reason": "新增评测把模型放进芯片设计、硬件、法律等复杂环境；可解释为什么会写答案不等于可靠完成整项工作，能改变观众对能力排行的理解。",
+      "limits": "206任务、11领域，默认Score按各领域等权，混合二元/连续评分、三次尝试均值；12%是该评测综合得分，不是现实工作成功率，不能等同ECI。"
+    },
+    {
+      "id": "genie4",
+      "tier": "近期补报",
+      "title": "Google Genie4生成可交互世界并支持原生声音",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "eventDate": "2026-10-27",
+      "reason": "自然语言在运行中改变场景、生成同步声音，变化直观，面向游戏原型/仿真有独立信息；明确是近期重要进展，不冒充11月2日首发。",
+      "limits": "仅研究预览/可信测试者，非所有人可用；交互为几分钟级，一致性、复杂交互、文字和声音准确性仍有限，不能说替代游戏引擎或证明理解物理。"
+    }
+  ],
+  "rejected": [
+    {
+      "title": "GPT-6.2 Astra / Mythos5.5泄密",
+      "reason": "文档自己标为爆料，未取得官方发布证据，不以传闻做头条或写入事实稿。"
+    },
+    {
+      "title": "FUMO Fusion开源模型",
+      "url": "https://github.com/Fumo-Lab",
+      "reason": "官方介绍为多模型复合系统、API邀请制；目录上新不等于当日发布，当前证据不支持开源权重说法。"
+    },
+    {
+      "title": "来也ADP MCP",
+      "url": "https://developer.cloud.tencent.com/mcp/server/11820",
+      "reason": "原页面为10月27日，并非11月1日新上线；本期未找到新增能力，目录条目不上正文。"
+    },
+    {
+      "title": "anthropics/skills / MemPalace涨星",
+      "reason": "单日涨星不足以说明新能力或可靠性；未以best-benchmarked自述代替评测，不占正文。"
+    },
+    {
+      "title": "Perplexity加入Rust Foundation",
+      "url": "https://rustfoundation.org/media/category/news/",
+      "reason": "官方成员公告日期为9月23日；本期无新事件，不能外推Rust是所有Agent系统事实标准。"
+    },
+    {
+      "title": "Kubernetes1.34 EOL与补丁排期",
+      "reason": "非本期新变化，面向特定维护者的例行排期；没有新增风险证据，留来源参考，不额外堆安全条目。"
+    },
+    {
+      "title": "风华一号/UOS适配",
+      "reason": "兼容认证对本期普通受众价值有限，没有核实新的重大能力变化，不照抄最适配的营销判断。"
+    },
+    {
+      "title": "Craft CMS防护库收录",
+      "reason": "防护规则收录不等于新漏洞发布；本期未补齐核心官方影响/修复链，ClickHouse已承担可行动安全简讯。"
+    },
+    {
+      "title": "PyRUA-Lean",
+      "reason": "同一期已有更容易解释且已核实的CORAL研究；该条需要额外模拟环境/基线限定，没有独立到值得增加本期解释成本，不将未核数字入稿。"
+    },
+    {
+      "title": "校招岗位合集",
+      "reason": "一般岗位汇总不属于本期重大科技变化，省去职位、薪酬和截止提醒。"
+    },
+    {
+      "title": "xAI旧图像接口别名迁移",
+      "url": "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2",
+      "reason": "独立发现且官方可核：旧quality别名切至2.0 low，单图便宜$0.01；适用面窄、迁移已预告，保留备选，不给本期再加一条版本提醒。"
+    },
+    {
+      "title": "格尔木60MW液态空气储能并网",
+      "url": "https://www.thepaper.cn/newsDetail_forward_34384486",
+      "reason": "用户明确认为本期价值不大，移出本期推荐与稿件；不由此推断整个栏目排除能源资讯。"
+    },
+    {
+      "title": "社区DSH安卓版把执行引擎装进手机",
+      "url": "https://github.com/jackwener/DSH-Android",
+      "reason": "用户认为本期价值一般。社区身份不是自动否决项，但本次没有足够独特实测和影响证据支撑重点篇幅，不因项目名、开源或热度入选。"
+    },
+    {
+      "title": "CORAL先保存进度再清理上下文",
+      "url": "https://arxiv.org/html/2610.40350v1",
+      "reason": "研究仍有价值，但本期用户更关注明显能力变化与实际影响，移出正文，保留技术专题备选。不是单纯因为另一条也是研究。"
+    },
+    {
+      "title": "自托管ClickHouse核对安全修复",
+      "url": "https://clickhouse.com/docs/resources/changelogs/security-changelog",
+      "reason": "对自托管运维用户重要，对当前普通科技观众适用面窄，本期移出正文，必要时另做定向提醒。"
+    },
+    {
+      "title": "Claude发现真实软件漏洞的研究",
+      "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+      "reason": "原文10月27日发布，影响较大但本次没有新的披露进展；列备选，不将聚合站11月2日转发当新公告。"
+    }
+  ],
+  "notes": "四条最终稿顺序LongCat→Carbon→Genie4→GDPx。Carbon与Genie4明确是10月28/27日近期补充。LongCat与Genie4各有两段官方录像；Carbon与GDPx未核到可采用的专属官方演示，使用官方图片和图表，不混用别的模型演示。旧录音保全，待按新稿核对复用。",
+  "pendingVerification": [
+    {
+      "title": "天垓300实机演示与H200比较",
+      "value": "用户条件认可：核实真实后可以入片。",
+      "missing": "原始测试报告/可复核模型负载与部署比较条件",
+      "decision": "不写全面超过H200，也不把多篇转述称为独立复核；本版暂不播性能结论。"
+    }
+  ],
+  "revisionHistory": [
+    {
+      "checkedAt": "2026-11-02T10:48:47.277873+00:00",
+      "reason": "用户认为原四条总体一般，要求先调整资讯。移出DSH、CORAL、ClickHouse正文，保留原稿和录音；不因非官方一刀切，按实际影响与独特变化重选。",
+      "previousSelected": [
+        "longcat",
+        "dsh",
+        "coral",
+        "clickhouse"
+      ]
+    },
+    {
+      "checkedAt": "2026-11-02T11:22:16.457976+00:00",
+      "reason": "用户指定加入Gemini Carbon、取得对应图像/视频并更新口播稿；当前四条LongCat/Carbon/Genie4/GDPx",
+      "previousSelected": [
+        "longcat",
+        "gdpx",
+        "genie4"
+      ]
+    }
+  ]
+}

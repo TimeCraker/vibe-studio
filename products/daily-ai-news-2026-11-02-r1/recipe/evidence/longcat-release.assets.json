@@ -1,0 +1,87 @@
+[
+  {
+    "tag": "meta",
+    "name": "google",
+    "content": "notranslate"
+  },
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  },
+  {
+    "tag": "meta",
+    "name": "color-scheme",
+    "content": "light"
+  },
+  {
+    "tag": "meta",
+    "name": "format-detection",
+    "content": "telephone=no"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "https://s3plus.meituan.net/aigc-media-resources/longcat/yeqian-logo.svg"
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "1.6万亿总参大模型，训练全程由国产芯片完成"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "Introducing LongCat-2.5"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "1.6万亿总参大模型，训练全程由国产芯片完成"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://s3plus.meituan.net/aigc-media-resources/longcat/big-cat-logo.png"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "Introducing LongCat-2.5"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//lx.meituan.net"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//lx1.meituan.net"
+  },
+  {
+    "tag": "link",
+    "rel": "dns-prefetch",
+    "href": "//plx.meituan.com"
+  },
+  {
+    "tag": "link",
+    "rel": "modulepreload",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/chunk-CFjPhJqf.js"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "//s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/index-q6GrAYGI.css"
+  }
+]

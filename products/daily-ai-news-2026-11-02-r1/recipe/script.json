@@ -1,0 +1,365 @@
+{
+  "meta": {
+    "title": "今日 AI 资讯 · 实际录音",
+    "lang": "zh",
+    "budgetSeconds": 154.14,
+    "charsPerSecond": 5.8,
+    "bannedWords": []
+  },
+  "segments": [
+    {
+      "id": 1,
+      "kind": "subtitle",
+      "text": "各位观众们大家好",
+      "ref": "scene overview"
+    },
+    {
+      "id": 2,
+      "kind": "subtitle",
+      "text": "欢迎收看今日AI资讯",
+      "ref": "scene overview"
+    },
+    {
+      "id": 3,
+      "kind": "subtitle",
+      "text": "今天我们来看美团的新模型和一项新的智能体评测",
+      "ref": "scene overview"
+    },
+    {
+      "id": 4,
+      "kind": "subtitle",
+      "text": "再补充两项谷歌近期公布的重要进展",
+      "ref": "scene overview"
+    },
+    {
+      "id": 5,
+      "kind": "subtitle",
+      "text": "先看美团的这个模型的正式版",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 6,
+      "kind": "subtitle",
+      "text": "官方更新日志确认",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 7,
+      "kind": "subtitle",
+      "text": "11月2日开放的新版本把视觉理解和多步编程",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 8,
+      "kind": "subtitle",
+      "text": "结合起来",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 9,
+      "kind": "subtitle",
+      "text": "重点面向复杂代码库开发",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 10,
+      "kind": "subtitle",
+      "text": "完整项目构建",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 11,
+      "kind": "subtitle",
+      "text": "这类需要持续执行的任务",
+      "ref": "scene longcat-release"
+    },
+    {
+      "id": 12,
+      "kind": "subtitle",
+      "text": "官方演示中",
+      "ref": "scene longcat-demos"
+    },
+    {
+      "id": 13,
+      "kind": "subtitle",
+      "text": "有交互式三维文物展览",
+      "ref": "scene longcat-demos"
+    },
+    {
+      "id": 14,
+      "kind": "subtitle",
+      "text": "流体模拟网页",
+      "ref": "scene longcat-demos"
+    },
+    {
+      "id": 15,
+      "kind": "subtitle",
+      "text": "也有商业分析案例",
+      "ref": "scene longcat-office"
+    },
+    {
+      "id": 16,
+      "kind": "subtitle",
+      "text": "目前可通过官方网页和接口体验",
+      "ref": "scene longcat-office"
+    },
+    {
+      "id": 17,
+      "kind": "subtitle",
+      "text": "不过，代码和模型下载入口仍标着敬请期待",
+      "ref": "scene longcat-office"
+    },
+    {
+      "id": 18,
+      "kind": "subtitle",
+      "text": "不能把正式版说成已经开源",
+      "ref": "scene longcat-office"
+    },
+    {
+      "id": 19,
+      "kind": "subtitle",
+      "text": "接着补充看谷歌10月28日公布的此项模型",
+      "ref": "scene carbon-release"
+    },
+    {
+      "id": 20,
+      "kind": "subtitle",
+      "text": "官方重点强调两件事",
+      "ref": "scene carbon-release"
+    },
+    {
+      "id": 21,
+      "kind": "subtitle",
+      "text": "持续完成复杂工程任务",
+      "ref": "scene carbon-release"
+    },
+    {
+      "id": 22,
+      "kind": "subtitle",
+      "text": "以及发现、验证和修复软件漏洞",
+      "ref": "scene carbon-release"
+    },
+    {
+      "id": 23,
+      "kind": "subtitle",
+      "text": "按照谷歌公布的结果",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 24,
+      "kind": "subtitle",
+      "text": "Carbon在多项安全评测中取得提升",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 25,
+      "kind": "subtitle",
+      "text": "但这些成绩有各自的测试条件",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 26,
+      "kind": "subtitle",
+      "text": "不能直接当成我们日常使用时的结果",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 27,
+      "kind": "subtitle",
+      "text": "开放方面",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 28,
+      "kind": "subtitle",
+      "text": "公告先面向部分网络安全防御人员和可信合作伙伴",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 29,
+      "kind": "subtitle",
+      "text": "并不是宣布所有用户能够立即体验",
+      "ref": "scene carbon-limits"
+    },
+    {
+      "id": 30,
+      "kind": "subtitle",
+      "text": "谷歌另一项",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 31,
+      "kind": "subtitle",
+      "text": "值得看的进展",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 32,
+      "kind": "subtitle",
+      "text": "是10月27日发布的此项世界模型",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 33,
+      "kind": "subtitle",
+      "text": "它生成的场景可以交互",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 34,
+      "kind": "subtitle",
+      "text": "用键盘移动视角",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 35,
+      "kind": "subtitle",
+      "text": "也可以运用文字改变天气",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 36,
+      "kind": "subtitle",
+      "text": "添加角色",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 37,
+      "kind": "subtitle",
+      "text": "让场景持续演化",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 38,
+      "kind": "subtitle",
+      "text": "同时生成环境声音和对话",
+      "ref": "scene genie-world"
+    },
+    {
+      "id": 39,
+      "kind": "subtitle",
+      "text": "这给游戏原型和仿真研究提供了新的尝试方向",
+      "ref": "scene genie-limits"
+    },
+    {
+      "id": 40,
+      "kind": "subtitle",
+      "text": "不过，目前仍是面向可信测试者的研究预览",
+      "ref": "scene genie-limits"
+    },
+    {
+      "id": 41,
+      "kind": "subtitle",
+      "text": "连续交互是几分钟的级别",
+      "ref": "scene genie-limits"
+    },
+    {
+      "id": 42,
+      "kind": "subtitle",
+      "text": "画面一致性和声音准确性也有限制",
+      "ref": "scene genie-limits"
+    },
+    {
+      "id": 43,
+      "kind": "subtitle",
+      "text": "还不能把它当成成熟的游戏引擎",
+      "ref": "scene genie-limits"
+    },
+    {
+      "id": 44,
+      "kind": "subtitle",
+      "text": "再看今天发布的此项智能体评测",
+      "ref": "scene gdpx-tasks"
+    },
+    {
+      "id": 45,
+      "kind": "subtitle",
+      "text": "它覆盖芯片设计、软件工程、法律等11个领域",
+      "ref": "scene gdpx-tasks"
+    },
+    {
+      "id": 46,
+      "kind": "subtitle",
+      "text": "共206个任务",
+      "ref": "scene gdpx-tasks"
+    },
+    {
+      "id": 47,
+      "kind": "subtitle",
+      "text": "模型需要在复杂的文件和工具环境里完成工作",
+      "ref": "scene gdpx-tasks"
+    },
+    {
+      "id": 48,
+      "kind": "subtitle",
+      "text": "不只是回答一道题",
+      "ref": "scene gdpx-tasks"
+    },
+    {
+      "id": 49,
+      "kind": "subtitle",
+      "text": "在当前的默认榜单上",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 50,
+      "kind": "subtitle",
+      "text": "最高综合得分是12%。注意",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 51,
+      "kind": "subtitle",
+      "text": "这是评测下的综合分数",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 52,
+      "kind": "subtitle",
+      "text": "混合了不同任务的评分方式",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 53,
+      "kind": "subtitle",
+      "text": "不代表模型在现实工作中只有12%的成功率",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 54,
+      "kind": "subtitle",
+      "text": "它更值得我们关注的是",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 55,
+      "kind": "subtitle",
+      "text": "模型能给出答案",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 56,
+      "kind": "subtitle",
+      "text": "和能把复杂工作可靠的完成",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 57,
+      "kind": "subtitle",
+      "text": "中间还有哪些差距",
+      "ref": "scene gdpx-scores"
+    },
+    {
+      "id": 58,
+      "kind": "subtitle",
+      "text": "以上就是今天的精选资讯",
+      "ref": "scene closing"
+    },
+    {
+      "id": 59,
+      "kind": "subtitle",
+      "text": "我们下期再见",
+      "ref": "scene closing"
+    }
+  ]
+}

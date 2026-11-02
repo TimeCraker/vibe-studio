@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "video": "render/daily-ai-news-2026-11-02.mp4",
+  "videoSha256": "5a911d687f53a85066d469042fe8a4550eccccaac918e006de945077ccdb6e89",
+  "reviewer": "Codex",
+  "inspection": {
+    "visual": [],
+    "audio": []
+  },
+  "checks": [
+    {
+      "kind": "visual",
+      "status": "unreviewed",
+      "note": "已实际查看qa/final-frame-index.json列出的23个静帧接触表，140秒和155秒全尺寸帧，以及封面；主体、数字层级与字幕安全区未见截断。GDPx样片半秒间隔抽帧确认由无数字到12%完成态及说明分步出现。仅静态取样，不声称连续看片。"
+    },
+    {
+      "kind": "audio",
+      "status": "unreviewed",
+      "note": "模型无法实际听音。已做真人停顿剪辑、音量处理和BGM避让，未继续电流底噪修复；剪口、噪声、否定句和音乐平衡待人工审听。"
+    },
+    {
+      "kind": "sync",
+      "status": "unreviewed",
+      "note": "真实ASR词窗与显式动效触发已核对，完整连续音画同步仍待人工。"
+    },
+    {
+      "kind": "story",
+      "status": "unreviewed",
+      "note": "四条既定选题，13个镜头与59条词窗字幕；叙事节奏终审待用户。"
+    },
+    {
+      "kind": "facts",
+      "status": "unreviewed",
+      "note": "沿用本期已保存的一手来源和claims；限定日期、开放范围、综合分口径已在静帧和字幕核对。最终逐句审听仍待人工。"
+    }
+  ]
+}

@@ -1,0 +1,545 @@
+[
+  {
+    "tag": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1"
+  },
+  {
+    "tag": "link",
+    "rel": "stylesheet",
+    "href": "/_next/static/immutable/chunks/1bz2dosiyzbcr.css"
+  },
+  {
+    "tag": "link",
+    "rel": "preload",
+    "href": "/_next/static/immutable/chunks/3rqd4qnakn6f7.js"
+  },
+  {
+    "tag": "meta",
+    "name": "theme-color",
+    "content": "#06060c"
+  },
+  {
+    "tag": "meta",
+    "name": "next-size-adjust",
+    "content": ""
+  },
+  {
+    "tag": "meta",
+    "name": "description",
+    "content": "GDPx measures general agentic capability across 11 economically valuable domains, built with domain-specialist partners. Live leaderboard, per-domain results, and cost per task for frontier models."
+  },
+  {
+    "tag": "meta",
+    "property": "og:title",
+    "content": "GDPx: The General Agentic Benchmark"
+  },
+  {
+    "tag": "meta",
+    "property": "og:description",
+    "content": "GDPx measures general agentic capability across 11 economically valuable domains, built with domain-specialist partners. Live leaderboard, per-domain results, and cost per task for frontier models."
+  },
+  {
+    "tag": "meta",
+    "property": "og:url",
+    "content": "https://gdpx.semianalysis.com"
+  },
+  {
+    "tag": "meta",
+    "property": "og:site_name",
+    "content": "GDPx"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image",
+    "content": "https://gdpx.semianalysis.com/opengraph-image.png?opengraph-image.2l-cpfj117n69.png"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:type",
+    "content": "image/png"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:width",
+    "content": "1200"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:height",
+    "content": "630"
+  },
+  {
+    "tag": "meta",
+    "property": "og:image:alt",
+    "content": "GDPx by SemiAnalysis: measuring frontier model capabilities across the most valuable domains"
+  },
+  {
+    "tag": "meta",
+    "property": "og:type",
+    "content": "website"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:card",
+    "content": "summary_large_image"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:site",
+    "content": "@SemiAnalysis_"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:title",
+    "content": "GDPx: The General Agentic Benchmark"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:description",
+    "content": "GDPx measures general agentic capability across 11 economically valuable domains, built with domain-specialist partners. Live leaderboard, per-domain results, and cost per task for frontier models."
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image",
+    "content": "https://gdpx.semianalysis.com/twitter-image.png?twitter-image.2l-cpfj117n69.png"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:alt",
+    "content": "GDPx by SemiAnalysis: measuring frontier model capabilities across the most valuable domains"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:type",
+    "content": "image/png"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:width",
+    "content": "1200"
+  },
+  {
+    "tag": "meta",
+    "name": "twitter:image:height",
+    "content": "630"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/favicon.ico?favicon.0w_i-nrizfkj9.ico",
+    "type": "image/x-icon"
+  },
+  {
+    "tag": "link",
+    "rel": "icon",
+    "href": "/icon.svg?icon.05a3t2lnkxc9w.svg",
+    "type": "image/svg+xml"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "img",
+    "alt": "SemiAnalysis",
+    "src": "/brand/sa-lettermark.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "/domains"
+  },
+  {
+    "tag": "a",
+    "href": "/rollouts"
+  },
+  {
+    "tag": "img",
+    "alt": "SemiAnalysis",
+    "src": "/brand/sa-box-lettermark.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "/domains"
+  },
+  {
+    "tag": "a",
+    "href": "/domains"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/cybersecurity"
+  },
+  {
+    "tag": "img",
+    "alt": "Arithmetic logo",
+    "src": "/partners/arithmetic.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/chip-design?partner=arcverex"
+  },
+  {
+    "tag": "img",
+    "alt": "Arcverex logo",
+    "src": "/partners/arcverex.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/software-engineering"
+  },
+  {
+    "tag": "img",
+    "alt": "Datacurve logo",
+    "src": "/partners/datacurve.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/materials-science?partner=emulated"
+  },
+  {
+    "tag": "img",
+    "alt": "Emulated logo",
+    "src": "/partners/emulated.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/legal"
+  },
+  {
+    "tag": "img",
+    "alt": "Chakra logo",
+    "src": "/partners/chakra.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/finance"
+  },
+  {
+    "tag": "img",
+    "alt": "Living Context logo",
+    "src": "/partners/living-context.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/alignment"
+  },
+  {
+    "tag": "img",
+    "alt": "Fleet logo",
+    "src": "/partners/fleet.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/rsi"
+  },
+  {
+    "tag": "img",
+    "alt": "Extrapolate logo",
+    "src": "/partners/extrapolate.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/hardware-design"
+  },
+  {
+    "tag": "img",
+    "alt": "Beautiful Machines logo",
+    "src": "/partners/beautiful-machines.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/chip-design?partner=aria"
+  },
+  {
+    "tag": "img",
+    "alt": "Aria logo",
+    "src": "/partners/aria.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/biology"
+  },
+  {
+    "tag": "img",
+    "alt": "LatchBio logo",
+    "src": "/partners/latch-blue.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/chip-design?partner=ergodex"
+  },
+  {
+    "tag": "img",
+    "alt": "Ergodex logo",
+    "src": "/partners/ergodex.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/materials-science?partner=valenceforge"
+  },
+  {
+    "tag": "img",
+    "alt": "ValenceForge logo",
+    "src": "/partners/valenceforge.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/quant-trading"
+  },
+  {
+    "tag": "img",
+    "alt": "Third Moment logo",
+    "src": "/partners/third-moment-tile.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/cybersecurity"
+  },
+  {
+    "tag": "img",
+    "alt": "Arithmetic logo",
+    "src": "/partners/arithmetic.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/chip-design?partner=arcverex"
+  },
+  {
+    "tag": "img",
+    "alt": "Arcverex logo",
+    "src": "/partners/arcverex.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/software-engineering"
+  },
+  {
+    "tag": "img",
+    "alt": "Datacurve logo",
+    "src": "/partners/datacurve.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/materials-science?partner=emulated"
+  },
+  {
+    "tag": "img",
+    "alt": "Emulated logo",
+    "src": "/partners/emulated.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/legal"
+  },
+  {
+    "tag": "img",
+    "alt": "Chakra logo",
+    "src": "/partners/chakra.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/finance"
+  },
+  {
+    "tag": "img",
+    "alt": "Living Context logo",
+    "src": "/partners/living-context.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/alignment"
+  },
+  {
+    "tag": "img",
+    "alt": "Fleet logo",
+    "src": "/partners/fleet.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/rsi"
+  },
+  {
+    "tag": "img",
+    "alt": "Extrapolate logo",
+    "src": "/partners/extrapolate.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/hardware-design"
+  },
+  {
+    "tag": "img",
+    "alt": "Beautiful Machines logo",
+    "src": "/partners/beautiful-machines.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/chip-design?partner=aria"
+  },
+  {
+    "tag": "img",
+    "alt": "Aria logo",
+    "src": "/partners/aria.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/biology"
+  },
+  {
+    "tag": "img",
+    "alt": "LatchBio logo",
+    "src": "/partners/latch-blue.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/chip-design?partner=ergodex"
+  },
+  {
+    "tag": "img",
+    "alt": "Ergodex logo",
+    "src": "/partners/ergodex.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/materials-science?partner=valenceforge"
+  },
+  {
+    "tag": "img",
+    "alt": "ValenceForge logo",
+    "src": "/partners/valenceforge.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "/domains/quant-trading"
+  },
+  {
+    "tag": "img",
+    "alt": "Third Moment logo",
+    "src": "/partners/third-moment-tile.png?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "img",
+    "alt": "",
+    "src": "/brand/sa-lettermark.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "img",
+    "src": "/labs/anthropic.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/google.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/openai.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/meta-infinity.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/anthropic.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/openai.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/anthropic.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/google.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/meta-infinity.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/deepseek.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/openai.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/xai.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "src": "/labs/zai.svg",
+    "alt": ""
+  },
+  {
+    "tag": "img",
+    "alt": "",
+    "src": "/brand/sa-lettermark.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "https://fireworks.ai",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "alt": "Fireworks",
+    "src": "/sponsors/fireworks.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "https://modal.com",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "alt": "Modal",
+    "src": "/sponsors/modal.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "https://semianalysis.com",
+    "rel": "noopener"
+  },
+  {
+    "tag": "img",
+    "alt": "",
+    "src": "/brand/sa-lettermark.svg?dpl=dpl_9pxdYd1q1JCv3P8E7T2rPmbgDqSn"
+  },
+  {
+    "tag": "a",
+    "href": "https://semianalysis.com",
+    "rel": "noopener"
+  },
+  {
+    "tag": "a",
+    "href": "https://semianalysis.com/privacy-policy/",
+    "rel": "noopener"
+  }
+]
