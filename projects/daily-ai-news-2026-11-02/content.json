@@ -7,16 +7,16 @@
   },
   "stories": [
     {
-      "title": "美团LongCat-2.5正式版开放接口",
+      "title": "美团 LongCat-2.5 正式版开放接口",
       "detail": "视觉理解结合长任务编程"
     },
     {
-      "title": "谷歌Gemini4 Carbon强化长任务与安全能力",
-      "detail": "10月28日发布，用户指定近期补充"
+      "title": "Gemini 4 Carbon强化长任务与安全",
+      "detail": "10月28日发布 · 长任务与网络安全"
     },
     {
-      "title": "Genie4生成可交互世界与原生声音",
-      "detail": "10月27日研究预览，近期补报"
+      "title": "Genie 4生成可交互世界",
+      "detail": "10月27日研究预览 · 实时交互与原生声音"
     },
     {
       "title": "GDPx检验复杂专业工作能力",
@@ -29,7 +29,7 @@
       "title": "今日AI资讯",
       "section": "今日AI资讯",
       "source": "",
-      "anchor": "各位观众们，大家好，欢迎收看今日",
+      "anchor": "各位观众们大家好",
       "claimIds": []
     },
     {
@@ -37,17 +37,17 @@
       "title": "美团LongCat-2.5正式版开放接口",
       "section": "模型头条",
       "source": "LongCat官方更新日志，2026-11-02",
-      "anchor": "先看美团的 LongCat-2.",
+      "anchor": "先看美团的这个模型",
       "claimIds": [
         "longcat-release"
       ]
     },
     {
       "id": "longcat-demos",
-      "title": "官方演示：三维展览与商业分析",
+      "title": "LongCat官方演示：交互式三维文物展览",
       "section": "模型头条",
       "source": "美团官方演示，非本栏目实测",
-      "anchor": "官方演示里，有交互式三维文物展览",
+      "anchor": "官方演示中",
       "claimIds": [
         "longcat-demos"
       ],
@@ -55,9 +55,27 @@
         "kind": "video",
         "file": "assets/longcat-3d-demo.mp4",
         "sourceIn": 0,
-        "sourceOut": 12,
+        "sourceOut": 4.7,
         "poster": "assets/longcat-3d-poster.jpg",
         "label": "美团官方生成案例；非本栏目实测"
+      }
+    },
+    {
+      "id": "longcat-office",
+      "title": "LongCat商业分析演示与体验入口",
+      "section": "模型头条",
+      "source": "美团官方生成案例，非本栏目实测",
+      "anchor": "也有商业分析案例",
+      "claimIds": [
+        "longcat-demos"
+      ],
+      "media": {
+        "kind": "video",
+        "file": "assets/longcat-office-demo.mp4",
+        "sourceIn": 0,
+        "sourceOut": 8.8,
+        "poster": "assets/longcat-office-poster.jpg",
+        "label": "美团官方商业分析生成案例"
       }
     },
     {
@@ -65,7 +83,7 @@
       "title": "Gemini4 Carbon强调长任务与安全能力",
       "section": "近期模型进展",
       "source": "Google官方公告，2026-10-28；非当日首发",
-      "anchor": "接着补充看谷歌十月二十八日公布的",
+      "anchor": "接着补充看谷歌",
       "claimIds": [
         "carbon-release"
       ],
@@ -77,10 +95,10 @@
     },
     {
       "id": "carbon-limits",
-      "title": "评测有条件，初期面向可信伙伴开放",
+      "title": "Carbon评测有条件，初期开放范围有限",
       "section": "近期模型进展",
       "source": "Google发布口径，非本栏目实测",
-      "anchor": "按照谷歌公布的结果，Carbon",
+      "anchor": "按照谷歌公布的结果",
       "claimIds": [
         "carbon-release"
       ],
@@ -95,7 +113,7 @@
       "title": "Genie4支持实时修改交互世界与声音",
       "section": "近期世界模型",
       "source": "Google官方演示，2026-10-27；非本栏目实测",
-      "anchor": "谷歌另一项值得看的进展，是十月二",
+      "anchor": "谷歌另一项值得看的进展",
       "claimIds": [
         "genie4-release"
       ],
@@ -113,7 +131,7 @@
       "title": "研究预览，交互时长与一致性仍有限",
       "section": "近期世界模型",
       "source": "Google官方Limitations，非成熟游戏引擎",
-      "anchor": "这给游戏原型和仿真研究提供了新的",
+      "anchor": "这给游戏原型和仿真研究",
       "claimIds": [
         "genie4-limits"
       ],
@@ -131,17 +149,17 @@
       "title": "GDPx在11领域检验复杂工作能力",
       "section": "当日评测",
       "source": "SemiAnalysis发布，2026-11-02",
-      "anchor": "再看今天发布的 GDPx 智能体",
+      "anchor": "再看今天发布的此项智能体评测",
       "claimIds": [
         "gdpx-launch"
       ]
     },
     {
       "id": "gdpx-scores",
-      "title": "12%是本评测综合分，非现实成功率",
+      "title": "GDPx综合得分不等于现实成功率",
       "section": "当日评测",
       "source": "GDPx默认Score；领域等权，混合评分，三次尝试均值",
-      "anchor": "在当前默认榜单上，最高综合得分是",
+      "anchor": "在当前的默认榜单上",
       "claimIds": [
         "gdpx-score",
         "gdpx-method"
@@ -157,7 +175,7 @@
       "title": "我们下期见",
       "section": "本期结束",
       "source": "2026-11-02",
-      "anchor": "以上就是今天的精选资讯，我们下期",
+      "anchor": "以上就是今天的精选资讯",
       "claimIds": []
     }
   ],
@@ -166,7 +184,29 @@
     "mono": "assets/fonts/mono.ttf"
   },
   "music": {
-    "file": "",
-    "credit": ""
+    "file": "assets/carefree.mp3",
+    "credit": "Carefree — Kevin MacLeod (incompetech.com). CC BY 4.0. https://creativecommons.org/licenses/by/4.0/"
+  },
+  "motion": {
+    "longcat-release:视觉理解": 408,
+    "longcat-release:持续执行": 580,
+    "longcat-office:目前": 138,
+    "longcat-office:不过": 333,
+    "carbon-release:复杂工程": 512,
+    "carbon-release:软件漏洞": 612,
+    "carbon-limits:日常使用": 608,
+    "carbon-limits:开放方面": 711,
+    "carbon-limits:所有用户": 1120,
+    "genie-world:改变天气": 862,
+    "genie-world:声音": 1173,
+    "genie-limits:一致性": 653,
+    "genie-limits:成熟": 871,
+    "gdpx-tasks:11个领域": 381,
+    "gdpx-tasks:206个任务": 458,
+    "gdpx-tasks:文件和工具": 632,
+    "gdpx-scores:12%": 227,
+    "gdpx-scores:评分方式": 524,
+    "gdpx-scores:不代表": 584,
+    "gdpx-scores:可靠": 1109
   }
 }

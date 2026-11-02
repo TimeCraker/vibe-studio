@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "status": "processed-needs-listening",
+  "output": "audio/voice-clean.wav",
+  "outputSha256": "368e4e080f22e57bb5cf3c2a99221f20724e629809f187171f1ba35310753dde",
+  "duration": 154.14,
+  "sampleRate": 48000,
+  "channels": 2,
+  "config": {
+    "path": "audio-voice.json",
+    "sha256": "e8d2da36cf50aa079b7304d38814bd8f5bd5970095f116aa586aba324d12dcd8"
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-11-02\\audio\\source\\narration-edited-721d99e16b3b-v1.wav",
+      "sha256": "49a3ebdbc25f656d3a1673c5c238513bba59842ea2cddf09a212ac1c8656275f",
+      "role": "voice",
+      "start": 0,
+      "in": 0,
+      "duration": 154.14,
+      "gainDb": 0,
+      "highpassHz": 65,
+      "denoise": false,
+      "denoiseDelayCompensationSamples": 0
+    }
+  ],
+  "duckingApplied": false,
+  "normalized": true,
+  "target": {
+    "integrated": -18,
+    "truePeak": -2,
+    "range": 9
+  },
+  "before": {
+    "input_i": "-21.38",
+    "input_tp": "-0.06",
+    "input_lra": "4.40",
+    "input_thresh": "-31.82",
+    "output_i": "-17.89",
+    "output_tp": "-2.00",
+    "output_lra": "4.00",
+    "output_thresh": "-28.31",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.11"
+  },
+  "after": {
+    "input_i": "-17.98",
+    "input_tp": "-1.99",
+    "input_lra": "4.10",
+    "input_thresh": "-28.39",
+    "output_i": "-17.94",
+    "output_tp": "-2.00",
+    "output_lra": "3.90",
+    "output_thresh": "-28.34",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.06"
+  },
+  "errors": [],
+  "warnings": [],
+  "humanReview": {
+    "status": "pending",
+    "checks": [
+      "intelligibility",
+      "music balance",
+      "cuts and fades",
+      "distortion",
+      "sync with picture"
+    ]
+  }
+}

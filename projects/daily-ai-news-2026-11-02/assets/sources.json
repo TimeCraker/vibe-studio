@@ -369,5 +369,70 @@
     ],
     "fallback": "用发布者榜单图、自绘分步评分对照与复杂任务说明；不将会话记录称录像。",
     "includedInVideo": false
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "sceneIds": [
+      "global",
+      "domestic",
+      "all-voice-scenes"
+    ],
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "status": "local-file-hash-verified",
+    "selection": "frozen-for-this-edition",
+    "reusedFrom": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-28\\assets\\carefree.mp3",
+    "licenseEvidence": "https://incompetech.com/music/royalty-free/faq.html#credit",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "audioReview": "本阶段只核验哈希、时长和解码；完整审听、循环接缝及人声避让待实际混音。",
+    "preparedAt": "2026-10-27T12:28:34+08:00",
+    "media": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "205.139625"
+      }
+    },
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/fonts/sans.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\sans.ttf",
+    "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "frozen-for-this-edition",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-28\\assets\\fonts\\sans.ttf",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/fonts/mono.ttf",
+    "sourcePage": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-27\\remotion-app\\public\\edition\\fonts\\mono.ttf",
+    "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179",
+    "rights": "沿用前期已验证的本机字体文件，仅作本地渲染；不将字体二进制提交 Git。",
+    "selection": "frozen-for-this-edition",
+    "status": "local-file-hash-verified",
+    "reusedFrom": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-28\\assets\\fonts\\mono.ttf",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/longcat-office-poster.jpg",
+    "sha256": "7648e42e21cd6403ecbc913d551b3bf4261dc073ff2fa1a834d984e21cb1d224",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "derivedFrom": "assets/longcat-office-demo.mp4 at 4.0 seconds",
+    "selection": "poster after original-speed clip",
+    "includedInVideo": false
   }
 ]

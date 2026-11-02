@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-11-02",
-  "status": "script-ready",
+  "status": "technical-pass-human-review-pending",
   "sourceDocument": "https://feishu.doubao.com/docx/WXjSdNCoboPqcjxCzy9cyvQqn2c",
   "fps": 60,
   "width": 1920,
@@ -12,8 +12,13 @@
   "narrationFile": "narration.md",
   "rankingSeconds": 7,
   "production": {
-    "humanRecording": "received-from-superseded-script",
+    "humanRecording": "received-and-preserved",
     "humanReview": "pending",
-    "publish": "not-started"
-  }
+    "publish": "not-started",
+    "asrAlignment": "word-windows-agent-reviewed",
+    "render": "completed",
+    "technicalQc": "passed",
+    "publishMaterials": "prepared"
+  },
+  "adoptedNarration": "narration-recorded.md"
 }
