@@ -1,0 +1,129 @@
+{
+  "headline": {
+    "title": "开源DSH装进安卓手机",
+    "subtitle": "社区项目，执行引擎本机运行；模型服务仍需联网",
+    "logo": "assets/dsh-hero.webp",
+    "source": "jackwener/DSH-Android，项目说明；非DeepSeek官方客户端"
+  },
+  "stories": [
+    {
+      "title": "社区DSH安卓版把执行引擎装进手机",
+      "detail": "授权后处理文件与操作App"
+    },
+    {
+      "title": "CORAL保存任务进度再清理上下文",
+      "detail": "论文实验，包含专门训练"
+    },
+    {
+      "title": "自托管ClickHouse需核对安全修复",
+      "detail": "官方Cloud/BYOC已应用修复"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "title": "今日AI资讯",
+      "section": "今日AI资讯",
+      "source": "DSH-Android社区项目说明；非本栏目实测",
+      "anchor": "各位观众们，大家好，欢迎收看今日",
+      "claimIds": []
+    },
+    {
+      "id": "dsh-intro",
+      "title": "社区DSH安卓版把执行引擎装进手机",
+      "section": "开源手机助手",
+      "source": "DSH-Android社区项目说明；非本栏目实测",
+      "anchor": "先看手机助手。社区开发者开源了 ",
+      "claimIds": [
+        "dsh-engine"
+      ]
+    },
+    {
+      "id": "dsh-example",
+      "title": "用自然语言查文件、打开勿扰",
+      "section": "开源手机助手",
+      "source": "DSH-Android社区项目说明；非本栏目实测",
+      "anchor": "比如，找出下载目录里最大的五个文",
+      "claimIds": [
+        "dsh-engine"
+      ]
+    },
+    {
+      "id": "dsh-limits",
+      "title": "需要联网与授权，实际适配待验证",
+      "section": "开源手机助手",
+      "source": "DSH-Android社区项目说明；非本栏目实测",
+      "anchor": "它支持安卓十及以上的部分设备，需",
+      "claimIds": [
+        "dsh-limits",
+        "dsh-engine"
+      ]
+    },
+    {
+      "id": "coral-problem",
+      "title": "CORAL研究长任务中的上下文混乱",
+      "section": "智能体研究",
+      "source": "CORAL论文，2026-10-29；非本栏目实测",
+      "anchor": "接着看一项智能体研究。十月二十九",
+      "claimIds": [
+        "coral-method"
+      ]
+    },
+    {
+      "id": "coral-memory",
+      "title": "保存已核事实和进度，再清理上下文",
+      "section": "智能体研究",
+      "source": "CORAL论文，2026-10-29；非本栏目实测",
+      "anchor": "它的办法是，让智能体先保存已核实",
+      "claimIds": [
+        "coral-method"
+      ]
+    },
+    {
+      "id": "coral-result",
+      "title": "论文实验：准确率约19%到43%",
+      "section": "智能体研究",
+      "source": "CORAL论文，2026-10-29；非本栏目实测",
+      "anchor": "论文报告，在一组需要搜索和使用工",
+      "claimIds": [
+        "coral-results"
+      ]
+    },
+    {
+      "id": "security-risk",
+      "title": "ClickHouse披露服务器执行代码漏洞",
+      "section": "安全简讯",
+      "source": "ClickHouse官方安全更新，2026-10-30",
+      "anchor": "再看一条安全提醒。ClickHo",
+      "claimIds": [
+        "clickhouse-security"
+      ]
+    },
+    {
+      "id": "security-fix",
+      "title": "自托管核对修复，云与BYOC已修",
+      "section": "安全简讯",
+      "source": "ClickHouse官方安全更新，2026-10-30",
+      "anchor": "自己部署这套数据库的团队，要核对",
+      "claimIds": [
+        "clickhouse-security"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "我们下期见",
+      "section": "本期结束",
+      "source": "2026-11-02",
+      "anchor": "以上就是今天的精选资讯，我们下期",
+      "claimIds": []
+    }
+  ],
+  "fonts": {
+    "sans": "assets/fonts/sans.ttf",
+    "mono": "assets/fonts/mono.ttf"
+  },
+  "music": {
+    "file": "",
+    "credit": ""
+  }
+}

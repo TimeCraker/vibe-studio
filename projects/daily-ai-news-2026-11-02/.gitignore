@@ -1,0 +1,6 @@
+assets/*
+!assets/sources.json
+evidence/*.html
+evidence/*.txt
+evidence/*.assets.json
+evidence/ranking-upstream.json

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ranking",
+    "text": "本次全球/国产ECI TOP15已按当前页面核对，精确值取11月2日开源快照，不合并同名不同id，不造升降。",
+    "status": "verified",
+    "source": {
+      "url": "https://raw.githubusercontent.com/liyupi/ai-model-world/main/data/models.json",
+      "locator": "models[].benchmarks.eci；ranking.json及browser-observations.md",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/ranking-upstream.json"
+    }
+  },
+  {
+    "id": "dsh-engine",
+    "text": "DSH-Android社区项目把DSH引擎放在Android App进程中，免Root/Termux，支持授权后的文件、文档与无障碍读屏操作；需要模型服务，非离线大模型。",
+    "status": "verified",
+    "source": {
+      "url": "https://github.com/jackwener/DSH-Android",
+      "locator": "README：亮点/能做什么/架构/系统要求",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/dsh-readme.md"
+    }
+  },
+  {
+    "id": "dsh-limits",
+    "text": "Android10+ arm64-v8a；任务可暂停插话，v0.3.6发布记录注明这版未真机测试。",
+    "status": "verified",
+    "source": {
+      "url": "https://github.com/jackwener/DSH-Android/releases/tag/v0.3.6",
+      "locator": "v0.3.6 11月1日发布记录，未真机测试；系统要求",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/dsh-releases-page.html"
+    }
+  },
+  {
+    "id": "coral-method",
+    "text": "10月29日提交CORAL，保存进度与已核事实后清理杂乱上下文继续推理；使用专门行为克隆和强化学习。",
+    "status": "verified",
+    "source": {
+      "url": "https://arxiv.org/html/2610.40350v1",
+      "locator": "摘要、§3、§4.2 Impact of Training；arxiv abs提交日期",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/coral-paper.html"
+    }
+  },
+  {
+    "id": "coral-results",
+    "text": "论文Qwen3-8B GAIA实验ReAct平均19.4%、CORAL RL42.8%；输入token减少87.4%。口播约19%到43%，仅描述同论文实验，非普遍承诺。",
+    "status": "verified",
+    "source": {
+      "url": "https://arxiv.org/html/2610.40350v1",
+      "locator": "表1、表2与§4.2/§4.3；103题×8次轨迹",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/coral-paper.html"
+    }
+  },
+  {
+    "id": "clickhouse-security",
+    "text": "10月30日CVE-2026-116366：特定条件下有网络访问的未认证用户可执行任意代码；修复26.3.62.3-lts、26.8.36.3-lts、26.9.27.3-stable、26.10.3.7-stable；Cloud及BYOC已修复。",
+    "status": "verified",
+    "source": {
+      "url": "https://clickhouse.com/docs/resources/changelogs/security-changelog",
+      "locator": "Fixed in ClickHouse v26.10.3.7, 2026-10-30 第一条公告",
+      "checkedAt": "2026-11-02T03:38:46.248Z",
+      "path": "evidence/clickhouse-security.html"
+    }
+  }
+]
