@@ -105,5 +105,79 @@
     "selection": "研究事实和表1/2原始证据",
     "status": "retrieved",
     "includedInVideo": false
+  },
+  {
+    "file": "assets/longcat-3d-demo.mp4",
+    "url": "https://s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/video2n-B6KVKw3k.mp4",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "checkedAt": "2026-11-02T04:48:13.105457+00:00",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "selection": "官方3D文物交互展示案例，待核对采用片段",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "6213a7940ec12759bdc74dc41eb7b8d36f42becf0886c84632a599c6b1c947af",
+    "bytes": 18811554,
+    "technical": {
+      "durationSeconds": 14.672993,
+      "width": 2214,
+      "height": 1440,
+      "fps": 30,
+      "videoCodec": "h264",
+      "audioCodec": "aac"
+    },
+    "inspection": "已解码并查看8秒代表帧，三维青铜神树交互界面；未连续观看、未审听、未入片。"
+  },
+  {
+    "file": "assets/longcat-office-demo.mp4",
+    "url": "https://s3plus-bj02.meituan.net/xiaomei-execute-result/0blogvideo/video5nt.mp4",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "checkedAt": "2026-11-02T04:48:13.106463+00:00",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "selection": "官方商业经营分析案例，待核对采用片段",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "eb38dd4b4c8373e71da99a39033413fb1941f64dd8580418431bd29e394e20ae",
+    "bytes": 7821610,
+    "technical": {
+      "durationSeconds": 8.8,
+      "width": 3808,
+      "height": 2160,
+      "fps": 30,
+      "videoCodec": "h264",
+      "audioCodec": "aac"
+    },
+    "inspection": "已解码并查看4秒代表帧，商业分析任务修改界面；未连续观看、未审听、未入片。"
+  },
+  {
+    "file": "assets/longcat-3d-poster.jpg",
+    "url": "https://s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/poster-sanxingdui-3d-MOfuE69s.jpg",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "checkedAt": "2026-11-02T04:48:13.106463+00:00",
+    "rights": "美团LongCat官方发布素材；用于本期新闻说明与来源署名，不主张获得再授权或素材独立分发权。正式发布前复核使用条件。",
+    "selection": "官方演示封面，待核对局部构图",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "c0d3144113fa11a23fb710c416fd724cc78ef5f5efa655d22a11fb1264c62d25",
+    "bytes": 37849
+  },
+  {
+    "file": "assets/longcat-logo.svg",
+    "url": "https://s3plus.meituan.net/aigc-media-resources/longcat/yeqian-logo.svg",
+    "sourcePage": "https://longcat.ai/blog/longcat-2.5/",
+    "sha256": "2a15f1d32cd8b2687bff4adab822d0facd2c5c7840b3adb432ccd5b4c700de1d",
+    "rights": "官方商标素材，仅用于身份识别，不转授商标权。",
+    "selection": "本期封面与LongCat新闻识别",
+    "status": "retrieved",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/tiangai300-official-specs.png",
+    "url": "https://resource.iluvatar.com/20260731/6238f205-799a-4f4b-b699-4880a0388244/6buR6Imy5p2_5Y2h.png",
+    "sourcePage": "https://www.iluvatar.com/productDetails?fullCode=cpjs-yj-xlxl-tg300",
+    "sha256": "e6663e588f79d83959da02f3685533a5b1f577e60b9c243a36798c0a6fd6747b",
+    "status": "retrieved",
+    "rights": "天数智芯官方产品配图，未主张再授权。",
+    "selection": "待核候选产品图；已实际查看，仅板卡外观，不支持任何性能数值结论。",
+    "includedInVideo": false
   }
 ]

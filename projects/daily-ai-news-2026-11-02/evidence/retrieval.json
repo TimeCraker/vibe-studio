@@ -142,5 +142,44 @@
     "contentType": "text/html; charset=utf-8",
     "mediaInventoryFile": "evidence/xai-migration.assets.json",
     "mediaItemCount": 197
+  },
+  {
+    "id": "longcat-release",
+    "url": "https://longcat.ai/blog/longcat-2.5/",
+    "queriedAt": "2026-11-02T12:47:43+08:00",
+    "finalUrl": "https://longcat.ai/blog/longcat-2.5/",
+    "status": "retrieved",
+    "file": "evidence/longcat-release.html",
+    "bytes": 7378,
+    "sha256": "b9d4405e5313038ac5cb0d70393eef4341d8676041da9d44f71789b5aacd23c7",
+    "contentType": "text/html; charset=utf-8",
+    "mediaInventoryFile": "evidence/longcat-release.assets.json",
+    "mediaItemCount": 17
+  },
+  {
+    "id": "longcat-changelog",
+    "url": "https://longcat.ai/platform/docs/change-log",
+    "queriedAt": "2026-11-02T12:47:43+08:00",
+    "finalUrl": "https://longcat.ai/platform/docs/change-log",
+    "status": "retrieved",
+    "file": "evidence/longcat-changelog.html",
+    "bytes": 58877,
+    "sha256": "eb7b34c83f733626c8441c06f5f49cf98bec3a30beb075e64652fd066ee34572",
+    "contentType": "text/html; charset=utf-8",
+    "mediaInventoryFile": "evidence/longcat-changelog.assets.json",
+    "mediaItemCount": 148
+  },
+  {
+    "id": "tiangai-product",
+    "url": "https://www.iluvatar.com/productDetails?fullCode=cpjs-yj-xlxl-tg300",
+    "queriedAt": "2026-11-02T12:47:43+08:00",
+    "finalUrl": "https://www.iluvatar.com/productDetails?fullCode=cpjs-yj-xlxl-tg300",
+    "status": "retrieved",
+    "file": "evidence/tiangai-product.html",
+    "bytes": 588871,
+    "sha256": "84990e27edfa6c386e5af3335d7efb01534a9d168f9e9f197659d34770854d01",
+    "contentType": "text/html; charset=utf-8",
+    "mediaInventoryFile": "evidence/tiangai-product.assets.json",
+    "mediaItemCount": 275
   }
 ]

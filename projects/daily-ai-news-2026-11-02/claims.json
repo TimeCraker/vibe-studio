@@ -64,5 +64,27 @@
       "checkedAt": "2026-11-02T03:38:46.248Z",
       "path": "evidence/clickhouse-security.html"
     }
+  },
+  {
+    "id": "longcat-release",
+    "text": "LongCat官方API更新日志2026-11-02确认2.5正式版可用，区别9月25日Preview；主打原生多模态、复杂代码库和长任务工程，与Agent工具接入。",
+    "status": "verified",
+    "source": {
+      "url": "https://longcat.ai/platform/docs/change-log",
+      "path": "evidence/longcat-changelog.html",
+      "locator": "Version 2026-11-02 LongCat-2.5 Now Available；Version2026-09-25 Preview；网页/API入口参见发布页",
+      "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+    }
+  },
+  {
+    "id": "longcat-demos",
+    "text": "官方发布页标2026-11-1，能力演示列三维文物、实时流体模拟、商业分析等；标GitHub/HuggingFace敬请期待，不能称已开放权重。",
+    "status": "verified",
+    "source": {
+      "url": "https://longcat.ai/blog/longcat-2.5/",
+      "path": "evidence/browser-observations.md",
+      "locator": "实际浏览器AX读取发布页标题/日期/入口、能力演示及视频DOM；本地HTML为SPA壳，不伪称包含全文",
+      "checkedAt": "2026-11-02T04:50:06.266685+00:00"
+    }
   }
 ]
