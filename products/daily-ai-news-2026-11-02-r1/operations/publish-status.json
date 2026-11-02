@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-02T12:43:53.669Z",
+  "video": "deliverables/render/daily-ai-news-2026-11-02.mp4",
+  "videoSha256": "5a911d687f53a85066d469042fe8a4550eccccaac918e006de945077ccdb6e89",
+  "published": false,
+  "platforms": {
+    "bili": {
+      "status": "uploaded-and-filled-needs-human-publish",
+      "title": "LongCat-2.5正式版上线：Carbon、Genie 4与GDPx新进展",
+      "descriptionVerified": true,
+      "coverApplied": true,
+      "aiDeclarationVerified": true,
+      "published": false,
+      "category": "人工智能"
+    },
+    "douyin": {
+      "status": "uploaded-and-filled-needs-human-publish",
+      "title": "LongCat正式版与谷歌模型新进展",
+      "descriptionVerified": true,
+      "coverApplied": true,
+      "aiDeclarationVerified": true,
+      "published": false,
+      "portraitCover": "operations/cover-portrait.png",
+      "landscapeCover": "deliverables/render/cover.png",
+      "coverScreenshotWarning": false
+    }
+  },
+  "skippedPlatforms": {
+    "xhs": "User explicitly requested skipping this platform in the current turn."
+  }
+}

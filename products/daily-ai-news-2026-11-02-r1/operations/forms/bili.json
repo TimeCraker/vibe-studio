@@ -1,0 +1,22 @@
+{
+  "title": "LongCat-2.5正式版上线：Carbon、Genie 4与GDPx新进展",
+  "description": [
+    "11月2日AI资讯：美团LongCat-2.5正式版开放接口、GDPx复杂工作评测；补充10月28日Gemini 4 Carbon与10月27日Genie 4研究预览。官方演示及评测不等于本栏目实测。",
+    "LongCat代码与模型下载仍敬请期待；Carbon初期面向部分安全防御人员和可信伙伴；Genie 4有交互时长、一致性和声音限制；GDPx的12%为默认综合分，不是现实工作成功率。",
+    "LongCat更新日志：https://longcat.ai/platform/docs/change-log",
+    "LongCat发布与演示：https://longcat.ai/blog/longcat-2.5/",
+    "Gemini Carbon公告：https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "Genie 4公告：https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "Genie 4能力与限制：https://deepmind.google/models/genie/",
+    "GDPx发布说明：https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "GDPx榜单：https://gdpx.semianalysis.com/",
+    "榜单采用11月2日当次快照：ECI — Epoch AI，CC BY 4.0 https://epoch.ai/eci ；聚合数据 liyupi/ai-model-world，MIT https://github.com/liyupi/ai-model-world 。B站入口显示名次与本次快照精度内一致，不画升降。",
+    "音乐：Carefree — Kevin MacLeod (incompetech.com). CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ 。已裁切、调音量、淡化和人声避让。",
+    "真人配音；AI辅助采编、画面和字幕。演示与配图来自官方，非本栏目实测。"
+  ],
+  "tags": [
+    "AI资讯",
+    "人工智能",
+    "大模型"
+  ]
+}
