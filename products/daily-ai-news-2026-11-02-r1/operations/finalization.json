@@ -1,8 +1,47 @@
 {
   "schemaVersion": 1,
-  "status": "archived-awaiting-finalize",
   "sourceProject": "projects/daily-ai-news-2026-11-02",
+  "product": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\products\\daily-ai-news-2026-11-02-r1",
+  "archive": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\products\\daily-ai-news-2026-11-02-r1\\archive.json",
   "archiveSha256": "1d2039b3aa1b308237da7d098bf526184820289761e91aa99995fb61a971231c",
-  "cleaned": false,
-  "complete": false
+  "workspaceExists": false,
+  "status": "closed",
+  "cleaned": true,
+  "complete": true,
+  "blockers": [],
+  "verified": {
+    "ok": true,
+    "errors": [],
+    "scope": "source-and-media"
+  },
+  "backup": "C:\\Users\\TimeCraker\\Videos\\vibe-studio-archive\\daily-ai-news-2026-11-02-r1",
+  "git": {
+    "available": true,
+    "changes": [],
+    "sourcesChecked": 141,
+    "blockers": []
+  },
+  "canFinalize": false,
+  "backupVerified": {
+    "ok": true,
+    "errors": [],
+    "scope": "source-and-media"
+  },
+  "restoredTo": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\.cache\\finalize-restore-RLctzQ",
+  "restored": {
+    "ok": true,
+    "restored": 243,
+    "scope": "source-and-media",
+    "missingExternalInputs": []
+  },
+  "handoffBackup": {
+    "manifest": "C:\\Users\\TimeCraker\\Videos\\vibe-studio-archive\\daily-ai-news-2026-11-02-r1\\handoff-GI7qQJ\\handoff.json",
+    "sha256": "a82b4a3eea0ee0767eb04a7172612bec5f93843fcadfa330afb2f02b803ce58e",
+    "files": 3
+  },
+  "checkedAt": "2026-11-02T12:02:50.001Z",
+  "rerenderCertified": false,
+  "closedAt": "2026-11-02T12:02:50.001Z",
+  "receiptExportPending": false,
+  "lastError": null
 }
