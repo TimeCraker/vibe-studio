@@ -67,6 +67,15 @@
       "limits": "发布页标11月1日，API更新日志11月2日；GitHub/HuggingFace仍敬请期待，不称已开源。演示为官方选例，非本栏目实测。"
     },
     {
+      "id": "carbon",
+      "tier": "用户指定近期补充",
+      "title": "谷歌Gemini4 Carbon强调长任务与网络安全能力",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "eventDate": "2026-10-28",
+      "reason": "用户明确要求加入；与本期复杂任务和新评测主题相连，已报道过仍按用户指令补充，但不改写日期或伪称新增开放。",
+      "limits": "厂商报告的性能与对应评测条件分开；初期面向部分安全防御人员及可信伙伴，不称所有用户已可用。"
+    },
+    {
       "id": "gdpx",
       "tier": "当日重点",
       "title": "GDPx用复杂专业工作环境检验前沿智能体",
@@ -155,17 +164,12 @@
       "reason": "对自托管运维用户重要，对当前普通科技观众适用面窄，本期移出正文，必要时另做定向提醒。"
     },
     {
-      "title": "Gemini4 Carbon",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-      "reason": "10月28日官方发布，10月29日栏目已有稿件报道，没有新的开放或能力变化就不重复首发。"
-    },
-    {
       "title": "Claude发现真实软件漏洞的研究",
       "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
       "reason": "原文10月27日发布，影响较大但本次没有新的披露进展；列备选，不将聚合站11月2日转发当新公告。"
     }
   ],
-  "notes": "当前推荐为LongCat正式版+GDPx两条当日重点，Genie4一条明确标日期的近期补报。条数由价值决定；DSH移出，CORAL/ClickHouse转备选，储能遵从用户本期排除，天垓仍待核。不编辑用户原录音；旧稿停用，尚未写/交新稿。",
+  "notes": "四条最终稿顺序LongCat→Carbon→Genie4→GDPx。Carbon与Genie4明确是10月28/27日近期补充。LongCat与Genie4各有两段官方录像；Carbon与GDPx未核到可采用的专属官方演示，使用官方图片和图表，不混用别的模型演示。旧录音保全，待按新稿核对复用。",
   "pendingVerification": [
     {
       "title": "天垓300实机演示与H200比较",
@@ -183,6 +187,15 @@
         "dsh",
         "coral",
         "clickhouse"
+      ]
+    },
+    {
+      "checkedAt": "2026-11-02T11:22:16.457976+00:00",
+      "reason": "用户指定加入Gemini Carbon、取得对应图像/视频并更新口播稿；当前四条LongCat/Carbon/Genie4/GDPx",
+      "previousSelected": [
+        "longcat",
+        "gdpx",
+        "genie4"
       ]
     }
   ]

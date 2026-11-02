@@ -158,7 +158,16 @@
     "includedInVideo": false,
     "status": "retrieved",
     "sha256": "c0d3144113fa11a23fb710c416fd724cc78ef5f5efa655d22a11fb1264c62d25",
-    "bytes": 37849
+    "bytes": 37849,
+    "technical": {
+      "width": 640,
+      "height": 416,
+      "format": "JPEG"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
   },
   {
     "file": "assets/longcat-logo.svg",
@@ -178,6 +187,187 @@
     "status": "retrieved",
     "rights": "天数智芯官方产品配图，未主张再授权。",
     "selection": "待核候选产品图；已实际查看，仅板卡外观，不支持任何性能数值结论。",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/carbon-official-hero.png",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "checkedAt": "2026-11-02T11:20:11.409462+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "Carbon官方主视觉；短暂识别，不撑整段",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "a01f232fadc672604d8927f89d18e265a486bd81dbce5b729e5f604e32878c61",
+    "bytes": 969025,
+    "technical": {
+      "width": 1300,
+      "height": 731,
+      "format": "PNG"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/carbon-official-evals.webp",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon__evals-table.width-1200.format-webp.webp",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "checkedAt": "2026-11-02T11:20:11.410467+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "Carbon官方评测表；只取与解说相关局部，保留厂商口径",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "bf06006b602be15bc91f0a65d2b4ced392aeb4f4ca69fa0466ae068dc594bed3",
+    "bytes": 77418,
+    "technical": {
+      "width": 1200,
+      "height": 1009,
+      "format": "WEBP"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/carbon-official-secbench.webp",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_secbench-pro.width-1200.format-webp.webp",
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "checkedAt": "2026-11-02T11:20:11.410970+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "漏洞发现评测图，官方发布口径，不当操作演示",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "3d1a4a65b2d0ab6087f6e9c997b1e69a89e2c37a86fbb0ecfaf9497b72910155",
+    "bytes": 18740,
+    "technical": {
+      "width": 1200,
+      "height": 675,
+      "format": "WEBP"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/gdpx-official-ranking.webp",
+    "url": "https://substackcdn.com/image/fetch/$s_!6qa6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626a52b0-2fdf-4e15-ba75-0853f1fef8c4_2048x1965.png",
+    "sourcePage": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "checkedAt": "2026-11-02T11:20:11.411471+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "GDPx发布者榜单图；核对默认Score和计分口径",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "641fa2d249fbca58d9264032ac2a908237db84fde0c82a3d5e1191f483e38c9c",
+    "bytes": 1116064,
+    "technical": {
+      "width": 1456,
+      "height": 1397,
+      "format": "PNG"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/genie4-official-hero.webp",
+    "url": "https://lh3.googleusercontent.com/i7iotPkcMbMubxRzAdriO5wsIsowROonBvjLNnmPbOaRgEb1k4LKTBqay5VrcPpZi0R4il_bYCCsPYQ0Gy_-XbAw66azAGEfE-E6_9Izz5apP0BMJVE=w1200-h630-n-nu-rw",
+    "sourcePage": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "checkedAt": "2026-11-02T11:20:11.411968+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "Genie4官方主视觉，非本栏目生成",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "a231bb8fb23a2161ac842b0711e77b508c4c3eb5f6173429a4c30a416ceefb9e",
+    "bytes": 350726,
+    "technical": {
+      "width": 1200,
+      "height": 630,
+      "format": "WEBP"
+    },
+    "inspection": {
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/genie4-balloon-demo.webm",
+    "url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/EAIt62AyeO_ZlSZD/genie4_demo_hot-air-balloon_UI_with-disclaimer_16x9_final.webm",
+    "sourcePage": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "checkedAt": "2026-11-02T11:20:12.084539+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "官方交互世界热气球案例，保留原有免责声明",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "d5f9d7a2a7ef2dcaa6a9325b439243052ec05ac6f6fecb133450d5d9b99b2ca2",
+    "bytes": 5221914,
+    "technical": {
+      "codec_name": "vp9",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1",
+      "durationSeconds": 14.75
+    },
+    "inspection": {
+      "frameAtSeconds": 5.9,
+      "continuousVideoReview": "not-done",
+      "audioListening": "not-done",
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "file": "assets/genie4-cloth-demo.webm",
+    "url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/Hx57sxbj0Ia3OXDq/genie4_demo_silk-scarf_UI_with-disclaimer_16x9_final.webm",
+    "sourcePage": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "checkedAt": "2026-11-02T11:20:12.515732+00:00",
+    "rights": "发布者官方新闻/研究素材，权利归原发布者；用于有出处的本期说明，不主张转授权或独立分发权。",
+    "selection": "官方交互世界布料案例，保留原有免责声明",
+    "includedInVideo": false,
+    "status": "retrieved",
+    "sha256": "6ea3ee9bea1a086d95ac035d29fec82da4a77bc954493f74a7200a5b2293f7b3",
+    "bytes": 7135817,
+    "technical": {
+      "codec_name": "vp9",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1",
+      "durationSeconds": 16.792
+    },
+    "inspection": {
+      "frameAtSeconds": 6.717,
+      "continuousVideoReview": "not-done",
+      "audioListening": "not-done",
+      "imageReview": "actual-contact-sheet-reviewed",
+      "evidence": "qa/selected-media/contact.jpg"
+    }
+  },
+  {
+    "sourcePage": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "status": "search-completed-no-official-dedicated-video-adopted",
+    "selection": "Carbon专属录像搜索",
+    "searchEvidence": [
+      "官方公告只含主视觉和评测图；另查DeepMind Gemini模型页",
+      "检索Carbon demo / Google official video，聚合页Google announces Gemini4Carbon实际署名Matthew Berman，为第三方解读，未采用"
+    ],
+    "fallback": "使用官方主视觉、SEC-bench图及带来源的长任务/开放范围图解；不把Argon或Genie录像当Carbon演示。",
+    "includedInVideo": false
+  },
+  {
+    "sourcePage": "https://gdpx.semianalysis.com/rollouts/compressor-housing",
+    "status": "search-completed-no-video-file-adopted",
+    "selection": "GDPx官方任务回放核对",
+    "searchEvidence": [
+      "发布原文及官网均核对",
+      "浏览器进入Rollouts→Compressor Housing，Watch呈现逐步会话记录与JSONL下载，无录制时间标记；不是视频文件"
+    ],
+    "fallback": "用发布者榜单图、自绘分步评分对照与复杂任务说明；不将会话记录称录像。",
     "includedInVideo": false
   }
 ]

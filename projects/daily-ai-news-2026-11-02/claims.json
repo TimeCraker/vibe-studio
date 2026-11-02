@@ -86,5 +86,16 @@
       "locator": "Limitations章节",
       "checkedAt": "2026-11-02T10:48:47.277873+00:00"
     }
+  },
+  {
+    "id": "carbon-release",
+    "text": "Google10月28日公布Gemini4Carbon，强调长程工程与网络安全能力；初期先向部分网络安全防御人员与Fairwind可信伙伴开放。官方评测结论有其条件，不等同本栏目实测或所有用户立即可用。",
+    "status": "verified",
+    "source": {
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "path": "evidence/carbon-launch.html",
+      "locator": "Oct28,2026；初期开放范围；长任务与网络安全章节；evaluated without guardrails限定",
+      "checkedAt": "2026-11-02T11:22:16.457976+00:00"
+    }
   }
 ]

@@ -1,25 +1,166 @@
 {
   "headline": {
-    "title": "LongCat-2.5正式版上线",
-    "subtitle": "本期重选：新模型、复杂任务评测、交互世界",
+    "title": "美团LongCat-2.5正式版上线",
+    "subtitle": "原生多模态与长任务编程；网页和接口可体验",
     "logo": "assets/longcat-logo.svg",
-    "source": "待修订口播稿与具体镜头，非已接受封面"
+    "source": "美团LongCat官方发布与更新日志；非本栏目实测"
   },
   "stories": [
     {
       "title": "美团LongCat-2.5正式版开放接口",
-      "detail": "当日重点；事件日期2026-11-02"
+      "detail": "视觉理解结合长任务编程"
     },
     {
-      "title": "GDPx用复杂专业工作环境检验前沿智能体",
-      "detail": "当日重点；事件日期2026-11-02"
+      "title": "谷歌Gemini4 Carbon强化长任务与安全能力",
+      "detail": "10月28日发布，用户指定近期补充"
     },
     {
-      "title": "Google Genie4生成可交互世界并支持原生声音",
-      "detail": "近期补报；事件日期2026-10-27"
+      "title": "Genie4生成可交互世界与原生声音",
+      "detail": "10月27日研究预览，近期补报"
+    },
+    {
+      "title": "GDPx检验复杂专业工作能力",
+      "detail": "11月2日新评测，分数不等于现实成功率"
     }
   ],
-  "scenes": [],
+  "scenes": [
+    {
+      "id": "overview",
+      "title": "今日AI资讯",
+      "section": "今日AI资讯",
+      "source": "",
+      "anchor": "各位观众们，大家好，欢迎收看今日",
+      "claimIds": []
+    },
+    {
+      "id": "longcat-release",
+      "title": "美团LongCat-2.5正式版开放接口",
+      "section": "模型头条",
+      "source": "LongCat官方更新日志，2026-11-02",
+      "anchor": "先看美团的 LongCat-2.",
+      "claimIds": [
+        "longcat-release"
+      ]
+    },
+    {
+      "id": "longcat-demos",
+      "title": "官方演示：三维展览与商业分析",
+      "section": "模型头条",
+      "source": "美团官方演示，非本栏目实测",
+      "anchor": "官方演示里，有交互式三维文物展览",
+      "claimIds": [
+        "longcat-demos"
+      ],
+      "media": {
+        "kind": "video",
+        "file": "assets/longcat-3d-demo.mp4",
+        "sourceIn": 0,
+        "sourceOut": 12,
+        "poster": "assets/longcat-3d-poster.jpg",
+        "label": "美团官方生成案例；非本栏目实测"
+      }
+    },
+    {
+      "id": "carbon-release",
+      "title": "Gemini4 Carbon强调长任务与安全能力",
+      "section": "近期模型进展",
+      "source": "Google官方公告，2026-10-28；非当日首发",
+      "anchor": "接着补充看谷歌十月二十八日公布的",
+      "claimIds": [
+        "carbon-release"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/carbon-official-hero.png",
+        "label": "Google官方发布图，2026-10-28"
+      }
+    },
+    {
+      "id": "carbon-limits",
+      "title": "评测有条件，初期面向可信伙伴开放",
+      "section": "近期模型进展",
+      "source": "Google发布口径，非本栏目实测",
+      "anchor": "按照谷歌公布的结果，Carbon",
+      "claimIds": [
+        "carbon-release"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/carbon-official-secbench.webp",
+        "label": "Google发布的限定评测结果；非本栏目实测"
+      }
+    },
+    {
+      "id": "genie-world",
+      "title": "Genie4支持实时修改交互世界与声音",
+      "section": "近期世界模型",
+      "source": "Google官方演示，2026-10-27；非本栏目实测",
+      "anchor": "谷歌另一项值得看的进展，是十月二",
+      "claimIds": [
+        "genie4-release"
+      ],
+      "media": {
+        "kind": "video",
+        "file": "assets/genie4-balloon-demo.webm",
+        "sourceIn": 0,
+        "sourceOut": 14.5,
+        "poster": "assets/genie4-official-hero.webp",
+        "label": "Google官方Genie4交互演示；保留原免责声明"
+      }
+    },
+    {
+      "id": "genie-limits",
+      "title": "研究预览，交互时长与一致性仍有限",
+      "section": "近期世界模型",
+      "source": "Google官方Limitations，非成熟游戏引擎",
+      "anchor": "这给游戏原型和仿真研究提供了新的",
+      "claimIds": [
+        "genie4-limits"
+      ],
+      "media": {
+        "kind": "video",
+        "file": "assets/genie4-cloth-demo.webm",
+        "sourceIn": 0,
+        "sourceOut": 16.5,
+        "poster": "assets/genie4-official-hero.webp",
+        "label": "Google官方Genie4生成画面，非真实场景记录"
+      }
+    },
+    {
+      "id": "gdpx-tasks",
+      "title": "GDPx在11领域检验复杂工作能力",
+      "section": "当日评测",
+      "source": "SemiAnalysis发布，2026-11-02",
+      "anchor": "再看今天发布的 GDPx 智能体",
+      "claimIds": [
+        "gdpx-launch"
+      ]
+    },
+    {
+      "id": "gdpx-scores",
+      "title": "12%是本评测综合分，非现实成功率",
+      "section": "当日评测",
+      "source": "GDPx默认Score；领域等权，混合评分，三次尝试均值",
+      "anchor": "在当前默认榜单上，最高综合得分是",
+      "claimIds": [
+        "gdpx-score",
+        "gdpx-method"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/gdpx-official-ranking.webp",
+        "label": "GDPx默认Score，百分比不是现实成功率"
+      }
+    },
+    {
+      "id": "closing",
+      "title": "我们下期见",
+      "section": "本期结束",
+      "source": "2026-11-02",
+      "anchor": "以上就是今天的精选资讯，我们下期",
+      "claimIds": []
+    }
+  ],
   "fonts": {
     "sans": "assets/fonts/sans.ttf",
     "mono": "assets/fonts/mono.ttf"
