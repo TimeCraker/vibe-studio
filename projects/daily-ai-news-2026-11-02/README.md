@@ -2,7 +2,7 @@
 
 接手：`node skills/daily-ai-news/scripts/edition.mjs status --project projects/daily-ai-news-2026-11-02`。先读[最新版口播稿](narration.md)、[制作简报](brief.md)、selection.json及assets/sources.json。
 
-## 当前阶段：四条新版稿已交付，待核对旧录音复用和补录
+## 当前阶段：新版录音已保全并导出停顿剪辑试听版
 
 顺序LongCat→Gemini Carbon→Genie4→GDPx。Carbon按用户要求加入，10月28日发布；Genie4是10月27日研究预览，两条均明确近期补充，不冒充当天首发。DSH等原弱项已移出，天垓仍待核。
 
@@ -10,11 +10,11 @@
 - [x] 当次两套TOP15、官标及四条新闻实际图片/录像取得并记录缺项。
 - [x] 标准录音39原件及对应旧稿快照保全。
 - [x] 最新口播稿与场景输入已更新；程序估时159.8秒，口播校验fail=0/warn=0，script检查通过。
-- [ ] 核对LongCat旧录音复用、新增内容补录及实际词级对齐。
+- [ ] 新版录音已剪出试听版；待人工审听、专名核词及正式画面词级对齐。
 - [ ] 制作代表镜头、实际渲染与成片。
 - [ ] 视听审阅、投稿物料、归档收尾。
 
-当前4/7项完成。narration-v1.md与narration-v2.md为历史稿，不再作为整片正文。audio/recording.json关联旧稿录音，仅保全原件和解码副本；原声未剪辑、变速或去噪，尚未审听。
+当前4/7项完成。narration-v1.md与narration-v2.md为历史稿，不再作为整片正文。新导入标准录音39(1)，原长161.232秒，剪辑试听版154.140秒，压缩7.092秒。7处显式剪辑包含首尾及5处内部停顿，原件、原PCM、原始ASR和稿件快照均保留。audio/edit-plan.json记录依据，audio/edit-decision.json记录哈希与源/输出映射；audio/recording.json已关联剪辑轨。保持原速、原音高，剪口4毫秒淡化；没有去噪。81至84秒附近未确认的有声内容未删，不声称卡壳全部修复或主观听感通过。试听MP3在audio/source/标准录音39-剪辑版-v1.mp3，另复制到用户Downloads。
 
 ## 素材与验证边界
 

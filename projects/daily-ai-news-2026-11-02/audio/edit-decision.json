@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "originalSource": "audio/source/narration-original-721d99e16b3b.mp3",
+  "originalSha256": "721d99e16b3befddce6787911504020935e4109dbde623aa69f14a18930126d6",
+  "source": "audio/source/narration-decoded-721d99e16b3b.wav",
+  "sourceSha256": "f13a0bdaca5d91627c29acb84bc5533f613b8c53e99043a7d89ef8fcaf7242ac",
+  "sourceDuration": 161.232,
+  "editedFile": "audio/source/narration-edited-721d99e16b3b-v1.wav",
+  "editedSha256": "49a3ebdbc25f656d3a1673c5c238513bba59842ea2cddf09a212ac1c8656275f",
+  "editedDuration": 154.14,
+  "removedSeconds": 7.092,
+  "preview": "audio/source/标准录音39-剪辑版-v1.mp3",
+  "previewSha256": "ef91c81781e5d142b005fc99d956d9e7e94e8c1e8865e57fb11c4fbd9a86bfcf",
+  "cuts": [
+    {
+      "start": 0,
+      "end": 0.55,
+      "reason": "首部准备空白，保留起声前余量。"
+    },
+    {
+      "start": 58.25,
+      "end": 58.81,
+      "reason": "按照谷歌公布的结果句内约1秒停顿，仅压缩中部，保留两侧字音。"
+    },
+    {
+      "start": 79.15,
+      "end": 79.6,
+      "reason": "Carbon到Genie换段空白局部压缩，其余换气和微弱声保留。"
+    },
+    {
+      "start": 83.93,
+      "end": 84.6,
+      "reason": "谷歌另一项值得看的进展句内第一处长空白压缩；保留前后未确认语音。"
+    },
+    {
+      "start": 85.08,
+      "end": 85.78,
+      "reason": "同句第二处长空白局部压缩，保留值得看的起声余量。"
+    },
+    {
+      "start": 134.9,
+      "end": 138.15,
+      "reason": "默认榜单上与最高综合得分之间约3.8秒长空白，保留约0.5秒句间停顿。"
+    },
+    {
+      "start": 160.32,
+      "end": 161.232,
+      "reason": "结束语后留约0.4秒再裁去尾部空白和尾部杂声。"
+    }
+  ],
+  "keptIntervals": [
+    {
+      "sourceIn": 0.55,
+      "sourceOut": 58.25,
+      "outputIn": 0.0,
+      "outputOut": 57.7,
+      "speed": 1,
+      "edgeFadeMs": 4
+    },
+    {
+      "sourceIn": 58.81,
+      "sourceOut": 79.15,
+      "outputIn": 57.7,
+      "outputOut": 78.04,
+      "speed": 1,
+      "edgeFadeMs": 4
+    },
+    {
+      "sourceIn": 79.6,
+      "sourceOut": 83.93,
+      "outputIn": 78.04,
+      "outputOut": 82.37,
+      "speed": 1,
+      "edgeFadeMs": 4
+    },
+    {
+      "sourceIn": 84.6,
+      "sourceOut": 85.08,
+      "outputIn": 82.37,
+      "outputOut": 82.85,
+      "speed": 1,
+      "edgeFadeMs": 4
+    },
+    {
+      "sourceIn": 85.78,
+      "sourceOut": 134.9,
+      "outputIn": 82.85,
+      "outputOut": 131.97,
+      "speed": 1,
+      "edgeFadeMs": 4
+    },
+    {
+      "sourceIn": 138.15,
+      "sourceOut": 160.32,
+      "outputIn": 131.97,
+      "outputOut": 154.14,
+      "speed": 1,
+      "edgeFadeMs": 4
+    }
+  ],
+  "processing": "Original speed and pitch; 4ms edge fades; no denoising or synthetic speech.",
+  "review": {
+    "technical": "sample-count, monotonic mapping, source hashes and MP3 decode verified",
+    "listening": "pending; model cannot listen; edits based on transcript and measured pause windows",
+    "unconfirmedSpeech": "No uncertain spoken words deleted; ASR spellings are not certified subtitles."
+  }
+}
