@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-06",
+  "status": "waiting-human-recording",
+  "sourceDocument": "https://feishu.doubao.com/docx/D9KLd3poMoX7JzxycE1cd3punbq",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "compositionId": "DailyAI",
+  "coverCompositionId": "DailyAICover",
+  "narration": "human",
+  "narrationFile": "narration.md",
+  "rankingSeconds": 7,
+  "production": {
+    "humanRecording": "pending",
+    "humanReview": "pending",
+    "publish": "not-started"
+  }
+}

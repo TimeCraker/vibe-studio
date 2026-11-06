@@ -1,0 +1,145 @@
+{
+  "decision": "produce",
+  "independentSearch": [
+    {
+      "title": "Apple 智能中国大陆开发者测试",
+      "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "11月4日的新节点，直接关系到支持机型用户能何时用上实时翻译及千问体验。"
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "15秒原生视频、多轮局部修改与可量化价格变化，能用官方演示讲明白。"
+    },
+    {
+      "title": "GPT-6 Cyber",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "有 Firefox 真实研究和修复案例，开放受限，以简讯呈现。"
+    },
+    {
+      "title": "Images 2.6",
+      "url": "https://openai.com/index/introducing-images-2-6/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "GIF 与编辑值得关注，与本期创作工具篇幅重叠，保留候选。"
+    },
+    {
+      "title": "腾讯混元 Hy4",
+      "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "正式发布，有视觉和电脑操作变化。保留作为后续实测候选，厂商金融评测不能外推。"
+    },
+    {
+      "title": "ERNIE 5.5 Flash Base",
+      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "预训练权重面向开发及继续训练，对大众的直接用途有限。"
+    },
+    {
+      "title": "Kimi K3.1 Pro 权重",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "近期权重开放有开发价值，体量和部署门槛高，本期不扩展。"
+    }
+  ],
+  "documentSupplement": [
+    {
+      "url": "https://feishu.doubao.com/docx/D9KLd3poMoX7JzxycE1cd3punbq",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "coverage": "浏览器滚动读取标题、八个栏目及末尾来源清单。",
+      "evidence": "evidence/document-read.json",
+      "candidates": [
+        "GPT-6 Cyber",
+        "Images 2.6",
+        "Cursor Agent SDK",
+        "SWE-2 Flash",
+        "spec-kit",
+        "gstack",
+        "Go JSON API",
+        "Zig 维护版",
+        "H200/RTX Pro 5500",
+        "Debian APT",
+        "Android 安全补丁",
+        "机器人仿真研究",
+        "Ripple-65B Preview",
+        "招聘"
+      ]
+    }
+  ],
+  "selected": [
+    {
+      "title": "Apple 智能中国大陆开发者测试",
+      "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "11月4日的新节点，直接关系到支持机型用户能何时用上实时翻译及千问体验。",
+      "tier": "头条"
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "15秒原生视频、多轮局部修改与可量化价格变化，能用官方演示讲明白。",
+      "tier": "次重点"
+    },
+    {
+      "title": "GPT-6 Cyber",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "有 Firefox 真实研究和修复案例，开放受限，以简讯呈现。",
+      "tier": "简讯"
+    }
+  ],
+  "rejected": [
+    {
+      "title": "Images 2.6",
+      "url": "https://openai.com/index/introducing-images-2-6/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "GIF 与编辑值得关注，与本期创作工具篇幅重叠，保留候选。"
+    },
+    {
+      "title": "腾讯混元 Hy4",
+      "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "正式发布，有视觉和电脑操作变化。保留作为后续实测候选，厂商金融评测不能外推。"
+    },
+    {
+      "title": "ERNIE 5.5 Flash Base",
+      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "预训练权重面向开发及继续训练，对大众的直接用途有限。"
+    },
+    {
+      "title": "Kimi K3.1 Pro 权重",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "近期权重开放有开发价值，体量和部署门槛高，本期不扩展。"
+    },
+    {
+      "title": "H200 与 RTX Pro 5500 供应",
+      "url": "https://ca.marketscreener.com/news/nvidia-chips-pile-up-in-hong-kong-as-china-withholds-import-approval-ce785fdcdc8ef227",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "H200 库存是路透引述匿名消息人士的估计，两个型号的订单口径不同，替代进度缺少直接证据。"
+    },
+    {
+      "title": "Debian APT",
+      "url": "https://security-tracker.debian.org/tracker/DSA-6607-1",
+      "checkedAt": "2026-11-06T06:35:13.675Z",
+      "reason": "官方确有通告，适合按发行版写给管理员的定向更新提醒，正文不采纳原文对所有服务器的泛化说法。"
+    },
+    {
+      "title": "Cursor SDK、SWE-2 Flash、Go JSON API、Ripple-65B",
+      "reason": "开发者候选，普通观众需要较多背景，本期不展开。"
+    },
+    {
+      "title": "Zig 维护版、GitHub 星数、招聘与仿真研究",
+      "reason": "维护版、热榜和招聘没有足够新增事件价值，仿真表现适合另做有实验边界的研究解读。"
+    },
+    {
+      "title": "Android 安全补丁",
+      "reason": "先核对受影响系统、实际攻击状态和各设备补丁推送，本期暂不播。"
+    }
+  ],
+  "notes": "先讲大众能用的入口变化，再讲能用视频直接展示的能力变化，最后用一个可核实案例讲模型发布。正文只取支撑主线的数据。"
+}

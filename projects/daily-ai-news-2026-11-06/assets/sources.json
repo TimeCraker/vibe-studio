@@ -1,0 +1,143 @@
+[
+  {
+    "file": "assets/apple-icon.ico",
+    "url": "https://www.apple.com.cn/favicon.ico",
+    "sourcePage": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+    "rights": "Apple 官方网站标识，用于新闻主体识别。",
+    "selection": "封面品牌标识",
+    "status": "retrieved",
+    "sha256": "5493c61cf725cf3a1d63cd9d07de75b0d6faa5564e772f7d0a6074f341442938",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/apple-live-translation.jpg",
+    "url": "https://www.apple.com.cn/newsroom/images/2026/10/apple-intelligence-features-are-coming-to-users-in-china/article/Apple-Intelligence-Live-Translation-Messages-CN_inline.jpg.large.jpg",
+    "sourcePage": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+    "rights": "Apple Newsroom 编辑配图，拟随报道署名引用，投稿前确认使用条件。",
+    "selection": "Apple 智能实时翻译官方示意",
+    "status": "retrieved-and-frame-reviewed",
+    "sha256": "46e8c3d1aa07be46402d976f74a9f53490b9eb45791002c3bc4caa9ee73779a4",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/gemini-background-edit.mp4",
+    "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_videos/Video_Background_Editing_Demo.mp4",
+    "sourcePage": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+    "rights": "Google 官方发布演示，拟短段署名引用，投稿前确认使用条件。",
+    "selection": "多轮换背景，先看 0–8 秒，最终剪点随录音确认",
+    "status": "retrieved-and-frames-reviewed",
+    "duration": 28.5,
+    "width": 1920,
+    "height": 1080,
+    "sha256": "093de877e1a57c90ab87b1ceab79617aa6dcc3838d718e0ab46a90e64fe71cd5",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "sourcePage": "https://openai.com/index/introducing-gpt-6-cyber/",
+    "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-118/",
+    "rights": "依据公开数据自制图解，来源按画面署名。",
+    "selection": "Firefox 研究结果与修复公告，画面仅呈现结果",
+    "status": "source-verified",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "OpenAI 官方仓库 favicon（浅底，白色圆形底）",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Anthropic Claude 官方资源图",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Google Gemini 官方闪标",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Meta 官方站资源",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "DeepSeek 官方站 favicon",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Kimi 官方站 logo",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Qwen 官方 GitHub 组织头像",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "智谱 Z.ai 官方 CDN logo",
+    "status": "retrieved-reused",
+    "selection": "两套综合智力榜厂商标识",
+    "reuseFrom": "daily-ai-news-2026-11-01",
+    "checkedAt": "2026-11-06T06:35:13.675Z",
+    "includedInVideo": false
+  }
+]

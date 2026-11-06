@@ -1,0 +1,135 @@
+{
+  "entryUrl": "https://www.bilibili.com/toy/ai-model-world",
+  "embed": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v41060/index.html",
+  "queriedAt": "2026-11-06T06:29:57.047Z",
+  "global": {
+    "body": "大模型世界\n广场\n时间线\n排行榜\n对比\n排行榜\n\n分数全部来自第三方公开评测，按榜单分开比较，跨榜不混算。 当前 99 个榜单可开榜，覆盖 735 个模型。\n\n查全部 735 个模型 →\n综合\n综合智力\n214\nSimpleBench\n105\n实用指标\n性价比\n213\n上下文窗口\n723\n最便宜\n599\n最新发布\n735\n编程\nSWE-bench Verified\n48\nSWE-bench Verified（转载）\n6\nSWE-bench Verified（转载）（厂商自报）\n36\nSWE-bench 多语言版\n16\nSWE-Bench Pro\n17\nSWE-Bench Pro（厂商自报）\n41\nSWE-Marathon\n6\nFrontierSWE\n22\nFrontierSWE（厂商自报）\n5\nDeepSWE\n28\nDeepSWE（厂商自报）\n19\nTerminal-Bench（厂商自报）\n61\nTerminal-Bench 2.0\n69\nTerminal-Bench 2.1\n5\nCursorBench\n19\nLiveBench 智能体编程\n114\nAider Polyglot\n64\nNL2Repo\n16\nFrontierCode\n50\nLiveBench 编程分项\n134\nLiveCodeBench\n8\nClawEval\n6\nALE-Bench\n159\nAlgoTune\n29\nGSO\n47\nSWE-Atlas 代码库问答\n10\nSWE-Atlas 重构\n11\nSWE-Atlas 写测试\n10\nMirrorCode\n16\nWebDev Arena\n136\n数学\nFrontierMath\n113\nFrontierMath 第四层\n85\nAIME 数学\n213\nMATH 五级\n94\nProofBench\n98\nGSM8K\n11\n知识与推理\nHLE 终极考试\n62\nGPQA 科学\n216\nARC-AGI-2\n122\nARC-AGI（第一代）\n121\nSimpleQA 事实问答\n110\n深度研究\n38\nMMLU\n48\nCritPt 物理\n192\nWeirdML\n151\nBIG-Bench Hard\n15\nHellaSwag\n14\nWinoGrande\n19\nPIQA\n16\nBoolQ\n8\nOpenBookQA\n5\nScienceQA\n6\nARC（AI2 科学题）\n16\nTriviaQA\n16\nANLI\n5\n智能体\n独立工作时长\n54\nOSWorld 操作电脑\n10\nOSWorld 2.0\n9\n经营售货机\n101\n虚拟公司实习\n24\n联网搜索竞技场\n13\nAPEX 专业任务\n68\nGDPval 职业任务\n21\n远程工作指数\n23\nCybench 网络安全\n20\nExploitBench\n9\nPostTrainBench\n11\nBlueprintBench\n39\nCAD 建模\n17\nSurface Evolver\n34\n长文本\n长文本记忆\n46\nCL-bench 长上下文\n41\nCL-bench 生活版\n29\n文档理解竞技场\n42\n多模态\n文生图竞技场\n16\n文生视频竞技场\n6\n图像编辑竞技场\n16\n图生视频竞技场\n6\n视频理解\n8\n看图猜地点\n31\n视觉物理预测\n38\n空间想象\n8\nGBA 游戏评测\n23\n游戏与谜题\n国际象棋残局\n108\nBALROG 游戏\n49\n推理游戏谜题\n105\nEnigmaEval\n52\nEBR-bench\n34\n写作\n创意写作\n6\n其他\nDtbench\n222\nLmca\n206\nFurniture Assembly\n41\nWeirdml V3\n30\nFrontiermath Erdos\n14\nSpireclimb\n8\nSpireclimb Sts1 A20 Heart\n8\nSpireclimb Sts2 A10\n8\n显示旧版榜单\n综合智力\n205 位上榜 · 其余 495 位未参赛\n\nEpoch Capabilities Index，把十几项学术评测归并成一个总分。想看综合实力，先看这一栏。 榜单主页 ↗\n\n搜索\n地区\n全部\n国内\n国外\n开放\n全部\n开源\n闭源\n类型\n全部\n多模态 415\n文本 285\n视觉 297\n全模态 55\n图像生成 28\n视频生成 11\n语音 24\n年份\n不限\n2026\n2025\n2024\n2023\n厂商\n▼\n含已退役\n700 个模型符合\n1\nGPT-6 Astra\nOpenAI\n169.1\n2\nGPT-6.1 Sol\nOpenAI\n168.9\n3\nClaude Opus 5.5\nAnthropic\n168.4\n4\nGPT-6.1 Terra\nOpenAI\n167.8\n5\nClaude Fable 5.1\nAnthropic\n166.9\n6\nGemini 4 Argon\n谷歌\n166.4\n7\nClaude Sonnet 5.5\nAnthropic\n166.2\n8\nClaude Opus 5\nAnthropic\n164.4\n9\nClaude Fable 5\nAnthropic\n164.2\n10\nGPT-6 Sol\nOpenAI\n164.1\n11\nGPT-5.6 Sol\nOpenAI\n163.0\n12\nGPT-5.5 Pro\nOpenAI\n162.7\n13\nMuse Wonder\nMeta\n162.0\n14\nMuse Wonder\nMeta\n162.0\n15\nGPT-5.6 Terra\nOpenAI\n160.9\n16\nClaude Haiku 5.5\nAnthropic\n160.2\n17\nGPT-5.4 Pro\nOpenAI\n160.2\n18\nGPT-5.5\nOpenAI\n160.0\n19\nClaude Opus 4.8\nAnthropic\n159.9\n20\nDeepSeek V4.1 Flash 1017\n深度求索\n159.3\n21\nGemini 3.8 Flash\n谷歌\n158.6\n22\nKimi K3\n月之暗面\n158.5\n23\nGemini 3.7 Flash\n谷歌\n158.4\n24\nMuse Spark 1.3\nMeta\n158.0\n25\nGrok 4.6\nxAI\n157.9\n26\nGPT-5.4\nOpenAI\n157.8\n27\nClaude Opus 4.7\nAnthropic\n157.6\n28\nQwen3.8 Max\n阿里通义\n157.4\n29\nQwen3.8 Max Preview\n阿里通义\n157.4\n30\nGPT-5.2 Pro\nOpenAI\n157.2\n展开全部 205 位\n\n分数来自 Epoch AI（CC-BY 4.0）、LiveBench（Apache-2.0）与 LMArena 官方数据集（CC-BY 4.0）， 每 12 小时同步一次。本站不使用 Artificial Analysis 的数据，它禁止再分发。\n\n作者：程序员鱼皮\n|\nAI 编程入门教程\n零基础学 Vibe Coding\n也看看\n鱼皮 AI 导航\nAI 工具、资讯与提示词大全\n编程导航\n程序员一站式编程学习交流社区\n数据来自\nEpoch AI（CC-BY 4.0）·\nmodels.dev（MIT）·\nLiveBench（Apache-2.0）·\nLMArena（CC-BY 4.0）\n字体\nFusion Pixel Font（OFL-1.1）\n·\n素材署名\n源码开源\nliyupi/ai-model-world\n（MIT）",
+    "rows": [
+      {
+        "text": "1\nGPT-6 Astra\nOpenAI\n169.1",
+        "href": "model/openai-gpt-6-astra/index.html"
+      },
+      {
+        "text": "2\nGPT-6.1 Sol\nOpenAI\n168.9",
+        "href": "model/openai-gpt-6-1-sol/index.html"
+      },
+      {
+        "text": "3\nClaude Opus 5.5\nAnthropic\n168.4",
+        "href": "model/anthropic-claude-opus-5-5/index.html"
+      },
+      {
+        "text": "4\nGPT-6.1 Terra\nOpenAI\n167.8",
+        "href": "model/openai-gpt-6-1-terra/index.html"
+      },
+      {
+        "text": "5\nClaude Fable 5.1\nAnthropic\n166.9",
+        "href": "model/anthropic-claude-fable-5-1/index.html"
+      },
+      {
+        "text": "6\nGemini 4 Argon\n谷歌\n166.4",
+        "href": "model/google-gemini-4-argon/index.html"
+      },
+      {
+        "text": "7\nClaude Sonnet 5.5\nAnthropic\n166.2",
+        "href": "model/anthropic-claude-sonnet-5-5/index.html"
+      },
+      {
+        "text": "8\nClaude Opus 5\nAnthropic\n164.4",
+        "href": "model/anthropic-claude-opus-5/index.html"
+      },
+      {
+        "text": "9\nClaude Fable 5\nAnthropic\n164.2",
+        "href": "model/anthropic-claude-fable-5/index.html"
+      },
+      {
+        "text": "10\nGPT-6 Sol\nOpenAI\n164.1",
+        "href": "model/openai-gpt-6-sol/index.html"
+      },
+      {
+        "text": "11\nGPT-5.6 Sol\nOpenAI\n163.0",
+        "href": "model/openai-gpt-5-6-sol/index.html"
+      },
+      {
+        "text": "12\nGPT-5.5 Pro\nOpenAI\n162.7",
+        "href": "model/openai-gpt-5-5-pro/index.html"
+      },
+      {
+        "text": "13\nMuse Wonder\nMeta\n162.0",
+        "href": "model/meta-muse-wonder/index.html"
+      },
+      {
+        "text": "14\nMuse Wonder\nMeta\n162.0",
+        "href": "model/meta-muse-wonder-1-0/index.html"
+      },
+      {
+        "text": "15\nGPT-5.6 Terra\nOpenAI\n160.9",
+        "href": "model/openai-gpt-5-6-terra/index.html"
+      }
+    ]
+  },
+  "domestic": {
+    "body": "大模型世界\n广场\n时间线\n排行榜\n对比\n排行榜\n\n分数全部来自第三方公开评测，按榜单分开比较，跨榜不混算。 当前 99 个榜单可开榜，覆盖 735 个模型。\n\n查全部 735 个模型 →\n综合\n综合智力\n214\nSimpleBench\n105\n实用指标\n性价比\n213\n上下文窗口\n723\n最便宜\n599\n最新发布\n735\n编程\nSWE-bench Verified\n48\nSWE-bench Verified（转载）\n6\nSWE-bench Verified（转载）（厂商自报）\n36\nSWE-bench 多语言版\n16\nSWE-Bench Pro\n17\nSWE-Bench Pro（厂商自报）\n41\nSWE-Marathon\n6\nFrontierSWE\n22\nFrontierSWE（厂商自报）\n5\nDeepSWE\n28\nDeepSWE（厂商自报）\n19\nTerminal-Bench（厂商自报）\n61\nTerminal-Bench 2.0\n69\nTerminal-Bench 2.1\n5\nCursorBench\n19\nLiveBench 智能体编程\n114\nAider Polyglot\n64\nNL2Repo\n16\nFrontierCode\n50\nLiveBench 编程分项\n134\nLiveCodeBench\n8\nClawEval\n6\nALE-Bench\n159\nAlgoTune\n29\nGSO\n47\nSWE-Atlas 代码库问答\n10\nSWE-Atlas 重构\n11\nSWE-Atlas 写测试\n10\nMirrorCode\n16\nWebDev Arena\n136\n数学\nFrontierMath\n113\nFrontierMath 第四层\n85\nAIME 数学\n213\nMATH 五级\n94\nProofBench\n98\nGSM8K\n11\n知识与推理\nHLE 终极考试\n62\nGPQA 科学\n216\nARC-AGI-2\n122\nARC-AGI（第一代）\n121\nSimpleQA 事实问答\n110\n深度研究\n38\nMMLU\n48\nCritPt 物理\n192\nWeirdML\n151\nBIG-Bench Hard\n15\nHellaSwag\n14\nWinoGrande\n19\nPIQA\n16\nBoolQ\n8\nOpenBookQA\n5\nScienceQA\n6\nARC（AI2 科学题）\n16\nTriviaQA\n16\nANLI\n5\n智能体\n独立工作时长\n54\nOSWorld 操作电脑\n10\nOSWorld 2.0\n9\n经营售货机\n101\n虚拟公司实习\n24\n联网搜索竞技场\n13\nAPEX 专业任务\n68\nGDPval 职业任务\n21\n远程工作指数\n23\nCybench 网络安全\n20\nExploitBench\n9\nPostTrainBench\n11\nBlueprintBench\n39\nCAD 建模\n17\nSurface Evolver\n34\n长文本\n长文本记忆\n46\nCL-bench 长上下文\n41\nCL-bench 生活版\n29\n文档理解竞技场\n42\n多模态\n文生图竞技场\n16\n文生视频竞技场\n6\n图像编辑竞技场\n16\n图生视频竞技场\n6\n视频理解\n8\n看图猜地点\n31\n视觉物理预测\n38\n空间想象\n8\nGBA 游戏评测\n23\n游戏与谜题\n国际象棋残局\n108\nBALROG 游戏\n49\n推理游戏谜题\n105\nEnigmaEval\n52\nEBR-bench\n34\n写作\n创意写作\n6\n其他\nDtbench\n222\nLmca\n206\nFurniture Assembly\n41\nWeirdml V3\n30\nFrontiermath Erdos\n14\nSpireclimb\n8\nSpireclimb Sts1 A20 Heart\n8\nSpireclimb Sts2 A10\n8\n显示旧版榜单\n综合智力\n68 位上榜 · 其余 153 位未参赛\n\nEpoch Capabilities Index，把十几项学术评测归并成一个总分。想看综合实力，先看这一栏。 榜单主页 ↗\n\n搜索\n地区\n全部\n国内\n国外\n开放\n全部\n开源\n闭源\n类型\n全部\n多模态 415\n文本 285\n视觉 297\n全模态 55\n图像生成 28\n视频生成 11\n语音 24\n年份\n不限\n2026\n2025\n2024\n2023\n厂商\n▼\n含已退役\n221 个模型符合\n清空筛选\n1\nDeepSeek V4.1 Flash 1017\n深度求索\n159.3\n2\nKimi K3\n月之暗面\n158.5\n3\nQwen3.8 Max\n阿里通义\n157.4\n4\nQwen3.8 Max Preview\n阿里通义\n157.4\n5\nGLM-5.3\n智谱\n156.9\n6\nDeepSeek V4.1 Flash\n深度求索\n156.5\n7\nDeepSeek V4 Pro 0813\n深度求索\n155.9\n8\nQwen3.8 Max 0902\n阿里通义\n155.8\n9\nQwen3.7 Max\n阿里通义\n154.5\n10\nDeepSeek V4 Flash 0731\n深度求索\n154.3\n11\nGLM-5.3-Flash\n智谱\n153.6\n12\nGLM-5.2\n智谱\n153.0\n13\nQwen3.8 27B\n阿里通义\n152.7\n14\nKimi K2.6\n月之暗面\n151.6\n15\nKimi K2.7 Code\n月之暗面\n151.2\n16\nGLM-5.1\n智谱\n150.7\n17\nDeepSeek V4 Pro\n深度求索\n150.1\n18\nDeepSeek V4 Pro 0423\n深度求索\n150.1\n19\nQwen3.6 Max Preview\n阿里通义\n149.8\n20\nQwen3.6 Plus\n阿里通义\n148.8\n21\nKimi K2.5\n月之暗面\n148.7\n22\nQwen3.5 397B-A17B\n阿里通义\n147.9\n23\nQwen3.7 Plus\n阿里通义\n147.8\n24\nMiniMax-M3\nMiniMax\n147.6\n25\nQwen3.5 Plus\n阿里通义\n147.2\n26\nQwen3.5 Plus 02 15\n阿里通义\n147.2\n27\nQwen3.5 Plus 20260420\n阿里通义\n147.2\n28\nDeepSeek V4 Flash\n深度求索\n146.9\n29\nDeepSeek V4 Flash 0423\n深度求索\n146.9\n30\nQwen3.6 27B\n阿里通义\n146.7\n展开全部 68 位\n\n分数来自 Epoch AI（CC-BY 4.0）、LiveBench（Apache-2.0）与 LMArena 官方数据集（CC-BY 4.0）， 每 12 小时同步一次。本站不使用 Artificial Analysis 的数据，它禁止再分发。\n\n作者：程序员鱼皮\n|\nAI 编程入门教程\n零基础学 Vibe Coding\n也看看\n鱼皮 AI 导航\nAI 工具、资讯与提示词大全\n编程导航\n程序员一站式编程学习交流社区\n数据来自\nEpoch AI（CC-BY 4.0）·\nmodels.dev（MIT）·\nLiveBench（Apache-2.0）·\nLMArena（CC-BY 4.0）\n字体\nFusion Pixel Font（OFL-1.1）\n·\n素材署名\n源码开源\nliyupi/ai-model-world\n（MIT）",
+    "rows": [
+      {
+        "text": "1\nDeepSeek V4.1 Flash 1017\n深度求索\n159.3",
+        "href": "model/deepseek-deepseek-v4-1-flash-1017/index.html"
+      },
+      {
+        "text": "2\nKimi K3\n月之暗面\n158.5",
+        "href": "model/moonshotai-kimi-k3/index.html"
+      },
+      {
+        "text": "3\nQwen3.8 Max\n阿里通义\n157.4",
+        "href": "model/alibaba-qwen3-8-max/index.html"
+      },
+      {
+        "text": "4\nQwen3.8 Max Preview\n阿里通义\n157.4",
+        "href": "model/alibaba-qwen3-8-max-preview/index.html"
+      },
+      {
+        "text": "5\nGLM-5.3\n智谱\n156.9",
+        "href": "/toy/ai-model-world/model/zhipuai-glm-5-3/"
+      },
+      {
+        "text": "6\nDeepSeek V4.1 Flash\n深度求索\n156.5",
+        "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-1-flash/"
+      },
+      {
+        "text": "7\nDeepSeek V4 Pro 0813\n深度求索\n155.9",
+        "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-pro-0813/"
+      },
+      {
+        "text": "8\nQwen3.8 Max 0902\n阿里通义\n155.8",
+        "href": "/toy/ai-model-world/model/alibaba-qwen3-8-max-0902/"
+      },
+      {
+        "text": "9\nQwen3.7 Max\n阿里通义\n154.5",
+        "href": "/toy/ai-model-world/model/alibaba-qwen3-7-max/"
+      },
+      {
+        "text": "10\nDeepSeek V4 Flash 0731\n深度求索\n154.3",
+        "href": "/toy/ai-model-world/model/deepseek-deepseek-v4-flash-0731/"
+      },
+      {
+        "text": "11\nGLM-5.3-Flash\n智谱\n153.6",
+        "href": "/toy/ai-model-world/model/zhipuai-glm-5-3-flash/"
+      },
+      {
+        "text": "12\nGLM-5.2\n智谱\n153.0",
+        "href": "/toy/ai-model-world/model/zhipuai-glm-5-2/"
+      },
+      {
+        "text": "13\nQwen3.8 27B\n阿里通义\n152.7",
+        "href": "/toy/ai-model-world/model/alibaba-qwen3-8-27b/"
+      },
+      {
+        "text": "14\nKimi K2.6\n月之暗面\n151.6",
+        "href": "/toy/ai-model-world/model/moonshotai-kimi-k2-6/"
+      },
+      {
+        "text": "15\nKimi K2.7 Code\n月之暗面\n151.2",
+        "href": "/toy/ai-model-world/model/moonshotai-kimi-k2-7-code/"
+      }
+    ]
+  }
+}

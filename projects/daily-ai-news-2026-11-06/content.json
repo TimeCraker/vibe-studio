@@ -1,0 +1,101 @@
+{
+  "headline": {
+    "title": "Apple 智能在中国大陆开放测试",
+    "subtitle": "部分功能接入阿里千问，正式版计划 12 月推出",
+    "logo": "assets/apple-icon.ico",
+    "source": "Apple 中国大陆 Newsroom"
+  },
+  "stories": [
+    {
+      "title": "Apple 智能在中国大陆开放开发者测试",
+      "detail": "实时翻译、写作工具等首批上线测试，部分体验接入千问。"
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash 支持 15 秒视频",
+      "detail": "可连续修改同一段视频，720p API 每秒 0.07 美元。"
+    },
+    {
+      "title": "OpenAI 发布 GPT-6 Cyber",
+      "detail": "面向受审安全团队，Firefox 已公开多项相关修复。"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "section": "今日 AI 资讯",
+      "source": "Apple · Google DeepMind · OpenAI",
+      "anchor": "各位观众们",
+      "claimIds": []
+    },
+    {
+      "id": "apple",
+      "title": "Apple 智能在中国大陆开放开发者测试",
+      "section": "头条",
+      "source": "Apple 中国大陆 Newsroom",
+      "anchor": "先看苹果",
+      "claimIds": [
+        "apple-beta",
+        "apple-tools"
+      ],
+      "lead": "11 月 4 日开始开发者测试",
+      "bullets": [
+        "部分 Siri 和写作工具体验接入千问",
+        "iOS 27.3 正式版计划 12 月推出"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/apple-live-translation.jpg",
+        "label": "Apple 官方示意 · 信息实时翻译"
+      }
+    },
+    {
+      "id": "gemini",
+      "title": "Gemini Omni 1.2 Flash 支持 15 秒视频",
+      "section": "模型更新",
+      "source": "Google DeepMind 官方公告",
+      "anchor": "再看谷歌",
+      "claimIds": [
+        "gemini-duration",
+        "gemini-demo",
+        "gemini-price"
+      ],
+      "lead": "原生单段从 10 秒到 15 秒",
+      "bullets": [
+        "对同一片段多轮换背景",
+        "720p API 每秒 0.07 美元"
+      ],
+      "media": {
+        "kind": "video",
+        "file": "assets/gemini-background-edit.mp4",
+        "label": "Google 官方演示 · 对话编辑更换背景",
+        "sourceIn": 0,
+        "sourceOut": 8
+      }
+    },
+    {
+      "id": "cyber",
+      "title": "OpenAI 发布网络安全模型 GPT-6 Cyber",
+      "section": "安全简讯",
+      "source": "OpenAI 研究结果 / Mozilla 安全公告",
+      "anchor": "OpenAI 发布了网络安全模型",
+      "claimIds": [
+        "cyber-findings",
+        "cyber-access"
+      ],
+      "lead": "OpenAI 披露在 Firefox 发现 81 个此前未知的高危漏洞",
+      "bullets": [
+        "Mozilla 已发布多项相关修复",
+        "初期仅面向部分审核通过的安全客户"
+      ]
+    }
+  ],
+  "fonts": {
+    "sans": "assets/fonts/sans.ttf",
+    "mono": "assets/fonts/mono.ttf"
+  },
+  "music": {
+    "file": "",
+    "credit": ""
+  }
+}

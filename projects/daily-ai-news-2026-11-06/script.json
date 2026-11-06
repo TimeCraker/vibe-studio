@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "每日 AI 资讯 · 2026-11-06",
+    "lang": "zh-CN",
+    "budgetSeconds": 110,
+    "charsPerSecond": 4.5,
+    "bannedWords": []
+  },
+  "segments": [
+    {
+      "id": "overview",
+      "kind": "voiceover",
+      "text": "各位观众们，大家好，欢迎收看今日AI资讯。今天先看苹果智能在中国大陆的测试进展，再看谷歌的视频生成更新，以及 OpenAI 新发布的网络安全模型。",
+      "ref": "资讯总览"
+    },
+    {
+      "id": "apple",
+      "kind": "voiceover",
+      "text": "先看苹果。十一月四日起，中国大陆的 iOS 开发者测试版加入了苹果智能。收到外语消息，可以直接在信息里看翻译。部分功能还接入了阿里千问，比如让 Siri 看一张照片，再问它照片里是什么。苹果计划十二月随 iOS 27.3 向支持的 iPhone 正式推出首批功能。",
+      "ref": "Apple 官方翻译图与测试时间"
+    },
+    {
+      "id": "gemini",
+      "kind": "voiceover",
+      "text": "再看谷歌。新版 Gemini Omni Flash 把单段视频的上限从十秒拉到了十五秒，还能接着改同一段视频。谷歌的演示里，两个人聊着天，背景从帐篷换成了树林，人物和构图保持一致。七二零 P 的接口价格也降到了每秒七美分。",
+      "ref": "Google 官方换背景视频与时长价格动效"
+    },
+    {
+      "id": "cyber",
+      "kind": "voiceover",
+      "text": "OpenAI 发布了网络安全模型 GPT-6 Cyber。OpenAI 说，研究团队用它在 Firefox 里找到了八十一个此前未知的高危漏洞，Mozilla 已经修复了其中多项。目前，模型只向一小部分通过审核的安全客户开放。",
+      "ref": "Firefox 数据及 Mozilla 修复公告"
+    },
+    {
+      "id": "outro",
+      "kind": "voiceover",
+      "text": "以上就是今天的资讯，我们下期见。",
+      "ref": "结尾"
+    }
+  ]
+}

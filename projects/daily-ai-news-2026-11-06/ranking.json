@@ -1,0 +1,253 @@
+{
+  "editionDate": "2026-11-06",
+  "metric": "ECI",
+  "queriedAt": "2026-11-06T06:29:57.047Z",
+  "sourceGeneratedAt": null,
+  "entryUrl": "https://www.bilibili.com/toy/ai-model-world",
+  "global": [
+    {
+      "id": "openai-gpt-6-astra",
+      "rank": 1,
+      "name": "GPT-6 Astra",
+      "eci": 169.1,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    },
+    {
+      "id": "openai-gpt-6-1-sol",
+      "rank": 2,
+      "name": "GPT-6.1 Sol",
+      "eci": 168.9,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    },
+    {
+      "id": "anthropic-claude-opus-5-5",
+      "rank": 3,
+      "name": "Claude Opus 5.5",
+      "eci": 168.4,
+      "icon": "assets/claude.png",
+      "vendor": "Anthropic"
+    },
+    {
+      "id": "openai-gpt-6-1-terra",
+      "rank": 4,
+      "name": "GPT-6.1 Terra",
+      "eci": 167.8,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    },
+    {
+      "id": "anthropic-claude-fable-5-1",
+      "rank": 5,
+      "name": "Claude Fable 5.1",
+      "eci": 166.9,
+      "icon": "assets/claude.png",
+      "vendor": "Anthropic"
+    },
+    {
+      "id": "google-gemini-4-argon",
+      "rank": 6,
+      "name": "Gemini 4 Argon",
+      "eci": 166.4,
+      "icon": "assets/google.png",
+      "vendor": "谷歌"
+    },
+    {
+      "id": "anthropic-claude-sonnet-5-5",
+      "rank": 7,
+      "name": "Claude Sonnet 5.5",
+      "eci": 166.2,
+      "icon": "assets/claude.png",
+      "vendor": "Anthropic"
+    },
+    {
+      "id": "anthropic-claude-opus-5",
+      "rank": 8,
+      "name": "Claude Opus 5",
+      "eci": 164.4,
+      "icon": "assets/claude.png",
+      "vendor": "Anthropic"
+    },
+    {
+      "id": "anthropic-claude-fable-5",
+      "rank": 9,
+      "name": "Claude Fable 5",
+      "eci": 164.2,
+      "icon": "assets/claude.png",
+      "vendor": "Anthropic"
+    },
+    {
+      "id": "openai-gpt-6-sol",
+      "rank": 10,
+      "name": "GPT-6 Sol",
+      "eci": 164.1,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    },
+    {
+      "id": "openai-gpt-5-6-sol",
+      "rank": 11,
+      "name": "GPT-5.6 Sol",
+      "eci": 163,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    },
+    {
+      "id": "openai-gpt-5-5-pro",
+      "rank": 12,
+      "name": "GPT-5.5 Pro",
+      "eci": 162.7,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    },
+    {
+      "id": "meta-muse-wonder",
+      "rank": 13,
+      "name": "Muse Wonder",
+      "eci": 162,
+      "icon": "assets/meta.svg",
+      "vendor": "Meta"
+    },
+    {
+      "id": "meta-muse-wonder-1-0",
+      "rank": 14,
+      "name": "Muse Wonder",
+      "eci": 162,
+      "icon": "assets/meta.svg",
+      "vendor": "Meta"
+    },
+    {
+      "id": "openai-gpt-5-6-terra",
+      "rank": 15,
+      "name": "GPT-5.6 Terra",
+      "eci": 160.9,
+      "icon": "assets/openai.svg",
+      "vendor": "OpenAI"
+    }
+  ],
+  "domestic": [
+    {
+      "id": "deepseek-deepseek-v4-1-flash-1017",
+      "rank": 1,
+      "name": "DeepSeek V4.1 Flash 1017",
+      "eci": 159.3,
+      "icon": "assets/deepseek.ico",
+      "vendor": "深度求索"
+    },
+    {
+      "id": "moonshotai-kimi-k3",
+      "rank": 2,
+      "name": "Kimi K3",
+      "eci": 158.5,
+      "icon": "assets/kimi.png",
+      "vendor": "月之暗面"
+    },
+    {
+      "id": "alibaba-qwen3-8-max",
+      "rank": 3,
+      "name": "Qwen3.8 Max",
+      "eci": 157.4,
+      "icon": "assets/qwen.png",
+      "vendor": "阿里通义"
+    },
+    {
+      "id": "alibaba-qwen3-8-max-preview",
+      "rank": 4,
+      "name": "Qwen3.8 Max Preview",
+      "eci": 157.4,
+      "icon": "assets/qwen.png",
+      "vendor": "阿里通义"
+    },
+    {
+      "id": "zhipuai-glm-5-3",
+      "rank": 5,
+      "name": "GLM-5.3",
+      "eci": 156.9,
+      "icon": "assets/glm.svg",
+      "vendor": "智谱"
+    },
+    {
+      "id": "deepseek-deepseek-v4-1-flash",
+      "rank": 6,
+      "name": "DeepSeek V4.1 Flash",
+      "eci": 156.5,
+      "icon": "assets/deepseek.ico",
+      "vendor": "深度求索"
+    },
+    {
+      "id": "deepseek-deepseek-v4-pro-0813",
+      "rank": 7,
+      "name": "DeepSeek V4 Pro 0813",
+      "eci": 155.9,
+      "icon": "assets/deepseek.ico",
+      "vendor": "深度求索"
+    },
+    {
+      "id": "alibaba-qwen3-8-max-0902",
+      "rank": 8,
+      "name": "Qwen3.8 Max 0902",
+      "eci": 155.8,
+      "icon": "assets/qwen.png",
+      "vendor": "阿里通义"
+    },
+    {
+      "id": "alibaba-qwen3-7-max",
+      "rank": 9,
+      "name": "Qwen3.7 Max",
+      "eci": 154.5,
+      "icon": "assets/qwen.png",
+      "vendor": "阿里通义"
+    },
+    {
+      "id": "deepseek-deepseek-v4-flash-0731",
+      "rank": 10,
+      "name": "DeepSeek V4 Flash 0731",
+      "eci": 154.3,
+      "icon": "assets/deepseek.ico",
+      "vendor": "深度求索"
+    },
+    {
+      "id": "zhipuai-glm-5-3-flash",
+      "rank": 11,
+      "name": "GLM-5.3-Flash",
+      "eci": 153.6,
+      "icon": "assets/glm.svg",
+      "vendor": "智谱"
+    },
+    {
+      "id": "zhipuai-glm-5-2",
+      "rank": 12,
+      "name": "GLM-5.2",
+      "eci": 153,
+      "icon": "assets/glm.svg",
+      "vendor": "智谱"
+    },
+    {
+      "id": "alibaba-qwen3-8-27b",
+      "rank": 13,
+      "name": "Qwen3.8 27B",
+      "eci": 152.7,
+      "icon": "assets/qwen.png",
+      "vendor": "阿里通义"
+    },
+    {
+      "id": "moonshotai-kimi-k2-6",
+      "rank": 14,
+      "name": "Kimi K2.6",
+      "eci": 151.6,
+      "icon": "assets/kimi.png",
+      "vendor": "月之暗面"
+    },
+    {
+      "id": "moonshotai-kimi-k2-7-code",
+      "rank": 15,
+      "name": "Kimi K2.7 Code",
+      "eci": 151.2,
+      "icon": "assets/kimi.png",
+      "vendor": "月之暗面"
+    }
+  ],
+  "sourceUrl": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v41060/index.html",
+  "sourceNote": "B 站入口现场切换全部/国内，综合智力默认榜。页面未显示该数据生成时间，保留查询时间。并列同名保留各自模型 ID 和原榜顺序。"
+}

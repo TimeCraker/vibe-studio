@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ranking",
+    "text": "B站指定入口现场查询综合智力榜，全部及国内各前15条。",
+    "status": "verified",
+    "source": {
+      "path": "evidence/ranking-live.json",
+      "url": "https://www.bilibili.com/toy/ai-model-world",
+      "locator": "global/domestic",
+      "checkedAt": "2026-11-06T06:29:57.047Z"
+    }
+  },
+  {
+    "id": "apple-beta",
+    "text": "Apple 10月31日公布，首批 Apple 智能从11月4日起随中国大陆 iOS 开发者 Beta 测试，计划12月随 iOS 27.3 向支持的 iPhone 正式推出。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+      "locator": "首段与可用性",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    }
+  },
+  {
+    "id": "apple-tools",
+    "text": "首批功能含信息实时翻译。千问接入部分 Siri、系统写作工具及视觉智能体验，部分 Siri 请求支持针对照片提问。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+      "locator": "首批功能清单与千问段",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    }
+  },
+  {
+    "id": "gemini-duration",
+    "text": "Google 11月5日推出 Gemini Omni 1.2 Flash，原生单段从10秒提高到15秒，支持多轮对话编辑，Gemini API 已正式提供。",
+    "status": "verified",
+    "source": {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "locator": "Longer clips up to 15 seconds / Easier editing in conversation",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    }
+  },
+  {
+    "id": "gemini-demo",
+    "text": "Google 官方对话编辑样例用同一段人物对话素材换背景，演示版本保持两个人物和构图。",
+    "status": "verified",
+    "source": {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "locator": "Easier editing in conversation，Video Background Editing Demo",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    }
+  },
+  {
+    "id": "gemini-price",
+    "text": "Google 公布 720p API 价格 0.07 美元每秒，较 Omni 1.1 降价 30%。",
+    "status": "verified",
+    "source": {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "locator": "发布正文开头定价",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    }
+  },
+  {
+    "id": "cyber-findings",
+    "text": "OpenAI 11月5日发布 GPT-6 Cyber，称研究团队用它在 Firefox 发现81个此前未知的高危漏洞，并辅助提出补丁。Mozilla 发布了其中多项修复。",
+    "status": "verified",
+    "source": {
+      "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "locator": "开篇与 Real-world impact",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    },
+    "supportingSources": [
+      {
+        "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-118/",
+        "locator": "Firefox 159 安全公告",
+        "checkedAt": "2026-11-06T06:35:13.675Z"
+      }
+    ]
+  },
+  {
+    "id": "cyber-access",
+    "text": "GPT-6 Cyber 初期通过 API 和 Codex 面向部分审核通过的 Daybreak Red 客户。",
+    "status": "verified",
+    "source": {
+      "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "locator": "Expanding access to trusted defenders",
+      "checkedAt": "2026-11-06T06:35:13.675Z"
+    }
+  }
+]
