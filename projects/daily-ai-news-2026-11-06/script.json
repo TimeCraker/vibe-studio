@@ -2,7 +2,7 @@
   "meta": {
     "title": "每日 AI 资讯 · 2026-11-06",
     "lang": "zh-CN",
-    "budgetSeconds": 110,
+    "budgetSeconds": 125,
     "charsPerSecond": 4.5,
     "bannedWords": []
   },
@@ -10,7 +10,7 @@
     {
       "id": "overview",
       "kind": "voiceover",
-      "text": "各位观众们，大家好，欢迎收看今日AI资讯。今天先看苹果智能在中国大陆的测试进展，再看谷歌的视频生成更新，以及 OpenAI 新发布的网络安全模型。",
+      "text": "各位观众们，大家好，欢迎收看今日AI资讯。今天先看苹果智能在中国大陆的测试进展，再聊国产模型、视频和动图的新功能。",
       "ref": "资讯总览"
     },
     {
@@ -20,10 +20,22 @@
       "ref": "Apple 官方翻译图与测试时间"
     },
     {
+      "id": "hy4",
+      "kind": "voiceover",
+      "text": "腾讯混元也发布了 Hy4 正式版。这一版能看图、读图表，也能结合命令行和软件界面操作电脑。腾讯已经把它接进了 WorkBuddy 和 CodeBuddy，有现成的入口可以试。",
+      "ref": "腾讯云 Hy4 入口和能力标签"
+    },
+    {
       "id": "gemini",
       "kind": "voiceover",
       "text": "再看谷歌。新版 Gemini Omni Flash 把单段视频的上限从十秒拉到了十五秒，还能接着改同一段视频。谷歌的演示里，两个人聊着天，背景从帐篷换成了树林，人物和构图保持一致。七二零 P 的接口价格也降到了每秒七美分。",
-      "ref": "Google 官方换背景视频与时长价格动效"
+      "ref": "Google 官方换背景、试穿视频与时长价格动效"
+    },
+    {
+      "id": "images26",
+      "kind": "voiceover",
+      "text": "ChatGPT 的 Images 2.6 正在推出 GIF 功能。你可以上传一张手绘草图，让里面的角色做个动作，再生成一段能循环播放的动图。",
+      "ref": "OpenAI 手绘猫头鹰草图及 GIF 演示入口"
     },
     {
       "id": "cyber",

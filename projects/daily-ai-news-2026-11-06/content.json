@@ -11,8 +11,16 @@
       "detail": "实时翻译、写作工具等首批上线测试，部分体验接入千问。"
     },
     {
+      "title": "腾讯混元 Hy4 正式版支持看图和电脑操作",
+      "detail": "可结合命令行与软件界面完成任务，已接入 WorkBuddy 和 CodeBuddy。"
+    },
+    {
       "title": "Gemini Omni 1.2 Flash 支持 15 秒视频",
       "detail": "可连续修改同一段视频，720p API 每秒 0.07 美元。"
+    },
+    {
+      "title": "ChatGPT Images 2.6 开始推出 GIF 生成",
+      "detail": "一张手绘草图可以变成可循环播放的动图。"
     },
     {
       "title": "OpenAI 发布 GPT-6 Cyber",
@@ -24,7 +32,7 @@
       "id": "overview",
       "title": "今日 AI 资讯",
       "section": "今日 AI 资讯",
-      "source": "Apple · Google DeepMind · OpenAI",
+      "source": "Apple · 腾讯混元 · Google DeepMind · OpenAI",
       "anchor": "各位观众们",
       "claimIds": []
     },
@@ -50,6 +58,27 @@
       }
     },
     {
+      "id": "hy4",
+      "title": "腾讯混元 Hy4 正式版支持看图和电脑操作",
+      "section": "国产模型",
+      "source": "腾讯官方公告 / 腾讯云 ADP",
+      "anchor": "腾讯混元也发布了",
+      "claimIds": [
+        "hy4-capabilities",
+        "hy4-availability"
+      ],
+      "lead": "正式版新增视觉理解和电脑操作",
+      "bullets": [
+        "会读图表，可结合命令行与软件界面",
+        "WorkBuddy、CodeBuddy 已接入"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/hy4-adp.webp",
+        "label": "腾讯云官方海报 · ADP 已接入 Hy4"
+      }
+    },
+    {
       "id": "gemini",
       "title": "Gemini Omni 1.2 Flash 支持 15 秒视频",
       "section": "模型更新",
@@ -70,7 +99,28 @@
         "file": "assets/gemini-background-edit.mp4",
         "label": "Google 官方演示 · 对话编辑更换背景",
         "sourceIn": 0,
-        "sourceOut": 8
+        "sourceOut": 8,
+        "poster": "assets/gemini-try-on-frame.jpg"
+      }
+    },
+    {
+      "id": "images26",
+      "title": "ChatGPT Images 2.6 开始推出 GIF 生成",
+      "section": "创作工具",
+      "source": "OpenAI 发布公告与 ChatGPT 更新日志",
+      "anchor": "ChatGPT 的 Images",
+      "claimIds": [
+        "images26-gif"
+      ],
+      "lead": "从手绘草图做成循环动图",
+      "bullets": [
+        "支持上传草图并用文字描述动作",
+        "GIF 创作正在向 ChatGPT 用户推出"
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/images26-owl-sketch.jpg",
+        "label": "OpenAI 官方演示输入 · 手绘猫头鹰"
       }
     },
     {
@@ -87,7 +137,12 @@
       "bullets": [
         "Mozilla 已发布多项相关修复",
         "初期仅面向部分审核通过的安全客户"
-      ]
+      ],
+      "media": {
+        "kind": "image",
+        "file": "assets/firefox-159-advisory.png",
+        "label": "Mozilla 官方修复公告 · Firefox 159"
+      }
     }
   ],
   "fonts": {

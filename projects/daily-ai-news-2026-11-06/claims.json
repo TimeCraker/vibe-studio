@@ -86,5 +86,49 @@
       "locator": "Expanding access to trusted defenders",
       "checkedAt": "2026-11-06T06:35:13.675Z"
     }
+  },
+  {
+    "id": "hy4-capabilities",
+    "text": "腾讯于11月4日发布混元 Hy4 正式版，首次加入视觉理解和电脑操作，可结合命令行与图形界面。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "locator": "视觉理解与 Computer Use 段",
+      "checkedAt": "2026-11-06T06:51:01.941Z"
+    },
+    "supportingSources": [
+      {
+        "url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
+        "locator": "Hy4 正式版升级了什么",
+        "checkedAt": "2026-11-06T06:51:01.941Z"
+      }
+    ]
+  },
+  {
+    "id": "hy4-availability",
+    "text": "腾讯公告确认正式版已接入 WorkBuddy、CodeBuddy 等产品，公告将正式版权重列为近期计划。",
+    "status": "verified",
+    "source": {
+      "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "locator": "发布开头与产品上线段",
+      "checkedAt": "2026-11-06T06:51:01.941Z"
+    }
+  },
+  {
+    "id": "images26-gif",
+    "text": "OpenAI 于11月4日发布 Images 2.6，ChatGPT 逐步开放 GIF 创作，可以根据文字或用户上传的草图生成可循环播放的动图。",
+    "status": "verified",
+    "source": {
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "locator": "November 4, 2026 / Introducing ChatGPT Images 2.6",
+      "checkedAt": "2026-11-06T06:51:01.941Z"
+    },
+    "supportingSources": [
+      {
+        "url": "https://openai.com/index/introducing-images-2-6/",
+        "locator": "Animate your ideas with GIFs",
+        "checkedAt": "2026-11-06T06:51:01.941Z"
+      }
+    ]
   }
 ]

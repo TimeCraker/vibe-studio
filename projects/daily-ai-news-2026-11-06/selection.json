@@ -77,11 +77,25 @@
       "tier": "头条"
     },
     {
+      "title": "腾讯混元 Hy4",
+      "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+      "checkedAt": "2026-11-06T06:51:01.941Z",
+      "reason": "用户确认加入。正式版新增看图与电脑操作，WorkBuddy 和 CodeBuddy 已提供体验入口。",
+      "tier": "次重点"
+    },
+    {
       "title": "Gemini Omni 1.2 Flash",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
       "checkedAt": "2026-11-06T06:35:13.675Z",
       "reason": "15秒原生视频、多轮局部修改与可量化价格变化，能用官方演示讲明白。",
       "tier": "次重点"
+    },
+    {
+      "title": "Images 2.6",
+      "url": "https://openai.com/index/introducing-images-2-6/",
+      "checkedAt": "2026-11-06T06:51:01.941Z",
+      "reason": "用户确认加入。侧重把手绘草图变成循环动图，与 Gemini 的 15 秒视频和连续编辑分开讲。",
+      "tier": "创作工具简讯"
     },
     {
       "title": "GPT-6 Cyber",
@@ -92,18 +106,6 @@
     }
   ],
   "rejected": [
-    {
-      "title": "Images 2.6",
-      "url": "https://openai.com/index/introducing-images-2-6/",
-      "checkedAt": "2026-11-06T06:35:13.675Z",
-      "reason": "GIF 与编辑值得关注，与本期创作工具篇幅重叠，保留候选。"
-    },
-    {
-      "title": "腾讯混元 Hy4",
-      "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
-      "checkedAt": "2026-11-06T06:35:13.675Z",
-      "reason": "正式发布，有视觉和电脑操作变化。保留作为后续实测候选，厂商金融评测不能外推。"
-    },
     {
       "title": "ERNIE 5.5 Flash Base",
       "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
@@ -141,5 +143,5 @@
       "reason": "先核对受影响系统、实际攻击状态和各设备补丁推送，本期暂不播。"
     }
   ],
-  "notes": "先讲大众能用的入口变化，再讲能用视频直接展示的能力变化，最后用一个可核实案例讲模型发布。正文只取支撑主线的数据。"
+  "notes": "本期五条。苹果仍为头条，Hy4 讲新增能力与入口，Gemini 和 Images 2.6 分别讲视频和循环动图，Cyber 保留 Firefox 研究简讯。最终稿及剪点等用户口播。"
 }
