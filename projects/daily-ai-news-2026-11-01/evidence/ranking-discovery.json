@@ -1,0 +1,26 @@
+{
+  "entry": "https://www.bilibili.com/toy/ai-model-world",
+  "discoveredAt": "2026-11-01T07:38:42.723Z",
+  "iframes": [
+    {
+      "src": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v36822/index.html",
+      "w": 1530,
+      "h": 1188
+    }
+  ],
+  "pageTitle": "AI 大模型世界",
+  "bodyText": "展开详情\n程序员鱼皮 的空间\n232\n点赞\n9\n评论\n278\n收藏\n4\n分享\nToy广场\nToy广场\n我收藏的\n我收藏的\n近期玩过\n近期玩过\n我创作的\n我创作的\n添加到桌面\n添加到桌面",
+  "toyUrl": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v36822/index.html",
+  "toyTitle": "AI 大模型世界",
+  "toyText": "展开详情\n程序员鱼皮 的空间\n232\n点赞\n9\n评论\n278\n收藏\n4\n分享\nToy广场\nToy广场\n我收藏的\n我收藏的\n近期玩过\n近期玩过\n我创作的\n我创作的\n添加到桌面\n添加到桌面",
+  "upstreamSha256": "c0e96eced699dd33bc8e975c7719e441b41335c761cd95afd61212d289cc6ef6",
+  "upstreamKeys": [
+    "benchmarks",
+    "generatedAt",
+    "models",
+    "sources",
+    "vendors"
+  ],
+  "upstreamGeneratedAt": "2026-11-01T01:43:07.695Z",
+  "modelCount": 729
+}

@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "audience": "关注 AI 实际变化的普通观众",
+  "goal": "讲清本期真实、有用的 AI 新闻",
+  "profile": "data",
+  "claims": [
+    {
+      "id": "ranking",
+      "text": "2026-11-01 从 B 站 AI 大模型世界入口取得的综合智力（ECI）榜：全球前 15 首名 GPT-6 Astra 169.06，国产前 15 首名 DeepSeek V4.1 Flash 1017 158.83；页面与开源数据同为 10 月 31 日口径。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v36822/leaderboard/index.html",
+        "path": "projects/daily-ai-news-2026-11-01/evidence/ranking-built.json",
+        "locator": "全球/国产各前 15 行；页面快照 evidence/ranking-global-view.txt、evidence/ranking-domestic-view.txt；精确分数 evidence/ranking-upstream.json",
+        "checkedAt": "2026-11-01T15:39:12+08:00"
+      }
+    },
+    {
+      "id": "ds-superagent-release",
+      "text": "DeepSeek Harness 团队在 2026 年 10 月 31 日晚公开 Super-agent 设计文章《Super-agent 设计探索：迈向更自主的 Agent 系统》，并开源研究原型 dsh-superagent-prototype（TypeScript，MIT）。",
+      "status": "verified",
+      "source": {
+        "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+        "locator": "仓库首页 README 与 LICENSE；发布时间取自智东西 2026-11-01 报道正文“10月31日晚间”",
+        "checkedAt": "2026-11-01T15:47:00+08:00"
+      }
+    },
+    {
+      "id": "ds-superagent-scope",
+      "text": "原型面向单个 GitHub 仓库：监听 GitHub 及可选的飞书消息，被授权的人提任务后建立工作项，在独立 agent 会话与目录里执行，再回到原对话反馈（例如提交 pull request）；网页面板显示需要人处理的事。",
+      "status": "verified",
+      "source": {
+        "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+        "locator": "README 正文第 2 段",
+        "checkedAt": "2026-11-01T15:47:00+08:00"
+      }
+    },
+    {
+      "id": "ds-superagent-not-product",
+      "text": "仓库自述明确写“Research prototype for reference only, not an official DeepSeek product”：为公开发布做过改编，与团队内部版本和文章描述的实现在细节上不同，部分设计只是后续方向、未在该原型中实现。",
+      "status": "verified",
+      "source": {
+        "url": "https://raw.githubusercontent.com/deepseek-ai/dsh-superagent-prototype/main/README.md",
+        "locator": "README 开头引用块",
+        "checkedAt": "2026-11-01T15:47:00+08:00"
+      }
+    },
+    {
+      "id": "ds-superagent-modules",
+      "text": "文章把支撑“连续、高效、主动、持久”四个特征的框架拆成五块：Router 与 Worker 双层架构、事件驱动（Trigger 两级过滤与订阅直通）、面向人的异步多信道交互、计算与状态及环境分离、主系统之外独立运行的 Watchdog。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.zhidx.com/p/606311.html",
+        "locator": "智东西 2026-11-01 报道第二至第六节；属媒体对官方文章的转述",
+        "checkedAt": "2026-11-01T15:49:00+08:00"
+      }
+    },
+    {
+      "id": "ds-superagent-bench",
+      "text": "文章的初步实验：任务完成时间 p50 12.4 分钟、p95 15.7 分钟；去掉订阅直通后 Router 决定数增加约 30%，读缓存 token 从 2323 万增至 3177 万；Router 批处理把单个决定分摊的推理时间从 6.4 秒降到 1.6 秒。实验基于合成负载与简化环境，作者自己写明只是初步参考。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.zhidx.com/p/606311.html",
+        "locator": "智东西报道第七节“初步实验”与开头实验结论段",
+        "checkedAt": "2026-11-01T15:49:00+08:00"
+      }
+    },
+    {
+      "id": "apple-qwen-announce",
+      "text": "苹果于 2026 年 10 月 31 日宣布首批 Apple 智能功能将在中国推出，并与阿里巴巴达成合作，在部分体验中接入千问；中国用户可在 Siri、写作工具和视觉智能中调用千问。",
+      "status": "verified",
+      "source": {
+        "url": "https://tech.cnr.cn/techph/20261031/t20261031_527858383.shtml",
+        "locator": "央广网 2026-10-31 10:43 报道阿里巴巴与 Apple 的合作公告",
+        "checkedAt": "2026-11-01T15:52:00+08:00"
+      }
+    },
+    {
+      "id": "apple-qwen-schedule",
+      "text": "这批功能自 11 月 4 日起随最新 iOS 开发者 Beta 版开放测试，预计 12 月随 iOS 27.3 正式向中国用户推出；其他平台在拿到必要审批后再推。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.sohu.com/a/1095237019_114760",
+        "locator": "IT之家 2026-10-31 07:04 报道，转述苹果官方公布的时间",
+        "checkedAt": "2026-11-01T15:52:00+08:00"
+      }
+    },
+    {
+      "id": "apple-qwen-devices",
+      "text": "支持的机型为 iPhone 16 及后续机型、iPhone Duo、iPhone 15 Pro、iPhone 15 Pro Max 和 iPhone Air，且 Siri 与设备语言需设置为英文和简体中文。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.sohu.com/a/1095237019_114760",
+        "locator": "IT之家报道“支持的 iPhone 设备包括”段",
+        "checkedAt": "2026-11-01T15:52:00+08:00"
+      }
+    },
+    {
+      "id": "apple-qwen-optin",
+      "text": "千问集成为用户自主选择是否开启；开启后可用 Apple 登录或自己的千问 App 账户登录；阿里巴巴表示不会把用户请求与生成的回复用于模型训练。",
+      "status": "verified",
+      "source": {
+        "url": "https://tech.cnr.cn/techph/20261031/t20261031_527858383.shtml",
+        "locator": "央广网转述阿里巴巴公告；IT之家报道“阿里巴巴公告表示”段互为印证",
+        "checkedAt": "2026-11-01T15:53:00+08:00"
+      }
+    },
+    {
+      "id": "apple-qwen-exclusions",
+      "text": "本次更新不包含 Siri AI，也不包含苹果在 WWDC 2026 上宣布的其他下一代 Apple 智能功能。",
+      "status": "verified",
+      "source": {
+        "url": "https://www.sohu.com/a/1095237019_114760",
+        "locator": "IT之家报道“IT之家提醒”段",
+        "checkedAt": "2026-11-01T15:52:00+08:00"
+      }
+    },
+    {
+      "id": "mol1-release",
+      "text": "觅深知源 Molence Bio 于 2026 年 10 月 31 日发布首个生物分子基础模型 Mol-1，开放模型权重与代码，并在 lab.molence.com 提供在线使用入口。",
+      "status": "verified",
+      "source": {
+        "url": "https://hub-assets-cache.baai.ac.cn/view/59224",
+        "locator": "智源社区转载的公司发布原文（标注 2026-10-31 18:20），“开放 Mol-1 的模型权重，并提供在线使用入口”段",
+        "checkedAt": "2026-11-01T15:55:00+08:00"
+      }
+    },
+    {
+      "id": "mol1-foldbench",
+      "text": "公司自报：FoldBench-AB 抗体-抗原测试集成功率 75.0%，与 Isomorphic Labs 的 IsoDDE 技术报告公布的 75.6% 相当；加入表位约束后为 88.3%。",
+      "status": "verified",
+      "source": {
+        "url": "https://hub-assets-cache.baai.ac.cn/view/59224",
+        "locator": "发布原文第 01 节及配图 Mol-1 与 IsoDDE 柱形对比；数字为公司自报，IsoDDE 侧以其技术报告为准",
+        "checkedAt": "2026-11-01T15:55:00+08:00"
+      }
+    },
+    {
+      "id": "mol1-large-complex",
+      "text": "公司自报：在评估的 10 个大型复合物中，9 个的结构准确度优于 Anthropic 此前报告的对应结果；最大成功体系约 6 万个氨基酸残基、120 条蛋白质链，TM-score 0.997，使用单张 NVIDIA H20 GPU。",
+      "status": "verified",
+      "source": {
+        "url": "https://hub-assets-cache.baai.ac.cn/view/59224",
+        "locator": "发布原文第 02 节及配图；为厂商自报结果",
+        "checkedAt": "2026-11-01T15:55:00+08:00"
+      }
+    },
+    {
+      "id": "mol1-wetlab",
+      "text": "公司自报：在自建湿实验室测试的 17 个靶点上均获得结合候选，单个靶点结合命中率最高 63%；BCMA 最优候选 SPR 测得 KD 43 pM。",
+      "status": "verified",
+      "source": {
+        "url": "https://hub-assets-cache.baai.ac.cn/view/59224",
+        "locator": "发布原文第 03 节；为厂商自报的湿实验数据",
+        "checkedAt": "2026-11-01T15:55:00+08:00"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "global",
+      "title": "全球 AI 模型综合能力 TOP15",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期全球榜与官标，BGM，无口播",
+      "subject": "全球 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国产 AI 模型综合能力 TOP15",
+      "start": 7,
+      "end": 14,
+      "purpose": "同版式当期国产榜",
+      "subject": "国产 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "start": 14,
+      "end": 32.516666666666666,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "今日 AI 资讯",
+      "claimIds": []
+    },
+    {
+      "id": "ds-what",
+      "title": "DeepSeek 公开 Super-agent 架构并开源原型",
+      "start": 32.516666666666666,
+      "end": 60.21666666666667,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "DeepSeek 公开 Super-agent 架构并开源原型",
+      "claimIds": [
+        "ds-superagent-release",
+        "ds-superagent-scope"
+      ]
+    },
+    {
+      "id": "ds-arch",
+      "title": "系统拆成五块：Router、Worker、事件、解耦、Watchdog",
+      "start": 60.21666666666667,
+      "end": 80.56666666666666,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "系统拆成五块：Router、Worker、事件、解耦、Watchdog",
+      "claimIds": [
+        "ds-superagent-modules"
+      ]
+    },
+    {
+      "id": "ds-bench",
+      "title": "初步实验：任务完成更快，直通与批处理省开销",
+      "start": 80.56666666666666,
+      "end": 94.71666666666667,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "初步实验：任务完成更快，直通与批处理省开销",
+      "claimIds": [
+        "ds-superagent-bench"
+      ]
+    },
+    {
+      "id": "ds-limits",
+      "title": "这是研究原型，不是正式产品",
+      "start": 94.71666666666667,
+      "end": 109.08333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "这是研究原型，不是正式产品",
+      "claimIds": [
+        "ds-superagent-not-product"
+      ]
+    },
+    {
+      "id": "apple-change",
+      "title": "Apple 智能国行首批功能接入阿里千问",
+      "start": 109.08333333333333,
+      "end": 131.03333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Apple 智能国行首批功能接入阿里千问",
+      "claimIds": [
+        "apple-qwen-announce",
+        "apple-qwen-optin"
+      ]
+    },
+    {
+      "id": "apple-timing",
+      "title": "11 月 4 日开发者 Beta，12 月随 iOS 27.3 上线",
+      "start": 131.03333333333333,
+      "end": 148.26666666666668,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "11 月 4 日开发者 Beta，12 月随 iOS 27.3 上线",
+      "claimIds": [
+        "apple-qwen-schedule",
+        "apple-qwen-devices",
+        "apple-qwen-exclusions"
+      ]
+    },
+    {
+      "id": "mol1-what",
+      "title": "觅深知源开源生物分子模型 Mol-1",
+      "start": 148.26666666666668,
+      "end": 156.3,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "觅深知源开源生物分子模型 Mol-1",
+      "claimIds": [
+        "mol1-release"
+      ]
+    },
+    {
+      "id": "mol1-numbers",
+      "title": "FoldBench-AB 75.0%，与 IsoDDE 的 75.6% 基本持平",
+      "start": 156.3,
+      "end": 178.98333333333332,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "FoldBench-AB 75.0%，与 IsoDDE 的 75.6% 基本持平",
+      "claimIds": [
+        "mol1-foldbench",
+        "mol1-wetlab"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "本期资讯与来源链接见简介",
+      "start": 178.98333333333332,
+      "end": 183.75,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "本期资讯与来源链接见简介",
+      "claimIds": []
+    }
+  ],
+  "review": {
+    "status": "pending"
+  }
+}

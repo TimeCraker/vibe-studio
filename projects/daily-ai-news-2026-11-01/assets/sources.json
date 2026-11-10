@@ -1,0 +1,125 @@
+[
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "OpenAI 官方仓库 favicon（浅底，白色圆形底）",
+    "status": "已取得可读文件（本期从 10-30 工程复用，哈希与该期记录一致，未重新下载）",
+    "selection": "全球榜 OpenAI 系模型（GPT-6 Astra、6.1 Terra、6.1 Sol、6 Sol、5.5 Pro、5.6 Sol）"
+  },
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Anthropic Claude 官方资源图",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "全球榜 Anthropic 系模型 7 条"
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Google Gemini 官方闪标",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "全球榜 Gemini 4 Argon"
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Meta 官方站资源",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "全球榜 Muse Wonder 两条（同一名称、不同 id，按原榜保留）"
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "DeepSeek 官方站 favicon",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "国产榜 DeepSeek 系 5 条；本期头条封面主标志"
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Kimi 官方站 logo",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "国产榜月之暗面 3 条"
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "Qwen 官方 GitHub 组织头像",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "国产榜 Qwen 系 5 条；Apple 接入千问那条的配图主体"
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed.",
+    "attribution": "智谱 Z.ai 官方 CDN logo",
+    "status": "已取得可读文件（复用 10-30 工程，哈希一致）",
+    "selection": "国产榜智谱 3 条"
+  },
+  {
+    "file": "assets/mol1-foldbench-ab.png",
+    "url": "https://simg.baai.ac.cn/hub-detail/300749e09515c9e40f515bee11efc56f1793442002163.webp",
+    "sourcePage": "https://hub-assets-cache.baai.ac.cn/view/59224",
+    "sha256": "5f219c69bf4c979bdaa4ed5e2858bb268752ecf522e4fcce2b66776188421261",
+    "rights": "厂商发布图；仅用于本地成片内说明与引用，不转授。来源为 Molence Bio 官方发布原文配图。",
+    "attribution": "觅深知源 Molence Bio，2026-10-31 发布原文配图",
+    "dimensions": "1080x442 PNG（服务器返回的 .webp 扩展名实为 PNG，已按实际格式改名）",
+    "status": "已取得可读文件；已实际看图，图内为 Mol-1 与 IsoDDE 等开源模型的 FoldBench-AB 柱状对比",
+    "selection": "Mol-1 简讯第二镜主图，只用于说明厂商自报的对比结果"
+  },
+  {
+    "file": "assets/mol1-large-complex.png",
+    "url": "https://simg.baai.ac.cn/hub-detail/bb58d58bea9d6668311e0da4f935ef9d1793442002164.webp",
+    "sourcePage": "https://hub-assets-cache.baai.ac.cn/view/59224",
+    "sha256": "81accb76d1f509313fa4754dc7cab170e2edc510cc198dba7ecbbb17f9b968c1",
+    "rights": "厂商发布图；仅用于本地成片内说明与引用，不转授。",
+    "attribution": "觅深知源 Molence Bio，2026-10-31 发布原文配图",
+    "dimensions": "1080x515 PNG（同上的扩展名与实际格式差异）",
+    "status": "已取得可读文件；已实际看图，为大型复合物预测与实验结构对照",
+    "selection": "备用图。口播没有细讲大型复合物，默认不入片；若后期需要补画面再用"
+  },
+  {
+    "file": "assets/fonts/sans.ttf",
+    "sourcePage": "https://fonts.google.com/noto/specimen/Noto+Sans+SC",
+    "localSource": "projects/daily-ai-news-2026-10-30/assets/fonts/sans.ttf",
+    "sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "rights": "Noto Sans SC，SIL Open Font License 1.1（允许嵌入与再分发）。本期沿用 10-30 工程已校验的本地副本，不重新下载，也不把字体二进制提交 Git。",
+    "attribution": "Noto Sans SC 2.04（name 表：family=Noto Sans SC, full=NotoSansSC-Thin）",
+    "status": "已取得可读文件，哈希与 10-30 记录一致；本次用 name 表读出实际字族",
+    "selection": "全片中文与正文。注意：name 表显示的样式是 Thin，实际字重是否适合正文字幕要在代表帧里看，渲染前确认"
+  },
+  {
+    "file": "assets/fonts/mono.ttf",
+    "sourcePage": "https://learn.microsoft.com/typography/font-list/consolas",
+    "localSource": "projects/daily-ai-news-2026-10-30/assets/fonts/mono.ttf",
+    "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179",
+    "rights": "Consolas 为微软随系统提供的商业字体，只在本地渲染使用，不随成片或仓库再分发。",
+    "attribution": "Consolas 7.01（name 表）",
+    "status": "已取得可读文件，哈希与 10-30 记录一致；本次用 name 表读出实际字族",
+    "selection": "榜单分数、ECI 数字、时间数字"
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200075",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "rights": "Kevin MacLeod，CC BY 4.0；署名放简介或片尾。",
+    "attribution": "Carefree — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0. https://creativecommons.org/licenses/by/4.0/",
+    "status": "已取得可读文件，哈希与 10-30 记录一致",
+    "selection": "榜单页与口播垫底 BGM；口播时自动避让"
+  }
+]

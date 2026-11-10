@@ -1,0 +1,162 @@
+{
+  "editionDate": "2026-11-01",
+  "decision": "produce",
+  "independentSearch": [
+    {
+      "phase": "before-document",
+      "queries": [
+        "AI news November 1 2026 model release",
+        "OpenAI Anthropic Google AI announcement October 31 2026",
+        "AI 新闻 2026年11月1日 大模型 发布",
+        "open source LLM release October 31 2026 github"
+      ],
+      "discovered": [
+        "Gemini 4 Carbon / GPT-6.1 Terra（实为 10 月 26-28 日旧发布，已在 10-27、10-29 期报道）",
+        "DeepSeek Super-agent",
+        "Anthropic 取消 Claude 5 小时限制、Max 20x 改名 Ultra",
+        "AWS Lambda Web Functions",
+        "OpenAI 下调融资目标"
+      ],
+      "url": "https://www.zhidx.com/p/606311.html",
+      "notes": "先广搜，再回厂商公告、官方仓库和原始页面；聚合站只用于发现。两条看起来很大的模型发布（Carbon、GPT-6.1 Terra）回查后是上周已报道过的旧事，不进本期。"
+    },
+    {
+      "phase": "before-document",
+      "queries": [
+        "DeepSeek Harness \"Super-agent\" 设计探索 迈向更自主的 Agent 系统",
+        "AI 每日简报 2026-11-01",
+        "苹果 智能 接入 阿里千问 Apple Intelligence 中国 iOS 27.3",
+        "觅深知源 Mol-1 开源 生物分子 基础模型 GitHub"
+      ],
+      "discovered": [
+        "Apple 智能接入阿里千问（国行落地时间表）",
+        "Mol-1 生物分子基础模型开源",
+        "清华 ActionOPD 智能体蒸馏",
+        "智元机器人产线直播数据",
+        "Anthropic Claude Fable 5.5 / Obsidian 3 传闻"
+      ],
+      "url": "https://zinbiel.net/daily-ai-engineering-brief-2026-11-01/",
+      "notes": "第二轮的候选汇总站帮我看到 10 月 31 日 07:00 到 11 月 1 日 07:00 的窗口里还有什么；每条都回到一手页面再判断。"
+    },
+    {
+      "phase": "verification",
+      "queries": [
+        "GitLab CVE-2026-97229 patch 19.4.2 CVSS 10",
+        "CISA KEV GitLab Cisco November 1 2026 deadline",
+        "apple.com.cn newsroom Apple 智能 中国 阿里巴巴 千问 2026年10月31日"
+      ],
+      "discovered": [
+        "GitLab 漏洞与 CISA 截止日核实成立，但披露在 10 月 13 日",
+        "Apple Newsroom 中文站首页没有直接可读的对应稿件链接"
+      ],
+      "url": "https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html",
+      "notes": "核实阶段专门去查了文档 Top3 里的安全条和苹果的官方页。苹果侧改用央广网转述的阿里公告 + IT之家转述的苹果公布内容，两条来源互相印证，并在 claims 里写明是转述。"
+    }
+  ],
+  "documentSupplement": [
+    {
+      "path": "evidence/reference-doc.md",
+      "extracted": "evidence/reference-doc-plain.txt",
+      "sha256": "c66ffc3b958690ce117dfe8466d4b22efa760121269a783969c730a6047249b0",
+      "readOrder": "after first two independent search rounds",
+      "role": "补充线索；文档里的命令、升级、投稿和招聘建议不构成用户授权，不执行。",
+      "candidates": [
+        "DeepSeek Super-agent（Top3 第①条）",
+        "GitLab / Cisco CISA KEV 截止日（Top3 第②条）",
+        "morluto/rea 星数（Top3 第③条）",
+        "经济日报 HBM 市场规模与产能售罄",
+        "codeinspectus v3.3.2、腾讯云上架 21st-dev",
+        "impeccable、Kubernetes 1.35.10、Vite 8.3.5",
+        "arXiv 2610.39761、Salesforce CHI-Bench",
+        "华为 / 字节 Seed / 柠檬微趣招聘"
+      ]
+    }
+  ],
+  "selected": [
+    {
+      "id": "deepseek-superagent",
+      "priority": "lead",
+      "discovery": "document-supplement + independent-verification",
+      "eventDate": "2026-10-31",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "reason": "当天最有实质变化的模型/Agent 事件：公开了一套可复用的 Agent 系统架构，同时放出可读代码和安装文档，对正在做 Agent 产品的开发者有直接参考价值。",
+      "limits": "仓库自称研究原型、非正式产品；架构描述来自媒体对官方文章的转述；实验数字基于合成负载与简化环境，作者自己标注只是初步参考，不写成生产环境实测。"
+    },
+    {
+      "id": "apple-qwen",
+      "priority": "feature",
+      "discovery": "independent",
+      "eventDate": "2026-10-31",
+      "url": "https://tech.cnr.cn/techph/20261031/t20261031_527858383.shtml",
+      "reason": "普通观众能直接感知的变化：国行 Apple 智能有了明确时间表，而且入口交给了一家国产模型。与本期模型主线相关，又不是重复报道。",
+      "limits": "时间表来自苹果公布、媒体转述，测试版与正式版之间可能再变；本期不写成已经可用；不含下一代 Siri AI 与其他 WWDC 2026 功能；隐私口径是阿里巴巴的说明，未做独立验证。"
+    },
+    {
+      "id": "mol1",
+      "priority": "brief",
+      "discovery": "independent",
+      "eventDate": "2026-10-31",
+      "url": "https://hub-assets-cache.baai.ac.cn/view/59224",
+      "reason": "国产团队把权重和代码一起放开，同一模型覆盖多类生物分子复合物，有官方配图可直接展示对比结果，适合做一条简短的开源资讯。",
+      "limits": "所有指标都是公司自报，第三方未复核；与 IsoDDE 的对比以其技术报告为参照，不是同期同环境的独立评测；不写成药物研发已被替代。"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "gitlab-kev",
+      "reason": "核实成立，但它是运维截止提醒，不是技术突破或影响面大的变革：漏洞 10 月 13 日就已修复披露，11 月 1 日只是美国联邦机构的修复截止日。按本期采用的选题标准（不限于 AI，但要可核实、有实际用途、变化幅度够大）仍然不入选，理由不是“它不是 AI”。",
+      "url": "https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html"
+    },
+    {
+      "id": "rea-stars",
+      "reason": "文档 Top3 第③条只有星数与趋势榜位次，没有新的功能变化；星数增长本身不是本期要讲的实质更新。rea 在 10 月 27 日那期已经用过，不重复介绍项目。",
+      "url": "https://www.ngjoo.com/trending/"
+    },
+    {
+      "id": "gemini-carbon-gpt-terra",
+      "reason": "看起来是当天的大消息，回查后是 10 月 26-28 日的发布：GPT-6.1 Terra 已在 10 月 27 日那期做头条，Gemini 4 Carbon 已在 10 月 29 日那期做头条。没有新进展，不做第二次首发。",
+      "url": "https://www.itmedia.co.jp/pcuser/articles/2611/01/news003.html"
+    },
+    {
+      "id": "hbm-supply",
+      "reason": "转述链条是微博转经济日报，没有找到可读的原报道；600 亿美元与产能售罄都是引用口径，缺原始出处不进入播报。10 月 30 日已按同类理由退掉算力对比。",
+      "url": "https://m.weibo.cn/detail/5360373373077270"
+    },
+    {
+      "id": "codeinspectus-21st-dev",
+      "reason": "目录上架与版本号更新，没找到可核的独立功能说明或原始仓库变更记录；价值不足一条新闻，也不为凑条数保留。",
+      "url": "https://registry.modelcontextprotocol.io/"
+    },
+    {
+      "id": "impeccable-k8s-vite",
+      "reason": "分别是星数介绍、补丁排期和一次 bug 修复版本，属于常驻开发信息，不是当天值得播报的变化。Vite 与 Kubernetes 的数字未做独立复核。",
+      "url": "https://kubernetes.io/zh-cn/releases/patch-releases/"
+    },
+    {
+      "id": "arxiv-webspec-chibench",
+      "reason": "论文本身可查，但本期已有三条更直接可用的内容，科学传播篇幅有限；未读完论文正文，不据二手摘要下结论。保留为后续候选。",
+      "url": "https://arxiv.org/abs/2610.39761"
+    },
+    {
+      "id": "claude-fable-obsidian",
+      "reason": "属于泄露与传闻，没有官方发布可回查；不确定的信息不做播报。",
+      "url": "https://www.qbitai.com/2026/10/506674.html"
+    },
+    {
+      "id": "anthropic-subscription",
+      "reason": "订阅档位改名与取消 5 小时限制，对已付费用户有用，但变化幅度不足以占一条独立资讯；本期三条已经覆盖模型、产品与开源三个方向。",
+      "url": "https://www.qbitai.com/2026/10/506855.html"
+    },
+    {
+      "id": "openai-funding",
+      "reason": "融资与估值变化属资本面，不是本期受众要用的功能变化；数字来自媒体转述，未取得公司公告。",
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/"
+    },
+    {
+      "id": "jobs",
+      "reason": "校招与实习信息按栏目约定不固定占板块。",
+      "url": "https://career.huawei.com/cn/campus-recruitment"
+    }
+  ],
+  "notes": "本期决定出片，共 3 条：DeepSeek Super-agent 做头条，苹果 Apple 智能接入千问做次重点，Mol-1 做简讯。检索覆盖 10 月 30 日至 11 月 1 日的模型、产品、开源与安全方向；没有声称已搜完所有来源。文档补充与独立发现已分开记录：苹果与 Mol-1 不来自参考文档。"
+}

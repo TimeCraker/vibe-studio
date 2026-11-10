@@ -1,0 +1,791 @@
+{
+  "date": "2026-11-01",
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "durationInFrames": 11025,
+  "seconds": 183.75,
+  "voice": "human-recorded",
+  "timingMode": "real-ASR-word-windows-agent-reviewed-human-listening-pending",
+  "recording": "audio/source/narration-original-8deab700a1b1.m4a",
+  "recordingSha256": "8deab700a1b1f0bef0da072cf0b843f80dd727312d9f9f924c8fe1894bc425b3",
+  "sourceIn": 0.12000000000000002,
+  "sourceOut": 169.07,
+  "voiceStart": 14,
+  "scenes": [
+    {
+      "id": "global",
+      "title": "全球 AI 模型综合能力 TOP15",
+      "start": 0,
+      "end": 7,
+      "purpose": "当期全球榜与官标，BGM，无口播",
+      "subject": "全球 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国产 AI 模型综合能力 TOP15",
+      "start": 7,
+      "end": 14,
+      "purpose": "同版式当期国产榜",
+      "subject": "国产 ECI TOP15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "今日 AI 资讯",
+      "start": 14,
+      "end": 32.516666666666666,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "今日 AI 资讯",
+      "claimIds": []
+    },
+    {
+      "id": "ds-what",
+      "title": "DeepSeek 公开 Super-agent 架构并开源原型",
+      "start": 32.516666666666666,
+      "end": 60.21666666666667,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "DeepSeek 公开 Super-agent 架构并开源原型",
+      "claimIds": [
+        "ds-superagent-release",
+        "ds-superagent-scope"
+      ]
+    },
+    {
+      "id": "ds-arch",
+      "title": "系统拆成五块：Router、Worker、事件、解耦、Watchdog",
+      "start": 60.21666666666667,
+      "end": 80.56666666666666,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "系统拆成五块：Router、Worker、事件、解耦、Watchdog",
+      "claimIds": [
+        "ds-superagent-modules"
+      ]
+    },
+    {
+      "id": "ds-bench",
+      "title": "初步实验：任务完成更快，直通与批处理省开销",
+      "start": 80.56666666666666,
+      "end": 94.71666666666667,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "初步实验：任务完成更快，直通与批处理省开销",
+      "claimIds": [
+        "ds-superagent-bench"
+      ]
+    },
+    {
+      "id": "ds-limits",
+      "title": "这是研究原型，不是正式产品",
+      "start": 94.71666666666667,
+      "end": 109.08333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "这是研究原型，不是正式产品",
+      "claimIds": [
+        "ds-superagent-not-product"
+      ]
+    },
+    {
+      "id": "apple-change",
+      "title": "Apple 智能国行首批功能接入阿里千问",
+      "start": 109.08333333333333,
+      "end": 131.03333333333333,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "Apple 智能国行首批功能接入阿里千问",
+      "claimIds": [
+        "apple-qwen-announce",
+        "apple-qwen-optin"
+      ]
+    },
+    {
+      "id": "apple-timing",
+      "title": "11 月 4 日开发者 Beta，12 月随 iOS 27.3 上线",
+      "start": 131.03333333333333,
+      "end": 148.26666666666668,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "11 月 4 日开发者 Beta，12 月随 iOS 27.3 上线",
+      "claimIds": [
+        "apple-qwen-schedule",
+        "apple-qwen-devices",
+        "apple-qwen-exclusions"
+      ]
+    },
+    {
+      "id": "mol1-what",
+      "title": "觅深知源开源生物分子模型 Mol-1",
+      "start": 148.26666666666668,
+      "end": 156.3,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "觅深知源开源生物分子模型 Mol-1",
+      "claimIds": [
+        "mol1-release"
+      ]
+    },
+    {
+      "id": "mol1-numbers",
+      "title": "FoldBench-AB 75.0%，与 IsoDDE 的 75.6% 基本持平",
+      "start": 156.3,
+      "end": 178.98333333333332,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "FoldBench-AB 75.0%，与 IsoDDE 的 75.6% 基本持平",
+      "claimIds": [
+        "mol1-foldbench",
+        "mol1-wetlab"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "本期资讯与来源链接见简介",
+      "start": 178.98333333333332,
+      "end": 183.75,
+      "purpose": "按实际语义展示变化与材料",
+      "subject": "本期资讯与来源链接见简介",
+      "claimIds": []
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "scene": "overview",
+      "text": "各位观众们大家好",
+      "from": 849,
+      "to": 933,
+      "sourceStart": 0.27,
+      "sourceEnd": 1.67
+    },
+    {
+      "id": 2,
+      "scene": "overview",
+      "text": "欢迎收看今日 AI 资讯",
+      "from": 946,
+      "to": 1025,
+      "sourceStart": 1.89,
+      "sourceEnd": 3.21
+    },
+    {
+      "id": 3,
+      "scene": "overview",
+      "text": "今天的主要资讯有三件",
+      "from": 1081,
+      "to": 1178,
+      "sourceStart": 4.13,
+      "sourceEnd": 5.75
+    },
+    {
+      "id": 4,
+      "scene": "overview",
+      "text": "第一个是DeepSeek开源了一套让AI同时干多件事的",
+      "from": 1203,
+      "to": 1435,
+      "sourceStart": 6.17,
+      "sourceEnd": 10.03
+    },
+    {
+      "id": 5,
+      "scene": "overview",
+      "text": "架构",
+      "from": 1435,
+      "to": 1457,
+      "sourceStart": 10.03,
+      "sourceEnd": 10.41
+    },
+    {
+      "id": 6,
+      "scene": "overview",
+      "text": "苹果国行版Apple智能接入了阿里千问",
+      "from": 1499,
+      "to": 1732,
+      "sourceStart": 11.11,
+      "sourceEnd": 14.99
+    },
+    {
+      "id": 7,
+      "scene": "overview",
+      "text": "还有国内团队开源了一个生物分子大模型",
+      "from": 1745,
+      "to": 1903,
+      "sourceStart": 15.21,
+      "sourceEnd": 17.83
+    },
+    {
+      "id": 8,
+      "scene": "ds-what",
+      "text": "10月31日晚上",
+      "from": 1951,
+      "to": 2018,
+      "sourceStart": 18.63,
+      "sourceEnd": 19.75
+    },
+    {
+      "id": 9,
+      "scene": "ds-what",
+      "text": "DeepSeekHarness团队发了一篇长文",
+      "from": 2041,
+      "to": 2185,
+      "sourceStart": 20.13,
+      "sourceEnd": 22.53
+    },
+    {
+      "id": 10,
+      "scene": "ds-what",
+      "text": "讲他们怎么设计一个一直在线的agent",
+      "from": 2198,
+      "to": 2385,
+      "sourceStart": 22.75,
+      "sourceEnd": 25.87
+    },
+    {
+      "id": 11,
+      "scene": "ds-what",
+      "text": "同时把研究原型放在了github",
+      "from": 2398,
+      "to": 2546,
+      "sourceStart": 26.09,
+      "sourceEnd": 28.55
+    },
+    {
+      "id": 12,
+      "scene": "ds-what",
+      "text": "它跟常见的编程助手不太一样",
+      "from": 2588,
+      "to": 2707,
+      "sourceStart": 29.25,
+      "sourceEnd": 31.23
+    },
+    {
+      "id": 13,
+      "scene": "ds-what",
+      "text": "你把它接到一个代码仓库",
+      "from": 2728,
+      "to": 2837,
+      "sourceStart": 31.59,
+      "sourceEnd": 33.41
+    },
+    {
+      "id": 14,
+      "scene": "ds-what",
+      "text": "也可以顺手接上飞书群",
+      "from": 2846,
+      "to": 2949,
+      "sourceStart": 33.55,
+      "sourceEnd": 35.27
+    },
+    {
+      "id": 15,
+      "scene": "ds-what",
+      "text": "有权限的人在群里提需求",
+      "from": 2961,
+      "to": 3087,
+      "sourceStart": 35.47,
+      "sourceEnd": 37.57
+    },
+    {
+      "id": 16,
+      "scene": "ds-what",
+      "text": "它自己开一个工作区去做",
+      "from": 3107,
+      "to": 3202,
+      "sourceStart": 37.91,
+      "sourceEnd": 39.49
+    },
+    {
+      "id": 17,
+      "scene": "ds-what",
+      "text": "做完回到原来的会话里回复",
+      "from": 3225,
+      "to": 3327,
+      "sourceStart": 39.87,
+      "sourceEnd": 41.57
+    },
+    {
+      "id": 18,
+      "scene": "ds-what",
+      "text": "比如直接提一个PR",
+      "from": 3345,
+      "to": 3435,
+      "sourceStart": 41.87,
+      "sourceEnd": 43.37
+    },
+    {
+      "id": 19,
+      "scene": "ds-what",
+      "text": "几件事情可以同时推进",
+      "from": 3451,
+      "to": 3544,
+      "sourceStart": 43.63,
+      "sourceEnd": 45.19
+    },
+    {
+      "id": 20,
+      "scene": "ds-what",
+      "text": "互不打断",
+      "from": 3556,
+      "to": 3592,
+      "sourceStart": 45.39,
+      "sourceEnd": 45.99
+    },
+    {
+      "id": 21,
+      "scene": "ds-arch",
+      "text": "背后是一套分层设计",
+      "from": 3613,
+      "to": 3721,
+      "sourceStart": 46.33,
+      "sourceEnd": 48.13
+    },
+    {
+      "id": 22,
+      "scene": "ds-arch",
+      "text": "上面一层只负责派活和回话",
+      "from": 3730,
+      "to": 3851,
+      "sourceStart": 48.29,
+      "sourceEnd": 50.31
+    },
+    {
+      "id": 23,
+      "scene": "ds-arch",
+      "text": "下面一层是互不干扰的",
+      "from": 3869,
+      "to": 3963,
+      "sourceStart": 50.61,
+      "sourceEnd": 52.17
+    },
+    {
+      "id": 24,
+      "scene": "ds-arch",
+      "text": "执行单元各干各的",
+      "from": 3968,
+      "to": 4040,
+      "sourceStart": 52.25,
+      "sourceEnd": 53.45
+    },
+    {
+      "id": 25,
+      "scene": "ds-arch",
+      "text": "所以它在后台跑长任务时",
+      "from": 4061,
+      "to": 4185,
+      "sourceStart": 53.81,
+      "sourceEnd": 55.87
+    },
+    {
+      "id": 26,
+      "scene": "ds-arch",
+      "text": "前台照样能接收新指令",
+      "from": 4214,
+      "to": 4331,
+      "sourceStart": 56.35,
+      "sourceEnd": 58.31
+    },
+    {
+      "id": 27,
+      "scene": "ds-arch",
+      "text": "笔记本合上了任务也不断",
+      "from": 4342,
+      "to": 4432,
+      "sourceStart": 58.49,
+      "sourceEnd": 59.99
+    },
+    {
+      "id": 28,
+      "scene": "ds-arch",
+      "text": "外面还挂了一个独立的看门狗",
+      "from": 4432,
+      "to": 4574,
+      "sourceStart": 59.99,
+      "sourceEnd": 62.35
+    },
+    {
+      "id": 29,
+      "scene": "ds-arch",
+      "text": "专门盯每个任务有没有真正在往前推进",
+      "from": 4576,
+      "to": 4790,
+      "sourceStart": 62.39,
+      "sourceEnd": 65.95
+    },
+    {
+      "id": 30,
+      "scene": "ds-bench",
+      "text": "文章给了一组初步数据",
+      "from": 4834,
+      "to": 4954,
+      "sourceStart": 66.69,
+      "sourceEnd": 68.69
+    },
+    {
+      "id": 31,
+      "scene": "ds-bench",
+      "text": "任务完成中位数12.4分",
+      "from": 4969,
+      "to": 5113,
+      "sourceStart": 68.93,
+      "sourceEnd": 71.33
+    },
+    {
+      "id": 32,
+      "scene": "ds-bench",
+      "text": "作者自己也说",
+      "from": 5164,
+      "to": 5221,
+      "sourceStart": 72.19,
+      "sourceEnd": 73.13
+    },
+    {
+      "id": 33,
+      "scene": "ds-bench",
+      "text": "实验用的是合成的负载和简化环境",
+      "from": 5261,
+      "to": 5444,
+      "sourceStart": 73.81,
+      "sourceEnd": 76.85
+    },
+    {
+      "id": 34,
+      "scene": "ds-bench",
+      "text": "只能当初步参考",
+      "from": 5459,
+      "to": 5656,
+      "sourceStart": 77.11,
+      "sourceEnd": 80.39
+    },
+    {
+      "id": 35,
+      "scene": "ds-limits",
+      "text": "有一点得说清楚",
+      "from": 5683,
+      "to": 5746,
+      "sourceStart": 80.83,
+      "sourceEnd": 81.89
+    },
+    {
+      "id": 36,
+      "scene": "ds-limits",
+      "text": "仓库里写得很明白",
+      "from": 5768,
+      "to": 5825,
+      "sourceStart": 82.25,
+      "sourceEnd": 83.21
+    },
+    {
+      "id": 37,
+      "scene": "ds-limits",
+      "text": "这是研究原型",
+      "from": 5830,
+      "to": 5873,
+      "sourceStart": 83.29,
+      "sourceEnd": 84.01
+    },
+    {
+      "id": 38,
+      "scene": "ds-limits",
+      "text": "不是DeepSeek的正式产品",
+      "from": 5877,
+      "to": 6005,
+      "sourceStart": 84.07,
+      "sourceEnd": 86.21
+    },
+    {
+      "id": 39,
+      "scene": "ds-limits",
+      "text": "为了公开做过改编",
+      "from": 6050,
+      "to": 6179,
+      "sourceStart": 86.95,
+      "sourceEnd": 89.11
+    },
+    {
+      "id": 40,
+      "scene": "ds-limits",
+      "text": "想试的话",
+      "from": 6188,
+      "to": 6221,
+      "sourceStart": 89.25,
+      "sourceEnd": 89.81
+    },
+    {
+      "id": 41,
+      "scene": "ds-limits",
+      "text": "先去仓库看安装文档",
+      "from": 6232,
+      "to": 6355,
+      "sourceStart": 89.99,
+      "sourceEnd": 92.03
+    },
+    {
+      "id": 42,
+      "scene": "ds-limits",
+      "text": "前提是你本来就在用DeepSeekHarness",
+      "from": 6362,
+      "to": 6526,
+      "sourceStart": 92.15,
+      "sourceEnd": 94.89
+    },
+    {
+      "id": 43,
+      "scene": "apple-change",
+      "text": "接着是苹果",
+      "from": 6545,
+      "to": 6605,
+      "sourceStart": 95.21,
+      "sourceEnd": 96.21
+    },
+    {
+      "id": 44,
+      "scene": "apple-change",
+      "text": "10月31日",
+      "from": 6614,
+      "to": 6668,
+      "sourceStart": 96.35,
+      "sourceEnd": 97.25
+    },
+    {
+      "id": 45,
+      "scene": "apple-change",
+      "text": "苹果宣布国行版Apple智能要来了",
+      "from": 6680,
+      "to": 6848,
+      "sourceStart": 97.45,
+      "sourceEnd": 100.25
+    },
+    {
+      "id": 46,
+      "scene": "apple-change",
+      "text": "部分体验接入了千问",
+      "from": 6871,
+      "to": 6964,
+      "sourceStart": 100.63,
+      "sourceEnd": 102.19
+    },
+    {
+      "id": 47,
+      "scene": "apple-change",
+      "text": "你可以直接在Siri写作工具和视觉智能里用它",
+      "from": 7013,
+      "to": 7318,
+      "sourceStart": 103.01,
+      "sourceEnd": 108.09
+    },
+    {
+      "id": 48,
+      "scene": "apple-change",
+      "text": "登录自己的千问账号或者通过 Apple 登录",
+      "from": 7329,
+      "to": 7465,
+      "sourceStart": 108.27,
+      "sourceEnd": 110.53
+    },
+    {
+      "id": 49,
+      "scene": "apple-change",
+      "text": "阿里说，用户的请求和回复不会被拿去训练模型",
+      "from": 7528,
+      "to": 7831,
+      "sourceStart": 111.59,
+      "sourceEnd": 116.63
+    },
+    {
+      "id": 50,
+      "scene": "apple-timing",
+      "text": "时间是11月4日",
+      "from": 7862,
+      "to": 7979,
+      "sourceStart": 117.15,
+      "sourceEnd": 119.11
+    },
+    {
+      "id": 51,
+      "scene": "apple-timing",
+      "text": "随 iOS 开发者开始测试",
+      "from": 7989,
+      "to": 8168,
+      "sourceStart": 119.27,
+      "sourceEnd": 122.25
+    },
+    {
+      "id": 52,
+      "scene": "apple-timing",
+      "text": "12 月随 iOS 27.3 正式推送",
+      "from": 8180,
+      "to": 8329,
+      "sourceStart": 122.45,
+      "sourceEnd": 124.93
+    },
+    {
+      "id": 53,
+      "scene": "apple-timing",
+      "text": "机型有门槛",
+      "from": 8345,
+      "to": 8410,
+      "sourceStart": 125.21,
+      "sourceEnd": 126.29
+    },
+    {
+      "id": 54,
+      "scene": "apple-timing",
+      "text": "需要是iPhone16之后",
+      "from": 8428,
+      "to": 8573,
+      "sourceStart": 126.59,
+      "sourceEnd": 129.01
+    },
+    {
+      "id": 55,
+      "scene": "apple-timing",
+      "text": "然后相关的较新的系列",
+      "from": 8584,
+      "to": 8758,
+      "sourceStart": 129.19,
+      "sourceEnd": 132.09
+    },
+    {
+      "id": 56,
+      "scene": "mol1-what",
+      "text": "第三个是开源模型",
+      "from": 8896,
+      "to": 9000,
+      "sourceStart": 134.38,
+      "sourceEnd": 136.12
+    },
+    {
+      "id": 57,
+      "scene": "mol1-what",
+      "text": "10月31日",
+      "from": 9037,
+      "to": 9091,
+      "sourceStart": 136.74,
+      "sourceEnd": 137.64
+    },
+    {
+      "id": 58,
+      "scene": "mol1-what",
+      "text": "国内的开源这个模型，权重和代码都放出来了",
+      "from": 9102,
+      "to": 9356,
+      "sourceStart": 137.82,
+      "sourceEnd": 142.06
+    },
+    {
+      "id": 59,
+      "scene": "mol1-numbers",
+      "text": "它做的是生物分子结构预测",
+      "from": 9378,
+      "to": 9499,
+      "sourceStart": 142.42,
+      "sourceEnd": 144.44
+    },
+    {
+      "id": 60,
+      "scene": "mol1-numbers",
+      "text": "抗体，蛋白",
+      "from": 9506,
+      "to": 9552,
+      "sourceStart": 144.56,
+      "sourceEnd": 145.32
+    },
+    {
+      "id": 61,
+      "scene": "mol1-numbers",
+      "text": "小分子，这几类都能算",
+      "from": 9557,
+      "to": 9643,
+      "sourceStart": 145.4,
+      "sourceEnd": 146.84
+    },
+    {
+      "id": 62,
+      "scene": "mol1-numbers",
+      "text": "官方给出的数字是",
+      "from": 9643,
+      "to": 9727,
+      "sourceStart": 146.84,
+      "sourceEnd": 148.24
+    },
+    {
+      "id": 63,
+      "scene": "mol1-numbers",
+      "text": "抗体抗原测试集成功率75%",
+      "from": 9736,
+      "to": 9923,
+      "sourceStart": 148.38,
+      "sourceEnd": 151.5
+    },
+    {
+      "id": 64,
+      "scene": "mol1-numbers",
+      "text": "和这个平台上公布的75.6%差不多",
+      "from": 9923,
+      "to": 10211,
+      "sourceStart": 151.5,
+      "sourceEnd": 156.3
+    },
+    {
+      "id": 65,
+      "scene": "mol1-numbers",
+      "text": "他们还自己做了个实验",
+      "from": 10228,
+      "to": 10307,
+      "sourceStart": 156.58,
+      "sourceEnd": 157.9
+    },
+    {
+      "id": 66,
+      "scene": "mol1-numbers",
+      "text": "17 个靶点都拿到了候选",
+      "from": 10318,
+      "to": 10430,
+      "sourceStart": 158.08,
+      "sourceEnd": 159.96
+    },
+    {
+      "id": 67,
+      "scene": "mol1-numbers",
+      "text": "这些数都是公司自己报的",
+      "from": 10439,
+      "to": 10678,
+      "sourceStart": 160.1,
+      "sourceEnd": 164.08
+    },
+    {
+      "id": 68,
+      "scene": "mol1-numbers",
+      "text": "第三方还没有复核",
+      "from": 10682,
+      "to": 10739,
+      "sourceStart": 164.16,
+      "sourceEnd": 165.1
+    },
+    {
+      "id": 69,
+      "scene": "closing",
+      "text": "以上是本期 AI 资讯",
+      "from": 10739,
+      "to": 10831,
+      "sourceStart": 165.1,
+      "sourceEnd": 166.64
+    },
+    {
+      "id": 70,
+      "scene": "closing",
+      "text": "相关链接放在简介里",
+      "from": 10842,
+      "to": 10918,
+      "sourceStart": 166.82,
+      "sourceEnd": 168.08
+    },
+    {
+      "id": 71,
+      "scene": "closing",
+      "text": "我们下期再见",
+      "from": 10924,
+      "to": 10975,
+      "sourceStart": 168.18,
+      "sourceEnd": 169.04
+    }
+  ]
+}

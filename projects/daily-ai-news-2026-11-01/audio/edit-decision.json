@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "authorization": "用户 2026-11-01 明确要求去掉录音里的卡顿、读错和重来，只保留正确的说法；本次只剪口，不做变速，不改变原声语速与音高。",
+  "originalSource": "audio/source/narration-original-8deab700a1b1.m4a",
+  "originalSha256": "8deab700a1b1f0bef0da072cf0b843f80dd727312d9f9f924c8fe1894bc425b3",
+  "rawDecodedSource": "audio/source/narration-decoded-8deab700a1b1.wav",
+  "rawDecodedSha256": "22fb5c4f849a5aca0bdd6d00de85d4ef8c7bf2953445021877640c34f44a51b9",
+  "source": "audio/source/narration-adopted-v1.wav",
+  "sourceSha256": "4e3bfd7cd3209adc99ca403fbd182fd68ca30e7e05c94ebf343c3d8029eb37f3",
+  "originalDuration": 185.728,
+  "sourceDuration": 169.07,
+  "removedSeconds": 16.658,
+  "edits": [
+    {
+      "kind": "head-trim",
+      "sourceIn": 0,
+      "sourceOut": 0.4,
+      "reason": "开头 0.4 秒的准备声与底噪，第一个字在 0.69 秒才开始。"
+    },
+    {
+      "kind": "false-start",
+      "sourceIn": 14.2,
+      "sourceOut": 15.58,
+      "reason": "“Apple 智能”后面接了一句没说完的“订入”（14.35-14.75），停 0.8 秒重新起“接入了阿里千问”。剪掉“订入”和这段停顿，保留后面完整的一句。"
+    },
+    {
+      "kind": "false-start",
+      "sourceIn": 64.18,
+      "sourceOut": 68.02,
+      "reason": "“独立的看门狗，”之后先说了“专门”，停 1 秒补“这个 watchdog”，又拖了一个“这个”，才接第三遍的“专门盯每个任务”。三段重来合成一处剪掉。"
+    },
+    {
+      "kind": "false-start",
+      "sourceIn": 72.6,
+      "sourceOut": 73.88,
+      "reason": "只有“文章”两个字的假起手（72.65-72.90），随后约 0.9 秒空白，再从头说“文章给了一组初步数据”。"
+    },
+    {
+      "kind": "false-start",
+      "sourceIn": 105.29,
+      "sourceOut": 106.6,
+      "reason": "“苹果宣布”之后先起了一次“国航版”没接下去（105.35-105.82），停 0.7 秒重说“国行版 Apple 智能要来了”。保留前一次已经说清的“苹果宣布”，接后一次完整的那句。"
+    },
+    {
+      "kind": "long-pause",
+      "sourceIn": 146.88,
+      "sourceOut": 150.65,
+      "reason": "“10 月 31 日，国内的”之后空停 3.7 秒（能量约 -35 dB 的底噪），再接着说“开源这个模型，权重和代码都放出来了”。这段是卡壳，不是语义停顿。"
+    },
+    {
+      "kind": "tail-trim",
+      "sourceIn": 181.05,
+      "sourceOut": 185.728,
+      "reason": "最后一个字“再见”在 180.93 秒结束，之后是 4.7 秒余音与房间噪声。"
+    }
+  ],
+  "keptIntervals": [
+    {"sourceIn": 0.4, "sourceOut": 14.2, "outputIn": 0.0, "outputOut": 13.8},
+    {"sourceIn": 15.58, "sourceOut": 64.18, "outputIn": 13.8, "outputOut": 62.4},
+    {"sourceIn": 68.02, "sourceOut": 72.6, "outputIn": 62.4, "outputOut": 66.98},
+    {"sourceIn": 73.88, "sourceOut": 105.29, "outputIn": 66.98, "outputOut": 98.39},
+    {"sourceIn": 106.6, "sourceOut": 146.88, "outputIn": 98.39, "outputOut": 138.67},
+    {"sourceIn": 150.65, "sourceOut": 181.05, "outputIn": 138.67, "outputOut": 169.07}
+  ],
+  "mergedRemovedIntervals": [
+    {"sourceIn": 0.0, "sourceOut": 0.4},
+    {"sourceIn": 14.2, "sourceOut": 15.58},
+    {"sourceIn": 64.18, "sourceOut": 68.02},
+    {"sourceIn": 72.6, "sourceOut": 73.88},
+    {"sourceIn": 105.29, "sourceOut": 106.6},
+    {"sourceIn": 146.88, "sourceOut": 150.65},
+    {"sourceIn": 181.05, "sourceOut": 185.728}
+  ],
+  "processing": {
+    "tool": "ffmpeg atrim + concat，每个接缝 12 毫秒淡入淡出",
+    "speed": 1.0,
+    "pitch": "unchanged",
+    "sampleRate": 48000,
+    "channels": 2,
+    "script": "projects/daily-ai-news-2026-11-01/scripts/build-adopted-track.mjs",
+    "reproduce": "node projects/daily-ai-news-2026-11-01/scripts/build-adopted-track.mjs"
+  },
+  "reviewNotes": [
+    "第一版把“看门狗”后面的剪点放在 67.28，切进了上一遍“这个 watchdog”的尾巴，采用轨被识别成“做个专门钉”。改到 68.02 后识别为“看门狗，专门钉每一个任务”。",
+    "第一版把“国行版”的剪点放在 106.83，正好切在“国”的起音上，采用轨少了一个字。改到 106.60 后“国行版”三个字完整。",
+    "剪点全部按本机解码 PCM 的能量包络与原始 ASR 词窗交叉判断，落在静音或底噪里。执行者无法听音，剪口是否自然、有没有残留气息声仍待人工审听。"
+  ],
+  "reviewScope": "未被录音覆盖的原稿句子（“开不开由你自己决定”、Siri 与设备语言条件、“不含下一代 Siri AI”）另记在 audio/alignment.json 的 actualChangesExplained。"
+}

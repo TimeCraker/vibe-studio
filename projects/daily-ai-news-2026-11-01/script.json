@@ -1,0 +1,437 @@
+{
+  "meta": {
+    "title": "今日 AI 资讯 · 实际录音",
+    "lang": "zh",
+    "budgetSeconds": 168.95,
+    "charsPerSecond": 5.8,
+    "bannedWords": []
+  },
+  "segments": [
+    {
+      "id": 1,
+      "kind": "subtitle",
+      "text": "各位观众们大家好",
+      "ref": "scene overview"
+    },
+    {
+      "id": 2,
+      "kind": "subtitle",
+      "text": "欢迎收看今日 AI 资讯",
+      "ref": "scene overview"
+    },
+    {
+      "id": 3,
+      "kind": "subtitle",
+      "text": "今天的主要资讯有三件",
+      "ref": "scene overview"
+    },
+    {
+      "id": 4,
+      "kind": "subtitle",
+      "text": "第一个是DeepSeek开源了一套让AI同时干多件事的",
+      "ref": "scene overview"
+    },
+    {
+      "id": 5,
+      "kind": "subtitle",
+      "text": "架构",
+      "ref": "scene overview"
+    },
+    {
+      "id": 6,
+      "kind": "subtitle",
+      "text": "苹果国行版Apple智能接入了阿里千问",
+      "ref": "scene overview"
+    },
+    {
+      "id": 7,
+      "kind": "subtitle",
+      "text": "还有国内团队开源了一个生物分子大模型",
+      "ref": "scene overview"
+    },
+    {
+      "id": 8,
+      "kind": "subtitle",
+      "text": "10月31日晚上",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 9,
+      "kind": "subtitle",
+      "text": "DeepSeekHarness团队发了一篇长文",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 10,
+      "kind": "subtitle",
+      "text": "讲他们怎么设计一个一直在线的agent",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 11,
+      "kind": "subtitle",
+      "text": "同时把研究原型放在了github",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 12,
+      "kind": "subtitle",
+      "text": "它跟常见的编程助手不太一样",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 13,
+      "kind": "subtitle",
+      "text": "你把它接到一个代码仓库",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 14,
+      "kind": "subtitle",
+      "text": "也可以顺手接上飞书群",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 15,
+      "kind": "subtitle",
+      "text": "有权限的人在群里提需求",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 16,
+      "kind": "subtitle",
+      "text": "它自己开一个工作区去做",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 17,
+      "kind": "subtitle",
+      "text": "做完回到原来的会话里回复",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 18,
+      "kind": "subtitle",
+      "text": "比如直接提一个PR",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 19,
+      "kind": "subtitle",
+      "text": "几件事情可以同时推进",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 20,
+      "kind": "subtitle",
+      "text": "互不打断",
+      "ref": "scene ds-what"
+    },
+    {
+      "id": 21,
+      "kind": "subtitle",
+      "text": "背后是一套分层设计",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 22,
+      "kind": "subtitle",
+      "text": "上面一层只负责派活和回话",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 23,
+      "kind": "subtitle",
+      "text": "下面一层是互不干扰的",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 24,
+      "kind": "subtitle",
+      "text": "执行单元各干各的",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 25,
+      "kind": "subtitle",
+      "text": "所以它在后台跑长任务时",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 26,
+      "kind": "subtitle",
+      "text": "前台照样能接收新指令",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 27,
+      "kind": "subtitle",
+      "text": "笔记本合上了任务也不断",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 28,
+      "kind": "subtitle",
+      "text": "外面还挂了一个独立的看门狗",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 29,
+      "kind": "subtitle",
+      "text": "专门盯每个任务有没有真正在往前推进",
+      "ref": "scene ds-arch"
+    },
+    {
+      "id": 30,
+      "kind": "subtitle",
+      "text": "文章给了一组初步数据",
+      "ref": "scene ds-bench"
+    },
+    {
+      "id": 31,
+      "kind": "subtitle",
+      "text": "任务完成中位数12.4分",
+      "ref": "scene ds-bench"
+    },
+    {
+      "id": 32,
+      "kind": "subtitle",
+      "text": "作者自己也说",
+      "ref": "scene ds-bench"
+    },
+    {
+      "id": 33,
+      "kind": "subtitle",
+      "text": "实验用的是合成的负载和简化环境",
+      "ref": "scene ds-bench"
+    },
+    {
+      "id": 34,
+      "kind": "subtitle",
+      "text": "只能当初步参考",
+      "ref": "scene ds-bench"
+    },
+    {
+      "id": 35,
+      "kind": "subtitle",
+      "text": "有一点得说清楚",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 36,
+      "kind": "subtitle",
+      "text": "仓库里写得很明白",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 37,
+      "kind": "subtitle",
+      "text": "这是研究原型",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 38,
+      "kind": "subtitle",
+      "text": "不是DeepSeek的正式产品",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 39,
+      "kind": "subtitle",
+      "text": "为了公开做过改编",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 40,
+      "kind": "subtitle",
+      "text": "想试的话",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 41,
+      "kind": "subtitle",
+      "text": "先去仓库看安装文档",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 42,
+      "kind": "subtitle",
+      "text": "前提是你本来就在用DeepSeekHarness",
+      "ref": "scene ds-limits"
+    },
+    {
+      "id": 43,
+      "kind": "subtitle",
+      "text": "接着是苹果",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 44,
+      "kind": "subtitle",
+      "text": "10月31日",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 45,
+      "kind": "subtitle",
+      "text": "苹果宣布国行版Apple智能要来了",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 46,
+      "kind": "subtitle",
+      "text": "部分体验接入了千问",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 47,
+      "kind": "subtitle",
+      "text": "你可以直接在Siri写作工具和视觉智能里用它",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 48,
+      "kind": "subtitle",
+      "text": "登录自己的千问账号或者通过 Apple 登录",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 49,
+      "kind": "subtitle",
+      "text": "阿里说，用户的请求和回复不会被拿去训练模型",
+      "ref": "scene apple-change"
+    },
+    {
+      "id": 50,
+      "kind": "subtitle",
+      "text": "时间是11月4日",
+      "ref": "scene apple-timing"
+    },
+    {
+      "id": 51,
+      "kind": "subtitle",
+      "text": "随 iOS 开发者开始测试",
+      "ref": "scene apple-timing"
+    },
+    {
+      "id": 52,
+      "kind": "subtitle",
+      "text": "12 月随 iOS 27.3 正式推送",
+      "ref": "scene apple-timing"
+    },
+    {
+      "id": 53,
+      "kind": "subtitle",
+      "text": "机型有门槛",
+      "ref": "scene apple-timing"
+    },
+    {
+      "id": 54,
+      "kind": "subtitle",
+      "text": "需要是iPhone16之后",
+      "ref": "scene apple-timing"
+    },
+    {
+      "id": 55,
+      "kind": "subtitle",
+      "text": "然后相关的较新的系列",
+      "ref": "scene apple-timing"
+    },
+    {
+      "id": 56,
+      "kind": "subtitle",
+      "text": "第三个是开源模型",
+      "ref": "scene mol1-what"
+    },
+    {
+      "id": 57,
+      "kind": "subtitle",
+      "text": "10月31日",
+      "ref": "scene mol1-what"
+    },
+    {
+      "id": 58,
+      "kind": "subtitle",
+      "text": "国内的开源这个模型，权重和代码都放出来了",
+      "ref": "scene mol1-what"
+    },
+    {
+      "id": 59,
+      "kind": "subtitle",
+      "text": "它做的是生物分子结构预测",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 60,
+      "kind": "subtitle",
+      "text": "抗体，蛋白",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 61,
+      "kind": "subtitle",
+      "text": "小分子，这几类都能算",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 62,
+      "kind": "subtitle",
+      "text": "官方给出的数字是",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 63,
+      "kind": "subtitle",
+      "text": "抗体抗原测试集成功率75%",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 64,
+      "kind": "subtitle",
+      "text": "和这个平台上公布的75.6%差不多",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 65,
+      "kind": "subtitle",
+      "text": "他们还自己做了个实验",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 66,
+      "kind": "subtitle",
+      "text": "17 个靶点都拿到了候选",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 67,
+      "kind": "subtitle",
+      "text": "这些数都是公司自己报的",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 68,
+      "kind": "subtitle",
+      "text": "第三方还没有复核",
+      "ref": "scene mol1-numbers"
+    },
+    {
+      "id": 69,
+      "kind": "subtitle",
+      "text": "以上是本期 AI 资讯",
+      "ref": "scene closing"
+    },
+    {
+      "id": 70,
+      "kind": "subtitle",
+      "text": "相关链接放在简介里",
+      "ref": "scene closing"
+    },
+    {
+      "id": 71,
+      "kind": "subtitle",
+      "text": "我们下期再见",
+      "ref": "scene closing"
+    }
+  ]
+}

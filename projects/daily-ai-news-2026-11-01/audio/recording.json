@@ -1,0 +1,19 @@
+{
+  "originalSource": "audio/source/narration-original-8deab700a1b1.m4a",
+  "originalSha256": "8deab700a1b1f0bef0da072cf0b843f80dd727312d9f9f924c8fe1894bc425b3",
+  "rawDecodedSource": "audio/source/narration-decoded-8deab700a1b1.wav",
+  "rawDecodedSha256": "22fb5c4f849a5aca0bdd6d00de85d4ef8c7bf2953445021877640c34f44a51b9",
+  "source": "audio/source/narration-adopted-v1.wav",
+  "sourceSha256": "4e3bfd7cd3209adc99ca403fbd182fd68ca30e7e05c94ebf343c3d8029eb37f3",
+  "asrSource": "audio/source/narration-asr-adopted-v1.wav",
+  "asrSha256": "cab61ad07deb21a33d510d9c05dac20d44831fec0ce7a7204c26ed6205082dd8",
+  "sourceDuration": 169.07,
+  "originalDuration": 185.728,
+  "editDecision": "audio/edit-decision.json",
+  "editDecisionSha256": "f52853b77f876dfaf22336926c9c316381c4992ceb9910e42b145f8ff75a7f58",
+  "manuscript": "audio/source/manuscript-8deab700a1b1.md",
+  "manuscriptSha256": "669e6e4c94f3c584d2f8aae78e73cab9e548b26f552e2ff41bb2a6871548175d",
+  "clock": "decoded PCM of the adopted track; original unchanged; no voice speed change",
+  "adoptedAt": "2026-11-01T17:40:00+08:00",
+  "note": "source/asrSource 指向剪口后的采用轨 v1；rawDecoded* 指向未剪的整段解码；原 m4a 与稿件快照保留未动。"
+}

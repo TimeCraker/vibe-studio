@@ -1,0 +1,602 @@
+{
+  "sourcePage": "https://www.bilibilitoy.com/toy/ai-model-world/34090174887936-v36822/leaderboard/index.html",
+  "pageCapturedAt": "2026-11-01T07:43:05.683Z",
+  "upstreamGeneratedAt": "2026-11-01T01:43:07.695Z",
+  "eciLiveModelCount": 216,
+  "pageRowCount": 30,
+  "cnVendors": [
+    "alibaba",
+    "baidu",
+    "bytedance-seed",
+    "deepseek",
+    "inclusionai",
+    "kwaipilot",
+    "meituan",
+    "minimax",
+    "moonshotai",
+    "stepfun",
+    "tencent",
+    "xiaomi",
+    "zhipuai"
+  ],
+  "global": [
+    {
+      "rank": 1,
+      "id": "openai/gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "eci": 169.06,
+      "vendorId": "openai",
+      "vendorName": "OpenAI",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-09-03"
+    },
+    {
+      "rank": 2,
+      "id": "anthropic/claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "eci": 168.4,
+      "vendorId": "anthropic",
+      "vendorName": "Anthropic",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-09-22"
+    },
+    {
+      "rank": 3,
+      "id": "openai/gpt-6.1-terra",
+      "name": "GPT-6.1 Terra",
+      "eci": 168.11,
+      "vendorId": "openai",
+      "vendorName": "OpenAI",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-10-26"
+    },
+    {
+      "rank": 4,
+      "id": "openai/gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "eci": 167.82,
+      "vendorId": "openai",
+      "vendorName": "OpenAI",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-09-29"
+    },
+    {
+      "rank": 5,
+      "id": "anthropic/claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "eci": 166.74,
+      "vendorId": "anthropic",
+      "vendorName": "Anthropic",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-09-28"
+    },
+    {
+      "rank": 6,
+      "id": "anthropic/claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "eci": 166.36,
+      "vendorId": "anthropic",
+      "vendorName": "Anthropic",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-08-31"
+    },
+    {
+      "rank": 7,
+      "id": "google/gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "eci": 166.07,
+      "vendorId": "google",
+      "vendorName": "谷歌",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-09-30"
+    },
+    {
+      "rank": 8,
+      "id": "anthropic/claude-opus-5",
+      "name": "Claude Opus 5",
+      "eci": 164.47,
+      "vendorId": "anthropic",
+      "vendorName": "Anthropic",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-07-24"
+    },
+    {
+      "rank": 9,
+      "id": "openai/gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "eci": 163.78,
+      "vendorId": "openai",
+      "vendorName": "OpenAI",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-09-22"
+    },
+    {
+      "rank": 10,
+      "id": "openai/gpt-5.5-pro",
+      "name": "GPT-5.5 Pro",
+      "eci": 163.11,
+      "vendorId": "openai",
+      "vendorName": "OpenAI",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-04-23"
+    },
+    {
+      "rank": 11,
+      "id": "anthropic/claude-fable-5",
+      "name": "Claude Fable 5",
+      "eci": 163.02,
+      "vendorId": "anthropic",
+      "vendorName": "Anthropic",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-06-09"
+    },
+    {
+      "rank": 12,
+      "id": "openai/gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "eci": 162.55,
+      "vendorId": "openai",
+      "vendorName": "OpenAI",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-07-09"
+    },
+    {
+      "rank": 13,
+      "id": "meta/muse-wonder",
+      "name": "Muse Wonder",
+      "eci": 161.71,
+      "vendorId": "meta",
+      "vendorName": "Meta",
+      "country": "US",
+      "openWeights": null,
+      "releaseDate": "2026-10-12"
+    },
+    {
+      "rank": 14,
+      "id": "meta/muse-wonder-1.0",
+      "name": "Muse Wonder",
+      "eci": 161.71,
+      "vendorId": "meta",
+      "vendorName": "Meta",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-10-12"
+    },
+    {
+      "rank": 15,
+      "id": "anthropic/claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "eci": 160.37,
+      "vendorId": "anthropic",
+      "vendorName": "Anthropic",
+      "country": "US",
+      "openWeights": false,
+      "releaseDate": "2026-10-07"
+    }
+  ],
+  "domestic": [
+    {
+      "rank": 1,
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "eci": 158.83,
+      "vendorId": "deepseek",
+      "vendorName": "深度求索",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-10-17"
+    },
+    {
+      "rank": 2,
+      "id": "moonshotai/kimi-k3",
+      "name": "Kimi K3",
+      "eci": 158.33,
+      "vendorId": "moonshotai",
+      "vendorName": "月之暗面",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-07-16"
+    },
+    {
+      "rank": 3,
+      "id": "alibaba/qwen3.8-max",
+      "name": "Qwen3.8 Max",
+      "eci": 157.98,
+      "vendorId": "alibaba",
+      "vendorName": "阿里通义",
+      "country": "CN",
+      "openWeights": false,
+      "releaseDate": "2026-08-02"
+    },
+    {
+      "rank": 4,
+      "id": "alibaba/qwen3.8-max-preview",
+      "name": "Qwen3.8 Max Preview",
+      "eci": 157.98,
+      "vendorId": "alibaba",
+      "vendorName": "阿里通义",
+      "country": "CN",
+      "openWeights": false,
+      "releaseDate": "2026-07-19"
+    },
+    {
+      "rank": 5,
+      "id": "alibaba/qwen3.8-max-0902",
+      "name": "Qwen3.8 Max 0902",
+      "eci": 156.24,
+      "vendorId": "alibaba",
+      "vendorName": "阿里通义",
+      "country": "CN",
+      "openWeights": false,
+      "releaseDate": "2026-09-01"
+    },
+    {
+      "rank": 6,
+      "id": "zhipuai/glm-5.3",
+      "name": "GLM-5.3",
+      "eci": 156.17,
+      "vendorId": "zhipuai",
+      "vendorName": "智谱",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-08-14"
+    },
+    {
+      "rank": 7,
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "eci": 156.11,
+      "vendorId": "deepseek",
+      "vendorName": "深度求索",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-09-08"
+    },
+    {
+      "rank": 8,
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek V4 Pro 0813",
+      "eci": 155.87,
+      "vendorId": "deepseek",
+      "vendorName": "深度求索",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-08-12"
+    },
+    {
+      "rank": 9,
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "name": "DeepSeek V4 Flash 0731",
+      "eci": 154.94,
+      "vendorId": "deepseek",
+      "vendorName": "深度求索",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-07-31"
+    },
+    {
+      "rank": 10,
+      "id": "alibaba/qwen3.7-max",
+      "name": "Qwen3.7 Max",
+      "eci": 154.22,
+      "vendorId": "alibaba",
+      "vendorName": "阿里通义",
+      "country": "CN",
+      "openWeights": false,
+      "releaseDate": "2026-05-19"
+    },
+    {
+      "rank": 11,
+      "id": "zhipuai/glm-5.3-flash",
+      "name": "GLM-5.3-Flash",
+      "eci": 153.22,
+      "vendorId": "zhipuai",
+      "vendorName": "智谱",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-08-20"
+    },
+    {
+      "rank": 12,
+      "id": "zhipuai/glm-5.2",
+      "name": "GLM-5.2",
+      "eci": 152.07,
+      "vendorId": "zhipuai",
+      "vendorName": "智谱",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-06-13"
+    },
+    {
+      "rank": 13,
+      "id": "alibaba/qwen3.8-27b",
+      "name": "Qwen3.8 27B",
+      "eci": 151.8,
+      "vendorId": "alibaba",
+      "vendorName": "阿里通义",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-08-14"
+    },
+    {
+      "rank": 14,
+      "id": "moonshotai/kimi-k2.6",
+      "name": "Kimi K2.6",
+      "eci": 151.06,
+      "vendorId": "moonshotai",
+      "vendorName": "月之暗面",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-04-20"
+    },
+    {
+      "rank": 15,
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "eci": 150.23,
+      "vendorId": "moonshotai",
+      "vendorName": "月之暗面",
+      "country": "CN",
+      "openWeights": true,
+      "releaseDate": "2026-06-12"
+    }
+  ],
+  "crossCheck": {
+    "orderAndNameMatchTop15": true,
+    "roundedScoreMatchTop15": true,
+    "rows": [
+      {
+        "rank": 1,
+        "page": {
+          "name": "GPT-6 Astra",
+          "vendor": "OpenAI",
+          "score": 169.1
+        },
+        "upstream": {
+          "name": "GPT-6 Astra",
+          "vendor": "OpenAI",
+          "eci": 169.06
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.04
+      },
+      {
+        "rank": 2,
+        "page": {
+          "name": "Claude Opus 5.5",
+          "vendor": "Anthropic",
+          "score": 168.4
+        },
+        "upstream": {
+          "name": "Claude Opus 5.5",
+          "vendor": "Anthropic",
+          "eci": 168.4
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0
+      },
+      {
+        "rank": 3,
+        "page": {
+          "name": "GPT-6.1 Terra",
+          "vendor": "OpenAI",
+          "score": 168.1
+        },
+        "upstream": {
+          "name": "GPT-6.1 Terra",
+          "vendor": "OpenAI",
+          "eci": 168.11
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.01
+      },
+      {
+        "rank": 4,
+        "page": {
+          "name": "GPT-6.1 Sol",
+          "vendor": "OpenAI",
+          "score": 167.8
+        },
+        "upstream": {
+          "name": "GPT-6.1 Sol",
+          "vendor": "OpenAI",
+          "eci": 167.82
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.02
+      },
+      {
+        "rank": 5,
+        "page": {
+          "name": "Claude Sonnet 5.5",
+          "vendor": "Anthropic",
+          "score": 166.7
+        },
+        "upstream": {
+          "name": "Claude Sonnet 5.5",
+          "vendor": "Anthropic",
+          "eci": 166.74
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.04
+      },
+      {
+        "rank": 6,
+        "page": {
+          "name": "Claude Fable 5.1",
+          "vendor": "Anthropic",
+          "score": 166.4
+        },
+        "upstream": {
+          "name": "Claude Fable 5.1",
+          "vendor": "Anthropic",
+          "eci": 166.36
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.04
+      },
+      {
+        "rank": 7,
+        "page": {
+          "name": "Gemini 4 Argon",
+          "vendor": "谷歌",
+          "score": 166.1
+        },
+        "upstream": {
+          "name": "Gemini 4 Argon",
+          "vendor": "谷歌",
+          "eci": 166.07
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.03
+      },
+      {
+        "rank": 8,
+        "page": {
+          "name": "Claude Opus 5",
+          "vendor": "Anthropic",
+          "score": 164.5
+        },
+        "upstream": {
+          "name": "Claude Opus 5",
+          "vendor": "Anthropic",
+          "eci": 164.47
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.03
+      },
+      {
+        "rank": 9,
+        "page": {
+          "name": "GPT-6 Sol",
+          "vendor": "OpenAI",
+          "score": 163.8
+        },
+        "upstream": {
+          "name": "GPT-6 Sol",
+          "vendor": "OpenAI",
+          "eci": 163.78
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.02
+      },
+      {
+        "rank": 10,
+        "page": {
+          "name": "GPT-5.5 Pro",
+          "vendor": "OpenAI",
+          "score": 163.1
+        },
+        "upstream": {
+          "name": "GPT-5.5 Pro",
+          "vendor": "OpenAI",
+          "eci": 163.11
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.01
+      },
+      {
+        "rank": 11,
+        "page": {
+          "name": "Claude Fable 5",
+          "vendor": "Anthropic",
+          "score": 163
+        },
+        "upstream": {
+          "name": "Claude Fable 5",
+          "vendor": "Anthropic",
+          "eci": 163.02
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.02
+      },
+      {
+        "rank": 12,
+        "page": {
+          "name": "GPT-5.6 Sol",
+          "vendor": "OpenAI",
+          "score": 162.6
+        },
+        "upstream": {
+          "name": "GPT-5.6 Sol",
+          "vendor": "OpenAI",
+          "eci": 162.55
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.05
+      },
+      {
+        "rank": 13,
+        "page": {
+          "name": "Muse Wonder",
+          "vendor": "Meta",
+          "score": 161.7
+        },
+        "upstream": {
+          "name": "Muse Wonder",
+          "vendor": "Meta",
+          "eci": 161.71
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.01
+      },
+      {
+        "rank": 14,
+        "page": {
+          "name": "Muse Wonder",
+          "vendor": "Meta",
+          "score": 161.7
+        },
+        "upstream": {
+          "name": "Muse Wonder",
+          "vendor": "Meta",
+          "eci": 161.71
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": -0.01
+      },
+      {
+        "rank": 15,
+        "page": {
+          "name": "Claude Haiku 5.5",
+          "vendor": "Anthropic",
+          "score": 160.4
+        },
+        "upstream": {
+          "name": "Claude Haiku 5.5",
+          "vendor": "Anthropic",
+          "eci": 160.37
+        },
+        "nameMatch": true,
+        "roundedMatch": true,
+        "delta": 0.03
+      }
+    ]
+  }
+}

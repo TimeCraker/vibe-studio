@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "editionDate": "2026-11-01",
+  "shots": [
+    {
+      "sceneId": "overview",
+      "inputs": [],
+      "note": "本期核实的三条官方来源"
+    },
+    {
+      "sceneId": "ds-what",
+      "inputs": [
+        "assets/deepseek.ico"
+      ],
+      "note": "GitHub deepseek-ai/dsh-superagent-prototype README；发布时间见智东西 11-01 报道"
+    },
+    {
+      "sceneId": "ds-arch",
+      "inputs": [],
+      "note": "智东西 2026-11-01 对官方设计文章的转述；文章本体未取得可读原文"
+    },
+    {
+      "sceneId": "ds-bench",
+      "inputs": [],
+      "note": "作者自述的初步实验；媒体转述，非本栏目复现"
+    },
+    {
+      "sceneId": "ds-limits",
+      "inputs": [],
+      "note": "仓库 README 开头声明"
+    },
+    {
+      "sceneId": "apple-change",
+      "inputs": [
+        "assets/qwen.png"
+      ],
+      "note": "央广网转述阿里巴巴公告；IT之家转述苹果公布内容"
+    },
+    {
+      "sceneId": "apple-timing",
+      "inputs": [],
+      "note": "IT之家 2026-10-31 报道，转述苹果公布内容"
+    },
+    {
+      "sceneId": "mol1-what",
+      "inputs": [],
+      "note": "Molence Bio 发布原文（智源社区转载）"
+    },
+    {
+      "sceneId": "mol1-numbers",
+      "inputs": [
+        "assets/mol1-foldbench-ab.png"
+      ],
+      "note": "Molence Bio 发布原文与官方配图；数字为厂商自报"
+    },
+    {
+      "sceneId": "closing",
+      "inputs": [],
+      "note": "本期来源与素材记录"
+    }
+  ],
+  "timing": "actual recorded speech; real video ranges, original speed"
+}

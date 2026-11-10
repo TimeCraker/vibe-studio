@@ -1,0 +1,201 @@
+{
+  "headline": {
+    "title": "DeepSeek 开源 Super-agent 原型",
+    "subtitle": "让 Agent 常驻在线、同时推进多件事",
+    "logo": "assets/deepseek.ico",
+    "source": "DeepSeek 官方仓库与设计文章；实验为作者自述的初步结果，非生产实测"
+  },
+  "stories": [
+    {
+      "title": "DeepSeek 开源 Super-agent 架构和原型",
+      "detail": "Agent 常驻在线，一个仓库里并行推进多个任务"
+    },
+    {
+      "title": "Apple 智能接入阿里千问，国行时间表确定",
+      "detail": "11 月 4 日开发者 Beta 测试，12 月随 iOS 27.3 上线"
+    },
+    {
+      "title": "国产 Mol-1 开源生物分子模型",
+      "detail": "一个模型做多类生物分子结构预测，权重和代码开放"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "section": "今日 AI 资讯",
+      "title": "今日 AI 资讯",
+      "claimIds": [],
+      "lead": "DeepSeek Super-agent · Apple 智能接入千问 · Mol-1 开源",
+      "source": "本期核实的三条官方来源",
+      "anchor": "各位观众们大家好"
+    },
+    {
+      "id": "ds-what",
+      "section": "模型头条",
+      "title": "DeepSeek 公开 Super-agent 架构并开源原型",
+      "claimIds": [
+        "ds-superagent-release",
+        "ds-superagent-scope"
+      ],
+      "lead": "常驻在线：盯着一个 GitHub 仓库，有人提任务就自己开工作项去做",
+      "media": {
+        "kind": "image",
+        "file": "assets/deepseek.ico",
+        "label": "DeepSeek 官方标志；事件来源为 deepseek-ai/dsh-superagent-prototype"
+      },
+      "presentation": {
+        "intent": "左标志右两栏：一栏写“监听 GitHub / 可选飞书”，一栏写“独立会话与目录 → 回原对话交付（如提 PR）”。用官方标志，不做黑底标志板。"
+      },
+      "source": "GitHub deepseek-ai/dsh-superagent-prototype README；发布时间见智东西 11-01 报道",
+      "anchor": "10月31日晚上"
+    },
+    {
+      "id": "ds-arch",
+      "section": "模型头条",
+      "title": "系统拆成五块：Router、Worker、事件、解耦、Watchdog",
+      "claimIds": [
+        "ds-superagent-modules"
+      ],
+      "lead": "Router 只分派，Worker 并行干活，外面再挂一个 Watchdog 盯进展",
+      "bullets": [
+        "Router 与 Worker 双层",
+        "事件两级过滤与订阅直通",
+        "异步多信道：后台跑任务，前台不卡",
+        "计算、状态、环境分离",
+        "独立 Watchdog 盯任务有没有前进"
+      ],
+      "presentation": {
+        "intent": "画一张五模块图解：上方常驻 Router，下挂多个 Worker，左侧事件入口标 Fast/Slow Path，右侧 Watchdog 用虚线连回主系统表示外部回路。细线方框，不用黑底流程卡，不做“输入→工具→结果”卡片。"
+      },
+      "source": "智东西 2026-11-01 对官方设计文章的转述；文章本体未取得可读原文",
+      "anchor": "背后是一套分层设计"
+    },
+    {
+      "id": "ds-bench",
+      "section": "模型头条",
+      "title": "初步实验：任务完成更快，直通与批处理省开销",
+      "claimIds": [
+        "ds-superagent-bench"
+      ],
+      "lead": "p50 12.4 分钟、p95 15.7 分钟；单决定分摊推理 6.4 秒 → 1.6 秒",
+      "bullets": [
+        "去掉订阅直通：Router 决定数 +30%，读缓存 token 2323 万 → 3177 万",
+        "Router 批处理：单个决定分摊推理时间 6.4 秒 → 1.6 秒",
+        "实验基于合成负载与简化环境"
+      ],
+      "presentation": {
+        "intent": "两组数字对照：完成时间 p50/p95 一组，推理时间 6.4→1.6 秒一组，用等宽数字和细线分隔。角落固定标注“作者自述初步实验，合成负载”。口播已省掉订阅直通的 token 数字，画面可保留作为补充，不要求观众跟上。"
+      },
+      "source": "作者自述的初步实验；媒体转述，非本栏目复现",
+      "anchor": "文章给了一组初步数据"
+    },
+    {
+      "id": "ds-limits",
+      "section": "模型头条",
+      "title": "这是研究原型，不是正式产品",
+      "claimIds": [
+        "ds-superagent-not-product"
+      ],
+      "lead": "仓库自述：为公开发布做过改编，与内部版本不同",
+      "bullets": [
+        "Research prototype，非官方 DeepSeek 产品",
+        "安装走 SETUP.md，前提是已在用 DeepSeek Harness"
+      ],
+      "presentation": {
+        "intent": "把仓库原文那句免责声明放在页面主体，配一行中文释义。不要用醒目警告贴纸，保持报刊排版。"
+      },
+      "source": "仓库 README 开头声明",
+      "anchor": "有一点得说清楚"
+    },
+    {
+      "id": "apple-change",
+      "section": "产品落地",
+      "title": "Apple 智能国行首批功能接入阿里千问",
+      "claimIds": [
+        "apple-qwen-announce",
+        "apple-qwen-optin"
+      ],
+      "lead": "在 Siri、写作工具、视觉智能里直接用千问，用户可自主开启",
+      "media": {
+        "kind": "image",
+        "file": "assets/qwen.png",
+        "label": "阿里通义千问官方标志；Apple 侧未取得官方配图"
+      },
+      "presentation": {
+        "intent": "三个入口用小字并排（Siri / 写作工具 / 视觉智能），下面一行写登录方式与“未被用于训练”的口径。不臆造苹果官方图，不放手机样机渲染。"
+      },
+      "source": "央广网转述阿里巴巴公告；IT之家转述苹果公布内容",
+      "anchor": "接着是苹果"
+    },
+    {
+      "id": "apple-timing",
+      "section": "产品落地",
+      "title": "11 月 4 日开发者 Beta，12 月随 iOS 27.3 上线",
+      "claimIds": [
+        "apple-qwen-schedule",
+        "apple-qwen-devices",
+        "apple-qwen-exclusions"
+      ],
+      "lead": "机型有门槛：iPhone 16 及后续、iPhone Duo、15 Pro 系列、iPhone Air",
+      "bullets": [
+        "Siri 与设备语言需英文 + 简体中文",
+        "不含下一代 Siri AI 与 WWDC 2026 其他功能"
+      ],
+      "presentation": {
+        "intent": "时间轴两段（11 月 4 日测试 / 12 月正式），下面列机型条件与“本批不含”的限定。机型用文字列，不画产品图。口播把 15 Pro 与 Pro Max 合成“15 Pro 系列”，画面上仍要写全两个型号。"
+      },
+      "source": "IT之家 2026-10-31 报道，转述苹果公布内容",
+      "anchor": "时间是11月4日"
+    },
+    {
+      "id": "mol1-what",
+      "section": "开源模型",
+      "title": "觅深知源开源生物分子模型 Mol-1",
+      "claimIds": [
+        "mol1-release"
+      ],
+      "lead": "一个模型覆盖抗体-抗原、蛋白-多肽、蛋白-小分子与分子胶",
+      "presentation": {
+        "intent": "用四行短标签列出四类复合物，右侧注明“权重与代码开放，另有在线试用”。不配无关的分子渲染装饰图。"
+      },
+      "source": "Molence Bio 发布原文（智源社区转载）",
+      "anchor": "第三个是开源模型"
+    },
+    {
+      "id": "mol1-numbers",
+      "section": "开源模型",
+      "title": "FoldBench-AB 75.0%，与 IsoDDE 的 75.6% 基本持平",
+      "claimIds": [
+        "mol1-foldbench",
+        "mol1-wetlab"
+      ],
+      "lead": "加表位约束升到 88.3%；湿实验室 17 个靶点都有结合候选",
+      "media": {
+        "kind": "image",
+        "file": "assets/mol1-foldbench-ab.png",
+        "label": "Molence Bio 官方发布的 FoldBench-AB 对比图，公司自报结果"
+      },
+      "presentation": {
+        "intent": "官方柱状图占主区，右侧只标两个数：75.0 与 88.3。页脚固定标“厂商自报，第三方未复核”。图内已有英文标注，不叠加改动图内文字。"
+      },
+      "source": "Molence Bio 发布原文与官方配图；数字为厂商自报",
+      "anchor": "它做的是生物分子结构预测"
+    },
+    {
+      "id": "closing",
+      "section": "本期结束",
+      "title": "本期资讯与来源链接见简介",
+      "claimIds": [],
+      "source": "本期来源与素材记录",
+      "anchor": "以上是本期 AI 资讯"
+    }
+  ],
+  "fonts": {
+    "sans": "assets/fonts/sans.ttf",
+    "mono": "assets/fonts/mono.ttf"
+  },
+  "music": {
+    "file": "assets/carefree.mp3",
+    "credit": "Carefree by Kevin MacLeod，CC BY 4.0；完整署名与来源见 assets/sources.json，口播时自动避让。"
+  }
+}
