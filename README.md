@@ -1,6 +1,23 @@
-# vibe-studio
+<div align="center">
 
-自媒体内容工作台：从事实材料和镜头设计，到 PPT、讲解视频、产品介绍片与网页动画成片。
+# 🎬 vibe-studio
+
+**全栈自媒体内容工厂：代码画 PPT · 逐页动效 · Remotion 科技成片 · 全平台自动化**  
+*Code-driven Content Factory: Deck Generation, Motion Graphics & Automated Video Pipeline*
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-3A7D44.svg?style=flat-square)](LICENSE)
+[![Output: 1080p60 Native](https://img.shields.io/badge/Output-1080p60%20Native-2D5A88.svg?style=flat-square)](#先选交付物)
+[![Engine: Remotion + GSAP](https://img.shields.io/badge/Engine-Remotion%20%7C%20GSAP-CC785C.svg?style=flat-square)](https://www.remotion.dev/)
+[![Pipeline: Automated Handoff](https://img.shields.io/badge/Pipeline-Deck%20%E2%86%92%20Motion%20%E2%86%92%20Publish-E61919.svg?style=flat-square)](#视频质量流程)
+
+<br/>
+
+> **从事实材料与镜头语言，到工业化短视频生产。**  
+> 一人闭环自媒体矩阵：支持代码生成高质感演示幻灯片、网页动画逐帧捕获、口播音频对齐、自动化视频合成与多平台发稿交接。
+
+</div>
+
+---
 
 ## 先选交付物
 
@@ -30,7 +47,7 @@
 | 板块 | 技能 | 用途（来自 SKILL.md） |
 |---|---|---|
 | 策划与文案 | [content-director](skills/content-director/) | 为产品介绍、科技讲解和内容视频做受众定位、参考分析、事实核查、产品演示设计、系列一致性、分镜与粗样片迭代。按镜头需要调度选材、设计和技术可视化；已有定稿的采集和渲染交给对应制作技能。 |
-| 策划与文案 | [daily-ai-news](skills/daily-ai-news/) | 制作或续做每日 AI 资讯：主动检索与筛选核查、全球/国产 TOP15、先交真人口播稿，再按录音制作字幕与 60fps 视频、准备三平台投稿。支持从工程文件跨会话接手；新闻条数随价值，无合适资讯可不出片。 |
+| 策划与文案 | [daily-ai-news](skills/daily-ai-news/) | 制作或续做每日科技资讯：主动检索与筛选核查、全球/国产 TOP15、先交真人口播稿，再按录音制作字幕与 60fps 视频、准备三平台投稿。选题不限于 AI，材料、能源、芯片、生物医药等前沿进展和影响面大的民生变革同样可以入选；新闻条数随价值，无合适资讯可不出片… |
 | 策划与文案 | [humanizer](skills/humanizer/) | 中英文去 AI 味改写：识别并去除 AI 生成文本痕迹，让文字像真人写的。 去 AI 腔、润色中文、去营销腔、去套话、humanize English prose。 基于 blader/humanizer 英文体系与中文社区去 AI 味研究（三毒机制、四层自检… |
 | 策划与文案 | [narration](skills/narration/) | 口播稿工具，不是成片入口。把讲稿写成带画面引用的分段稿 JSON，字数与秒数由程序派生，校验器红绿分明，交付剪映配音。用户说「写口播稿 / 视频文案 / 配音稿 / 分段稿 / narration」时使用。用户说做 PPT 走 ppt；说做介绍视频走 work… |
 | 内容制作 | [asset-scout](skills/asset-scout/) | 按分镜搜集和筛选截图、录像、图片、音乐、音效及模型，交付实际可用素材、镜头对应关系与来源和使用条件。适用于缺素材、找替代素材和整理选材；生成图片、实际采集和后期制作交给对应技能。 |

@@ -12,6 +12,8 @@ out/
 # 媒体产物（全局兜底，不进 git，脚本可复跑）
 *.mp4
 *.webm
+*.wav
+*.m4a
 
 # PPT / PDF 产物
 *.pptx
@@ -75,3 +77,6 @@ projects/*/render/
 
 # VMBL 升级核查基线（still 对照产物，不入库）
 skills/video-motion/templates/remotion-app/.baseline/
+
+# 项目级 Remotion 升级核查基线（still 对照产物，不入库，同 skills 规则）
+projects/*/remotion-app/.baseline/
