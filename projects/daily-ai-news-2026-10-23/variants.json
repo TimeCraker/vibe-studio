@@ -12,7 +12,7 @@
         "声音是本地测试音色，不是正式配音。来源：Hugging Face 模型卡、MiniMax 许可、IT之家 10 月 23 日报道、recursive.com、微软 TypeScript 博客、Cloudflare 博客。"
       ],
       "tags": ["人工智能", "MiniMax", "大模型", "TypeScript", "开源"],
-      "sceneIds": ["ranking", "minimax", "flint", "typescript", "close"],
+      "sceneIds": ["ranking", "minimax", "limits", "flint", "typescript", "close"],
       "format": { "width": 1920, "height": 1080, "fps": 60 },
       "video": "render/daily-ai-news-2026-10-23.mp4",
       "cover": "render/cover.png",

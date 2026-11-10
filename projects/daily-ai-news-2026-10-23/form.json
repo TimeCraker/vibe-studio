@@ -7,7 +7,7 @@
     "Recursive Flint 是 10 月 21 日放出的本地编码模型。39.8B 总参、约 2.5B 激活，Apache 2.0。Verified 74.2% 等分数是官方自测。笔记本速度来自优化引擎，不要直接套 BF16 主文件。",
     "TypeScript 7.1 beta 和 Cloudflare tsrs 都是 10 月 20 日。7.1 对照的是 7.0；tsrs 官方说的最多 8 倍也是对照 7.0，不是 7.1。",
     "榜单来自大模型世界开源数据 models.json，生成于 2026-10-23 21:46（北京时间），口径是 Epoch ECI。没有昨日快照，所以不标升降。",
-    "声音是本地测试音色 Microsoft Huihui，不是正式配音。字幕是句级粗对齐，还没做语音识别校准。",
+    "这一版没有配音。画面上的字就是要看的内容。",
     "来源：Hugging Face 上的 MiniMax-M3.1-Flash 与 Recursive Flint 模型卡、MiniMax Community License、IT之家 10 月 23 日报道、recursive.com、微软 TypeScript 博客、Cloudflare 博客。"
   ]
 }

@@ -5,7 +5,7 @@ import { ArtLayerDemo, DataBarsDemo, SpotlightDemo, SubtitleDemo } from "./Demos
 import { DeckVideo } from "./DeckVideo";
 import { DeckVideoV2 } from "./DeckVideoV2";
 import { deckParams } from "./deck-params";
-import { DailyCover, DailyEdition } from "./DailyEdition";
+import { DailyCover, DailyEdition, EDITION_FRAMES, EDITION_FPS } from "./DailyEdition";
 import { FootageOverlay } from "./FootageOverlay";
 import { footageParams } from "./footage-params";
 
@@ -109,10 +109,10 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="DailyEdition"
         component={DailyEdition}
-        durationInFrames={Math.max(1, Math.round(deckParams.totalSeconds * deckParams.fps))}
-        fps={deckParams.fps}
-        width={deckParams.width}
-        height={deckParams.height}
+        durationInFrames={EDITION_FRAMES}
+        fps={EDITION_FPS}
+        width={1920}
+        height={1080}
       />
       <Composition
         id="DailyCover"

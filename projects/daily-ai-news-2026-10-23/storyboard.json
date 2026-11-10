@@ -109,7 +109,7 @@
     {
       "id": "ranking",
       "start": 0,
-      "end": 62.026,
+      "end": 16,
       "title": "综合智力 TOP 15",
       "purpose": "先给出完整榜单和口径，只解读前三名与同名两条",
       "subject": "ECI 前 15",
@@ -117,17 +117,26 @@
     },
     {
       "id": "minimax",
-      "start": 62.026,
-      "end": 142.45,
+      "start": 16,
+      "end": 27,
       "title": "M3.1 Flash 开放权重",
       "purpose": "讲今天的权重、结构和许可限制",
       "subject": "MiniMax M3.1 Flash",
       "claimIds": ["minimax-card", "minimax-license", "minimax-report"]
     },
     {
+      "id": "limits",
+      "start": 27,
+      "end": 36,
+      "title": "M3.1 Flash 的限制",
+      "purpose": "把许可、官方用量和芯片接入分开说",
+      "subject": "MiniMax M3.1 Flash",
+      "claimIds": ["minimax-license", "minimax-report"]
+    },
+    {
       "id": "flint",
-      "start": 142.45,
-      "end": 228.46,
+      "start": 36,
+      "end": 48,
       "title": "Flint 本地编码模型",
       "purpose": "把官方自测、上下文口径和笔记本速度的适用范围分开",
       "subject": "Recursive Flint",
@@ -135,8 +144,8 @@
     },
     {
       "id": "typescript",
-      "start": 228.46,
-      "end": 283.832,
+      "start": 48,
+      "end": 59,
       "title": "TypeScript 7.1 与 tsrs",
       "purpose": "标明 10 月 20 日的工具链变化，以及 8 倍所对照的版本",
       "subject": "TypeScript 7.1 beta / tsrs",
@@ -144,8 +153,8 @@
     },
     {
       "id": "close",
-      "start": 283.832,
-      "end": 297.638,
+      "start": 59,
+      "end": 65,
       "title": "本期收束",
       "purpose": "收回三件已核实的事，不另加事实",
       "subject": "本期四段",
