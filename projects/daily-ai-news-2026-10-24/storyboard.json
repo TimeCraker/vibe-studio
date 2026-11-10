@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "audience": "关注AI模型与开发工具的创作者、独立开发者",
-  "goal": "了解K3.1 Pro实际变化、可用时间与两个工具的用途",
+  "goal": "了解Kimi新模型与两项工具观察",
   "profile": "data",
   "claims": [
     {
@@ -99,8 +99,8 @@
       "start": 0,
       "end": 8,
       "title": "全球综合智力 TOP15",
-      "purpose": "完整榜单，前三突出，所有行显示官方厂商图标",
-      "subject": "当期 ECI 全球排名",
+      "purpose": "原榜与官方图标，BGM开场",
+      "subject": "当期全球ECI前15",
       "claimIds": [
         "ranking"
       ]
@@ -110,8 +110,8 @@
       "start": 8,
       "end": 16,
       "title": "国产综合智力 TOP15",
-      "purpose": "与全球榜平齐排版，不合并不同模型版本",
-      "subject": "同源 ECI 国内排名",
+      "purpose": "与全球榜平齐，BGM开场",
+      "subject": "当期国产ECI前15",
       "claimIds": [
         "ranking"
       ]
@@ -119,9 +119,9 @@
     {
       "id": "overview",
       "start": 16,
-      "end": 26,
+      "end": 26.366666666666667,
       "title": "今日资讯总览",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
       "subject": "今日资讯总览",
       "claimIds": [
         "kimi-launch",
@@ -131,10 +131,10 @@
     },
     {
       "id": "kimi-title",
-      "start": 26,
-      "end": 37,
+      "start": 26.366666666666667,
+      "end": 40.78333333333333,
       "title": "Kimi K3.1 Pro",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
       "subject": "Kimi K3.1 Pro",
       "claimIds": [
         "kimi-launch"
@@ -142,77 +142,89 @@
     },
     {
       "id": "kimi-bench",
-      "start": 37,
-      "end": 51,
-      "title": "编程表现怎么看",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "编程表现怎么看",
+      "start": 40.78333333333333,
+      "end": 56.766666666666666,
+      "title": "终端任务评测",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "终端任务评测",
       "claimIds": [
         "kimi-terminal"
       ]
     },
     {
       "id": "kimi-creative",
-      "start": 51,
-      "end": 63,
-      "title": "代码之外，还能做什么",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "代码之外，还能做什么",
+      "start": 56.766666666666666,
+      "end": 71.08333333333333,
+      "title": "游戏与三维创作",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "游戏与三维创作",
       "claimIds": [
         "kimi-creative"
       ]
     },
     {
       "id": "kimi-access",
-      "start": 63,
-      "end": 75,
-      "title": "现在能用，权重还要等",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "现在能用，权重还要等",
+      "start": 71.08333333333333,
+      "end": 88.23333333333333,
+      "title": "使用入口与权重",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "使用入口与权重",
       "claimIds": [
         "kimi-access"
       ]
     },
     {
       "id": "harness",
-      "start": 75,
-      "end": 89,
-      "title": "让智能体改进工作方法",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "让智能体改进工作方法",
+      "start": 88.23333333333333,
+      "end": 108.31666666666666,
+      "title": "Harness²智能体研究",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "Harness²智能体研究",
       "claimIds": [
-        "harness-method"
+        "harness-method",
+        "harness-components"
       ]
     },
     {
       "id": "harness-use",
-      "start": 89,
-      "end": 99,
-      "title": "对做 Agent 的人有什么用",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "对做 Agent 的人有什么用",
+      "start": 108.31666666666666,
+      "end": 118.13333333333334,
+      "title": "研究框架与开发者用途",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "研究框架与开发者用途",
       "claimIds": [
         "harness-components"
       ]
     },
     {
       "id": "voice",
-      "start": 99,
-      "end": 114,
-      "title": "本地语音工作台",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "本地语音工作台",
+      "start": 118.13333333333334,
+      "end": 131.58333333333334,
+      "title": "开源语音项目VoiceStudio",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "开源语音项目VoiceStudio",
+      "claimIds": [
+        "voice-features"
+      ]
+    },
+    {
+      "id": "voice-api",
+      "start": 131.58333333333334,
+      "end": 145.01666666666668,
+      "title": "本地接口与使用条件",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "本地接口与使用条件",
       "claimIds": [
         "voice-features"
       ]
     },
     {
       "id": "close",
-      "start": 114,
-      "end": 124,
-      "title": "今天值得记住",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "今天值得记住",
+      "start": 145.01666666666668,
+      "end": 153.68333333333334,
+      "title": "本期资讯结束",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "本期资讯结束",
       "claimIds": [
         "kimi-access",
         "harness-method",
@@ -222,6 +234,6 @@
   ],
   "review": {
     "status": "pending",
-    "note": "Previous episode visual direction accepted; this episode and human voice pending."
+    "note": "采用用户真人录音；技术与ASR不代表听感或人工接受"
   }
 }

@@ -11,8 +11,8 @@ const spec=JSON.parse(readFileSync(join(project,'exports/bili/render-spec.json')
 if(JSON.stringify(spec.sourceSceneIds)!==JSON.stringify(timeline.scenes.map(s=>s.id))||spec.seconds!==timeline.seconds)throw Error('Subtitle export requires identical full timeline; rebase cuts explicitly.');
 // The shared derivative creates scene-caption cues. This episode burns sentence
 // cues, so deliver the very same draft cues instead of an empty/scene-only SRT.
-copyFileSync(join(project,'captions-preview.srt'),join(project,'exports/bili/captions.srt'));
+copyFileSync(join(project,timeline.voice==='human-recorded'?'captions.srt':'captions-preview.srt'),join(project,'exports/bili/captions.srt'));
 const target=join(project,'exports/bili/timeline.json');const exported=JSON.parse(readFileSync(target,'utf8'));
-exported.cues=timeline.cues.map(c=>({start:c.from/60,end:c.to/60,text:c.text}));
+exported.cues=timeline.cues.map(c=>({start:Number((c.from/60).toFixed(3)),end:Number((c.to/60).toFixed(3)),text:c.text}));
 exported.subtitleTiming=timeline.timingMode;exported.voice=timeline.voice;
 writeFileSync(target,JSON.stringify(exported,null,2)+'\n');

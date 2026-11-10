@@ -3,18 +3,20 @@
   "fps": 60,
   "width": 1920,
   "height": 1080,
-  "durationInFrames": 7440,
-  "seconds": 124,
-  "voice": "human-pending",
-  "timingMode": "reading-estimate-pending-human-voice",
+  "durationInFrames": 9221,
+  "seconds": 153.68333333333334,
+  "voice": "human-recorded",
+  "timingMode": "faster-whisper-word-windows-text-reviewed-listening-pending",
+  "recording": "audio/source/narration-original.m4a",
+  "recordingSha256": "0d3c17d9ab040c30522a02b46a82e3d0f3bb6c8a972f945a19feba82f0f4e082",
   "scenes": [
     {
       "id": "global",
       "start": 0,
       "end": 8,
       "title": "全球综合智力 TOP15",
-      "purpose": "完整榜单，前三突出，所有行显示官方厂商图标",
-      "subject": "当期 ECI 全球排名",
+      "purpose": "原榜与官方图标，BGM开场",
+      "subject": "当期全球ECI前15",
       "claimIds": [
         "ranking"
       ]
@@ -24,8 +26,8 @@
       "start": 8,
       "end": 16,
       "title": "国产综合智力 TOP15",
-      "purpose": "与全球榜平齐排版，不合并不同模型版本",
-      "subject": "同源 ECI 国内排名",
+      "purpose": "与全球榜平齐，BGM开场",
+      "subject": "当期国产ECI前15",
       "claimIds": [
         "ranking"
       ]
@@ -33,9 +35,9 @@
     {
       "id": "overview",
       "start": 16,
-      "end": 26,
+      "end": 26.366666666666667,
       "title": "今日资讯总览",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
       "subject": "今日资讯总览",
       "claimIds": [
         "kimi-launch",
@@ -45,10 +47,10 @@
     },
     {
       "id": "kimi-title",
-      "start": 26,
-      "end": 37,
+      "start": 26.366666666666667,
+      "end": 40.78333333333333,
       "title": "Kimi K3.1 Pro",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
       "subject": "Kimi K3.1 Pro",
       "claimIds": [
         "kimi-launch"
@@ -56,77 +58,89 @@
     },
     {
       "id": "kimi-bench",
-      "start": 37,
-      "end": 51,
-      "title": "编程表现怎么看",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "编程表现怎么看",
+      "start": 40.78333333333333,
+      "end": 56.766666666666666,
+      "title": "终端任务评测",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "终端任务评测",
       "claimIds": [
         "kimi-terminal"
       ]
     },
     {
       "id": "kimi-creative",
-      "start": 51,
-      "end": 63,
-      "title": "代码之外，还能做什么",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "代码之外，还能做什么",
+      "start": 56.766666666666666,
+      "end": 71.08333333333333,
+      "title": "游戏与三维创作",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "游戏与三维创作",
       "claimIds": [
         "kimi-creative"
       ]
     },
     {
       "id": "kimi-access",
-      "start": 63,
-      "end": 75,
-      "title": "现在能用，权重还要等",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "现在能用，权重还要等",
+      "start": 71.08333333333333,
+      "end": 88.23333333333333,
+      "title": "使用入口与权重",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "使用入口与权重",
       "claimIds": [
         "kimi-access"
       ]
     },
     {
       "id": "harness",
-      "start": 75,
-      "end": 89,
-      "title": "让智能体改进工作方法",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "让智能体改进工作方法",
+      "start": 88.23333333333333,
+      "end": 108.31666666666666,
+      "title": "Harness²智能体研究",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "Harness²智能体研究",
       "claimIds": [
-        "harness-method"
+        "harness-method",
+        "harness-components"
       ]
     },
     {
       "id": "harness-use",
-      "start": 89,
-      "end": 99,
-      "title": "对做 Agent 的人有什么用",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "对做 Agent 的人有什么用",
+      "start": 108.31666666666666,
+      "end": 118.13333333333334,
+      "title": "研究框架与开发者用途",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "研究框架与开发者用途",
       "claimIds": [
         "harness-components"
       ]
     },
     {
       "id": "voice",
-      "start": 99,
-      "end": 114,
-      "title": "本地语音工作台",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "本地语音工作台",
+      "start": 118.13333333333334,
+      "end": 131.58333333333334,
+      "title": "开源语音项目VoiceStudio",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "开源语音项目VoiceStudio",
+      "claimIds": [
+        "voice-features"
+      ]
+    },
+    {
+      "id": "voice-api",
+      "start": 131.58333333333334,
+      "end": 145.01666666666668,
+      "title": "本地接口与使用条件",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "本地接口与使用条件",
       "claimIds": [
         "voice-features"
       ]
     },
     {
       "id": "close",
-      "start": 114,
-      "end": 124,
-      "title": "今天值得记住",
-      "purpose": "按讲述语义分层，图解和真实素材支撑信息",
-      "subject": "今天值得记住",
+      "start": 145.01666666666668,
+      "end": 153.68333333333334,
+      "title": "本期资讯结束",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "本期资讯结束",
       "claimIds": [
         "kimi-access",
         "harness-method",
@@ -138,310 +152,408 @@
     {
       "id": 1,
       "scene": "overview",
-      "text": "大家好，欢迎收看今日AI资讯。",
-      "from": 978,
-      "to": 1114
+      "text": "各位观众们大家好",
+      "from": 975,
+      "to": 1054
     },
     {
       "id": 2,
       "scene": "overview",
-      "text": "今天先看Kimi的新模型。",
-      "from": 1120,
-      "to": 1246
+      "text": "欢迎收看今日AI资讯",
+      "from": 1067,
+      "to": 1147
     },
     {
       "id": 3,
       "scene": "overview",
-      "text": "再聊让智能体改进工作方法的工具，",
-      "from": 1252,
-      "to": 1410
+      "text": "今天我们重点关注Kimi新模型的发布",
+      "from": 1162,
+      "to": 1330
     },
     {
       "id": 4,
       "scene": "overview",
-      "text": "还有一个本地语音工作台。",
-      "from": 1416,
-      "to": 1530
+      "text": "另外还有几项AI工具的相关资讯",
+      "from": 1340,
+      "to": 1491
     },
     {
       "id": 5,
-      "scene": "kimi-title",
-      "text": "月之暗面发布了K3.1 Pro。",
-      "from": 1578,
-      "to": 1721
+      "scene": "overview",
+      "text": "下面来看详细内容",
+      "from": 1501,
+      "to": 1567
     },
     {
       "id": 6,
       "scene": "kimi-title",
-      "text": "官方给出的规格是三万亿级参数，",
-      "from": 1727,
-      "to": 1881
+      "text": "首先，月之暗面发布了",
+      "from": 1598,
+      "to": 1718
     },
     {
       "id": 7,
       "scene": "kimi-title",
-      "text": "以及一百万token的上下文。",
-      "from": 1887,
-      "to": 2041
+      "text": "Kimi K3.1 Pro",
+      "from": 1718,
+      "to": 1808
     },
     {
       "id": 8,
       "scene": "kimi-title",
-      "text": "这次重点是编程和长任务能力。",
-      "from": 2047,
-      "to": 2190
+      "text": "这次更新的重点是编程和长任务处理",
+      "from": 1831,
+      "to": 2030
     },
     {
       "id": 9,
-      "scene": "kimi-bench",
-      "text": "先看官方公布的终端任务评测。",
-      "from": 2238,
-      "to": 2375
+      "scene": "kimi-title",
+      "text": "按照官方介绍",
+      "from": 2065,
+      "to": 2111
     },
     {
       "id": 10,
-      "scene": "kimi-bench",
-      "text": "Kimi的成绩是百分之65.7，",
-      "from": 2381,
-      "to": 2529
+      "scene": "kimi-title",
+      "text": "这款模型采用3万亿级参数规模",
+      "from": 2134,
+      "to": 2329
     },
     {
       "id": 11,
-      "scene": "kimi-bench",
-      "text": "高于GPT的58.2，",
-      "from": 2535,
-      "to": 2634
+      "scene": "kimi-title",
+      "text": "支持100万token的上下文",
+      "from": 2337,
+      "to": 2447
     },
     {
       "id": 12,
       "scene": "kimi-bench",
-      "text": "略低于Claude的66.4。",
-      "from": 2640,
-      "to": 2777
+      "text": "在官方公布的终端任务评测中",
+      "from": 2447,
+      "to": 2618
     },
     {
       "id": 13,
       "scene": "kimi-bench",
-      "text": "这是发布方整理的比较，",
-      "from": 2783,
-      "to": 2887
+      "text": "它取得了65.7%的好成绩",
+      "from": 2629,
+      "to": 2828
     },
     {
       "id": 14,
       "scene": "kimi-bench",
-      "text": "不能直接当成所有任务的胜负。",
-      "from": 2893,
-      "to": 3030
+      "text": "不过，这组模型对比由发布方整理",
+      "from": 2840,
+      "to": 3075
     },
     {
       "id": 15,
-      "scene": "kimi-creative",
-      "text": "做游戏和三维内容的人可以关注。",
-      "from": 3078,
-      "to": 3224
+      "scene": "kimi-bench",
+      "text": "测试条件存在差异",
+      "from": 3092,
+      "to": 3172
     },
     {
       "id": 16,
-      "scene": "kimi-creative",
-      "text": "官方展示了Godot游戏作品，",
-      "from": 3230,
-      "to": 3375
+      "scene": "kimi-bench",
+      "text": "还不能据此判断它在所有编程任务中的表现",
+      "from": 3182,
+      "to": 3391
     },
     {
       "id": 17,
       "scene": "kimi-creative",
-      "text": "也展示了三维模型制作入口。",
-      "from": 3381,
-      "to": 3505
+      "text": "除了写代码",
+      "from": 3422,
+      "to": 3475
     },
     {
       "id": 18,
       "scene": "kimi-creative",
-      "text": "这些是官方案例，",
-      "from": 3511,
-      "to": 3609
+      "text": "官方还展示了Godot的游戏作品",
+      "from": 3491,
+      "to": 3631
     },
     {
       "id": 19,
       "scene": "kimi-creative",
-      "text": "实际交付质量还需要自己测试。",
-      "from": 3615,
-      "to": 3750
+      "text": "以及三维模型制作案例",
+      "from": 3631,
+      "to": 3741
     },
     {
       "id": 20,
-      "scene": "kimi-access",
-      "text": "使用时间也要分开看。",
-      "from": 3798,
-      "to": 3896
+      "scene": "kimi-creative",
+      "text": "对游戏开发和三维创作感兴趣的朋友",
+      "from": 3754,
+      "to": 3927
     },
     {
       "id": 21,
-      "scene": "kimi-access",
-      "text": "网页、编程工具和API已经上线。",
-      "from": 3902,
-      "to": 4047
+      "scene": "kimi-creative",
+      "text": "可以先看看这些演示",
+      "from": 3958,
+      "to": 4055
     },
     {
       "id": 22,
-      "scene": "kimi-access",
-      "text": "完整权重承诺在十一月四日前开放。",
-      "from": 4053,
-      "to": 4210
+      "scene": "kimi-creative",
+      "text": "实际能否用于自己的项目",
+      "from": 4067,
+      "to": 4173
     },
     {
       "id": 23,
-      "scene": "kimi-access",
-      "text": "所以现在可以体验和接入，",
-      "from": 4216,
-      "to": 4329
+      "scene": "kimi-creative",
+      "text": "还需要进一步测试",
+      "from": 4184,
+      "to": 4257
     },
     {
       "id": 24,
       "scene": "kimi-access",
-      "text": "本地部署要等权重与许可落地。",
-      "from": 4335,
-      "to": 4470
+      "text": "目前，新模型已经接入Kimi网页端",
+      "from": 4274,
+      "to": 4462
     },
     {
       "id": 25,
-      "scene": "harness",
-      "text": "第二个是近期工具观察。",
-      "from": 4518,
-      "to": 4616
+      "scene": "kimi-access",
+      "text": "编程工具和API",
+      "from": 4485,
+      "to": 4557
     },
     {
       "id": 26,
-      "scene": "harness",
-      "text": "谷歌研究仓库里的Harness平方，",
-      "from": 4622,
-      "to": 4793
+      "scene": "kimi-access",
+      "text": "官方承诺在11月4号前开放完整模型权重",
+      "from": 4582,
+      "to": 4845
     },
     {
       "id": 27,
-      "scene": "harness",
-      "text": "保持模型权重不变，",
-      "from": 4799,
-      "to": 4893
+      "scene": "kimi-access",
+      "text": "想先体验可以使用在线服务",
+      "from": 4871,
+      "to": 4994
     },
     {
       "id": 28,
-      "scene": "harness",
-      "text": "让智能体尝试修改提示词和工具配置。",
-      "from": 4899,
-      "to": 5060
+      "scene": "kimi-access",
+      "text": "准备本地部署的朋友",
+      "from": 5006,
+      "to": 5079
     },
     {
       "id": 29,
-      "scene": "harness",
-      "text": "在同一个任务上试跑，再比较结果。",
-      "from": 5066,
-      "to": 5206
+      "scene": "kimi-access",
+      "text": "还需要等权重发布并确认许可条件",
+      "from": 5099,
+      "to": 5282
     },
     {
       "id": 30,
       "scene": "harness",
-      "text": "再把有效修改组合起来。",
-      "from": 5212,
-      "to": 5310
+      "text": "接下来是谷歌研究的开源项目",
+      "from": 5306,
+      "to": 5471
     },
     {
       "id": 31,
-      "scene": "harness-use",
-      "text": "它能改的还有记忆、技能和脚本。",
-      "from": 5358,
-      "to": 5501
+      "scene": "harness",
+      "text": "Harness²",
+      "from": 5471,
+      "to": 5534
     },
     {
       "id": 32,
-      "scene": "harness-use",
-      "text": "做智能体产品时，",
-      "from": 5507,
-      "to": 5611
+      "scene": "harness",
+      "text": "这是一项近期的智能体研究",
+      "from": 5543,
+      "to": 5680
     },
     {
       "id": 33,
-      "scene": "harness-use",
-      "text": "可以把工作流程本身拿来比较。",
-      "from": 5617,
-      "to": 5761
+      "scene": "harness",
+      "text": "关注的是执行任务时",
+      "from": 5693,
+      "to": 5795
     },
     {
       "id": 34,
-      "scene": "harness-use",
-      "text": "效果仍要在自己的任务上验证。",
-      "from": 5767,
-      "to": 5910
+      "scene": "harness",
+      "text": "提示词、工具和记忆该怎么配置",
+      "from": 5815,
+      "to": 5981
     },
     {
       "id": 35,
-      "scene": "voice",
-      "text": "另一个是开源工具VoiceStudio。",
-      "from": 5958,
-      "to": 6159
+      "scene": "harness",
+      "text": "它保持模型权重不变",
+      "from": 6004,
+      "to": 6100
     },
     {
       "id": 36,
-      "scene": "voice",
-      "text": "它把语音设计、转写和视频配音，",
-      "from": 6165,
-      "to": 6301
+      "scene": "harness",
+      "text": "让智能体尝试调整这些配置",
+      "from": 6111,
+      "to": 6249
     },
     {
       "id": 37,
-      "scene": "voice",
-      "text": "放进同一个本地工作台。",
-      "from": 6307,
-      "to": 6411
+      "scene": "harness",
+      "text": "在同一个任务上比较不同方案",
+      "from": 6266,
+      "to": 6405
     },
     {
       "id": 38,
-      "scene": "voice",
-      "text": "也提供供智能体调用的本地接口。",
-      "from": 6417,
-      "to": 6564
+      "scene": "harness",
+      "text": "再组合出有效的修改",
+      "from": 6419,
+      "to": 6499
     },
     {
       "id": 39,
-      "scene": "voice",
-      "text": "做长旁白时可以关注，",
-      "from": 6570,
-      "to": 6668
+      "scene": "harness-use",
+      "text": "如果你在开发AI助手",
+      "from": 6499,
+      "to": 6590
     },
     {
       "id": 40,
-      "scene": "voice",
-      "text": "先确认硬件和所选引擎的要求。",
-      "from": 6674,
-      "to": 6810
+      "scene": "harness-use",
+      "text": "这个项目提供了一种优化工作流程的思路",
+      "from": 6610,
+      "to": 6776
     },
     {
       "id": 41,
-      "scene": "close",
-      "text": "今天的重点是Kimi的新模型，",
-      "from": 6858,
-      "to": 7013
+      "scene": "harness-use",
+      "text": "目前它属于研究框架",
+      "from": 6790,
+      "to": 6879
     },
     {
       "id": 42,
-      "scene": "close",
-      "text": "以及两种改进制作流程的工具。",
-      "from": 7019,
-      "to": 7162
+      "scene": "harness-use",
+      "text": "具体效果还需要在自己任务中验证",
+      "from": 6898,
+      "to": 7078
     },
     {
       "id": 43,
-      "scene": "close",
-      "text": "来源和使用入口放在简介里。",
-      "from": 7168,
-      "to": 7300
+      "scene": "voice",
+      "text": "最后来看GitHub上",
+      "from": 7099,
+      "to": 7190
     },
     {
       "id": 44,
+      "scene": "voice",
+      "text": "开源的语音项目",
+      "from": 7205,
+      "to": 7319
+    },
+    {
+      "id": 45,
+      "scene": "voice",
+      "text": "VoiceStudio",
+      "from": 7342,
+      "to": 7393
+    },
+    {
+      "id": 46,
+      "scene": "voice",
+      "text": "它支持音色设计",
+      "from": 7411,
+      "to": 7490
+    },
+    {
+      "id": 47,
+      "scene": "voice",
+      "text": "把录音转成文字",
+      "from": 7499,
+      "to": 7574
+    },
+    {
+      "id": 48,
+      "scene": "voice",
+      "text": "以及为视频配音",
+      "from": 7587,
+      "to": 7661
+    },
+    {
+      "id": 49,
+      "scene": "voice",
+      "text": "这些功能整合进一个桌面工作台",
+      "from": 7688,
+      "to": 7867
+    },
+    {
+      "id": 50,
+      "scene": "voice-api",
+      "text": "它也提供本地接口",
+      "from": 7923,
+      "to": 8008
+    },
+    {
+      "id": 51,
+      "scene": "voice-api",
+      "text": "方便接入自动化流程",
+      "from": 8017,
+      "to": 8115
+    },
+    {
+      "id": 52,
+      "scene": "voice-api",
+      "text": "经常制作旁白和视频配音的朋友",
+      "from": 8131,
+      "to": 8267
+    },
+    {
+      "id": 53,
+      "scene": "voice-api",
+      "text": "可以关注这个项目",
+      "from": 8267,
+      "to": 8326
+    },
+    {
+      "id": 54,
+      "scene": "voice-api",
+      "text": "具体能运行哪些功能",
+      "from": 8342,
+      "to": 8432
+    },
+    {
+      "id": 55,
+      "scene": "voice-api",
+      "text": "还要看电脑配置和所选的语音引擎",
+      "from": 8462,
+      "to": 8668
+    },
+    {
+      "id": 56,
       "scene": "close",
-      "text": "我们下期见。",
-      "from": 7306,
-      "to": 7410
+      "text": "以上就是本期的AI资讯",
+      "from": 8733,
+      "to": 8825
+    },
+    {
+      "id": 57,
+      "scene": "close",
+      "text": "相关来源和项目地址我会放在视频简介里",
+      "from": 8840,
+      "to": 9019
+    },
+    {
+      "id": 58,
+      "scene": "close",
+      "text": "感谢观看，我们下期再见",
+      "from": 9046,
+      "to": 9142
     }
   ]
 }

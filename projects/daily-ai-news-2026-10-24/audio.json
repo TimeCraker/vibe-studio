@@ -1,14 +1,29 @@
 {
   "schemaVersion": 1,
-  "duration": 124,
-  "normalize": false,
-  "ducking": false,
+  "duration": 153.68333333333334,
+  "target": {
+    "integrated": -16,
+    "truePeak": -1.5,
+    "range": 11
+  },
+  "ducking": {
+    "threshold": 0.03,
+    "ratio": 6,
+    "attack": 12,
+    "release": 280
+  },
   "tracks": [
+    {
+      "file": "audio/voice-clean.wav",
+      "role": "voice",
+      "start": 16,
+      "duration": 136.67
+    },
     {
       "file": "assets/carefree.mp3",
       "role": "music",
       "duration": 16.5,
-      "gainDb": -2,
+      "gainDb": -4,
       "fadeIn": 1,
       "fadeOut": 1
     },
@@ -17,10 +32,10 @@
       "role": "music",
       "start": 15.5,
       "in": 15.5,
-      "duration": 108.5,
-      "gainDb": -7,
+      "duration": 138.18333333333334,
+      "gainDb": -11,
       "fadeIn": 1,
-      "fadeOut": 2
+      "fadeOut": 1.5
     }
   ]
 }

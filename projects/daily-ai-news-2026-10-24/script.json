@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "2026年10月24日每日AI资讯",
+    "title": "2026年10月24日每日AI资讯 真人口播",
     "lang": "zh-CN",
-    "budgetSeconds": 108,
+    "budgetSeconds": 136.67,
     "charsPerSecond": 5.8,
     "bannedWords": []
   },
@@ -10,266 +10,350 @@
     {
       "id": 1,
       "kind": "subtitle",
-      "text": "大家好，欢迎收看今日AI资讯。",
-      "ref": "page 1"
+      "text": "各位观众们大家好",
+      "ref": "scene overview"
     },
     {
       "id": 2,
       "kind": "subtitle",
-      "text": "今天先看Kimi的新模型。",
-      "ref": "page 1"
+      "text": "欢迎收看今日AI资讯",
+      "ref": "scene overview"
     },
     {
       "id": 3,
       "kind": "subtitle",
-      "text": "再聊让智能体改进工作方法的工具，",
-      "ref": "page 1"
+      "text": "今天我们重点关注Kimi新模型的发布",
+      "ref": "scene overview"
     },
     {
       "id": 4,
       "kind": "subtitle",
-      "text": "还有一个本地语音工作台。",
-      "ref": "page 1"
+      "text": "另外还有几项AI工具的相关资讯",
+      "ref": "scene overview"
     },
     {
       "id": 5,
       "kind": "subtitle",
-      "text": "月之暗面发布了K3.1 Pro。",
-      "ref": "page 2"
+      "text": "下面来看详细内容",
+      "ref": "scene overview"
     },
     {
       "id": 6,
       "kind": "subtitle",
-      "text": "官方给出的规格是三万亿级参数，",
-      "ref": "page 2"
+      "text": "首先，月之暗面发布了",
+      "ref": "scene kimi-title"
     },
     {
       "id": 7,
       "kind": "subtitle",
-      "text": "以及一百万token的上下文。",
-      "ref": "page 2"
+      "text": "Kimi K3.1 Pro",
+      "ref": "scene kimi-title"
     },
     {
       "id": 8,
       "kind": "subtitle",
-      "text": "这次重点是编程和长任务能力。",
-      "ref": "page 2"
+      "text": "这次更新的重点是编程和长任务处理",
+      "ref": "scene kimi-title"
     },
     {
       "id": 9,
       "kind": "subtitle",
-      "text": "先看官方公布的终端任务评测。",
-      "ref": "page 3"
+      "text": "按照官方介绍",
+      "ref": "scene kimi-title"
     },
     {
       "id": 10,
       "kind": "subtitle",
-      "text": "Kimi的成绩是百分之65.7，",
-      "ref": "page 3"
+      "text": "这款模型采用3万亿级参数规模",
+      "ref": "scene kimi-title"
     },
     {
       "id": 11,
       "kind": "subtitle",
-      "text": "高于GPT的58.2，",
-      "ref": "page 3"
+      "text": "支持100万token的上下文",
+      "ref": "scene kimi-title"
     },
     {
       "id": 12,
       "kind": "subtitle",
-      "text": "略低于Claude的66.4。",
-      "ref": "page 3"
+      "text": "在官方公布的终端任务评测中",
+      "ref": "scene kimi-bench"
     },
     {
       "id": 13,
       "kind": "subtitle",
-      "text": "这是发布方整理的比较，",
-      "ref": "page 3"
+      "text": "它取得了65.7%的好成绩",
+      "ref": "scene kimi-bench"
     },
     {
       "id": 14,
       "kind": "subtitle",
-      "text": "不能直接当成所有任务的胜负。",
-      "ref": "page 3"
+      "text": "不过，这组模型对比由发布方整理",
+      "ref": "scene kimi-bench"
     },
     {
       "id": 15,
       "kind": "subtitle",
-      "text": "做游戏和三维内容的人可以关注。",
-      "ref": "page 4"
+      "text": "测试条件存在差异",
+      "ref": "scene kimi-bench"
     },
     {
       "id": 16,
       "kind": "subtitle",
-      "text": "官方展示了Godot游戏作品，",
-      "ref": "page 4"
+      "text": "还不能据此判断它在所有编程任务中的表现",
+      "ref": "scene kimi-bench"
     },
     {
       "id": 17,
       "kind": "subtitle",
-      "text": "也展示了三维模型制作入口。",
-      "ref": "page 4"
+      "text": "除了写代码",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 18,
       "kind": "subtitle",
-      "text": "这些是官方案例，",
-      "ref": "page 4"
+      "text": "官方还展示了Godot的游戏作品",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 19,
       "kind": "subtitle",
-      "text": "实际交付质量还需要自己测试。",
-      "ref": "page 4"
+      "text": "以及三维模型制作案例",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 20,
       "kind": "subtitle",
-      "text": "使用时间也要分开看。",
-      "ref": "page 5"
+      "text": "对游戏开发和三维创作感兴趣的朋友",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 21,
       "kind": "subtitle",
-      "text": "网页、编程工具和API已经上线。",
-      "ref": "page 5"
+      "text": "可以先看看这些演示",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 22,
       "kind": "subtitle",
-      "text": "完整权重承诺在十一月四日前开放。",
-      "ref": "page 5"
+      "text": "实际能否用于自己的项目",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 23,
       "kind": "subtitle",
-      "text": "所以现在可以体验和接入，",
-      "ref": "page 5"
+      "text": "还需要进一步测试",
+      "ref": "scene kimi-creative"
     },
     {
       "id": 24,
       "kind": "subtitle",
-      "text": "本地部署要等权重与许可落地。",
-      "ref": "page 5"
+      "text": "目前，新模型已经接入Kimi网页端",
+      "ref": "scene kimi-access"
     },
     {
       "id": 25,
       "kind": "subtitle",
-      "text": "第二个是近期工具观察。",
-      "ref": "page 6"
+      "text": "编程工具和API",
+      "ref": "scene kimi-access"
     },
     {
       "id": 26,
       "kind": "subtitle",
-      "text": "谷歌研究仓库里的Harness平方，",
-      "ref": "page 6"
+      "text": "官方承诺在11月4号前开放完整模型权重",
+      "ref": "scene kimi-access"
     },
     {
       "id": 27,
       "kind": "subtitle",
-      "text": "保持模型权重不变，",
-      "ref": "page 6"
+      "text": "想先体验可以使用在线服务",
+      "ref": "scene kimi-access"
     },
     {
       "id": 28,
       "kind": "subtitle",
-      "text": "让智能体尝试修改提示词和工具配置。",
-      "ref": "page 6"
+      "text": "准备本地部署的朋友",
+      "ref": "scene kimi-access"
     },
     {
       "id": 29,
       "kind": "subtitle",
-      "text": "在同一个任务上试跑，再比较结果。",
-      "ref": "page 6"
+      "text": "还需要等权重发布并确认许可条件",
+      "ref": "scene kimi-access"
     },
     {
       "id": 30,
       "kind": "subtitle",
-      "text": "再把有效修改组合起来。",
-      "ref": "page 6"
+      "text": "接下来是谷歌研究的开源项目",
+      "ref": "scene harness"
     },
     {
       "id": 31,
       "kind": "subtitle",
-      "text": "它能改的还有记忆、技能和脚本。",
-      "ref": "page 7"
+      "text": "Harness²",
+      "ref": "scene harness"
     },
     {
       "id": 32,
       "kind": "subtitle",
-      "text": "做智能体产品时，",
-      "ref": "page 7"
+      "text": "这是一项近期的智能体研究",
+      "ref": "scene harness"
     },
     {
       "id": 33,
       "kind": "subtitle",
-      "text": "可以把工作流程本身拿来比较。",
-      "ref": "page 7"
+      "text": "关注的是执行任务时",
+      "ref": "scene harness"
     },
     {
       "id": 34,
       "kind": "subtitle",
-      "text": "效果仍要在自己的任务上验证。",
-      "ref": "page 7"
+      "text": "提示词、工具和记忆该怎么配置",
+      "ref": "scene harness"
     },
     {
       "id": 35,
       "kind": "subtitle",
-      "text": "另一个是开源工具VoiceStudio。",
-      "ref": "page 8"
+      "text": "它保持模型权重不变",
+      "ref": "scene harness"
     },
     {
       "id": 36,
       "kind": "subtitle",
-      "text": "它把语音设计、转写和视频配音，",
-      "ref": "page 8"
+      "text": "让智能体尝试调整这些配置",
+      "ref": "scene harness"
     },
     {
       "id": 37,
       "kind": "subtitle",
-      "text": "放进同一个本地工作台。",
-      "ref": "page 8"
+      "text": "在同一个任务上比较不同方案",
+      "ref": "scene harness"
     },
     {
       "id": 38,
       "kind": "subtitle",
-      "text": "也提供供智能体调用的本地接口。",
-      "ref": "page 8"
+      "text": "再组合出有效的修改",
+      "ref": "scene harness"
     },
     {
       "id": 39,
       "kind": "subtitle",
-      "text": "做长旁白时可以关注，",
-      "ref": "page 8"
+      "text": "如果你在开发AI助手",
+      "ref": "scene harness-use"
     },
     {
       "id": 40,
       "kind": "subtitle",
-      "text": "先确认硬件和所选引擎的要求。",
-      "ref": "page 8"
+      "text": "这个项目提供了一种优化工作流程的思路",
+      "ref": "scene harness-use"
     },
     {
       "id": 41,
       "kind": "subtitle",
-      "text": "今天的重点是Kimi的新模型，",
-      "ref": "page 9"
+      "text": "目前它属于研究框架",
+      "ref": "scene harness-use"
     },
     {
       "id": 42,
       "kind": "subtitle",
-      "text": "以及两种改进制作流程的工具。",
-      "ref": "page 9"
+      "text": "具体效果还需要在自己任务中验证",
+      "ref": "scene harness-use"
     },
     {
       "id": 43,
       "kind": "subtitle",
-      "text": "来源和使用入口放在简介里。",
-      "ref": "page 9"
+      "text": "最后来看GitHub上",
+      "ref": "scene voice"
     },
     {
       "id": 44,
       "kind": "subtitle",
-      "text": "我们下期见。",
-      "ref": "page 9"
+      "text": "开源的语音项目",
+      "ref": "scene voice"
+    },
+    {
+      "id": 45,
+      "kind": "subtitle",
+      "text": "VoiceStudio",
+      "ref": "scene voice"
+    },
+    {
+      "id": 46,
+      "kind": "subtitle",
+      "text": "它支持音色设计",
+      "ref": "scene voice"
+    },
+    {
+      "id": 47,
+      "kind": "subtitle",
+      "text": "把录音转成文字",
+      "ref": "scene voice"
+    },
+    {
+      "id": 48,
+      "kind": "subtitle",
+      "text": "以及为视频配音",
+      "ref": "scene voice"
+    },
+    {
+      "id": 49,
+      "kind": "subtitle",
+      "text": "这些功能整合进一个桌面工作台",
+      "ref": "scene voice"
+    },
+    {
+      "id": 50,
+      "kind": "subtitle",
+      "text": "它也提供本地接口",
+      "ref": "scene voice-api"
+    },
+    {
+      "id": 51,
+      "kind": "subtitle",
+      "text": "方便接入自动化流程",
+      "ref": "scene voice-api"
+    },
+    {
+      "id": 52,
+      "kind": "subtitle",
+      "text": "经常制作旁白和视频配音的朋友",
+      "ref": "scene voice-api"
+    },
+    {
+      "id": 53,
+      "kind": "subtitle",
+      "text": "可以关注这个项目",
+      "ref": "scene voice-api"
+    },
+    {
+      "id": 54,
+      "kind": "subtitle",
+      "text": "具体能运行哪些功能",
+      "ref": "scene voice-api"
+    },
+    {
+      "id": 55,
+      "kind": "subtitle",
+      "text": "还要看电脑配置和所选的语音引擎",
+      "ref": "scene voice-api"
+    },
+    {
+      "id": 56,
+      "kind": "subtitle",
+      "text": "以上就是本期的AI资讯",
+      "ref": "scene close"
+    },
+    {
+      "id": 57,
+      "kind": "subtitle",
+      "text": "相关来源和项目地址我会放在视频简介里",
+      "ref": "scene close"
+    },
+    {
+      "id": 58,
+      "kind": "subtitle",
+      "text": "感谢观看，我们下期再见",
+      "ref": "scene close"
     }
   ]
 }

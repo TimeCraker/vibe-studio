@@ -21,9 +21,11 @@
 
 ## 声音和字幕
 
-用户亲自配音，本期不生成TTS。可照读文稿见narration.md；script.json是分段正本。captions-preview.srt仅按阅读速度粗排，没有真人音轨、没有ASR，不冒充同步字幕。录音后再按实际音轨改timeline和字幕，允许镜头自然变长。
+用户已提供138.920875秒真人录音，本期不生成TTS。narration.md保留交付稿，audio/recording-review.json记录实际改词、词窗口与校订，script.json和captions.srt派生自采用音轨。首0.25秒及尾空白裁去，内部停顿保留，声音不加速；58条字幕、12个场景，总长153.683333秒。前两榜各8秒；口播从16.25秒起，最后一句到152.366667秒。旧captions-preview.srt和124秒BGM预览仅是历史样片，不能用于新版核查。
 
-BGM选Kevin MacLeod的Carefree，官方曲库标96BPM、尤克里里/吉他/马林巴/钟琴/打击乐，Bouncy/Bright/Calming/Uplifting。基于这些风格信息初选，未以机器响度检查冒充审听。官方页面授权CC BY4.0，投稿简介保留曲名、作者、来源与许可；本地音乐、原始来源和哈希在assets/sources.json。配乐先压低，为未来真人旁白留空间；预览有音乐、没有人声，不能当正式音画完成。
+总览将英文项目名称与来源放在画面，口播只简述本期重点。Kimi规格和Harness阶段高亮按实际说到的内容触发。VoiceStudio先显示官方截图与功能，讲到本地接口后切入浅色流程示意，避免整段停在同一页面；示意不冒充安装实测。
+
+BGM沿用Kevin MacLeod的Carefree，官方曲库标96BPM、尤克里里/吉他/马林巴/钟琴/打击乐，Bouncy/Bright/Calming/Uplifting。基于这些风格信息初选，未以机器响度检查冒充审听。官方页面授权CC BY4.0，投稿简介保留曲名、作者、来源与许可；本地音乐、原始来源和哈希在assets/sources.json。新版以audio-voice.json先处理偏低电平的录音，再由audio.json进行音乐避让和两遍响度处理；混音-15.91LUFS、-1.47dBTP，技术通过，听感仍待用户确认。
 
 ## 制作和验收
 

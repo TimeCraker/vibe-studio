@@ -1,145 +1,160 @@
 {
   "date": "2026-10-24",
   "fps": 60,
-  "voice": "human-pending",
-  "subtitleTiming": "reading-estimate-pending-human-voice",
+  "voice": "human-recorded",
+  "subtitleTiming": "faster-whisper-word-windows-text-reviewed-listening-pending",
   "stories": [
     {
       "id": "overview",
       "title": "今日资讯总览",
-      "minimumSeconds": 9,
       "claimIds": [
         "kimi-launch",
         "harness-method",
         "voice-features"
       ],
       "lines": [
-        "大家好，欢迎收看今日AI资讯。",
-        "今天先看Kimi的新模型。",
-        "再聊让智能体改进工作方法的工具，",
-        "还有一个本地语音工作台。"
+        "各位观众们大家好",
+        "欢迎收看今日AI资讯",
+        "今天我们重点关注Kimi新模型的发布",
+        "另外还有几项AI工具的相关资讯",
+        "下面来看详细内容"
       ]
     },
     {
       "id": "kimi-title",
       "title": "Kimi K3.1 Pro",
-      "minimumSeconds": 10,
       "claimIds": [
         "kimi-launch"
       ],
       "lines": [
-        "月之暗面发布了K3.1 Pro。",
-        "官方给出的规格是三万亿级参数，",
-        "以及一百万token的上下文。",
-        "这次重点是编程和长任务能力。"
+        "首先，月之暗面发布了",
+        "Kimi K3.1 Pro",
+        "这次更新的重点是编程和长任务处理",
+        "按照官方介绍",
+        "这款模型采用3万亿级参数规模",
+        "支持100万token的上下文"
       ]
     },
     {
       "id": "kimi-bench",
-      "title": "编程表现怎么看",
-      "minimumSeconds": 12,
+      "title": "终端任务评测",
       "claimIds": [
         "kimi-terminal"
       ],
       "lines": [
-        "先看官方公布的终端任务评测。",
-        "Kimi的成绩是百分之65.7，",
-        "高于GPT的58.2，",
-        "略低于Claude的66.4。",
-        "这是发布方整理的比较，",
-        "不能直接当成所有任务的胜负。"
+        "在官方公布的终端任务评测中",
+        "它取得了65.7%的好成绩",
+        "不过，这组模型对比由发布方整理",
+        "测试条件存在差异",
+        "还不能据此判断它在所有编程任务中的表现"
       ]
     },
     {
       "id": "kimi-creative",
-      "title": "代码之外，还能做什么",
-      "minimumSeconds": 11,
+      "title": "游戏与三维创作",
       "claimIds": [
         "kimi-creative"
       ],
       "lines": [
-        "做游戏和三维内容的人可以关注。",
-        "官方展示了Godot游戏作品，",
-        "也展示了三维模型制作入口。",
-        "这些是官方案例，",
-        "实际交付质量还需要自己测试。"
+        "除了写代码",
+        "官方还展示了Godot的游戏作品",
+        "以及三维模型制作案例",
+        "对游戏开发和三维创作感兴趣的朋友",
+        "可以先看看这些演示",
+        "实际能否用于自己的项目",
+        "还需要进一步测试"
       ]
     },
     {
       "id": "kimi-access",
-      "title": "现在能用，权重还要等",
-      "minimumSeconds": 11,
+      "title": "使用入口与权重",
       "claimIds": [
         "kimi-access"
       ],
       "lines": [
-        "使用时间也要分开看。",
-        "网页、编程工具和API已经上线。",
-        "完整权重承诺在十一月四日前开放。",
-        "所以现在可以体验和接入，",
-        "本地部署要等权重与许可落地。"
+        "目前，新模型已经接入Kimi网页端",
+        "编程工具和API",
+        "官方承诺在11月4号前开放完整模型权重",
+        "想先体验可以使用在线服务",
+        "准备本地部署的朋友",
+        "还需要等权重发布并确认许可条件"
       ]
     },
     {
       "id": "harness",
-      "title": "让智能体改进工作方法",
-      "minimumSeconds": 13,
+      "title": "Harness²智能体研究",
       "claimIds": [
-        "harness-method"
+        "harness-method",
+        "harness-components"
       ],
       "lines": [
-        "第二个是近期工具观察。",
-        "谷歌研究仓库里的Harness平方，",
-        "保持模型权重不变，",
-        "让智能体尝试修改提示词和工具配置。",
-        "在同一个任务上试跑，再比较结果。",
-        "再把有效修改组合起来。"
+        "接下来是谷歌研究的开源项目",
+        "Harness²",
+        "这是一项近期的智能体研究",
+        "关注的是执行任务时",
+        "提示词、工具和记忆该怎么配置",
+        "它保持模型权重不变",
+        "让智能体尝试调整这些配置",
+        "在同一个任务上比较不同方案",
+        "再组合出有效的修改"
       ]
     },
     {
       "id": "harness-use",
-      "title": "对做 Agent 的人有什么用",
-      "minimumSeconds": 8,
+      "title": "研究框架与开发者用途",
       "claimIds": [
         "harness-components"
       ],
       "lines": [
-        "它能改的还有记忆、技能和脚本。",
-        "做智能体产品时，",
-        "可以把工作流程本身拿来比较。",
-        "效果仍要在自己的任务上验证。"
+        "如果你在开发AI助手",
+        "这个项目提供了一种优化工作流程的思路",
+        "目前它属于研究框架",
+        "具体效果还需要在自己任务中验证"
       ]
     },
     {
       "id": "voice",
-      "title": "本地语音工作台",
-      "minimumSeconds": 12,
+      "title": "开源语音项目VoiceStudio",
       "claimIds": [
         "voice-features"
       ],
       "lines": [
-        "另一个是开源工具VoiceStudio。",
-        "它把语音设计、转写和视频配音，",
-        "放进同一个本地工作台。",
-        "也提供供智能体调用的本地接口。",
-        "做长旁白时可以关注，",
-        "先确认硬件和所选引擎的要求。"
+        "最后来看GitHub上",
+        "开源的语音项目",
+        "VoiceStudio",
+        "它支持音色设计",
+        "把录音转成文字",
+        "以及为视频配音",
+        "这些功能整合进一个桌面工作台"
+      ]
+    },
+    {
+      "id": "voice-api",
+      "title": "本地接口与使用条件",
+      "claimIds": [
+        "voice-features"
+      ],
+      "lines": [
+        "它也提供本地接口",
+        "方便接入自动化流程",
+        "经常制作旁白和视频配音的朋友",
+        "可以关注这个项目",
+        "具体能运行哪些功能",
+        "还要看电脑配置和所选的语音引擎"
       ]
     },
     {
       "id": "close",
-      "title": "今天值得记住",
-      "minimumSeconds": 8,
+      "title": "本期资讯结束",
       "claimIds": [
         "kimi-access",
         "harness-method",
         "voice-features"
       ],
       "lines": [
-        "今天的重点是Kimi的新模型，",
-        "以及两种改进制作流程的工具。",
-        "来源和使用入口放在简介里。",
-        "我们下期见。"
+        "以上就是本期的AI资讯",
+        "相关来源和项目地址我会放在视频简介里",
+        "感谢观看，我们下期再见"
       ]
     }
   ],
