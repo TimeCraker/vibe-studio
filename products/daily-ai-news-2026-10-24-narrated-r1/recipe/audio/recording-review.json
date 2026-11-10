@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 1,
+  "source": "audio/source/narration-original.m4a",
+  "sourceSha256": "0d3c17d9ab040c30522a02b46a82e3d0f3bb6c8a972f945a19feba82f0f4e082",
+  "sourceDuration": 138.920875,
+  "sourceIn": 0.25,
+  "sourceOut": 136.92,
+  "edit": "仅裁去首部0.25秒和尾部空白；不加速、不删除内部停顿，未发现明显整句重念",
+  "timing": "faster-whisper large-v3-turbo实际词时间窗；按词聚合句级字幕，非按字数摊时",
+  "actualWording": "保留录音中的好成绩、11月4号、感谢观看、下期再见等实际改词",
+  "corrections": [
+    {
+      "raw": "产物任务",
+      "text": "长任务",
+      "start": 17.0,
+      "end": 17.72,
+      "reason": "ASR疑似同音误识；依据已交付稿与官方长任务说明校订，保留待审听点"
+    },
+    {
+      "raw": "许个条件",
+      "text": "许可条件",
+      "start": 71.66,
+      "end": 72.28,
+      "reason": "依据上下文与原稿校订ASR用字，未改变配音"
+    },
+    {
+      "raw": "KimiK3.1Pro",
+      "text": "Kimi K3.1 Pro",
+      "start": 12.88,
+      "end": 14.38,
+      "reason": "统一模型名排版，原语音不变"
+    },
+    {
+      "raw": "Harness平方",
+      "text": "Harness²",
+      "start": 75.44,
+      "end": 76.48,
+      "reason": "口语读法转官方项目名"
+    },
+    {
+      "raw": "VoiceStudio",
+      "text": "VoiceStudio",
+      "start": 106.62,
+      "end": 107.46,
+      "reason": "合并拆开的英文项目名词元，避免字幕切断名称"
+    },
+    {
+      "raw": "Godot",
+      "text": "Godot",
+      "start": 43.4,
+      "end": 43.76,
+      "reason": "保留完整引擎名称"
+    },
+    {
+      "raw": "GitHub",
+      "text": "GitHub",
+      "start": 103.4,
+      "end": 103.82,
+      "reason": "保留完整站点名称"
+    },
+    {
+      "raw": "token",
+      "text": "token",
+      "start": 24.14,
+      "end": 24.5,
+      "reason": "保留完整单位名称"
+    },
+    {
+      "raw": "65.7%",
+      "text": "65.7%",
+      "start": 28.66,
+      "end": 30.76,
+      "reason": "保留完整数字与单位，不在小数中途切字幕"
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.5,
+      "end": 1.82,
+      "text": "各位观众们大家好",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 2.04,
+      "end": 3.36,
+      "text": "欢迎收看今日AI资讯",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 3.62,
+      "end": 6.42,
+      "text": "今天我们重点关注Kimi新模型的发布",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 6.58,
+      "end": 9.1,
+      "text": "另外还有几项AI工具的相关资讯",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 9.26,
+      "end": 10.36,
+      "text": "下面来看详细内容",
+      "scene": "overview",
+      "asrSegments": [
+        1
+      ]
+    },
+    {
+      "start": 10.88,
+      "end": 12.88,
+      "text": "首先，月之暗面发布了",
+      "scene": "kimi-title",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 12.88,
+      "end": 14.38,
+      "text": "Kimi K3.1 Pro",
+      "scene": "kimi-title",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 14.76,
+      "end": 18.08,
+      "text": "这次更新的重点是编程和长任务处理",
+      "scene": "kimi-title",
+      "asrSegments": [
+        2
+      ]
+    },
+    {
+      "start": 18.66,
+      "end": 19.44,
+      "text": "按照官方介绍",
+      "scene": "kimi-title",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 19.82,
+      "end": 23.06,
+      "text": "这款模型采用3万亿级参数规模",
+      "scene": "kimi-title",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 23.2,
+      "end": 25.04,
+      "text": "支持100万token的上下文",
+      "scene": "kimi-title",
+      "asrSegments": [
+        3
+      ]
+    },
+    {
+      "start": 25.04,
+      "end": 27.88,
+      "text": "在官方公布的终端任务评测中",
+      "scene": "kimi-bench",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 28.06,
+      "end": 31.38,
+      "text": "它取得了65.7%的好成绩",
+      "scene": "kimi-bench",
+      "asrSegments": [
+        4
+      ]
+    },
+    {
+      "start": 31.58,
+      "end": 35.5,
+      "text": "不过，这组模型对比由发布方整理",
+      "scene": "kimi-bench",
+      "asrSegments": [
+        5
+      ]
+    },
+    {
+      "start": 35.78,
+      "end": 37.12,
+      "text": "测试条件存在差异",
+      "scene": "kimi-bench",
+      "asrSegments": [
+        5
+      ]
+    },
+    {
+      "start": 37.28,
+      "end": 40.76,
+      "text": "还不能据此判断它在所有编程任务中的表现",
+      "scene": "kimi-bench",
+      "asrSegments": [
+        5
+      ]
+    },
+    {
+      "start": 41.28,
+      "end": 42.16,
+      "text": "除了写代码",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 42.44,
+      "end": 44.76,
+      "text": "官方还展示了Godot的游戏作品",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 44.76,
+      "end": 46.6,
+      "text": "以及三维模型制作案例",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 46.82,
+      "end": 49.7,
+      "text": "对游戏开发和三维创作感兴趣的朋友",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        6
+      ]
+    },
+    {
+      "start": 50.22,
+      "end": 51.84,
+      "text": "可以先看看这些演示",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        7
+      ]
+    },
+    {
+      "start": 52.04,
+      "end": 53.8,
+      "text": "实际能否用于自己的项目",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        7
+      ]
+    },
+    {
+      "start": 53.98,
+      "end": 55.2,
+      "text": "还需要进一步测试",
+      "scene": "kimi-creative",
+      "asrSegments": [
+        7
+      ]
+    },
+    {
+      "start": 55.48,
+      "end": 58.62,
+      "text": "目前，新模型已经接入Kimi网页端",
+      "scene": "kimi-access",
+      "asrSegments": [
+        8
+      ]
+    },
+    {
+      "start": 59.0,
+      "end": 60.2,
+      "text": "编程工具和API",
+      "scene": "kimi-access",
+      "asrSegments": [
+        8
+      ]
+    },
+    {
+      "start": 60.62,
+      "end": 65.0,
+      "text": "官方承诺在11月4号前开放完整模型权重",
+      "scene": "kimi-access",
+      "asrSegments": [
+        9
+      ]
+    },
+    {
+      "start": 65.44,
+      "end": 67.48,
+      "text": "想先体验可以使用在线服务",
+      "scene": "kimi-access",
+      "asrSegments": [
+        9
+      ]
+    },
+    {
+      "start": 67.68,
+      "end": 68.9,
+      "text": "准备本地部署的朋友",
+      "scene": "kimi-access",
+      "asrSegments": [
+        10
+      ]
+    },
+    {
+      "start": 69.24,
+      "end": 72.28,
+      "text": "还需要等权重发布并确认许可条件",
+      "scene": "kimi-access",
+      "asrSegments": [
+        10
+      ]
+    },
+    {
+      "start": 72.68,
+      "end": 75.44,
+      "text": "接下来是谷歌研究的开源项目",
+      "scene": "harness",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 75.44,
+      "end": 76.48,
+      "text": "Harness²",
+      "scene": "harness",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 76.64,
+      "end": 78.92,
+      "text": "这是一项近期的智能体研究",
+      "scene": "harness",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 79.14,
+      "end": 80.84,
+      "text": "关注的是执行任务时",
+      "scene": "harness",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 81.16,
+      "end": 83.94,
+      "text": "提示词、工具和记忆该怎么配置",
+      "scene": "harness",
+      "asrSegments": [
+        11
+      ]
+    },
+    {
+      "start": 84.32,
+      "end": 85.92,
+      "text": "它保持模型权重不变",
+      "scene": "harness",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 86.1,
+      "end": 88.4,
+      "text": "让智能体尝试调整这些配置",
+      "scene": "harness",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 88.68,
+      "end": 91.0,
+      "text": "在同一个任务上比较不同方案",
+      "scene": "harness",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 91.24,
+      "end": 92.56,
+      "text": "再组合出有效的修改",
+      "scene": "harness",
+      "asrSegments": [
+        12
+      ]
+    },
+    {
+      "start": 92.56,
+      "end": 94.08,
+      "text": "如果你在开发AI助手",
+      "scene": "harness-use",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 94.42,
+      "end": 97.18,
+      "text": "这个项目提供了一种优化工作流程的思路",
+      "scene": "harness-use",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 97.42,
+      "end": 98.9,
+      "text": "目前它属于研究框架",
+      "scene": "harness-use",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 99.22,
+      "end": 102.22,
+      "text": "具体效果还需要在自己任务中验证",
+      "scene": "harness-use",
+      "asrSegments": [
+        13
+      ]
+    },
+    {
+      "start": 102.56,
+      "end": 104.08,
+      "text": "最后来看GitHub上",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 104.34,
+      "end": 106.24,
+      "text": "开源的语音项目",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 106.62,
+      "end": 107.46,
+      "text": "VoiceStudio",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 107.76,
+      "end": 109.08,
+      "text": "它支持音色设计",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 109.24,
+      "end": 110.48,
+      "text": "把录音转成文字",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 110.7,
+      "end": 111.94,
+      "text": "以及为视频配音",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 112.38,
+      "end": 115.36,
+      "text": "这些功能整合进一个桌面工作台",
+      "scene": "voice",
+      "asrSegments": [
+        14
+      ]
+    },
+    {
+      "start": 116.3,
+      "end": 117.72,
+      "text": "它也提供本地接口",
+      "scene": "voice-api",
+      "asrSegments": [
+        15
+      ]
+    },
+    {
+      "start": 117.86,
+      "end": 119.5,
+      "text": "方便接入自动化流程",
+      "scene": "voice-api",
+      "asrSegments": [
+        15
+      ]
+    },
+    {
+      "start": 119.76,
+      "end": 122.04,
+      "text": "经常制作旁白和视频配音的朋友",
+      "scene": "voice-api",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 122.04,
+      "end": 123.02,
+      "text": "可以关注这个项目",
+      "scene": "voice-api",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 123.28,
+      "end": 124.78,
+      "text": "具体能运行哪些功能",
+      "scene": "voice-api",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 125.28,
+      "end": 128.72,
+      "text": "还要看电脑配置和所选的语音引擎",
+      "scene": "voice-api",
+      "asrSegments": [
+        16
+      ]
+    },
+    {
+      "start": 129.8,
+      "end": 131.34,
+      "text": "以上就是本期的AI资讯",
+      "scene": "close",
+      "asrSegments": [
+        17
+      ]
+    },
+    {
+      "start": 131.58,
+      "end": 134.56,
+      "text": "相关来源和项目地址我会放在视频简介里",
+      "scene": "close",
+      "asrSegments": [
+        17
+      ]
+    },
+    {
+      "start": 135.02,
+      "end": 136.62,
+      "text": "感谢观看，我们下期再见",
+      "scene": "close",
+      "asrSegments": [
+        18
+      ]
+    }
+  ],
+  "listening": {
+    "status": "pending",
+    "note": "当前通过ASR与稿件文本核对，未实际审听；17.0至17.56秒长任务识别需优先复核"
+  }
+}

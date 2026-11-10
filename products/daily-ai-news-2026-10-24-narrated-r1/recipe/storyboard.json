@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "audience": "关注AI模型与开发工具的创作者、独立开发者",
+  "goal": "了解Kimi新模型与两项工具观察",
+  "profile": "data",
+  "claims": [
+    {
+      "id": "ranking",
+      "text": "当日全球及国内 ECI 前15按原站规则取值，保留版本、两位原始小数；K3.1 Pro无ECI不补分。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/models.json",
+        "url": "https://www.bilibili.com/toy/ai-model-world",
+        "locator": "2026-10-24 01:52:45.328Z 快照；浏览器现场综合智力全球与国内筛选前15逐条对照；sort=ECI desc/id，vendor.continent=east且country=CN。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "kimi-launch",
+      "text": "Kimi官方研究索引标注2026-10-24；K3.1 Pro为3T级、1M token上下文的K3后训练模型。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/kimi-blog.html",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "locator": "Introducing Kimi K3.1 Pro 首段及 Advancing the Frontier；不把3T-class写成精确参数值。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "kimi-terminal",
+      "text": "发布方比较：Terminal-Bench4.0，K3.1 Pro65.7%、GPT-6 Astra58.2%、Claude Opus5.5 66.4%。这不是本栏目独立实测。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/kimi-blog.html",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "locator": "Advancing the Frontier正文与Footnotes/Coding benchmarks第1条；Kimi使用Claude-Code harness，其他数值取各公告或榜单最高值，比较条件并非栏目统一复测。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "kimi-creative",
+      "text": "官方展示Godot等游戏引擎作品与3D Make界面，本片只展示官方案例截图，不冒充本栏目实操。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/kimi-blog.html",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "locator": "Coding与3D Modeling and Design；godot-adventure-cover.webp与3D Make图。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "kimi-access",
+      "text": "Kimi.com、Kimi Code、API已提供K3.1 Pro；官方承诺2026-11-04前放出完整权重，本期不能写成已可下载。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/kimi-blog.html",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "locator": "Availability与开头第三段：Full model weights will be released by Nov4。许可待权重实际落地后核实，本期不给商用授权结论。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "harness-method",
+      "text": "Harness²为google-research仓库的研究框架，权重固定，提出修改、同任务试跑、比较与组合；属于近期观察，不声称10/24新发布。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/harness2-readme.md",
+        "url": "https://github.com/google-research/harness2",
+        "locator": "Recursive Agent Harnessing首段、Task-level recursion、Disclaimer；仓库元数据created10/6,pushed10/14，不能仅凭趋势榜标10/22发布。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "harness-components",
+      "text": "Harness²可编辑提示词、工具指导、记忆、技能、脚本等外围组件；不声称无限自我提升或保证生产效果。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/harness2-readme.md",
+        "url": "https://github.com/google-research/harness2",
+        "locator": "Harness components和任务级Propose-Probe-Compose；非Google正式支持产品。",
+        "checkedAt": "2026-10-24"
+      }
+    },
+    {
+      "id": "voice-features",
+      "text": "VoiceStudio当前README列出语音设计、转写、配音及本地API/MCP；可选远程服务，具体能力、语言及硬件随引擎，本片未安装实测。",
+      "status": "verified",
+      "source": {
+        "path": "evidence/voicestudio-readme.md",
+        "url": "https://github.com/debpalash/VoiceStudio",
+        "locator": "Your voice.Your workflow.、Local workflows run on your hardware、Features&engine catalog。只作当日工具选读，不声称当日发布，不引用趋势涨星数。",
+        "checkedAt": "2026-10-24"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "global",
+      "start": 0,
+      "end": 8,
+      "title": "全球综合智力 TOP15",
+      "purpose": "原榜与官方图标，BGM开场",
+      "subject": "当期全球ECI前15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "domestic",
+      "start": 8,
+      "end": 16,
+      "title": "国产综合智力 TOP15",
+      "purpose": "与全球榜平齐，BGM开场",
+      "subject": "当期国产ECI前15",
+      "claimIds": [
+        "ranking"
+      ]
+    },
+    {
+      "id": "overview",
+      "start": 16,
+      "end": 26.366666666666667,
+      "title": "今日资讯总览",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "今日资讯总览",
+      "claimIds": [
+        "kimi-launch",
+        "harness-method",
+        "voice-features"
+      ]
+    },
+    {
+      "id": "kimi-title",
+      "start": 26.366666666666667,
+      "end": 40.78333333333333,
+      "title": "Kimi K3.1 Pro",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "Kimi K3.1 Pro",
+      "claimIds": [
+        "kimi-launch"
+      ]
+    },
+    {
+      "id": "kimi-bench",
+      "start": 40.78333333333333,
+      "end": 56.766666666666666,
+      "title": "终端任务评测",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "终端任务评测",
+      "claimIds": [
+        "kimi-terminal"
+      ]
+    },
+    {
+      "id": "kimi-creative",
+      "start": 56.766666666666666,
+      "end": 71.08333333333333,
+      "title": "游戏与三维创作",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "游戏与三维创作",
+      "claimIds": [
+        "kimi-creative"
+      ]
+    },
+    {
+      "id": "kimi-access",
+      "start": 71.08333333333333,
+      "end": 88.23333333333333,
+      "title": "使用入口与权重",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "使用入口与权重",
+      "claimIds": [
+        "kimi-access"
+      ]
+    },
+    {
+      "id": "harness",
+      "start": 88.23333333333333,
+      "end": 108.31666666666666,
+      "title": "Harness²智能体研究",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "Harness²智能体研究",
+      "claimIds": [
+        "harness-method",
+        "harness-components"
+      ]
+    },
+    {
+      "id": "harness-use",
+      "start": 108.31666666666666,
+      "end": 118.13333333333334,
+      "title": "研究框架与开发者用途",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "研究框架与开发者用途",
+      "claimIds": [
+        "harness-components"
+      ]
+    },
+    {
+      "id": "voice",
+      "start": 118.13333333333334,
+      "end": 131.58333333333334,
+      "title": "开源语音项目VoiceStudio",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "开源语音项目VoiceStudio",
+      "claimIds": [
+        "voice-features"
+      ]
+    },
+    {
+      "id": "voice-api",
+      "start": 131.58333333333334,
+      "end": 145.01666666666668,
+      "title": "本地接口与使用条件",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "本地接口与使用条件",
+      "claimIds": [
+        "voice-features"
+      ]
+    },
+    {
+      "id": "close",
+      "start": 145.01666666666668,
+      "end": 153.68333333333334,
+      "title": "本期资讯结束",
+      "purpose": "按实际语音推进，相关官方图片与数据支撑正文",
+      "subject": "本期资讯结束",
+      "claimIds": [
+        "kimi-access",
+        "harness-method",
+        "voice-features"
+      ]
+    }
+  ],
+  "review": {
+    "status": "pending",
+    "note": "采用用户真人录音；技术与ASR不代表听感或人工接受"
+  }
+}

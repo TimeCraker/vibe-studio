@@ -1,0 +1,10 @@
+{
+  "videoSha256": "eab466fa9f9f19f66515500310c68c7646dc7c08653b709e64af6d4e7d977272",
+  "bytes": 16190341,
+  "motionSample": {
+    "start": 27,
+    "seconds": 0.3,
+    "frames": 18,
+    "uniqueFrames": 18
+  }
+}

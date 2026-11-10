@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "video": "render/daily-ai-news-2026-10-24-narrated.mp4",
+  "videoSha256": "eab466fa9f9f19f66515500310c68c7646dc7c08653b709e64af6d4e7d977272",
+  "reviewer": "Codex actual MP4 frame inspection; listening pending",
+  "inspection": {
+    "visual": [
+      {
+        "start": 7,
+        "end": 7.016666666666667
+      },
+      {
+        "start": 15,
+        "end": 15.016666666666667
+      },
+      {
+        "start": 34,
+        "end": 34.016666666666666
+      },
+      {
+        "start": 65,
+        "end": 65.01666666666667
+      },
+      {
+        "start": 104,
+        "end": 104.01666666666667
+      },
+      {
+        "start": 127,
+        "end": 127.01666666666667
+      },
+      {
+        "start": 140,
+        "end": 140.01666666666668
+      }
+    ],
+    "audio": []
+  },
+  "checks": [
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 7,
+      "end": 7.016666666666667,
+      "note": "全球TOP15原榜、官标、两位小数和来源完整；细项需横屏或暂停。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 15,
+      "end": 15.016666666666667,
+      "note": "国产TOP15与全球同版，保留K3.1 Pro暂无ECI说明。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 34,
+      "end": 34.016666666666666,
+      "note": "Kimi官方发布图与型号完整；此帧位于真实句间字幕空隙，不提前显示下一句规格。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 65,
+      "end": 65.01666666666667,
+      "note": "Godot与3D Make官方实图并列，字幕在安全区内，细字不要求手机逐字阅读。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 104,
+      "end": 104.01666666666667,
+      "note": "Harness三阶段随实际叙述高亮，浅色版式，无黑底流程框。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 127,
+      "end": 127.01666666666667,
+      "note": "VoiceStudio官方工作区截图与音色/转写/配音功能可见，项目署名完整。"
+    },
+    {
+      "kind": "visual",
+      "status": "pass",
+      "start": 140,
+      "end": 140.01666666666668,
+      "note": "本地API示意单独成页，明确是示意，未冒充实际运行；字幕与图解无重叠。"
+    },
+    {
+      "kind": "audio",
+      "status": "unreviewed",
+      "note": "仅完成响度测量与自动避让，未实际审听。原录音17至18.08秒的长任务识别疑点需优先确认。"
+    },
+    {
+      "kind": "sync",
+      "status": "unreviewed",
+      "note": "字幕与关键揭示由真实ASR词窗口驱动，量化误差不超过半帧；未连续听看，不能将ASR当作人工同步接受。"
+    },
+    {
+      "kind": "story",
+      "status": "unreviewed",
+      "note": "短片和整片已有浏览器播放抽查及实际媒体抽帧，未完整连续审阅全片。"
+    },
+    {
+      "kind": "facts",
+      "status": "unreviewed",
+      "note": "沿用本期已保存来源与claims，录音数字与文本已核对；未逐帧完成事实终审。"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "file": "assets/claude.png",
+    "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=256&h=256",
+    "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+    "bytes": 1198,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/openai.svg",
+    "url": "https://raw.githubusercontent.com/openai/openai-agents-js/main/docs/public/favicon.svg",
+    "sha256": "a60015dff9e88ad4801ab7f1ba5461283ccde4ddf315a6802d2f56897feaafe6",
+    "bytes": 3273,
+    "fetchedAt": "2026-10-24T08:41:20.736187+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/google.png",
+    "url": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+    "sha256": "5e7cfecaa53f4f65a313fe89b0f389548126544a78fad8489510c70ae641a4a1",
+    "bytes": 61823,
+    "fetchedAt": "2026-10-24T08:41:21.298240+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/meta.svg",
+    "url": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "sha256": "9c354dc7d40f7862df2dfb34df05ae08c3e956d55a450379803d6cac6878a63e",
+    "bytes": 8912,
+    "fetchedAt": "2026-10-24T08:41:21.296653+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/kimi.png",
+    "url": "https://statics.kimi.ai/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+    "sha256": "59f90505d585b37ea216153859bf357dd5693997316a8ab30662794236b2c273",
+    "bytes": 7454,
+    "fetchedAt": "2026-10-24T08:41:20.127217+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/qwen.png",
+    "url": "https://avatars.githubusercontent.com/u/141221163?v=4",
+    "sha256": "a6b261b9b688a81e984c20411dadd616215287e90a31e9c5c65fdefbc09f12b3",
+    "bytes": 15465,
+    "fetchedAt": "2026-10-24T08:41:21.136261+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/glm.svg",
+    "url": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "sha256": "07a45e8e35b0b631ed2c68cd1cb041f9721b1ceeb0bd0e34f1459b0304a741c7",
+    "bytes": 11037,
+    "fetchedAt": "2026-10-24T08:41:20.833370+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/deepseek.ico",
+    "url": "https://www.deepseek.com/favicon.ico",
+    "sha256": "30a4420e6e4dcb17fd7de560c5004346c2bc8cd971d2d5f5ee15326603e51321",
+    "bytes": 209762,
+    "fetchedAt": "2026-10-24T08:41:20.962405+00:00",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/kimi-godot.webp",
+    "url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/godot-adventure-cover.webp",
+    "sha256": "47205e219e127e642cf1b530604429ecb293d2d5473e4d6c96299200ced703fa",
+    "bytes": 366930,
+    "fetchedAt": "2026-10-24T08:41:21.054516+00:00",
+    "sourcePage": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+    "use": "Official case image for attributed news commentary; not independently reproduced demo.",
+    "rights": "Publisher image; no blanket open license claimed. Preserve official attribution."
+  },
+  {
+    "file": "assets/kimi-3d.webp",
+    "url": "https://kimi-img.kimi.ai/pub/slides/kimi-fs/weaver/assets/9d2a6db49991ae6a4eb13c8a322de721.webp",
+    "sha256": "f643d791063ead3b3fe7447e99065e54d9518f6f8768b4478f4276d5b2ad74a6",
+    "bytes": 95144,
+    "fetchedAt": "2026-10-24T08:41:21.257374+00:00",
+    "sourcePage": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+    "use": "Official case image for attributed news commentary; not independently reproduced demo.",
+    "rights": "Publisher image; no blanket open license claimed. Preserve official attribution."
+  },
+  {
+    "file": "assets/carefree.mp3",
+    "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3",
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+    "bytes": 6566713,
+    "fetchedAt": "2026-10-24T08:41:26.661509+00:00",
+    "sourcePage": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+    "license": "CC BY 4.0",
+    "attribution": "Carefree by Kevin MacLeod (incompetech.com), licensed under Creative Commons Attribution 4.0, https://creativecommons.org/licenses/by/4.0/",
+    "selection": "96 BPM; Ukulele, Guitar, Marimba, Glockenspiel, Percussion; Bouncy/Bright/Calming/Uplifting. Mood selected from official description; listening pending.",
+    "use": "Low BGM bed, trimmed and faded; no human voice yet."
+  },
+  {
+    "file": "assets/harness2.png",
+    "url": "https://raw.githubusercontent.com/google-research/harness2/main/assets/Harness2-wordmark.png",
+    "bytes": 499744,
+    "sha256": "d9546b0cc67cbfbec5fa1083e1c323bbefff81d2c3c4bcde7f43f325057d6f19",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/voicestudio.png",
+    "url": "https://raw.githubusercontent.com/debpalash/VoiceStudio/main/docs/logo.png",
+    "bytes": 89957,
+    "sha256": "410e52c6181af589fc702e6e091cb4ddaba1866ba667b82e2241e9e95b05ed1d",
+    "use": "Official brand/project identification; source file unmodified, no endorsement.",
+    "rights": "Trademark/official project asset; no blanket relicensing claimed."
+  },
+  {
+    "file": "assets/kimi-launch.webp",
+    "url": "https://statics.moonshot.cn/kimi-blogs/kimi-k3-1/54ef01b6-a91d-44de-9434-dc07028e72cc.webp",
+    "sha256": "0ab315fa4406ef35e614dbad8584314fb01e4a586b8996c3cccd4ad3e2eb9102",
+    "bytes": 411746,
+    "use": "Official source image for attributed news illustration; not independently performed demo.",
+    "rights": "Publisher/project material; preserve source attribution."
+  },
+  {
+    "file": "assets/harness-pipeline.png",
+    "url": "https://raw.githubusercontent.com/google-research/harness2/main/assets/harness2_pipeline.png",
+    "sha256": "0fb071d27c7bab29c8221d37ef63d2ae8bd3e635b82803fa08480bf2374a4ddd",
+    "bytes": 390625,
+    "use": "Official source image for attributed news illustration; not independently performed demo.",
+    "rights": "Publisher/project material; preserve source attribution."
+  },
+  {
+    "file": "assets/voice-workspace.png",
+    "url": "https://raw.githubusercontent.com/debpalash/VoiceStudio/main/docs/media/electron/dubbing.png",
+    "sha256": "f16013d1b80f29f07ea12aa59e1d386aa90e5a922925f803097a532b1ec76819",
+    "bytes": 338132,
+    "use": "Official source image for attributed news illustration; not independently performed demo.",
+    "rights": "Publisher/project material; preserve source attribution."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "driver": "pw",
+  "platforms": {
+    "bili": {
+      "video": "render/daily-ai-news-2026-10-24-narrated.mp4",
+      "cover": "render/cover.png",
+      "spec": "exports/bili/form.json",
+      "topics": "AI资讯,Kimi,人工智能,开源,Agent"
+    }
+  }
+}

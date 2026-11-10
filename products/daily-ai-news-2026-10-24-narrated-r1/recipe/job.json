@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "steps": [
+    {
+      "id": "deps",
+      "command": [
+        "node",
+        "scripts/deps.mjs"
+      ],
+      "inputs": [
+        "remotion-app/package.json",
+        "remotion-app/package-lock.json",
+        "scripts/deps.mjs"
+      ],
+      "outputs": [
+        ".studio/deps.json"
+      ],
+      "timeoutSeconds": 900
+    },
+    {
+      "id": "recording-review",
+      "command": [
+        "python",
+        "scripts/review-recording.py"
+      ],
+      "inputs": [
+        "scripts/review-recording.py",
+        "audio/asr/raw-words.json",
+        "audio/source/narration-original.m4a"
+      ],
+      "outputs": [
+        "audio/recording-review.json",
+        "audio/asr/reviewed-transcript.txt"
+      ],
+      "timeoutSeconds": 120
+    },
+    {
+      "id": "inputs",
+      "command": [
+        "node",
+        "scripts/build-narrated-inputs.mjs"
+      ],
+      "inputs": [
+        "scripts/build-narrated-inputs.mjs",
+        "audio/recording-review.json",
+        "audio/source/narration-original.m4a",
+        "edition.json",
+        "claims.json",
+        "ranking.json",
+        "assets/voice-workspace.png"
+      ],
+      "outputs": [
+        "timeline.json",
+        "script.json",
+        "storyboard.json",
+        "audio.json",
+        "audio-voice.json",
+        "captions.srt",
+        "captions.cues.json",
+        "qc.json"
+      ],
+      "timeoutSeconds": 120
+    },
+    {
+      "id": "plan",
+      "command": [
+        "node",
+        "{repo}/skills/content-director/scripts/validate-plan.mjs",
+        "{project}"
+      ],
+      "inputs": [
+        "storyboard.json"
+      ],
+      "outputs": []
+    },
+    {
+      "id": "typecheck",
+      "cwd": "remotion-app",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "timeline.json",
+        "ranking.json",
+        "edition.json"
+      ],
+      "outputs": []
+    },
+    {
+      "id": "voice",
+      "command": [
+        "node",
+        "{repo}/scripts/studio.mjs",
+        "audio",
+        "--project",
+        "{project}",
+        "--config",
+        "audio-voice.json",
+        "--out",
+        "audio/voice-clean.wav"
+      ],
+      "inputs": [
+        "audio-voice.json",
+        "audio/source/narration-original.m4a"
+      ],
+      "outputs": [
+        "audio/voice-clean.wav",
+        "audio/voice-clean.wav.json"
+      ],
+      "timeoutSeconds": 180
+    },
+    {
+      "id": "audio",
+      "command": [
+        "node",
+        "{repo}/scripts/studio.mjs",
+        "audio",
+        "--project",
+        "{project}"
+      ],
+      "inputs": [
+        "audio.json",
+        "audio/voice-clean.wav",
+        "assets/carefree.mp3"
+      ],
+      "outputs": [
+        "audio/mix.wav",
+        "audio/mix.wav.json"
+      ],
+      "timeoutSeconds": 180
+    },
+    {
+      "id": "stills",
+      "command": [
+        "node",
+        "scripts/render.mjs",
+        "stills"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "remotion-app/public/edition",
+        "timeline.json",
+        "ranking.json",
+        "edition.json",
+        "audio/mix.wav",
+        "scripts/render.mjs"
+      ],
+      "outputs": [
+        "render/cover.png",
+        "render/stills/global.png",
+        "render/stills/domestic.png",
+        "render/stills/voice.png"
+      ],
+      "timeoutSeconds": 900
+    },
+    {
+      "id": "sample",
+      "command": [
+        "node",
+        "scripts/render.mjs",
+        "sample"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "remotion-app/public/edition",
+        "timeline.json",
+        "ranking.json",
+        "edition.json",
+        "audio/mix.wav",
+        "scripts/render.mjs"
+      ],
+      "outputs": [
+        "render/daily-ai-news-2026-10-24-narrated-sample.mp4"
+      ],
+      "timeoutSeconds": 1200
+    },
+    {
+      "id": "render",
+      "command": [
+        "node",
+        "scripts/render.mjs",
+        "video"
+      ],
+      "inputs": [
+        "remotion-app/src",
+        "remotion-app/remotion",
+        "remotion-app/public/edition",
+        "timeline.json",
+        "ranking.json",
+        "edition.json",
+        "audio/mix.wav",
+        "scripts/render.mjs"
+      ],
+      "outputs": [
+        "render/daily-ai-news-2026-10-24-narrated.mp4"
+      ],
+      "timeoutSeconds": 5400
+    },
+    {
+      "id": "qc",
+      "command": [
+        "node",
+        "{repo}/skills/media-qc/scripts/check.mjs",
+        "--project",
+        "{project}",
+        "--video",
+        "render/daily-ai-news-2026-10-24-narrated.mp4",
+        "--srt",
+        "captions.srt",
+        "--require-audio",
+        "--out",
+        "qa/human/media-report.json"
+      ],
+      "inputs": [
+        "render/daily-ai-news-2026-10-24-narrated.mp4",
+        "captions.srt",
+        "qc.json"
+      ],
+      "outputs": [
+        "qa/human/media-report.json"
+      ],
+      "timeoutSeconds": 600
+    },
+    {
+      "id": "materials",
+      "command": [
+        "node",
+        "scripts/prepare-publish.mjs"
+      ],
+      "inputs": [
+        "variants.json",
+        "storyboard.json",
+        "timeline.json",
+        "captions.srt",
+        "scripts/prepare-publish.mjs"
+      ],
+      "outputs": [
+        "publish-plan.json",
+        "exports/bili/captions.srt",
+        "exports/bili/form.json"
+      ],
+      "timeoutSeconds": 60
+    }
+  ]
+}

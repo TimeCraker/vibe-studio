@@ -1,0 +1,19 @@
+{
+  "files": [
+    "render/daily-ai-news-2026-10-24-narrated.mp4",
+    "render/cover.png",
+    "qa/human/media-report.json",
+    "qa/human/media-report-contact-sheet.png",
+    "qa/human/inspection-input.json",
+    "qa/human/editorial-review.json",
+    "qa/human/alignment-report.json",
+    "qa/human/render-evidence.json",
+    "qa/human/mp4-7.png",
+    "qa/human/mp4-15.png",
+    "qa/human/mp4-34.png",
+    "qa/human/mp4-65.png",
+    "qa/human/mp4-104.png",
+    "qa/human/mp4-127.png",
+    "qa/human/mp4-140.png"
+  ]
+}

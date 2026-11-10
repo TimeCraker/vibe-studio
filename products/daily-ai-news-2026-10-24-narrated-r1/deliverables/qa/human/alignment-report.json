@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "errors": [],
+  "sourceSha256": "0d3c17d9ab040c30522a02b46a82e3d0f3bb6c8a972f945a19feba82f0f4e082",
+  "asrModel": "large-v3-turbo",
+  "modelSha256": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+  "rawSegments": 18,
+  "cues": 58,
+  "normalizedManuscriptSimilarity": 0.9924585218702866,
+  "timingSource": "actual ASR word windows, whole-word grouping; nearest frame at 60fps",
+  "maximumRoundingErrorSeconds": 0.008333333333333333,
+  "firstSpeechSeconds": 16.25,
+  "lastSpeechSeconds": 152.36666666666667,
+  "originalRecordingSeconds": 138.920875,
+  "keptRecordingSeconds": 136.67,
+  "retimingOrInternalCuts": false,
+  "listening": "pending; ASR/text checks cannot certify phoneme alignment or auditory quality",
+  "priorityListening": [
+    {
+      "originalStart": 17,
+      "originalEnd": 18.08,
+      "videoStart": 32.75,
+      "videoEnd": 33.83,
+      "note": "长任务：ASR疑似误识为产物任务，依稿件校订，需审听确认"
+    }
+  ]
+}

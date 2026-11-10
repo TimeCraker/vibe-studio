@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "status": "processed-needs-listening",
+  "output": "audio/mix.wav",
+  "outputSha256": "225a38a7da8c993258869ea7c596f90d24461b45a08d8bcfd3cbd87c4db3377e",
+  "duration": 153.683333,
+  "sampleRate": 48000,
+  "channels": 2,
+  "config": {
+    "path": "audio.json",
+    "sha256": "7c657a84210065567a351f84b0197a0efb172fa4a3484c2d330f9c35fa817d15"
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\audio\\voice-clean.wav",
+      "sha256": "99ee0596cee62959aa6fe7b60b2e31cfaddfb44a14d8e00bec204cb9c438e2d3",
+      "role": "voice",
+      "start": 16,
+      "in": 0,
+      "duration": 136.67
+    },
+    {
+      "path": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\assets\\carefree.mp3",
+      "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+      "role": "music",
+      "start": 0,
+      "in": 0,
+      "duration": 16.5
+    },
+    {
+      "path": "C:\\Users\\TimeCraker\\Desktop\\my_workspace\\vibe-studio\\projects\\daily-ai-news-2026-10-24\\assets\\carefree.mp3",
+      "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+      "role": "music",
+      "start": 15.5,
+      "in": 15.5,
+      "duration": 138.18333333333334
+    }
+  ],
+  "duckingApplied": true,
+  "normalized": true,
+  "target": {
+    "integrated": -16,
+    "truePeak": -1.5,
+    "range": 11
+  },
+  "before": {
+    "input_i": "-18.34",
+    "input_tp": "-1.97",
+    "input_lra": "5.50",
+    "input_thresh": "-28.62",
+    "output_i": "-14.82",
+    "output_tp": "-1.50",
+    "output_lra": "3.30",
+    "output_thresh": "-25.09",
+    "normalization_type": "dynamic",
+    "target_offset": "-1.18"
+  },
+  "after": {
+    "input_i": "-15.91",
+    "input_tp": "-1.47",
+    "input_lra": "3.20",
+    "input_thresh": "-26.18",
+    "output_i": "-15.80",
+    "output_tp": "-1.50",
+    "output_lra": "3.20",
+    "output_thresh": "-26.07",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.20"
+  },
+  "errors": [],
+  "warnings": [],
+  "humanReview": {
+    "status": "pending",
+    "checks": [
+      "intelligibility",
+      "music balance",
+      "cuts and fades",
+      "distortion",
+      "sync with picture"
+    ]
+  }
+}

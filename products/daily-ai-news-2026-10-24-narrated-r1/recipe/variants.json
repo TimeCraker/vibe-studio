@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "platforms": {
+    "bili": {
+      "title": "Kimi K3.1 Pro发布：编程、3D与权重开放时间｜每日AI 1024",
+      "description": [
+        "本期采用真人旁白，字幕按实际词时间窗对齐；待完整审听与人工终审，尚未发布。",
+        "Kimi头条：https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "近期工具观察：https://github.com/google-research/harness2",
+        "本地语音工具选读：https://github.com/debpalash/VoiceStudio",
+        "全球/国产模型榜单：https://www.bilibili.com/toy/ai-model-world；数据来自Epoch AI（CC BY4.0）及同源大模型世界快照，北京时间2026-10-24 09:52:45。",
+        "Carefree by Kevin MacLeod (incompetech.com). Licensed under Creative Commons Attribution 4.0: https://creativecommons.org/licenses/by/4.0/",
+        "Music source: https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037 ; edited volume, trims and fades."
+      ],
+      "tags": [
+        "AI资讯",
+        "Kimi",
+        "人工智能",
+        "开源",
+        "Agent"
+      ],
+      "sceneIds": [
+        "global",
+        "domestic",
+        "overview",
+        "kimi-title",
+        "kimi-bench",
+        "kimi-creative",
+        "kimi-access",
+        "harness",
+        "harness-use",
+        "voice",
+        "voice-api",
+        "close"
+      ],
+      "format": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 60
+      },
+      "video": "render/daily-ai-news-2026-10-24-narrated.mp4",
+      "cover": "render/cover.png",
+      "safeArea": {
+        "top": 0.04,
+        "bottom": 0.1,
+        "left": 0.04,
+        "right": 0.04
+      }
+    }
+  }
+}
